@@ -3,8 +3,6 @@
   "image" : "starforge-plaguebringerrocket.png",
   "animationCycle" : 0.25,
   "frameNumber" : 5,
-  "damageKindImage" : "icon.png",
-  "fallSpeed" : 0,
   "lightColor" : [67, 110, 32],
   "pointLight" : true,
   "actionOnReap" : [
@@ -31,39 +29,39 @@
   "teleportDelay" : 0.2,
   "teleportGenerosity" : 5,		//How far away from its destination it will teleport to, 0 would be directly on top, 3 would be 3 blocks away
   "teleportOutActions" : [
-	{
-	  "action" : "sound",
-	  "options" : [ "/sfx/tech/tech_blink1.ogg" ]
-	},
-	{
-	  "action" : "particle",
-	  "rotate" : true,
-	  "specification" : {
-		"type" : "animated",
-		"animation" : "/animations/starforge-smallteleport/starforge-smallteleportout.animation",
-		"approach" : [0.0, 0.0],
-		"timeToLive" : 0.25,
-		"rotation" : 90,
-		"fullbright" : true
-	  }
-	}
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/tech/tech_blink1.ogg" ]
+    },
+    {
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+      "type" : "animated",
+      "animation" : "/animations/starforge-smallteleport/starforge-smallteleportout.animation",
+      "approach" : [0.0, 0.0],
+      "timeToLive" : 0.25,
+      "rotation" : 90,
+      "fullbright" : true
+      }
+    }
   ],
   "teleportInActions" : [
-	{
-	  "action" : "sound",
-	  "options" : [ "/sfx/tech/tech_blink2.ogg" ]
-	},
-	{
-	  "action" : "particle",
-	  "rotate" : true,
-	  "specification" : {
-		"type" : "animated",
-		"animation" : "/animations/starforge-smallteleport/starforge-smallteleportin.animation",
-		"approach" : [0.0, 0.0],
-		"timeToLive" : 0.25,
-		"rotation" : 90,
-		"fullbright" : true
-	  }
-	}
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/tech/tech_blink2.ogg" ]
+    },
+    {
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+      "type" : "animated",
+      "animation" : "/animations/starforge-smallteleport/starforge-smallteleportin.animation",
+      "approach" : [0.0, 0.0],
+      "timeToLive" : 0.25,
+      "rotation" : 90,
+      "fullbright" : true
+      }
+    }
   ]
 }

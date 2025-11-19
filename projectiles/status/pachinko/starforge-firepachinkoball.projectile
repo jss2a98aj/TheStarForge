@@ -23,25 +23,25 @@
       "body" : [
         {
           "action" : "particle",
-		  "rotate" : true,
-		  "specification" : {
-			"type" : "textured",
-			"image" : "/celestial/stars/star21pxOrange.png:2",
-			"position" : [0, 0],
-			"layer" : "front",
-			"collidesForeground" : false,
-			"timeToLive" : 0.2,
-			"destructionTime" : 0.1,
-			"destructionAction" : "shrink",
-			"fullbright" : true,
-			"size" : 1.2,
-			"rotation" : 0,
-			"angularVelocity" : 180,
-			"variance" : {
-			  "size" : 0.9,
-			  "rotation" : 180,
-			  "angularVelocity" : 420
-			} 
+          "rotate" : true,
+          "specification" : {
+            "type" : "textured",
+            "image" : "/celestial/stars/star21pxOrange.png:2",
+            "position" : [0, 0],
+            "layer" : "front",
+            "collidesForeground" : false,
+            "timeToLive" : 0.2,
+            "destructionTime" : 0.1,
+            "destructionAction" : "shrink",
+            "fullbright" : true,
+            "size" : 1.2,
+            "rotation" : 0,
+            "angularVelocity" : 180,
+            "variance" : {
+              "size" : 0.9,
+              "rotation" : 180,
+              "angularVelocity" : 420
+            } 
           }
         }
       ]

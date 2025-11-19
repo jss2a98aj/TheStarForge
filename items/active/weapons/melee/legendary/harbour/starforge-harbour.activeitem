@@ -3,7 +3,7 @@
   "price" : 1000,
   "level" : 6,
   "maxStack" : 1,
-  "rarity" : "Legendary",
+  "rarity" : "Rare",
   "description" : "An intensely powerful armament, harnessing the the Tide within its blade.",
   "shortdescription" : "Harbour",
   "tooltipKind" : "starforge-uniquesword",

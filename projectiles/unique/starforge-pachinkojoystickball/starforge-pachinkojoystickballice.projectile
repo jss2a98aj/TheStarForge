@@ -1,0 +1,53 @@
+{
+  "projectileName" : "starforge-pachinkojoystickballice",
+  "physics" : "arrownosticky",
+  "image" : "starforge-pachinkojoystickball.png:ice",
+  "animationCycle" : 0.5,
+  "frameNumber" : 1,
+  "power" : 50,
+  "speed" : 100,
+  "timeToLive" : 2,
+  "supportsProcessing" : true,
+  "fullbright" : true,
+  "damageType" : "NoDamage",
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/iceexplosionknockback.config"
+    }
+  ],
+  
+  "advancedPeriodicActions" : [
+    {
+      "loopTime" : 0.01,
+      "delayTime" : 0.01,
+      "rotate" : true,
+      "minimumVelocity" : 55,
+
+      "action" : "particle",
+      "specification" : {
+        "type" : "streak",
+        "layer" : "back",
+        "fullbright" : true,
+        "destructionAction" : "shrink",
+        "size" : 2,
+        "color" : [176, 255, 255, 255],
+        "collidesForeground" : false,
+        "length" : 20,
+        "position" : [1, 0],
+        "timeToLive" : 0.01,
+        "destructionTime" : 0.06,
+        "initialVelocity" : [0.5, 0],
+        "variance" : {
+          "size" : 0,
+          "destructionTime" : 0.5,
+          "initialVelocity" : [0.5, -0],
+          "length" : 0
+        }
+      }
+    }
+  ],
+  "damageKind" : "fist",
+
+  "scripts" : [ "/projectiles/scripts/starforge-advancedperiodicactions.lua" ]
+}

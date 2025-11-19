@@ -4,7 +4,7 @@
   "level" : 6,
   "fixedLevel" : false,
   "maxStack" : 1,
-  "rarity" : "legendary",
+  "rarity" : "Common",
   "description" : "An unusual weapon made out of scraps by desperate Apex scientists.",
   "shortdescription" : "Marauder",
   "tooltipKind" : "starforge-uniquesword",

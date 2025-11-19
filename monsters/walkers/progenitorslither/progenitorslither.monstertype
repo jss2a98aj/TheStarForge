@@ -92,7 +92,7 @@
             "windupState" : "spitWindup",
             "windupTime" : 0.125,
 
-            "projectileType" : "starforge-withersplinter",
+            "projectileType" : "starforge-witherneedle",
             "projectileParameters" : {},
             "aimAtTarget" : true,
             "fireOffset" : [1.250, 0.125],
@@ -254,6 +254,19 @@
         },
         "poisonStatusImmunity" : {
           "baseValue" : 0.0
+        },
+
+        "starforge-tidalfrostResistance" : {
+          "baseValue" : -0.80
+        },
+        "starforge-tidalfrostStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "starforge-witherResistance" : {
+          "baseValue" : 0.80
+        },
+        "starforge-witherStatusImmunity" : {
+          "baseValue" : 1.0
         }
       },
 

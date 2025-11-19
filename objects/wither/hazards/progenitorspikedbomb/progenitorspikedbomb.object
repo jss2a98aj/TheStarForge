@@ -8,37 +8,43 @@
   "category" : "storage",
   "price" : 0,
   "printable" : false,
-  "description" : "TODO.",
-  "shortdescription" : "Progenitor Spiked Bomb",
+  "description" : "A wither seed pod, that reacts to nearby creatures.",
+  "shortdescription" : "Progenitor Pod",
 
-  "apexDescription" : "TODO.",
-  "avianDescription" : "TODO.",
-  "floranDescription" : "TODO.",
-  "glitchDescription" : "TODO.",
-  "humanDescription" : "TODO.",
-  "hylotlDescription" : "TODO.",
-  "novakidDescription" : "TODO.",
+  "apexDescription" : "A wither seed pod, likely how it spreads.",
+  "avianDescription" : "It looks like it would explode... I don't wanna be near it when that happens.",
+  "floranDescription" : "It looksss... wrong.",
+  "glitchDescription" : "Concerned. This plant sack looks volatile.",
+  "humanDescription" : "Seems to hold something like pollen.",
+  "hylotlDescription" : "A strange plant in a strange world.",
+  "novakidDescription" : "Looks like a big ol' seed pod.",
 
   "inventoryIcon" : "progenitorspikedbombicon.png",
 
   "orientations" : [
     {
-      "imageLayers" : [ { "image" : "progenitorspikedbomb.png:active"}, { "image" : "progenitorspikedbombfullbright.png:active", "fullbright" : true } ],
+      "imageLayers" : [ { "image" : "progenitorspikedbomb.png:1.active"}, { "image" : "progenitorspikedbombfullbright.png:1.active", "fullbright" : true } ],
       "imagePosition" : [-4, 0],
 
       "direction" : "left",
       "flipImages" : true,
 
       "spaceScan" : 0.1,
+
+      "floorOffset" : [0.5, -1],
+
       "anchors" : [ "bottom" ]
     },
     {
-      "imageLayers" : [ { "image" : "progenitorspikedbomb.png:active"}, { "image" : "progenitorspikedbombfullbright.png:active", "fullbright" : true } ],
+      "imageLayers" : [ { "image" : "progenitorspikedbomb.png:1.active"}, { "image" : "progenitorspikedbombfullbright.png:1.active", "fullbright" : true } ],
       "imagePosition" : [-4, 0],
 
       "direction" : "right",
 
       "spaceScan" : 0.1,
+
+      "floorOffset" : [2.5, -1],
+
       "anchors" : [ "bottom" ]
     }
   ],
@@ -56,18 +62,45 @@
 
   "smashParticles" : [ ],
 
-  "scripts" : ["/objects/scripts/starforge-explodeonsmash.lua"],
+  "scripts" : ["/objects/scripts/starforge-explodeonsmash.lua", "/objects/scripts/starforge-varianthook.lua"],
   "scriptDelta" : 1,
   
-  "damageToBurst" : 100,
+  "damageToBurst" : 15,
   "regrowTime" : 30,		//If specified, will regrow the object after being burst
-  "burstProjectileType" : ["poisonplasmaexplosion", "poisonburstexplosion"],		//Spawns all of these
+  "burstProjectileType" : [ "invisibleprojectile" ],		//Spawns all of these
+  "burstProjectileParameters" : {
+    "actionOnReap" : [
+      {
+        "action" : "projectile",
+        "inheritDamageFactor" : 1,
+        "type" : "starforge-witheredground",
+        "config" : {
+          "timeToLive" : 0.5
+        }
+      },
+      {
+        "action" : "projectile",
+        "inheritDamageFactor" : 1,
+        "type" : "poisonexplosionknockback",
+        "angleAdjust" : 90,
+        "config" : {
+          "lightColor" : [0, 0, 0],
+          "damageKind" : "starforge-wither"
+        }
+      }
+    ],
+
+    "damageType" : "nodamage",
+    "timeToLive" : 0
+  }, 
   
   "proximityScan" : 15,
-  "proximityToDetonate" : 5,
+  "proximityToDetonate" : 4,
+  "projectileSpawnOffset" : [1, 1],
   "proximityShakeConfig" : {
-    "floorOffset" : [1.375, 0.5],
-    "cycle" : 0.15,
-	"amplitude" : 0.05
-  }
+    "cycle" : 0.4,
+  	"amplitude" : 0.035
+  },
+
+  "variants" : 3
 }

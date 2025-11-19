@@ -3,7 +3,7 @@
   "price" : 600,
   "level" : 6,
   "maxStack" : 1,
-  "rarity" : "legendary",
+  "rarity" : "Rare",
   "description" : "A Yukai glaive, capable of firing strong blasts of energy from its blade.",
   "shortdescription" : "Spellslinger",
   "tooltipKind" : "starforge-uniquesword",

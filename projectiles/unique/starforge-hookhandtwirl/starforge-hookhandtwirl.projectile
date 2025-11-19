@@ -7,7 +7,7 @@
   "fullbright" : false,
   "physics" : "sticky",
   "piercing" : true,
-  "emitters" : [ ],
+  "emitters" : [],
   "actionOnReap" : [],
   "periodicActions" : [],
   "damagePoly" : [ [-8, 0], [2, 3], [8, 0], [2, -3] ],

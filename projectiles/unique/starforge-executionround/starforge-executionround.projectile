@@ -89,5 +89,5 @@
   "fullbright" : true,
   "damageKind" : "fireplasmabullet",
   
-  "scripts" : [ "/projectiles/scripts/starforge-advancedPeriodicActions.lua" ]
+  "scripts" : [  "/projectiles/scripts/starforge-killonstick.lua", "/projectiles/scripts/starforge-advancedPeriodicActions.lua" ]
 }

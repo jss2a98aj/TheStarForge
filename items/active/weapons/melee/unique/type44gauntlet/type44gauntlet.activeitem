@@ -2,7 +2,7 @@
   "itemName": "starforge-type44gauntlet",
   "price" : 5000,
   "maxStack" : 1,
-  "rarity" : "Essential",
+  "rarity" : "Legendary",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {
     "subtitle" : "Fist Weapon"
@@ -15,7 +15,7 @@
     {"image" : "type44gauntletfullbright.png:front"}
   ],
   "description" : "The product of a reckless merger of ancient technology and Unbound ambition.",
-  "shortdescription" : "^orange;Type-44 Gauntlet^reset;",
+  "shortdescription" : "Type-44 Gauntlet",
   "itemTags" : [ "starforge", "weapon", "melee", "fist", "unbound" ],
   "learnBlueprintsOnPickup" : [ "starforge-type44gauntlet" ],
 

@@ -5,7 +5,7 @@
   "maxStack" : 1,
   "rarity" : "Essential",
   "description" : "Wrought from brimstone, of unending fury resurging from a former death.",
-  "shortdescription" : "^#b4f5c3;Behemoth ver.9000^reset;",
+  "shortdescription" : "Behemoth ver.9000",
   "level" : 7,
   "tooltipKind" : "starforge-uniquegun",
   "category": "uniqueWeapon",

@@ -3,14 +3,14 @@
   "price" : 2500,
   "inventoryIcon" : "bloodveilicon.png",
   "maxStack" : 1,
-  "rarity" : "essential",
+  "rarity" : "Legendary",
   "tooltipKind" : "bow",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {
     "subtitle" : "Bow"
   },
   "description" : "Manifests your life essence into a powerful arrow.",
-  "shortdescription" : "^orange;Bloodveil^reset;",
+  "shortdescription" : "Bloodveil",
   "twoHanded" : true,
   "itemTags" : [ "starforge", "weapon", "ranged", "bow", "yukai" ],
 

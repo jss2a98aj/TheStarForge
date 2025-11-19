@@ -3,7 +3,7 @@
   "price" : 950,
   "level" : 7,
   "maxStack" : 1,
-  "rarity" : "Essential",
+  "rarity" : "Rare",
   "description" : "This blade is as old as the Ancient temples found in the galaxy. Its power is unbelievable.",
   "shortdescription" : "Ancient Energy Blade",
   "tooltipKind" : "sword",

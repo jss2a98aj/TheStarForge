@@ -2,7 +2,7 @@
   "itemName": "starforge-silverserpent",
   "price": 1500,
   "maxStack": 1,
-  "rarity": "Legendary",
+  "rarity": "Rare",
   "description": "A serpent bound cannon, sporting armour penetrating rounds.",
   "shortdescription" : "Silver Serpent",
   "tooltipKind": "starforge-uniquegun",
@@ -13,7 +13,7 @@
   "twoHanded": true,
   "level" : 6,
   "itemTags" : [ "starforge", "weapon", "ranged", "pistol" ],
-  "inventoryIcon": "starforge-silverserpenticon.png",
+  "inventoryIcon": "starforge-silverserpent.png:slide.1",
   
   "animation": "/items/active/weapons/ranged/unique/mauricessidearm/mauricessidearm.animation",
   "animationParts": {

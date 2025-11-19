@@ -17,7 +17,7 @@ function init()
 
   self.weapon = Weapon:new()
 
-  self.weapon:addTransformationGroup("weapon", {0,0}, 0)
+  self.weapon:addTransformationGroup("weapon", {0, 0}, 0)
   self.weapon:addTransformationGroup("muzzle", self.weapon.muzzleOffset, 0)
 
   local primaryAbility = getPrimaryAbility()

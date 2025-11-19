@@ -17,7 +17,7 @@
   "piercing" : false,
   "damageKind" : "iceplasma",
   
-  "scripts" : [ "/projectiles/scripts/starforge-advancedPeriodicActions.lua" ],
+  "scripts" : [ "/projectiles/scripts/starforge-killonstick.lua", "/projectiles/scripts/starforge-advancedPeriodicActions.lua" ],
   "advancedPeriodicActions" : [
     {
       "loopTime" : 0.01,

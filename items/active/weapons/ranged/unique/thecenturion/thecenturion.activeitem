@@ -2,11 +2,12 @@
   "itemName": "starforge-thecenturion",
   "price": 3000,
   "maxStack": 1,
-  "rarity": "Essential",
+  "rarity": "Legendary",
   "description": "A massive tank cannon, repurposed & made portable.",
-  "shortdescription": "^orange;The Centurion^reset;",
+  "shortdescription": "The Centurion",
   "tooltipKind": "starforge-uniquegun",
   "category": "uniqueWeapon",
+  "manufacturer" : "unboundArmaments",
   "tooltipFieldsOverride" : {"subtitle":"Tank Cannon"},
   "twoHanded": true,
   "level": 7,
@@ -40,7 +41,7 @@
   
   "muzzleOffset":  [1.125,0.125], 
   
-  "scripts": [ "/items/active/weapons/ranged/gun.lua" ],
+  "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
   
   "elementalType": "fire",
   

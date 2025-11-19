@@ -6,73 +6,41 @@ function init()
   self.validEntityTypes = config.getParameter("validEntityTypes", {"creature"})
   self.stickActionOnReap = config.getParameter("stickActionOnReap", {})
   self.actionOnStick = config.getParameter("actionOnStick", {})
-  self.searchDistance = config.getParameter("searchDistance", 0.1)
-  self.retainDamage = config.getParameter("retainStickingDamage", false)
+  self.damageMultiplierOnStick = config.getParameter("damageMultiplierOnStick", 1)
+  self.proximitySearchRadius = config.getParameter("proximitySearchRadius")
 
   --Store rotation to lock it
-  self.stickingRotation = mcontroller.rotation()
+  projectile.setPower(config.getParameter("initialDamageMultiplier", 1) * projectile.power())
+  self.baseDamage = projectile.power()
   
+  self.targetRotation = mcontroller.rotation()
   self.stickingTarget = nil
   self.stickingOffset = {0, 0}
   self.stuckToTarget = false
-  self.stuckToGround = false
   self.hasActioned = false
 end
 
 function update(dt)
-  --Sticking
-  local targets = {}
-
-  --Look for a target to stick to
-  if not self.stickingTarget then
-	local projectileLengthVector = vec2.norm(mcontroller.velocity())
-    self.stuckToGround = world.lineTileCollision(mcontroller.position(), vec2.add(mcontroller.position(), projectileLengthVector))
-    targets = world.entityQuery(mcontroller.position(), self.searchDistance, {
-      withoutEntityId = projectile.sourceEntity(),
-      includedTypes = self.validEntityTypes,
-      order = "nearest"
-    })
-  end
-
-  --If targets were found, set tracking info to the closest entity, unless we were already stuck in the ground
-  if #targets > 0 and not self.stuckToGround then
-    if world.entityExists(targets[1]) then
-	  --Set the sticking target
-      self.stickingTarget = targets[1]
-	  
-      self.stuckToTarget = true
-	  --Determine where to stick on the enemy
-	  self.stickingOffset = world.distance(mcontroller.position(), world.entityPosition(self.stickingTarget))
-      --If specified set the time to live for when you have stuck to an enemy
-	  if config.getParameter("stickToTargetTime") then
-        projectile.setTimeToLive(config.getParameter("stickToTargetTime"))
-      end
-      --mcontroller.setVelocity({0, 0})
-    end
-  end
-
   --While our target lives, make the projectile follow the target
   if self.stickingTarget then
     --If our entity exists do the sticking actions
     if world.entityExists(self.stickingTarget) then
-	  --If applicable, process actions on stick
-	  if not self.hasActioned then
+      --If applicable, process actions on stick
+      if not self.hasActioned then
         for i, action in ipairs(self.actionOnStick) do
           projectile.processAction(action)
         end
         self.hasActioned = true
       end
-	  --Find the position to stick to and stick to it
+	    --Find the position to stick to and stick to it
       local targetStickingPosition = vec2.add(world.entityPosition(self.stickingTarget), self.stickingOffset)
       mcontroller.setPosition(targetStickingPosition)
-	  --Adjust velocity as to not offset from entity
+	    --Adjust velocity as to not offset from entity
       local stickingVelocity = self.stickingOffset
       mcontroller.setVelocity(stickingVelocity)
-	  
-	  --Lock rotation to the rotation upon hitting the enemy
-	  mcontroller.setRotation(self.stickingRotation)
     else
       self.stickingTarget = nil
+      projectile.setPower(self.baseDamage)
     end
   end
 
@@ -81,11 +49,21 @@ function update(dt)
     projectile.die()
   end
 
+  --Look for a target to stick to
+  if not self.stickingTarget then
+	  local projectileLengthVector = vec2.norm(mcontroller.velocity())
+    self.stuckToGround = world.lineTileCollision(mcontroller.position(), vec2.add(mcontroller.position(), projectileLengthVector))
+    if not self.stuckToGround then
+      self.targetRotation = math.atan(mcontroller.velocity()[2], mcontroller.velocity()[1])
+    end
+  end
+  mcontroller.setRotation(self.targetRotation)
+
   if self.stuckToGround then
-    if config.getParameter("proximitySearchRadius") then
+    if self.proximitySearchRadius then
       local targets = world.entityQuery(mcontroller.position(), self.proximitySearchRadius, {
         withoutEntityId = projectile.sourceEntity(),
-        includedTypes = {"creature"},
+        includedTypes = self.validEntityTypes,
         order = "nearest"
       })
 
@@ -99,10 +77,44 @@ function update(dt)
   end
 end
 
+function hit(entityId)
+  if entityId and world.entityExists(entityId) then
+    local enemyPos = world.entityPosition(entityId)
+    local dist = world.magnitude(enemyPos, mcontroller.position())
+    if dist > 4 then
+      mcontroller.setPosition(enemyPos)
+    end
+
+    self.targetRotation = mcontroller.rotation()
+    --Set the sticking target
+    self.stickingTarget = entityId
+  
+    self.stuckToTarget = true
+    --Determine where to stick on the enemy
+    self.stickingOffset = world.distance(mcontroller.position(), world.entityPosition(self.stickingTarget))
+    --If specified set the time to live for when you have stuck to an enemy
+    if config.getParameter("stickToTargetTime") then
+      projectile.setTimeToLive(config.getParameter("stickToTargetTime"))
+    end
+    
+    projectile.setPower(self.baseDamage * self.damageMultiplierOnStick)
+    --mcontroller.setVelocity({0, 0})
+  end
+end
+
+starforge_sticking_advancedPeriodicActions = advancedPeriodicActions
+function advancedPeriodicActions(action, dt, index)
+  if action.requiresSticking and not self.stickingTarget then
+    return action
+  end
+
+  starforge_sticking_advancedPeriodicActions(action, dt, index)
+end
+
 function destroy()
   if self.stuckToTarget then
     for i, action in ipairs(self.stickActionOnReap) do
-	  projectile.processAction(action)
+	    projectile.processAction(action)
     end
   end
 end

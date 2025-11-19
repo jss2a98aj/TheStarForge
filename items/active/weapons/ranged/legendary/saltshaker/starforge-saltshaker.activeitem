@@ -3,7 +3,7 @@
   "price" : 3000,
   "inventoryIcon" : "starforge-saltshaker.png:ready1",
   "maxStack" : 1,
-  "rarity" : "Legendary",
+  "rarity" : "Rare",
   "description" : "A durable revolver that can revolve its cylinder to release a piercing shot.",
   "shortdescription" : "Saltshaker",
   "level" : 6,

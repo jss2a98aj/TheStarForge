@@ -4,7 +4,7 @@
   "maxStack" : 1,
   "rarity" : "Essential",
   "description" : "A strange lantern bringing sorrow to all it shines upon.",
-  "shortdescription" : "^orange;Light of Sorrow^white;",
+  "shortdescription" : "Light of Sorrow",
   "level" : 6,
   "fixedLevel" : false,
   "tooltipKind" : "starforge-uniquegun",

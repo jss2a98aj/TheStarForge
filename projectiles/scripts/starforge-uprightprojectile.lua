@@ -10,9 +10,9 @@ function update(dt)
   else
     if config.getParameter("rotateInAir") then
       mcontroller.setRotation(math.atan(mcontroller.velocity()[2], mcontroller.velocity()[1]))
-	end
-	if config.getParameter("alwaysUpright", true) then
-      mcontroller.setRotation(0)
-	end
+    end
+    if config.getParameter("alwaysUpright", true) then
+        mcontroller.setRotation(0)
+    end
   end
 end

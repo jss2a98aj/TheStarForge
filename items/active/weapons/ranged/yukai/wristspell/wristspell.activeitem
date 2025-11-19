@@ -2,7 +2,7 @@
   "itemName": "starforge-yukaiwristspell",
   "price": 1000,
   "maxStack": 1,
-  "rarity": "Legendary",
+  "rarity": "Uncommon",
   "description": "A Yukai Pearl carved into a crystal, embed on a wrist weapon. Casts deadly spells.",
   "shortdescription": "Yukai Wrist Spell",
   "tooltipKind": "gun",
@@ -14,14 +14,15 @@
     "weapon",
     "ranged"
   ],
-  "inventoryIcon": "wristspellicon.png",
+  "inventoryIcon": "wristspell.png:slide.1",
   "animation": "wristspell.animation",
 
   "animationParts": {
     "butt": "",
     "middle": "wristspell.png",
     "barrel": "",
-	"middleFullbright": "wristspellfullbright.png"
+  	"middleFullbright": "wristspellfullbright.png",
+	  "muzzleFlash" : "/items/active/weapons/ranged/muzzleflash/starforge-yukaienergymuzzle.png"
   },
   "animationCustom": {
     "sounds": {
@@ -32,19 +33,19 @@
   },
   
   "baseOffset": [-0.3, 0.3],
-  "muzzleOffset": [2.0, 0.275],
+  "muzzleOffset": [1.5, 0.125],
   "scripts": [
-    "/items/active/weapons/ranged/gun.lua"
+    "/items/active/weapons/ranged/starforge-gun.lua"
   ],
   "handGrip" : "wrap",
   "elementalType": "fire",
   "primaryAbility": {
     "scripts": [
-      "/items/active/weapons/ranged/gunfire.lua"
+      "/items/active/weapons/ranged/starforge-gunfire.lua"
     ],
-    "class": "GunFire",
+    "class": "StarforgeGunFire",
     "fireTime": 1.40,
-    "baseDps": 25,
+    "baseDps": 6,
     "energyUsage": 100,
     "inaccuracy": 0.003,
     "projectileCount": 1,
@@ -64,20 +65,20 @@
       },
       "fire" : {
         "duration" : 0,
-        "armRotation" : 10,
-        "weaponRotation" : 10,
+        "armRotation" : 5,
+        "weaponRotation" : 5,
         "twoHanded" : false,
 
-        "allowRotate" : false,
+        "allowRotate" : true,
         "allowFlip" : true
       },
       "cooldown" : {
-        "duration" : 0.15,
-        "armRotation" : 10,
-        "weaponRotation" : 10,
+        "duration" : 1,
+        "armRotation" : 5,
+        "weaponRotation" : 5,
         "twoHanded" : false,
 
-        "allowRotate" : false,
+        "allowRotate" : true,
         "allowFlip" : true
       }
     }

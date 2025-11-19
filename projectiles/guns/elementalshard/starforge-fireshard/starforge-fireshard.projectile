@@ -9,28 +9,122 @@
   "speed" : 125,
   "timeToLive" : 3,
   "supportsProcessing" : true,
-  "piercing" : false,
+  "piercing" : true,
   "flippable" : true,
+  "pointLight" : true,
+  "orientationLocked" : true,
   "emitters" : [],
+  "periodicActions" : [],
+  "statusEffects" : [],
+  "lightColor" : [149, 49, 35],
+  "fullbright" : true,
+  "damageKind" : "firespear",
   "actionOnReap" : [
+    {
+      "action" : "loop",
+      "count" : 3,
+      "body" : [
+        {
+          "action" : "option",
+          "options" : [
+            {
+              "action" : "particle",
+              "specification" : {
+                "type" : "animated",
+                "animation" : "/animations/mediumflamefire/mediumflamefire.animation",
+                "approach" : [0.5, 0.5],
+                "timeToLive" : 0.4,
+                "variance" : {
+                  "timeToLive" : 0.15,
+                  "position" : [0.5, 0.5],
+                  "initialVelocity" : [1, 1],
+                  "rotation" : 180
+                }
+              }
+            }
+          ]
+        },
+        {
+          "action" : "spark"
+        }
+      ]
+    }
+  ],
+  "stickActionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/starforge-vitriumcrystalboom.ogg"
+      ]
+    },
+  	{
+      "action" : "projectile",
+      "type" : "smallregularexplosion",
+      "inheritDamageFactor" : 10,
+      "config" : {
+        "damageKind" : "fire"
+      }
+    }
+  ],
+  
+  "advancedPeriodicActions" : [
+    {
+      "loopTime" : 0.01,
+      "delayTime" : 0.01,
+      "rotate" : true,
+      "minimumVelocity" : 100,
+
+      "action" : "particle",
+      "specification" : {
+        "type" : "streak",
+        "layer" : "back",
+        "fullbright" : false,
+        "destructionAction" : "shrink",
+        "size" : 1.25,
+        "color" : [149, 49, 35, 255],
+        "collidesForeground" : false,
+        "length" : 20,
+        "position" : [2, 0],
+        "timeToLive" : 0.01,
+        "destructionTime" : 0.06,
+	    	"initialVelocity" : [0.5, 0],
+        "variance" : {
+		      "size" : 0,
+          "destructionTime" : 0.5,
+          "initialVelocity" : [0.5, -0],
+          "length" : 0
+        }
+      }
+    }
+  ],
+
+  "actionOnCollide" : [
     {
       "action" : "config",
       "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
     },
-	{
-      "action" : "projectile",
-      "type" : "starforge-fireshardsticking",
-      "inheritDamageFactor" : 0.35,
-      "inheritSpeedFactor" : 0.75
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/projectiles/ropehook_impact1.ogg",
+        "/sfx/projectiles/ropehook_impact2.ogg",
+        "/sfx/projectiles/ropehook_impact3.ogg",
+        "/sfx/projectiles/ropehook_impact4.ogg",
+        "/sfx/projectiles/ropehook_impact5.ogg",
+        "/sfx/projectiles/ropehook_impact6.ogg",
+        "/sfx/projectiles/ropehook_impact7.ogg",
+        "/sfx/projectiles/ropehook_impact8.ogg",
+        "/sfx/projectiles/ropehook_impact9.ogg",
+        "/sfx/projectiles/ropehook_impact10.ogg",
+        "/sfx/projectiles/ropehook_impact11.ogg",
+        "/sfx/projectiles/ropehook_impact12.ogg"
+      ]
     }
   ],
-  "periodicActions" : [],
-  "statusEffects" : [],
-    "lightColor" : [177, 47, 8],
-  "fullbright" : true,
-  "damageType" : "nodamage",
-  "damageKind" : "firespear",
   
-  "scripts" : [ "/projectiles/scripts/starforge-killonstick.lua" ],
-  "killOnHit" : true
+  "renderLayer" : "Monster+1",
+  
+  "scripts" : [ "/projectiles/scripts/starforge-stickingprojectile.lua", "/projectiles/scripts/starforge-advancedperiodicactions.lua" ],
+  "initialDamageMultiplier" : 0.1,
+  "damageMultiplierOnStick" : 0.35
 }

@@ -3,7 +3,7 @@
   "price" : 600,
   "level" : 6,
   "maxStack" : 1,
-  "rarity" : "Legendary",
+  "rarity" : "Rare",
   "description" : "A stun baton used by Unbound Commandos in prisons or civilian sectors.",
   "shortdescription" : "Unbound Baton",
   "tooltipKind" : "base",

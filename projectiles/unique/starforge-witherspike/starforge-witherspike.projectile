@@ -34,6 +34,7 @@
   "speed" : 65,
   "damageKind" : "starforge-wither",
   "emitters" : [ ],
+  "statusEffects" : [ "starforge-wither" ],
   "timeToLive" : 4,
   
   "renderLayer" : "Monster+1",

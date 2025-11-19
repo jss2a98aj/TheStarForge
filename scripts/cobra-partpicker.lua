@@ -158,11 +158,12 @@ if not partPicker then
   --- @param seed integer
   --- @return PartDescriptor 
   function partPicker.pickPart(generationConfig, partType, filters, currentParts, seed)
+    local randomSource = sb.makeRandomSource(seed)
+    local randomFloat = randomSource:randf(0, 1)
     -- if the filter has an id already set we don't need to do anything.
     if type(filters.id) == "string" then return filters; end
     -- Create a list of allowed parts
     local pickPool = {};
-
     
 
     -- we need to sort here because the loaded data doesn't have the same order everytime
@@ -176,7 +177,7 @@ if not partPicker then
       local partConfig = generationConfig.partConfigs[partType].pool[partId];
       
       local skipped = false
-      if partConfig.chanceToPick and (math.random() > partConfig.chanceToPick) then
+      if partConfig.chanceToPick and (randomFloat > partConfig.chanceToPick) then
         skipped = true
       end
       if (partConfig.unique and not partConfig.chanceToPick) then

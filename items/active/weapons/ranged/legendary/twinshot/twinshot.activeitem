@@ -2,7 +2,7 @@
   "itemName": "starforge-twinshot",
   "price": 3000,
   "maxStack": 1,
-  "rarity": "legendary",
+  "rarity": "Rare",
   "fixedLevel" : false,
   "description": "\"Quick and quiet -- that's the difference between safe and dead\"",
   "shortdescription": "Twin Shot",

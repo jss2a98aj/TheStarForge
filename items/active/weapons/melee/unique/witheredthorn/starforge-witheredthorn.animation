@@ -160,7 +160,7 @@
           "zLevel" : -1,
           "centered" : true,
           "offset" : [3.5, 0.5],
-          "fullbright" : true,
+          "fullbright" : false,
           "transformationGroups" : ["muzzle"]
         },
 

@@ -5,7 +5,7 @@
   "maxStack" : 1,
   "rarity" : "Essential",
   "description" : "A heavy underslung bowgun, capable of firing bolts at incredibly high speeds.",
-  "shortdescription" : "^#b4f5c3;Hunter's Avarice^reset;",
+  "shortdescription" : "Hunter's Avarice",
   "level" : 7,
   "tooltipKind" : "starforge-uniquegun",
   "category": "uniqueWeapon",
@@ -21,28 +21,35 @@
   "animationCustom" : {
     "sounds" : {
       "loadAmmo" : [ "/sfx/gun/reload/ar_reload_clip2.ogg" ],
-      "fire" : [ "/sfx/gun/starforge-bowgunfire.ogg" ],
+      "fire" : [ "/sfx/gun/starforge-bowgunaltfire.ogg" ],
       "altFire" : [ "/sfx/gun/starforge-bowgunaltfire.ogg" ]
     },
     "particleEmitters" : {
+      "muzzleFlash" : {
+        "transformationGroups" : ["muzzle"],
+        "offsetRegion" : [0.25, -1.75, 0.25, -1.75],
+        "burstCount" : 1,
+        "particles" : [
+          { "particle" : "rocketbarrelpuff" }
+        ]
+      },
       "ammoIndicator" : {
         "active" : false,
         "emissionRate" : 8,
         "transformationGroups" : ["muzzle"],
-        "offsetRegion" : [-1.375, -0.25, -1.375, -0.25],
+        "offsetRegion" : [0.25, -1.75, 0.25, -1.75],
         "particles" : [
-          { "particle" : "daggerblue"},
-          { "particle" : "daggerblue"},
-          { "particle" : "daggerblue"}
+          { "particle" : "rocketbarrelpuff"}
         ]
       }
     }
   },
 
   "baseOffset" : [1.125, -0.875],
-  "muzzleOffset" : [2.5, 0.25],
+  "muzzleOffset" : [1.25, 1.625],
+  "aimOffset" : -0.625,
   
-  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+  "scripts" : ["/items/active/weapons/ranged/starforge-gun.lua"],
 
   "elementalType" : "physical",
 
@@ -51,43 +58,42 @@
     "class" : "StarforgeGunFire",
 
     "fireTime" : 0.625,
-    "baseDps" : 15,
+    "baseDps" : 12.25,
     "energyUsage" : 30,
     "inaccuracy" : 0.01,
 
     "projectileCount" : 1,
 
     "burstCount" : 3,
-    "burstTime" : 0.2875,
+    "burstTime" : 0.15,
     "fireType" : "burst",
-	"fireSound" : "fire",
+	  "fireSound" : "fire",
 	
-	"animatedFire" : true,
+	  "animatedFire" : true,
 
-    "projectileType" : "woodenbolt",
+    "projectileType" : "starforge-imperviumbolt",
     "projectileParameters" : {
-      "speed" : 135,
-      "knockback" : 10
     },
 
     "stances" : {
       "idle" : {
-		"frontArmFrame": "idle.3",
-		"backArmFrame": "fall.1",
-        "armRotation" : 0,
-        "weaponRotation" : 0,
+        "frontArmFrame": "idle.3",
+        "backArmFrame": "fall.1",
+        "armRotation" : -20,
+        "weaponRotation" : 22,
+        "weaponOffset" : [0, 0.75],
         "twoHanded" : true,
 
         "allowRotate" : true,
         "allowFlip" : true
       },
       "fire" : {
-		"frontArmFrame": "idle.3",
-		"backArmFrame": "fall.1",
-		"weaponOffset" : [-0.125, 0],
+        "frontArmFrame": "idle.3",
+        "backArmFrame": "fall.1",
+        "weaponOffset" : [-0.125, 0.75],
         "duration" : 0,
-        "armRotation" : 7,
-        "weaponRotation" : 5,
+        "armRotation" : -13,
+        "weaponRotation" : 22,
         "twoHanded" : true,
 
         "allowRotate" : true,
@@ -95,11 +101,12 @@
 		
       },
       "cooldown" : {
-		"frontArmFrame": "idle.3",
-		"backArmFrame": "fall.1",
+        "frontArmFrame": "idle.3",
+        "backArmFrame": "fall.1",
         "duration" : 0.4,
-        "armRotation" : 7,
-        "weaponRotation" : 5,
+        "weaponOffset" : [-0.125, 0.75],
+        "armRotation" : -13,
+        "weaponRotation" : 22,
         "twoHanded" : true,
 
         "allowRotate" : true,
@@ -117,34 +124,36 @@
 	
     //The new stats which will overwrite the primary ability
     "newAbility" : {
-      "projectileType" : "starforge-imperviumbolt",
+      "projectileType" : "starforge-imperviumboltheavy",
       "projectileParameters" : {
-      "speed" : 200,
-      "knockback" : 25
-	  },
-	  
-	  "projectileCount" : 1,
-	  
-	  "fireType" : "auto",
-	  "fireSound" : "altFire",
+      },
+      
+      "projectileCount" : 1,
+      
+      "fireType" : "auto",
+      "fireSound" : "altFire",
 	
-      "baseDps" : 12.0,	
-      "fireTime" : 2,
+      "baseDps" : 7.25,	
+      "fireTime" : 1.75,
       "energyUsage" : 50,
       "inaccuracy" : 0.0
     },
 
     "stances" : {
       "load" : {
-        "duration" : 0.6,
+        "duration" : 1,
         "frontArmFrame": "idle.3",
         "backArmFrame": "fall.1",
-        "aimAngle" : 0,
-        "armRotation" : -7,
-        "weaponRotation" : 60,
+        "armRotation" : 20,
+        "weaponRotation" : 55,
+        "weaponOffset" : [0, 0.75],
         "twoHanded" : true,
-  
-        "allowRotate" : false,
+
+        "animationStates" : {
+          "gun" : "fire"
+        },
+
+        "allowRotate" : true,
         "allowFlip" : true
       }
     }

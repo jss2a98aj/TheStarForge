@@ -3,7 +3,7 @@
   "price" : 1000,
   "level" : 6,
   "maxStack" : 1,
-  "rarity" : "Legendary",
+  "rarity" : "Rare",
   "description" : "A blade wrought with blight, it may have known another name, though it lost now.",
   "shortdescription" : "Blightfang",
   "tooltipKind" : "starforge-uniquesword",
@@ -21,6 +21,7 @@
   "animationParts" : {
     "handle" : "",
     "blade" : "starforge-blightfang.png",
+    "bladeFullbright" : "",
 	
     "swoosh" : "wither"
   },
@@ -56,16 +57,15 @@
       }
     },
     "particleEmitters" : {
-      "starforge-witherCharge" : {
+      "chargeShockwave" : {
         "active" : false,
         "particles" : []
       }
     },
 
     "sounds" : {
-      "starforge-withercharge" : [],
-      "starforge-witherfull" : [],
-      "starforge-witherimpact" : [ "/sfx/gun/starforge_tidalfrostblast.ogg" ]
+      "chargeShockwave" : [],
+      "shockwaveImpact" : [ "/sfx/gun/starforge_tidalfrostblast.ogg" ]
     }
   },
 
@@ -78,20 +78,31 @@
     "fireTime" : 0.83,
     "baseDps" : 10,
     "damageConfig" : {
+      "statusEffects" : [ "starforge-wither" ],
       "damageSourceKind" : "starforge-wither"
     }
   },
 
-  "altAbilityType" : "physicalshockwave",
   "altAbility" : {
+    "scripts" : ["/items/active/weapons/melee/abilities/other/shockwave/starforge-shockwave.lua"],
+    "class" : "StarforgeShockwave",
     "name" : "Earthrot",
-    "chargeTime" : 1.5,
-    "minChargeTime" : 0.75,
-    "maxDistance" : 15,
-    "bothDirections" : true,
-    "projectileType" : "starforge-starmitelick",
 
-    "impactWeaponOffset" : 0.0,
+    "energyUsage" : 100.0,
+    "cooldownTime" : 3.5,
+
+    "chargeTime" : 0.75,
+    "minChargeTime" : 0.5,
+    "maxDistance" : 0,
+    "bothDirections" : false,
+    "projectileType" : "starforge-witheredground",
+    "projectileParameters" : {
+      "timeToLive" : 8
+    },
+    "targetDirection" : [0, -1],
+
+    "impactWeaponOffset" : -0.125,
+    "yOffset" : -1.5,
 
     "stances" : {
       "windup" : {

@@ -3,7 +3,7 @@
   "price" : 1000,
   "level" : 6,
   "maxStack" : 1,
-  "rarity" : "Legendary",
+  "rarity" : "Rare",
   "description" : "A sturdy sword, worn from its ventures into the earth.",
   "shortdescription" : "Earthbringer",
   "tooltipKind" : "starforge-uniquesword",

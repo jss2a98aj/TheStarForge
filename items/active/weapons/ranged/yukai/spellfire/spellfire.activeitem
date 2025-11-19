@@ -2,7 +2,7 @@
   "itemName": "starforge-yukaispellfire",
   "price": 450,
   "maxStack": 1,
-  "rarity": "rare",
+  "rarity": "Uncommon",
   "description": "A Yukai Pearl carved into a crystal, embed on a weapon. Casts deadly spells.",
   "shortdescription": "Spellfire",
   "tooltipKind": "starforge-uniquegun",
@@ -14,14 +14,14 @@
     "weapon",
     "ranged"
   ],
-  "inventoryIcon": "spellfireicon.png",
+  "inventoryIcon": "spellfire.png:slide.1",
   "animation": "spellfire.animation",
-
   "animationParts": {
     "butt": "",
     "middle": "spellfire.png",
     "barrel": "",
-	"middleFullbright": "spellfirefullbright.png"
+  	"middleFullbright": "spellfirefullbright.png",
+	  "muzzleFlash" : "/items/active/weapons/ranged/muzzleflash/starforge-yukaienergymuzzle.png"
   },
   "animationCustom": {
     "sounds": {
@@ -31,31 +31,29 @@
     }
   },
   
-  "baseOffset": [0.125, 0.0],
-  "muzzleOffset": [2.0, 0.275],
+  "baseOffset": [-0.125, 0.0],
+  "muzzleOffset": [1.0, 0],
   "scripts": [
-    "/items/active/weapons/ranged/gun.lua"
+    "/items/active/weapons/ranged/starforge-gun.lua"
   ],
   "elementalType": "fire",
   "primaryAbility": {
     "scripts": [
-      "/items/active/weapons/ranged/gunfire.lua"
+      "/items/active/weapons/ranged/starforge-gunfire.lua"
     ],
-    "class": "GunFire",
+    "class": "StarforgeGunFire",
     "fireTime": 0.3,
     "baseDps": 6.5,
     "energyUsage": 10,
     "inaccuracy": 0.02,
     "projectileCount": 2,
-	"burstTime" : 0.15,
-    "burstCount" : 3,
+	  "burstTime" : 0.1,
+    "burstCount" : 2,
     "fireType": "burst",
-    "projectileType": "starforge-electricfluxbolt",
+    "projectileType": "starforge-firefluxbolt",
     "projectileParameters": {
-      "knockback": 1,
-	  "damageKind" : "fireplasmabullet"
     },
-      "stances" : {
+    "stances" : {
       "idle" : {
         "armRotation" : 0,
         "weaponRotation" : 0,
@@ -66,8 +64,8 @@
       },
       "fire" : {
         "duration" : 0,
-        "armRotation" : 10,
-        "weaponRotation" : 10,
+        "armRotation" : 3,
+        "weaponRotation" : 3,
         "twoHanded" : false,
 
         "allowRotate" : true,
@@ -75,8 +73,8 @@
       },
       "cooldown" : {
         "duration" : 0.15,
-        "armRotation" : 10,
-        "weaponRotation" : 10,
+        "armRotation" : 3,
+        "weaponRotation" : 3,
         "twoHanded" : false,
 
         "allowRotate" : false,

@@ -1,9 +1,16 @@
 {
   "name" : "starforge-wither",
-  "blockingStat" : "poisonStatusImmunity",
+  "blockingStat" : "starforge-witherStatusImmunity",
 
   "effectConfig" : {
-    "decayRate" : 0.065
+    "directive" : "fade=000000=0.75",
+    "deathDirective" : "fade=000000=0.95",
+
+    "bloomProjectileType" : "starforge-witherbloom",
+    "sizeToBloomFactor" : 0.45,       //size is based on entity boundbox, players/npcs are 1.22 punchy is 2.25, adultpoptop is 2.75, size / sizeToBloomFactor = maximum number of blooms
+    "timeBetweenBlooms" : [4, 8],
+    "damageMultiplierPerBloom" : 0.05,  //this multiplied by the hit, so 0.5 is a 50% damage increase
+    "bonusDamageKind" : "starforge-wither"    //if unspecified, will just deal the hits damage kind instead
   },
   "defaultDuration" : 5,
 
@@ -13,7 +20,7 @@
 
   "animationConfig" : "starforge-wither.animation",
 
-  "label" : "Your armor is withering away!",
+  "label" : "Virulent Bloom",
   "icon" : "/interface/statuses/starforge-wither.png"
 }
 	

@@ -3,9 +3,9 @@
   "price" : 3000,
   "level" : 7,
   "maxStack" : 1,
-  "rarity" : "Essential",
+  "rarity" : "Legendary",
   "description" : "An impervium blade, stolen and cursed with many generations of rage.",
-  "shortdescription" : "^orange;Furour^reset;",
+  "shortdescription" : "Furour",
   "tooltipKind" : "starforge-uniquesword",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {

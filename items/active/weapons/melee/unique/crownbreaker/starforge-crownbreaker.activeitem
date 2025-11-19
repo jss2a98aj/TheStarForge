@@ -5,7 +5,7 @@
   "maxStack" : 1,
   "rarity" : "Essential",
   "description" : "The sixth weapon, wip desc ",
-  "shortdescription" : "^orange;-VI- Crown Breaker^reset;",
+  "shortdescription" : "-VI-",
   "tooltipKind" : "starforge-uniquesword",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {

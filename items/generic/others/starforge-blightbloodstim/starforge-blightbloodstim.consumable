@@ -1,0 +1,17 @@
+{
+  "itemName" : "starforge-blightbloodstim",
+  "rarity" : "Legendary",
+  "price" : 100,
+  "category" : "medicine",
+  "inventoryIcon" : "starforge-blightbloodstim.png",
+  "description" : "Injecting the liquid allows one to gain warped health beyond what is considered natural.",
+  "shortdescription" : "Blightblood Syringe",
+  "effects" : [ [
+      {
+        "effect" : "starforge-blightblood",
+        "duration" : 30
+      }
+    ] ],
+  "emote" : "",
+  "emitters" : [ "stimuse" ]
+}

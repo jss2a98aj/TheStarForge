@@ -3,9 +3,9 @@
   "price" : 3000,
   "inventoryIcon" : "starforge-principleofredemption.png",
   "maxStack" : 1,
-  "rarity" : "Essential",
+  "rarity" : "Legendary",
   "description" : "A handcannon that fires dual elemental slugs, perfect for every encounter.",
-  "shortdescription" : "^#b4f5c3;Principle of Redemption^reset;",
+  "shortdescription" : "Principle of Redemption",
   "level" : 7,
   "fixedLevel" : false,
   "tooltipKind" : "starforge-uniquegun",
@@ -29,7 +29,7 @@
           "properties" : {
             "zLevel" : -1,
             "centered" : true,
-            "offset" : [1.5, 0.0],
+            "offset" : [1.25, 0.0],
             "fullbright" : true,
             "transformationGroups" : ["muzzle"]
           },
@@ -48,7 +48,7 @@
           "properties" : {
             "zLevel" : -2,
             "centered" : true,
-            "offset" : [1.375, -0.375],
+            "offset" : [1.5, -0.375],
             "fullbright" : true,
             "transformationGroups" : ["muzzle"]
           },
@@ -72,7 +72,7 @@
   },
 
   "baseOffset" : [1.125, 0.125],
-  "muzzleOffset" : [1.125, 0.5],
+  "muzzleOffset" : [0.875, 0.5],
 
   "scripts" : ["/items/active/weapons/ranged/gun.lua"],
 

@@ -13,10 +13,10 @@
 
   "inventoryIcon" : "images/katahelimperviumshield.png:nearidle",
 
-  "animation" : "shieldfullbright.animation",
+  "animation" : "starforge-shield.animation",
   "animationParts" : {
     "shield" : "images/katahelimperviumshield.png",
-	"shieldFullbright" : ""
+	  "shieldFullbright" : ""
   },
   "animationCustom" : {
     "animatedParts" : { "parts" : { "shield" : { "properties" : {

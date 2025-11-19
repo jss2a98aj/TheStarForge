@@ -273,7 +273,7 @@
         "distribution" : "/biomes/distributions.config:denseSmall",
 
         "type" : "grass",
-        "grasses" : [ "smallblackrotgrass" ]
+        "grasses" : [ "starforge-smallblackrotgrass" ]
       },
       {
         "mode" : "floor",

@@ -2,7 +2,7 @@
   "itemName": "starforge-raygun",
   "price": 1000,
   "maxStack": 1,
-  "rarity": "Essential",
+  "rarity": "Legendary",
   "description": "Pew pew.",
   "shortdescription": "Raygun",
   "tooltipKind" : "starforge-uniquegun",

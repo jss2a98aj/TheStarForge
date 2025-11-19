@@ -5,7 +5,7 @@
   "maxStack" : 1,
   "rarity" : "Essential",
   "description" : "\"Stillness. A state of being; numb. You feel nothing. You will do nothing.\" ",
-  "shortdescription" : "^orange;Torpor^reset;",
+  "shortdescription" : "Torpor",
   "tooltipKind" : "starforge-uniquesword",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {

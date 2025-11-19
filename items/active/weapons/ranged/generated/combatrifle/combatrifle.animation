@@ -53,7 +53,7 @@
       "heatIndicator" : {
         "properties" : {
           "centered" : true,
-          "zLevel" : 7,
+          "zLevel" : 10,
           "image" : "<partImage><paletteSwaps><elementalDirectives>",
           "offset" : [0, 0],
           "transformationGroups" : ["heatIndicator"]
@@ -167,6 +167,15 @@
   },
 
   "particleEmitters" : {
+    "overheatMuzzle" : {
+      "transformationGroups" : ["muzzle"],
+      "offsetRegion" : [0, 0, 0, 0],
+      "emissionRate" : 5,
+      "particles" : [
+        { "particle" : "rocketbarrelpuff" }
+      ]
+    },
+
     "muzzleFlash" : {
       "transformationGroups" : ["muzzle"],
       "offsetRegion" : [0, 0, 0, 0],

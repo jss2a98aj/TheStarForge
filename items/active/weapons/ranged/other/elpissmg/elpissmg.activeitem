@@ -2,7 +2,7 @@
   "itemName" : "starforge-elpissmg",
   "price" : 400,
   "maxStack" : 1,
-  "rarity" : "Rare",
+  "rarity" : "Common",
   "description" : "An SMG used by the Elpis security to protect its settlements.",
   "shortdescription" : "Elpis SMG",
   "category": "uniqueWeapon",

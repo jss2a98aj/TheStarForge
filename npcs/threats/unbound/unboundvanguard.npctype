@@ -59,5 +59,12 @@
 				 "alt" : [ "starforge-unboundsmartpistol" ]
             }]]
         ]
-    }
+    },
+  
+  "statusControllerSettings" : {
+    "primaryScriptSources" : [
+      "/stats/starforge-npc_primary.lua",
+      "/scripts/vec2.lua"
+    ]
+  }
 }

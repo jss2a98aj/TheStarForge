@@ -20,8 +20,10 @@
   "animation" : "starforge-witheredthorn.animation",
   "animationParts" : {
     "blade" : "starforge-witheredthorn.png",
+    "bladeFullbright" : "",
 	
-    "swoosh" : "wither"
+    "swoosh" : "wither",
+    "muzzleFlash" : "/items/active/weapons/ranged/muzzleflash/starforge-withermuzzleflash.png"
   },
   "animationCustom" : {
     "sounds" : {
@@ -426,7 +428,9 @@
     "name" : "Curse Blast",
     "projectileType" : "starforge-withersmoke",
     "projectileParameters" : {
-      "damageKind" : "starforge-wither"
+      "animationCycle" : 0.5,
+      "timeToLive" : 0.5,
+      "zeroApproachFactor" : 10
     },
 
     "projectileCount" : 1,
@@ -437,7 +441,7 @@
     "fireTime" : 0.8,
     "fireType" : "burst",
     "burstTime" : 0.01,
-    "burstCount" : 35,
+    "burstCount" : 55,
     "noBurstRecoil" : true,
 
     "fireOffset" : [2.0, 0.125],

@@ -3,9 +3,9 @@
   "price" : 3000,
   "level" : 7,
   "maxStack" : 1,
-  "rarity" : "Essential",
+  "rarity" : "Common",
   "description" : "A cursed Yukai artefact used a long time ago to slay countless Florans.",
-  "shortdescription" : "^orange;The Omen^reset;",
+  "shortdescription" : "The Omen",
   "tooltipKind" : "starforge-uniquesword",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {

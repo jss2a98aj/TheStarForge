@@ -3,7 +3,7 @@
   "level" : 6,
   "price" : 1000,
   "maxStack" : 1,
-  "rarity" : "Legendary",
+  "rarity" : "Rare",
   "description" : "Sling the teeth of a fallen leviathan to destroy your foes.",
   "shortdescription" : "Leviathan's Teeth",
   "tooltipKind" : "starforge-uniquegun",

@@ -47,17 +47,17 @@
     "scripts" : [
       "/monsters/starforge-monster.lua"
     ],
-	"periodicActions" : [
-	  {
-	    "action" : "projectile",					//only supported at the moment
-		"projectileType" : "pyreaperorb",
-		"projectileParameters" : {
-		  "power" : 5,
+	  "periodicActions" : [
+      {
+        "action" : "projectile",					//only supported at the moment
+        "projectileType" : "pyreaperorb",
+        "projectileParameters" : {
+        "power" : 5,
           "statusEffects" : [ "burning" ]
-		},
-		"distanceBetweenAction" : 3.87				//3 blocks away from the other action or time, 3 seconds
-	  }
-	],
+        },
+        "distanceBetweenAction" : 3.87				//3 blocks away from the other action or time, 3 seconds
+      }
+    ],
 
     "behavior" : "monster",
 

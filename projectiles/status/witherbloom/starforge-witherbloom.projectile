@@ -1,0 +1,22 @@
+{
+  "projectileName" : "starforge-witherbloom",
+  "image" : "starforge-witherbloom.png",
+  "physics" : "illusion",
+  "renderLayer" : "Player+1",
+  "animationCycle" : 1.0,
+  "animationLoops" : true,
+  "frameNumber" : 1,
+  "windupFrames" : 6,
+  "power" : 0,
+  "speed" : 0,
+  "onlyHitTerrain" : true,
+  "lightColor" : [56, 91, 0],
+  "actionOnBlossom" : [
+    //todo!
+  ],
+  "emitters" : [ ],
+  "damageKind" : "default",
+  "hydrophobic" : false,
+  
+  "scripts" : [ "starforge-witherbloom.lua" ]
+}

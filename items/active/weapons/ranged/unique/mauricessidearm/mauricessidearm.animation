@@ -35,7 +35,7 @@
           "firing": {
             "fire": {
               "properties": {
-                "image": "<partImage>:slide.<frame>"
+                "image": "<partImage>:slide.2"
               }
             }
           }
@@ -50,9 +50,11 @@
             0,
             0
           ],
-          "transformationGroups": [
-            "weapon"
+          "rotationCenter": [
+            0,
+            0
           ],
+          "transformationGroups": [ ],
           "anchorPart": "middle",
           "fullbright": true
         },
@@ -60,7 +62,7 @@
           "firing": {
             "fire": {
               "properties": {
-                "image": "<partImage>:slide.<frame>"
+                "image": "<partImage>:slide.2"
               }
             }
           }
@@ -73,6 +75,10 @@
           "offset": [
             0.75,
             -0.125
+          ],
+          "rotationCenter": [
+            0,
+            0
           ],
           "fullbright": true,
           "transformationGroups": [

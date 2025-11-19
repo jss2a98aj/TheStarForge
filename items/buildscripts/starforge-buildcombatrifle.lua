@@ -119,7 +119,7 @@ function build(directory, config, parameters, level, seed)
 
   -- make sure the parts exist
   -- it won't actually do anything if all the parts are pre-generated
-  parameters.weaponParts = partPicker.generateParts(parameters.partParams, generationConfig, generatePartSeed)
+  parameters.weaponParts = partPicker.generateParts(parameters.partParams, generationConfig, generatePartSeed, randomSource)
 
   function getPartData(partType)
     local partId = parameters.weaponParts[partType].id;
@@ -338,7 +338,7 @@ function build(directory, config, parameters, level, seed)
     for _, partName in pairs(parts) do
       local offset = {0, 0}
       if partName == "attachment" then
-        offset = vec2.add(vec2.mul(parameters.attachmentOffset, 10), {0, -1.25})
+        offset = vec2.add(vec2.mul(parameters.attachmentOffset, 10), {0, 0.125})
       end
       local drawable = {
         image = config.animationParts[partName] .. config.paletteSwaps,

@@ -4,7 +4,7 @@
   "level" : 6,
   "fixedLevel" : false,
   "maxStack" : 1,
-  "rarity" : "Legendary",
+  "rarity" : "Rare",
   "description" : "A terrible weapon that tasted the blood of many innocent people.",
   "shortdescription" : "Forsaken Carver",
   "tooltipKind" : "starforge-uniquesword",

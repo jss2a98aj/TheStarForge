@@ -1,0 +1,122 @@
+{
+  "itemName": "starforge-sanctum",
+  "price": 1500,
+  "maxStack": 1,
+  "rarity": "Essential",
+  "description": "A conduit of the smartest minds of Vitrium, their voices spears of unforgiving light.",
+  "shortdescription" : "Sanctum",
+  "tooltipKind": "starforge-uniquegun",
+  "category" : "uniqueWeapon",
+  "tooltipFieldsOverride" : {
+    "subtitle" : "Pistol"
+  },
+  "twoHanded": true,
+  "level" : 6,
+  "manufacturer" : "vitriumIndustries",
+  "itemTags" : [ "starforge", "weapon", "ranged", "pistol" ],
+  "inventoryIcon": "starforge-sanctum.png:slide.1",
+  
+  "animation": "/items/active/weapons/ranged/unique/mauricessidearm/mauricessidearm.animation",
+  "animationParts": {
+    "butt": "",
+    "middle": "starforge-sanctum.png",
+    "barrel": "",
+	  "middleFullbright": "starforge-sanctumfullbright.png",
+    "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-surgemuzzleflash.png"
+  },
+  "animationCustom": {
+    "animatedParts": {
+      "parts": {
+        "muzzleFlash": {
+          "properties": {
+            "offset" : [ 0.75, -0.375 ]
+          }
+        }
+      }
+    },
+    "sounds" : {
+      "fire": [ "/sfx/gun/starforge-principleofredemptionfire.ogg" ],
+	    "unholsterTwirl" : [ "/sfx/interface/item_equip.ogg" ]
+    }
+  },
+  
+  "baseOffset" : [0.375, 0.5],
+  "muzzleOffset": [1.125, 0.625],
+
+  "aimOffset" : 0.25,
+  
+  "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
+  "elementalType": "starforge-surge",
+  
+  "primaryAbility": {
+    "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
+    "class": "StarforgeGunFire",
+	
+    "fireTime": 0.25,
+    "baseDps": 13,
+    "energyUsage": 20,
+    "inaccuracy": 0.01,
+	
+    "projectileCount": 1,
+    "fireType": "auto",
+    "projectileType": "starforge-silverserpentbullet",
+    "projectileParameters": {
+	    "armourPiercingFactor" : 0.45,
+      "knockback": 4
+    },
+	
+    "stances" : {
+      "idle" : {
+        "armRotation" : -10,
+        "weaponRotation" : 10,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+		    "frontArmFrame" : "swim.3",
+        "backArmFrame" : "swim.4"
+      },
+      "unholsterTwirl" : {
+        "duration" : 0.5,
+        "armRotation" : -25,
+        "weaponRotation" : -418,
+	    	"weaponOffset" : [-0.0, 0.5],
+        "weaponRotationCenter" : [0.0, 0.5],
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+	    	"frontArmFrame" : "swim.3",
+        "backArmFrame" : "swim.4"
+      }, 
+      "fire" : {
+        "duration" : 0.1,
+        "armRotation" : -5,
+        "weaponRotation" : 14,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : true,
+		
+		    "frontArmFrame" : "swim.3",
+        "backArmFrame" : "swim.4"
+      },
+      "cooldown" : {
+        "duration" : 0.15,
+        "armRotation" : -5,
+        "weaponRotation" : 14,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+		    "frontArmFrame" : "swim.3",
+        "backArmFrame" : "swim.4"
+      }
+    }
+  },
+  
+  "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
+}

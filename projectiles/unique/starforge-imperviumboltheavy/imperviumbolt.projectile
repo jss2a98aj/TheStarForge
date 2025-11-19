@@ -1,0 +1,73 @@
+{
+  "projectileName" : "starforge-imperviumboltheavy",
+  "physics" : "arrow",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+  ],
+  "image" : "imperviumbolt.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "emitters" : [],
+  "statusEffects" : [ "starforge-morehealthmoredamage" ],
+  "damageKind" : "bow",
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+  "timeToLive" : 10,
+  "pointLight" : false,
+  "power" : 5.0,
+  "knockback" : 20,
+  "knockbackDirectional" : true,
+  "piercing" : true,
+  "speed" : 175,
+
+  "advancedPeriodicActions" : [
+  	{
+      "action" : "projectile",
+      "delayTime" : 0.01,
+      "inheritDamageFactor" : 0.0,
+      "type" : "starforge-burstring"
+    },
+    {
+      "loopTime" : 0.01,
+      "delayTime" : 0.01,
+      "rotate" : true,
+      "minimumVelocity" : 100,
+      "action" : "particle",
+      "specification" : {
+        "type" : "streak",
+        "layer" : "back",
+        "fullbright" : false,
+        "destructionAction" : "shrink",
+        "size" : 1.5,
+        "color" : [175, 175, 175, 255],
+        "collidesForeground" : false,
+        "length" : 25,
+        "position" : [1, 0],
+        "timeToLive" : 0.01,
+        "destructionTime" : 0.3,
+	    	"initialVelocity" : [0.5, 0],
+        "variance" : {
+		      "size" : 0,
+          "destructionTime" : 0.5,
+          "initialVelocity" : [0.5, -0],
+          "length" : 0
+        }
+      }
+    },
+    {
+      "loopTime" : 0.03,
+      "loopTimeVaraince" : 0.02,
+      "delayTime" : 0.01,
+      "rotate" : true,
+      "minimumVelocity" : 100,
+      "action" : "particle",
+      "specification" : "rocketbarrelpuff"
+    }
+  ],
+  
+  "scripts" : [ "/projectiles/scripts/starforge-advancedperiodicactions.lua" ]
+}

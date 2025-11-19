@@ -278,7 +278,7 @@ function StarforgeGunFire:fireProjectile(burstNumber)
   local shotNumber = 0
 
   local baseSpeed = params.speed
-  if self.projectileCount > 1 and not baseSpeed and (self.projectileSpeedVariance or config.getParameter("itemName") == "starforge-combatrifle") then -- im lazy lol
+  if math.ceil(self.projectileCount) > 1 and not baseSpeed and (self.projectileSpeedVariance or config.getParameter("itemName") == "starforge-combatrifle") then -- im lazy lol
     local config = root.projectileConfig(self.projectileType)
     baseSpeed = {math.max(5, config.speed - 20), config.speed + 20}
   end

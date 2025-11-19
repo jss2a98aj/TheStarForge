@@ -7,8 +7,6 @@
 
     "projectileType" : "starforge-electricfluxbolt",
     "projectileParameters" : {
-      "damageKind" : "plasmabullet",
-      "knockback": 15
     },
 
     "projectileCount" : 1,

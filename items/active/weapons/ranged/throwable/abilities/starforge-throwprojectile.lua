@@ -28,10 +28,10 @@ function StarforgeThrowProjectile:update(dt, fireMode, shiftHeld)
   if self.fireMode == (self.activatingFireMode or self.abilitySlot)
     and not self.weapon.currentAbility
     and self.cooldownTimer == 0
-    and (self:energyPerShot() == 0 and true or (not status.resourceLocked("energy")))
+    and (not self.energyUsage or (self.energyUsage > 0 and not status.resourceLocked("energy")))
     and not world.lineTileCollision(mcontroller.position(), self:firePosition()) then
 
-	self:setState(self.prepare)
+	  self:setState(self.prepare)
   end
 end
 
@@ -44,32 +44,33 @@ function StarforgeThrowProjectile:prepare()
   local projectileTimesAndAngles = copy(self.projectileTimesAndAngles)
   
   if self.stances.prepare.smooth then
-	local progress = 0
-	util.wait(self.stances.prepare.duration, function(dt)
-	  local from = self.stances.prepare.weaponOffset or {0,0}
-	  local to = self.stances.throw.weaponOffset or {0,0}
-	  self.weapon.weaponOffset = {util.interpolateSigmoid(progress, from[1], to[1]), util.interpolateSigmoid(progress, from[2], to[2])}
-	  
-	  self.weapon.relativeWeaponRotation = util.toRadians(util.interpolateSigmoid(progress, self.stances.prepare.weaponRotation, self.stances.throw.weaponRotation))
-	  self.weapon.relativeArmRotation = util.toRadians(util.interpolateSigmoid(progress, self.stances.prepare.armRotation, self.stances.throw.armRotation))
-	  
-	  progress = math.min(1.0, progress + (self.dt / self.stances.prepare.duration))
+    local progress = 0
+    util.wait(self.stances.prepare.duration, function(dt)
+      local from = self.stances.prepare.weaponOffset or {0,0}
+      local to = self.stances.throw.weaponOffset or {0,0}
+      self.weapon.weaponOffset = {util.interpolateSigmoid(progress, from[1], to[1]), util.interpolateSigmoid(progress, from[2], to[2])}
+      
+      self.weapon.relativeWeaponRotation = util.toRadians(util.interpolateSigmoid(progress, self.stances.prepare.weaponRotation, self.stances.throw.weaponRotation))
+      self.weapon.relativeArmRotation = util.toRadians(util.interpolateSigmoid(progress, self.stances.prepare.armRotation, self.stances.throw.armRotation))
+      
+      progress = math.min(1.0, progress + (self.dt / self.stances.prepare.duration))
 	  
       local newTimesAndAngles = {}
       for _, timeAndAngle in pairs(projectileTimesAndAngles) do
         if timeAndAngle[1] <= dt and status.overConsumeResource("energy", self:energyPerShot()) then
-		  animator.setAnimationState("weapon", "invisible")
+		      animator.setAnimationState("weapon", "invisible")
           self:spawnProjectile(timeAndAngle[2])
+          self.cheesePrevention = true
         else
           table.insert(newTimesAndAngles, {timeAndAngle[1] - dt, timeAndAngle[2]})
         end
       end
       projectileTimesAndAngles = newTimesAndAngles
-	end)
+	  end)
   else
-	if self.stances.prepare.duration then
-	  util.wait(self.stances.prepare.duration)
-	end
+    if self.stances.prepare.duration then
+      util.wait(self.stances.prepare.duration)
+    end
   end
 
   self:setState(self.throw)
@@ -87,6 +88,7 @@ function StarforgeThrowProjectile:throw()
   end
   
   item.consume(self.consumeCount or 0)
+  self.cheesePrevention = false
   
   util.wait(self.reloadWait)
   self.cooldownTimer = self.cooldownTime
@@ -118,12 +120,15 @@ function StarforgeThrowProjectile:reload()
 end
 
 function StarforgeThrowProjectile:spawnProjectile(angleAdjust)
+  --Add normal pitch variance to shots
+  local pitchVariance = (1 + (self.pitchVariance or 0.1)) - (math.random() * ((self.pitchVariance or 0.1) * 2)) + (pitchIncrease or 0)
+  animator.setSoundPitch("throw", pitchVariance)
   animator.playSound("throw")
   
   --Set up projectile type
   local projectileType = self.projectileType
   if type(projectileType) == "table" then
-	projectileType = projectileType[math.random(#projectileType)]
+	  projectileType = projectileType[math.random(#projectileType)]
   end
   
   --Set up projectile parameters
@@ -190,4 +195,7 @@ end
 
 
 function StarforgeThrowProjectile:uninit()
+  if self.cheesePrevention then
+    item.consume(self.consumeCount or 0)
+  end
 end

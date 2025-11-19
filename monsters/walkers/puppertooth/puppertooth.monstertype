@@ -223,6 +223,19 @@
         },
         "poisonStatusImmunity" : {
           "baseValue" : 0.0
+        },
+
+        "starforge-tidalfrostResistance" : {
+          "baseValue" : 0.80
+        },
+        "starforge-tidalfrostStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "starforge-witherResistance" : {
+          "baseValue" : 0.80
+        },
+        "starforge-witherStatusImmunity" : {
+          "baseValue" : 1.0
         }
       },
 

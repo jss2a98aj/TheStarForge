@@ -1,0 +1,16 @@
+{
+  "name" : "starforge-blightblood",
+  "effectConfig" : {
+    "maxHearts" : 3,      //this can be as high as you want, just needs relevant frames specified in frames file
+    "healthPerHeartFactor" : 1,     //how much of your current hp is considered per heart, so when you get hit, if it is less than this % of your hp, only 1 heart breaks, if its higher than the %, 2 break, if its 3x the %, then 3 break
+    "uiOffset" : [0, 3]
+  },
+  "defaultDuration" : 10,    //add duration/10 hearts, rounded up, so a duration of 10 will add 1 heart, when it is reapplied, it will add more hearts
+
+  "scripts" : [
+    "starforge-blightblood.lua"
+  ],
+  "scriptDelta" : 5,
+
+  "animationConfig" : "starforge-blightblood.animation"
+}

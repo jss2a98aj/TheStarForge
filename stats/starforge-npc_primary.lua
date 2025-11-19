@@ -7,7 +7,7 @@ function init()
     end)
 end
 
-function applyDamageRequest(damageRequest)
+function applyDamageRequest(damageRequest) 
   if self.hitInvulnerabilityTime > 0 or world.getProperty("nonCombat") then
     return {}
   end
@@ -30,12 +30,52 @@ function applyDamageRequest(damageRequest)
     return {}
   end
 
-  if damageRequest.hitType == "ShieldHit" and status.statPositive("shieldHealth") and status.resourcePositive("shieldStamina") then
-    status.modifyResource("shieldStamina", -damage / status.stat("shieldHealth"))
+  if damageRequest.hitType == "ShieldHit" then
+    if not status.resourcePositive("perfectBlock") then
+      status.modifyResource("shieldStamina", -damage / status.stat("shieldHealth"))
+    end
+
     status.setResourcePercentage("shieldStaminaRegenBlock", 1.0)
     damage = 0
     damageRequest.statusEffects = {}
-    damageRequest.damageSourceKind = "shield"
+    --damageRequest.damageSourceKind = "shield" --this enables the shieldnumber particle to spawn, so lets do it manually so we can tell the shield what damage its really taking
+    params = {
+      damageType = "nodamage",
+      timeToLive = 0.1
+    }  
+    params.actionOnReap = {
+      {
+        action = "particle",
+        specification = {
+          type = "text",
+          text = "^shadow;BLOCK",
+          color = {131, 245, 255, 180},
+          light = {0, 0, 70},
+          initialVelocity = {0, 5.0},
+          finalVelocity = {0, 0},
+          approach = {0, 11},
+          angularVelocity = 20,
+          timeToLive = 0.2,
+          layer = "front",
+          size = 0.5,
+          destructionAction = "fade",
+          destructionTime = 0.1,
+          variance = {
+            initialVelocity = {0, 3.0}
+          },
+          flippable = false
+        }
+      }
+    }
+    
+    local projectileId = world.spawnProjectile(
+      "invisibleprojectile",
+      entity.position(),
+      entity.id(),
+      {0, 0},
+      false,
+      params
+    )
   end
 
   local hitType = damageRequest.hitType

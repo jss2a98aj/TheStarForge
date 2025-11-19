@@ -1,0 +1,12 @@
+{
+  "frameGrid" : {
+    "size" : [4, 4],
+    "dimensions" : [1, 3],
+
+    "names" : [
+      [ "physical:0" ],
+      [ "fire:0" ],
+      [ "ice:0" ]
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "ui" : {
+        "default" : "idle",
+        "states" : {
+          "grow" : {
+            "frames" : 2,
+            "cycle" : 0.2,
+            "mode" : "transition",
+			      "transition" : "idle"
+          },
+          "idle" : {
+            "frames" : 1,
+            "cycle" : 0.4,
+            "mode" : "loop"
+          },
+          "break" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "transition",
+			      "transition" : "idle"
+          }
+        }
+      }
+    },
+    "parts" : {
+      "ui" : {
+        "properties" : {
+          "zLevel" : 0,
+		      "fullbright" : false,
+          "transformationGroups" : ["ui"]
+        },
+        "partStates" : {
+          "ui" : {
+            "grow" : {
+              "properties" : {
+                "image" : "starforge-blightblood.png:<count>.grow.<frame>"
+              }
+            },
+            "idle" : {
+              "properties" : {
+                "image" : "starforge-blightblood.png:<count>.idle.<frame>"
+              }
+            },
+            "break" : {
+              "properties" : {
+                "image" : "starforge-blightblood.png:<count>.break.<frame>"
+              }
+            }
+          }
+        }
+      },
+      "uiFullbright" : {
+        "properties" : {
+          "zLevel" : 1,
+		      "fullbright" : true,
+          "transformationGroups" : ["ui"]
+        },
+        "partStates" : {
+          "ui" : {
+            "grow" : {
+              "properties" : {
+                "image" : "starforge-blightbloodfb.png:<count>.grow.<frame>"
+              }
+            },
+            "idle" : {
+              "properties" : {
+                "image" : "starforge-blightbloodfb.png:<count>.idle.<frame>"
+              }
+            },
+            "break" : {
+              "properties" : {
+                "image" : "starforge-blightbloodfb.png:<count>.break.<frame>"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "transformationGroups" : {
+    "ui" : {}
+  },
+  
+  "particleEmitters" : {
+	  "takeHit" : {
+      "burstCount"  : 100,
+	    "offsetRegion" : [-2.5, -2.5, 2.5, 2.5],
+      "particles" : [
+        { "particle" : "blood" }
+	    ]
+    }
+  },
+
+  "sounds" : {
+    "takeHit" : [ ]
+  }
+}

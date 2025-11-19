@@ -1,0 +1,93 @@
+{
+  "projectileName" : "starforge-pachinkojoystickball",
+  "physics" : "arrownosticky",
+  "image" : "starforge-pachinkojoystickball.png:physical",
+  "animationCycle" : 0.5,
+  "frameNumber" : 1,
+  "power" : 50,
+  "speed" : 75,
+  "timeToLive" : 0.2,
+  "supportsProcessing" : true,
+  "actionOnCollide" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
+    }
+  ],
+  
+  "periodicActions" : [
+    {
+	  "time" : 0.195,
+	  "repeat" : false,
+      "action" : "loop",
+      "count" : 3,
+      "body" : [
+        {
+          "action" : "option",
+          "options" : [
+            {
+              "action" : "particle",
+              "specification" : {
+                "type" : "animated",
+                "animation" : "/animations/mediumflamefire/mediumflamefire.animation",
+                "approach" : [0.5, 0.5],
+                "timeToLive" : 0.4,
+                "variance" : {
+                  "timeToLive" : 0.15,
+                  "position" : [0.5, 0.5],
+                  "initialVelocity" : [1, 1],
+                  "rotation" : 180
+                }
+              }
+            }
+          ]
+        },
+        {
+          "action" : "spark"
+        }
+      ]
+    },
+	{
+	  "time" : 0.195,
+	  "repeat" : false,
+	  "inheritDamageFactor": 1,
+	  "angleAdjust": 0,
+	  "fuzzAngle": 0,
+	  "action": "projectile",
+	  "type": "starforge-pachinkojoystickballfire"
+	}
+  ],
+  "advancedPeriodicActions" : [
+    {
+      "loopTime" : 0.01,
+      "delayTime" : 0.01,
+      "rotate" : true,
+      "minimumVelocity" : 55,
+
+      "action" : "particle",
+      "specification" : {
+        "type" : "streak",
+        "layer" : "back",
+        "fullbright" : false,
+        "destructionAction" : "shrink",
+        "size" : 2,
+        "color" : [131, 131, 131, 255],
+        "collidesForeground" : false,
+        "length" : 20,
+        "position" : [1, 0],
+        "timeToLive" : 0.01,
+        "destructionTime" : 0.06,
+		"initialVelocity" : [0.5, 0],
+		"variance" : {
+		  "size" : 0,
+          "destructionTime" : 0.5,
+          "initialVelocity" : [0.5, -0],
+          "length" : 0
+        }
+      }
+    }
+  ],
+  "damageKind" : "fist",
+
+  "scripts" : [ "/projectiles/scripts/starforge-advancedperiodicactions.lua" ]
+}

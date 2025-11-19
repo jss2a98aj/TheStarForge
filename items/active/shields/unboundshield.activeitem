@@ -1,6 +1,6 @@
 {
   "itemName" : "starforge-unboundshield",
-  "fixedLevel" : 6,
+  "level" : 6,
   "price" : 720,
   "maxStack" : 1,
   "rarity" : "Legendary",
@@ -13,15 +13,45 @@
 
   "inventoryIcon" : "images/unboundshield.png:nearidle",
 
-  "animation" : "shieldfullbright.animation",
+  "animation" : "starforge-shield.animation",
   "animationParts" : {
     "shield" : "images/unboundshield.png",
-	"shieldFullbright" : "images/unboundshieldfullbright.png"
+  	"shieldFullbright" : "images/unboundshieldfullbright.png"
   },
   "animationCustom" : {
-    "animatedParts" : { "parts" : { "shield" : { "properties" : {
-        "shieldPoly" : [ [-0.5, -2.5], [-0.5, 2.25], [0.75, 1.5], [0.75, -1.75] ]
-    }}}},
+    "animatedParts" : { 
+      "parts" : { 
+        "shield" : { 
+          "properties" : {
+            "offset" : [-0.25, 0.25],
+            "shieldPoly" : [ [-0.5, -2.5], [-0.5, 2.25], [0.75, 1.5], [0.75, -1.75] ]
+          },
+          "partStates" : {
+            "shield" : {
+              "block" : {
+                "properties" : {
+                  "offset" : [-0.375, 0.25]
+                }
+              }
+            }
+          }
+        },
+        "shieldFullbright" : { 
+          "properties" : {
+            "offset" : [-0.25, 0.25]
+          },
+          "partStates" : {
+            "shield" : {
+              "block" : {
+                "properties" : {
+                  "offset" : [-0.375, 0.25]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "sounds" : {
       "raiseShield" : [ "/sfx/tech/vehicle_appear1.ogg" ],
       "perfectBlock" : [ "/sfx/tech/vehicle_disappear1.ogg" ],
@@ -35,8 +65,8 @@
   "minActiveTime" : 0.3,
 
   "forceWalk" : false,
-  "baseShieldHealth" : 65,
-  "cooldownTime" : 0.9,
+  "baseShieldHealth" : 165,
+  "cooldownTime" : 0.1,
 
   "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
   "perfectBlockTime" : 0.2,
@@ -44,20 +74,23 @@
   "knockback" : 10,
 
   "shieldStats" : {
-    "electricResistance" : 0.25
+    "electricResistance" : 1
   },
+
+  "alwaysOutside" : true,
 
   "stances" : {
     "idle" : {
-      "armRotation" : -90,
+      "armRotation" : -85,
       "shieldRotation" : 0,
+      "aimAngle" : 0,
       "allowRotate" : false,
       "allowFlip" : true
     },
     "raised" : {
       "armRotation" : 0,
       "shieldRotation" : 0,
-      "allowRotate" : false,
+      "allowRotate" : true,
       "allowFlip" : true
     }
   },

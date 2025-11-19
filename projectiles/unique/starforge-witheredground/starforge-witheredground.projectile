@@ -13,7 +13,7 @@
   "knockback" : 20,
   "knockbackDirectional" : true,
   "damagePoly" : [ [-4, 0], [4, 0], [4, -11], [-4, -11] ],
-  "damageKind" : "hidden",
+  "damageKind" : "starforge-wither",
   "damageType" : "status",
   "periodicActions" : [
     {
@@ -27,6 +27,18 @@
       "specification" : "starforge-withersmokerise",
       "time" : 0.1,
       "repeat" : true
+    },
+  	{ 
+      "time" : 0.02,
+      "repeat" : true,
+      "action" : "projectile",
+      "rotate" : true,
+      "type" : "starforge-withersmoke",
+      "config" : {
+      },
+      "inheritDamageFactor" : 0.0125,
+      "angleAdjust" : 180,
+      "fuzzAngle" : 25
     }
   ],
   "statusEffects" : [ "starforge-wither" ],

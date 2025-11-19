@@ -5,7 +5,7 @@
   "maxStack" : 1,
   "rarity" : "Essential",
   "description" : "Cursed, forever hungry, leaving only a lifeless husk left of those who wield it.",
-  "shortdescription" : "^orange;Sanguine^reset;",
+  "shortdescription" : "Sanguine",
   "tooltipKind" : "starforge-uniquesword",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {

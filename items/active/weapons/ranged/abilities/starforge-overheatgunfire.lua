@@ -12,6 +12,7 @@ function StarforgeGunFire:init()
 
   if self.overheated then
     animator.playSound("overheatedLoop", -1)
+    animator.setParticleEmitterActive("overheatMuzzle", true)
       
     if self.overheatAnimations then
       animator.setAnimationState("gun", "overheat")
@@ -28,6 +29,7 @@ function StarforgeGunFire:update(dt, fireMode, shiftHeld)
     local soundPitchFactor = self.overheat / 100
     local soundPitch = 0.75 + (soundPitchFactor * 0.5)
     animator.setSoundPitch("overheatedLoop", soundPitch)
+    animator.setParticleEmitterEmissionRate("overheatMuzzle", 7 * soundPitch)
 
     if self.stances.overheated and self.overheat <= 95 then
       self.weapon:setStance(self.stances.overheated)
@@ -41,6 +43,7 @@ function StarforgeGunFire:update(dt, fireMode, shiftHeld)
       if self.overheatAnimations then
         animator.setAnimationState("gun", "idle")
       end 
+      animator.setParticleEmitterActive("overheatMuzzle", false) 
       animator.stopAllSounds("overheatedLoop")
       self.overheated = false
     end
@@ -85,6 +88,7 @@ function StarforgeGunFire:muzzleFlash()
   end
   
   if self.overheat > 100 then
+    animator.setParticleEmitterActive("overheatMuzzle", true)
     animator.playSound("overheatedLoop", -1)
     animator.playSound("overheat")
     self.overheated = true
@@ -99,7 +103,6 @@ end
 
 local oldUninit = StarforgeGunFire.uninit or function() end
 function StarforgeGunFire:uninit() oldUninit(self)
-  --animator.stopAllSounds("overheatedLoop")
   activeItem.setInstanceValue("overheat", self.overheat)
   activeItem.setInstanceValue("overheated", self.overheated)
 end

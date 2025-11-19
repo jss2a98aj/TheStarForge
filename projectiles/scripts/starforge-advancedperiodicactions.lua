@@ -1,14 +1,13 @@
 require "/scripts/vec2.lua"
 
-function init()
+starforge_advancedPeriodicActions_init = init
+function init(...) if starforge_advancedPeriodicActions_init then starforge_advancedPeriodicActions_init(...) end
   self.advancedPeriodicActions = config.getParameter("advancedPeriodicActions", {})
 end
 
-function update(dt)
-  if projectile.collision() or mcontroller.isCollisionStuck() or mcontroller.isColliding() then
 	projectile.die()
-  end
-  
+starforge_advancedPeriodicActions_update = update
+function update(dt) if starforge_advancedPeriodicActions_update then starforge_advancedPeriodicActions_update(dt) end
   --Advanced Periodic Action
   for _, action in pairs(self.advancedPeriodicActions) do
     action = advancedPeriodicActions(action, dt, _)
@@ -16,7 +15,7 @@ function update(dt)
 end
 
 function advancedPeriodicActions(action, dt, index)
-  if action.action == "particle" then
+  if action.action == "particle" and config.getParameter("scaleModifier") then
     local baseAction = config.getParameter("advancedPeriodicActions", {})[index]
 	
 	if config.getParameter("scaleModifier") then
@@ -26,6 +25,7 @@ function advancedPeriodicActions(action, dt, index)
 	  action.specification.variance.position = vec2.mul(baseAction.specification.variance.position, config.getParameter("scaleModifier", 1))
     end
   end
+  
   if action.terminateOnDeath then
 	if action.action == "projectile" then
 	  action.config.timeToLive = projectile.timeToLive()
@@ -47,9 +47,12 @@ function advancedPeriodicActions(action, dt, index)
 	if action.delayTime <= 0 then
 	  action.delayTime = nil
 	end
+  elseif action.minimumVelocity and (action.minimumVelocity > vec2.mag(mcontroller.velocity())) then
+	return action
   elseif action.loopTime and action.loopTime ~= -1 then
 	action.loopTimer = action.loopTimer or 0
 	action.loopTimer = math.max(0, action.loopTimer - dt)
+	
 	if action.loopTimer == 0 then
 	  action.loopTimer = action.loopTime
 	  if action.loopTimeVariance then

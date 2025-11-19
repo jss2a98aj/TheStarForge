@@ -25,9 +25,10 @@
       "idle" : {
         "armRotation" : -35,
         "weaponRotation" : 0,
+        "aimAngle" : 0,
         "twoHanded" : false,
 		
-        "allowRotate" : true,
+        "allowRotate" : false,
         "allowFlip" : true
       },
       "prepare" : {
@@ -36,7 +37,7 @@
         "weaponRotation" : 0,
         "twoHanded" : false,
 		
-		"smooth" : true,
+	    	"smooth" : true,
 		
         "allowRotate" : true,
         "allowFlip" : true
@@ -50,8 +51,8 @@
         "allowRotate" : false,
         "allowFlip" : true
       },
-	  "reload" : {
-	    //"aimAngle" : 0,
+	    "reload" : {
+	      //"aimAngle" : 0,
         "duration" : 0.1,
         "armRotation" : -115,
         "endArmRotation" : -45,
@@ -59,7 +60,7 @@
         "endWeaponRotation" : 0,
         "twoHanded" : false,
 		
-		"loadTime" : 0.5,	//Percentage of the duration where the weapon reappears
+		    "loadTime" : 0.5,	//Percentage of the duration where the weapon reappears
 		
         "allowRotate" : false,
         "allowFlip" : true
