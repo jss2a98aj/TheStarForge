@@ -37,7 +37,7 @@
     },
     "sounds": {
       "fire": [
-        "/sfx/gun/starforge-unboundrifle.ogg"
+        "/sfx/gun/starforge-sniper.ogg"
       ]
     }
   },
@@ -112,17 +112,21 @@
             "scripts" : ["/items/active/weapons/ranged/abilities/starforge-altfire.lua"],
             "class" : "StarforgeAltFire",
 
-			"projectileType" : "electriccloudgrenade",
-            "projectileParameters" : {},
+			"projectileType" : "starforge-unboundelecgrenade",
+            "projectileParameters": {
+	  "speed" : 40,
+      "knockback": 3.5
+    },
             "projectileCount" : 1,
             "inaccuracy" : 0.01,
-            "baseDamage" : 15,
+            "baseDamage" : 16,
+			"speed" : 55.0,
             "energyUsage" : 40,
             "fireTime" : 2.25,
             "fireType" : "auto",
             "useStanceDuration" : true,
 
-            "fireOffset" : [2.5, 0.5],
+            "fireOffset" : [1, 0.5],
 
             "stances" : {
               "fire" : {
