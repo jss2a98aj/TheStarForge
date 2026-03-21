@@ -108,7 +108,7 @@
         "distribution" : "/biomes/distributions.config:minibiomeChests",
 
         "type" : "treasureBox",
-        "treasureBoxSets" : [ "starforge-blackrotChest" ]
+        "treasureBoxSets" : [ "starforge-progenitorChest" ]
       },
       {
         "mode" : "floor",

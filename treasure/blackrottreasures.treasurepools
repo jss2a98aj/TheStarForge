@@ -47,6 +47,15 @@
 		{"weight" : 0.15, "item" : ["starforge-blackrotmaterial", 6]}
       ]
     }]
+  ],
+  
+  "starforge-blackrotweapons" : [
+    [1, {
+      "pool" : [
+        {"weight" : 0.60, "item" : "starforge-silverserpent"},
+        {"weight" : 0.40, "item" : "starforge-crackshot"}
+      ]
+    }]
   ]
      
   }

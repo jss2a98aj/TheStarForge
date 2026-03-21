@@ -10,6 +10,17 @@
 	]
   },
   
+  { "op" : "add", "path" : "/starforge-progenitorChest",
+  "value" :
+	[
+		{
+		"containers" : [ "starforge-progenitorchest" ],
+		"treasurePool" : "progenitorChestTreasure",
+		"minimumLevel" : 1
+		}
+	]
+  },
+  
   { "op" : "add", "path" : "/starforge-blackrotChest",
   "value" :
 	[
