@@ -14,8 +14,8 @@
       ],
       "poolRounds" : [
         [0.05, 1],
-        [0.40, 2],
-        [0.30, 3],
+        [0.20, 2],
+        [0.50, 3],
         [0.15, 4],
         [0.10, 5]
       ],
@@ -29,6 +29,7 @@
         {"weight" : 0.3, "item" : "starforge-tidekeeperhead"},
         {"weight" : 0.3, "item" : "starforge-tidekeeperchest"},
         {"weight" : 0.3, "item" : "starforge-tidekeeperpants"},
+		{"weight" : 0.3, "pool" : "starforge-progenitorlore"},
         {"weight" : 0.3, "item" : "starforge-progenitorchest-recipe"},
 		{"weight" : 0.3, "pool" : "starforge-progenitorweapons"},
 		{"weight" : 0.3, "pool" : "progenitormaterialTreasure"}
@@ -52,6 +53,16 @@
         {"weight" : 0.60, "item" : "starforge-blightfang"},
         {"weight" : 0.25, "item" : "starforge-hazedart"},
 		{"weight" : 0.15, "item" : "starforge-ashcaster"}
+      ]
+    }]
+  ],
+  
+  "starforge-progenitorlore" : [
+    [1, {
+      "pool" : [
+        {"weight" : 0.40, "item" : "starforge-witherorigins1-codex"},
+        {"weight" : 0.40, "item" : "starforge-witherorigins2-codex"},
+		{"weight" : 0.20, "item" : "starforge-witherorigins3-codex"}
       ]
     }]
   ]

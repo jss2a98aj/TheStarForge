@@ -1,0 +1,47 @@
+{
+	"id": "starforge-witherorigins1",
+	"title": "Gods Don't Die - I",
+	"description": "An Elpis data disk, containing audio logs made by a group of scientists.",
+	"icon": "starforge-witherorigins1.png",
+	"contentPages": [
+
+		"^red;--This world was beautiful once.--^reset;
+
+^gray;>Audio transcription: introductions^reset;
+^cyan;Female Hylotl^reset;: \"Finally got that thing recording? It's a miracle you can operate a light switch.\"
+^yellow;Male Hylotl^reset;: \"Well at least I didn't have to ask where the light switch was.\"
+^cyan;Female Hylotl^reset;: \"Hey, it was in an odd spot...\"
+^yellow;Male Hylotl^reset;: \"Anyways, I'm Ryouta, Zoologist.\"
+^cyan;Female Hylotl^reset;: \"Masami, Botanist. Elpis detected some unknown pollen in atmosphere samples here.\"",
+"^yellow;Ryouta^reset;: \"It might mean there are some new species too.\"
+^cyan;Masami^reset;: \"Regardless, I would love to finally name a plant.\"
+^gray;>End audio transcription^reset;",
+
+"^red;--In it's beauty the world gave hope.--^reset;
+
+^gray;>Audio transcription: new_plant^reset;
+^yellow;Ryouta^reset;: \"About a week ago the resident salad specialist...\"
+^cyan;Masami^reset;: \"Botanist.\"
+^yellow;Ryouta^reset;: \"...resident botanist found a new topping.\"
+^cyan;Masami^reset;: \"Hey!\"
+^yellow;Ryouta^reset;: \"It is edible, though.\"
+^cyan;Masami^reset;: \"That's beside the point!\"
+^yellow;Ryouta^reset;: \"It may also help severed nerves reconnect in frogs.\"",
+"^cyan;Masami^reset;: \"Yeah, now imagine what Elpis could do if they use it in medicine instead of food.\"
+^gray;>End audio transcription^reset;",
+
+"^red;--It was condemned by something that should not be.--^reset;
+
+^gray;>Audio transcription: something_fell^reset;
+^cyan;Masami^reset;: \"What felt like an earthquake just woke us and every animal in the lab. We are nowhere near a fault line.\"
+^yellow;Ryouta^reset;: \"Looks like a meteor from the security footage. I think it landed at the edge of our survey zone. Some of the rainfall monitoring equipment is down. Six... no... seven of the sensors are offline.\"",
+"^cyan;Masami^reset;: \"We should have a look at it. We need to go out that way again anyways.\"
+^yellow;Ryouta^reset;: \"I will prepare the hoverbike.\"
+^gray;>End audio transcription^reset;"
+
+	],
+	"itemConfig": {
+		"rarity": "rare",
+		"price": 75
+	}
+}

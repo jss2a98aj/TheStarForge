@@ -1,0 +1,46 @@
+{
+	"id": "starforge-witherorigins3",
+	"title": "Gods Don't Die - III",
+	"description": "THEY BECOME SOMETHING WORSE.",
+	"icon": "starforge-witherorigins3.png",
+	"contentPages": [
+
+"^red;--Even a blind fool will miss a voice.--^reset;
+
+^gray;>Audio transcription: spiral^reset;
+^yellow;Ryouta^reset;: \"Some equipment in the lab has failed, but I can barely bring myself to care...\"
+\"Masami is slipping in and out of consciousness, and I don't know why.\"
+^cyan;Masami^reset;: *inaudible* \"hurts...\"
+^gray;*Pop from a recording pause/resume*^reset;
+^yellow;Ryouta^reset;: \"Her right leg has an infection...\"",
+"\"When cleaning up the hazmat suits to try to quell the stench from that thing, I found out why...\"
+\"There is a hole in her suit... She stepped on a thin spike of the black material around the rot out there. I'm going to have to amputate the leg...\"
+\"I pray antibiotics are enough after...\"
+^gray;>End audio transcription^reset;",
+
+"^red;--The blind may gain sight from the loss of something greater.--^reset;
+
+^gray;>Audio transcription: death^reset;
+^yellow;Ryouta^reset;: \"... Masami is dead... The amputation only slowed it. Antibiotics did nothing... Her heart stopped beating almost three hours ago...\"
+^gray;*A long gap of silence.*^reset;
+\"The lab is no better off. The samples of that... thing... ate through metal and shattered glass. Its unsalvageable. Even got the plant... The one she wanted to name...\"",
+"^gray;*A quiet sob, followed by a pop from a recording pause/resume.*^reset;
+^yellow;Ryouta^reset;: \"I have to leave soon, I can't even burn it out. Will salvage what I can. Bury what I can't...\"
+^gray;>End audio transcription^reset;",
+
+"^red;--Sight to watch this world's hope spoil, its name lost with her.--^reset;
+
+^gray;>Audio transcription: overrun^reset;
+^yellow;Ryouta^reset;: \"I have what was left of the useful supplies stashed on the hoverbike. I still have to bury her...\"
+^gray;*Footsteps, the sound of med bay doors sliding open.*^reset;
+^yellow;Ryouta^reset;: \"Masami!? Is that y- Oh my god wh-
+^gray;>Audio transcription terminated^reset;",
+"I cannot, will not relive those moments of false hope and forlorn terror. It twisted her into something vile. Her body puppeteered by it, bone and withered flesh lurching about. Like something that shouldn't learning to walk. It looked at me with her dead eyes, and I ran. I could not stay or bring myself to look back. Unable to even lay her to rest. Even where that rotted abomination landed, it has not left the world at peace. Kilometers from it the forest is deformed, a grotesque husk of what it once was.",
+"It was cast from the heavens, and even in death it has brought the world to its knees."
+
+	],
+	"itemConfig": {
+		"rarity": "rare",
+		"price": 75
+	}
+}

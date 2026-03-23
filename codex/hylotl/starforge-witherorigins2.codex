@@ -1,0 +1,44 @@
+{
+	"id": "starforge-witherorigins2",
+	"title": "Gods Don't Die - II",
+	"description": "An Elpis data disk, its box is covered in strange plant matter.",
+	"icon": "starforge-witherorigins2.png",
+	"contentPages": [
+
+"^red;--It gave numerous signs.--^reset;
+
+^gray;>Audio transcription: departure^reset;
+^yellow;Ryouta^reset;: \"We have been on the hoverbike for almost two days now, but are close. Been taking shifts driving so we don't have to stop too long.\"
+^cyan;Masami^reset;: \"It is exhausting... Looks like the sensor that was giving erroneous readings yesterday went down since I last checked.\"
+^yellow;Ryouta^reset;: \"Probably had a toppled tree crushing it. Wouldn't be a first... Do you smell something off?\"",
+"^cyan;Masami^reset;: \"You always smell kind of off. \"
+^yellow;Ryouta^reset;: \"I'm being serious.\"
+^cyan;Masami^reset;: \"Actually, yeah... like a whiff of something rotten.\"
+^gray;>End audio transcription^reset;",
+
+"^red;--But what are signs to the blind?--^reset;
+
+^gray;>Audio transcription: samples^reset;
+^yellow;Ryouta^reset;: \"The scent we noticed has gotten much worse. It isn't a normal smell for a meteor like sulphur or tar. The impact site isn't normal either. Kind of small and filled with rot.\"
+^cyan;Masami^reset;: \"Like a... a titanic creature died and putrified. One that fell from the heavens.\"
+^yellow;Ryouta^reset;: \"There are chunks of it everywhere. Not even scavengers have touched it.\"",
+"^cyan;Masami^reset;: \"And the plants around the rot look like they are dying... disgusting.\"
+^yellow;Ryouta^reset;: \"Glad we can take samples without touching it.\"
+^gray;>End audio transcription^reset;",
+
+"^red;--Nothing, and from that nothing it encroached.--^reset;
+
+^gray;>Audio transcription: sickness^reset;
+^yellow;Ryouta^reset;: \"We are back, but Masami is feeling ill.\"
+^cyan;Masami^reset;: \"I... I just need to sleep it off.\"
+^yellow;Ryouta^reset;: \"With four days of rushed driving and the horrible smell it is a miracle I'm not sick too.\"
+^cyan;Masami^reset;: \"Yeah... I swear can smell a hint of it still.\"",
+"^yellow;Ryouta^reset;: \"I did start running tests on it earlier. I'll light a scented candle, you go get some sleep.\"
+^gray;>End audio transcription^reset;"
+
+	],
+	"itemConfig": {
+		"rarity": "rare",
+		"price": 75
+	}
+}
