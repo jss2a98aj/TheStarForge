@@ -1,0 +1,56 @@
+{
+  "objectName" : "starforge-bucofruitseed",
+  "colonyTags" : ["nature"],
+  "rarity" : "rare",
+  "description" : "A surprising gift of life from a living, evolving cancer.",
+  "category" : "seed",
+  "shortdescription" : "Buco Seed",
+  "objectType" : "farmable",
+  "printable" : false,
+  "price" : 450,
+
+  "apexDescription" : "You expect the hard shell of the fruit to protect its flavors, but it doesn't have any.",
+  "avianDescription" : "Hard to eat, harder to swallow.",
+  "floranDescription" : "Floran refussse to eat the mud fruit.",
+  "glitchDescription" : "Curious. Who would eat such a fruit willingly?",
+  "humanDescription" : "No amount of salt or spice could save this thing.",
+  "hylotlDescription" : "If it wasn't for its effects, such a fruit would never be consumed.",
+  "novakidDescription" : "Ain't so bad if you've tasted mud before...",
+
+  "inventoryIcon" : "starforge-bucofruitseedicon.png",
+
+  "tooltipKind" : "seed",
+  "largeImage" : "starforge-bucofruitseed.png:default.2.0",
+
+
+  "orientations" : [
+    {
+      "dualImage" : "starforge-bucofruitseed.png:<color>.<stage>.<alt>",
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaces" : [ [1, 0], [0, 0], [1, 1], [0, 1], [1, 2], [0, 2] ],
+      "requireTilledAnchors" : true,
+      "anchors" : [ "bottom" ]
+
+    }
+  ],
+
+  "radioMessagesOnPickup" : [ "pickupseed" ],
+
+  "stages" : [
+    {
+      "duration" : [1170, 1230]
+    },
+    {
+      "duration" : [1170, 1230]
+    },
+    {
+      "alts" : 5,
+      "harvestPool" : "starforge-bucofruitseedHarvest"
+    }
+  ],
+
+  "maxImmersion" : 0.17
+}

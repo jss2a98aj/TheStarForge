@@ -357,25 +357,9 @@
         "type" : "object",
         "objectSets" : [
           {
-            "pool" : [ [1, "wildtomatoseed" ] ],
+            "pool" : [ [1, "starforge-wildbucofruitseed" ] ],
             "parameters" : {
-              "startingStage" : 4
-            }
-          }
-        ]
-      },
-      {
-        "mode" : "floor",
-        "priority" : 1.0,
-        "variants" : 1,
-        "distribution" : "/biomes/distributions.config:surfaceCrops",
-
-        "type" : "object",
-        "objectSets" : [
-          {
-            "pool" : [ [1, "wildcocoaseed" ] ],
-            "parameters" : {
-              "startingStage" : 4
+              "startingStage" : 3
             }
           }
         ]

@@ -52,6 +52,20 @@
         [0.4, 2]
       ]
     } ]
+  ],
+  
+  "starforge-bucofruitseedHarvest" : [
+    [0, {
+      "pool" : [
+        {"weight" : 0.85, "item" : "starforge-witherfruit"},
+        {"weight" : 0.04, "item" : "starforge-bucofruitseed"},
+        {"weight" : 0.1, "pool" : "progenitormaterialTreasure"}
+      ],
+      "poolRounds" : [
+        [0.6, 1],
+        [0.4, 2]
+      ]
+    } ]
   ]
   
   

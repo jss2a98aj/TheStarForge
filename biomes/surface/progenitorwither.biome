@@ -114,7 +114,7 @@
         "mode" : "floor",
         "priority" : 1.0,
         "variants" : 1,
-        "distribution" : "/biomes/tidetreedistribution.config:starforge-tidetreedistrib1",
+        "distribution" : "/biomes/distributions.config:scatteredLarge",
 
         "type" : "object",
         "objectSets" : [
@@ -211,7 +211,7 @@
         "type" : "object",
         "objectSets" : [
           {
-            "pool" : [ [1, "wildcarrotseed" ] ],
+            "pool" : [ [1, "starforge-wildbucofruitseed" ] ],
             "parameters" : {
               "startingStage" : 3
             }
