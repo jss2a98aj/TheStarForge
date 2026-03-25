@@ -74,7 +74,35 @@
 			}
 		}
 	},
-	
+	{
+		"op": "add",
+		"path": "/starforge-praetorianmission",
+		"value": {
+			"type": "FloatingDungeon",
+			"dungeonWorld": "starforge-praetorianmission",
+			"seed": 1234,
+			"spawningEnabled": false,
+			"beamUpRule": "Anywhere",
+			"disableDeathDrops": true,
+			"worldProperties": {"nonCombat": false},
+			"skyParameters" : {
+      "spaceLevel" : 3000,
+      "ambientLightLevel" : [184, 197, 182],
+
+      "planet" : {
+        "pos" : [ 0.46, 0.46 ],
+        "layers" : []
+      },
+      "skyType" : "barren",
+			   
+				"horizonImages": [],
+				"dayLength": 5000.36,
+				"surfaceLevel": 800,
+				"seed": -5288806180628667000
+		
+			}
+		}
+	},
   //UNBOUND STORY MISSIONS
 	{
 		"op": "add",

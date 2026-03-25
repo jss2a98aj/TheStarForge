@@ -1,0 +1,24 @@
+{
+  "metadata" : {
+    "name" : "starforge-praetorianmission",
+    "species" : "generic",
+    "rules" : [
+    ],
+    "anchor" : [ "praetorianmission" ],
+    "gravity" : 60,
+    "maxRadius" : 1000000,
+    "maxParts" : 100,
+    "protected" : true,
+	"persistent" : false
+  },
+
+  "parts" : [
+    {
+      "name" : "praetorianmission",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "praetorianmission.json" ]
+    }
+  ]
+}
