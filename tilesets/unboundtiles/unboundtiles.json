@@ -1,12 +1,4 @@
 { "columns":0,
- "editorsettings":
-    {
-     "export":
-        {
-         "format":"",
-         "target":"."
-        }
-    },
  "grid":
     {
      "height":1,
@@ -16,8 +8,8 @@
  "margin":0,
  "name":"unboundtiles",
  "spacing":0,
- "tilecount":8,
- "tiledversion":"1.4.3",
+ "tilecount":13,
+ "tiledversion":"1.10.2",
  "tileheight":8,
  "tileproperties":
     {
@@ -34,6 +26,27 @@
          "\/\/name":"starforge-unboundwallpanelwithered",
          "\/\/shortdescription":"Unbound Hull Panel",
          "material":"starforge-unboundwallpanelwithered"
+        },
+     "10":
+        {
+         "\/\/description":"Whatever",
+         "\/\/name":"starforge-unbounddoubleplatform",
+         "\/\/shortdescription":"Unbound Platform",
+         "material":"starforge-unbounddoubleplatform"
+        },
+     "11":
+        {
+         "\/\/description":"Whatever",
+         "\/\/name":"starforge-withereddirt",
+         "\/\/shortdescription":"Whithered Dirt",
+         "material":"starforge-withereddirt"
+        },
+     "12":
+        {
+         "\/\/description":"Whatever",
+         "\/\/name":"starforge-withereddirt",
+         "\/\/shortdescription":"Whithered Stone",
+         "material":"starforge-witherstone"
         },
      "2":
         {
@@ -76,6 +89,20 @@
          "\/\/name":"starforge-tiderock",
          "\/\/shortdescription":"Tidal Rock",
          "material":"starforge-tiderock"
+        },
+     "8":
+        {
+         "\/\/description":"A durable plant-like mass. Twisted by the Great Withering.",
+         "\/\/name":"starforge-blackrotmatter",
+         "\/\/shortdescription":"Blackrot Matter",
+         "material":"starforge-blackrotmatter"
+        },
+     "9":
+        {
+         "\/\/description":"Whatever",
+         "\/\/name":"starforge-unboundbackblock",
+         "\/\/shortdescription":"Unbound backpanel",
+         "material":"starforge-unboundbackblock"
         }
     },
  "tilepropertytypes":
@@ -88,6 +115,27 @@
          "material":"string"
         },
      "1":
+        {
+         "\/\/description":"string",
+         "\/\/name":"string",
+         "\/\/shortdescription":"string",
+         "material":"string"
+        },
+     "10":
+        {
+         "\/\/description":"string",
+         "\/\/name":"string",
+         "\/\/shortdescription":"string",
+         "material":"string"
+        },
+     "11":
+        {
+         "\/\/description":"string",
+         "\/\/name":"string",
+         "\/\/shortdescription":"string",
+         "material":"string"
+        },
+     "12":
         {
          "\/\/description":"string",
          "\/\/name":"string",
@@ -135,6 +183,20 @@
          "\/\/name":"string",
          "\/\/shortdescription":"string",
          "material":"string"
+        },
+     "8":
+        {
+         "\/\/description":"string",
+         "\/\/name":"string",
+         "\/\/shortdescription":"string",
+         "material":"string"
+        },
+     "9":
+        {
+         "\/\/description":"string",
+         "\/\/name":"string",
+         "\/\/shortdescription":"string",
+         "material":"string"
         }
     },
  "tiles":
@@ -148,6 +210,24 @@
      "1":
         {
          "image":"unboundwallpanelwithered.png",
+         "imageheight":8,
+         "imagewidth":8
+        },
+     "10":
+        {
+         "image":"unbounddoubleplatform.png",
+         "imageheight":8,
+         "imagewidth":8
+        },
+     "11":
+        {
+         "image":"withereddirt.png",
+         "imageheight":8,
+         "imagewidth":8
+        },
+     "12":
+        {
+         "image":"witherstone.png",
          "imageheight":8,
          "imagewidth":8
         },
@@ -184,6 +264,18 @@
      "7":
         {
          "image":"tidalrock.png",
+         "imageheight":8,
+         "imagewidth":8
+        },
+     "8":
+        {
+         "image":"blackrotmatter.png",
+         "imageheight":8,
+         "imagewidth":8
+        },
+     "9":
+        {
+         "image":"unboundbackmetal.png",
          "imageheight":8,
          "imagewidth":8
         }

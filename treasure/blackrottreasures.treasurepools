@@ -33,7 +33,7 @@
 		{"weight" : 0.3, "item" : "starforge-blackrotchair-recipe"},
 		{"weight" : 0.3, "item" : "starforge-blackrottable-recipe"},
 		{"weight" : 0.3, "item" : "starforge-blackrotlamp-recipe"},
-		{"weight" : 0.3, "pool" : "starforge-tidalweapons"},
+		{"weight" : 0.5, "pool" : "starforge-blackrotweapons"},
 		{"weight" : 0.3, "pool" : "blackrotmaterialTreasure"}
       ]
     }]

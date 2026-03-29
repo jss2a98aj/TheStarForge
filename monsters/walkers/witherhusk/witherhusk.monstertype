@@ -8,7 +8,7 @@
 
   "animation" : "witherhusk.animation",
 
-  "dropPools" : [ "orbideTreasure" ],
+  "dropPools" : [ "witherhuskTreasure" ],
 
   "baseParameters" : {
     "scripts" : [
@@ -96,6 +96,13 @@
       ],
 
       "wanderActions" : [
+        {
+          "name" : "wander-walk",
+          "cooldown" : 12.0,
+          "parameters" : {
+            "wanderTime" : [1, 8]
+          }
+        }
       ]
     },
 

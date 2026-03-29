@@ -1,0 +1,33 @@
+{
+  "objectName" : "starforge-witherhuskaf",
+  "colonyTags" : ["pretty"],
+  "rarity" : "Legendary",
+  "category" : "actionFigure",
+  "price" : 10000,
+  "printable" : false,
+  "description" : "The label reads, \"An abhorrent attempt to mimic the sentient species of our universe.\"",
+  "shortdescription" : "Wither Husk Figurine",
+  "collectablesOnPickup" : { "actionfigures" : "starforge-witherhuskaf" },
+
+
+  "inventoryIcon" : "witherhuskAF.png",
+  "orientations" : [
+    {
+      "image" : "witherhuskAF.png:<color>",
+      "imagePosition" : [-2, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaces" : [ [0, 0], [0, 1] ],  
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "witherhuskAF.png:<color>",
+      "imagePosition" : [-2, 0],
+      "direction" : "right",
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

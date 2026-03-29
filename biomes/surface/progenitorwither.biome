@@ -154,7 +154,7 @@
         "distribution" : "/biomes/distributions.config:mainBiomeEncounterDungeon",
 
         "type" : "microdungeon",
-        "microdungeons" : [ "encounterdungeons" ]
+        "microdungeons" : [ "starforge-withermicrodungeons" ]
       },
 	  
       {

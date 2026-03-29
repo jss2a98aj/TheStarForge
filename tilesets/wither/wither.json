@@ -8,8 +8,8 @@
  "margin":0,
  "name":"wither",
  "spacing":0,
- "tilecount":1,
- "tiledversion":"1.4.3",
+ "tilecount":2,
+ "tiledversion":"1.10.2",
  "tileheight":62,
  "tileproperties":
     {
@@ -22,11 +22,31 @@
          "imagePositionY":"0",
          "object":"starforge-withercocoon1",
          "tilesetDirection":"left"
+        },
+     "1":
+        {
+         "\/\/description":"A strange, organic sack containing goodies.",
+         "\/\/name":"starforge-progenitorchest",
+         "\/\/shortdescription":"Progenitor Sack",
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"starforge-progenitorchest",
+         "tilesetDirection":"left"
         }
     },
  "tilepropertytypes":
     {
      "0":
+        {
+         "\/\/description":"string",
+         "\/\/name":"string",
+         "\/\/shortdescription":"string",
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "1":
         {
          "\/\/description":"string",
          "\/\/name":"string",
@@ -44,6 +64,12 @@
          "image":"withercocoon1.png",
          "imageheight":62,
          "imagewidth":39
+        },
+     "1":
+        {
+         "image":"progenitorchest.png",
+         "imageheight":16,
+         "imagewidth":16
         }
     },
  "tilewidth":39,
