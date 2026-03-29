@@ -1,0 +1,8 @@
+{
+  "name" : "starforge-witherStatusImmunity",
+  "effectConfig" : {},
+  "defaultDuration" : 60,
+
+  "label" : "Wither Resistance",
+  "icon" : "/interface/statuses/starforge-witherimmunity.png"
+}

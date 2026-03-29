@@ -8,12 +8,26 @@
 
   "animation" : "witherhusk.animation",
 
-  "dropPools" : [ { "default" : "orbideTreasure", "bow" : "orbideHunting" } ],
+  "dropPools" : [ "orbideTreasure" ],
 
   "baseParameters" : {
     "scripts" : [
       "/monsters/monster.lua"
     ],
+	
+	"animationCustom" : {
+      "particleEmitters" : {
+        "smoke" : {
+          "active" : true,
+          "burstCount" : 2,
+          "emissionRate" : 5,
+          "offsetRegion" : [ -0.625, -2.25, 0.625, 0.25 ],
+          "particles" : [
+            { "particle" : "starforge-withersmoke" }
+          ]
+        }
+	   }
+	  },
 
     "behavior" : "monster",
     "deathBehavior" : "monster-death",
@@ -27,47 +41,29 @@
       "keepTargetInRange" : 50,
       "targetOutOfSightTime" : 2.5,
 
-      "foundTargetActions" : [
-        {
-          "name" : "action-animate",
-          "parameters" : {
-            "stateType" : "body",
-            "state" : "invulnerablewinddown",
-            "animationTimer" : 1.2
-          }
-        }
-      ],
+      "foundTargetActions" : [ ],
 
       "fleeActions" : [],
 
       "hostileActions" : [
         {
           "name" : "action-charge",
-          "parameters": {
-            "maximumRange": 15,
-            "minimumRange": 5,
-            "windupTime": 1,
-            "chargeSpeed": 100,
-            "chargeControlForce": 1000,
-            "chargeTime": 0.35,
-            "wallKnockback" : true,
-            "wallCrashSound": "wallCrash",
-            "wallCrashEmitter": "",
+          "cooldown" : 2.0,
+          "parameters" : {
+            "maximumRange" : 15,
+            "windupState" : "chargewindup",
+            "windupTime" : 0.3,
 
-            "winddownStopForce": 1000,
-            "winddownTime": 0.6
-          }
-        }
-      ],
+            "chargeTime" : 0.4,
+            "chargeSpeed" : 25,
+            "chargeControlForce" : 1000,
+            "chargeState" : "charge",
+            "wallCrashSound" : "",
+            "wallCrashEmitter" : "",
 
-      "periodicActions" : [
-        {
-          "name": "action-invulnerable",
-          "parameters": {
-            "invulnerableEffect": "maxprotection",
-            "invulnerableTime": 600,
-            "winddownTime": 1.2,
-            "windupTime": 1.2
+            "winddownTime" : 0.05,
+            "winddownStopForce" : 1000,
+            "winddownState" : "chargewinddown"
           }
         }
       ],
@@ -100,20 +96,6 @@
       ],
 
       "wanderActions" : [
-      ],
-
-      "deathActions" : [
-        {
-          "name" : "action-projectile",
-          "parameters" : {
-            "projectileCount" : 1,
-            "projectileType" : "orbideball",
-            "projectileParameters" : {},
-            "aimDirection" : [1, 1],
-            "inaccuracy" : 1.5,
-            "fireOffset" : [0, 0]
-          }
-        }
       ]
     },
 
@@ -124,7 +106,7 @@
       "teamType" : "enemy",
       "damageSourceKind" : "slash",
       "knockback" : 20,
-      "statusEffects" : [ ]
+      "statusEffects" : ["starforge-wither" ]
     },
 
     "metaBoundBox" : [-4, -4, 4, 4],
@@ -134,8 +116,8 @@
       "collisionPoly" : [ [0.3075, 1.5], [0.75, 1.06], [0.75, -2.93], [0.3075, -3.375], [-0.3075, -3.375], [-0.75, -2.93], [-0.75, 1.06], [-0.3075, 1.5] ],
 
       "mass" : 1.0,
-      "walkSpeed" : 1,
-      "runSpeed" : 3,
+      "walkSpeed" : 5,
+      "runSpeed" : 8,
 
       "airFriction" : 0,
 
@@ -171,52 +153,65 @@
 
       "stats" : {
         "knockbackStunTime" : {
-          "baseValue" : 0.25
+          "baseValue" : 0.5
         },
         "knockbackThreshold" : {
           "baseValue" : 9
         },
         "maxHealth" : {
-          "baseValue" : 85
+          "baseValue" : 140
         },
         "protection" : {
           "baseValue" : 0.0
         },
         "healthRegen" : {
-          "baseValue" : 0.0
+          "baseValue" : 2.0
         },
         "powerMultiplier" : {
-          "baseValue" : 1.0
+          "baseValue" : 2.0
         },
         "physicalResistance" : {
           "baseValue" : 0.0
         },
         "fireResistance" : {
-          "baseValue" : 0.0
+          "baseValue" : 0.80
         },
         "fireStatusImmunity" : {
-          "baseValue" : 0.0
-        },
-        "iceResistance" : {
-          "baseValue" : 0.5
-        },
-        "iceStatusImmunity" : {
           "baseValue" : 1.0
         },
-        "electricResistance" : {
+        "iceResistance" : {
+          "baseValue" : -0.4
+        },
+        "iceStatusImmunity" : {
           "baseValue" : 0.0
+        },
+        "electricResistance" : {
+          "baseValue" : -0.2
         },
         "electricStatusImmunity" : {
           "baseValue" : 0.0
         },
         "poisonResistance" : {
-          "baseValue" : -0.5
+          "baseValue" : -0.2
         },
         "poisonStatusImmunity" : {
           "baseValue" : 0.0
-        }
-      },
+        },
 
+        "starforge-tidalfrostResistance" : {
+          "baseValue" : -0.80
+        },
+        "starforge-tidalfrostStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "starforge-witherResistance" : {
+          "baseValue" : 0.80
+        },
+        "starforge-witherStatusImmunity" : {
+          "baseValue" : 1.0
+        }
+	   },
+	   
       "resources" : {
         "stunned" : {
           "deltaValue" : -1.0,
@@ -228,14 +223,14 @@
           "defaultPercentage" : 100
         }
       }
-    },
+	 },
 
     "mouthOffset" : [0, 0],
-    "feetOffset" : [0, -8],
+    "feetOffset" : [0, -16],
     "capturable" : true,
 
     "captureHealthFraction" : 0.5,
     "nametagColor" : [64, 200, 255],
-    "captureCollectables" : { "monsters" : "orbide" }
-  }
+    "captureCollectables" : { "monsters" : "witherhusk" }
+}
 }

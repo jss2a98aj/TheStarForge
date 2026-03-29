@@ -133,6 +133,17 @@
 	
 	{
 	  "op": "add",
+	  "path": "/collectables/witherhusk",
+	  "value": 	  
+	  {
+	    "order" : 114,
+	    "monsterType" : "starforge-witherhusk",
+	    "icon" : "/monsters/walkers/witherhusk/icon.png"
+	  }
+	},
+	
+	{
+	  "op": "add",
 	  "path": "/collectables/erchiusflayer",
 	  "value": 	  
 	  {
