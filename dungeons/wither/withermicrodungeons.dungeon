@@ -4,7 +4,7 @@
 	"species" : "generic",
     "rules" : [
     ],
-    "anchor" : [ "witherbonepile", "withermaw", "withersack", "withersack2" ],
+    "anchor" : [ "witherbonepile", "withermaw", "withersack", "withersack2", "witherruin" ],
     "gravity" : 80,
     "maxRadius" : 1000000,
     "maxParts" : 100,
@@ -25,6 +25,13 @@
         [ "maxSpawnCount", [1] ]
       ],
       "def" : [ "tmx", "withermaw.json" ]
+    },
+	{
+      "name" : "witherruin",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "witherruin.json" ]
     },
 	{
       "name" : "withersack",
