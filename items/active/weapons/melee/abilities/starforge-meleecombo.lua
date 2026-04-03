@@ -3,7 +3,7 @@ StarforgeMeleeCombo = WeaponAbility:new()
 
 function StarforgeMeleeCombo:init()
   self.comboStep = 1
-  animator.setGlobalTag("comboDirectives", "")
+  animator.setGlobalTag("comboDirectives", self.stances.idle.comboDirectives or "")
 
   self.energyUsage = self.energyUsage or 0
 
@@ -18,7 +18,11 @@ function StarforgeMeleeCombo:init()
   self.animKeyPrefix = self.animKeyPrefix or ""
 
   self.weapon.onLeaveAbility = function()
-    self.weapon:setStance(self.stances.idle)
+    if not self.stallLeaveAbiity then
+      animator.setGlobalTag("comboDirectives", self.stances.idle.comboDirectives or "")
+      self.weapon:setStance(self.stances.idle)
+    end
+    self.stallLeaveAbiity = nil
   end
 end
 
@@ -146,7 +150,7 @@ function StarforgeMeleeCombo:teleport()
     order = "nearest"
   })
   if targets[1] and entity.entityInSight(targets[1]) and world.entityCanDamage(activeItem.ownerEntityId(), targets[1]) then
-	targetPosition = world.entityPosition(targets[1])
+	  targetPosition = world.entityPosition(targets[1])
   end
   world.resolvePolyCollision(mcontroller.collisionPoly(), vec2.add(targetPosition, stance.teleportOffset), stance.teleportTolerance)
 
@@ -220,7 +224,6 @@ function StarforgeMeleeCombo:wait()
     end
   end)
 
-  animator.setGlobalTag("comboDirectives", "")
   self.cooldownTimer = math.max(0, self.cooldowns[self.comboStep - 1] - stance.duration)
   self.comboStep = 1
 end
@@ -327,12 +330,13 @@ function StarforgeMeleeCombo:fire()
     self.comboStep = self.comboStep + 1
     self:setState(self.wait)
   else
-    animator.setGlobalTag("comboDirectives", "")
     self.cooldownTimer = self.cooldowns[self.comboStep]
     self.comboStep = 1
     
     local alt = getAltAbility()
     if alt and self.altComboFinisher then
+      animator.setGlobalTag("comboDirectives", "")
+      self.stallLeaveAbiity = true
       triggerFinisher(self.finisherHoldTime)
     end
   end

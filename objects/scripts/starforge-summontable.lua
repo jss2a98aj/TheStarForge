@@ -3,7 +3,7 @@ require "/scripts/util.lua"
 
 function init()
   object.setMaterialSpaces(config.getParameter("materialSpaces", {}))
-  object.setInteractive(true)
+  object.setInteractive(false)
   
   self.currentStage = 1
   animator.setGlobalTag("stage", self.currentStage)
@@ -16,6 +16,23 @@ function init()
   end
 end
 
+function update(dt)
+  world.debugText("%s", storage.addonId, object.position(), "red")
+
+  if storage.bossId and not world.entityExists(storage.bossId) then   
+    --BREAK ADDON PERMANENTLY
+    
+    if ObjectAddons then
+      updateAddonData(true)
+    end
+
+    --Reset object back to stage 1
+    self.currentStage = 1
+    animator.setGlobalTag("stage", self.currentStage)
+    storage.bossId = nil
+  end
+end
+
 --
 --MAIN MANAGEMENT
 --
@@ -25,31 +42,28 @@ function onInteraction(args)
   --Check and consume the item if it is available and progress
   if consumeItem(args.sourceId, item) then
     self.currentStage = self.currentStage + 1
-	animator.setGlobalTag("stage", self.currentStage)
-	if not config.getParameter("isActive") and self.currentStage == config.getParameter("stageCount", 5) - 1 then
-	  object.setInteractive(false)
-	elseif config.getParameter("isActive") and self.currentStage == config.getParameter("stageCount", 5) then
-	  local boss = spawnMonster()
-	  world.sendEntityMessage(boss, "applyStatusEffect", "starforge-yukaiteleporteffect")
-	end
+	  animator.setGlobalTag("stage", self.currentStage)
+    if not config.getParameter("isActive") and self.currentStage == config.getParameter("stageCount", 5) - 1 then
+      object.setInteractive(false)
+    elseif config.getParameter("isActive") and self.currentStage == config.getParameter("stageCount", 5) then
+      storage.bossId = spawnMonster()
+      world.sendEntityMessage(storage.bossId, "applyStatusEffect", "starforge-yukaiteleporteffect")
+    end
   end
 end
 
 function spawnMonster()
   local monsterId = world.spawnMonster(config.getParameter("summonedMonster", "poptop"), object.position(), {level = world.threatLevel(), aggressive = true})
   
-  --BREAK ADDON PERMANENTLY
-  
-  --Reset object back to stage 1
-  self.currentStage = 1
-  
+  object.setInteractive(false)
+
   return monsterId
 end
 
 function consumeItem(interactEntityId, item)
   if world.entityHasCountOfItem(interactEntityId, item) > 0 then --THIS FUNCTION IS INCONSISTENT ONLINE, FIND AN ALTERNATIVE!!
     world.sendEntityMessage(interactEntityId, "starforge-callPlayerFunction", "consumeItem", {item})
-	sb.logInfo("%s", "aaashhh")
+	  --sb.logInfo("%s", "aaashhh")
     return true
   end
   return false
@@ -66,8 +80,8 @@ end
 --Determine whether we use the base item or final item
 function determineItem()
   local item = config.getParameter("requireItem", "money")
-  if self.currentStage == config.getParameter("stageCount", 5) then
-	item = config.getParameter("finalRequiredItem", "money")
+  if self.currentStage == config.getParameter("stageCount", 5) - 1 then
+	  item = config.getParameter("finalRequiredItem", "money")
   end
   return item
 end
@@ -75,17 +89,24 @@ end
 --
 --ADDON MANAGEMENT
 --
-function currentAddonData()
+function currentAddonData(breakAddon)
   --Check if we are connected to any addons
   if ObjectAddons:isConnectedToAny() then
     --Merge data from any connected addons
     local res = copy(storage.backupData)
     for _, addon in pairs(self.addonConfig.usesAddons or {}) do
-      if ObjectAddons:isConnectedTo(addon.name) then
-	    --Reset interactivity
-		object.setInteractive(true)
-		--Merge backup/default table with addon data
+      local addonId = ObjectAddons:isConnectedTo(addon.name)
+      if addonId then
+        if breakAddon then
+          world.breakObject(storage.addonId, true)
+          object.setInteractive(false)
+        else
+          object.setInteractive(true)
+        end
+
+        --Merge backup/default table with addon data
         res = util.mergeTable(res, addon.addonData)
+        --sb.logInfo("%s", res)
       end
     end
     return res
@@ -93,8 +114,9 @@ function currentAddonData()
   else return storage.backupData end
 end
 
-function updateAddonData()
-  local addonData = currentAddonData()
+function updateAddonData(breakAddon)
+  local addonData = currentAddonData(breakAddon)
+  storage.backupData = addonData
 
   for k, v in pairs(addonData or {}) do
     --sb.logInfo("%s: %s", k, v)
@@ -107,8 +129,8 @@ function backupData()
   for _, addon in pairs(self.addonConfig.usesAddons or {}) do
     for k, v in pairs(addon.addonData or {}) do
       if not backup[k] then
-	    backup[k] = config.getParameter(k)
-	  end
+        backup[k] = config.getParameter(k)
+      end
     end
   end
   storage.backupData = backup

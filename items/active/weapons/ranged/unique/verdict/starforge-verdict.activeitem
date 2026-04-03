@@ -1,0 +1,224 @@
+{
+  "itemName": "starforge-verdict",
+  "price": 1500,
+  "maxStack": 1,
+  "rarity": "Legendary",
+  "description": ".",
+  "shortdescription" : "Verdict",
+  "tooltipKind": "starforge-uniquegun",
+  "category" : "uniqueWeapon",
+  "tooltipFieldsOverride" : {
+    "subtitle" : "Pistol"
+  },
+  "twoHanded": true,
+  "level" : 6,
+  //"manufacturer" : "solus",
+  "itemTags" : [ "starforge", "weapon", "ranged", "pistol" ],
+  "inventoryIcon": "starforge-verdict.png:idle",
+  
+  "animation": "/items/active/weapons/ranged/starforge-gun.animation",
+  "animationParts": {
+    "butt": "",
+    "middle": "starforge-verdict.png",
+    "barrel": "",
+	  "middleFullbright": "starforge-verdictfullbright.png",
+    "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-solusmuzzleflash.png"
+  },
+  "animationCustom": {
+    "animatedParts" : {
+      "stateTypes" : {
+        "gun" : {
+          "default" : "idle",
+          "states" : {
+            "idle" : {},
+            "overheat" : {
+              "frames" : 1,
+              "cycle" : 0.3,
+              "mode" : "loop"
+            }
+          }
+        }
+      },
+
+      "parts" : {
+        "muzzleFlash": {
+          "properties": {
+            "offset" : [ 0.75, -0.25 ]
+          }
+        },
+        "middle" : {
+          "partStates" : {
+            "gun" : {
+              "idle" : {
+                "properties" : {
+                  "image" : "<partImage>:idle<paletteSwaps>"
+                }
+              },
+              "overheat" : {
+                "properties" : {
+                  "image" : "<partImage>:overheat<paletteSwaps>"
+                }
+              }
+            }
+          }
+        },
+        "middleFullbright" : {
+          "properties" : {
+           //Same as BaseOffset
+            "offset" : [0.75, 0.5]
+          },
+          "partStates" : {
+            "gun" : {
+              "idle" : {
+                "properties" : {
+                  "image" : "<partImage>:idle<paletteSwaps>"
+                }
+              },
+              "overheat" : {
+                "properties" : {
+                  "image" : "<partImage>:overheat<paletteSwaps>"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "particleEmitters" : {
+      "overheatMuzzle" : {
+        "transformationGroups" : ["muzzle"],
+        "offsetRegion" : [-0.5, -0.625, -1.5, -0.75],
+        "particles" : [
+          { "particle" : "rocketbarrelpuff" }
+        ]
+      }
+    },
+
+    "sounds" : {
+      "fire": [ "/sfx/gun/starforge-principleofredemptionfire.ogg" ],
+      "overheat": [ "/sfx/gun/mech_beamdrill_winddown.ogg" ],
+      "overheatedLoop": [ "/sfx/gun/mech_beamdrill_loop.ogg" ],
+	    "unholsterTwirl" : [ "/sfx/interface/item_equip.ogg" ]
+    }
+  },
+  
+  "baseOffset" : [0.75, 0.5],
+  "muzzleOffset": [1.125, 0.75],
+
+  "aimOffset" : 0.25,
+  
+  "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
+  "elementalType": "physical",
+  
+  "primaryAbility": {
+    "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua", "/items/active/weapons/ranged/abilities/starforge-overheatgunfire.lua" ],
+    "class": "StarforgeGunFire",
+
+    "overheatPosition" : [[0.25, 0.625], [0.25, 0.625]],
+    "overheatRotation" : [1.55, -1.55],
+	
+    "fireTime": 0.025,
+    "baseDps": 22.5,
+    "energyUsage": 150,
+    "inaccuracy": 0.015,
+    "projectileCount": 1,
+    "fireType": "auto",
+
+    "overheatAnimations" : true,
+    "overheatModifier" : 1.45,
+    "cooldownModifier" : 0.65,
+    "overheatEmissionModifier" : 2,
+
+    "projectileType": "starforge-firebullet",
+    "projectileParameters": {
+      "speed" : [170, 210],
+      "damageKind" : "plasma",
+      "knockback": 4
+    },
+
+    /*"autoFire" : true,
+    "holdToCharge" : true,
+    "chargeTime" : 0.1,
+
+	  "chargeShake" : true,
+	  "chargeShakeWavePeriod" : 0.25,
+	  "chargeShakeWaveAmplitude" : 0.015,
+	  "chargeShakeFactor" : 1,
+	
+    "fireType": "burst",
+    "burstTime" : 0.06,
+    "burstCount" : 3,*/
+	
+    "stances" : {
+      "idle" : {
+        "armRotation" : -10,
+        "weaponRotation" : 10,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "weaponRotationCenter" : [0.0, 0.5],
+		
+		    "frontArmFrame" : "swim.3",
+        "backArmFrame" : "swim.4"
+      },
+      "unholsterTwirl" : {
+        "duration" : 0.5,
+        "armRotation" : -25,
+        "weaponRotation" : -418,
+	    	"weaponOffset" : [-0.0, 0],
+        "weaponRotationCenter" : [0.0, 0.5],
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+	    	"frontArmFrame" : "swim.3",
+        "backArmFrame" : "swim.4"
+      }, 
+      "fire" : {
+        "duration" : 0.01,
+        "armRotation" : -8,
+        "weaponRotation" : 12,
+        "twoHanded" : true,
+        "weaponRotationCenter" : [0.0, 0.5],
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+		    "frontArmFrame" : "swim.3",
+        "backArmFrame" : "swim.4"
+      },
+      "overheated" : {
+        "armRotation" : -12,
+        "weaponRotation" : 75,
+        "twoHanded" : true,
+	    	"weaponOffset" : [-0.125, 0.5],
+        "weaponRotationCenter" : [0.0, 0.5],
+
+        "aimAngle" : 0,
+        "allowRotate" : false,
+        "allowFlip" : true,
+		
+		    "frontArmFrame" : "run.1",
+        "backArmFrame" : "run.5"
+      },
+      "cooldown" : {
+        "duration" : 0.025,
+        "armRotation" : -8,
+        "weaponRotation" : 12,
+        "twoHanded" : true,
+        "weaponRotationCenter" : [0.0, 0.5],
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+		    "frontArmFrame" : "swim.3",
+        "backArmFrame" : "swim.4"
+      }
+    }
+  },
+  
+  "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
+}

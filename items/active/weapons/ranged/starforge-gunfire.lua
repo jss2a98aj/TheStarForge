@@ -11,7 +11,7 @@ function StarforgeGunFire:init()
   
   self.unholster = self.stances.unholsterTwirl
 
-  self.weapon.onLeaveAbility = function()
+  self.weapon.onLeaveAbility = self.weapon.onLeaveAbility or function()
     self.weapon:setStance(self.weapon.abilities[1].stances.idle)
     self:reset()
   end
@@ -39,7 +39,7 @@ function StarforgeGunFire:update(dt, fireMode, shiftHeld)
     and not self.weapon.currentAbility
     and self.cooldownTimer == 0
     and not status.resourceLocked("energy")
-    and not world.lineTileCollision(mcontroller.position(), self:firePosition()) then
+    and (self.skipCollisionCheck or not world.lineTileCollision(mcontroller.position(), self:firePosition())) then
 
     if self.chargeTime then
       self:setState(self.charge)    
@@ -176,7 +176,8 @@ function StarforgeGunFire:chargeFunctions(timer)
     timer = timer + self.dt
     local rotation = waveAmplitude * math.sin(timer / wavePeriod)
 
-    self.weapon.relativeArmRotation = rotation + util.toRadians(self.weapon.abilities[1].stances.idle.armRotation) --Add weaponRotation again, as relativeWeaponRotation overwrites it
+    self.weapon.relativeArmRotation = (rotation * 0.5) + util.toRadians(self.weapon.abilities[1].stances.idle.armRotation) --Add weaponRotation again, as relativeWeaponRotation overwrites it
+    self.weapon.relativeWeaponRotation = rotation + util.toRadians(self.weapon.abilities[1].stances.idle.weaponRotation)
   end
 
   status.overConsumeResource("energy", self:energyPerShot() * self.dt * (self.burstCount or 1))
@@ -260,8 +261,10 @@ function StarforgeGunFire:muzzleFlash(pitchIncrease)
 end
 
 function StarforgeGunFire:knockbackFire()
-  local momentum = vec2.mul(self:aimVector(), -self.knockbackForce)
-  
+  local momentum = vec2.mul(vec2.mul(self:aimVector(), self.knockbackForce), -1)
+  if self.knockbackJump then
+    mcontroller.controlJump()
+  end
   mcontroller.addMomentum(momentum)
 end
 
@@ -296,7 +299,7 @@ function StarforgeGunFire:fireProjectile(burstNumber)
 
     projectileId = world.spawnProjectile(
         projectileType,
-        firePosition or self:firePosition(),
+        self:firePosition(),
         activeItem.ownerEntityId(),
         self:aimVector(inaccuracy or self.inaccuracy, shotNumber, burstNumber),
         self.trackSourceEntity or false,

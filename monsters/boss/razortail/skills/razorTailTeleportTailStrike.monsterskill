@@ -1,0 +1,24 @@
+{
+  "name" : "razorTailTeleportTailStrike",
+  "label" : "OH FUCK OH SHIT OH FUCK",
+  "image" : "/monsters/generated/ground/skills/icon.png",
+
+  "parameters" : {
+    "scripts" : [ "/monsters/boss/razortail/skills/razorTailTeleportTailStrike.lua" ],
+
+    "razorTailTeleportTailStrike" : {
+      "skillDuration" : 1.25,
+      "projectileDelay" : 0.2,
+      "teleportXOffset" : 15,
+      "tooCloseRange" : 5,
+
+      "projectileType" : "starforge-tidalblast",
+      "projectileConfig" : {
+        "power" : 25,
+        "speed" : 120,
+        "timeToLive" : 1.5
+      },
+      "projectileOffset" : [2, -1]
+	  }
+  }
+}

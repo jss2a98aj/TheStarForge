@@ -109,7 +109,7 @@
             "blade" : {
               "active" : {
                 "properties" : {
-                  "image" : "<partImage>:active.<frame>?<directives>?<bladeDirectives>?flipx<comboDirectives>"
+                  "image" : "<partImage>:active.<frame>?<directives>?<bladeDirectives><comboDirectives>"
                 }
               }
             }
@@ -120,7 +120,7 @@
             "blade" : {
               "active" : {
                 "properties" : {
-                  "image" : "<partImage>:active.<frame>?<directives>?<bladeDirectives>?flipx<comboDirectives>"
+                  "image" : "<partImage>:active.<frame>?<directives>?<bladeDirectives><comboDirectives>"
                 }
               }
             }
@@ -229,7 +229,7 @@
   
   "primaryAbilityType" : "starforge-daggercombo",
   "primaryAbility" : {
-    "baseDps" : 8,
+    "baseDps" : 4,
 	
     "finisherHoldTime" : 0.6,
   
@@ -243,8 +243,8 @@
 
   //INACTIVE and ACTIVE stats
   "canEmpower" : true,
-  "inactiveBaseDps" : 7,
-  "activeBaseDps" : 8,
+  "inactiveBaseDps" : 4,
+  "activeBaseDps" : 6,
   "inactiveEnergyUsage" : 0,
   "activeEnergyUsage" : 15,
   "empoweredDamageConfig" : {
@@ -265,7 +265,7 @@
     "cooldownTime" : 1.0,
 	
     "durationBefore" : 0.2,
-    "durationAfter" : 0.5,
+    "durationAfter" : 0.2,
 
     "baseDamage" : 10,
     "projectileType" : "firetravelingswoosh",
@@ -274,6 +274,18 @@
     "swooshAnim" : "altfire",
 
     "stances" : {
+      "activate" : {
+        "armRotation" : -135,
+        "weaponRotation" : 40,
+        "armAngularVelocity" : 150,
+        "weaponAngularVelocity" : -1000,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+
+        "comboDirectives" : "?flipx"
+      },
       "windup" : {
         "duration" : 0.15,
         "armRotation" : 90,
@@ -283,7 +295,7 @@
         "allowRotate" : true,
         "allowFlip" : true,
 
-        "comboDirectives" : "flipx"
+        "comboDirectives" : "?flipx"
       },
       "fire" : {
         "duration" : 0.225,
@@ -294,7 +306,7 @@
         "allowRotate" : false,
         "allowFlip" : false,
         
-        "comboDirectives" : "flipx"
+        "comboDirectives" : "?flipx"
       }
     }
   },

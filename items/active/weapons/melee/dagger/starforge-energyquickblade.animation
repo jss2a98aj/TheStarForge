@@ -107,17 +107,17 @@
             },
             "extend" : {
               "properties" : {
-                "image" : "<partImage>:extend.<frame>?flipx<comboDirectives>?<directives>?<bladeDirectives>"
+                "image" : "<partImage>:extend.<frame><comboDirectives>?<directives>?<bladeDirectives>"
               }
             },
             "active" : {
               "properties" : {
-                "image" : "<partImage>:active.<frame>?flipx<comboDirectives>?<directives>?<bladeDirectives>"
+                "image" : "<partImage>:active.<frame><comboDirectives>?<directives>?<bladeDirectives>"
               }
             },
             "retract" : {
               "properties" : {
-                "image" : "<partImage>:retract.<frame>?flipx<comboDirectives>?<directives>?<bladeDirectives>"
+                "image" : "<partImage>:retract.<frame><comboDirectives>?<directives>?<bladeDirectives>"
               }
             }
           }
@@ -127,7 +127,7 @@
         "properties" : {
           "zLevel" : 1,
           "centered" : true,
-          "image" : "<partImage>?flipx<comboDirectives><paletteSwaps>?<directives>",
+          "image" : "<partImage><comboDirectives><paletteSwaps>?<directives>",
           "offset" : [0.125, 1.0],
           "transformationGroups" : ["weapon"],
           "rotationCenter" : [0, 0]
@@ -138,7 +138,7 @@
           "zLevel" : 2,
           "centered" : true,
           "fullbright" : true,
-          "image" : "<partImage>?flipx<comboDirectives><paletteSwaps>?<directives>",
+          "image" : "<partImage><comboDirectives><paletteSwaps>?<directives>",
           "offset" : [0.125, 1.0],
           "transformationGroups" : ["weapon"],
           "rotationCenter" : [0, 0]

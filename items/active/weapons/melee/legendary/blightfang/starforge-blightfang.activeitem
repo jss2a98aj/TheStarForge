@@ -93,15 +93,16 @@
 
     "chargeTime" : 0.75,
     "minChargeTime" : 0.5,
-    "maxDistance" : 0,
-    "bothDirections" : false,
     "projectileType" : "starforge-witheredground",
     "projectileParameters" : {
       "timeToLive" : 8
     },
+    "shockWaveBounds" : [-0.4, -1.375, 0.4, 0.0],
+    "shockwaveHeight" : 1.375,
+    "maxDistance" : 0,
+    "bothDirections" : true,
     "targetDirection" : [0, -1],
-
-    "impactWeaponOffset" : -0.125,
+    "impactLine" : [[0.0, 0.0], [0.0, -10]],
     "yOffset" : -1.5,
 
     "stances" : {

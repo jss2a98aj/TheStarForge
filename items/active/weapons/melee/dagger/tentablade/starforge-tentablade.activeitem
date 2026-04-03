@@ -1,0 +1,186 @@
+{
+  "itemName" : "starforge-tentablade",
+  "price" : 1000,
+  "level" : 6,
+  "fixedLevel" : false,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "A strange use of a tentacle and a small comet fragment. It is remniscent of something.",
+  "shortdescription" : "Tentablade",
+  "tooltipKind" : "starforge-uniquesword",
+  "category" : "uniqueWeapon",
+  "twoHanded" : false,
+  "itemTags" : [ "starforge", "weapon", "melee", "quickblade", "dagger" ],
+  "tooltipFieldsOverride" : {
+    "subtitle" : "Quickblade"
+  },
+
+  "inventoryIcon" : "starforge-tentablade.png:idle",
+
+  "animation" : "/items/active/weapons/melee/dagger/starforge-quickblade.animation",
+  "animationParts" : {
+    "blade" : "starforge-tentablade.png",
+	
+    "swoosh" : "physical"
+  },
+  "animationCustom" : {
+    "animatedParts" : {
+      "stateTypes" : {
+        "firing" : {
+          "default" : "off",
+          "states" : {
+            "off" : {},
+            "fire" : {
+              "frames" : 2,
+              "cycle" : 0.07,
+              "mode" : "transition",
+              "transition" : "off"
+            }
+          }
+        },
+        "blade" : {
+          "default" : "idle",
+          "states" : {
+            "idle" : {},
+            "fired" : {},
+            "reload" : {
+              "frames" : 7,
+              "cycle" : 0.9,
+              "mode" : "transition",
+              "transition" : "idle"
+            }
+          }
+        }
+      },
+      "parts" : {
+        "blade" : {
+          "properties" : {
+            "zLevel" : 0,
+            "centered" : true,
+            "offset" : [0.125, 1.625],
+            "transformationGroups" : ["weapon"],
+            "damageArea" : [[0, -0.5], [-0.75, 1.0], [-0.75, 2.75], [0, 4.25], [0.75, 2.75], [0.75, 1.0]]
+          },
+          "partStates" : {
+            "blade" : {
+              "idle" : {
+                "properties" : {
+                  "image" : "<partImage>:idle<comboDirectives><paletteSwaps>?<directives>?<bladeDirectives>"
+                }
+              },
+              "fired" : {
+                "properties" : {
+                  "image" : "<partImage>:reload.1<comboDirectives><paletteSwaps>?<directives>?<bladeDirectives>"
+                }
+              },
+              "reload" : {
+                "properties" : {
+                  "image" : "<partImage>:reload.<frame><comboDirectives><paletteSwaps>?<directives>?<bladeDirectives>"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "transformationGroups" : {
+      "muzzle" : {}
+    },
+    "lights" : {
+      "muzzleFlash" : {
+        "active" : false,
+        "position" : [0, 0],
+        "color" : [0, 0, 0]
+      }
+    },
+    "particleEmitters" : {
+      "muzzleFlash" : {
+        "active" : false,
+        "transformationGroups" : ["swoosh"],
+        "offsetRegion" : [3.5, -1.0, 7.5, 1.0],
+        "burstCount" : 1,
+        "particles" : []
+      }
+    },
+    "sounds" : {    
+      "fireBolt" : [ "/sfx/gun/wormgun_burst.ogg" ]
+    }
+  },
+
+  "scripts" : ["/items/active/weapons/melee/starforge-meleeweapon.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbilityType" : "starforge-daggercombo",
+  "primaryAbility" : {
+    "baseDps" : 5.5,
+	
+    "finisherHoldTime" : 0.6,
+  
+    "damageConfig" : {
+      "damageSourceKind" : "dagger",
+      "knockbackMode" : "aim",
+      "timeout" : 0.25,
+	    "statusEffects" : [ ]
+    }
+  },
+  
+  "altAbilityType" : "starforge-spellglaiveblast",
+  "altAbility" : {
+    "name" : "Create Offspring",
+    "projectileType" : "standardbullet",
+    "projectileParameters" : {
+      
+    },
+
+    "projectileCount" : 2,
+    "inaccuracy": 0.05,
+    "baseDamage" : 8,
+    "energyUsage" : 25,
+    
+    "fireTime" : 1,
+    "fireType" : "auto",
+    "fireOffset" : [1.0, 0.125],
+    "knockbackForce" : 40,
+
+    "skipCollisionCheck" : true,
+
+    "stances" : {
+      "fire" : {
+        "preDuration" : 0.1,
+        "duration" : 0.4,
+        "armRotation" : -20,
+        "weaponRotation" : -70,
+        "twoHanded" : false,
+        "weaponOffset" : [0, -0.125],
+
+        "animationStates" : {
+          "blade" : "fired"
+        },
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+    
+        "frontArmFrame" : "rotation"
+      },
+      "cooldown" : {
+        "duration" : 0.45,
+        "armRotation" : -90,
+        "weaponRotation" : -185,
+        "aimAngle" : 0,
+        "twoHanded" : false,
+
+        "animationStates" : {
+          "blade" : "reload"
+        },
+
+        "allowRotate" : false,
+        "allowFlip" : true,
+    
+        "frontArmFrame" : "rotation"
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
+}

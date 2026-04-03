@@ -11,7 +11,7 @@ function StarForgeActivateBlade:update(dt, fireMode, shiftHeld)
 
   self.cooldownTimer = math.max(0, self.cooldownTimer - self.dt)
 
-  if self.active and not status.overConsumeResource(self.energyResource or "energy", self.energyPerSecond * self.dt) and  (status.resource(self.energyResource or "energy") < (self.minimumEnergy or 0)) then
+  if self.active and not status.overConsumeResource(self.energyResource or "energy", self.energyPerSecond * self.dt) and (status.resource(self.energyResource or "energy") <= (self.minimumEnergy or 0)) then
     self.active = false
   end
 

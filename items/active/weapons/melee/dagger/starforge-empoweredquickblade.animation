@@ -94,22 +94,22 @@
           "blade" : {
             "inactive" : {
               "properties" : {
-                "image" : "<partImage>:inactive?<directives>?<bladeDirectives>?flipx<comboDirectives>"
+                "image" : "<partImage>:inactive?<directives>?<bladeDirectives><comboDirectives>"
               }
             },
             "extend" : {
               "properties" : {
-                "image" : "<partImage>:extend.<frame>?<directives>?<bladeDirectives>?flipx<comboDirectives>"
+                "image" : "<partImage>:extend.<frame>?<directives>?<bladeDirectives><comboDirectives>"
               }
             },
             "active" : {
               "properties" : {
-                "image" : "<partImage>:active?<directives>?<bladeDirectives>?flipx<comboDirectives>"
+                "image" : "<partImage>:active?<directives>?<bladeDirectives><comboDirectives>"
               }
             },
             "retract" : {
               "properties" : {
-                "image" : "<partImage>:retract.<frame>?<directives>?<bladeDirectives>?flipx<comboDirectives>"
+                "image" : "<partImage>:retract.<frame>?<directives>?<bladeDirectives><comboDirectives>"
               }
             }
           }
@@ -131,22 +131,22 @@
           "blade" : {
             "inactive" : {
               "properties" : {
-                "image" : "<partImage>:inactive?<directives>?<bladeDirectives>?flipx<comboDirectives>"
+                "image" : "<partImage>:inactive?<directives>?<bladeDirectives><comboDirectives>"
               }
             },
             "extend" : {
               "properties" : {
-                "image" : "<partImage>:extend.<frame>?<directives>?<bladeDirectives>?flipx<comboDirectives>"
+                "image" : "<partImage>:extend.<frame>?<directives>?<bladeDirectives><comboDirectives>"
               }
             },
             "active" : {
               "properties" : {
-                "image" : "<partImage>:active?<directives>?<bladeDirectives>?flipx<comboDirectives>"
+                "image" : "<partImage>:active?<directives>?<bladeDirectives><comboDirectives>"
               }
             },
             "retract" : {
               "properties" : {
-                "image" : "<partImage>:retract.<frame>?<directives>?<bladeDirectives>?flipx<comboDirectives>"
+                "image" : "<partImage>:retract.<frame>?<directives>?<bladeDirectives><comboDirectives>"
               }
             }
           }
@@ -156,7 +156,7 @@
         "properties" : {
           "zLevel" : 2,
           "centered" : true,
-          "image" : "<partImage>?flipx<comboDirectives><paletteSwaps>?<directives>",
+          "image" : "<partImage><comboDirectives><paletteSwaps>?<directives>",
           "offset" : [0.125, 1.0],
           "transformationGroups" : ["weapon"],
           "rotationCenter" : [0, 0]

@@ -133,7 +133,7 @@ function StarforgeThrowProjectile:spawnProjectile(angleAdjust)
   
   --Set up projectile parameters
   local params = sb.jsonMerge(self.projectileParameters, {})
-  params.power = self.baseDamage / self.projectileCount / #self.projectileTimesAndAngles
+  params.power = (self.baseDamage or (self.baseDps * self.cooldownTime)) / self.projectileCount / #self.projectileTimesAndAngles
   params.powerMultiplier = activeItem.ownerPowerMultiplier()
   
   if self.projectileFacesDirection and self.weapon.aimDirection > 0 then

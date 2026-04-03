@@ -1,0 +1,13 @@
+{
+  "name" : "razortailIdle",
+  "label" : "OH FUCK OH SHIT OH FUCK",
+  "image" : "/monsters/generated/ground/skills/icon.png",
+
+  "parameters" : {
+    "scripts" : [ "/monsters/boss/razortail/skills/razortailIdle.lua" ],
+
+    "razortailIdle" : {
+      "skillDuration" : 0.25
+	  }
+  }
+}

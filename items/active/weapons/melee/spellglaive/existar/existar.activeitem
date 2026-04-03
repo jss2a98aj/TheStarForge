@@ -5,7 +5,7 @@
   "fixedLevel" : false,
   "maxStack" : 1,
   "rarity" : "legendary",
-  "description" : "A golden trident infused with the flame of a dragon.",
+  "description" : "An ancient golden trident infused with an inferno ruby, treasured by the Glitch of old.",
   "shortdescription" : "Existar",
   "tooltipKind" : "starforge-uniquesword",
   "category" : "uniqueWeapon",
@@ -23,24 +23,94 @@
   "animation" : "/items/active/weapons/melee/spellglaive/spellglaive.animation",
   "animationParts" : {
     "blade" : "existar.png",
-	"bladeFullbright" : "existarfullbright.png",
+	  "bladeFullbright" : "existarfullbright.png",
+
+    "tassel1" : "starforge-existstarcloth1.png",
+    "tassel1Fullbright" : "starforge-existstarcloth1fb.png",
+    "tassel2" : "starforge-existstarcloth2.png",
+    "tassel2Fullbright" : "starforge-existstarcloth2fb.png",
 	
     "swoosh" : "fire",
-	"muzzleFlash" : "/items/active/weapons/ranged/muzzleflash/starforge-firemuzzleflash.png"
+	  "muzzleFlash" : "/items/active/weapons/ranged/muzzleflash/starforge-firemuzzleflash.png"
   },
   "animationCustom" : {
     "animatedParts" : {
       "parts" : {
+        "tassel1" : {
+          "properties" : {
+            "zLevel" : -4,
+            "centered" : true,
+            "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives>?<comboDirectives>",
+            "offset" : [0, -0.5],
+            "transformationGroups" : ["weapon", "tassel1"],
+            "rotationCenter" : [0, 0.5]
+          }
+        },
+        "tassel1Fullbright" : {
+          "properties" : {
+            "zLevel" : -3,
+            "centered" : true,
+            "fullbright" : true,
+            "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives>?<comboDirectives>",
+            "offset" : [0, -0.5],
+            "transformationGroups" : ["weapon", "tassel1"],
+            "rotationCenter" : [0, 0.5]
+          }
+        },
+        "tassel2" : {
+          "properties" : {
+            "zLevel" : -2,
+            "centered" : true,
+            "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives>?<comboDirectives>",
+            "offset" : [0.325, 0.5],
+            "transformationGroups" : ["weapon", "tassel2"],
+            "rotationCenter" : [0, 0.5]
+          }
+        },
+        "tassel2Fullbright" : {
+          "properties" : {
+            "zLevel" : -1,
+            "centered" : true,
+            "fullbright" : true,
+            "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives>?<comboDirectives>",
+            "offset" : [0.325, 0.5],
+            "transformationGroups" : ["weapon", "tassel2"],
+            "rotationCenter" : [0, 0.5]
+          }
+        },
         "swoosh" : {
           "properties" : {
             "fullbright" : true
           }
         }
       }
+    },
+  
+    "lights" : {
+      "idleGlow" : {
+        "active" : true,
+        "position" : [0, 0],
+        "color" : [90, 75, 0],
+        "flickerPeriod" : 1,
+        "flickerMinIntensity" : 0.95,
+        "flickerMaxIntensity" : 1.0,
+        "flickerPeriodVariance" : 0.0,
+        "flickerIntensityVariance" : 0.0
+      }
+    },
+
+    "transformationGroups" : {
+      "tassel1" : {},
+      "tassel2" : {}
     }
   },
 
-  "scripts" : ["/items/active/weapons/melee/starforge-meleeweapon.lua"],
+  "scripts" : ["/items/active/weapons/melee/starforge-meleeweapon.lua", "/items/active/weapons/starforge-hangingparts.lua"],
+  "hangingParts" : {
+    "tassel1" : "tassel1",
+    "tassel2" : "tassel2"
+  },
+  "shakeVelocity" : 4,
 
   "elementalType" : "fire",
 
@@ -56,36 +126,61 @@
   
   "altAbilityType" : "starforge-spellglaiveblast",
   "altAbility" : {
-	"projectileType" : "dragonfirelarge",
-	"projectileParameters" : {
-	  "movementSettings" : {
-	  	"gravityMultiplier" : 1
-	  },
-	  
-	  "speed" : 45,
-	  
-	  "actionOnReap": [
-      {
-        "action" : "config",
-        "file" : "/projectiles/explosions/vsmallregularexplosion/vsmallregularexplosionnodamage.config"
+    "name" : "Spell Blast",
+    "projectileType" : "dragonfiresmall",
+    "projectileParameters" : {
+      "movementSettings" : {
+        "gravityMultiplier" : 1
       },
-      {
-        "inheritDamageFactor": 0.2,
-        "angleAdjust": 0,
-        "fuzzAngle": 30,
-        "type": "largefirecloud",
-        "action": "projectile"
-      }
-	  ]
-	},
+      "damageType" : "NoDamage",
+      
+      "speed" : 155,
+      
+      "actionOnReap": [
+        {
+          "action" : "config",
+          "file" : "/projectiles/explosions/regularexplosion2/fireexplosionknockbackstatus.config"
+        },
+        {
+          "action" : "projectile",
+          "inheritDamageFactor" : 1,
+          "type" : "whipcrackphysical",
+          "config" : {
+            "timeToLive" : 0.65,
+            "piercing" : true,
+            "damageType" : "NoDamage",
+            "periodicActions" : [
+              {
+                "repeat" : true,
+                "time" : 0.01,
+                "action" : "projectile",
+                "inheritDamageFactor" : 0.05,
+                "type" : "flamethrower",
+                "angleAdjust" : 180,
+                "fuzzAngle" : 180
+              },
+              {
+                "repeat" : true,
+                "time" : 0.01,
+                "action" : "projectile",
+                "inheritDamageFactor" : 0.05,
+                "type" : "flamethrower",
+                "angleAdjust" : 180,
+                "fuzzAngle" : 180
+              }
+            ]
+          }
+        }
+      ]
+    },
 
-	"projectileCount" : 1,
-	"inaccuracy": 0.005,
-	"baseDamage" : 8,
-	"energyUsage" : 35,
-	
-	"fireTime" : 1.9,
-	"fireType" : "auto"
+    "projectileCount" : 1,
+    "inaccuracy": 0.005,
+    "baseDamage" : 4,
+    "energyUsage" : 35,
+    
+    "fireTime" : 2,
+    "fireType" : "auto"
   },
 
   "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"

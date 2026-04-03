@@ -54,6 +54,7 @@
   "altAbility" : {
     "projectileType" : "starforge-tidalblast",
     "projectileParameters" : {
+      "timeToLive" : 0.25,
       "damageKind" : "starforge-tidalfrost"
      },
 

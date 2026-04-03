@@ -1,10 +1,10 @@
 {
-  "itemName": "starforge-sanctum",
+  "itemName": "starforge-sanctity",
   "price": 1500,
   "maxStack": 1,
   "rarity": "Essential",
   "description": "A conduit of the smartest minds of Vitrium, their voices spears of unforgiving light.",
-  "shortdescription" : "Sanctum",
+  "shortdescription" : "Sanctity",
   "tooltipKind": "starforge-uniquegun",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {
@@ -14,14 +14,14 @@
   "level" : 6,
   "manufacturer" : "vitriumIndustries",
   "itemTags" : [ "starforge", "weapon", "ranged", "pistol" ],
-  "inventoryIcon": "starforge-sanctum.png:slide.1",
+  "inventoryIcon": "starforge-sanctity.png:slide.1",
   
   "animation": "/items/active/weapons/ranged/unique/mauricessidearm/mauricessidearm.animation",
   "animationParts": {
     "butt": "",
-    "middle": "starforge-sanctum.png",
+    "middle": "starforge-sanctity.png",
     "barrel": "",
-	  "middleFullbright": "starforge-sanctumfullbright.png",
+	  "middleFullbright": "starforge-sanctityfullbright.png",
     "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-surgemuzzleflash.png"
   },
   "animationCustom": {

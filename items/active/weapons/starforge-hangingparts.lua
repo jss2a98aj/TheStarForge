@@ -19,7 +19,7 @@ function update(dt, fireMode, shiftHeld) starforge_hangingParts_update(dt, fireM
     if mcontroller.walking() then
         baseFactor[1] = baseFactor[1] * 0.5
     end
-    local targetRotation = (baseFactor[1] * -0.75) * mcontroller.facingDirection()
+    local targetRotation = (baseFactor[1] * -0.75) * mcontroller.facingDirection() - self.weapon.aimAngle
     
     if self.weapon.currentAbility then
         targetRotation = targetRotation - (self.weapon.relativeArmRotation * 2)
@@ -28,7 +28,7 @@ function update(dt, fireMode, shiftHeld) starforge_hangingParts_update(dt, fireM
     end
 
     if self.graceTime > 0 then
-        targetRotation = ((self.graceTime * 0.5) * math.sin(self.graceTime * (self.shakeVelocity))) * self.shakeDirection
+        targetRotation = ((self.graceTime * 0.5) * math.sin(self.graceTime * (self.shakeVelocity))) * self.shakeDirection - self.weapon.aimAngle
     end
     
     self.currentRotation = self.rotationMemory + (targetRotation - self.rotationMemory) * (dt * 7)

@@ -1,0 +1,15 @@
+{
+  "name" : "razortailWalk",
+  "label" : "OH FUCK OH SHIT OH FUCK",
+  "image" : "/monsters/generated/ground/skills/icon.png",
+
+  "parameters" : {
+    "scripts" : [ "/monsters/boss/razortail/skills/razortailWalk.lua" ],
+
+    "razortailWalk" : {
+      "skillDuration" : 0.95,
+      "walkSpeed" : 8,
+      "targetDistance" : 10
+    }
+  }
+}

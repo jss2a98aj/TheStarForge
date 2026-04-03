@@ -79,18 +79,16 @@ function StarforgeShockwave:fireShockwave(charge)
   local impact, impactHeight = self:impactPosition()
 
   if impact then
-    self.weapon.weaponOffset = {0, impactHeight + self.impactWeaponOffset}
-
     local charge = math.floor(charge * self.maxDistance)
     local directions = {1}
     if self.bothDirections then directions[2] = -1 end
-    local positions = self:shockWaveProjectilePositions(impact, charge, directions)
+    local positions, newDirections = self:shockWaveProjectilePositions(impact, charge, directions)
     if #positions > 0 then
       animator.playSound("shockwaveImpact")
       local params = copy(self.projectileParameters)
       params.powerMultiplier = activeItem.ownerPowerMultiplier()
       params.power = params.power * config.getParameter("damageLevelMultiplier")
-      local childParams = self.projectileParams or {}
+      local childParams = self.projectileParameters or {}
       params.actionOnReap = {}
       params.damageType = "nodamage"
       params.actionOnReap[#params.actionOnReap + 1] = {
@@ -101,10 +99,13 @@ function StarforgeShockwave:fireShockwave(charge)
       }
       for i, position in pairs(positions) do
         local xDistance = world.distance(position, impact)[1]
-        local dir = util.toDirection(xDistance)
+        local dir = newDirections[i]
         position = vec2.add(position, {0, self.yOffset})
-        params.timeToLive = (math.floor(math.abs(xDistance))) * 0.2
-        world.spawnProjectile("starforge-shockwavespawner", position, activeItem.ownerEntityId(), self.targetDirection or (self.moveInDirection and {dir, 0} or {0, -1}), false, params)
+        params.timeToLive = 0
+        if self.delaySpawns then
+          params.timeToLive = (math.floor(math.abs(xDistance))) * 0.2
+        end
+        world.spawnProjectile("starforge-shockwavespawner", position, activeItem.ownerEntityId(), self.targetDirection or (self.moveInDirection and {dir, 0}) or {0, -1}, false, params)
       end
     end
   end
@@ -123,8 +124,9 @@ end
 
 function StarforgeShockwave:shockWaveProjectilePositions(impactPosition, maxDistance, directions)
   local positions = {}
+  local newDirections = {}
 
-  for _,direction in pairs(directions) do
+  for _, direction in pairs(directions) do
     direction = direction * mcontroller.facingDirection()
     local position = copy(impactPosition)
     for i = 0, maxDistance do
@@ -136,6 +138,7 @@ function StarforgeShockwave:shockWaveProjectilePositions(impactPosition, maxDist
 
         if world.pointTileCollision(groundPosition, {"Null", "Block", "Dynamic", "Slippery"}) and not world.rectTileCollision(bounds, {"Null", "Block", "Dynamic", "Slippery"}) then
           table.insert(positions, wavePosition)
+          table.insert(newDirections, direction)
           position[2] = position[2] + yDir
           continue = true
           break
@@ -145,5 +148,5 @@ function StarforgeShockwave:shockWaveProjectilePositions(impactPosition, maxDist
     end
   end
 
-  return positions
+  return positions, newDirections
 end

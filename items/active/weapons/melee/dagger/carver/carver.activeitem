@@ -17,7 +17,7 @@
 
   "learnBlueprintsOnPickup" : [ "starforge-carver" ],
 
-  "inventoryIcon" : "carver.png?flipx",
+  "inventoryIcon" : "carver.png",
 
   "animation" : "/items/active/weapons/melee/dagger/starforge-quickblade.animation",
   "animationParts" : {
@@ -33,7 +33,7 @@
 
   "primaryAbilityType" : "starforge-daggercombo",
   "primaryAbility" : {
-    "baseDps" : 7.5,
+    "baseDps" : 4.5,
 	
     "finisherHoldTime" : 0.6,
   

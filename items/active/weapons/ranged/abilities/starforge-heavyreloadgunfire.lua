@@ -16,7 +16,7 @@ function StarforgeHeavyReloadGunFire:init()
 
   self.weapon.onLeaveAbility = function()
     self.weapon:setStance(self.stances.idle)
-	animator.stopAllSounds("reloadLoop")
+	  animator.stopAllSounds("reloadLoop")
   end
 end
 
@@ -249,12 +249,12 @@ function StarforgeHeavyReloadGunFire:fireProjectile(projectileType, projectilePa
   local projectileIsHeavy = self:isShotHeavy(self.maxAmmo - self.ammoRemaining + 1)
   
   local params = sb.jsonMerge(self.projectileParameters, projectileParams or {})
-  params.power = self:damagePerShot() * (heavyShot and self.heavyDamageMultiplier or 1)
+  params.power = self:damagePerShot() * (projectileIsHeavy and self.heavyDamageMultiplier or 1)
   params.powerMultiplier = activeItem.ownerPowerMultiplier()
   params.speed = util.randomInRange(params.speed)
 
   if projectileIsHeavy then
-	projectileType = self.heavyProjectileType
+	  projectileType = self.heavyProjectileType
   end
   
   if not projectileType then

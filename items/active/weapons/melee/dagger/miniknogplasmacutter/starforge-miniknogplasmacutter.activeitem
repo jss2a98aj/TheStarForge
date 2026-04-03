@@ -99,7 +99,7 @@
 
   "primaryAbilityType" : "starforge-daggercombo",
   "primaryAbility" : {
-    "baseDps" : 8,
+    "baseDps" : 6,
 	
     "finisherHoldTime" : 0.6,
   
@@ -233,6 +233,8 @@
     "fireType" : "auto",
     "fireOffset" : [1.0, 0.125],
     "knockbackForce" : 40,
+
+    "skipCollisionCheck" : true,
 
     "stances" : {
       "fire" : {

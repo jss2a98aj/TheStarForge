@@ -6,6 +6,7 @@
   "speed" : 90,
   "lightColor" : [44, 172, 219],
   "pointLight" : true,
+  "timeToLive" : 1,
   "statusEffects" : [ ],
   "damagePoly" : [ [-37, 0], [-28, -28], [0, -37], [28, -28], [37, 0], [28, 28], [0, 37], [-28, 28] ],
   "animationLoops" : false,

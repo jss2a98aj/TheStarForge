@@ -5,6 +5,7 @@ function init()
 	facingSuppressed = true,
 	movementSuppressed = true
   })
+  animator.setSoundPitch("die", 0.25 + (math.random() * 1.5))
   animator.playSound("die")
 end
 

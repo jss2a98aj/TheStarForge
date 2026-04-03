@@ -1,0 +1,262 @@
+{
+  "globalTagDefaults" : {
+  },
+
+  "animatedParts" : {
+    "stateTypes" : {
+	    //BODY
+      "body" : {
+        "priority" : 1,
+        "default" : "idle",
+        "states" : {
+          "invisible" : {
+            "frames" : 1
+          },
+          "idle" : {
+            "frames" : 1
+          },
+          "walk" : {
+            "frames" : 8,
+            "cycle" : 0.8,
+            "mode" : "loop"
+          },
+          "jumping" : {
+            "frames" : 1
+          },
+          "falling" : {
+            "frames" : 1
+          },
+          "tailStrike" : {
+            "frames" : 5,
+            "cycle" : 0.4,
+            "mode" : "transition",
+            "transition" : "tailStrikeWinddown"
+          },
+          "tailStrikeWinddown" : {
+            "frames" : 5,
+            "cycle" : 0.6,
+            "mode" : "transition",
+            "transition" : "idle"
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "body" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 1,
+          "transformationGroups" : [ "all" ]
+        },
+
+        "partStates" : {
+          "body" : {
+            "invisible" : {
+              "properties" : {
+                "image" : ""
+              }
+            },
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle"
+              }
+            },
+            "jumping" : {
+              "properties" : {
+                "image" : "<partImage>:jumping"
+              }
+            },
+            "falling" : {
+              "properties" : {
+                "image" : "<partImage>:falling"
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "<partImage>:walk.<frame>"
+              }
+            },
+            "tailStrike" : {
+              "properties" : {
+                "image" : "<partImage>:tailStrike.<frame>"
+              }
+            },
+            "tailStrikeWinddown" : {
+              "properties" : {
+                "image" : "<partImage>:tailStrikeWinddown.<frame>"
+              }
+            }
+          }
+        }
+      },
+      "bodyFullbright" : {
+        "properties" : {
+          "centered" : true,
+          "fullbright" : true,
+          "zLevel" : 2,
+          "transformationGroups" : [ "all" ]
+        },
+
+        "partStates" : {
+          "body" : {
+            "invisible" : {
+              "properties" : {
+                "image" : ""
+              }
+            },
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle"
+              }
+            },
+            "jumping" : {
+              "properties" : {
+                "image" : "<partImage>:jumping"
+              }
+            },
+            "falling" : {
+              "properties" : {
+                "image" : "<partImage>:falling"
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "<partImage>:walk.<frame>"
+              }
+            },
+            "tailStrike" : {
+              "properties" : {
+                "image" : "<partImage>:tailStrike.<frame>"
+              }
+            },
+            "tailStrikeWinddown" : {
+              "properties" : {
+                "image" : "<partImage>:tailStrikeWinddown.<frame>"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  
+  "transformationGroups" : {
+    "all" : {"interpolated" : true}
+  },
+
+  "particleEmitters" : {
+    "teleport" : {
+      "active" : false,
+      "emissionRate" : 200,
+      "burstCount" : 20,
+      "offsetRegion" : [-4.0, -2.0, 4.0, 2.0],
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "ember",
+            "size" : 2.0,
+            "color" : [184, 230, 208, 255],
+            "light" : [184, 230, 208],
+            "fullbright" : true,
+            "fade" : 0.5,
+            "destructionAction" : "shrink",
+            "destructionTime" : 0.5,
+            "initialVelocity" : [0, 0],
+            "finalVelocity" : [0.0, 0],
+            "approach" : [10, 10],
+            "timeToLive" : 0.15,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [5, 5],
+              "size" : 1.0,
+              "timeToLive" : 0.1,
+              "destructionTime" : 0.3
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "ember",
+            "size" : 2.0,
+            "color" : [184, 184, 208, 255],
+            "light" : [184, 184, 208],
+            "fullbright" : true,
+            "fade" : 0.5,
+            "destructionAction" : "shrink",
+            "destructionTime" : 0.5,
+            "initialVelocity" : [0, 0],
+            "finalVelocity" : [0, 0],
+            "approach" : [10, 10],
+            "timeToLive" : 0.15,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [5, 5],
+              "size" : 1.0,
+              "timeToLive" : 0.1,
+              "destructionTime" : 0.3
+            }
+          }
+        }
+      ]
+    },
+    "damage" : {
+      "emissionRate" : 0.7,
+      "particles" : [
+      ]
+    },
+    "deathPoof" : {
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/puff2c/puff2c.animation",
+            "size" : 1,
+            "angularVelocity" : 35,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [0, 0],
+            "finalVelocity" : [0, 0],
+            "approach" : [1, 1],
+            "timeToLive" : 0.4,
+            "layer" : "middle"
+          }
+        }
+      ]
+    }
+  },
+
+  "sounds" : {
+    "turnHostile" : [  ],
+    "hurt" : {
+      "pool" : [ ],
+      "rangeMultiplier" : 1.5
+    },
+    "death" : {
+      "pool" : [ ],
+      "rangeMultiplier" : 1.5
+    },
+    "tailStrike" : {
+      "pool" : [ "/sfx/gun/starforge_tidalfrostblast.ogg" ],
+      "rangeMultiplier" : 1.5
+    },
+
+    "blinkDash" : {
+      "pool" : [ "/sfx/npc/boss/cultistboss_blink.ogg" ],
+      "rangeMultiplier" : 1.5
+    }
+  },
+
+  "effects" : {
+    "blink" : {
+      "type" : "flash",
+      "time" : 0.25,
+      "directives" : "fade=ffffff;0.5"
+    },
+    "teleport" : {
+      "type" : "directive",
+      "directives" : "fade=041614;0.75?border=1;b8e6d0ff"
+    }
+  }
+}

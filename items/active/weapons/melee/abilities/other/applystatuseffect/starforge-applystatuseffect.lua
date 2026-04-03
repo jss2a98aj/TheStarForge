@@ -88,7 +88,7 @@ function StarForgeApplyStatusEffect:activate()
   
   if self.selfDamage then
     status.applySelfDamageRequest({
-      damageType = "IgnoresDef",
+      --damageType = "IgnoresDef",
       damage = math.max(1, self.selfDamage * config.getParameter("damageLevelMultiplier") * activeItem.ownerPowerMultiplier()),
       damageSourceKind = self.selfDamageSource,
       sourceEntityId = activeItem.ownerEntityId()

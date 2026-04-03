@@ -5,7 +5,6 @@ function init(...) if starforge_advancedPeriodicActions_init then starforge_adva
   self.advancedPeriodicActions = config.getParameter("advancedPeriodicActions", {})
 end
 
-	projectile.die()
 starforge_advancedPeriodicActions_update = update
 function update(dt) if starforge_advancedPeriodicActions_update then starforge_advancedPeriodicActions_update(dt) end
   --Advanced Periodic Action

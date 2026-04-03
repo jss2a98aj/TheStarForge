@@ -5,7 +5,7 @@
   "fixedLevel" : false,
   "maxStack" : 1,
   "rarity" : "legendary",
-  "description" : "A Spellglaive made of unique, prism-like materials. ",
+  "description" : "Prism-like ice makes up the blade of this weapon, allowing for powerful frost beams.",
   "shortdescription" : "Faefrost",
   "tooltipKind" : "starforge-uniquesword",
   "category" : "uniqueWeapon",
@@ -105,7 +105,7 @@
     "beamLength" : 50,
     "beamWidth" : 1,
     "beamCollisionType" : "box",
-    "fireOffset" : [1.0, 0.125],
+    "fireOffset" : [1.0, -0.125],
 
     "hueShiftFrequency" : 2,
     "chain" : {

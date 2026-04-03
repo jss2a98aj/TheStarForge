@@ -75,6 +75,8 @@
         "allowRotate" : false,
         "twoHanded" : false,
         "allowFlip" : true,
+		
+		    "comboDirectives" : "?flipx",
 		    "aimAngle" : 0
       },
 	  //COMBO STEP 1
@@ -84,8 +86,6 @@
         "weaponRotation" : 20,
         "twoHanded" : false,
         "weaponOffset" : [0, 0.5],
-		
-		    "comboDirectives" : "?flipx",
 
         "allowRotate" : true,
         "allowFlip" : true
@@ -96,8 +96,6 @@
         "weaponRotation" : 20,
         "twoHanded" : false,
         "weaponOffset" : [0.5, 1.0],
-		
-		    "comboDirectives" : "?flipx",
 
         "allowRotate" : false,
         "allowFlip" : false
@@ -108,8 +106,6 @@
         "weaponRotation" : -70,
         "twoHanded" : false,
         "weaponOffset" : [0, -0.125],
-		
-        "comboDirectives" : "?flipx",
         "continueStep" : true,
 
         "allowRotate" : false,
@@ -121,8 +117,6 @@
         "weaponRotation" : -70,
         "twoHanded" : false,
         "weaponOffset" : [0, -0.25],
-		
-		    "comboDirectives" : "?flipx",
 
         "allowRotate" : false,
         "allowFlip" : false
@@ -134,8 +128,6 @@
         "weaponRotation" : 20,
         "twoHanded" : false,
         "weaponOffset" : [0, 0.5],
-		
-	    	"comboDirectives" : "?flipx",
 
         "allowRotate" : true,
         "allowFlip" : true
@@ -146,8 +138,6 @@
         "weaponRotation" : 20,
         "twoHanded" : false,
         "weaponOffset" : [0, 1.0],
-		
-	    	"comboDirectives" : "?flipx",
 
         "allowRotate" : false,
         "allowFlip" : false
@@ -158,8 +148,6 @@
         "weaponRotation" : -70,
         "twoHanded" : false,
         "weaponOffset" : [0, -0.125],
-		
-        "comboDirectives" : "?flipx",
         "continueStep" : true,
 
         "allowRotate" : false,
@@ -171,8 +159,6 @@
         "weaponRotation" : -70,
         "twoHanded" : false,
         "weaponOffset" : [0, -0.25],
-		
-		    "comboDirectives" : "?flipx",
 
         "allowRotate" : false,
         "allowFlip" : false
@@ -184,8 +170,6 @@
         "weaponRotation" : 20,
         "twoHanded" : false,
         "weaponOffset" : [0, 0.5],
-		
-	    	"comboDirectives" : "?flipx",
 
         "allowRotate" : true,
         "allowFlip" : true
@@ -196,8 +180,6 @@
         "weaponRotation" : 20,
         "twoHanded" : false,
         "weaponOffset" : [0.5, 1.0],
-		
-	    	"comboDirectives" : "?flipx",
 
         "allowRotate" : false,
         "allowFlip" : false
@@ -208,8 +190,6 @@
         "weaponRotation" : -70,
         "twoHanded" : false,
         "weaponOffset" : [0, -0.125],
-		
-	    	"comboDirectives" : "?flipx",
 
         "overSwing" : -0.1,
 
@@ -222,8 +202,6 @@
         "weaponRotation" : -70,
         "twoHanded" : false,
         "weaponOffset" : [0, -0.25],
-		
-		    "comboDirectives" : "?flipx",
 
         "allowRotate" : false,
         "allowFlip" : false
@@ -235,6 +213,8 @@
         "weaponRotation" : 220,
         "weaponOffset" : [0, -0.5],
         "twoHanded" : false,
+		
+		    "comboDirectives" : "?flipx",
 
         "allowRotate" : true,
         "allowFlip" : true
@@ -245,6 +225,8 @@
         "weaponRotation" : -100,
         "weaponOffset" : [0, 0.125],
         "twoHanded" : false,
+		
+		    "comboDirectives" : "?flipx",
 
         "allowRotate" : false,
         "allowFlip" : false
@@ -255,6 +237,8 @@
         "weaponRotation" : -100,
         "weaponOffset" : [0, 0.125],
         "twoHanded" : false,
+		
+		    "comboDirectives" : "?flipx",
 
         "allowRotate" : false,
         "allowFlip" : false
@@ -265,8 +249,6 @@
         "armRotation" : -20,
         "weaponRotation" : -20,
         "weaponOffset" : [0, 0.125],
-		
-	    	"comboDirectives" : "?flipx",
 
         "allowFlip" : true,
         "allowRotate" : false
@@ -276,8 +258,6 @@
         "armRotation" : -135,
         "weaponRotation" : 40,
         "weaponOffset" : [0, 0.125],
-		
-		    "comboDirectives" : "?flipx",
 
         "allowFlip" : true,
         "allowRotate" : false

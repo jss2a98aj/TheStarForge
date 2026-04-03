@@ -58,43 +58,45 @@
   
   "altAbilityType" : "starforge-spellglaiveblast",
   "altAbility" : {
-	"projectileType" : "cellblast",
-	"projectileParameters" : {
-	  "speed" : 120,
-    "actionOnReap" : [
-      {
-        "action" : "projectile",
-        "inheritDamageFactor" : 1,
-        "type" : "pulsecannonexplosion",
-        "config" : {
-          "damageKind" : "electric"
+    "name" : "Spell Blast",
+    "projectileType" : "cellblast",
+    "projectileParameters" : {
+      "speed" : 120,
+      "actionOnReap" : [
+        {
+          "action" : "projectile",
+          "inheritDamageFactor" : 1,
+          "type" : "pulsecannonexplosion",
+          "config" : {
+            "bounces" : -1,
+            "damageKind" : "electric"
+          }
+        },
+        {
+          "action" : "sound",
+          "options" : [ "/sfx/gun/pulsecannon_blast1.ogg" ]
+        },
+        {
+          "action" : "light",
+          "color" : "blue"
+        },
+        {
+          "action" : "explosion",
+          "foregroundRadius" : 2,
+          "backgroundRadius" : 0,
+          "explosiveDamageAmount" : 0.5,
+          "delaySteps" : 2
         }
-      },
-      {
-        "action" : "sound",
-        "options" : [ "/sfx/gun/pulsecannon_blast1.ogg" ]
-      },
-      {
-        "action" : "light",
-        "color" : "blue"
-      },
-      {
-        "action" : "explosion",
-        "foregroundRadius" : 2,
-        "backgroundRadius" : 0,
-        "explosiveDamageAmount" : 0.5,
-        "delaySteps" : 2
-      }
-    ]
-	},
+      ]
+    },
 
-	"projectileCount" : 1,
-	"inaccuracy": 0.01,
-	"baseDamage" : 8,
-	"energyUsage" : 5,
-	
-	"fireTime" : 0.3,
-	"fireType" : "auto"
+    "projectileCount" : 1,
+    "inaccuracy": 0.01,
+    "baseDamage" : 8,
+    "energyUsage" : 5,
+    
+    "fireTime" : 0.3,
+    "fireType" : "auto"
   },
 
   "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"

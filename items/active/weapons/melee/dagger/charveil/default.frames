@@ -8,5 +8,7 @@
   },
 
   "aliases" : {
+    "extend.1" : "inactive",
+    "retract.1" : "inactive"
   }
 }

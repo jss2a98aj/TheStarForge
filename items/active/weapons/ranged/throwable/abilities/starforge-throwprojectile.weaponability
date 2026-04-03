@@ -5,7 +5,6 @@
     "scripts" : ["/items/active/weapons/ranged/throwable/abilities/starforge-throwprojectile.lua"],
     "class" : "StarforgeThrowProjectile",
 
-    "baseDamage" : 10.0,
     "inaccuracy" : 0.008,
     "cooldownTime" : 0.4,
     "reloadWait" : 0.15,

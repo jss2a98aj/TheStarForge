@@ -1,0 +1,96 @@
+{
+  "itemName" : "starforge-frozenanguish",
+  "price" : 1000,
+  "level" : 6,
+  "fixedLevel" : false,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "Ice and alpine stone melded together to form an effective tool for killing.",
+  "shortdescription" : "Frozen Anguish",
+  "tooltipKind" : "starforge-uniquesword",
+  "category" : "uniqueWeapon",
+  "twoHanded" : false,
+  "itemTags" : [ "starforge", "weapon", "melee", "quickblade", "dagger" ],
+  "tooltipFieldsOverride" : {
+    "subtitle" : "Quickblade"
+  },
+
+  "inventoryIcon" : "starforge-frozenanguish.png",
+
+  "animation" : "/items/active/weapons/melee/dagger/starforge-quickblade.animation",
+  "animationParts" : {
+    "blade" : "starforge-frozenanguish.png",
+	
+    "swoosh" : "ice"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fireKunai" : [ "/sfx/gun/plasma_pistol1.ogg" ]
+    }
+  },
+
+  "scripts" : ["/items/active/weapons/melee/starforge-meleeweapon.lua"],
+
+  "elementalType" : "ice",
+
+  "primaryAbilityType" : "starforge-daggercombo",
+  "primaryAbility" : {
+    "baseDps" : 5,
+    
+    "finisherHoldTime" : 0.4,
+    "damageConfig" : {
+      "damageSourceKind" : "icedagger",
+      "knockbackMode" : "aim",
+      "timeout" : 0.25,
+	    "statusEffects" : [ "frostslow" ]
+    }
+  },
+  "altAbilityType" : "elementalaura",
+  "altAbility" : {
+    "name" : "Cold Shock",
+    "chargeTime" : 0.3,
+    "minChargeTime" : 0.15,
+    "duration" : 1.0,
+
+    "damagePoly" : [[0,3.75], [2.66, 2.66], [3.75,0], [2.66, -2.66], [0,-3.75], [-2.66, -2.66], [-3.75, 0], [-2.66, 2.66]],
+    "damageConfig" : {
+      "damageSourceKind" : "<elementalType>plasma",
+      "baseDamage" : 1,
+      "knockbackMode" : "none",
+      "knockback" : 0,
+      "timeout" : 0.1,
+      "timeoutGroup" : "alt",
+	    "statusEffects" : [ "frostslow" ]
+    },
+
+    "stances" : {
+      "windup" : {
+        "armRotation" : 0,
+        "endArmRotation" : 50,
+        "weaponRotation" : 0,
+        "endWeaponRotation" : -50,
+        "weaponOffset" : [-0.125, -0.25],
+        "twoHanded" : false,
+
+        "aimAngle" : 0,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0.3,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "weaponOffset" : [-0.125, -0.25],
+        "twoHanded" : false,
+
+        "aimAngle" : 0,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
+}

@@ -60,7 +60,7 @@
 
   "primaryAbilityType" : "starforge-daggercombo",
   "primaryAbility" : {
-    "baseDps" : 8,
+    "baseDps" : 6,
 	
     "finisherHoldTime" : 0.6,
   

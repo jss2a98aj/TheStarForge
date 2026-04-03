@@ -25,11 +25,11 @@ end
 local oldUpdate = StarforgeGunFire.update or function() end
 function StarforgeGunFire:update(dt, fireMode, shiftHeld)
   if self.overheated then
-    self.overheat = math.max(0, self.overheat - (1.5 * self.energyUsage) * dt)
+    self.overheat = math.max(0, self.overheat - (1.5 * self.energyUsage * (self.cooldownModifier or 1)) * dt)
     local soundPitchFactor = self.overheat / 100
     local soundPitch = 0.75 + (soundPitchFactor * 0.5)
     animator.setSoundPitch("overheatedLoop", soundPitch)
-    animator.setParticleEmitterEmissionRate("overheatMuzzle", 7 * soundPitch)
+    animator.setParticleEmitterEmissionRate("overheatMuzzle", 7 * soundPitch * (self.overheatEmissionModifier or 1))
 
     if self.stances.overheated and self.overheat <= 95 then
       self.weapon:setStance(self.stances.overheated)
@@ -48,7 +48,7 @@ function StarforgeGunFire:update(dt, fireMode, shiftHeld)
       self.overheated = false
     end
   elseif self.cooldownTimer == 0 then
-    self.overheat = math.max(0, self.overheat - (1.25 * self.energyUsage) * dt)
+    self.overheat = math.max(0, self.overheat - (1.25 * self.energyUsage * (self.cooldownModifier or 1)) * dt)
   end 
   world.debugText("%s", self.overheat, {mcontroller.position()[1] + 5, mcontroller.position()[2]}, "red")
   
@@ -79,7 +79,7 @@ end
 
 local oldMuzzleFlash = StarforgeGunFire.muzzleFlash or function() end
 function StarforgeGunFire:muzzleFlash() 
-  self.overheat = self.overheat and (self.overheat + (self:energyPerShot() * 2.5)) or 0
+  self.overheat = self.overheat and (self.overheat + (self:energyPerShot() * (self.overheatModifier or 1) * 2.5)) or 0
   
   local pitchIncrease = 0
   if self.overheat > 60 then
