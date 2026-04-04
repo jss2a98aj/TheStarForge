@@ -1,0 +1,14 @@
+{
+  "input" : [
+	{ "item" : "refinedferozium", "count" : 8},
+	{ "item" : "grassyrock", "count" : 50},
+	{ "item" : "ice", "count" : 25}
+  ],
+  "output" : {
+    "item" : "starforge-frozenanguish",
+    "count" : 1
+  },
+  "groups" : [ "starforge-masamune", "starforge-yukaishop", "quickblade" ],
+  "duration" : 0
+}
+

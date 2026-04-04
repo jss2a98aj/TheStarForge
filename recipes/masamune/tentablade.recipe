@@ -1,0 +1,14 @@
+{
+  "input" : [
+	{ "item" : "refinedviolium", "count" : 8},
+	{ "item" : "tentacleblock", "count" : 25},
+	{ "item" : "meteoriterock", "count" : 50}
+  ],
+  "output" : {
+    "item" : "starforge-tentablade",
+    "count" : 1
+  },
+  "groups" : [ "starforge-masamune", "starforge-yukaishop", "quickblade" ],
+  "duration" : 0
+}
+

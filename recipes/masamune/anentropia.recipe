@@ -9,7 +9,7 @@
     "item" : "starforge-anentropia",
     "count" : 1
   },
-  "groups" : [ "starforge-masamune", "starforge-yukaishop", "weapon" ],
+  "groups" : [ "starforge-masamune", "starforge-yukaishop", "quickblade" ],
   "duration" : 0
 }
 

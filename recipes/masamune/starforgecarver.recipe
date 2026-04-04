@@ -1,6 +1,5 @@
 {
   "input" : [
-    { "item" : "essence", "count" : 250},
     { "item" : "refinedviolium", "count" : 3},
 	{ "item" : "ironbar", "count" : 10},
 	{ "item" : "darkwoodmaterial", "count" : 50}
@@ -9,7 +8,7 @@
     "item" : "starforge-carver",
     "count" : 1
   },
-  "groups" : [ "starforge-starforge", "weapons" ],
+  "groups" : [ "starforge-masamune", "starforge-yukaishop", "quickblade" ],
   "duration" : 2
 }
 

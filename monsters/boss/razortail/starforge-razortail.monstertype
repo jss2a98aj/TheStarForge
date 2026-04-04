@@ -14,7 +14,7 @@
 
     "scripts" : [
       "/monsters/boss/starforge-bossMonster.lua",
-      "starforge-razortail.lua",
+      "/monsters/boss/razortail/starforge-razortail.lua",
       "/scripts/stateMachine.lua"
     ],
     "animationScripts" : [

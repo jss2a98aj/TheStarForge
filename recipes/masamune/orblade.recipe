@@ -1,0 +1,14 @@
+{
+  "input" : [
+	{ "item" : "refinedaegisalt", "count" : 6},
+	{ "item" : "sharpenedclaw", "count" : 3},
+	{ "item" : "venomsample", "count" : 3}
+  ],
+  "output" : {
+    "item" : "starforge-orblade",
+    "count" : 1
+  },
+  "groups" : [ "starforge-masamune", "starforge-yukaishop", "quickblade" ],
+  "duration" : 0
+}
+

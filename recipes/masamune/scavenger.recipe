@@ -9,7 +9,7 @@
     "item" : "starforge-scavenger",
     "count" : 1
   },
-  "groups" : [ "starforge-masamune", "weapon", "starforge-yukaishop" ],
+  "groups" : [ "starforge-masamune", "spellglaive", "starforge-yukaishop" ],
   "duration" : 2
 }
 

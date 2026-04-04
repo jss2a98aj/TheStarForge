@@ -7,7 +7,7 @@
     "item" : "starforge-yukaiknife",
     "count" : 1
   },
-  "groups" : [ "starforge-masamune", "weapon", "starforge-yukaishop"],
+  "groups" : [ "starforge-masamune", "quickblade", "starforge-yukaishop"],
   "duration" : 2
 }
 

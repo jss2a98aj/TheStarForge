@@ -19,7 +19,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJztlgGugyAMhjmXt\/NSO4AHcBxpIc8\/rzZFalQY7P+SRhdU+tGKC4EQQgghhBBCCCGEEPJrrK0TqAx9x2ZpnUBFlkDf0ZDvK3xfjXKpgd6f4Gs597yXreoIlrDvazk+mm+qKTzhPIKvrCEc0MOLcR3o0XdxhHV9okdfELej5xtk9XZvRHF+xnkEkvsvOevejiI0I7zPVm\/nfOU1vfpKZG97nVO8t+htDc709hz+\/HCEb0\/\/v729jbpO4d8Z3rn\/37Xx5BDVuezb5IO+hee0xTt8j\/Mr7N8zL3CHF5ymsO9ljMl3uJWzdJX7SgnULah7Z\/F7VmN635LxNHq+lEPMhKzNJMJaJ9m36G89btW6pmvOUwZytly1D\/oZ53IsGvc8tWfreUqOVt9ZoeulPXNruh7McYerXmc9r9W\/RznlejQX1loerekdrnKtrXw8eejnldbHcrbuu9PXUxerh61cjnL09Hx0POMqnjxye+eVKPW4dnxiry7Vz8rziqN3D3wSK8c76qkjtx9bta1Brj7e9S\/VuPTdqekKjupz9hln+qQld85vOX2LJyGkPR88dtz7",
+         "data":"eJztloGNgzAMRTMX23UpBmAAmpGq6Pg6YzmJEZA09D\/JKieg+MWf9EIghBBCCCGEEEIIIYT8GmvvBhpD32ez9G6gIUug79OQ7yt85069tEDvT\/C1nEfey1b1CZawz7U8\/zTfNFN4wvkJvnKGcECGF+M6MKLv4ijr+sSIviBun57fICvboxHF8RHnJ5Dcf8lZZ3sO+d\/gJ7zPVrZzvvKaUX0lMtte51TvrUZbgyPZfoU\/P3zCd6T\/v73Zxlyn8O8M71IuWuLpIapjmdvkg9zCc9rqHb7HeQ7798wL3OEFpynss4xz8h3u5Sxd5b5SA3ML6t6X+Pulzul9S9bd6OelHmKm5GwmUdY6ydwi3\/q8NeuWrjlPWejZctU+yDOO5blo3HPXnq2fU3O0cmeVnpf2zK3pWnjGFa56nfVzrfyWesplNFfWWpbW9ApXudZWP54+9PfV1sdytu670tczFyvDVi+lHj2Zj47vOIunj9zeeaZqGdeOd+zVtflZfZ5x9O6Bd2L1eMU8deX2Y2u2LcjNx7v+tRnXfndauoLSfI5+x5Gc9OTK51tO3+JJCOnPB5A\/28M=",
          "encoding":"base64",
          "height":60,
          "id":2,
@@ -78,6 +78,14 @@
                  "height":16,
                  "id":834,
                  "name":"",
+                 "properties":
+                    {
+                     "parameters":"{\"treasurePools\":[\"progenitorChestTreasure\"]}"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -90,6 +98,14 @@
                  "height":24,
                  "id":835,
                  "name":"",
+                 "properties":
+                    {
+                     "parameters":"{\"treasurePools\":[\"progenitorChestTreasure\"]}"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -380,7 +396,7 @@
  "nextobjectid":837,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.8.4",
+ "tiledversion":"1.10.2",
  "tileheight":8,
  "tilesets":[
         {

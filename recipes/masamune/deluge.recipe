@@ -9,7 +9,7 @@
     "item" : "starforge-deluge",
     "count" : 1
   },
-  "groups" : [ "starforge-masamune", "starforge-yukaishop", "weapon" ],
+  "groups" : [ "starforge-masamune", "starforge-yukaishop", "spellglaive" ],
   "duration" : 0
 }
 

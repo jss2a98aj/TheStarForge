@@ -1,0 +1,15 @@
+{
+  "input" : [
+	{ "item" : "refinedviolium", "count" : 5},
+	{ "item" : "scorchedcore", "count" : 3},
+	{ "item" : "bone", "count" : 25},
+	{ "item" : "tarball", "count" : 50}
+  ],
+  "output" : {
+    "item" : "starforge-charveil",
+    "count" : 1
+  },
+  "groups" : [ "starforge-masamune", "starforge-yukaishop", "quickblade" ],
+  "duration" : 0
+}
+

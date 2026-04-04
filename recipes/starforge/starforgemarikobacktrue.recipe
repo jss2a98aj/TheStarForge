@@ -1,7 +1,6 @@
 {
   "input" : [
-	{ "item" : "starforge-marikolkatana", "count" : 1 },
-	{ "item" : "starforge-marikorkatana", "count" : 1 },
+	{ "item" : "starforge-cerulium", "count" : 10 },
 	{ "item" : "starforge-marikobackfalse", "count" : 1 },
 	{ "item" : "essence", "count" : 5000}
   ],

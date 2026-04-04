@@ -1,0 +1,14 @@
+{
+  "input" : [
+	{ "item" : "refinedviolium", "count" : 4},
+	{ "item" : "solariumstar", "count" : 3},
+	{ "item" : "battery", "count" : 1}
+  ],
+  "output" : {
+    "item" : "starforge-violiumdagger",
+    "count" : 1
+  },
+  "groups" : [ "starforge-masamune", "starforge-yukaishop", "quickblade" ],
+  "duration" : 0
+}
+

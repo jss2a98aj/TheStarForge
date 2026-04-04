@@ -4,7 +4,7 @@
 	"species" : "generic",
     "rules" : [
     ],
-    "anchor" : [ "witherbonepile", "withermaw", "withersack", "withersack2", "witherruin" ],
+    "anchor" : [ "witherbonepile", "withermaw", "withersack", "withersack2", "witherruin", "witherasteroid", "withercrashedship", "witherpowerlines", "witherspires", "withergoopnet" ],
     "gravity" : 80,
     "maxRadius" : 1000000,
     "maxParts" : 100,
@@ -32,6 +32,41 @@
         [ "maxSpawnCount", [1] ]
       ],
       "def" : [ "tmx", "witherruin.json" ]
+    },
+	{
+      "name" : "witherasteroid",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "witherasteroid.json" ]
+    },
+	{
+      "name" : "withercrashedship",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "withercrashedship.json" ]
+    },
+	{
+      "name" : "withergoopnet",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "withergoopnet.json" ]
+    },
+	{
+      "name" : "witherpowerlines",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "witherpowerlines.json" ]
+    },
+	{
+      "name" : "witherspires",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "witherspires.json" ]
     },
 	{
       "name" : "withersack",
