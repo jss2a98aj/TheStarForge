@@ -1,0 +1,42 @@
+{
+  "itemName" : "starforge-tungstenhighbrand",
+  "level" : 4,
+  "price" : 1500,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "A highbrand rough off the forge. Heavy, graceless, and absolutely good enough.",
+  "shortdescription" : "Tungsten Highbrand",
+  "tooltipKind" : "starforge-uniquesword",
+  "category" : "uniqueWeapon",
+  "tooltipFieldsOverride" : {
+    "subtitle" : "Highbrand"
+  },
+  "twoHanded" : true,
+  "itemTags" : [ "starforge", "weapon", "melee", "highbrand", "greatsword" ],
+
+  "inventoryIcon" : "starforge-tungstenhighbrand.png",
+
+  "animation" : "/items/active/weapons/melee/highbrand/starforge-highbrand.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "starforge-tungstenhighbrand.png",
+	
+    "swoosh" : "physical"
+  },
+  "animationCustom" : {
+  },
+
+  "scripts" : ["/items/active/weapons/melee/starforge-meleeweapon.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbilityType" : "starforge-highbrandcombo",
+  "primaryAbility" : {
+    "fireTime" : 0.9,
+    "baseDps" : 12.5,
+    "stanceSpeedFactor" : 0.9,
+    "energyUsage" : 30
+  },
+
+  "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
+}

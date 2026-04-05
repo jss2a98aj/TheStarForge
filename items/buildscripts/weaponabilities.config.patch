@@ -5,6 +5,12 @@
 	"path": "/starforge-broadswordcombo",
 	"value": "/items/active/weapons/melee/abilities/broadsword/starforge-broadswordcombo.weaponability"
   },
+  //HIGHBRANDS
+  {
+	"op": "add",
+	"path": "/starforge-highbrandcombo",
+	"value": "/items/active/weapons/melee/abilities/highbrand/starforge-highbrandcombo.weaponability"
+  },
   //DAGGERS
   {
 	"op": "add",

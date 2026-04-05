@@ -1,17 +1,17 @@
 {
   "itemName" : "starforge-riftslasher",
   "price" : 4750,
-  "level" : 8,
+  "level" : 7,
   "maxStack" : 1,
   "rarity" : "Essential",
   "description" : "Its blade vibrates on the edge of reality, phasing between dimensions.",
-  "shortdescription" : "Rift Slasher",
+  "shortdescription" : "Rift Gargler",
   "tooltipKind" : "starforge-uniquesword",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {
     "subtitle" : "Quickblade"
   },
-  "twoHanded" : true,
+  "twoHanded" : false,
   "itemTags" : [ "starforge", "weapon", "melee", "quickblade", "dagger", "unbound" ],
  
   "inventoryIcon" : "riftslashericon.png",
@@ -30,7 +30,7 @@
       "fire2" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ],
       "fire3" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ],
       "fire4" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ],
-      "fire5" : [ "/sfx/melee/charge_traildash3.ogg" ]
+      "fire5" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ]
     }
   },
 
@@ -40,35 +40,12 @@
 
   "elementalType" : "starforge-surge",
 
-  "primaryAbilityType" : "broadswordcombo",
+  "primaryAbilityType" : "starforge-daggercombo",
   "primaryAbility" : {
-    "scripts" : ["/items/active/weapons/melee/abilities/starforge-warpcombo.lua"],
-	  "class" : "StarforgeWarpCombo",
     "fireTime" : 0.55,
-    "baseDps" : 10.5,
-	
-  	"stepDamageConfig" : [
-      {
-        "baseDamageFactor" : 0.5,
-        "knockback" : 12.5
-      },
-      {
-        "baseDamageFactor" : 0.5,
-        "knockback" : 12.5
-      },
-      {
-        "baseDamageFactor" : 0.35,
-        "knockback" : 6.5
-      },
-      {
-        "baseDamageFactor" : 0.35,
-        "knockback" : 6.5
-      },
-      {
-        "baseDamageFactor" : 0.25,
-        "knockback" : 10
-      }
-    ],
+    "baseDps" : 6.5,
+    
+    "finisherHoldTime" : 0.1,
 	
     "damageConfig" : {
       "damageSourceKind" : "starforge-surge",
@@ -76,17 +53,6 @@
       "knockbackMode" : "facing",
       "timeout" : 0.11
     },
-	
-	  "comboSteps" : 5,
-    "comboSpeedFactor" : 0.8,
-	
-	  "swooshOffsetRegions" : [
-      [0.75, 0.0, 4.25, -5.0],
-      [0.75, 0.0, 4.25, -5.0],
-      [1.5, -1.0, 5.5, 1.0],
-      [1.5, -1.0, 5.5, 1.0],
-      [1.5, -1.0, 5.5, 1.0]
-    ],
 
     "stances" : {
       //IDLE - DEFAULT
@@ -100,7 +66,7 @@
       },
 	    //UPSLASH
       "windup1" : {
-        "duration" : 0.1,
+        "duration" : 0.05,
         "armRotation" : -90,
         "weaponRotation" : -170,
         "twoHanded" : false,
@@ -136,7 +102,7 @@
       },
       //Downslash
       "windup2" : {
-        "duration" : 0.15,
+        "duration" : 0.1,
         "armRotation" : 55,
         "weaponRotation" : 3,
         "twoHanded" : false,
@@ -158,7 +124,7 @@
 		    "comboDirectives" : "flipx"
       },
       "fire2" : {
-        "duration" : 0.15,
+        "duration" : 0.125,
         "armRotation" : -50,
         "weaponRotation" : -55,
         "twoHanded" : false,
@@ -178,9 +144,44 @@
 		
 		    "comboDirectives" : "flipx"
       },
-	    //STAB 1
       "windup3" : {
+        "duration" : 0.05,
+        "armRotation" : -20,
+        "weaponRotation" : -20,
+        "weaponOffset" : [0, 0.125],
+
+        "allowFlip" : true,
+        "allowRotate" : false
+      },
+      "preslash3" : {
         "duration" : 0.025,
+        "armRotation" : -135,
+        "weaponRotation" : 40,
+        "weaponOffset" : [0, 0.125],
+
+        "allowFlip" : true,
+        "allowRotate" : false
+      },
+      "fire3" : {
+        "duration" : 0.075,
+        "armRotation" : -135,
+        "weaponRotation" : 40,
+        "weaponOffset" : [0, 0.125],
+
+        "allowFlip" : true,
+        "allowRotate" : false
+      },
+      "wait3" : {
+        "duration" : 0.2,
+        "armRotation" : -135,
+        "weaponRotation" : 40,
+        "weaponOffset" : [0, 0.125],
+
+        "allowFlip" : true,
+        "allowRotate" : false
+      },
+      "windup4" : {
+        "duration" : 0.125,
         "armRotation" : -110,
         "weaponRotation" : 20,
         "twoHanded" : false,
@@ -191,7 +192,7 @@
         "allowRotate" : true,
         "allowFlip" : true
       },
-      "preslash3" : {
+      "preslash4" : {
         "duration" : 0.025,
         "armRotation" : -110,
         "weaponRotation" : 20,
@@ -203,32 +204,256 @@
         "allowRotate" : false,
         "allowFlip" : false
       },
-      "fire3" : {
-        "duration" : 0.075,
+      "fire4" : {
+        "duration" : 0.2,
         "armRotation" : -30,
-        "weaponRotation" : -70,
+        "weaponRotation" : -60,
         "twoHanded" : false,
         "weaponOffset" : [0, -0.125],
-		
-        "comboDirectives" : "?flipx",
-        "continueStep" : true,
 
         "allowRotate" : false,
         "allowFlip" : false
       },
-      "wait3" : {
+      "wait4" : {
         "duration" : 0.075,
         "armRotation" : -30,
         "weaponRotation" : -70,
         "twoHanded" : false,
         "weaponOffset" : [0, -0.25],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+
+  "altAbility" : {
+    "name" : "Riftstrike",
+    "scripts" : ["/items/active/weapons/melee/abilities/starforge-meleecombo.lua"],
+    "class" : "StarforgeMeleeCombo",
+
+    "fireTime" : 0.55,
+    "baseDps" : 12.5,
+	
+    "flashTime" : 0.15,
+    "flashDirectives" : "fade=FFFFFFFF=0.15",
+	
+  	"stepDamageConfig" : [
+      {
+        "baseDamageFactor" : 1.0,
+        "knockback" : 12.5
+      },
+      {
+        "baseDamageFactor" : 0.5,
+        "knockback" : 10
+      },
+      {
+        "baseDamageFactor" : 1,
+        "knockback" : 12.5
+      },
+      {
+        "baseDamageFactor" : 0.5,
+        "knockback" : 12.5
+      }
+    ],
+	
+    "comboSpeedFactor" : 0.65,
+	
+	  "comboSteps" : 4,
+	
+	  "swooshOffsetRegions" : [
+      [0.75, 0.0, 4.25, -5.0],
+      [3.0, -0.5, 6.5, 2.0],
+      [0.75, 0.0, 4.25, 5.0],
+      [3.0, -0.5, 6.5, 2.0]
+    ],
+
+    "edgeTriggerGrace" : 0.25,
+	
+    "damageConfig" : {
+      "damageSourceKind" : "starforge-surge",
+      "statusEffects" : [],
+      "knockbackMode" : "facing",
+      "timeout" : 0.11
+    },
+
+    "stances" : {
+      //IDLE - DEFAULT
+      "idle" : {
+        "armRotation" : -90,
+        "weaponRotation" : -210,
+        "allowRotate" : false,
+        "twoHanded" : false,
+        "allowFlip" : true,
+		    "aimAngle" : 0
+      },
+	    //UPSLASH
+      "windup1" : {
+        "duration" : 0.05,
+        "armRotation" : -90,
+        "weaponRotation" : -170,
+        "twoHanded" : false,
 		
-		    "comboDirectives" : "?flipx",
+        "teleport" : true,
+		    "hold" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "preslash1" : {
+        "duration" : 0.025,
+        "armRotation" : -45,
+        "weaponRotation" : -140,
+        "twoHanded" : false,
 
         "allowRotate" : false,
         "allowFlip" : false
       },
-	    //STAB 2
+      "fire1" : {
+        "duration" : 0.05,
+        "armRotation" : 55,
+        "weaponRotation" : -125,
+        "twoHanded" : false,
+        "continueStep" : true,
+
+        "teleportStatus" : "starforge-teleporteffect",
+        "teleportOffset" : [0, 1],
+        "teleportTarget" : [0, 0],
+        "teleportTolerance" : 3.0,
+        "trackProjectile" : false,
+        
+        //Slightly marks enemies within forgivenessRange which moves the slash a little
+        "forgivenessRange" : 50,
+        
+        "projectileType" : "starforge-riftstrikefirst",
+        "projectileParameters" : {},
+        "projectileDamage" : 3,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "wait1" : {
+        "duration" : 0.2,
+        "armRotation" : 45,
+        "weaponRotation" : -125,
+        "allowRotate" : false,
+        "allowFlip" : true,
+        "twoHanded" : false
+      },
+      //Downslash
+      "windup2" : {
+        "duration" : 0.05,
+        "armRotation" : 55,
+        "weaponRotation" : 3,
+        "twoHanded" : false,
+		
+        "teleport" : true,
+		    "hold" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : false,
+		
+		    "comboDirectives" : "flipx"
+      },
+      "preslash2" : {
+        "duration" : 0.025,
+        "armRotation" : -50,
+        "weaponRotation" : -55,
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		    "comboDirectives" : "flipx"
+      },
+      "fire2" : {
+        "duration" : 0.05,
+        "armRotation" : -50,
+        "weaponRotation" : -55,
+        "twoHanded" : false,
+        "continueStep" : true,
+
+        "teleportStatus" : "starforge-teleporteffect",
+        "teleportOffset" : [0, 1],
+        "teleportTarget" : [0, 0],
+        "teleportTolerance" : 3.0,
+        "trackProjectile" : false,
+        
+        //Slightly marks enemies within forgivenessRange which moves the slash a little
+        "forgivenessRange" : 50,
+        
+        "projectileType" : "starforge-riftstrikefirst",
+        "projectileParameters" : {},
+        "projectileDamage" : 3,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		    "comboDirectives" : "flipx"
+      },
+      "wait2" : {
+        "duration" : 0.2,
+        "armRotation" : 45,
+        "weaponRotation" : -125,
+        "allowRotate" : false,
+        "allowFlip" : true,
+        "twoHanded" : false,
+		
+		    "comboDirectives" : "flipx"
+      },
+      "windup3" : {
+        "duration" : 0.05,
+        "armRotation" : -20,
+        "weaponRotation" : -20,
+        "weaponOffset" : [0, 0.125],
+		
+        "teleport" : true,
+		    "hold" : true,
+
+        "allowFlip" : true,
+        "allowRotate" : false
+      },
+      "preslash3" : {
+        "duration" : 0.025,
+        "armRotation" : -135,
+        "weaponRotation" : 40,
+        "weaponOffset" : [0, 0.125],
+
+        "allowFlip" : true,
+        "allowRotate" : false
+      },
+      "fire3" : {
+        "duration" : 0.05,
+        "armRotation" : -135,
+        "weaponRotation" : 40,
+        "weaponOffset" : [0, 0.125],
+        "continueStep" : true,
+
+        "teleportStatus" : "starforge-teleporteffect",
+        "teleportOffset" : [0, 1],
+        "teleportTarget" : [0, 0],
+        "teleportTolerance" : 3.0,
+        "trackProjectile" : false,
+        
+        //Slightly marks enemies within forgivenessRange which moves the slash a little
+        "forgivenessRange" : 50,
+        
+        "projectileType" : "starforge-riftstrikefirst",
+        "projectileParameters" : {},
+        "projectileDamage" : 3,
+
+        "allowFlip" : true,
+        "allowRotate" : false
+      },
+      "wait3" : {
+        "duration" : 0.2,
+        "armRotation" : -135,
+        "weaponRotation" : 40,
+        "weaponOffset" : [0, 0.125],
+
+        "allowFlip" : true,
+        "allowRotate" : false
+      },
       "windup4" : {
         "duration" : 0.05,
         "armRotation" : -110,
@@ -236,7 +461,10 @@
         "twoHanded" : false,
         "weaponOffset" : [0, 0.5],
 		
-	    	"comboDirectives" : "?flipx",
+        "teleport" : true,
+		    "hold" : true,
+		
+		    "comboDirectives" : "?flipx",
 
         "allowRotate" : true,
         "allowFlip" : true
@@ -246,75 +474,46 @@
         "armRotation" : -110,
         "weaponRotation" : 20,
         "twoHanded" : false,
-        "weaponOffset" : [0, 1.0],
-		
-	    	"comboDirectives" : "?flipx",
-
-        "allowRotate" : false,
-        "allowFlip" : false
-      },
-      "fire4" : {
-        "duration" : 0.075,
-        "armRotation" : -20,
-        "weaponRotation" : -70,
-        "twoHanded" : false,
-        "weaponOffset" : [0, -0.125],
-		
-        "comboDirectives" : "?flipx",
-
-        "allowRotate" : false,
-        "allowFlip" : false
-      },
-      "wait4" : {
-        "duration" : 0.1,
-        "armRotation" : -20,
-        "weaponRotation" : -70,
-        "twoHanded" : false,
-        "weaponOffset" : [0, -0.25],
+        "weaponOffset" : [0.5, 1.0],
 		
 		    "comboDirectives" : "?flipx",
 
         "allowRotate" : false,
         "allowFlip" : false
       },
-	    //RIFTSTRIKE
-      "windup5" : {
-        "duration" : 0.0,
-        "weaponRotation" : 145,
-        "armRotation" : -45,
-        "aimAngle" : 0,
-        "twoHanded" : true,
-        "allowRotate" : false,
-        "allowFlip" : true,
-		
-        "teleport" : true,
-		    "hold" : true,
-		
-		    "comboDirectives" : "flipx?fade=FFFFFFFF=0.15"
-      },
-      "fire5" : {
-        "duration" : 0.325,
-        "weaponRotation" : 145,
-        "armRotation" : -45,
-        "aimAngle" : 0,
-        "twoHanded" : true,
+      "fire4" : {
+        "duration" : 0.05,
+        "armRotation" : -30,
+        "weaponRotation" : -60,
+        "twoHanded" : false,
+        "weaponOffset" : [0, -0.125],
+        "continueStep" : true,
 
-        "allowRotate" : true,
-        "allowFlip" : false,
-		
         "teleportStatus" : "starforge-teleporteffect",
-        "teleportOffset" : [0, 0],
-        "teleportTarget" : [10, 0],
+        "teleportOffset" : [0, 1],
+        "teleportTarget" : [0, 0],
         "teleportTolerance" : 3.0,
+        "trackProjectile" : false,
         
         //Slightly marks enemies within forgivenessRange which moves the slash a little
-        "forgivenessRange" : 25,
+        "forgivenessRange" : 50,
         
         "projectileType" : "starforge-riftstrikefirst",
         "projectileParameters" : {},
         "projectileDamage" : 3,
-        
-        "comboDirectives" : "flipx"
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "wait4" : {
+        "duration" : 0.075,
+        "armRotation" : -30,
+        "weaponRotation" : -70,
+        "twoHanded" : false,
+        "weaponOffset" : [0, -0.25],
+
+        "allowRotate" : false,
+        "allowFlip" : false
       }
     }
   },

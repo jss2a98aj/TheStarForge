@@ -1,0 +1,48 @@
+{
+  "itemName" : "starforge-wyvernsbane",
+  "level" : 6,
+  "price" : 1500,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "Great for hunting things with scales. A bit big for the job, but that never stops anyone",
+  "shortdescription" : "Wyvern's Bane",
+  "tooltipKind" : "starforge-uniquesword",
+  "category" : "uniqueWeapon",
+  "tooltipFieldsOverride" : {
+    "subtitle" : "Highbrand"
+  },
+  "twoHanded" : true,
+  "itemTags" : [ "starforge", "weapon", "melee", "highbrand", "greatsword" ],
+
+  "inventoryIcon" : "starforge-wyvernsbane.png",
+
+  "animation" : "/items/active/weapons/melee/highbrand/starforge-highbrand.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "starforge-wyvernsbane.png",
+	
+    "swoosh" : "physical"
+  },
+  "animationCustom" : {
+  },
+
+  "scripts" : ["/items/active/weapons/melee/starforge-meleeweapon.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbilityType" : "starforge-highbrandcombo",
+  "primaryAbility" : {
+    "fireTime" : 0.9,
+    "baseDps" : 12.5,
+    "stanceSpeedFactor" : 1.5,
+    "energyUsage" : 30,
+    "damageConfig" : {
+      "damageSourceKind" : "hammer",
+      "statusEffects" : [ ],
+      "knockbackMode" : "facing",
+      "timeout" : 0.5
+    }
+  },
+
+  "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
+}

@@ -34,6 +34,12 @@
             "cycle" : 0.1,
             "mode" : "transition",
             "transition" : "idle"
+          },
+          "fire5" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
           }
         }
       }
@@ -45,7 +51,7 @@
           "zLevel" : 0,
           "centered" : true,
           "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives><stanceDirectives>",
-          "offset" : [0, 1.875],
+          "offset" : [0, 2.375],
           "transformationGroups" : ["weapon"],
           "rotationCenter" : [0, 0],
           "damageArea" : [ [-0.7, -1.0], [-0.7, 2.5], [0.5, 2.5], [0.5, -1.0] ]
@@ -57,7 +63,7 @@
           "centered" : true,
           "fullbright" : true,
           "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives><stanceDirectives>",
-          "offset" : [0, 1.875],
+          "offset" : [0, 2.375],
           "transformationGroups" : ["weapon"],
           "rotationCenter" : [0, 0],
           "damageArea" : [ [-0.7, -1.0], [-0.7, 2.5], [0.5, 2.5], [0.5, -1.0] ]
@@ -77,7 +83,7 @@
         "properties" : {
           "zLevel" : -1,
           "centered" : true,
-          "transformationGroups" : ["swoosh"],
+          "transformationGroups" : ["swoosh", "swooshOffset"],
           "rotationCenter" : [0, 0]
         },
 
@@ -90,30 +96,37 @@
             },
             "fire" : {
               "properties" : {
-                "image" : "/items/active/weapons/melee/swoosh/starforge/downcut/downcut-<partImage>.png:<frame>",
-                "offset" : [0, 2.5],
-                "damageArea" : [[-5, 2], [-2.5, 3], [1, 3], [4, 1.75], [5, -0.25], [5, -2.25], [4, -3.25], [0, -2.5]]
+                "image" : "/items/active/weapons/melee/swoosh/starforge/heavyuppercut/heavyuppercut-<partImage>.png:<frame>?flipy",
+                "offset" : [3, 2.5],
+                "damageArea" : [[-8, 5], [-2.5, 5], [1, 5], [5, 2.75], [7, -0.25], [7, -3.25], [5.5, -5.25], [5, -6.25], [-2, -6]]
               }
             },
             "fire2" : {
               "properties" : {
-                "image" : "/items/active/weapons/melee/swoosh/starforge/slash/slash-<partImage>.png:<frame>",
-                "offset" : [5.0, 1.0],
-                "damageArea" : [[-4, 1], [2.5, 1], [2.5, -2], [-4, -2]]
+                "image" : "/items/active/weapons/melee/swoosh/starforge/swiftslash/swiftslash-<partImage>.png:<frame>",
+                "offset" : [4, 1.0],
+                "damageArea" : [[-10, -1], [4.5, 1], [4.5, -2], [-2, -9], [-12, -8]]
               }
             },
             "fire3" : {
               "properties" : {
-                "image" : "/items/active/weapons/melee/swoosh/starforge/downcut/downcut-<partImage>.png:<frame>",
-                "offset" : [0, 2.5],
-                "damageArea" : [[-5, 2], [-2.5, 3], [1, 3], [4, 1.75], [5, -0.25], [5, -2.25], [4, -3.25], [0, -2.5]]
+                "image" : "/items/active/weapons/melee/swoosh/starforge/heavyuppercut/heavyuppercut-<partImage>.png:<frame>",
+                "offset" : [3, -2.5],
+                "damageArea" : [[-8, -5], [-2.5, -5], [1, -5], [5, -2.75], [7, 0.25], [7, 3.25], [5.5, 5.25], [5, 6.25], [-2, 6]]
               }
             },
             "fire4" : {
               "properties" : {
+                "image" : "/items/active/weapons/melee/swoosh/starforge/sweep/sweep-<partImage>.png:<frame>?flipx?flipy",
+                "offset" : [5.5, 2],
+                "damageArea" : [[-4.75, 3.5], [6, 3], [6, -3], [-4.75, -3.5]]
+              }
+            },
+            "fire5" : {
+              "properties" : {
                 "image" : "/items/active/weapons/melee/swoosh/starforge/stab/stab-<partImage>.png:<frame>",
-                "offset" : [3.5, 0],
-                "damageArea" : [[-4.75, 1.5], [3, 1], [3, -1], [-4.75, -1.5]]
+                "offset" : [6.5, 0.25],
+                "damageArea" : [[-8.75, 1.5], [3, 1], [3, -1], [-8.75, -1.5]]
               }
             }
           }
@@ -124,7 +137,8 @@
 
   "transformationGroups" : {
     "weapon" : {},
-    "swoosh" : {}
+    "swoosh" : {},
+    "swooshOffset" : {}
   },
 
   "particleEmitters" : {

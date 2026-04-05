@@ -1,0 +1,242 @@
+{
+  "itemName" : "starforge-vigilance",
+  "level" : 6,
+  "price" : 1500,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "An Impervium blade whose edge, like the faith of those who carry it, never dulls.",
+  "shortdescription" : "Vigilance",
+  "tooltipKind" : "starforge-uniquesword",
+  "category" : "uniqueWeapon",
+  "tooltipFieldsOverride" : {
+    "subtitle" : "Highbrand"
+  },
+  "twoHanded" : false,
+  "itemTags" : [ "starforge", "weapon", "melee", "highbrand", "greatsword" ],
+
+  "inventoryIcon" : "starforge-vigilance.png",
+
+  "animation" : "/items/active/weapons/melee/highbrand/starforge-highbrand.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "starforge-vigilance.png",
+    "tassel" : "starforge-vigilancecloth.png",
+	
+    "swoosh" : "physical"
+  },
+  "animationCustom" : {
+    "animatedParts" : {
+      "parts" : {
+        "tassel" : {
+          "properties" : {
+            "zLevel" : -4,
+            "centered" : true,
+            "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives>?<comboDirectives>",
+            "offset" : [-0.125, -1.75],
+            "transformationGroups" : ["weapon", "tassel"],
+            "rotationCenter" : [0, 0.5]
+          }
+        }
+      }
+    },
+
+    "transformationGroups" : {
+      "tassel" : {}
+    }
+  },
+
+  "scripts" : ["/items/active/weapons/melee/starforge-meleeweapon.lua", "/items/active/weapons/starforge-hangingparts.lua"],
+  "hangingParts" : {
+    "tassel" : "tassel"
+  },
+  "shakeVelocity" : 4,
+
+  "elementalType" : "physical",
+
+  "primaryAbilityType" : "starforge-highbrandcombo",
+  "primaryAbility" : {
+    "fireTime" : 0.9,
+    "baseDps" : 8.5,
+    "stanceSpeedFactor" : 1.65,
+    "energyUsage" : 30,
+    "stances" : {
+      "idle" : {
+        "aimAngle" : 0,
+        "armRotation" : -15,
+        "weaponRotation" : 50,
+        "weaponOffset" : [0, 0.35],
+        "twoHanded" : false,
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "windup1" : {
+        "duration" : 0.4,
+        "armRotation" : 90,
+        "weaponRotation" : -10,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "preslash1" : {
+        "duration" : 0.025,
+        "armRotation" : 55,
+        "weaponRotation" : -45,
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "fire1" : {
+        "duration" : 0.425,
+        "armRotation" : -55,
+        "weaponRotation" : -55,
+        "twoHanded" : false,
+
+        "swooshRotation" : 40,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "wait1" : {
+        "duration" : 0.2,
+        "armRotation" : -50,
+        "weaponRotation" : -55,
+        "allowRotate" : false,
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+      "windup2" : {
+        "duration" : 0.25,
+        "armRotation" : -40,
+        "weaponRotation" : -55,
+        "weaponOffset" : [0, 0],
+        "twoHanded" : false,
+        "allowFlip" : true,
+        "allowRotate" : true
+      },
+      "fire2" : {
+        "duration" : 0.2,
+        "armRotation" : -110,
+        "weaponRotation" : -160,
+        "aimAngle" : 0,
+        "twoHanded" : false,
+
+        "swooshRotation" : -5,
+		
+		    "comboDirectives" : "?flipx",
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "wait2" : {
+        "duration" : 0.2,
+        "armRotation" : -110,
+        "weaponRotation" : -160,
+        "aimAngle" : 0,
+        "twoHanded" : false,
+		
+		    "comboDirectives" : "?flipx",
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "windup3" : {
+        "duration" : 0.35,
+        "armRotation" : -110,
+        "weaponRotation" : -160,
+        "twoHanded" : false,
+		
+		    "comboDirectives" : "?flipx",
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "preslash3" : {
+        "duration" : 0.025,
+        "armRotation" : 5,
+        "weaponRotation" : -80,
+        "weaponOffset" : [0, 0.125],
+        "twoHanded" : false,
+		
+		    "comboDirectives" : "?flipx",
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "fire3" : {
+        "duration" : 0.3,
+        "armRotation" : 65,
+        "weaponRotation" : -120,
+        "weaponOffset" : [0, 0.125],
+        "twoHanded" : false,
+
+        "swooshRotation" : -40,
+		
+		    "comboDirectives" : "?flipx",
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "wait3" : {
+        "duration" : 0.2,
+        "armRotation" : 35,
+        "weaponRotation" : -35,
+        "weaponOffset" : [0, 0.125],
+        "twoHanded" : false,
+		
+		    "comboDirectives" : "?flipx",
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "windup4" : {
+        "duration" : 0.25,
+        "armRotation" : 30,
+        "weaponRotation" : -75,
+        "weaponOffset" : [0, 0],
+        "twoHanded" : false,
+        "allowFlip" : true,
+        "allowRotate" : true
+      },
+      "fire4" : {
+        "duration" : 0.2,
+        "armRotation" : -150,
+        "weaponRotation" : 40,
+        "weaponOffset" : [0, 0],
+        "twoHanded" : false,
+        "allowFlip" : true,
+        "allowRotate" : false
+      },
+      "wait4" : {
+        "duration" : 0.2,
+        "armRotation" : -150,
+        "weaponRotation" : 40,
+        "weaponOffset" : [0, 0],
+        "allowRotate" : false,
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+      "windup5" : {
+        "duration" : 0.25,
+        "armRotation" : -150,
+        "weaponRotation" : 25,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire5" : {
+        "duration" : 0.3,
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
+}

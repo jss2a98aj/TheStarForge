@@ -24,9 +24,6 @@
     "swoosh" : "ice"
   },
   "animationCustom" : {
-    "sounds" : {
-      "fireKunai" : [ "/sfx/gun/plasma_pistol1.ogg" ]
-    }
   },
 
   "scripts" : ["/items/active/weapons/melee/starforge-meleeweapon.lua"],
@@ -50,12 +47,12 @@
     "name" : "Cold Shock",
     "chargeTime" : 0.3,
     "minChargeTime" : 0.15,
-    "duration" : 1.0,
+    "duration" : 2.5,
 
     "damagePoly" : [[0,3.75], [2.66, 2.66], [3.75,0], [2.66, -2.66], [0,-3.75], [-2.66, -2.66], [-3.75, 0], [-2.66, 2.66]],
     "damageConfig" : {
       "damageSourceKind" : "<elementalType>plasma",
-      "baseDamage" : 1,
+      "baseDamage" : 0.85,
       "knockbackMode" : "none",
       "knockback" : 0,
       "timeout" : 0.1,

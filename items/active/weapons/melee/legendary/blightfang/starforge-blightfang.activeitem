@@ -95,7 +95,8 @@
     "minChargeTime" : 0.5,
     "projectileType" : "starforge-witheredground",
     "projectileParameters" : {
-      "timeToLive" : 8
+      "timeToLive" : 8,
+      "power" : 5
     },
     "shockWaveBounds" : [-0.4, -1.375, 0.4, 0.0],
     "shockwaveHeight" : 1.375,

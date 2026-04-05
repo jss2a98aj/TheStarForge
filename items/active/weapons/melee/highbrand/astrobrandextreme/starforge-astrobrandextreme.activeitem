@@ -1,0 +1,223 @@
+{
+  "itemName" : "starforge-astrobrandextreme",
+  "level" : 6,
+  "price" : 1500,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "An inscription on the blade reads, \"For when a high-five just isn't enough.\"",
+  "shortdescription" : "Asuteroburando EX",
+  "tooltipKind" : "starforge-uniquesword",
+  "category" : "uniqueWeapon",
+  "tooltipFieldsOverride" : {
+    "subtitle" : "Highbrand"
+  },
+  "twoHanded" : true,
+  "itemTags" : [ "starforge", "weapon", "melee", "highbrand", "greatsword" ],
+
+  "inventoryIcon" : "starforge-astrobrandextreme.png",
+
+  "animation" : "/items/active/weapons/melee/highbrand/starforge-highbrand.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "starforge-astrobrandextreme.png",
+    "bladeFullbright" : "starforge-astrobrandextremefb.png",
+	
+    "swoosh" : "astraltear"
+  },
+  "animationCustom" : {
+    "animatedParts" : {
+      "parts" : {
+        "bladeFullbright" : {
+          "properties" : {
+            "zLevel" : 2,
+            "centered" : true,
+            "fullbright" : true,
+            "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives><stanceDirectives>",
+            "offset" : [0, 2.375],
+            "transformationGroups" : ["weapon"]
+          }
+        }
+      }
+    },
+    "particleEmitters" : {
+      "idleparticles1" : {
+        "active" : true,
+        "transformationGroups" : ["weapon"],
+        "emissionRate" : 10,
+        "emissionRateVariance" : 5,
+        "offsetRegion" : [0.0, 5.5, 0.0, 4.75],
+        "particles" : [
+          {
+            "particle" : {
+              "type" : "animated",
+              "animation" : "/animations/sparkles/sparkleloop6.animation",
+              "position" : [0, 0],
+              "initialVelocity" : [0, 0],
+              "finalVelocity" : [0, -2.0],
+              "approach" : [0, 50],
+              "fade" : 0.3,
+              "destructionAction" : "shrink",
+              "destructionTime" : 1,
+              "size" : 0.5,
+              "timeToLive" : 1,
+              "fullbright" : true,
+              "variance" : {
+                "initialVelocity" : [1, 0]
+              }
+            }
+          }
+        ]
+      },
+      "idleparticles2" : {
+        "active" : true,
+        "transformationGroups" : ["weapon"],
+        "emissionRate" : 10,
+        "emissionRateVariance" : 5,
+        "offsetRegion" : [0.0, 4.75, 0.0, 4.0],
+        "particles" : [
+          {
+            "particle" : {
+              "type" : "animated",
+              "animation" : "/animations/sparkles/sparkleloop6.animation",
+              "position" : [0, 0],
+              "layer" : "back",
+              "initialVelocity" : [0, 0],
+              "finalVelocity" : [0, -2.0],
+              "approach" : [0, 50],
+              "fade" : 0.5,
+              "destructionAction" : "shrink",
+              "destructionTime" : 1,
+              "size" : 0.5,
+              "timeToLive" : 1,
+              "fullbright" : true,
+              "variance" : {
+                "initialVelocity" : [1, 0]
+              }
+            }
+          }
+        ]
+      },
+      "idleparticles3" : {
+        "active" : true,
+        "transformationGroups" : ["weapon"],
+        "emissionRate" : 10,
+        "emissionRateVariance" : 5,
+        "offsetRegion" : [0.0, 4.0, 0.0, 3.25],
+        "particles" : [
+          {
+            "particle" : {
+              "type" : "animated",
+              "animation" : "/animations/sparkles/sparkleloop5.animation",
+              "position" : [0, 0],
+              "initialVelocity" : [0, 0],
+              "finalVelocity" : [0, -2.0],
+              "approach" : [0, 50],
+              "fade" : 0.3,
+              "destructionAction" : "shrink",
+              "destructionTime" : 0.8,
+              "size" : 0.6,
+              "timeToLive" : 0.8,
+              "fullbright" : true,
+              "variance" : {
+                "initialVelocity" : [1, 0]
+              }
+            }
+          }
+        ]
+      },
+      "idleparticles4" : {
+        "active" : true,
+        "transformationGroups" : ["weapon"],
+        "emissionRate" : 10,
+        "emissionRateVariance" : 5,
+        "offsetRegion" : [0.0, 3.25, 0.0, 2.25],
+        "particles" : [
+          {
+            "particle" : {
+              "type" : "animated",
+              "animation" : "/animations/sparkles/sparkleloop4.animation",
+              "position" : [0, 0],
+              "layer" : "back",
+              "initialVelocity" : [0, 0],
+              "finalVelocity" : [0, -2.0],
+              "approach" : [0, 50],
+              "fade" : 0.5,
+              "destructionAction" : "shrink",
+              "destructionTime" : 1,
+              "size" : 0.5,
+              "timeToLive" : 1,
+              "fullbright" : true,
+              "variance" : {
+                "initialVelocity" : [1, 0]
+              }
+            }
+          }
+        ]
+      },
+      "idleparticles5" : {
+        "active" : true,
+        "transformationGroups" : ["weapon"],
+        "emissionRate" : 10,
+        "emissionRateVariance" : 5,
+        "offsetRegion" : [0.0, 2.25, 0.0, 1],
+        "particles" : [
+          {
+            "particle" : {
+              "type" : "animated",
+              "animation" : "/animations/sparkles/sparkleloop2.animation",
+              "position" : [0, 0],
+              "layer" : "back",
+              "initialVelocity" : [0, 0],
+              "finalVelocity" : [0, -2.0],
+              "approach" : [0, 50],
+              "fade" : 0.5,
+              "destructionAction" : "shrink",
+              "destructionTime" : 1,
+              "size" : 0.4,
+              "timeToLive" : 1,
+              "fullbright" : true,
+              "variance" : {
+                "initialVelocity" : [1, 0]
+              }
+            }
+          }
+        ]
+      }
+    },
+
+    "lights" : {
+      "glow" : {
+        "active" : true,
+        "position" : [0.0, 0.0],
+        "color" : [100, 100, 100],
+        "flickerPeriod" : 1,
+        "flickerMinIntensity" : 0.95,
+        "flickerMaxIntensity" : 1.0,
+        "flickerPeriodVariance" : 0.0,
+        "flickerIntensityVariance" : 0.0
+      }
+    },
+    
+    "sounds" : {
+      "fire" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ],
+      "fire2" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ],
+      "fire3" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ],
+      "fire4" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ],
+      "fire5" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ]
+    }
+  },
+
+  "scripts" : ["/items/active/weapons/melee/starforge-meleeweapon.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbilityType" : "starforge-highbrandcombo",
+  "primaryAbility" : {
+    "fireTime" : 0.9,
+    "baseDps" : 12.5,
+    "stanceSpeedFactor" : 1.1,
+    "energyUsage" : 30
+  },
+
+  "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
+}

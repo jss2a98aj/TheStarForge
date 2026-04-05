@@ -97,7 +97,7 @@ function StarforgeMeleeCombo:windup()
     end
     
     local progress = 0
-    util.wait(stance.duration, function()
+    util.wait(stance.duration * (self.stanceSpeedFactor or 1), function()
       if stance.windupSwing ~= false then
         for part, rotation in pairs(windupSwing) do
           local from = stance[part]
@@ -105,7 +105,7 @@ function StarforgeMeleeCombo:windup()
         
           self.weapon["relative" .. part:gsub("^%l", string.upper)] = util.toRadians(util.interpolateHalfSigmoid(1- progress, from, to))
         end
-        progress = math.min(1.0, progress + (self.dt / stance.duration))
+        progress = math.min(1.0, progress + (self.dt / (stance.duration * (self.stanceSpeedFactor or 1))))
       end
     end)
   end
@@ -129,7 +129,7 @@ function StarforgeMeleeCombo:teleport()
   local stance = self.stances["fire"..self.comboStep]
   
   --Create the teleportation effect and add 0.5 for both animations to take effect
-  status.addEphemeralEffect(stance.teleportStatus or "starforge-teleporteffect", stance.duration + 0.5)
+  status.addEphemeralEffect(stance.teleportStatus or "starforge-teleporteffect", stance.duration * (self.stanceSpeedFactor or 1) + 0.5)
 
   animator.setGlobalTag("comboDirectives", stance.comboDirectives or "")
   self.weapon:setStance(stance)
@@ -177,15 +177,19 @@ function StarforgeMeleeCombo:teleport()
 	)
   end
   
-  util.wait(stance.duration, function()
+  util.wait(stance.duration * (self.stanceSpeedFactor or 1), function()
     --Reset player momentum, prevents fall damage
-    mcontroller.setXVelocity(0, 0)
-    mcontroller.setYVelocity(0, 0)
-    mcontroller.setPosition(targetPosition)
+    if stance.trackProjectile ~= false then
+      mcontroller.setXVelocity(0, 0)
+      mcontroller.setYVelocity(0, 0)
+      mcontroller.setPosition(targetPosition)
+    end
   end)
   animator.setGlobalTag("comboDirectives", "")
   
-  mcontroller.setPosition(oldPosition)
+  if stance.trackProjectile ~= false then
+    mcontroller.setPosition(oldPosition)
+  end
 
   if stance.continueStep then
     self.edgeTriggerTimer = self.edgeTriggerGrace
@@ -224,7 +228,7 @@ function StarforgeMeleeCombo:wait()
     end
   end)
 
-  self.cooldownTimer = math.max(0, self.cooldowns[self.comboStep - 1] - stance.duration)
+  self.cooldownTimer = math.max(0, self.cooldowns[self.comboStep - 1] - stance.duration * (self.stanceSpeedFactor or 1))
   self.comboStep = 1
 end
 
@@ -260,7 +264,14 @@ function StarforgeMeleeCombo:fire()
   self.weapon:updateAim()
 
   local animStateKey = self.animKeyPrefix .. (self.comboStep > 1 and "fire" .. self.comboStep or "fire")
+  if stance.swooshRotation then
+    animator.resetTransformationGroup("swooshOffset")
+    animator.rotateTransformationGroup("swooshOffset", util.toRadians(stance.swooshRotation))
+  end
   animator.setAnimationState("swoosh", animStateKey)
+  --Add normal pitch variance to shots
+  local pitchVariance = (1 + (self.pitchVariance or 0.1)) - (math.random() * ((self.pitchVariance or 0.1) * 2)) + (pitchIncrease or 0)
+  animator.setSoundPitch(animStateKey, pitchVariance)
   animator.playSound(animStateKey)
 
   local swooshKey = self.animKeyPrefix .. (self.elementalType or self.weapon.elementalType) .. "swoosh"
@@ -269,7 +280,7 @@ function StarforgeMeleeCombo:fire()
 
   -- If this step is configured as a "spin" move, spin the weapon
   if stance.spinRate then
-    util.wait(stance.duration, function()
+    util.wait(stance.duration * (self.stanceSpeedFactor or 1), function()
       local damageArea = partDamageArea("swoosh")
       self.weapon:setDamage(self.stepDamageConfig[self.comboStep], damageArea)
     
@@ -301,7 +312,7 @@ function StarforgeMeleeCombo:fire()
     end
     
     local progress = 0
-    util.wait(stance.duration, function()
+    util.wait(stance.duration * (self.stanceSpeedFactor or 1), function()
       local damageArea = partDamageArea("swoosh")
       self.weapon:setDamage(self.stepDamageConfig[self.comboStep], damageArea)
       
@@ -317,9 +328,12 @@ function StarforgeMeleeCombo:fire()
         
           self.weapon["relative" .. part:gsub("^%l", string.upper)] = util.toRadians(util.interpolateHalfSigmoid(progress, from, to))
         end
-        progress = math.min(1.0, progress + (self.dt / stance.duration))
+        progress = math.min(1.0, progress + (self.dt / (stance.duration * (self.stanceSpeedFactor or 1))))
       end
     end)
+  end
+  if stance.swooshRotation then
+    animator.resetTransformationGroup("swooshOffset")
   end
   
   if stance.continueStep then
