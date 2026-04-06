@@ -1,0 +1,8 @@
+{
+  "input" : [
+    { "item" : "tungstenbar", "count" : 8 },
+    { "item" : "climbingrope", "count" : 3 }
+  ],
+  "output" : { "item" : "starforge-tungstenhighbrand", "count" : 1 },
+  "groups" : [ "craftinganvil", "weapons", "all" ]
+}

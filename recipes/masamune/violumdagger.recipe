@@ -8,7 +8,7 @@
     "item" : "starforge-violiumdagger",
     "count" : 1
   },
-  "groups" : [ "starforge-masamune", "starforge-yukaishop", "quickblade" ],
+  "groups" : [ "starforge-masamune", "starforge-yukaishop", "quickblade", "craftingseparator", "weapons", "all" ],
   "duration" : 0
 }
 
