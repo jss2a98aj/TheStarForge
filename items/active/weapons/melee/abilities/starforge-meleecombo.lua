@@ -270,7 +270,7 @@ function StarforgeMeleeCombo:fire()
   end
   animator.setAnimationState("swoosh", animStateKey)
   --Add normal pitch variance to shots
-  local pitchVariance = (1 + (self.pitchVariance or 0.1)) - (math.random() * ((self.pitchVariance or 0.1) * 2)) + (pitchIncrease or 0)
+  local pitchVariance = ((self.swingPitchFactor or 1) + (self.pitchVariance or 0.1)) - (math.random() * ((self.pitchVariance or 0.1) * 2)) + (pitchIncrease or 0)
   animator.setSoundPitch(animStateKey, pitchVariance)
   animator.playSound(animStateKey)
 

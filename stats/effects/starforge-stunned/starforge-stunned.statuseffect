@@ -1,0 +1,16 @@
+{
+  "name" : "starforge-stunned",
+  "blockingStat" : "stunImmunity",
+
+  "effectConfig" : {
+    "minimumDuration" : 1,
+    "minTriggerDamage" : 1
+  },
+  "defaultDuration" : 2,
+
+  "scripts" : [
+    "starforge-stunned.lua"
+  ],
+
+  "animationConfig" : "starforge-stunned.animation"
+}

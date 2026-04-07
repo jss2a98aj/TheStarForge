@@ -25,27 +25,13 @@
     "swoosh" : "astraltear"
   },
   "animationCustom" : {
-    "animatedParts" : {
-      "parts" : {
-        "bladeFullbright" : {
-          "properties" : {
-            "zLevel" : 2,
-            "centered" : true,
-            "fullbright" : true,
-            "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives><stanceDirectives>",
-            "offset" : [0, 2.375],
-            "transformationGroups" : ["weapon"]
-          }
-        }
-      }
-    },
     "particleEmitters" : {
       "idleparticles1" : {
         "active" : true,
         "transformationGroups" : ["weapon"],
         "emissionRate" : 10,
         "emissionRateVariance" : 5,
-        "offsetRegion" : [0.0, 5.5, 0.0, 4.75],
+        "offsetRegion" : [0.0, 6, 0.0, 5],
         "particles" : [
           {
             "particle" : {
@@ -73,7 +59,7 @@
         "transformationGroups" : ["weapon"],
         "emissionRate" : 10,
         "emissionRateVariance" : 5,
-        "offsetRegion" : [0.0, 4.75, 0.0, 4.0],
+        "offsetRegion" : [0.0, 5, 0.0, 4.0],
         "particles" : [
           {
             "particle" : {
@@ -102,7 +88,7 @@
         "transformationGroups" : ["weapon"],
         "emissionRate" : 10,
         "emissionRateVariance" : 5,
-        "offsetRegion" : [0.0, 4.0, 0.0, 3.25],
+        "offsetRegion" : [0.0, 4.0, 0.0, 3.0],
         "particles" : [
           {
             "particle" : {
@@ -130,7 +116,7 @@
         "transformationGroups" : ["weapon"],
         "emissionRate" : 10,
         "emissionRateVariance" : 5,
-        "offsetRegion" : [0.0, 3.25, 0.0, 2.25],
+        "offsetRegion" : [0.0, 3.0, 0.0, 2.0],
         "particles" : [
           {
             "particle" : {
@@ -159,7 +145,7 @@
         "transformationGroups" : ["weapon"],
         "emissionRate" : 10,
         "emissionRateVariance" : 5,
-        "offsetRegion" : [0.0, 2.25, 0.0, 1],
+        "offsetRegion" : [0.0, 2, 0.0, 1],
         "particles" : [
           {
             "particle" : {
@@ -203,7 +189,9 @@
       "fire2" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ],
       "fire3" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ],
       "fire4" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ],
-      "fire5" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ]
+      "fire5" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ],
+
+      "travelSlash" : [ "/sfx/melee/astraltear1.ogg" ]
     }
   },
 
@@ -216,7 +204,75 @@
     "fireTime" : 0.9,
     "baseDps" : 12.5,
     "stanceSpeedFactor" : 1.1,
-    "energyUsage" : 30
+    "swingPitchFactor" : 0.7,
+    "energyUsage" : 30,
+    "stances" : {
+      "idle" : {
+        "aimAngle" : 0,
+        "armRotation" : -15,
+        "weaponRotation" : 45,
+        "twoHanded" : false,
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+    }
+  },
+
+  "altAbilityType" : "astraltear",
+  "altAbility" : {
+    "name" : "Astral Break",
+    "scripts" : ["/items/active/weapons/melee/abilities/broadsword/starforge-travellingslash.lua"],
+    "class" : "StarforgeTravellingSlash",
+    "cooldownTime" : 2,
+
+    "projectileType" : "astraltearstart",
+    "projectileParameters" : {
+      "actionOnReap" : [
+        {
+          "action" : "projectile",
+          "type" : "astraltearstop",
+          "inheritDamageFactor" : 0.25,
+          "inheritSpeedFactor" : 1
+        },
+        {
+          "action" : "loop",
+          "count" : 4,
+          "body" : [
+            {
+              "action" : "projectile",
+              "type" : "starforge-astralstar",
+              "fuzzAngle" : 360,
+              "config" : {
+              },
+              "inheritDamageFactor" : 0.25,
+              "angleAdjust" : 0
+            }
+          ]
+        }
+      ]
+    },
+    "projectileOffset" : [0, 6],
+
+    "stances" : {
+      "windup" : {
+        "duration" : 0.25,
+        "armRotation" : -35,
+        "weaponRotation" : 35,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "fire" : {
+        "duration" : 0.5,
+        "armRotation" : 65,
+        "weaponRotation" : -65,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
   },
 
   "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"

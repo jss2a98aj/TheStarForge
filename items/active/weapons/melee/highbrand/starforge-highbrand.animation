@@ -1,6 +1,6 @@
 {
   "globalTagDefaults" : {
-    "stanceDirectives" : "",
+    "comboDirectives" : "",
     "paletteSwaps" : ""
   },
 
@@ -50,8 +50,8 @@
         "properties" : {
           "zLevel" : 0,
           "centered" : true,
-          "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives><stanceDirectives>",
-          "offset" : [0, 2.375],
+          "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives><comboDirectives>",
+          "offset" : [0, 2.625],
           "transformationGroups" : ["weapon"],
           "rotationCenter" : [0, 0],
           "damageArea" : [ [-0.7, -1.0], [-0.7, 2.5], [0.5, 2.5], [0.5, -1.0] ]
@@ -62,8 +62,8 @@
           "zLevel" : 1,
           "centered" : true,
           "fullbright" : true,
-          "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives><stanceDirectives>",
-          "offset" : [0, 2.375],
+          "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives><comboDirectives>",
+          "offset" : [0, 2.625],
           "transformationGroups" : ["weapon"],
           "rotationCenter" : [0, 0],
           "damageArea" : [ [-0.7, -1.0], [-0.7, 2.5], [0.5, 2.5], [0.5, -1.0] ]
@@ -73,8 +73,8 @@
         "properties" : {
           "zLevel" : 2,
           "centered" : true,
-          "image" : "<partImage><paletteSwaps>?<directives><stanceDirectives>",
-          "offset" : [0, 1.875],
+          "image" : "<partImage><paletteSwaps>?<directives><comboDirectives>",
+          "offset" : [0, 2.625],
           "transformationGroups" : ["weapon"],
           "rotationCenter" : [0, 0]
         }
@@ -103,8 +103,8 @@
             },
             "fire2" : {
               "properties" : {
-                "image" : "/items/active/weapons/melee/swoosh/starforge/swiftslash/swiftslash-<partImage>.png:<frame>",
-                "offset" : [4, 1.0],
+                "image" : "/items/active/weapons/melee/swoosh/starforge/heavyslice/heavyslice-<partImage>.png:<frame>",
+                "offset" : [-1.5, 0.25],
                 "damageArea" : [[-10, -1], [4.5, 1], [4.5, -2], [-2, -9], [-12, -8]]
               }
             },

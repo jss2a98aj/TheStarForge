@@ -30,8 +30,9 @@
     ],
 
     // cooldown time multiplier for steps after the first, compounded per combo step
-    "comboSpeedFactor" : 1,
+    "comboSpeedFactor" : 0.9,
     "stanceSpeedFactor" : 1,
+    "swingPitchFactor" : 0.6,
 
     "edgeTriggerGrace" : 0.25,
 
@@ -72,7 +73,6 @@
         "aimAngle" : 0,
         "armRotation" : -15,
         "weaponRotation" : 50,
-        "weaponOffset" : [0, 0.35],
         "twoHanded" : false,
         "allowRotate" : false,
         "allowFlip" : true
@@ -130,9 +130,7 @@
         "aimAngle" : 0,
         "twoHanded" : true,
 
-        "swooshRotation" : -5,
-		
-		    "comboDirectives" : "?flipx",
+        "swooshRotation" : 20,
 
         "allowRotate" : false,
         "allowFlip" : false
@@ -143,8 +141,6 @@
         "weaponRotation" : -160,
         "aimAngle" : 0,
         "twoHanded" : true,
-		
-		    "comboDirectives" : "?flipx",
 
         "allowRotate" : false,
         "allowFlip" : false

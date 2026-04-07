@@ -4,7 +4,7 @@
   "price" : 1500,
   "maxStack" : 1,
   "rarity" : "Legendary",
-  "description" : "Great for hunting things with scales. A bit big for the job, but that never stops anyone",
+  "description" : "Great for hunting things with scales. A bit big for the job, but that never stops anyone.",
   "shortdescription" : "Wyvern's Bane",
   "tooltipKind" : "starforge-uniquesword",
   "category" : "uniqueWeapon",
@@ -20,10 +20,68 @@
   "animationParts" : {
     "handle" : "",
     "blade" : "starforge-wyvernsbane.png",
+    "bladeFullbright" : "",
 	
     "swoosh" : "physical"
   },
   "animationCustom" : {
+    "animatedParts" : {
+      "stateTypes" : {
+        "swoosh" : {
+          "states" : {
+            "flip" : {},
+            "slam" : {
+              "frames" : 3,
+              "cycle" : 0.1,
+              "mode" : "transition",
+              "transition" : "idle"
+            }
+          }
+        }
+      },
+
+      "parts" : {
+        "blade" : {
+          "properties" : {
+            "groundSlamPoint" : [1, 2]
+          }
+        },
+        "swoosh" : {
+          "partStates" : {
+            "swoosh" : {
+              "flip" : {
+                "properties" : {
+                  "image" : "/items/active/weapons/melee/swoosh/starforge/heavyuppercut/heavyuppercut-<partImage>.png:2?flipy",
+                  "offset" : [3, 2.5],
+                  "damageArea" : [[-6.0, -3.5], [-6.0, 0], [-3.5, 2.5], [0, 2.5], [2.5, 0], [2.5, -3.5], [0, -6.0], [-3.5, -6.0]]
+                }
+              },
+              "slam" : {
+                "properties" : {
+                  "image" : "/items/active/weapons/melee/swoosh/starforge/heavyuppercut/heavyuppercut-<partImage>.png:<frame>?flipy",
+                  "offset" : [3, 2.5],
+                  "damageArea" : [[-6.0, -3.5], [-6.0, 0], [-3.5, 2.5], [0, 2.5], [2.5, 0], [2.5, -3.5], [0, -6.0], [-3.5, -6.0]]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "particleEmitters" : {
+      "flip" : {
+        "active" : false,
+        "transformationGroups" : ["weapon"],
+        "offsetRegion" : [-4, -4, 5, 5],
+        "emissionRate" : 70,
+        "particles" : [
+        ]
+      }
+    },
+    "sounds" : {
+      "flipSlash" : [ "/sfx/melee/laser_flip_slash.ogg" ],
+      "slamFall" : [ "/sfx/tech/tech_dash.ogg" ]
+    }
   },
 
   "scripts" : ["/items/active/weapons/melee/starforge-meleeweapon.lua"],
@@ -35,12 +93,80 @@
     "fireTime" : 0.9,
     "baseDps" : 12.5,
     "stanceSpeedFactor" : 1.5,
+    "swingPitchFactor" : 0.5,
     "energyUsage" : 30,
     "damageConfig" : {
       "damageSourceKind" : "hammer",
-      "statusEffects" : [ ],
+      "statusEffects" : [ { "effect" : "starforge-stunned", "duration" : 0.5 } ],
       "knockbackMode" : "facing",
       "timeout" : 0.5
+    },
+    "stances" : {
+      "idle" : {
+        "aimAngle" : 0,
+        "armRotation" : -15,
+        "weaponRotation" : 40,
+        "twoHanded" : false,
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+    }
+  },
+
+  "altAbilityType" : "flipslash",
+  "altAbility" : {
+    "name" : "Dragon Piercer",
+    "scripts" : ["/items/active/weapons/melee/abilities/broadsword/flipslash/starforge-flipslashslam.lua"],
+    "class" : "StarforgeFlipSlashSlam",
+
+    "energyUsage" : 200.0,
+    "rotations" : 1,
+    "rotationTime" : 0.3,
+
+    "jumpVelocity" : [35, 15],
+    "jumpDuration" : 0.2,
+    
+    "slamDelay" : 0.2,
+    "slamVelocity" : [5, -75],
+    "bounceVelocity" : 10,
+    "projectileType" : "physicalexplosionknockback",
+    "projectileParameters" : {
+      "power" : 8,
+      "onlyHitTerrain" : true
+    },
+    "winddownTime" : 0.5,
+    
+    "stances" : {
+      "windup" : {
+        "duration" : 0.45,
+        "armRotation" : 30,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "flip" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "swooshRotation" : 40,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "slam" : {
+        "duration" : 0.425,
+        "armRotation" : -55,
+        "weaponRotation" : -40,
+        "twoHanded" : true,
+
+        "swooshRotation" : 40,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
     }
   },
 

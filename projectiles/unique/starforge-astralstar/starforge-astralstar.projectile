@@ -1,0 +1,62 @@
+{
+  "projectileName" : "starforge-astralstar",
+  "image" : "starforge-astralstar.png",
+  "animationCycle" : 0.2,
+  "frameNumber" : 1,
+  "damageKindImage" : "icon.png",
+  "fallSpeed" : 0,
+  //"lightColor" : [67, 110, 32],
+  "pointLight" : true,
+  "actionOnReap" : [
+	  {
+      "action" : "projectile",
+      "type" : "astraltearstart",
+      "fuzzAngle" : 360
+    }
+  ],
+  "periodicActions" : [
+    {
+      "action" : "particle",
+      "specification" : "astraltearsparkle1",
+      "time" : 0.05,
+      "repeat" : true
+    },
+    {
+      "action" : "particle",
+      "specification" : "astraltearsparkle2",
+      "time" : 0.05,
+      "repeat" : true
+    },
+    {
+      "action" : "particle",
+      "specification" : "astraltearsparkle3",
+      "time" : 0.05,
+      "repeat" : true
+    }
+  ],
+  "statusEffects" : [ ],
+  "emitters" : [ ],
+  "flippable" : true,
+  "fullbright" : true,
+  "power" : 10.0,
+  "speed" : 25.0,
+  "timeToLive" : 0.5,
+  "physics" : "illusion",
+  "damageType" : "NoDamage",
+  "damageKind" : "plasma",
+
+  "scripts" : ["/projectiles/scripts/starforge-homingbullet-wave.lua"],
+  "scriptDelta" : 1,
+
+  //Wave
+  "wavePeriod" : 0,
+  "waveAmplitude" : 0,
+  
+  //Homing
+  "homingStartDelay" : 0.05,
+  "homingStyle" : "controlVelocity",
+  "searchRadius" : 100,
+  "baseHomingControlForce" : 4,
+  "requireLineOfSight" : false,
+  "dieDistance" : 2
+}
