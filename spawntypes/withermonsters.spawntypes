@@ -44,6 +44,22 @@
       "monsterParameters" : {
         "aggressive" : true
       }
+    },
+	
+	{
+	  "name" : "starforge-blackrotfly",
+	  "spawnParameters" : {
+		"area" : "air",
+		"region" : "exposed",
+		"time" : "all"
+	  },
+	  
+	  "groupSize" : [2, 4],
+	  "spawnChance" : 0.01,
+      "monsterType" : "starforge-blackrotfly",
+      "monsterParameters" : {
+        "aggressive" : true
+      }
     }
   
   ]

@@ -1,0 +1,9 @@
+{
+  "name" : "starforge-blackrotfly",
+  "category" : "blackrotfly",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "starforge-blackrotfly.png"
+  }
+}

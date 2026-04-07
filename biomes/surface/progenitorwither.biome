@@ -5,24 +5,18 @@
   "spawnProfile" : {
     "groups" : [
       {
-        "select" : 2,
+        "select" : 3,
         "pool" : [
-          [ 0.5, "starforge-progenitorslither" ],
-          [ 0.5, "starforge-tanglevineseeker" ]
+          [ 0.33, "starforge-progenitorslither" ],
+          [ 0.33, "starforge-tanglevineseeker" ],
+		  [ 0.33, "starforge-witherhusk"]
         ]
       },
       {
-        "select" : 4,
+        "select" : 2,
         "pool" : [
           [ 1, "starforge-blackrotbugcritter" ],
-          [ 1, "starforge-blackrotrollycritter" ],
-          [ 1, "snailcritter" ],
-          [ 1, "sporelingcritter" ],
-          [ 1, "owlcritter" ],
-          [ 1, "blipcritter" ],
-          [ 1, "mousecritter" ],
-          [ 1, "fireflyspawner" ],
-          [ 1, "fishcritter" ]
+          [ 1, "starforge-blackrotrollycritter" ]
         ]
       }
     ],
