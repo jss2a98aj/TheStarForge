@@ -1,0 +1,14 @@
+{
+  "frameGrid" : {
+    "size" : [24, 66],
+    "dimensions" : [2, 1],
+
+    "names" : [
+      [ "blink.1", "blink.2" ]
+    ]
+  },
+
+  "aliases" : {
+    "blink.3" : "blink.1"
+  }
+}

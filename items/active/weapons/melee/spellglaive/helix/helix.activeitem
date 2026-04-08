@@ -37,6 +37,14 @@
           }
         }
       }
+    },
+    "sounds" : {
+      "fire" : [ "/sfx/melee/swing_spear_electric1.ogg", "/sfx/melee/swing_spear_electric2.ogg", "/sfx/melee/swing_spear_electric3.ogg" ],
+      "fire2" : [ "/sfx/melee/swing_spear_electric1.ogg", "/sfx/melee/swing_spear_electric2.ogg", "/sfx/melee/swing_spear_electric3.ogg" ],
+      "fire3" : [ "/sfx/melee/swing_broadsword_electric1.ogg", "/sfx/melee/swing_broadsword_electric2.ogg", "/sfx/melee/swing_broadsword_electric3.ogg" ],
+      "fire4" : [ "/sfx/melee/swing_shortsword_electric1.ogg", "/sfx/melee/swing_shortsword_electric2.ogg", "/sfx/melee/swing_shortsword_electric3.ogg" ],
+      
+      "fireBolt" : [ "/sfx/gun/twigun_shot1.ogg", "/sfx/gun/twigun_shot2.ogg", "/sfx/gun/twigun_shot3.ogg" ]
     }
   },
 

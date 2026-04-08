@@ -65,10 +65,17 @@
     },
 		"sounds" : {
 			"beamImpact" : [ "/sfx/projectiles/flame_burn.ogg" ],
-			"fireStart" : [ ],
-			"fireLoop" : [ ],
-			"fireEnd" : [ ]
-		}
+			"fireStart" : [ "/sfx/gun/gnomebeam_start1.ogg", "/sfx/gun/gnomebeam_start2.ogg" ],
+			"fireLoop" : [ "/sfx/gun/gnomebeam_loop1.ogg", "/sfx/gun/gnomebeam_loop2.ogg" ],
+			"fireEnd" : [ ],
+
+      "fire" : [ "/sfx/melee/swing_spear_ice1.ogg", "/sfx/melee/swing_spear_ice2.ogg", "/sfx/melee/swing_spear_ice3.ogg" ],
+      "fire2" : [ "/sfx/melee/swing_spear_ice1.ogg", "/sfx/melee/swing_spear_ice2.ogg", "/sfx/melee/swing_spear_ice3.ogg" ],
+      "fire3" : [ "/sfx/melee/swing_broadsword_ice1.ogg", "/sfx/melee/swing_broadsword_ice2.ogg", "/sfx/melee/swing_broadsword_ice3.ogg" ],
+      "fire4" : [ "/sfx/melee/swing_shortsword_ice1.ogg", "/sfx/melee/swing_shortsword_ice2.ogg", "/sfx/melee/swing_shortsword_ice3.ogg" ],
+      
+      "fireBolt" : [ "/sfx/gun/omnicannon_shot1.ogg", "/sfx/gun/omnicannon_shot3.ogg", "/sfx/gun/omnicannon_shot4.ogg" ]
+    }
   },
   "animationScripts" : ["/items/active/effects/chain.lua"],
 

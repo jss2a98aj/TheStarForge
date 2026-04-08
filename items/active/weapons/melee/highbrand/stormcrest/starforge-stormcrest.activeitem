@@ -1,0 +1,236 @@
+{
+  "itemName" : "starforge-stormcrest",
+  "level" : 6,
+  "prfire" : 1500,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "A blade thought to follow the storm, but in truth, the storm follows the path cut for it.",
+  "shortdescription" : "Stormcrest",
+  "tooltipKind" : "starforge-uniquesword",
+  "category" : "uniqueWeapon",
+  "tooltipFieldsOverride" : {
+    "subtitle" : "Highbrand"
+  },
+  "twoHanded" : true,
+  "itemTags" : [ "starforge", "weapon", "melee", "highbrand", "greatsword" ],
+
+  "inventoryIcon" : "starforge-stormcrest.png",
+
+  "animation" : "/items/active/weapons/melee/highbrand/starforge-highbrand.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "starforge-stormcrest.png",
+    "bladeFullbright" : "starforge-stormcrestfb.png",
+
+    "tassel1" : "starforge-stormcrestcloth1.png",
+    "tassel1Fullbright" : "starforge-stormcrestcloth1fb.png",
+    "tassel2" : "starforge-stormcrestcloth2.png",
+    "tassel2Fullbright" : "starforge-stormcrestcloth2fb.png",
+	
+    "swoosh" : "electric"
+  },
+  "animationCustom" : {
+    "animatedParts" : {
+      "parts" : {
+        "tassel1" : {
+          "properties" : {
+            "zLevel" : -4,
+            "centered" : true,
+            "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives>?<comboDirectives>",
+            "offset" : [0, -1.5],
+            "transformationGroups" : ["weapon", "tassel1"],
+            "rotationCenter" : [0, 0.5]
+          }
+        },
+        "tassel1Fullbright" : {
+          "properties" : {
+            "zLevel" : -3,
+            "centered" : true,
+            "fullbright" : true,
+            "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives>?<comboDirectives>",
+            "offset" : [0, -1.5],
+            "transformationGroups" : ["weapon", "tassel1"],
+            "rotationCenter" : [0, 0.5]
+          }
+        },
+        "tassel2" : {
+          "properties" : {
+            "zLevel" : -2,
+            "centered" : true,
+            "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives>?<comboDirectives>",
+            "offset" : [0, 0.5],
+            "transformationGroups" : ["weapon", "tassel2"],
+            "rotationCenter" : [0, 0.5]
+          }
+        },
+        "tassel2Fullbright" : {
+          "properties" : {
+            "zLevel" : -1,
+            "centered" : true,
+            "fullbright" : true,
+            "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives>?<comboDirectives>",
+            "offset" : [0, 0.5],
+            "transformationGroups" : ["weapon", "tassel2"],
+            "rotationCenter" : [0, 0.5]
+          }
+        },
+        "swoosh" : {
+          "properties" : {
+            "fullbright" : true
+          }
+        }
+      }
+    },
+  
+    "lights" : {
+      "idleGlow" : {
+        "active" : true,
+        "position" : [0, 0],
+        "color" : [35, 35, 55],
+        "flickerPeriod" : 1,
+        "flickerMinIntensity" : 0.95,
+        "flickerMaxIntensity" : 1.0,
+        "flickerPeriodVariance" : 0.0,
+        "flickerIntensityVariance" : 0.0
+      }
+    },
+
+    "transformationGroups" : {
+      "tassel1" : {},
+      "tassel2" : {}
+    },
+    
+    "particleEmitters" : {
+      "electricswoosh" : {
+        "active" : false,
+        "transformationGroups" : ["swoosh"],
+        "offsetRegion" : [3.5, -1.0, 7.5, 1.0],
+        "burstCount" : 1,
+        "particles" : [
+          {
+            "particle" : {
+              "type" : "animated",
+              "animation" : "/animations/electriccloudpuff/electriccloudpuff.animation",
+              "position" : [0, 0],
+              "layer" : "back",
+              "initialVelocity" : [0, 0],
+              "finalVelocity" : [0, 0.0],
+              "approach" : [0, 50],
+              "fade" : 0.5,
+              "destructionAction" : "shrink",
+              "destructionTime" : 0.1,
+              "size" : 0.75,
+              "timeToLive" : 0.7,
+              "fullbright" : true,
+              "variance" : {
+                "rotation" : 190,
+                "size" : 0.25,
+                "initialVelocity" : [1, 0]
+              }
+            }
+          }
+        ]
+      },
+      "idleParticles" : {
+        "active" : true,
+        "transformationGroups" : ["weapon"],
+        "emissionRate" : 35,
+        "emissionRateVariance" : 5,
+        "offsetRegion" : [-0.25, 1, 0.25, 7.5],
+        "particles" : [
+          {
+            "particle" : {
+              "type" : "animated",
+              "animation" : "/animations/electriccloudpuff/electriccloudpuff.animation",
+              "position" : [0, 0],
+              "layer" : "back",
+              "initialVelocity" : [0, 0],
+              "finalVelocity" : [0, 0.0],
+              "approach" : [0, 50],
+              "fade" : 0.5,
+              "destructionAction" : "shrink",
+              "destructionTime" : 0.1,
+              "size" : 0.75,
+              "timeToLive" : 0.7,
+              "fullbright" : true,
+              "variance" : {
+                "rotation" : 190,
+                "size" : 0.25,
+                "initialVelocity" : [1, 0]
+              }
+            }
+          },
+          {
+            "particle" : {
+              "type" : "animated",
+              "animation" : "/animations/electriccloudpuff/electriccloudpuff.animation",
+              "position" : [0, 0],
+              "layer" : "back",
+              "initialVelocity" : [0, 0],
+              "finalVelocity" : [0, 0.0],
+              "approach" : [0, 50],
+              "fade" : 0.5,
+              "destructionAction" : "shrink",
+              "destructionTime" : 0.1,
+              "size" : 0.75,
+              "timeToLive" : 0.7,
+              "fullbright" : true,
+              "variance" : {
+                "rotation" : 190,
+                "size" : 0.25,
+                "initialVelocity" : [1, 0]
+              }
+            }
+          }
+        ]
+      }
+    },
+
+    "sounds" : {
+      "fire" : [ "/sfx/melee/swing_broadsword_electric1.ogg", "/sfx/melee/swing_broadsword_electric2.ogg", "/sfx/melee/swing_broadsword_electric3.ogg" ],
+      "fire2" : [ "/sfx/melee/swing_shortsword_electric1.ogg", "/sfx/melee/swing_shortsword_electric2.ogg", "/sfx/melee/swing_shortsword_electric3.ogg" ],
+      "fire3" : [ "/sfx/melee/swing_broadsword_electric1.ogg", "/sfx/melee/swing_broadsword_electric2.ogg", "/sfx/melee/swing_broadsword_electric3.ogg" ],
+      "fire4" : [ "/sfx/melee/swing_shortsword_electric1.ogg", "/sfx/melee/swing_shortsword_electric2.ogg", "/sfx/melee/swing_shortsword_electric3.ogg" ],
+      "fire5" : [ "/sfx/melee/swing_spear_electric1.ogg", "/sfx/melee/swing_spear_electric2.ogg", "/sfx/melee/swing_spear_electric3.ogg" ]
+    }
+  },
+
+  "scripts" : ["/items/active/weapons/melee/starforge-meleeweapon.lua", "/items/active/weapons/starforge-hangingparts.lua"],
+  "hangingParts" : {
+    "tassel1" : "tassel1",
+    "tassel2" : "tassel2"
+  },
+  "shakeVelocity" : 4,
+
+  "elementalType" : "electric",
+
+  "primaryAbilityType" : "starforge-highbrandcombo",
+  "primaryAbility" : {
+    "fireTime" : 0.9,
+    "baseDps" : 11.5,
+    "stanceSpeedFactor" : 1,
+    "swingPitchFactor" : 0.8,
+    "energyUsage" : 30,
+    "damageConfig" : {
+      "damageSourceKind" : "electricbroadsword",
+      "statusEffects" : [ ],
+      "knockbackMode" : "facing",
+      "timeout" : 0.5
+    },
+
+    "swooshReachOffset" : 0.5,
+
+    "stances" : {
+      "idle" : {
+        "aimAngle" : 0,
+        "armRotation" : -10,
+        "weaponRotation" : 50,
+        "twoHanded" : false,
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
+}

@@ -54,9 +54,11 @@
   "primaryAbility" : {
     "fireTime" : 0.9,
     "baseDps" : 12.5,
-    "stanceSpeedFactor" : 1,
+    "stanceSpeedFactor" : 1.15,
     "swingPitchFactor" : 0.8,
-    "energyUsage" : 30
+    "energyUsage" : 30,
+
+    "swooshReachOffset" : -0.5
   },
 
   "altAbilityType" : "bladecharge",

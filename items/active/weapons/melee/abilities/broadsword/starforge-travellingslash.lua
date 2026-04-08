@@ -44,7 +44,12 @@ function StarforgeTravellingSlash:fire()
 end
 
 function StarforgeTravellingSlash:aimVector()
-  return {mcontroller.facingDirection(), 0}
+  local aimVector = vec2.rotate({1, 0}, self.weapon.aimAngle)
+  if self.fixedAimVector then
+    aimVector = self.fixedAimVector
+  end
+  aimVector[1] = aimVector[1] * mcontroller.facingDirection()
+  return aimVector
 end
 
 function StarforgeTravellingSlash:damageAmount()

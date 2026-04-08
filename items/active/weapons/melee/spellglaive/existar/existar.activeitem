@@ -102,6 +102,14 @@
     "transformationGroups" : {
       "tassel1" : {},
       "tassel2" : {}
+    },
+    "sounds" : {
+      "fire" : [ "/sfx/melee/swing_spear_fire1.ogg", "/sfx/melee/swing_spear_fire2.ogg", "/sfx/melee/swing_spear_fire3.ogg" ],
+      "fire2" : [ "/sfx/melee/swing_spear_fire1.ogg", "/sfx/melee/swing_spear_fire2.ogg", "/sfx/melee/swing_spear_fire3.ogg" ],
+      "fire3" : [ "/sfx/melee/swing_broadsword_fire1.ogg", "/sfx/melee/swing_broadsword_fire2.ogg", "/sfx/melee/swing_broadsword_fire3.ogg" ],
+      "fire4" : [ "/sfx/melee/swing_shortsword_fire1.ogg", "/sfx/melee/swing_shortsword_fire2.ogg", "/sfx/melee/swing_shortsword_fire3.ogg" ],
+      
+      "fireBolt" : [ "/sfx/gun/dragonhead_charged_fire1.ogg", "/sfx/gun/dragonhead_charged_fire2.ogg", "/sfx/gun/dragonhead_charged_fire3.ogg", "/sfx/gun/dragonhead_charged_fire4.ogg" ]
     }
   },
 

@@ -1,0 +1,54 @@
+{
+  "itemName" : "starforge-godkey",
+  "level" : 7,
+  "price" : 1500,
+  "maxStack" : 1,
+  "rarity" : "Essential",
+  "description" : "Something about its make suggests a purpose far older than the hand that forged it.",
+  "shortdescription" : "Godkey",
+  "tooltipKind" : "starforge-uniquesword",
+  "category" : "uniqueWeapon",
+  "tooltipFieldsOverride" : {
+    "subtitle" : "Highbrand"
+  },
+  "twoHanded" : true,
+  "itemTags" : [ "starforge", "weapon", "melee", "highbrand", "greatsword" ],
+
+  "inventoryIcon" : "starforge-godkey.png",
+
+  "animation" : "/items/active/weapons/melee/highbrand/starforge-highbrand.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "starforge-godkey.png",
+    "bladeFullbright" : "",
+	
+    "swoosh" : "physical"
+  },
+  "animationCustom" : {
+  },
+
+  "scripts" : ["/items/active/weapons/melee/starforge-meleeweapon.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbilityType" : "starforge-highbrandcombo",
+  "primaryAbility" : {
+    "fireTime" : 0.9,
+    "baseDps" : 14.5,
+    "stanceSpeedFactor" : 1.3,
+    "swingPitchFactor" : 0.6,
+    "energyUsage" : 70,
+    "stances" : {
+      "idle" : {
+        "aimAngle" : 0,
+        "armRotation" : -15,
+        "weaponRotation" : 40,
+        "twoHanded" : false,
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
+}

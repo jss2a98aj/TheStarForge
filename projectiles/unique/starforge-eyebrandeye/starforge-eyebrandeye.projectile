@@ -1,0 +1,47 @@
+{
+  "projectileName" : "starforge-eyebrandeye",
+  "image" : "eye.png",
+  "physics" : "grenade",
+  "animationCycle" : 1,
+  "frameNumber" : 1,
+  "power" : 0,
+  "speed" : 25,
+  "timeToLive" : 5,
+  "bounces" : -1,
+  "piercing" : false,
+  "emitters" : [ ],
+  "damagePoly" : [ ],
+  "damageKind" : "default",
+  "damageType" : "noDamage",
+  "periodicActions" : [
+    {
+      "time" : 0.25,
+      "action" : "particle",
+      "specification" : {
+        "type" : "ember",
+        "size" : 2,
+        "color" : [240, 50, 80, 200],
+        "initialVelocity" : [0.0, 2.0],
+        "finalVelocity" : [0.0, -10.0],
+        "approach" : [2.0, 25.0],
+        "timeToLive" : 0.25,
+        "fade" : 0.8,
+        "destructionAction" : "shrink",
+        "destructionTime" : 0.25,
+        "layer" : "back",
+        "variance" : {
+          "initialVelocity" : [3.0, 1.0],
+          "size" : 1.0
+        }
+      }
+    },
+    {
+      "time" : 0.2,
+      "action" : "projectile",
+      "inheritDamageFactor" : 0.05,
+      "type" : "largepoisoncloud",
+      "direction" : [0, 0],
+      "fuzzAngle" : 30
+    }
+  ]
+}

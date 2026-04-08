@@ -62,7 +62,13 @@
       }
     },
     "sounds" : {    
-      "fireBolt" : [ "/sfx/melee/astraltear1.ogg" ]
+      "fireBolt" : [ "/sfx/melee/astraltear1.ogg" ],
+      
+      "fire" : [ "/sfx/melee/swing_spear_ice1.ogg", "/sfx/melee/swing_spear_ice2.ogg", "/sfx/melee/swing_spear_ice3.ogg" ],
+      "fire2" : [ "/sfx/melee/swing_spear_ice1.ogg", "/sfx/melee/swing_spear_ice2.ogg", "/sfx/melee/swing_spear_ice3.ogg" ],
+      "fire3" : [ "/sfx/melee/swing_spear_ice1.ogg", "/sfx/melee/swing_spear_ice2.ogg", "/sfx/melee/swing_spear_ice3.ogg" ],
+      "fire4" : [ "/sfx/melee/swing_broadsword_ice1.ogg", "/sfx/melee/swing_broadsword_ice2.ogg", "/sfx/melee/swing_broadsword_ice3.ogg" ],
+      "fire5" : [ "/sfx/melee/swing_shortsword_ice1.ogg", "/sfx/melee/swing_shortsword_ice2.ogg", "/sfx/melee/swing_shortsword_ice3.ogg" ]
     }
   },
 

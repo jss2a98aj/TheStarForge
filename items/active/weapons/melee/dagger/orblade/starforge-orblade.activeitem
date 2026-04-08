@@ -66,6 +66,12 @@
       }
     },
     "sounds" : {
+      "fire" : [ "/sfx/melee/swing_spear_poison1.ogg", "/sfx/melee/swing_spear_poison2.ogg", "/sfx/melee/swing_spear_poison3.ogg" ],
+      "fire2" : [ "/sfx/melee/swing_spear_poison1.ogg", "/sfx/melee/swing_spear_poison2.ogg", "/sfx/melee/swing_spear_poison3.ogg" ],
+      "fire3" : [ "/sfx/melee/swing_spear_poison1.ogg", "/sfx/melee/swing_spear_poison2.ogg", "/sfx/melee/swing_spear_poison3.ogg" ],
+      "fire4" : [ "/sfx/melee/swing_broadsword_poison1.ogg", "/sfx/melee/swing_broadsword_poison2.ogg", "/sfx/melee/swing_broadsword_poison3.ogg" ],
+      "fire5" : [ "/sfx/melee/swing_shortsword_poison1.ogg", "/sfx/melee/swing_shortsword_poison2.ogg", "/sfx/melee/swing_shortsword_poison3.ogg" ],
+
       "fireTrailDashCharge" : [ "/sfx/npc/monsters/orbide_windup.ogg" ],
       "iceTrailDashCharge" : [ "/sfx/npc/monsters/orbide_windup.ogg" ],
       "electricTrailDashCharge" : [ "/sfx/npc/monsters/orbide_windup.ogg" ],

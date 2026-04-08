@@ -264,9 +264,14 @@ function StarforgeMeleeCombo:fire()
   self.weapon:updateAim()
 
   local animStateKey = self.animKeyPrefix .. (self.comboStep > 1 and "fire" .. self.comboStep or "fire")
-  if stance.swooshRotation then
+  if animator.hasTransformationGroup("swooshOffset") then
     animator.resetTransformationGroup("swooshOffset")
-    animator.rotateTransformationGroup("swooshOffset", util.toRadians(stance.swooshRotation))
+    if self.swooshReachOffset then
+      animator.translateTransformationGroup("swooshOffset", {self.swooshReachOffset, 0})
+    end
+    if stance.swooshRotation then
+      animator.rotateTransformationGroup("swooshOffset", util.toRadians(stance.swooshRotation))
+    end
   end
   animator.setAnimationState("swoosh", animStateKey)
   --Add normal pitch variance to shots
@@ -277,6 +282,16 @@ function StarforgeMeleeCombo:fire()
   local swooshKey = self.animKeyPrefix .. (self.elementalType or self.weapon.elementalType) .. "swoosh"
   animator.setParticleEmitterOffsetRegion(swooshKey, self.swooshOffsetRegions[self.comboStep])
   animator.burstParticleEmitter(swooshKey)
+
+  if stance.immediateSounds then
+    for sound, pitchShift in pairs(stance.immediateSounds) do
+      if animator.hasSound(sound) then
+        local variance = (pitchShift or 0.1) - (math.random() * ((pitchShift or 0.1) * 2))
+        animator.setSoundPitch(sound, 1 + pitchVariance)
+        animator.playSound(sound)
+      end
+    end
+  end
 
   -- If this step is configured as a "spin" move, spin the weapon
   if stance.spinRate then

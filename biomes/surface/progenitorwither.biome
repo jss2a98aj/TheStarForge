@@ -65,10 +65,10 @@
 
   "musicTrack" : {
     "day" : {
-      "tracks" : [ "/music/the_unruly.ogg"  ]
+      "tracks" : [ "/music/loib-the_unruly.ogg"  ]
     },
     "night" : {
-      "tracks" : [ "/music/the_unruly.ogg"  ]
+      "tracks" : [ "/music/loib-the_unruly.ogg"  ]
     }
   },
 

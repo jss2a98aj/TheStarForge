@@ -20,13 +20,44 @@
   "animationParts" : {
     "handle" : "",
     "blade" : "starforge-resonance.png",
-    "bladeFullbright" : "",
+    "bladeFullbright" : "starforge-resonanceshine.png",
 	
     "swoosh" : "fire"
   },
   "animationCustom" : {
     "animatedParts" : {
+      "stateTypes" : {
+        "geode" : {
+          "default" : "silent",
+          "states" : {
+            "silent" : {
+            },
+            "chime" : {
+              "frames" : 5,
+              "cycle" : 0.5,
+              "mode" : "transition",
+              "transition" : "silent"
+            }
+          }
+        }
+      },
       "parts" : {
+        "bladeFullbright" : {
+          "partStates" : {
+            "geode" : {
+              "silent" : {
+                "properties" : {
+                  "image" : ""
+                }
+              },
+              "chime" : {
+                "properties" : {
+                  "image" : "<partImage>:<frame><paletteSwaps>?<directives><comboDirectives>"
+                }
+              }
+            }
+          }
+        },
         "swoosh" : {
           "properties" : {
             "fullbright" : true
@@ -39,7 +70,9 @@
       "fire2" : [ "/sfx/melee/swing_shortsword_fire1.ogg", "/sfx/melee/swing_shortsword_fire2.ogg", "/sfx/melee/swing_shortsword_fire3.ogg" ],
       "fire3" : [ "/sfx/melee/swing_broadsword_fire1.ogg", "/sfx/melee/swing_broadsword_fire2.ogg", "/sfx/melee/swing_broadsword_fire3.ogg" ],
       "fire4" : [ "/sfx/melee/swing_shortsword_fire1.ogg", "/sfx/melee/swing_shortsword_fire2.ogg", "/sfx/melee/swing_shortsword_fire3.ogg" ],
-      "fire5" : [ "/sfx/melee/swing_spear_fire1.ogg", "/sfx/melee/swing_spear_fire2.ogg", "/sfx/melee/swing_spear_fire3.ogg" ]
+      "fire5" : [ "/sfx/melee/swing_spear_fire1.ogg", "/sfx/melee/swing_spear_fire2.ogg", "/sfx/melee/swing_spear_fire3.ogg" ],
+
+      "chime" : ["/sfx/instruments/geode/geodehum.ogg"]
     }
   },
 
@@ -68,6 +101,46 @@
         "twoHanded" : false,
         "allowRotate" : false,
         "allowFlip" : true
+      },
+      "fire1" : {
+        "animationStates" : {
+          "geode" : "chime"
+        },
+        "immediateSounds" : {
+          "chime" : 0.5
+        }
+      },
+      "fire2" : {
+        "animationStates" : {
+          "geode" : "chime"
+        },
+        "immediateSounds" : {
+          "chime" : 0.5
+        }
+      },
+      "fire3" : {
+        "animationStates" : {
+          "geode" : "chime"
+        },
+        "immediateSounds" : {
+          "chime" : 0.5
+        }
+      },
+      "fire4" : {
+        "animationStates" : {
+          "geode" : "chime"
+        },
+        "immediateSounds" : {
+          "chime" : 0.5
+        }
+      },
+      "fire5" : {
+        "animationStates" : {
+          "geode" : "chime"
+        },
+        "immediateSounds" : {
+          "chime" : 0.5
+        }
       }
     }
   },

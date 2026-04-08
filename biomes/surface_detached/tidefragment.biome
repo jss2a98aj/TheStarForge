@@ -10,8 +10,8 @@
         "pool" : [
           [ 1.0, "starforge-cephaloworm" ],
           [ 1.0, "starforge-glorbee"],
-		  [ 1.0, "starforge-glorbite"],
-		  [ 1.0, "starforge-puppertooth"]
+          [ 1.0, "starforge-glorbite"],
+          [ 1.0, "starforge-puppertooth"]
         ]
       },
       {
@@ -31,10 +31,10 @@
   
    "musicTrack" : {
     "day" : {
-      "tracks" : [  "/music/Tidal_Depths.ogg" ]
+      "tracks" : [  "/music/loib-tidal_depths.ogg" ]
     },
     "night" : {
-      "tracks" : [  "/music/Tidal_Depths.ogg" ]
+      "tracks" : [  "/music/loib-tidal_depths.ogg" ]
     }
   },
 

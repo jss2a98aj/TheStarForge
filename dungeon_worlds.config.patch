@@ -24,7 +24,7 @@
         60
       ],
       "ambientNoises": "/sfx/environmental/space_loop4.ogg",
-      "musicTrack": "/music/Snowswept.ogg"
+      "musicTrack": "/music/kyumay-feleiaen.ogg"
     }
   },
   {
@@ -47,7 +47,7 @@
       128
     ],
     "ambientNoises": "/sfx/others/unboundmission1ambience.ogg",
-    "musicTrack": "/music/unshackled_unbound.ogg"
+    "musicTrack": ""
   }
  },
    {
@@ -92,7 +92,7 @@
         128
       ],
       "ambientNoises": "/sfx/others/unboundmission1ambience.ogg",
-      "musicTrack": "/music/unshackled_unbound.ogg"
+      "musicTrack": "/music/kyumay-guwata.ogg"
     }
   },
   {
@@ -115,7 +115,7 @@
         128
       ],
       "ambientNoises": "/sfx/others/unboundmission1ambience.ogg",
-      "musicTrack": "/music/unshackled_unbound.ogg"
+      "musicTrack": "/music/loib-unshackled_unbound.ogg"
     }
   },
   {
@@ -144,7 +144,7 @@
         128
       ],
       "ambientNoises": "/sfx/others/unboundmission1ambience.ogg",
-      "musicTrack": "/music/unshackled_unbound.ogg"
+      "musicTrack": "/music/loib-unshackled_unbound.ogg"
     }
   },
   {
@@ -167,7 +167,7 @@
         128
       ],
       "ambientNoises": "/sfx/others/unboundmission1ambience.ogg",
-      "musicTrack": "/music/unshackled_unbound.ogg"
+      "musicTrack": "/music/loib-unshackled_unbound.ogg"
     }
   },
   {
@@ -190,7 +190,7 @@
         128
       ],
       "ambientNoises": "/sfx/others/unboundmission1ambience.ogg",
-      "musicTrack": "/music/unshackled_unbound.ogg"
+      "musicTrack": "/music/loib-unshackled_unbound.ogg"
     }
   },
   {
@@ -408,7 +408,7 @@
       "dungeonSurfaceHeight" : 1070,
       "ambientLightLevel" : [128, 128, 128],
       "ambientNoises" : "/sfx/others/unboundmission1ambience.ogg",
-      "musicTrack" : "/music/unshackled_unbound.ogg"
+      "musicTrack" : "/music/loib-unshackled_unbound.ogg"
 	}
   }
 ]

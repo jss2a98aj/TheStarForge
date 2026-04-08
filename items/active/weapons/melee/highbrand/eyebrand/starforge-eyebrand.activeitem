@@ -21,12 +21,273 @@
     "handle" : "",
     "blade" : "starforge-eyebrand.png",
     "bladeFullbright" : "",
+
+    "pupil1" : "eyebrandpupil.png",
+    "pupil2" : "eyebrandpupil.png",
+    "pupil3" : "eyebrandpupil.png",
+    "pupil4" : "eyebrandpupil.png",
+    "pupil5" : "eyebrandpupil.png",
+
+    "eye1" : "eyebrandeye1.png",
+    "eye2" : "eyebrandeye2.png",
+    "eye3" : "eyebrandeye3.png",
+    "eye4" : "eyebrandeye4.png",
+    "eye5" : "eyebrandeye5.png",
 	
     "swoosh" : "poison"
   },
   "animationCustom" : {
     "animatedParts" : {
+      "stateTypes" : {
+        "firing" : {
+          "default" : "off",
+          "states" : {
+            "off" : {},
+            "fire" : {
+              "frames" : 2,
+              "cycle" : 0.07,
+              "mode" : "transition",
+              "transition" : "off"
+            }
+          }
+        },
+        "eye1" : {
+          "default" : "open",
+          "states" : {
+            "open" : {},
+            "blink" : {
+              "frames" : 3,
+              "cycle" : 0.15,
+              "mode" : "transition",
+              "transition" : "open"
+            },
+            "empty" : {}
+          }
+        },
+        "eye2" : {
+          "default" : "open",
+          "states" : {
+            "open" : {},
+            "blink" : {
+              "frames" : 3,
+              "cycle" : 0.15,
+              "mode" : "transition",
+              "transition" : "open"
+            },
+            "empty" : {}
+          }
+        },
+        "eye3" : {
+          "default" : "open",
+          "states" : {
+            "open" : {},
+            "blink" : {
+              "frames" : 3,
+              "cycle" : 0.15,
+              "mode" : "transition",
+              "transition" : "open"
+            },
+            "empty" : {}
+          }
+        },
+        "eye4" : {
+          "default" : "open",
+          "states" : {
+            "open" : {},
+            "blink" : {
+              "frames" : 3,
+              "cycle" : 0.15,
+              "mode" : "transition",
+              "transition" : "open"
+            },
+            "empty" : {}
+          }
+        },
+        "eye5" : {
+          "default" : "open",
+          "states" : {
+            "open" : {},
+            "blink" : {
+              "frames" : 3,
+              "cycle" : 0.15,
+              "mode" : "transition",
+              "transition" : "open"
+            }
+          }
+        }
+      },
       "parts" : {
+        "eye1" : {
+          "properties" : {
+            "zLevel" : 3,
+            "centered" : true,
+            "offset" : [0, 2.625],
+            "transformationGroups" : ["weapon"],
+            "rotationCenter" : [0, 0]
+          },
+
+          "partStates" : {
+            "eye1" : {
+              "open" : {
+                "properties" : {
+                  "image" : ""
+                }
+              },
+              "blink" : {
+                "properties" : {
+                  "image" : "<partImage>:blink.<frame>?<bladeDirectives>"
+                }
+              }
+            }
+          }
+        },
+        "eye2" : {
+          "properties" : {
+            "zLevel" : 3,
+            "centered" : true,
+            "offset" : [0, 2.625],
+            "transformationGroups" : ["weapon"],
+            "rotationCenter" : [0, 0]
+          },
+
+          "partStates" : {
+            "eye2" : {
+              "open" : {
+                "properties" : {
+                  "image" : ""
+                }
+              },
+              "blink" : {
+                "properties" : {
+                  "image" : "<partImage>:blink.<frame>?<bladeDirectives>"
+                }
+              }
+            }
+          }
+        },
+        "eye3" : {
+          "properties" : {
+            "zLevel" : 3,
+            "centered" : true,
+            "offset" : [0, 2.625],
+            "transformationGroups" : ["weapon"],
+            "rotationCenter" : [0, 0]
+          },
+
+          "partStates" : {
+            "eye3" : {
+              "open" : {
+                "properties" : {
+                  "image" : ""
+                }
+              },
+              "blink" : {
+                "properties" : {
+                  "image" : "<partImage>:blink.<frame>?<bladeDirectives>"
+                }
+              }
+            }
+          }
+        },
+        "eye4" : {
+          "properties" : {
+            "zLevel" : 3,
+            "centered" : true,
+            "offset" : [0, 2.625],
+            "transformationGroups" : ["weapon"],
+            "rotationCenter" : [0, 0]
+          },
+
+          "partStates" : {
+            "eye4" : {
+              "open" : {
+                "properties" : {
+                  "image" : ""
+                }
+              },
+              "blink" : {
+                "properties" : {
+                  "image" : "<partImage>:blink.<frame>?<bladeDirectives>"
+                }
+              }
+            }
+          }
+        },
+        "eye5" : {
+          "properties" : {
+            "zLevel" : 3,
+            "centered" : true,
+            "offset" : [0, 2.625],
+            "transformationGroups" : ["weapon"],
+            "rotationCenter" : [0, 0]
+          },
+
+          "partStates" : {
+            "eye5" : {
+              "open" : {
+                "properties" : {
+                  "image" : ""
+                }
+              },
+              "blink" : {
+                "properties" : {
+                  "image" : "<partImage>:blink.<frame>?<bladeDirectives>"
+                }
+              }
+            }
+          }
+        },
+
+        "pupil1" : {
+          "properties" : {
+            "zLevel" : 2,
+            "centered" : true,
+            "image" : "<partImage>",
+            "offset" : [-0.375, 2.75],
+            "transformationGroups" : ["weapon", "eye1"],
+            "rotationCenter" : [0, 0]
+          }
+        },
+        "pupil2" : {
+          "properties" : {
+            "zLevel" : 2,
+            "centered" : true,
+            "image" : "<partImage>",
+            "offset" : [0.125, 2.125],
+            "transformationGroups" : ["weapon", "eye2"],
+            "rotationCenter" : [0, 0]
+          }
+        },
+        "pupil3" : {
+          "properties" : {
+            "zLevel" : 2,
+            "centered" : true,
+            "image" : "<partImage>",
+            "offset" : [-0.5, 1.75],
+            "transformationGroups" : ["weapon", "eye3"],
+            "rotationCenter" : [0, 0]
+          }
+        },
+        "pupil4" : {
+          "properties" : {
+            "zLevel" : 2,
+            "centered" : true,
+            "image" : "<partImage>",
+            "offset" : [0.0625, 1.0625],
+            "transformationGroups" : ["weapon", "eye4"],
+            "rotationCenter" : [0, 0]
+          }
+        },
+        "pupil5" : {
+          "properties" : {
+            "zLevel" : 2,
+            "centered" : true,
+            "image" : "<partImage>",
+            "offset" : [0.25, -0.875],
+            "transformationGroups" : ["weapon", "eye5"],
+            "rotationCenter" : [0, 0]
+          }
+        },
         "swoosh" : {
           "properties" : {
             "fullbright" : true
@@ -34,16 +295,94 @@
         }
       }
     },
+    "transformationGroups" : {
+      "eye1" : {
+        "interpolated" : true
+      },
+      "eye2" : {
+        "interpolated" : true
+      },
+      "eye3" : {
+        "interpolated" : true
+      },
+      "eye4" : {
+        "interpolated" : true
+      },
+      "eye5" : {
+        "interpolated" : true
+      },
+      "muzzle" : {}
+    },
+    "lights" : {
+      "muzzleFlash" : {
+        "active" : false,
+        "position" : [0, 0],
+        "color" : [0, 0, 0]
+      }
+    },
+    "particleEmitters" : {
+      "muzzleFlash" : {
+        "active" : false,
+        "transformationGroups" : ["swoosh"],
+        "offsetRegion" : [3.5, -1.0, 7.5, 1.0],
+        "burstCount" : 1,
+        "particles" : []
+      }
+    },
     "sounds" : {
       "fire" : [ "/sfx/melee/swing_broadsword_poison1.ogg", "/sfx/melee/swing_broadsword_poison2.ogg", "/sfx/melee/swing_broadsword_poison3.ogg" ],
       "fire2" : [ "/sfx/melee/swing_shortsword_poison1.ogg", "/sfx/melee/swing_shortsword_poison2.ogg", "/sfx/melee/swing_shortsword_poison3.ogg" ],
       "fire3" : [ "/sfx/melee/swing_broadsword_poison1.ogg", "/sfx/melee/swing_broadsword_poison2.ogg", "/sfx/melee/swing_broadsword_poison3.ogg" ],
       "fire4" : [ "/sfx/melee/swing_shortsword_poison1.ogg", "/sfx/melee/swing_shortsword_poison2.ogg", "/sfx/melee/swing_shortsword_poison3.ogg" ],
-      "fire5" : [ "/sfx/melee/swing_spear_poison1.ogg", "/sfx/melee/swing_spear_poison2.ogg", "/sfx/melee/swing_spear_poison3.ogg" ]
+      "fire5" : [ "/sfx/melee/swing_spear_poison1.ogg", "/sfx/melee/swing_spear_poison2.ogg", "/sfx/melee/swing_spear_poison3.ogg" ],
+
+      "travelSlash" : [ "/sfx/gun/wormgun_burst.ogg" ]
     }
   },
 
-  "scripts" : ["/items/active/weapons/melee/starforge-meleeweapon.lua"],
+  "scripts" : ["/items/active/weapons/melee/starforge-meleeweapon.lua", "starforge-eyebrand.lua"],
+  "eyes" : {
+    "eye1" : {
+      "blinkTime" : [2.0, 4.0],
+
+      "twitchTime" : [0.4, 1.5],
+      "twitchMagnitude" : 0.125,
+
+      "rotation" : 0
+    },
+    "eye2" : {
+      "blinkTime" : [2.0, 4.0],
+
+      "twitchTime" : [0.4, 1.5],
+      "twitchMagnitude" : 0.125,
+
+      "rotation" : -90
+    },
+    "eye3" : {
+      "blinkTime" : [2.0, 4.0],
+
+      "twitchTime" : [0.4, 1.5],
+      "twitchMagnitude" : 0.125,
+
+      "rotation" : 0
+    },
+    "eye4" : {
+      "blinkTime" : [2.0, 4.0],
+
+      "twitchTime" : [0.4, 1.5],
+      "twitchMagnitude" : 0.225,
+
+      "rotation" : 0
+    },
+    "eye5" : {
+      "blinkTime" : [2.0, 4.0],
+
+      "twitchTime" : [0.4, 1.5],
+      "twitchMagnitude" : 0.125,
+
+      "rotation" : 90
+    }
+  },
 
   "elementalType" : "poison",
 
@@ -55,7 +394,7 @@
     "swingPitchFactor" : 0.6,
     "energyUsage" : 30,
     "damageConfig" : {
-      "damageSourceKind" : "poisonbroadsword",
+      "damageSourceKind" : "poisonhammer",
       "statusEffects" : [ ],
       "knockbackMode" : "facing",
       "timeout" : 0.5
@@ -66,6 +405,74 @@
         "armRotation" : -15,
         "weaponRotation" : 35,
         "twoHanded" : false,
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "windup3" : {
+		    "comboDirectives" : ""
+      },
+      "fire3" : {
+		    "comboDirectives" : ""
+      },
+      "wait3" : {
+		    "comboDirectives" : ""
+      }
+    }
+  },
+
+  "altAbilityType" : "astraltear",
+  "altAbility" : {
+    "name" : "Visual Impairment",
+    "scripts" : ["/items/active/weapons/melee/abilities/broadsword/starforge-travellingslash.lua"],
+    "class" : "StarforgeTravellingSlash",
+
+    "cooldownTime" : 2,
+
+    "projectileType" : "starforge-eyebrandeye",
+    "projectileParameters" : {
+      "timeToLive" : 0,
+      "actionOnReap" : [
+        {
+          "action" : "loop",
+          "count" : 5,
+          "body" : [
+            {
+              "action" : "projectile",
+              "inheritDamageFactor" : 0.2,
+              "type" : "starforge-eyebrandeye",
+              "fuzzAngle" : 30
+            }
+          ]
+        }
+      ]
+    },
+    "projectileOffset" : [0, 6],
+    "fixedAimVector" : [0.2, 1],
+
+    "stances" : {
+      "windup" : {
+        "duration" : 0.25,
+        "armRotation" : 0,
+        "weaponRotation" : 10,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0.5,
+        "armRotation" : 60,
+        "weaponRotation" : -40,
+        "twoHanded" : true,
+
+        "animationStates" : {
+          "eye1" : "blink",
+          "eye2" : "blink",
+          "eye3" : "blink",
+          "eye4" : "blink",
+          "eye5" : "blink"
+        },
+
         "allowRotate" : false,
         "allowFlip" : true
       }
