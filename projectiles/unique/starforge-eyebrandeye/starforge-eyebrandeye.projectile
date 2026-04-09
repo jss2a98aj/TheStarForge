@@ -40,8 +40,10 @@
       "action" : "projectile",
       "inheritDamageFactor" : 0.05,
       "type" : "largepoisoncloud",
-      "direction" : [0, 0],
-      "fuzzAngle" : 30
+      //"direction" : [0, 1],
+      "config" : {
+      },
+      "fuzzAngle" : 360
     }
   ]
 }

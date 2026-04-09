@@ -1,0 +1,57 @@
+{
+  "itemName" : "starforge-feroziumshuriken",
+  "level" : 5,
+  "price" : 1000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "Fling fragments of tidal ice at your foes.",
+  "shortdescription" : "Ferozium Shuriken",
+  "tooltipKind" : "starforge-uniquegun",
+  "category": "uniqueWeapon",
+  "tooltipFieldsOverride" : {
+    "subtitle" : "Throwable"
+  },
+  "twoHanded" : false,
+  "itemTags" : [ "starforge", "weapon", "ranged", "throwable" ],
+  //"learnBlueprintsOnPickup" : [ "starforge-feroziumshuriken" ],
+
+  "inventoryIcon" : "starforge-feroziumshuriken.png",
+
+  "animation" : "/items/active/weapons/ranged/throwable/starforge-throwable.animation",
+  "animationParts" : {
+    "middle" : ""
+  },
+  "animationCustom" : {
+	  "sounds" : {
+      "throw" : [ "/sfx/projectiles/throw_item.ogg" ]
+    }
+  },
+
+  "scripts" : ["/items/active/weapons/ranged/throwable/starforge-throwable.lua"],
+
+  "elementalType" : "ice",
+
+  "primaryAbilityType" : "starforge-throwprojectile",
+  "primaryAbility" : {
+    "baseDps" : 6,
+    "cooldownTime" : 0.2,
+	
+    "hideItemWhileIdle" : true,
+
+    "inaccuracy": 0.022,
+    "projectileCount" : 1,
+    "projectileType" : "starforge-feroziumshuriken",
+    "projectileParameters" : {
+    },
+    "stances" : {
+      "prepare" : {
+        "duration" : 0.1
+      },
+      "throw" : {
+        "duration" : 0.1
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
+}

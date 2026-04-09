@@ -70,7 +70,7 @@ function build(directory, config, parameters, level, seed)
     config.tooltipFields.levelLabel = util.round(configParameter("level", 1), 1)
     config.tooltipFields.rarityLabel = configParameter("rarity", "Common")
     config.tooltipFields.dpsLabel = util.round((config.primaryAbility.baseDps or 0) * config.damageLevelMultiplier, 1)
-    config.tooltipFields.speedLabel = util.round(1 / ((config.primaryAbility.stanceSpeedFactor or 1) * config.primaryAbility.fireTime or 1.0), 1)
+    config.tooltipFields.speedLabel = util.round(1 / ((config.primaryAbility.stanceSpeedFactor or 1) * (config.primaryAbility.fireTime or 1.0)), 1)
     config.tooltipFields.damagePerShotLabel = util.round((config.primaryAbility.baseDps or 0) * (config.primaryAbility.fireTime or 1.0) * config.damageLevelMultiplier, 1)
     config.tooltipFields.energyPerShotLabel = util.round((config.primaryAbility.energyUsage or 0) * (config.primaryAbility.fireTime or 1.0), 1)
     if elementalType ~= "physical" then

@@ -1,0 +1,184 @@
+{
+  "projectileName" : "starforge-feroziumshuriken",
+  "physics" : "arrownosticky",
+  "image" : "starforge-feroziumshuriken.png",
+  "animationCycle" : 0.5,
+  "frameNumber" : 1,
+  "power" : 50,
+  "speed" : 65,
+  "supportsProcessing" : true,
+  "flippable" : false,
+  "damageKind" : "icespear",
+  "actionOnReap" : [
+    {
+      "action" : "loop",
+      "count" : 1,
+      "body" : [
+        {
+          "action" : "option",
+          "options" : [
+            {
+              "action" : "particle",
+              "specification" : {
+                "type" : "animated",
+                "animation" : "/animations/mediumflameice/mediumflameice.animation",
+                "approach" : [0.5, 0.5],
+                "timeToLive" : 0.4,
+                "variance" : {
+                  "timeToLive" : 0.15,
+                  "position" : [0.5, 0.5],
+                  "initialVelocity" : [1, 1],
+                  "rotation" : 180
+                }
+              }
+            }
+          ]
+        },
+        {
+          "action" : "spark"
+        }
+      ]
+    }
+  ],
+  "stickActionOnReap" : [
+    {
+      "action" : "projectile",
+      "inheritDamageFactor" : 1,
+      "type" : "iceexplosionknockback",
+      "config" : {
+        "statusEffects" : [ "frostslow" ],
+		"knockback" : 0
+      }
+    },{
+      "action" : "loop",
+      "count" : 7,
+      "body" : [
+        {
+          "action" : "option",
+          "options" : [
+            {
+              "action" : "particle",
+              "specification" : {
+                "type" : "animated",
+                "animation" : "/animations/statuseffects/frozen/frozen.animation",
+                "approach" : [0.5, 0.5],
+                "timeToLive" : 0.5,
+                "variance" : {
+                  "timeToLive" : 0.15,
+                  "position" : [2, 2],
+                  "initialVelocity" : [1, 1],
+                  "rotation" : 180
+                }
+              }
+            }
+          ]
+        },
+        {
+          "action" : "spark"
+        }
+      ]
+    },
+    {
+      "action" : "loop",
+      "count" : 7,
+      "body" : [
+        {
+          "action" : "option",
+          "options" : [
+            {
+              "action" : "particle",
+              "specification" : {
+                "type" : "animated",
+                "animation" : "/animations/frozendust2/frozendust2.animation",
+                "approach" : [0.5, 0.5],
+                "timeToLive" : 2.0,
+                "variance" : {
+                  "timeToLive" : 0.4,
+                  "position" : [2, 2],
+                  "initialVelocity" : [1, 1],
+                  "rotation" : 180
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "action" : "loop",
+      "count" : 7,
+      "body" : [
+        {
+          "action" : "option",
+          "options" : [
+            {
+              "action" : "particle",
+              "specification" : {
+                "type" : "animated",
+                "animation" : "/animations/snowballexplosion/snowballexplosion.animation",
+                "approach" : [0.5, 0.5],
+                "timeToLive" : 2.0,
+                "variance" : {
+                  "timeToLive" : 0.4,
+                  "position" : [2, 2],
+                  "initialVelocity" : [1, 1],
+                  "rotation" : 180
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/gun/grenadeblast_ice1.ogg", "/sfx/gun/grenadeblast_ice2.ogg", "/sfx/gun/grenadeblast_ice3.ogg" ]
+    },
+    {
+      "action" : "light",
+      "color" : "blue"
+    }
+  ],
+  
+  "advancedPeriodicActions" : [
+    {
+      "loopTime" : 0.0325,
+      "delayTime" : 0.05,
+      "rotate" : true,
+      "minimumVelocity" : 25,
+
+      "action" : "particle",
+      "specification" : {
+		"type" : "textured",
+		"image" : "/projectiles/unique/starforge-feroziumshuriken/starforge-feroziumshuriken.png?setcolor=FFFFFFFF",
+        "layer" : "back",
+        "fullbright" : false,
+        "destructionAction" : "fade",
+        "size" : 1,
+        "collidesForeground" : false,
+        "position" : [0, 0],
+        "timeToLive" : 0.01,
+        "destructionTime" : 0.1,
+		"initialVelocity" : [0, 0],
+		"variance" : {
+		  "size" : 0.1,
+          "destructionTime" : 0.1,
+          "initialVelocity" : [0, -0]
+        }
+      }
+    }
+  ],
+  
+  "renderLayer" : "Monster+1",
+
+  "scripts" : [ "/projectiles/scripts/starforge-stickingprojectile.lua", "/projectiles/scripts/starforge-advancedperiodicactions.lua", "/projectiles/scripts/starforge-spin.lua" ],
+  "initialDamageMultiplier" : 1,
+  "damageMultiplierOnStick" : 1,
+  "stickToTargetTime" :  0.95,
+
+  "orientationLocked" : true,
+  "pointToLight" : true,
+  "spinRate" : 1,
+  "minSpinSpeed": 25,
+  "spinDirection" : 1
+}

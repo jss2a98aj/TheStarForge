@@ -9,6 +9,8 @@ function init()
   self.damageMultiplierOnStick = config.getParameter("damageMultiplierOnStick", 1)
   self.proximitySearchRadius = config.getParameter("proximitySearchRadius")
 
+  self.spinning = config.getParameter("spinRate")
+
   --Store rotation to lock it
   projectile.setPower(config.getParameter("initialDamageMultiplier", 1) * projectile.power())
   self.baseDamage = projectile.power()
@@ -38,6 +40,7 @@ function update(dt)
 	    --Adjust velocity as to not offset from entity
       local stickingVelocity = self.stickingOffset
       mcontroller.setVelocity(stickingVelocity)
+      mcontroller.setRotation(self.targetRotation)
     else
       self.stickingTarget = nil
       projectile.setPower(self.baseDamage)
@@ -57,7 +60,9 @@ function update(dt)
       self.targetRotation = math.atan(mcontroller.velocity()[2], mcontroller.velocity()[1])
     end
   end
-  mcontroller.setRotation(self.targetRotation)
+  if not self.spinning then
+    mcontroller.setRotation(self.targetRotation)
+  end
 
   if self.stuckToGround then
     if self.proximitySearchRadius then
