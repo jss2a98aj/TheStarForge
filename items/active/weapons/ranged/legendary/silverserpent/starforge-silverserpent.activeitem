@@ -12,6 +12,7 @@
   },
   "twoHanded": true,
   "level" : 6,
+  "fixedLevel" : false,
   "itemTags" : [ "starforge", "weapon", "ranged", "pistol" ],
   "inventoryIcon": "starforge-silverserpent.png:slide.1",
   

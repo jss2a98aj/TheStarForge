@@ -12,6 +12,7 @@
   },
   "twoHanded": true,
   "level" :  6,
+  "fixedLevel" : false,
   "itemTags" : [ "starforge", "weapon", "ranged", "shotgun" ],
   "inventoryIcon": "starforge-crackshot.png:reload.1",
   

@@ -8,6 +8,14 @@
             "item": "starforge-faefrost"
         }
     },
+	{
+        "op": "add",
+        "path": "/alpineChestTreasure/0/1/pool/1",
+        "value": {
+            "weight": 0.20,
+            "item": "starforge-frozenanguish"
+        }
+    },
     {
         "op": "add",
         "path": "/cellChestTreasure/0/1/pool/1",

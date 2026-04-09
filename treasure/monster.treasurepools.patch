@@ -13,5 +13,20 @@
      "op": "add",
      "path": "/guardianTreasure/0/1/fill/-",
      "value": {"item": "starforge-exaltedenergy"}
+   }],
+   [{
+    "op": "test",
+    "path": "/orbideTreasure/0/1/pool",
+    "inverse": true
+   },
+   {
+     "op": "add",
+     "path": "/orbideTreasure/0/1/pool",
+     "value": []
+   }],
+   [{
+     "op": "add",
+     "path": "/orbideTreasure/0/1/pool/-",
+     "value":  {"weight" : 0.05, "item" : "starforge-orblade"}
    }]
 ]
