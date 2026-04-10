@@ -11,5 +11,5 @@
   "flippable" : false,
   "piercing" : true,
   "actionOnReap" : [],
-  "damageKind" : "spear"
+  "damageKind" : "poisonspear"
 }

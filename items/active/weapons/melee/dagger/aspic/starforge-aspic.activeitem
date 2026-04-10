@@ -1,0 +1,404 @@
+{
+  "itemName" : "starforge-aspic",
+  "price" : 1000,
+  "level" : 6,
+  "fixedLevel" : false,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "An oxidised hook older than it has any right to be, yet still treasured all the same.",
+  "shortdescription" : "Aspic",
+  "tooltipKind" : "starforge-uniquesword",
+  "category" : "uniqueWeapon",
+  "twoHanded" : false,
+  "itemTags" : [ "starforge", "weapon", "melee", "quickblade", "dagger" ],
+  "tooltipFieldsOverride" : {
+    "subtitle" : "Quickblade"
+  },
+
+  "inventoryIcon" : "starforge-aspic.png",
+
+  "animation" : "/items/active/weapons/melee/dagger/starforge-quickblade.animation",
+  "animationParts" : {
+    "blade" : "starforge-aspic.png",
+    "bladeFullbright" : "starforge-aspicfb.png",
+    "tassel" : "starforge-aspiccloth.png",
+	
+    "swoosh" : "poison"
+  },
+  "animationCustom" : { 
+    "animatedParts" : {
+      "stateTypes" : {
+        "swoosh" : {
+          "states" : {
+            "spin" : {
+              "frames" : 3,
+              "cycle" : 0.45,
+              "mode" : "transition",
+              "transition" : "idle"
+            }
+          }
+        }
+      },
+      "parts" : {
+        "swoosh" : {
+          "partStates" : {
+            "swoosh" : {
+              "spin" : {
+                "properties" : {
+                  "image" : "/items/active/weapons/melee/swoosh/starforge/smalldowncut/smalldowncut-<partImage>.png:2?flipy",
+                  "offset" : [-0.75, -1.75],
+                  "damageArea" : [[-3.75, -1.5], [-1.875, -2.25], [0.75, -2.25], [3, -1.25], [3.75, 0.15], [3.75, 1.675], [3, 2.375], [0, 1.875]]
+                }
+              },
+              "fire" : {
+                "properties" : {
+                  "image" : "/items/active/weapons/melee/swoosh/starforge/smalldowncut/smalldowncut-<partImage>.png:<frame>?flipy",
+                  "offset" : [-0.75, -1.75],
+                  "damageArea" : [[-3.75, -1.5], [-1.875, -2.25], [0.75, -2.25], [3, -1.25], [3.75, 0.15], [3.75, 1.675], [3, 2.375], [0, 1.875]]
+                }
+              },
+              "fire2" : {
+                "properties" : {
+                  "image" : "/items/active/weapons/melee/swoosh/starforge/smalldowncut/smalldowncut-<partImage>.png:<frame>",
+                  "offset" : [-0.75, 1.75],
+                  "damageArea" : [[-3.75, -1.5], [-1.875, -2.25], [0.75, -2.25], [3, -1.25], [3.75, 0.15], [3.75, 1.675], [3, 2.375], [0, 1.875]]
+                }
+              },
+              "fire3" : {
+                "properties" : {
+                  "image" : "/items/active/weapons/melee/swoosh/starforge/slash/slash-<partImage>.png:<frame>",
+                  "offset" : [3.0, 0.75],
+                  "damageArea" : [[-3, 1], [3, 1], [3, -1], [-3, -1]]
+                }
+              },
+              "fire4" : {
+                "properties" : {
+                  "image" : "/items/active/weapons/melee/swoosh/starforge/thrust/thrust-<partImage>.png:<frame>",
+                  "offset" : [2, -0.125],
+                  "damageArea" : [[-3, 1], [3, 1], [3, -1], [-3, -1]]
+                }
+              },
+              "fire5" : {
+                "properties" : {
+                  "image" : "/items/active/weapons/melee/swoosh/starforge/slash/slash-<partImage>.png:<frame>",
+                  "offset" : [3.0, 0.75],
+                  "damageArea" : [[-3, 1], [3, 1], [3, -1], [-3, -1]]
+                }
+              }
+            }
+          }
+        },
+        "tassel" : {
+          "properties" : {
+            "zLevel" : -4,
+            "centered" : true,
+            "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives>?<comboDirectives>",
+            "offset" : [0, 0.25],
+            "transformationGroups" : ["weapon", "tassel"],
+            "rotationCenter" : [0, 0.5]
+          }
+        }
+      }
+    },
+
+    "transformationGroups" : {
+      "tassel" : {}
+    },
+    "sounds" : {
+      "fire" : [ "/sfx/melee/swing_broadsword_poison1.ogg", "/sfx/melee/swing_broadsword_poison2.ogg", "/sfx/melee/swing_broadsword_poison3.ogg" ],
+      "fire2" : [ "/sfx/melee/swing_broadsword_poison1.ogg", "/sfx/melee/swing_broadsword_poison2.ogg", "/sfx/melee/swing_broadsword_poison3.ogg" ],
+      "fire3" : [ "/sfx/melee/swing_shortsword_poison1.ogg", "/sfx/melee/swing_shortsword_poison2.ogg", "/sfx/melee/swing_shortsword_poison3.ogg" ],
+      "fire4" : [ "/sfx/melee/swing_spear_poison1.ogg", "/sfx/melee/swing_spear_poison2.ogg", "/sfx/melee/swing_spear_poison3.ogg" ],
+      "fire5" : [ "/sfx/melee/swing_shortsword_poison1.ogg", "/sfx/melee/swing_shortsword_poison2.ogg", "/sfx/melee/swing_shortsword_poison3.ogg" ]
+    }
+  },
+
+  "scripts" : ["/items/active/weapons/melee/starforge-meleeweapon.lua", "/items/active/weapons/starforge-hangingparts.lua"],
+  "hangingParts" : {
+    "tassel" : "tassel"
+  },
+  "shakeVelocity" : 4,
+
+  "elementalType" : "poison",
+
+  "primaryAbilityType" : "starforge-daggercombo",
+  "primaryAbility" : {
+    "baseDps" : 6.5,
+    "stanceSpeedFactor" : 0.9,
+    "swingPitchFactor" : 1.1,
+    
+    "finisherHoldTime" : 0.5,
+    "damageConfig" : {
+      "damageSourceKind" : "poisondagger",
+      "knockbackMode" : "aim",
+      "timeout" : 0.25,
+	    "statusEffects" : [ "weakpoison" ]
+    },
+
+    "stances" : {
+      //IDLE - DEFAULT
+      "idle" : {
+        "armRotation" : -90,
+        "weaponRotation" : -210,
+        "allowRotate" : false,
+        "twoHanded" : false,
+        "allowFlip" : true,
+		    "aimAngle" : 0
+      },
+	    //UPSLASH
+      "windup1" : {
+        "duration" : 0.05,
+        "armRotation" : -90,
+        "weaponRotation" : -170,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "preslash1" : {
+        "duration" : 0.025,
+        "armRotation" : -45,
+        "weaponRotation" : -140,
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "fire1" : {
+        "duration" : 0.1,
+        "armRotation" : 55,
+        "weaponRotation" : -125,
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "wait1" : {
+        "duration" : 0.2,
+        "armRotation" : 45,
+        "weaponRotation" : -125,
+        "allowRotate" : false,
+        "allowFlip" : true,
+        "twoHanded" : false
+      },
+      //Downslash
+      "windup2" : {
+        "duration" : 0.1,
+        "armRotation" : 55,
+        "weaponRotation" : 3,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : false,
+		
+		    "comboDirectives" : "?flipx"
+      },
+      "preslash2" : {
+        "duration" : 0.025,
+        "armRotation" : -50,
+        "weaponRotation" : -55,
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		    "comboDirectives" : "?flipx"
+      },
+      "fire2" : {
+        "duration" : 0.125,
+        "armRotation" : -50,
+        "weaponRotation" : -55,
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		    "comboDirectives" : "?flipx"
+      },
+      "wait2" : {
+        "duration" : 0.2,
+        "armRotation" : 45,
+        "weaponRotation" : -125,
+        "allowRotate" : false,
+        "allowFlip" : true,
+        "twoHanded" : false,
+		
+		    "comboDirectives" : "?flipx"
+      },
+      "windup3" : {
+        "duration" : 0.05,
+        "armRotation" : -20,
+        "weaponRotation" : -20,
+        "weaponOffset" : [0, 0.125],
+
+        "allowFlip" : true,
+        "allowRotate" : false
+      },
+      "preslash3" : {
+        "duration" : 0.025,
+        "armRotation" : -135,
+        "weaponRotation" : 40,
+        "weaponOffset" : [0, 0.125],
+
+        "allowFlip" : true,
+        "allowRotate" : false
+      },
+      "fire3" : {
+        "duration" : 0.075,
+        "armRotation" : -135,
+        "weaponRotation" : 40,
+        "weaponOffset" : [0, 0.125],
+
+        "allowFlip" : true,
+        "allowRotate" : false
+      },
+      "wait3" : {
+        "duration" : 0.2,
+        "armRotation" : -135,
+        "weaponRotation" : 40,
+        "weaponOffset" : [0, 0.125],
+
+        "allowFlip" : true,
+        "allowRotate" : false
+      },
+      "windup4" : {
+        "duration" : 0.125,
+        "armRotation" : -110,
+        "weaponRotation" : 20,
+        "twoHanded" : false,
+        "weaponOffset" : [0, 0.5],
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "preslash4" : {
+        "duration" : 0.025,
+        "armRotation" : -110,
+        "weaponRotation" : 20,
+        "twoHanded" : false,
+        "weaponOffset" : [0.5, 1.0],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "fire4" : {
+        "duration" : 0.2,
+        "armRotation" : -30,
+        "weaponRotation" : -60,
+        "twoHanded" : false,
+        "weaponOffset" : [0, -0.125],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "wait4" : {
+        "duration" : 0.075,
+        "armRotation" : -30,
+        "weaponRotation" : -70,
+        "twoHanded" : false,
+        "weaponOffset" : [0, -0.25],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+
+  
+  "altAbility" : {
+    "name" : "Spin",
+    "scripts" : ["/items/active/weapons/melee/abilities/starforge-meleecombo.lua"],
+    "class" : "StarforgeMeleeCombo",
+
+    "fireTime" : 1,
+    "baseDps" : 7,
+    
+    "flashTime" : 0.15,
+    "flashDirectives" : "fade=FFFFFFFF=0.15",
+	
+  	"stepDamageConfig" : [
+      {
+        "baseDamageFactor" : 0.2,
+        "knockback" : 13
+      }
+    ],
+	
+    "comboSpeedFactor" : 0.65,
+
+    "stanceSpeedFactor" : 1,
+    "swingPitchFactor" : 1.1,
+    "comboSteps" : 1,
+
+	  "swooshOffsetRegions" : [
+      [0.75, 0.0, 4.25, -5.0]
+    ],
+
+    "edgeTriggerGrace" : 0.25,
+    
+    "damageConfig" : {
+      "damageSourceKind" : "poisondagger",
+      "knockbackMode" : "aim",
+      "timeout" : 0.1,
+	    "statusEffects" : [ "weakpoison" ]
+    },
+
+    "stances" : {
+      //IDLE - DEFAULT
+      "idle" : {
+        "armRotation" : -90,
+        "weaponRotation" : -210,
+        "allowRotate" : false,
+        "twoHanded" : false,
+        "allowFlip" : true,
+		    "aimAngle" : 0
+      },
+	    //UPSLASH
+      "windup1" : {
+        "duration" : 0.1,
+        "armRotation" : -90,
+        "weaponRotation" : -170,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+		    "comboDirectives" : "?flipx"
+      },
+      "preslash1" : {
+        "duration" : 0.01,
+        "armRotation" : -45,
+        "weaponRotation" : -140,
+        "weaponAngularVelocity" : 1000,
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		    "comboDirectives" : "?flipx"
+      },
+      "fire1" : {
+        "duration" : 0.5,
+        "armRotation" : -45,
+        "weaponRotation" : -140,
+        "armAngularVelocity" : 100,
+        "weaponAngularVelocity" : 2000,
+        "overSwing" : false,
+
+        "animationStates" : {
+          "swoosh" : "spin"
+        },
+
+        "swooshRotation" : -45,
+
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+		    "comboDirectives" : "?flipx"
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
+}

@@ -273,7 +273,9 @@ function StarforgeMeleeCombo:fire()
       animator.rotateTransformationGroup("swooshOffset", util.toRadians(stance.swooshRotation))
     end
   end
-  animator.setAnimationState("swoosh", animStateKey)
+  if not stance.animationStates or not stance.animationStates.swoosh then
+    animator.setAnimationState("swoosh", animStateKey)
+  end
   --Add normal pitch variance to shots
   local pitchVariance = ((self.swingPitchFactor or 1) + (self.pitchVariance or 0.1)) - (math.random() * ((self.pitchVariance or 0.1) * 2)) + (pitchIncrease or 0)
   animator.setSoundPitch(animStateKey, pitchVariance)
@@ -319,7 +321,7 @@ function StarforgeMeleeCombo:fire()
   -- If this step is a regular attack, simply set the damage area for the duration of the step
   else
     local overSwing = {}
-    if stance.overSwing ~= false or stance.overSwing ~= 0 then
+    if stance.overSwing ~= false and stance.overSwing ~= 0 then
       local overSwingValue = stance.overSwing or 0.1
       local windupStance = self.stances["windup"..self.comboStep]
       overSwing.armRotation = (stance.armRotation - windupStance.armRotation) * overSwingValue
@@ -336,7 +338,7 @@ function StarforgeMeleeCombo:fire()
         mcontroller.setVelocity({0,0})
       end
     
-      if stance.overSwing ~= false or stance.overSwing ~= 0 then
+      if stance.overSwing ~= false and stance.overSwing ~= 0 then
         for part, rotation in pairs(overSwing) do
           local from = stance[part]
           local to = stance[part] + rotation

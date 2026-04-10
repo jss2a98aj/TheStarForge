@@ -33,6 +33,9 @@
   "primaryAbility" : {
     "baseDps" : 4.5,
     
+    "stanceSpeedFactor" : 0.95,
+    "swingPitchFactor" : 1.15,
+    
     "finisherHoldTime" : 1,
     "damageConfig" : {
       "damageSourceKind" : "dagger",

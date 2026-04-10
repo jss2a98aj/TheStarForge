@@ -50,7 +50,7 @@
   "primaryAbilityType" : "starforge-highbrandcombo",
   "primaryAbility" : {
     "fireTime" : 0.9,
-    "baseDps" : 11.5,
+    "baseDps" : 13,
     "stanceSpeedFactor" : 1.2,
     "swingPitchFactor" : 0.7,
     "energyUsage" : 30,

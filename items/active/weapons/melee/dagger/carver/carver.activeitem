@@ -34,6 +34,9 @@
   "primaryAbilityType" : "starforge-daggercombo",
   "primaryAbility" : {
     "baseDps" : 4.5,
+    
+    "stanceSpeedFactor" : 1.25,
+    "swingPitchFactor" : 0.85,
 	
     "finisherHoldTime" : 0.6,
   

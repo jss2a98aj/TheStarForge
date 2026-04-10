@@ -41,6 +41,9 @@
   "primaryAbility" : {
     "baseDps" : 5,
     
+    "stanceSpeedFactor" : 1.2,
+    "swingPitchFactor" : 0.9,
+    
     "finisherHoldTime" : 0.4,
     "damageConfig" : {
       "damageSourceKind" : "icedagger",
@@ -49,6 +52,7 @@
 	    "statusEffects" : [ "frostslow" ]
     }
   },
+
   "altAbilityType" : "elementalaura",
   "altAbility" : {
     "name" : "Cold Shock",

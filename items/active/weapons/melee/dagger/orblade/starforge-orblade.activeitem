@@ -92,6 +92,9 @@
   "primaryAbility" : {
     "baseDps" : 6.5,
     
+    "stanceSpeedFactor" : 0.8,
+    "swingPitchFactor" : 1.2,
+    
     "finisherHoldTime" : 0.25,
     "damageConfig" : {
       "damageSourceKind" : "poisondagger",
@@ -100,6 +103,7 @@
 	    "statusEffects" : [ "weakpoison" ]
     }
   },
+
   "altAbilityType" : "traildash",
   "altAbility" : {
     "name" : "Orbide Dash",

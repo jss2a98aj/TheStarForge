@@ -1,6 +1,7 @@
 {
   "globalTagDefaults" : {
-    "paletteSwaps" : ""
+    "paletteSwaps" : "",
+    "partImage" : ""
   },
 
   "animatedParts" : {
@@ -64,13 +65,24 @@
           "damageArea" : [[0, -0.5], [-0.75, 1.0], [-0.75, 2.75], [0, 4.25], [0.75, 2.75], [0.75, 1.0]]
         }
       },
+      "bladeFullbright" : {
+        "properties" : {
+          "zLevel" : 2,
+          "centered" : true,
+          "fullbright" : true,
+          "image" : "<partImage><comboDirectives><paletteSwaps>?<directives>?<bladeDirectives>",
+          "offset" : [0.125, 1.0],
+          "transformationGroups" : ["weapon"],
+          "damageArea" : [[0, -0.5], [-0.75, 1.0], [-0.75, 2.75], [0, 4.25], [0.75, 2.75], [0.75, 1.0]]
+        }
+      },
       "swoosh" : {
         "properties" : {
           "zLevel" : -1,
           "centered" : true,
           "fullbright" : false,
           "offset" : [3.0, 0.0],
-          "transformationGroups" : ["swoosh"]
+          "transformationGroups" : ["swoosh", "swooshOffset"]
         },
         "partStates" : {
           "swoosh" : {
@@ -122,7 +134,8 @@
 
   "transformationGroups" : {
     "weapon" : {},
-    "swoosh" : {}
+    "swoosh" : {},
+    "swooshOffset" : {}
   },
   
   

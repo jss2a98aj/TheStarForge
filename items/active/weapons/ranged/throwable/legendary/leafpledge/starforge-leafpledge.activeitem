@@ -28,7 +28,7 @@
 
   "scripts" : ["/items/active/weapons/ranged/throwable/starforge-throwable.lua"],
 
-  "elementalType" : "physical",
+  "elementalType" : "poison",
 
   "primaryAbilityType" : "starforge-throwprojectile",
   "primaryAbility" : {

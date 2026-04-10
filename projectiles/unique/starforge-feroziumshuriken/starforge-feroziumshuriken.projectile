@@ -9,6 +9,7 @@
   "supportsProcessing" : true,
   "flippable" : false,
   "damageKind" : "icespear",
+  "damagePoly" : [[-8, 4], [-4, 8], [4, 8], [8, 4], [8, -4], [4, -8], [-4, -8], [-8, -4]],
   "actionOnReap" : [
     {
       "action" : "loop",
@@ -178,6 +179,7 @@
 
   "orientationLocked" : true,
   "pointToLight" : true,
+  "countMovementDirection" : true,
   "spinRate" : 1,
   "minSpinSpeed": 25,
   "spinDirection" : 1

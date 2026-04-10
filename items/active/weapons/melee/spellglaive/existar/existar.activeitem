@@ -124,7 +124,10 @@
 
   "primaryAbilityType" : "starforge-spellglaivecombo",
   "primaryAbility" : {
-    "baseDps" : 8.5,
+    "baseDps" : 13,
+
+    "stanceSpeedFactor" : 1.25,
+    "swingPitchFactor" : 0.7,
     
     "damageConfig" : {
       "damageSourceKind" : "fire",

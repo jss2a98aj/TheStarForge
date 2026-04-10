@@ -104,7 +104,7 @@
             "fire2" : {
               "properties" : {
                 "image" : "/items/active/weapons/melee/swoosh/starforge/heavyslice/heavyslice-<partImage>.png:<frame>",
-                "offset" : [-1.5, 0.25],
+                "offset" : [-1.25, -0.25],
                 "damageArea" : [[-10, -1], [4.5, 1], [4.5, -2], [-2, -9], [-12, -8]]
               }
             },

@@ -45,7 +45,10 @@
 
   "primaryAbilityType" : "starforge-spellglaivecombo",
   "primaryAbility" : {
-    "baseDps" : 10.5,
+    "baseDps" : 12.5,
+
+    "stanceSpeedFactor" : 1.15,
+    "swingPitchFactor" : 0.8,
 	
     "damageConfig" : {
       "damageSourceKind" : "starforge-tidalfrost",
@@ -61,7 +64,7 @@
     "projectileParameters" : {
       "timeToLive" : 0.25,
       "damageKind" : "starforge-tidalfrost"
-     },
+    },
 
     "projectileCount" : 1,
     "inaccuracy": 0.01,

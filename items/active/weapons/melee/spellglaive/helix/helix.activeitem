@@ -55,6 +55,9 @@
   "primaryAbilityType" : "starforge-spellglaivecombo",
   "primaryAbility" : {
     "baseDps" : 3.5,
+    
+    "stanceSpeedFactor" : 0.8,
+    "swingPitchFactor" : 1.17,
 	
 	  "damageConfig" : {
       "damageSourceKind" : "electricbroadsword",

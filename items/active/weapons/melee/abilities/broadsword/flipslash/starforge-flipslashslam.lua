@@ -21,7 +21,7 @@ function StarforgeFlipSlashSlam:update(dt, fireMode, shiftHeld)
      and not status.statPositive("activeMovementAbilities")
      and status.overConsumeResource("energy", self.energyUsage) then
 
-      if mcontroller.onGround() then
+      if self:nearGround() then
         self:setState(self.windup)
       else
         self:setState(self.slam)
@@ -51,7 +51,7 @@ function StarforgeFlipSlashSlam:flip()
   end
   animator.setAnimationState("swoosh", "flip")
   animator.playSound(self.fireSound or "flipSlash")
-  animator.setParticleEmitterActive("flip", true)
+  animator.setParticleEmitterActive("flipParticles", true)
 
   self.flipTime = self.rotations * self.rotationTime
   self.flipTimer = 0
@@ -78,7 +78,7 @@ function StarforgeFlipSlashSlam:flip()
 
   animator.setAnimationState("swoosh", "idle")
   mcontroller.setRotation(0)
-  animator.setParticleEmitterActive("flip", false)
+  animator.setParticleEmitterActive("flipParticles", false)
   self:setState(self.slam)
 end
 
@@ -103,14 +103,15 @@ function StarforgeFlipSlashSlam:slam()
       local damageArea = partDamageArea("swoosh")
       self.weapon:setDamage(self.damageConfig, damageArea, self.fireTime)
 
-      mcontroller.setVelocity({self.slamVelocity[1] * self.weapon.aimDirection, self.slamVelocity[2]})
+      mcontroller.addMomentum({self.slamVelocity[1] * self.weapon.aimDirection, self.slamVelocity[2]})
       local newSlamPosition = self:slamPosition()
       if world.lineTileCollision(lastSlamPosition, newSlamPosition) then
         local params = copy(self.projectileParameters)
         params.powerMultiplier = activeItem.ownerPowerMultiplier()
         params.power = params.power * config.getParameter("damageLevelMultiplier")
 
-        world.spawnProjectile(self.projectileType, lastSlamPosition, activeItem.ownerEntityId(), {mcontroller.facingDirection(), 0}, false, params)
+        world.spawnProjectile(self.projectileType, lastSlamPosition, activeItem.ownerEntityId(), {mcontroller.facingDirection() * self.slamAimVec[1], self.slamAimVec[2]}, false, params)
+        mcontroller.setVelocity(vec2.mul(vec2.norm(world.distance(self:slamPosition(), lastSlamPosition)), -self.bounceVelocity))
         return true
       end
       lastSlamPosition = newSlamPosition
@@ -121,8 +122,6 @@ function StarforgeFlipSlashSlam:slam()
     local damageArea = partDamageArea("blade")
     self.weapon:setDamage(self.damageConfig, damageArea)
   end)
-
-  mcontroller.setVelocity(vec2.mul(vec2.norm(world.distance(self:slamPosition(), lastSlamPosition)), -self.bounceVelocity))
 
   status.clearPersistentEffects("weaponMovementAbility")
 
@@ -136,6 +135,15 @@ end
 function StarforgeFlipSlashSlam:slamPosition()
   return vec2.add(activeItem.handPosition(animator.partPoint("blade", "groundSlamPoint")), mcontroller.position())
 end
+
+function StarforgeFlipSlashSlam:nearGround()
+  local grounded = mcontroller.onGround()
+  if world.lineTileCollision(mcontroller.position(), vec2.add(mcontroller.position(), {0, -5})) then
+    grounded = true
+  end
+  return grounded
+end
+
 
 function StarforgeFlipSlashSlam:inGravity()
   return math.abs(world.gravity(mcontroller.position())) > 0

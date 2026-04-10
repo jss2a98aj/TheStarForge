@@ -52,15 +52,16 @@
               "flip" : {
                 "properties" : {
                   "image" : "/items/active/weapons/melee/swoosh/starforge/heavyuppercut/heavyuppercut-<partImage>.png:2?flipy",
-                  "offset" : [3, 2.5],
-                  "damageArea" : [[-6.0, -3.5], [-6.0, 0], [-3.5, 2.5], [0, 2.5], [2.5, 0], [2.5, -3.5], [0, -6.0], [-3.5, -6.0]]
+                  "offset" : [2, 2.5],
+                  "damageArea" : [[-8.0, -5.5], [-8.0, 1.5], [-4.5, 5.0], [2.5, 5.0], [6.0, 1.5], [6.0, -5.5], [2.5, -9.0], [-4.5, -9.0]]
+                  //"damageArea" : [[-7.0, -3.5], [-7.0, 3.5], [-3.5, 7.0], [3.5, 7.0], [7.0, 3.5], [7.0, -3.5], [3.5, -7.0], [-3.5, -7.0]]
                 }
               },
               "slam" : {
                 "properties" : {
                   "image" : "/items/active/weapons/melee/swoosh/starforge/heavyuppercut/heavyuppercut-<partImage>.png:<frame>?flipy",
                   "offset" : [3, 2.5],
-                  "damageArea" : [[-6.0, -3.5], [-6.0, 0], [-3.5, 2.5], [0, 2.5], [2.5, 0], [2.5, -3.5], [0, -6.0], [-3.5, -6.0]]
+                  "damageArea" : [[-8, 5], [-2.5, 5], [1, 5], [5, 2.75], [7, -0.25], [7, -3.25], [5.5, -5.25], [5, -6.25], [-2, -6]]
                 }
               }
             }
@@ -69,7 +70,7 @@
       }
     },
     "particleEmitters" : {
-      "flip" : {
+      "flipParticles" : {
         "active" : false,
         "transformationGroups" : ["weapon"],
         "offsetRegion" : [-4, -4, 5, 5],
@@ -79,8 +80,8 @@
       }
     },
     "sounds" : {
-      "flipSlash" : [ "/sfx/melee/laser_flip_slash.ogg" ],
-      "slamFall" : [ "/sfx/tech/tech_dash.ogg" ]
+      "flipSlash" : [ "/sfx/tech/tech_dash.ogg" ],
+      "slamFall" : [ "/sfx/melee/swing_broadsword.ogg" ]
     }
   },
 
@@ -91,7 +92,7 @@
   "primaryAbilityType" : "starforge-highbrandcombo",
   "primaryAbility" : {
     "fireTime" : 0.9,
-    "baseDps" : 12.5,
+    "baseDps" : 15,
     "stanceSpeedFactor" : 1.5,
     "swingPitchFactor" : 0.5,
     "energyUsage" : 30,
@@ -115,7 +116,7 @@
 
   "altAbilityType" : "flipslash",
   "altAbility" : {
-    "name" : "Dragon Piercer",
+    "name" : "Dragon Splitter",
     "scripts" : ["/items/active/weapons/melee/abilities/broadsword/flipslash/starforge-flipslashslam.lua"],
     "class" : "StarforgeFlipSlashSlam",
 
@@ -123,18 +124,84 @@
     "rotations" : 1,
     "rotationTime" : 0.3,
 
-    "jumpVelocity" : [35, 15],
+    "jumpVelocity" : [45, 25],
     "jumpDuration" : 0.2,
     
     "slamDelay" : 0.2,
     "slamVelocity" : [5, -75],
+    "slamAimVec" : [1, 1],
     "bounceVelocity" : 10,
     "projectileType" : "physicalexplosionknockback",
     "projectileParameters" : {
       "power" : 8,
-      "onlyHitTerrain" : true
+      "onlyHitTerrain" : true,
+      "periodicActions" : [
+        {
+          "repeat" : false,
+          "time" : 0.0,
+          "rotate" : true,
+          "action" : "projectile",
+          "type" : "throwingboulder",
+          "fuzzAngle" : 10,
+          "inheritDamageFactor" : 0.15,
+          "config" : {
+            "actionOnReap" : [
+              {
+                "action" : "config",
+                "file" : "/projectiles/explosions/bouldersmashexplosion/bouldersmashexplosion.config"
+              }
+            ]
+          },
+          "angleAdjust" : 15
+        },
+        {
+          "repeat" : false,
+          "time" : 0.0,
+          "rotate" : true,
+          "action" : "projectile",
+          "type" : "throwingboulder",
+          "fuzzAngle" : 10,
+          "inheritDamageFactor" : 0.15,
+          "config" : {
+            "actionOnReap" : [
+              {
+                "action" : "config",
+                "file" : "/projectiles/explosions/bouldersmashexplosion/bouldersmashexplosion.config"
+              }
+            ]
+          },
+          "angleAdjust" : 0
+        },
+        {
+          "repeat" : false,
+          "time" : 0.0,
+          "rotate" : true,
+          "action" : "projectile",
+          "type" : "throwingboulder",
+          "fuzzAngle" : 10,
+          "inheritDamageFactor" : 0.15,
+          "config" : {
+            "actionOnReap" : [
+              {
+                "action" : "config",
+                "file" : "/projectiles/explosions/bouldersmashexplosion/bouldersmashexplosion.config"
+              }
+            ]
+          },
+          "angleAdjust" : -15
+        }
+      ]
     },
-    "winddownTime" : 0.5,
+    "winddownTime" : 0.35,
+
+    "damageConfig" : {
+      "damageSourceKind" : "hammer",
+      "statusEffects" : [ ],
+      "baseDamage" : 6,
+      "knockback" : [0, -35],
+      "timeout" : 0.2,
+      "timeoutGroup" : "alt"
+    },
     
     "stances" : {
       "windup" : {
@@ -157,9 +224,9 @@
         "allowFlip" : false
       },
       "slam" : {
-        "duration" : 0.425,
+        "duration" : 0.8,
         "armRotation" : -55,
-        "weaponRotation" : -40,
+        "weaponRotation" : -65,
         "twoHanded" : true,
 
         "swooshRotation" : 40,

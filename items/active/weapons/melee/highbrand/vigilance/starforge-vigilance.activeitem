@@ -33,7 +33,7 @@
             "zLevel" : -4,
             "centered" : true,
             "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives>?<comboDirectives>",
-            "offset" : [-0.125, -1.75],
+            "offset" : [-0.125, -1.5],
             "transformationGroups" : ["weapon", "tassel"],
             "rotationCenter" : [0, 0.5]
           }
@@ -57,7 +57,7 @@
   "primaryAbilityType" : "starforge-highbrandcombo",
   "primaryAbility" : {
     "fireTime" : 0.9,
-    "baseDps" : 8.5,
+    "baseDps" : 8,
     "comboSteps" : 3,
     "stanceSpeedFactor" : 1.65,
     "swingPitchFactor" : 0.45,

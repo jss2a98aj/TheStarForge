@@ -8,6 +8,7 @@
   "speed" : 50,
   "supportsProcessing" : true,
   "flippable" : false,
+  "damagePoly" : [[-8, 4], [-4, 8], [4, 8], [8, 4], [8, -4], [4, -8], [-4, -8], [-8, -4]],
   "actionOnReap" : [
     {
       "action" : "sound",
@@ -69,6 +70,7 @@
   "scripts" : ["/projectiles/scripts/starforge-spin.lua"],
   "orientationLocked" : true,
   "pointToLight" : true,
+  "countMovementDirection" : true,
   "spinRate" : 0.5,
   "minSpinSpeed": 25,
   "spinDirection" : -1

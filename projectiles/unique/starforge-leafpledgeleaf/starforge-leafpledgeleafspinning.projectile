@@ -11,8 +11,8 @@
   "flippable" : false,
   "piercing" : true,
   "actionOnReap" : [],
-  "damageKind" : "spear",
-  "damageRepeatTimeout" : 0.15,
+  "damageKind" : "poisonspear",
+  "damageRepeatTimeout" : 0.35,
 
   "scripts" : ["/projectiles/scripts/starforge-spin.lua"],
   "orientationLocked" : true,

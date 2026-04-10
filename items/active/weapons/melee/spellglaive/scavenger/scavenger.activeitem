@@ -56,6 +56,9 @@
   "primaryAbility" : {
     "baseDps" : 9.5,
     
+    "stanceSpeedFactor" : 0.95,
+    "swingPitchFactor" : 1.05,
+    
     "damageConfig" : {
       "damageSourceKind" : "poisonbroadsword",
       "statusEffects" : [ "weakpoison" ]
