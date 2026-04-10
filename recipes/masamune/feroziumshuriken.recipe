@@ -1,0 +1,14 @@
+{
+  "input" : [
+    { "item" : "solariumstar", "count" : 3},
+	{ "item" : "refinedferozium", "count" : 5},
+	{ "item" : "cryonicextract", "count" : 3}
+  ],
+  "output" : {
+    "item" : "starforge-feroziumshuriken",
+    "count" : 1
+  },
+  "groups" : [ "starforge-masamune", "starforge-yukaishop", "throwable", "craftingmanipulator", "weapons", "all" ],
+  "duration" : 0
+}
+

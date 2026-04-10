@@ -1,0 +1,105 @@
+{
+  "type" : "starforge-thewatcher",
+  "baseType" : "merchant",
+
+  "damageTeamType" : "ghostly",
+
+  "persistent" : true,
+
+  "dropPools" : [ ],
+
+  "movementParameters" : {
+    "walkSpeed" : 5.0
+  },
+  
+  
+"scriptConfig" : {
+ "merchant" : {
+		"categories" : {
+		  "override" : [ "starforge-watchermerchant" ]
+		},
+      "buyFactorRange" : [ 1.5, 1.5 ],
+      "sellFactorRange" : [ 0.4, 0.4 ],
+      "numItems" : 3,
+      "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "The Watcher",
+        "subtitle" : "I see..."}
+		}
+    },
+
+    "dialog" : {
+      "merchant" : {
+        "start" : {
+          "default" : {
+            "default" : [
+              "I see...",
+	      "I watch...",
+	      "I peep..."
+            ]
+          }
+        },
+        "end" : {
+          "default" : {
+            "default" : [
+              "See you next time...",
+        "I'll watch you.",
+        "I see you still had pixels...",
+        "I see.",
+        "I can't see my wife anymore.",
+        "Great to see you.",
+        "I've got my eye on you."
+            ]
+          }
+        },
+        "follow" : {
+          "default" : {
+            "default" : [
+              "You've got an eye for good merchandise...",
+	          "See what I've got..."
+            ]
+          }
+        },
+        "welcome" : {
+          "default" : {
+            "default" : [
+              "See what you like.",
+	      "Watch your step."
+            ]
+          }
+        },
+        "tout" : {
+          "default" : {
+            "default" : [
+              "You've got eyes for this.",
+	          "See what's in stock.",
+	          "I'd sell an eye for those."
+            ]
+          }
+        }
+      }
+	  }
+    },
+
+     "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [
+              { "name" : "eyehead", "parameters" : { "colorIndex" : 4 } }
+            ],
+            "chest" : [
+              { "name" : "eyeballchest" }
+            ],
+            "legs" : [
+              { "name" : "eyeballlegs" }
+            ],
+			
+				"back": [{ 
+				    "name": "eyeballback" 
+				}],
+				"primary": [
+                    "starforge-eyebrand"
+                ]
+          }]]] }
+}

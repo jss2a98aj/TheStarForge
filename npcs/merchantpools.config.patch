@@ -76,5 +76,19 @@
 			  
 			] ]					
 		]
+	},
+	
+	{ "op" : "add", "path" : "/starforge-watchermerchant",
+		"value" : [
+			[ 0, [
+			  { "item": { "name": "starforge-eyebrand" }, "rarity": 0.2},
+			  { "item": { "name": "eyeshield" }, "rarity": 0.1},
+			  { "item": { "name": "eyesword" }, "rarity": 0.1},
+			  { "item": { "name": "evileye" }, "rarity": 0.1},
+			  { "item": { "name": "burningeyeballs" }, "rarity": 0.3},
+			  { "item": { "name": "oculemonstew" }, "rarity": 0.3}
+			  
+			] ]					
+		]
 	}
 ]

@@ -45,6 +45,7 @@
   {"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"starforge-luminesilk"} },
   {"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"starforge-undyingfibre"} },
   {"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"starforge-violiumdagger"} },
+  {"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"starforge-feroziumshuriken"} },
   {"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"starforge-tungstenhighbrand"} },
   {"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"starforge-witherlore1-codex"} },
   {"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"starforge-onikabutolore-codex"} },
