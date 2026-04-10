@@ -73,11 +73,6 @@
             "transformationGroups" : ["weapon", "tassel2"],
             "rotationCenter" : [0, 0.5]
           }
-        },
-        "swoosh" : {
-          "properties" : {
-            "fullbright" : true
-          }
         }
       }
     },
@@ -253,12 +248,8 @@
 
     "stances" : {
       "idle" : {
-        "aimAngle" : 0,
-        "armRotation" : -10,
-        "weaponRotation" : 50,
-        "twoHanded" : false,
-        "allowRotate" : false,
-        "allowFlip" : true
+        "weaponRotation" : 40,
+        "weaponOffset" : [-0.25, 0.25]
       }
     }
   },

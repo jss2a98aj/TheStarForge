@@ -22,6 +22,12 @@ function init()
   else
     self.homingEnabled = true
   end
+
+  local randomTTL = config.getParameter("randomTimeToLive")
+  if randomTTL then
+	local newTTL = math.random() * (randomTTL[2] - randomTTL[1]) + randomTTL[1]
+	projectile.setTimeToLive(newTTL)
+  end
   
   --Seting up the sine wave movement
   self.wavePeriod = config.getParameter("wavePeriod") / (2 * math.pi)

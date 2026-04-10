@@ -92,7 +92,7 @@
   "primaryAbility" : {
     "baseDps" : 6.5,
     
-    "stanceSpeedFactor" : 0.8,
+    "stanceSpeedFactor" : 0.9,
     "swingPitchFactor" : 1.2,
     
     "finisherHoldTime" : 0.25,

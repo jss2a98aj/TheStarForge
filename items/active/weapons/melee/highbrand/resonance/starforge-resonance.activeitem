@@ -57,11 +57,6 @@
               }
             }
           }
-        },
-        "swoosh" : {
-          "properties" : {
-            "fullbright" : true
-          }
         }
       }
     },
@@ -95,12 +90,8 @@
     },
     "stances" : {
       "idle" : {
-        "aimAngle" : 0,
-        "armRotation" : -15,
-        "weaponRotation" : 40,
-        "twoHanded" : false,
-        "allowRotate" : false,
-        "allowFlip" : true
+        "armRotation" : 15,
+        "weaponRotation" : 30
       },
       "fire1" : {
         "animationStates" : {

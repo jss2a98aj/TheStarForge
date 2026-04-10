@@ -287,11 +287,6 @@
             "transformationGroups" : ["weapon", "eye5"],
             "rotationCenter" : [0, 0]
           }
-        },
-        "swoosh" : {
-          "properties" : {
-            "fullbright" : true
-          }
         }
       }
     },
@@ -401,12 +396,8 @@
     },
     "stances" : {
       "idle" : {
-        "aimAngle" : 0,
-        "armRotation" : -15,
-        "weaponRotation" : 35,
-        "twoHanded" : false,
-        "allowRotate" : false,
-        "allowFlip" : true
+        "armRotation" : 15,
+        "weaponRotation" : 30
       },
       "windup3" : {
 		    "comboDirectives" : ""

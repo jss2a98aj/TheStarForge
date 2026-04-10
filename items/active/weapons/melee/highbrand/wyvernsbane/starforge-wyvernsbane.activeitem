@@ -104,12 +104,9 @@
     },
     "stances" : {
       "idle" : {
-        "aimAngle" : 0,
-        "armRotation" : -15,
-        "weaponRotation" : 40,
-        "twoHanded" : false,
-        "allowRotate" : false,
-        "allowFlip" : true
+        "armRotation" : 15,
+        "weaponRotation" : 30,
+        "weaponOffset" : [-0.25, 0.25]
       }
     }
   },
@@ -196,7 +193,7 @@
 
     "damageConfig" : {
       "damageSourceKind" : "hammer",
-      "statusEffects" : [ ],
+      "statusEffects" : [ { "effect" : "starforge-stunned", "duration" : 0.85 } ],
       "baseDamage" : 6,
       "knockback" : [0, -35],
       "timeout" : 0.2,

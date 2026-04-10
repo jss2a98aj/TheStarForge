@@ -25,15 +25,6 @@
     "swoosh" : "ice"
   },
   "animationCustom" : {
-    "animatedParts" : {
-      "parts" : {
-        "swoosh" : {
-          "properties" : {
-            "fullbright" : true
-          }
-        }
-      }
-    },
     "sounds" : {
       "fire" : [ "/sfx/melee/swing_broadsword_ice1.ogg", "/sfx/melee/swing_broadsword_ice2.ogg", "/sfx/melee/swing_broadsword_ice3.ogg" ],
       "fire2" : [ "/sfx/melee/swing_shortsword_ice1.ogg", "/sfx/melee/swing_shortsword_ice2.ogg", "/sfx/melee/swing_shortsword_ice3.ogg" ],
@@ -59,6 +50,13 @@
       "statusEffects" : [ "frostslow" ],
       "knockbackMode" : "facing",
       "timeout" : 0.5
+    },
+
+    "stances" : {
+      "idle" : {
+        "weaponRotation" : 42,
+        "weaponOffset" : [-0.25, 0.25]
+      }
     }
   },
 

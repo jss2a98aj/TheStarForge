@@ -110,8 +110,14 @@ function StarforgeFlipSlashSlam:slam()
         params.powerMultiplier = activeItem.ownerPowerMultiplier()
         params.power = params.power * config.getParameter("damageLevelMultiplier")
 
-        world.spawnProjectile(self.projectileType, lastSlamPosition, activeItem.ownerEntityId(), {mcontroller.facingDirection() * self.slamAimVec[1], self.slamAimVec[2]}, false, params)
-        mcontroller.setVelocity(vec2.mul(vec2.norm(world.distance(self:slamPosition(), lastSlamPosition)), -self.bounceVelocity))
+        local impactPoint = lastSlamPosition
+        local collision = world.lineTileCollisionPoint(mcontroller.position(), impactPoint)
+        if collision then
+          impactPoint = collision[1] 
+        end
+        
+        world.spawnProjectile(self.projectileType, impactPoint, activeItem.ownerEntityId(), {mcontroller.facingDirection() * self.slamAimVec[1], self.slamAimVec[2]}, false, params)
+        mcontroller.setVelocity(vec2.mul(vec2.norm(world.distance(self:slamPosition(), impactPoint)), -self.bounceVelocity))
         return true
       end
       lastSlamPosition = newSlamPosition

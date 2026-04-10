@@ -205,15 +205,11 @@
     "baseDps" : 12.5,
     "stanceSpeedFactor" : 1.1,
     "swingPitchFactor" : 0.7,
-    "energyUsage" : 30,
+    "energyUsage" : 45,
     "stances" : {
       "idle" : {
-        "aimAngle" : 0,
-        "armRotation" : -15,
-        "weaponRotation" : 45,
-        "twoHanded" : false,
-        "allowRotate" : false,
-        "allowFlip" : true
+        "armRotation" : 15,
+        "weaponRotation" : 45
       }
     }
   },
@@ -236,7 +232,7 @@
         },
         {
           "action" : "loop",
-          "count" : 4,
+          "count" : 6,
           "body" : [
             {
               "action" : "projectile",
@@ -244,7 +240,7 @@
               "fuzzAngle" : 360,
               "config" : {
               },
-              "inheritDamageFactor" : 0.25,
+              "inheritDamageFactor" : 0.3,
               "angleAdjust" : 0
             }
           ]
