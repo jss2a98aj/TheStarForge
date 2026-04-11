@@ -1,0 +1,91 @@
+{
+  "projectileName" : "starforge-veilcrystal",
+  "physics" : "arrownosticky",
+  "actionOnCollide" : [
+    {
+      "action" : "spark"
+    }
+  ],
+  "image" : "starforge-veilcrystal.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "power" : 30,
+  "knockback" : 10,
+  "knockbackDirectional" : true,
+  "damageKind" : "bow",
+  "timeToLive" : 10,
+  "pointLight" : true,
+  "fullbright" : true,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+  
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "inheritDamageFactor" : 0,
+      "type" : "paintexplosionred",
+      "config" : {"bounces" : -1}
+    },
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/tar_hit_organic1.ogg", "/sfx/projectiles/tar_hit_organic2.ogg", "/sfx/projectiles/tar_hit_organic3.ogg", "/sfx/projectiles/tar_hit_organic4.ogg", "/sfx/projectiles/tar_hit_organic5.ogg" ]
+    },
+    {
+      "action" : "loop",
+      "count" : 4,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : {
+            "type" : "ember",
+            "size" : 1.0,
+            "color" : [163, 14, 26, 255],
+            "position" : [0, 0],
+            "fade" : 0.9,
+            "initialVelocity" : [0.0, 0.0],
+            "finalVelocity" : [0, -10.0],
+            "approach" : [20, 20],
+            "destructionTime" : 0.8,
+            "layer" : "middle",
+            "variance" : {
+				      "initialVelocity" : [6.0, 6.0],
+              "position" : [1, 1],
+              "size" : 0.5
+            }
+          }
+        }
+      ]
+    }
+  ],
+  
+  "advancedPeriodicActions" : [
+    {
+      "loopTime" : 0.01,
+      "rotate" : true,
+      "minimumVelocity" : 10,
+
+      "action" : "particle",
+      "specification" : {
+        "type" : "streak",
+        "layer" : "back",
+        "fullbright" : true,
+        "destructionAction" : "shrink",
+        "size" : 2,
+        "color" : [163, 14, 26, 255],
+        "collidesForeground" : false,
+        "length" : 10,
+        "position" : [1, 0],
+        "timeToLive" : 0.01,
+        "destructionTime" : 0.045,
+	    	"initialVelocity" : [0.5, 0],
+        "variance" : {
+		      "size" : 0,
+          "destructionTime" : 0.5,
+          "initialVelocity" : [0.5, -0],
+          "length" : 0
+        }
+      }
+    }
+  ],
+  
+  "scripts" : [ "/projectiles/scripts/starforge-advancedperiodicactions.lua" ]
+}

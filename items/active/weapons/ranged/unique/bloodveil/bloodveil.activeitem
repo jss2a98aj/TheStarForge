@@ -1,53 +1,203 @@
 {
   "itemName" : "starforge-bloodveil",
   "price" : 2500,
-  "inventoryIcon" : "bloodveilicon.png",
+  "inventoryIcon" : "starforge-bloodveil.png:0",
   "maxStack" : 1,
   "rarity" : "Legendary",
-  "tooltipKind" : "bow",
+  "tooltipKind": "starforge-uniquegun",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {
     "subtitle" : "Bow"
   },
-  "description" : "Manifests your life essence into a powerful arrow.",
+  "description" : "Wreathe your blood into powerful bolts, and risk the dangers that follow in tow.",
   "shortdescription" : "Bloodveil",
   "twoHanded" : true,
   "itemTags" : [ "starforge", "weapon", "ranged", "bow", "yukai" ],
 
   "radioMessagesOnPickup" : [ "pickupbow" ],
 
-  "level" : 7,
+  "level" : 6,
 
   "animation" : "/items/active/weapons/bow/bow.animation",
   "animationParts" : {
-    "bow" : "bloodveil.png"
+    "bow" : "starforge-bloodveil.png",
+    "bowFullbright" : "starforge-bloodveilfb.png",
+
+    "tassel" : "starforge-bloodveiltassel.png"
   },
   "animationCustom" : {
-    "animatedParts" : { "parts" : { "bow" : { "properties" : {
-      "offset" : [0.0, 0]
-    }}}},
+    "animatedParts" : {
+      "parts" : {
+        "tassel" : {
+          "properties" : {
+            "zLevel" : -4,
+            "centered" : true,
+            "image" : "<partImage>",
+            "offset" : [0.375, -1.5],
+            "transformationGroups" : ["weapon", "tassel"],
+            "rotationCenter" : [0, 0.5]
+          }
+        },
+        "bowFullbright" : { 
+          "properties" : {
+            "zLevel" : 1,
+            "centered" : true,
+            "fullbright" : true,
+            "transformationGroups" : ["weapon"],
+            "image" : "<partImage>:<drawFrame>",
+            "offset" : [0.25, 0]
+          }
+        },
+        "bow" : { 
+          "properties" : {
+            "zLevel" : 0,
+            "offset" : [0.25, 0]
+          }
+        }
+      }
+    },
+    "transformationGroups" : {
+      "tassel" : {}
+    },
     "sounds" : {
-      "draw" : [ "/sfx/gun/bow_draw1.ogg", "/sfx/gun/bow_draw2.ogg", "/sfx/gun/bow_draw3.ogg" ],
-      "release" : [ "/sfx/gun/bow_loose.ogg" ],
-      "perfectRelease" : [ "/sfx/gun/bow_loose_perfect.ogg" ]
+      "draw" : [ "/sfx/gun/starforge-yukaicharge.ogg" ],
+      "ready" : [ "/sfx/blocks/footstep_bone.ogg" ],
+      "release" : [ "/sfx/weapon/sanguine/sanguinepowerdown.ogg" ],
+      "perfectRelease" : [ "/sfx/gun/starforge-yukaifire.ogg" ],
+      
+      "summon" : [ "/sfx/weapon/sanguine/sanguinepowerdown.ogg" ]
     }
   },
 
-  "scripts" : ["/items/active/weapons/bow/bow.lua"],
+  "scripts" : ["/items/active/weapons/bow/bow.lua", "/items/active/weapons/starforge-hangingparts.lua"],
+  "hangingParts" : {
+    "tassel" : "tassel"
+  },
+  "shakeVelocity" : 4,
 
-  "primaryAbilityType" : "bowshot",
   "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/abilities/bow/starforge-bowshot.lua"],
+    "class" : "StarforgeBowShot",
+    
+    "fireOffset" : [0.75, 0],
+
+    "drawTime" : 0.8,
+    "powerProjectileTime" : 0.15,
+
+    "resourcetype" : "health",
+    "energyPerShot" : 50,
+    "drainEnergyWhilePowerful" : true,	//If true, consume energy while at max power
+    "holdEnergyUsage" : 10,
+	
+    "cooldownTime" : 0.2,
+    "inaccuracy" : 0.01,
+	
+    "walkWhileFiring" : false,
+    "useQuiverDamageBonus" : true,	//from ERM
+
+    "staticDamageMultiplier" : null,	//If this value is set, arrow damage is independent of draw time and is instead multiplied by this value
+    "dynamicDamageMultiplier" : 1.0,	//All damage is multiplied by this value. Useful for modifying damage using alt ability special arrows
+
+    "drawArmFrames" : ["swim.4", "swim.4", "swim.2", "swimIdle.1", "swimIdle.1", "swimIdle.1", "swimIdle.1"],
+
+	  "projectileCount" : 1,
     "projectileType" : "starforge-veilcrystal",
-    "powerProjectileType" : "starforge-veilcrystalperfect",
     "projectileParameters" : {
-      "power" : 9.5
+      "speed" : 65,
+      "statusEffects" : [
+        "starforge-yukaiblooddrain",
+        "starforge-lightbleeding"
+      ],
+      "power" : 4.5
+    },
+    "powerProjectileType" : "starforge-veilcrystal",
+    "powerProjectileParameters" : {
+      "speed" : 75,
+      "statusEffects" : [
+        "starforge-yukaiblooddrain",
+        "starforge-heavybleeding"
+      ],
+      "power" : 8.5
+    },
+
+    "stances" : {
+      "idle" : {
+        "armRotation" : -30,
+        "weaponRotation" : 0,
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+      "draw" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+      "fire" : {
+        "duration" : 0.1,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "allowRotate" : false,
+        "allowFlip" : true,
+        "twoHanded" : true,
+
+        "frontArmFrame" : "idle.3"
+      }
     }
   },
 
-  "altAbilityType" : "zenshot",
   "altAbility" : {
+    "name" : "Summon Friend",
+    "scripts" : ["/items/active/weapons/ranged/abilities/starforge-allymonstersummon/starforge-allymonstersummon.lua"],
+    "class" : "StarforgeAllyMonsterSummon",
+	
+    "windupTime" : 0.5,
+    "cooldownTime" : 2.5,
+	
+    "summonEnergyUsage" : 500,
+    "summonOffset" : [0.0, 0],
 
+    "monsterConfigs" : [ 
+      { 
+        "monsterType" : "starforge-yukaiwisp",
+        "monsterParameters" : {},
+        "spawnEffects" : [ "starforge-delayeddeath", "starforge-fadein" ],
+        "spawnOffset" : [ 0, 0 ]
+      } 
+    ],
+
+    "stances" : {
+      "windup" : {
+        "aimAngle" : 0,
+		
+        "armRotation" : -5,
+        "weaponRotation" : 15,
+		    "weaponOffset" : [0.25, 0.25],
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+
+        "frontArmFrame" : "idle.3"
+      },
+      "summon" : {
+        "aimAngle" : 0,
+		
+        "duration" : 0.3,
+        "armRotation" : -5,
+        "weaponRotation" : 15,
+		    "weaponOffset" : [0.25, 0.25],
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+
+        "frontArmFrame" : "idle.3"
+      }
+    }
   },
 
-  "builder" : "/items/buildscripts/buildbow.lua"
+  "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
 }

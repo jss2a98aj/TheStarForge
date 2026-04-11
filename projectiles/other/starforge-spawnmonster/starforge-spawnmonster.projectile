@@ -1,0 +1,22 @@
+{
+  "projectileName" : "starforge-spawnmonster",
+  "image" : "/assetmissing.png",
+  "animationCycle" : 0.8,
+  "frameNumber" : 1,
+  "speed" : 0,
+  "animationLoops" : false,
+  "piercing" : true,
+  "flippable" : true,
+  "damageKind" : "default",
+  
+  "scripts" : [ "/projectiles/scripts/starforge-spawnmonsters.lua" ],
+
+  "monsterConfigs" : [ 
+    { 
+      "monsterType" : "starforge-starmite",
+      "monsterParameters" : {},
+      "spawnEffects" : [ "starforge-fadein" ],
+      "spawnOffset" : [0, 0]
+    }
+  ]
+}

@@ -18,12 +18,13 @@
   ],
   "periodicActions" : [
   	{ 
-      "time" : 0.05,
+      "time" : 0.01,
       "repeat" : true,
       "action" : "projectile",
       "rotate" : true,
       "type" : "starforge-withersmoke",
       "config" : {
+        "speed" : 1
       },
       "inheritDamageFactor" : 0.0125,
       "angleAdjust" : 180,

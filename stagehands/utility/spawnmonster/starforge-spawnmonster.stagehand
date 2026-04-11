@@ -1,0 +1,14 @@
+{
+  "type" : "starforge-spawnmonster",
+
+  "broadcastArea" : [-5, -5, 5, 5],
+
+  "scripts" : [ "/stagehands/utility/spawnmonster/starforge-spawnmonster.lua" ],
+  "scriptDelta" : 5,
+
+  "monsterType" : "",
+  "monsterLevel" : 1,
+  
+  "monsterTestPoly" : [ [0.8125, 1.25], [1.3125, 0.75],  [1.3125, -1.05], [0.8125, -1.55],  [-0.8125, -1.55], [-1.3125, -1.05],  [-1.3125, 0.75], [-0.8125, 1.25] ],
+  "spawnTolerance" : 20
+}

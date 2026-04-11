@@ -1,0 +1,262 @@
+{
+  "itemName" : "starforge-locust",
+  "price" : 1500,
+  "level" : 7,
+  "fixedLevel" : false,
+  "maxStack" : 1,
+  "rarity" : "Essential",
+  "tooltipKind": "starforge-uniquegun",
+  "category" : "uniqueWeapon",
+  "tooltipFieldsOverride" : {
+    "subtitle" : "Bow"
+  },
+  "description" : "It squirms and writhes in hope of corrupting its master. And it will, with time.",
+  "shortdescription" : "Locust",
+  "twoHanded" : true,
+  "itemTags" : [ "starforge", "weapon", "ranged", "bow" ],
+
+  "radioMessagesOnPickup" : [ "pickupbow" ],
+
+  "inventoryIcon" : "starforge-locust.png:1.0",
+
+  "animation" : "/items/active/weapons/bow/bow.animation",
+  "animationParts" : {
+    "bow" : "starforge-locust.png",
+    "bowFullbright" : "starforge-locust.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : {
+      "stateTypes" : {
+        "bow" : {
+          "default" : "idle",
+          "states" : {
+            "idle" : {
+              "frames" : 4,
+              "cycle" : 0.4,
+              "mode" : "loop"
+            }
+          }
+        }
+      },
+      "parts" : { 
+        "bow" : { 
+          "properties" : {
+           "offset" : [0.25, -0.125]
+          },
+          "partStates" : {
+            "bow" : {
+              "idle" : {
+                "properties" : {
+                  "image" : "<partImage>:<frame>.<drawFrame>"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "sounds" : {
+      "draw" : [ "/sfx/npc/monsters/anglure_windup.ogg" ],
+      "ready" : [ "/sfx/npc/monsters/crustoise_charge.ogg" ],
+      "release" : [ "/sfx/projectiles/spit1.ogg", "/sfx/projectiles/spit2.ogg" ],
+      "perfectRelease" : [ "/sfx/projectiles/spit1.ogg", "/sfx/projectiles/spit2.ogg" ]
+    }
+  },
+
+  "scripts" : [ "/items/active/weapons/bow/bow.lua" ],
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/abilities/bow/starforge-bowshot.lua"],
+    "class" : "StarforgeBowShot",
+    
+    "fireOffset" : [0.75, 0],
+
+    "drawTime" : 1.35,
+    "powerProjectileTime" : 0.3,
+
+    "energyPerShot" : 50,
+    "drainEnergyWhilePowerful" : true,	//If true, consume energy while at max power
+    "holdEnergyUsage" : 10,
+	
+    "cooldownTime" : 0.4,
+    "inaccuracy" : 0.02,
+	
+    "walkWhileFiring" : true,
+    "useQuiverDamageBonus" : true,	//from ERM
+
+    "staticDamageMultiplier" : null,	//If this value is set, arrow damage is independent of draw time and is instead multiplied by this value
+    "dynamicDamageMultiplier" : 1.0,	//All damage is multiplied by this value. Useful for modifying damage using alt ability special arrows
+
+    "drawArmFrames" : ["rotation", "swim.4", "swim.2", "swimIdle.1", "swim.1", "swim.1"],
+
+	  "projectileCount" : 1,
+    "projectileType" : "starforge-locustarrow",
+    "projectileParameters" : {
+      "speed" : 55,
+      "power" : 5.0
+    },
+    "powerProjectileType" : "starforge-locustarrow",
+    "powerProjectileParameters" : {
+      "speed" : 65,
+      "power" : 9.0,
+      
+      "actionOnReap" : [
+        {
+          "action" : "projectile",
+          "type" : "starforge-withersmoke",
+          "inheritDamageFactor" : 0.25,
+          "config" : {
+            "targetRandSpeed" : [0, 1]
+          }
+        },
+
+        {
+          "action" : "sound",
+          "options" : [
+            "/sfx/projectiles/bugswarm1.ogg",
+            "/sfx/projectiles/bugswarm2.ogg",
+            "/sfx/projectiles/bugswarm3.ogg",
+            "/sfx/projectiles/bugswarm4.ogg"
+          ]
+        },   
+
+        {
+          "action" : "loop",
+          "count" : 4,
+          "body" : [
+            {
+              "action" : "projectile",
+              "inheritDamageFactor" : 0.05,
+              "type" : "starforge-blackrotswarm",
+              "fuzzAngle" : 360,
+              "config" : {
+                "statusEffects" : [ "starforge-wither" ]
+              }
+            }
+          ]
+        }
+      ],
+      
+      "periodicActions" : [
+        {
+          "time" : 0.1,
+          "repeat" : true,
+          "action" : "sound",
+          "options" : [
+            "/sfx/projectiles/bugswarm1.ogg",
+            "/sfx/projectiles/bugswarm2.ogg",
+            "/sfx/projectiles/bugswarm3.ogg",
+            "/sfx/projectiles/bugswarm4.ogg"
+          ]
+        },
+        { 
+          "time" : 0.05,
+          "repeat" : true,
+          "action" : "projectile",
+          "rotate" : true,
+          "type" : "starforge-blackrotswarm",
+          "config" : {
+            "speed" : 5
+          },
+          "inheritDamageFactor" : 0.0125,
+          "angleAdjust" : 180,
+          "fuzzAngle" : 15
+        }
+      ]
+    },
+
+    "stances" : {
+      "idle" : {
+        "armRotation" : -30,
+        "weaponRotation" : 0,
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+      "draw" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+      "fire" : {
+        "duration" : 0.2,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "allowRotate" : false,
+        "allowFlip" : true,
+        "twoHanded" : true,
+
+        "frontArmFrame" : "idle.3"
+      }
+    }
+  },
+
+  "altAbility" : {
+    "name" : "Blackrot Hive",
+    "scripts" : ["/items/active/weapons/ranged/abilities/bow/starforge-bowshot.lua"],
+    "class" : "StarforgeBowShot",
+    
+    "fireOffset" : [0.75, 0],
+
+    "drawTime" : 1.85,
+    "powerProjectileTime" : 0.0,
+
+    "energyPerShot" : 200,
+    "drainEnergyWhilePowerful" : true,	//If true, consume energy while at max power
+    "holdEnergyUsage" : 50,
+	
+    "cooldownTime" : 3,
+    "inaccuracy" : 0.02,
+	
+    "walkWhileFiring" : true,
+    "useQuiverDamageBonus" : true,	//from ERM
+
+    "staticDamageMultiplier" : 1.0,	//If this value is set, arrow damage is independent of draw time and is instead multiplied by this value
+    "dynamicDamageMultiplier" : 1.0,	//All damage is multiplied by this value. Useful for modifying damage using alt ability special arrows
+
+    "drawArmFrames" : ["rotation", "swim.4", "swim.2", "swimIdle.1", "swim.1", "swim.1"],
+
+	  "projectileCount" : 1,
+    "projectileType" : "starforge-locustarrowhive",
+    "projectileParameters" : {
+      "speed" : 50,
+      "power" : 10.0
+    },
+    "powerProjectileType" : "starforge-locustarrowhive",
+    "powerProjectileParameters" : {
+      "speed" : 50,
+      "power" : 10.0
+    },
+
+    "stances" : {
+      "idle" : {
+        "armRotation" : -30,
+        "weaponRotation" : 0,
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+      "draw" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+      "fire" : {
+        "duration" : 0.2,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "allowRotate" : false,
+        "allowFlip" : true,
+        "twoHanded" : true,
+
+        "frontArmFrame" : "idle.3"
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
+}

@@ -5,8 +5,8 @@ function init()
   self.damageGivenListener = damageListener("inflictedDamage", function(notifications)
     for _, notification in pairs(notifications) do
       for _, effect in ipairs(self.statusEffects) do
-          world.sendEntityMessage(notification.targetEntityId, "applyStatusEffect", effect, config.getParameter("statusDurationOverwrite", nil), entity.id())
-        end
+        world.sendEntityMessage(notification.targetEntityId, "applyStatusEffect", effect, config.getParameter("statusDurationOverwrite", nil), entity.id())
+      end
     end
   end)
 end

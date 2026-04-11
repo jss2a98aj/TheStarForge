@@ -19,7 +19,7 @@
   "damageType" : "NoDamage",
   "damageKind" : "electricplasma",
 
-  "scripts" : ["/projectiles/scripts/starforge-longbowprojectile.lua"],
+  "scripts" : [ "/projectiles/scripts/starforge-longbowprojectile.lua", "/projectiles/scripts/starforge-spin.lua" ],
   "scriptDelta" : 1,
   
   "teleportRange" : 1000,
@@ -59,7 +59,14 @@
         "timeToLive" : 0.25,
         "rotation" : 90,
         "fullbright" : true
-        }
+      }
     }
-  ]
+  ],
+
+  "orientationLocked" : true,
+  "pointToLight" : true,
+  "countMovementDirection" : true,
+  "spinRate" : 1,
+  "minSpinSpeed": 25,
+  "spinDirection" : 1
 }

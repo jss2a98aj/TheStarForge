@@ -15,8 +15,8 @@
       "/monsters/flyers/yukaiwisp/yukaiwisp.lua"
     ],
 	
-	"hostileStatusEffect" : "starforge-yukaiblooddrain", //Hostile to it (friendlies to player)
-	"friendlyStatusEffect" : "starforge-yukaibloodboost", //Friendly to it (enemies to player)
+    "hostileStatusEffect" : "starforge-yukaiblooddrain", //Hostile to it (friendlies to player)
+    "friendlyStatusEffect" : "starforge-yukaibloodboost", //Friendly to it (enemies to player)
 
     "behavior" : "monster",
     "deathBehavior" : "monster-death",
@@ -43,22 +43,7 @@
 
       "wanderActions" : [ ],
 	  
-      "deathActions" : [
-        {
-          "name" : "action-projectile",
-          "parameters" : {
-            "projectileCount" : 1,
-            "projectileType" : "electricplasmaexplosion",
-            "projectileParameters" : {
-              "damageTeam" : { "type" : "indiscriminate", "team" : 0 },
-			  "power" : 10.0
-            },
-            "aimDirection" : [0, 0],
-            "inaccuracy" : 0,
-            "fireOffset" : [0, 0]
-          }
-        }
-      ],
+      "deathActions" : [ ],
 
       "concurrentActions" : [ ],
 

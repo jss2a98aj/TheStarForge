@@ -1,0 +1,99 @@
+{
+  "projectileName" : "starforge-locustarrowhive",
+  "physics" : "arrow",
+  "image" : "starforge-locustarrow.png",
+  "animationCycle" : 0.4,
+  "frameNumber" : 4,
+  "pointLight" : true,
+  "piercing" : true,
+  "emitters" : [ ],
+  "statusEffects" : [
+    "starforge-wither"
+  ],
+  "actionOnReap" : [
+  	{
+      "action" : "projectile",
+      "type" : "starforge-withersmoke",
+      "inheritDamageFactor" : 0.25,
+      "config" : {
+        "targetRandSpeed" : [0, 1]
+      }
+    },
+
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/wormgun1.ogg",
+        "/sfx/gun/wormgun2.ogg",
+        "/sfx/gun/wormgun3.ogg",
+        "/sfx/gun/wormgun4.ogg",
+        "/sfx/gun/wormgun5.ogg",
+        "/sfx/gun/wormgun6.ogg"
+      ]
+    }
+  ],
+  "stickActionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/projectiles/hivebomb_impact.ogg"
+      ]
+    },
+
+    {
+      "action" : "loop",
+      "count" : 4,
+      "body" : [
+        {
+          "action" : "projectile",
+          "inheritDamageFactor" : 1,
+          "type" : "starforge-blackrotswarm",
+          "fuzzAngle" : 360,
+          "config" : {
+            "statusEffects" : [ "starforge-wither" ]
+          }
+        }
+      ]
+    }
+  ],
+  "periodicActions" : [
+    {
+      "repeat" : true,
+      "time" : 0.1,
+      "action" : "sound",
+      "options" : [
+        "/sfx/projectiles/bugswarm1.ogg",
+        "/sfx/projectiles/bugswarm2.ogg",
+        "/sfx/projectiles/bugswarm3.ogg",
+        "/sfx/projectiles/bugswarm4.ogg"
+      ]
+    },
+    {
+      "repeat" : true,
+      "time" : 0.05,
+      "action" : "loop",
+      "count" : 1,
+      "body" : [
+        {
+          "action" : "projectile",
+          "inheritDamageFactor" : 0.25,
+          "type" : "starforge-blackrotswarm",
+          "fuzzAngle" : 360,
+          "config" : {
+            "statusEffects" : [ "starforge-wither" ]
+          }
+        }
+      ]
+    }
+  ],
+  "power" : 20,
+  "knockback" : 0,
+  "knockbackDirectional" : true,
+  "damageKind" : "starforge-wither",
+  "timeToLive" : 4,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+
+  "scripts" : [ "/projectiles/scripts/starforge-stickingprojectile.lua" ],
+  "initialDamageMultiplier" : 0.1,
+  "damageMultiplierOnStick" : 1
+}

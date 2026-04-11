@@ -69,10 +69,22 @@ function build(directory, config, parameters, level, seed)
     config.tooltipFields = {}
     config.tooltipFields.levelLabel = util.round(configParameter("level", 1), 1)
     config.tooltipFields.rarityLabel = configParameter("rarity", "Common")
-    config.tooltipFields.dpsLabel = util.round((config.primaryAbility.baseDps or 0) * config.damageLevelMultiplier, 1)
-    config.tooltipFields.speedLabel = util.round(1 / ((config.primaryAbility.stanceSpeedFactor or 1) * (config.primaryAbility.fireTime or 1.0)), 1)
-    config.tooltipFields.damagePerShotLabel = util.round((config.primaryAbility.baseDps or 0) * (config.primaryAbility.fireTime or 1.0) * config.damageLevelMultiplier, 1)
-    config.tooltipFields.energyPerShotLabel = util.round((config.primaryAbility.energyUsage or 0) * (config.primaryAbility.fireTime or 1.0), 1)
+    if config.primaryAbility.drawTime then
+      config.tooltipFields.speedTitleLabel = "Draw Time:"
+      config.tooltipFields.speedLabel = config.primaryAbility.drawTime - (config.altAbility and config.altAbility.drawTimeReduction or 0) or 0
+      
+      config.tooltipFields.damagePerShotTitleLabel = "Base Damage:"
+      config.tooltipFields.damagePerShotLabel = util.round(config.primaryAbility.projectileParameters.power * config.primaryAbility.dynamicDamageMultiplier * config.damageLevelMultiplier, 1) or 0
+      config.tooltipFields.energyPerShotLabel = config.primaryAbility.energyPerShot or 0
+      if config.primaryAbility.resourcetype == "health" then
+        config.tooltipFields.energyPerShotTitleLabel = "Health Per Shot:"
+      end
+    else
+      config.tooltipFields.damagePerShotLabel = util.round((config.primaryAbility.baseDps or 0) * (config.primaryAbility.fireTime or 1.0) * config.damageLevelMultiplier, 1)
+      config.tooltipFields.energyPerShotLabel = util.round((config.primaryAbility.energyUsage or 0) * (config.primaryAbility.fireTime or 1.0), 1)
+      config.tooltipFields.dpsLabel = util.round((config.primaryAbility.baseDps or 0) * config.damageLevelMultiplier, 1)
+      config.tooltipFields.speedLabel = util.round(1 / ((config.primaryAbility.stanceSpeedFactor or 1) * (config.primaryAbility.fireTime or 1.0)), 1)
+    end
     if elementalType ~= "physical" then
       config.tooltipFields.damageKindImage = "/interface/elements/" .. elementalType .. ".png"
     end

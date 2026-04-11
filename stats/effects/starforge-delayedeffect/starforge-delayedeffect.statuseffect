@@ -1,0 +1,11 @@
+{
+  "name" : "starforge-delayeddeath",
+  "effectConfig" : {
+    "effectOnExpire" : "monsterdespawn"
+  },
+  "defaultDuration" : 30.0,
+
+  "scripts" : [
+    "starforge-delayedeffect.lua"
+  ]
+}
