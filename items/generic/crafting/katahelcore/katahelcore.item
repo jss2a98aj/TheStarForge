@@ -4,7 +4,7 @@
   "rarity" : "Essential",
   "category" : "craftingMaterial",
   "inventoryIcon" : "katahelcore.png",
-  "description" : "An ancient core, now activated.",
-  "shortdescription" : "^orange;Activated Ancient Core^white;",
+  "description" : "A powerful, ancient artefact from long ago.",
+  "shortdescription" : "^orange;Ancient Matrix^white;",
   "itemTags" : ["starforge-starforge", "reagent"]
 }

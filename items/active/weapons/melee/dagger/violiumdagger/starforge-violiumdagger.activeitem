@@ -1,7 +1,7 @@
 {
   "itemName" : "starforge-violiumdagger",
   "price" : 960,
-  "level" : 6,
+  "level" : 5,
   "maxStack" : 1,
   "rarity" : "Legendary",
   "description" : "A violium-forged hilt with a compact energy blade, built for speed and precision.",

@@ -2,7 +2,7 @@
   "input" : [
 	{ "item" : "essence", "count" : 1750},
 	{ "item" : "starforge-cerulium", "count" : 6},
-	{ "item" : "starforge-infusedtitanium", "count" : 3},
+	{ "item" : "tungstenbar", "count" : 3},
 	{ "item" : "scorchedcore", "count" : 3},
 	{ "item" : "staticcell", "count" : 3},
 	{ "item" : "cryonicextract", "count" : 3},

@@ -13,7 +13,7 @@
   },
   "twoHanded" : false,
   "itemTags" : [ "starforge", "weapon", "ranged", "throwable" ],
-  //"learnBlueprintsOnPickup" : [ "starforge-ashcaster" ],
+  "learnBlueprintsOnPickup" : [ "starforge-ashcaster" ],
 
   "inventoryIcon" : "starforge-ashcaster.png",
 

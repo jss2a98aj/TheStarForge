@@ -15,6 +15,7 @@
   "twoHanded" : false,
   "itemTags" : [ "starforge", "weapon", "melee", "quickblade", "dagger" ],
 
+  "learnBlueprintsOnPickup" : [ "starforge-charveil" ],
   "inventoryIcon" : "starforge-charveil.png:inactive",
 
   "animation" : "/items/active/weapons/melee/dagger/starforge-empoweredquickblade.animation",

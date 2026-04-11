@@ -2,7 +2,7 @@
   "input" : [
 	{ "item" : "essence", "count" : 1750},
 	{ "item" : "starforge-brimsteel", "count" : 5},
-	{ "item" : "starforge-infusedtitanium", "count" : 7},
+	{ "item" : "durasteelbar", "count" : 7},
 	{ "item" : "scorchedcore", "count" : 6},
 	{ "item" : "corefragmentore", "count" : 75}
   ],

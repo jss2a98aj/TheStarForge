@@ -1,0 +1,16 @@
+{
+  "input" : [
+	{ "item" : "essence", "count" : 25000},
+	{ "item" : "starforge-katahelcore", "count" : 3},
+		{ "item" : "starforge-impervium", "count" : 10},
+	{ "item" : "solariumstar", "count" : 50}
+
+  ],
+  "output" : {
+    "item" : "starforge-godkey",
+    "count" : 1
+  },
+  "groups" : [ "starforge-starforge", "weapons" ],
+  "duration" : 2
+}
+

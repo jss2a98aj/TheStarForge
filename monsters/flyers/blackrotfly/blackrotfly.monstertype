@@ -90,7 +90,7 @@
       "teamType" : "enemy",
       "damageSourceKind" : "lash",
       "knockback" : 20,
-      "statusEffects" : [ ]
+      "statusEffects" : ["starforge-wither" ]
     },
 
     "metaBoundBox" : [-4, -4, 4, 4],

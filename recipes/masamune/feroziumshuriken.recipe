@@ -1,6 +1,5 @@
 {
   "input" : [
-    { "item" : "solariumstar", "count" : 3},
 	{ "item" : "refinedferozium", "count" : 5},
 	{ "item" : "cryonicextract", "count" : 3}
   ],

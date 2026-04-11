@@ -3,7 +3,8 @@
     { "item" : "starforge-yukaipearl", "count" : 5},
 	{ "item" : "solariumstar", "count" : 2},
 	{ "item" : "goldbar", "count" : 25},
-	{ "item" : "coralfragment", "count" : 35}
+	{ "item" : "diamond", "count" : 1},
+	{ "item" : "scorchedcore", "count" : 5}
   ],
   "output" : {
     "item" : "starforge-existar",

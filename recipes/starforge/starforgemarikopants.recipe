@@ -1,7 +1,7 @@
 {
   "input" : [
 	{ "item" : "starforge-emberfabric", "count" : 4 },
-	{ "item" : "starforge-infusedtitanium", "count" : 8 },
+	{ "item" : "titaniumbar", "count" : 8 },
 	{ "item" : "essence", "count" : 1000}
   ],
   "output" : {

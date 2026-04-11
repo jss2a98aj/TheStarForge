@@ -5,7 +5,7 @@
   "maxStack" : 1,
   "rarity" : "Essential",
   "description" : "Something about its make suggests a purpose far older than the hand that forged it.",
-  "shortdescription" : "Godward",
+  "shortdescription" : "^orange;Godward^reset;",
   "tooltipKind" : "starforge-uniquesword",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {
@@ -13,7 +13,7 @@
   },
   "twoHanded" : true,
   "itemTags" : [ "starforge", "weapon", "melee", "highbrand", "greatsword" ],
-
+  "learnBlueprintsOnPickup" : [ "starforge-godkey" ],
   "inventoryIcon" : "starforge-godkey.png",
 
   "animation" : "/items/active/weapons/melee/highbrand/starforge-highbrand.animation",

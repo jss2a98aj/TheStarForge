@@ -1,0 +1,15 @@
+{
+  "input" : [
+	{ "item" : "solariumstar", "count" : 5},
+	{ "item" : "copperbar", "count" : 10},
+	{ "item" : "diamond", "count" : 1},
+	{ "item" : "venomsample", "count" : 5}
+  ],
+  "output" : {
+    "item" : "starforge-aspic",
+    "count" : 1
+  },
+  "groups" : [ "starforge-masamune", "starforge-yukaishop", "quickblade" ],
+  "duration" : 0
+}
+

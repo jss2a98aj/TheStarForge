@@ -15,6 +15,7 @@
     "subtitle" : "Quickblade"
   },
 
+  "learnBlueprintsOnPickup" : [ "starforge-aspic" ],
   "inventoryIcon" : "starforge-aspic.png",
 
   "animation" : "/items/active/weapons/melee/dagger/starforge-quickblade.animation",

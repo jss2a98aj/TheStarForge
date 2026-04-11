@@ -14,7 +14,7 @@
   "tooltipFieldsOverride" : {
     "subtitle" : "Quickblade"
   },
-
+  "learnBlueprintsOnPickup" : [ "starforge-frozenanguish" ],
   "inventoryIcon" : "starforge-frozenanguish.png",
 
   "animation" : "/items/active/weapons/melee/dagger/starforge-quickblade.animation",
