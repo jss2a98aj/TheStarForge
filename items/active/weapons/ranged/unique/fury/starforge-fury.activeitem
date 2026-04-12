@@ -76,7 +76,7 @@
 
   "scripts" : ["/items/active/weapons/ranged/gun.lua"],
 
-  "elementalType" : "physical",
+  "elementalType" : "fire",
 
   "primaryAbility" : {
     "scripts" : ["/items/active/weapons/ranged/abilities/starforge-multibarrelfire.lua"],

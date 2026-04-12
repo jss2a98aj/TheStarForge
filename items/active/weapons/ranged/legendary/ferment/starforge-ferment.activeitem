@@ -3,7 +3,7 @@
   "price" : 1500,
   "level" : 6,
   "fixedLevel" : false,
-  "inventoryIcon" : "starforge-fermenticon.png",
+  "inventoryIcon" : "starforge-ferment.png:idle",
   "maxStack" : 1,
   "rarity" : "Rare",
   "description" : "The ferment held it together, let it grow.",
@@ -46,7 +46,7 @@
   "animationScripts" : ["/items/active/effects/starforge-enhancedchain.lua"],
 
   "baseOffset" : [0.875, 0.5],
-  "muzzleOffset" : [0.375, 0.125],
+  "muzzleOffset" : [0.375, 0.0625],
 
   "scripts" : ["/items/active/weapons/ranged/starforge-gun.lua"],
 
