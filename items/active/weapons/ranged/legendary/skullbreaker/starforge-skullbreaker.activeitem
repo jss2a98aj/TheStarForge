@@ -2,7 +2,7 @@
   "itemName" : "starforge-skullbreaker",
   "price" : 3000,
   "maxStack" : 1,
-  "rarity" : "Rare",
+  "rarity" : "Legendary",
   "description" : "\"I call it trauma therapy, a bullet a day makes the pain go away.\"",
   "shortdescription" : "Skullbreaker",
   "tooltipKind" : "starforge-uniquegun",
@@ -24,18 +24,25 @@
     "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-physicalmuzzleflash.png"
   },
   "animationCustom" : {
+    "particleEmitters" : {
+      "muzzleFlash" : {
+        "particles" : [
+          { "particle" : "rocketbarrelpuff", "offset" : [0.0, 0.0] }
+        ]
+      }
+    },
     "sounds": {
-      "fire": ["/sfx/gun/starforge-minigunfire.ogg"],
+      "fire": [ "/sfx/gun/gristlegun3.ogg" ],
       "bite": ["/sfx/npc/monsters/monster_bite1.ogg", "/sfx/npc/monsters/monster_bite1.ogg"]
-	}
+	  }
   },
   
-  "baseOffset" : [1.0, 0.375],
-  "muzzleOffset" : [1.25, 0],
+  "baseOffset" : [0.75, 0.375],
+  "muzzleOffset" : [1.5, 0.125],
   
   "scripts" : [ "/items/active/weapons/ranged/starforge-gun.lua" ],
   
-  "elementalType" : "physical",
+  "elementalType" : "poison",
   
   "primaryAbility" : {
     "scripts" : [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
@@ -47,14 +54,16 @@
     "inaccuracy" : 0.002,
     "projectileCount" : 1,
 	
-    "burstTime" : 0.125,
+    "fireType" : "burst",
+    "burstTime" : 0.11,
     "burstCount" : 3,
 	
-    "fireType" : "burst",
-    "projectileType": "starforge-physicalbullet",
+    "projectileType" : "bonethorn",
     "projectileParameters": {
-      "knockback" : 3,
-	    "statusEffects" : [ { "effect" : "starforge-skullbreakerreturn", "duration" : 0.5 } ]
+      "knockback" : 8,
+      "statusEffects" : [ "weakpoison", { "effect" : "starforge-skullbreakerreturn", "duration" : 0.5 } ],
+      "bounces" : 1,
+      "damageKind" : "poisonbullet"
 	  },
 	
     "stances" : {
@@ -88,6 +97,7 @@
   },
   
   "altAbility" : {
+    "name" : "Reave",
     "scripts" : [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
     "class" : "StarforgeGunFire",
 	
@@ -99,14 +109,14 @@
 	
     "fireType" : "auto",
     "projectileType": "meleebite",
-	"fireOffset" : [1.25, 0],
+	  "fireOffset" : [1.25, 0],
     "projectileParameters": {
       "knockback" : 3,
-	  "statusEffects" : [ { "effect" : "starforge-skullbreakerreturn", "duration" : 4 } ]
+	    "statusEffects" : [ { "effect" : "starforge-skullbreakerreturn", "duration" : 4 } ]
     },
-	"trackSourceEntity" : true,
-	"useStanceDuration" : true,
-	"fireSound" : "bite",
+    "trackSourceEntity" : true,
+    "useStanceDuration" : true,
+    "fireSound" : "bite",
 	
     "stances" : {
       "idle" : {
