@@ -42,11 +42,11 @@
   "starforge-watcherhutstash" : [
     [1, {
       "pool" : [
-        {"weight" : 0.80, "pool" : "smallChestTreasure"},
+        {"weight" : 0.20, "pool" : "smallChestTreasure"},
 		{"weight" : 0.10, "item" : "starforge-combatrifle"},
-        {"weight" : 0.10, "item" : "starforge-eyebrand"},
-		{"weight" : 0.10, "item" : "starforge-scavenger"},
-		{"weight" : 0.10, "item" : "starforge-twinshot"}
+        {"weight" : 0.30, "item" : "starforge-eyebrand"},
+		{"weight" : 0.15, "item" : "starforge-scavenger"},
+		{"weight" : 0.25, "item" : "starforge-aspic"}
       ],
       "poolRounds" : [
         [0.30, 1],

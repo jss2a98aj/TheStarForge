@@ -259,10 +259,10 @@
 	
 	{
 		"op": "add",
-		"path": "/starforge-eleuthia1",
+		"path": "/starforge-razortailhunt",
 		"value": {
 			"type": "FloatingDungeon",
-			"dungeonWorld": "starforge-eleuthia1",
+			"dungeonWorld": "starforge-razortailhunt",
 			"seed": 1234,
 			"spawningEnabled": false,
 			"beamUpRule": "Anywhere",
@@ -270,11 +270,11 @@
 			"worldProperties": {"nonCombat": false},
 			 "skyParameters" : {
 		"dayLength" : 10000,
-		"surfaceLevel" : 1000,
+		"surfaceLevel" : 600,
 		"spaceLevel" : 3000,
 		"seed" : -5288806180628666923,
 
-		"skyType" : "barren",
+		"skyType" : "atmospheric",
 		"skyColoring" : {
 		  "mainColor" : [200, 200, 255],
 

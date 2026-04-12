@@ -11,7 +11,7 @@
     "subtitle" : "Bow"
   },
   "description" : "It squirms and writhes in hope of corrupting its master. And it will, with time.",
-  "shortdescription" : "Locust",
+  "shortdescription" : "^orange;Locust^reset;",
   "twoHanded" : true,
   "itemTags" : [ "starforge", "weapon", "ranged", "bow" ],
 

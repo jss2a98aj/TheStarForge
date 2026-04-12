@@ -195,18 +195,18 @@
   },
   {
     "op": "add",
-    "path": "/starforge-eleuthia1",
+    "path": "/starforge-razortailhunt",
     "value": {
-      "primaryDungeon": "starforge-eleuthia1",
-      "threatLevel": 4,
-      "biome": "starforge-eleuthia",
+      "primaryDungeon": "starforge-razortailhunt",
+      "threatLevel": 5,
+      "biome": "desert",
       "gravity": 80,
       "worldSize": [
         1000,
         300
       ],
-      "dungeonBaseHeight": 400,
-      "dungeonSurfaceHeight": 170,
+      "dungeonBaseHeight": 350,
+      "dungeonSurfaceHeight": 130,
       "ambientLightLevel": [
         128,
         128,
