@@ -68,7 +68,9 @@
         128,
         128,
         128
-      ]
+      ],
+	  "ambientNoises": "/sfx/others/unboundmission1ambience.ogg",
+      "musicTrack": "/music/loib-unshackled_unbound.ogg"
     }
   },
   //UNBOUND MISSIONS
@@ -92,7 +94,7 @@
         128
       ],
       "ambientNoises": "/sfx/others/unboundmission1ambience.ogg",
-      "musicTrack": "/music/kyumay-guwata.ogg"
+      "musicTrack": "/music/loib-unshackled_unbound.ogg"
     }
   },
   {
@@ -206,7 +208,7 @@
         300
       ],
       "dungeonBaseHeight": 350,
-      "dungeonSurfaceHeight": 130,
+      "dungeonSurfaceHeight": 150,
       "ambientLightLevel": [
         128,
         128,

@@ -9,6 +9,7 @@
   "category": "assaultRifle",
   "tooltipFieldsOverride" : {"subtitle":"Unbound Rifle"},
   "twoHanded": true,
+  "learnBlueprintsOnPickup" : [ "starforge-unboundheadway" ],
   "level" : 5,
   "itemTags": [
     "weapon",

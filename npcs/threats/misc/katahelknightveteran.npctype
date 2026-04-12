@@ -1,0 +1,249 @@
+{
+  "type": "starforge-katahelknightveteran",
+  "baseType": "hostile",
+
+  "persistent" : true,
+	
+  "scripts" : ["/npcs/bmain.lua", "/npcs/scripts/npchealthbar.lua"],
+  "initialScriptDelta" : 5,
+ 
+  "dropPools": [],
+ 
+ 
+  "scriptConfig" : {
+	"bossName" : "Last Vigil",
+	
+	"behavior" : "mik-hostilenpc",
+	
+	"bandageTime" : 60,
+
+	"aggressive" : true,
+
+	"behaviorConfig" : {
+	  "leapWindup" : 0.15,
+	  "leapCooldown": 8,
+	  "rangedAimTime" : 0.1,
+	  "rangedWindupTime" : 0.1,
+	  "leapChance" : 0.95,
+	  "rangedSwapTime" : 1,
+	  "meleeSwapTime" : 1.5
+	},
+
+    "chatSounds" : {
+      "default" : {
+        "male" : [
+          "/sfx/cinematics/protectorate/stage_panic.ogg"
+        ]
+      }
+    },
+	
+    "dialog": {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Angry. I WILL AVENGE MY LORD!",
+            "Challenging. I WILL NEVER FALL.",
+            "Angry. I WILL TAKE YOU."
+          ]
+        }
+      },
+      "reattack" : {
+        "default" : {
+          "default" : [
+            "Mmphm!"
+          ]
+        }
+      },
+      "killedTarget" : {
+        "default" : {
+          "default" : [
+            "Glorious. AND SO ANOTHER ONE FALL.",
+            "Proud. I STAND UNDEFEATED,"
+          ]
+        }
+      },
+      "lostTarget" : {
+        "default" : {
+          "default" : [
+            "Confused. WHY HIDE?",
+            "Taunting. YOU'RE THAT WEAK YOU NEED TO HIDE?",
+            "Serious. I WILL FIND YOU."
+          ]
+        }
+      },
+      "outOfSight" : {
+        "default" : {
+          "default" : [
+            "Taunting. COME BACK HERE!",
+            "I can't reach you, but my bullets will!",
+            "Coward!"
+          ]
+        }
+      },
+      "cheerOn" : {
+        "default" : {
+          "default" : [
+            "I will be the one alive at the end, as always!"
+          ]
+        }
+      },
+      "cantReach" : {
+        "default" : {
+          "default" : [
+            "Get back here!",
+            "You truly are a coward!",
+            "You can't flee!"
+          ]
+        }
+      }
+    },
+	
+    "combat" : {
+      "meleeWeaponWindups" : {
+        "default" : 0,
+        "broadsword" : 0,
+        "dagger" : 0,
+        "axe" : 0.45,
+        "hammer" : 0.45,
+        "shortsword" : 0,
+        "spear" : 0
+      },
+      "meleeWeaponCooldowns" : {
+        "default" : 1.0,
+        "broadsword" : 3.7,
+        "dagger" : 0.7,
+        "axe" : 1.4,
+        "hammer" : 2.0,
+        "shortsword" : 1.0,
+        "spear" : 1.4
+      }
+    }
+  },
+
+  "touchDamage" : {
+    "damage" : 0,
+    "teamType" : "enemy",
+    "damageType" : "knockback",
+    "damageSourceKind" : "nodamage",
+    "damageRepeatGroup" : "npcTouchKnockback",
+    "damageRepeatTimeout" : 0.5,
+    "knockback" : 35,
+    "statusEffects" : [ ]
+  },
+ 
+  "innateStatusEffects" : [{"stat":"maxHealth","amount":3000}, {"stat":"powerMultiplier","amount":1.7}, {"stat":"maxEnergy","amount":180}],
+	
+  "items": {
+    "override": [
+      [0, [{
+        "head": [{
+          "name": "starforge-katahelknighthead"
+        }],
+        "chest": [{
+          "name": "starforge-katahelknightchest"
+        }],
+        "legs": [{
+          "name": "starforge-katahelknightpants"
+        }],
+		"back": [{ 
+				    "name": "raggedcapeback" 
+				}],
+        "primary": [
+          "starforge-vigilance"
+        ],
+				 "alt" : [ "starforge-katahelimperviumshield" ]
+      }]]
+    ]
+  },
+  
+  "movementParameters" : {
+    "mass" : 2.0,
+    "runSpeed" : 10,
+    "airJumpProfile" : {
+      "jumpSpeed": 60,
+      "jumpHoldTime": 0,
+      "autoJump": false,
+      "collisionCancelled": true,
+      "multiJump": false,
+      "jumpControlForce": 900,
+      "reJumpDelay": 0.05,
+      "jumpInitialPercentage": 1
+    }
+  },
+  
+  "statusControllerSettings" : {
+    "statusProperties" : {
+      "hitInvulnerabilityThreshold" : 0.1,
+      "hitInvulnerabilityTime" : 1,
+      "hitInvulnerabilityFlash" : 0.15,
+      "shieldHitInvulnerabilityTime" : 1.0,
+      "damageFlashOnDirectives" : "",
+      "damageFlashOffDirectives" : "multiply=ffffff00=0.85"
+    },
+	
+    "primaryScriptSources" : [
+      "/stats/starforge-npc_primary.lua",
+      "/scripts/vec2.lua"
+    ],
+	
+    "primaryScriptDelta" : 5,
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "maxEnergy" : {
+        "baseValue" : 1.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.01
+      },
+      "protection" : {
+        "baseValue" : 0.6
+      },
+      "healthRegen" : {
+        "baseValue" : 0.0
+      },
+      "jumpModifier" : {
+        "baseValue" : 0.5
+      },
+      "knockbackStunTime" : {
+        "baseValue" : 1
+      },
+	  "fireResistance" : {
+          "baseValue" : 0.5
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "iceResistance" : {
+          "baseValue" : 0.5
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.3
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 0.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.8
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+      "grit" : {
+        "baseValue" : -1
+      }
+    },
+	
+    "resources" : {
+      "stunned" : {
+        "deltaValue" : -1.0,
+        "initialValue" : 0.0,
+        "maxValue" : 0.0
+      }
+    }
+  }
+}

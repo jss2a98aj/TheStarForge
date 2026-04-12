@@ -85,9 +85,59 @@
         [0.4, 2]
       ]
     } ]
+  ],
+  
+  "starforge-katahelspecial1" : [
+    [1, {
+      "fill" : [
+        {"item" : [ "starforge-katahelknighthead", 1]},
+        {"pool" : "ore"},
+		{"pool" : "chestMoney"}
+      ]
+    }]
+  ],
+  
+  "starforge-katahelspecial2" : [
+    [1, {
+      "fill" : [
+        {"item" : [ "starforge-katahelknightpants", 1]},
+        {"pool" : "ore"},
+		{"pool" : "chestMoney"}
+      ]
+    }]
+  ],
+  
+  "starforge-katahelspecial3" : [
+    [1, {
+      "fill" : [
+        {"item" : [ "starforge-katahelknightchest", 1]},
+        {"pool" : "ore"},
+		{"pool" : "chestMoney"}
+      ]
+    }]
+  ],
+  
+  "starforge-katahelspecial4" : [
+    [1, {
+      "fill" : [
+        {"item" : [ "starforge-vigilance", 1]},
+        {"pool" : "ore"},
+		{"pool" : "chestMoney"}
+      ]
+    }]
+  ],
+  
+  "starforge-katahelspecial5" : [
+    [1, {
+      "fill" : [
+        {"item" : [ "starforge-katahelimperviumshield", 1]},
+        {"pool" : "ore"},
+		{"pool" : "chestMoney"},
+		{"pool" : "chestMoney"},
+		{"pool" : "chestMoney"}
+      ]
+    }]
   ]
-  
-  
      
   }
   
