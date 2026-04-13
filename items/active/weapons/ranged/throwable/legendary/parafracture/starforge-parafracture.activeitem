@@ -91,7 +91,7 @@
   "primaryAbility" : {
     "baseDps" : 10.5,
     "fireTime" : 0.35,
-    "stanceSpeedFactor" : 0.9,
+    "stanceSpeedFactor" : 1.3,
 	
 	"projectileFacesDirection" : true, //when facing left, flip to make the blade always face away
 	

@@ -16,7 +16,7 @@
   "statusEffects" : [ ],
   "damageKind" : "bow",
   "damagePoly" : [ [8, -0.12], [8.5, -0.12], [8.5, 0.12], [8, 0.12] ],
-  "timeToLive" : 10,
+  "timeToLive" : 5,
   "pointLight" : true,
   "orientationLocked" : true,
   "power" : 5.0,
@@ -57,5 +57,6 @@
   ],
   
   "scripts" : [ "/projectiles/scripts/starforge-stickingprojectile.lua", "/projectiles/scripts/starforge-advancedperiodicactions.lua" ],
-  "damageMultiplierOnStick" : 0.1
+  "damageMultiplierOnStick" : 0.1,
+  "stickToTargetTime" : 4
 }

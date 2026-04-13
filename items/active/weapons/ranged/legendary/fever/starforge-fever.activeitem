@@ -4,7 +4,7 @@
   "maxStack": 1,
   "rarity": "Legendary",
   "description": "The fever saw to the beginning, a story built.",
-  "shortdescription" : "Fever",
+  "shortdescription" : "^#80F4FF;Fever",
   "tooltipKind": "starforge-uniquegun",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {
@@ -15,6 +15,7 @@
   "level" : 6,
   "itemTags" : [ "starforge", "weapon", "ranged", "pistol" ],
   "inventoryIcon": "starforge-fever.png:slide.1",
+  "learnBlueprintsOnPickup" : [ "starforge-fever" ],
   
   "animation": "/items/active/weapons/ranged/unique/mauricessidearm/mauricessidearm.animation",
   "animationParts": {

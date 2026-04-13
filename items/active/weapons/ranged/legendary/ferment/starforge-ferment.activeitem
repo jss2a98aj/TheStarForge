@@ -7,7 +7,7 @@
   "maxStack" : 1,
   "rarity" : "Legendary",
   "description" : "The ferment held it together, let it grow.",
-  "shortdescription" : "Ferment",
+  "shortdescription" : "^#80F4FF;Ferment",
   "tooltipKind": "starforge-uniquegun",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {
@@ -15,6 +15,7 @@
   },
   "itemTags" : [ "starforge", "weapon", "ranged", "beamrifle" ],
   "twoHanded" : true,
+  "learnBlueprintsOnPickup" : [ "starforge-ferment" ],
   
   "cursor" : "/cursors/starforge-staticbeamcursor.cursor",
   

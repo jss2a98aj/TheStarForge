@@ -99,7 +99,7 @@ function StarForgeMultiBarrelFire:cooldown()
     local to = self.weapon.abilities[1].stances.idle.weaponOffset or {0,0}
     self.weapon.weaponOffset = {c5Easing.easeOut(progress, from[1], to[1]), c5Easing.easeOut(progress, from[2], to[2])}
 
-    self.weapon.relativeWeaponRotation = util.toRadians(c5Easing.customEase(progress, self.burstCount or self.stances.cooldown.weaponRotation, self.weapon.abilities[1].stances.idle.weaponRotation, 5.9, 1.15, 0.65, -0.024))
+    self.weapon.relativeWeaponRotation = util.toRadians(c5Easing.customEase(progress, self.stances.cooldown.weaponRotation, self.weapon.abilities[1].stances.idle.weaponRotation, 5.9, 1.15, 0.65, -0.024))
     self.weapon.relativeArmRotation = util.toRadians(c5Easing.easeOut(progress, self.stances.cooldown.armRotation, self.weapon.abilities[1].stances.idle.armRotation))
 
     progress = math.min(1.0, progress + (self.dt / duration))
@@ -134,13 +134,12 @@ function StarForgeMultiBarrelFire:muzzleFlash()
   animator.setSoundPitch("fire", pitchVariance)
   animator.playSound("fire")
   
-  if self.muzzleFlashSuffix == "" then return end
-  
   animator.setPartTag("muzzleFlash" .. self.barrelIndex + 1 .. (self.muzzleFlashSuffix or ""), "variant", math.random(1, self.muzzleFlashVariants or 3))
   animator.setAnimationState("firing", "fire" .. (self.muzzleFlashSuffix or ""))
   
   local flashString = (self.useElementalMuzzleEmitter and self.weapon.elementalType ~= "physical") and (self.weapon.elementalType .. "MuzzleFlash") or "muzzleFlash"
   animator.burstParticleEmitter(flashString .. (self.muzzleFlashSuffix or ""))
+  sb.logInfo("%s", flashString .. (self.muzzleFlashSuffix or ""))
 
   --Optional firing animations
   if self.animatedFire == true then

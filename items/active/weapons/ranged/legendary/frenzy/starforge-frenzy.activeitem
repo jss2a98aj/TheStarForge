@@ -4,7 +4,7 @@
   "maxStack": 1,
   "rarity": "Legendary",
   "description": "The frenzy brought a new piece, a boost.",
-  "shortdescription" : "Frenzy",
+  "shortdescription" : "^#80F4FF;Frenzy",
   "tooltipKind": "starforge-uniquegun",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {
@@ -15,13 +15,14 @@
   "fixedLevel": false,
   "itemTags" : [ "starforge", "weapon", "ranged", "shotgun" ],
   "inventoryIcon": "starforge-frenzy.png:slide.1",
+  "learnBlueprintsOnPickup" : [ "starforge-frenzy" ],
   
   "animation": "/items/active/weapons/ranged/unique/mauricessidearm/mauricessidearm.animation",
   "animationParts": {
     "butt": "",
     "middle": "starforge-frenzy.png",
     "barrel": "",
-	"middleFullbright": "starforge-frenzyfullbright.png",
+	  "middleFullbright": "starforge-frenzyfullbright.png",
     "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-firemuzzleflash.png"
   },
   "animationCustom": {
@@ -29,7 +30,7 @@
       "muzzleFlash" : {
         "burstCount" : 5,
         "transformationGroups" : ["muzzle"],
-		"offsetRegion" : [0, 0, 0, 0],
+		    "offsetRegion" : [0, 0, 0, 0],
         "particles" : [
           { "particle" : "rocketbarrelpuff" }
         ]

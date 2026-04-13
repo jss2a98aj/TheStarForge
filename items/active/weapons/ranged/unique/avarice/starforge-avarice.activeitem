@@ -5,7 +5,7 @@
   "maxStack" : 1,
   "rarity" : "Essential",
   "description" : "A heavy underslung bowgun, capable of firing bolts at incredibly high speeds.",
-  "shortdescription" : "^orange;Hunter's Avarice^reset;",
+  "shortdescription" : "^#FFBC47;Hunter's Avarice^reset;",
   "level" : 7,
   "tooltipKind" : "starforge-uniquegun",
   "category": "uniqueWeapon",
@@ -69,6 +69,8 @@
     "fireType" : "burst",
 	  "fireSound" : "fire",
 	
+    "armRotationModifier" : -0.15,
+
 	  "animatedFire" : true,
 
     "projectileType" : "starforge-imperviumbolt",

@@ -1,11 +1,11 @@
 {
-  "itemName": "starforge-twinshot",
+  "itemName": "starforge-silentneedle",
   "price": 3000,
   "maxStack": 1,
   "rarity": "Legendary",
   "fixedLevel" : false,
-  "description": "\"Quick and quiet -- that's the difference between safe and dead\"",
-  "shortdescription": "^#FFBC47;Twin Shot",
+  "description": "A common form of hidden arms, this one given to especially talented Glitch for covert ops.",
+  "shortdescription": "^#FFBC47;Silent Needle",
   "tooltipKind": "starforge-uniquegun",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {
@@ -14,43 +14,58 @@
   "twoHanded": false,
   "level": 6,
   "itemTags" : [ "starforge", "weapon", "ranged", "pistol", "crossbow" ],
-  "learnBlueprintsOnPickup" : [ "starforge-twinshot" ],
+  "learnBlueprintsOnPickup" : [ "starforge-silentneedle" ],
 
-  "inventoryIcon": "starforge-twinshot.png:idle",
+  "inventoryIcon": "starforge-silentneedle.png:idle",
 
-  "animation": "starforge-twinshot.animation",
+  "animation": "/items/active/weapons/ranged/legendary/twinshot/starforge-twinshot.animation",
   "animationParts": {
     "butt": "",
-    "middle": "starforge-twinshot.png",
+    "middle": "starforge-silentneedle.png",
     "barrel": "",
     "muzzleFlash": ""
   },
   "animationCustom": {
+    "animatedParts": {
+      "stateTypes": {
+        "reload": {
+          "states": {
+            "fire": {
+              "cycle": 0.15
+            },
+            "reload": {
+              "cycle": 0.3
+            }
+          }
+        }
+      }
+    },
     "sounds": {
-      "fire": ["/sfx/gun/starforge-bowgunfire.ogg"]}
+      "fire": ["/sfx/gun/bow_loose_perfect.ogg"]
+    }
   },
   
-  "baseOffset" : [0.875, 0.25],
-  "muzzleOffset" : [1.125, 0.25],
+  "baseOffset" : [0.375, -0.0625],
+  "muzzleOffset" : [0.25, 0.0],
+
+  "handGrip" : "outside",
   
   "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
   "elementalType": "physical",
   "primaryAbility": {
     "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
     "class": "StarforgeGunFire",
-    "fireTime": 0.55,
-    "baseDps": 6,
+    "fireTime": 0.4,
+    "baseDps": 4,
     "energyUsage": 30,
     "inaccuracy": 0.01,
     "projectileCount" : 1,
-    "burstTime" : 0.2,
-    "burstCount" : 2,
-    "fireType" : "burst",
+    "fireType" : "auto",
     "projectileType": "starforge-imperviumbolt",
     "projectileParameters": {
-      "timeToLive" : 3,
-      "stickToTargetTime" : 3,
-      "knockback": 3
+      "timeToLive" : 2,
+      "stickToTargetTime" : 2,
+      "knockback": 1
     },
     "stances" : {
       "idle" : {
@@ -63,8 +78,8 @@
       },
       "fire" : {
         "duration" : 0,
-        "armRotation" : 5,
-        "weaponRotation" : 5,
+        "armRotation" : 1,
+        "weaponRotation" : 0,
         "twoHanded" : false,
 
         "animationStates" : {
@@ -76,8 +91,8 @@
       },
       "cooldown" : {
         "duration" : 0.15,
-        "armRotation" : 5,
-        "weaponRotation" : 5,
+        "armRotation" : 1,
+        "weaponRotation" : 0,
         "twoHanded" : false,
 
         "animationStates" : {

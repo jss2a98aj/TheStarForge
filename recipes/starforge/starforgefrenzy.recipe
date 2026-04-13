@@ -1,0 +1,15 @@
+{
+  "input" : [
+	{ "item" : "essence", "count" : 250},
+	{ "item" : "refinedferozium", "count" : 4},
+	{ "item" : "tungstenbar", "count" : 12},
+	{ "item" : "darkwoodmaterial", "count" : 125}
+  ],
+  "output" : {
+    "item" : "starforge-frenzy",
+    "count" : 1
+  },
+  "groups" : [ "starforge-starforge", "weapons" ],
+  "duration" : 2
+}
+

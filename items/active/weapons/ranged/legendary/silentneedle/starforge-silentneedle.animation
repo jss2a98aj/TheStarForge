@@ -10,9 +10,28 @@
           "off": {},
           "fire": {
             "frames": 2,
-            "cycle": 0.25,
+            "cycle": 0.1,
             "mode": "transition",
             "transition": "off"
+          }
+        }
+      },
+      "reload": {
+        "default": "idle",
+        "states": {
+          "idle": {},
+          "fire": {
+            "frames": 2,
+            "cycle": 0.2
+          },
+          "reload": {
+            "frames": 4,
+            "cycle": 0.4,
+            "mode": "transition",
+            "transition": "idle",
+            "properties" : {
+              "immediateSound" : "/sfx/gun/starforge-bowgundraw.ogg"
+            }
           }
         }
       }
@@ -22,20 +41,24 @@
         "properties": {
           "zLevel": 1,
           "centered": true,
-          "image": "twinshot.png:slide.1",
-          "offset": [
-            0,
-            0
-          ],
-          "transformationGroups": [
-            "weapon"
-          ]
+          "offset": [0, 0],
+          "transformationGroups": ["weapon"]
         },
         "partStates": {
-          "firing": {
+          "reload": {
+            "idle": {
+              "properties": {
+                "image": "<partImage>:idle"
+              }
+            },
             "fire": {
               "properties": {
-                "image": "twinshot.png:slide.<frame>"
+                "image": "<partImage>:fire.<frame>"
+              }
+            },
+            "reload": {
+              "properties": {
+                "image": "<partImage>:reload.<frame>"
               }
             }
           }

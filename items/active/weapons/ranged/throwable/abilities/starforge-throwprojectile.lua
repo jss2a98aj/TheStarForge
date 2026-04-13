@@ -44,25 +44,27 @@ function StarforgeThrowProjectile:throw()
   local projectileTimesAndAngles = copy(self.projectileTimesAndAngles)
   
   if self.stances.throw.smooth then
-    local progress = 0
+    local timer = 0
     util.wait(self.stances.throw.duration * (self.stanceSpeedFactor or 1), function(dt)
+      local progress = timer / self.stances.throw.duration * (self.stanceSpeedFactor or 1)
+
       local from = self.stances.throw.weaponOffset or {0,0}
       local to = self.stances.throw.weaponOffset or {0,0}
       self.weapon.weaponOffset = {util.interpolateSigmoid(progress, from[1], to[1]), util.interpolateSigmoid(progress, from[2], to[2])}
       
-      self.weapon.relativeWeaponRotation = util.toRadians(util.interpolateSigmoid(progress, self.stances.throw.weaponRotation, self.stances.throw.weaponRotation))
-      self.weapon.relativeArmRotation = util.toRadians(util.interpolateSigmoid(progress, self.stances.throw.armRotation, self.stances.throw.armRotation))
+      self.weapon.relativeWeaponRotation = util.toRadians(util.interpolateSigmoid(progress, self.stances.throw.weaponRotation, self.stances.cooldown.weaponRotation))
+      self.weapon.relativeArmRotation = util.toRadians(util.interpolateSigmoid(progress, self.stances.throw.armRotation, self.stances.cooldown.armRotation))
       
-      progress = math.min(1.0, progress + (self.dt / self.stances.throw.duration * (self.stanceSpeedFactor or 1)))
+      timer = math.min(self.stances.throw.duration * (self.stanceSpeedFactor or 1), timer + self.dt)
 	  
       local newTimesAndAngles = {}
       for _, timeAndAngle in pairs(projectileTimesAndAngles) do
-        if timeAndAngle[1] <= dt and status.overConsumeResource("energy", self:energyPerShot()) then
+        if (timeAndAngle[1] * (self.stanceSpeedFactor or 1)) <= timer and status.overConsumeResource("energy", self:energyPerShot()) then
 		      animator.setAnimationState("weapon", "invisible")
           self:spawnProjectile(timeAndAngle[2])
           self.cheesePrevention = true
         else
-          table.insert(newTimesAndAngles, {timeAndAngle[1] - dt, timeAndAngle[2]})
+          table.insert(newTimesAndAngles, {timeAndAngle[1], timeAndAngle[2]})
         end
       end
       projectileTimesAndAngles = newTimesAndAngles
