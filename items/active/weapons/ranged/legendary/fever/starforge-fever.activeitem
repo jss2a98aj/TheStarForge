@@ -2,7 +2,7 @@
   "itemName": "starforge-fever",
   "price": 1500,
   "maxStack": 1,
-  "rarity": "Rare",
+  "rarity": "Legendary",
   "description": "The fever saw to the beginning, a story built.",
   "shortdescription" : "Fever",
   "tooltipKind": "starforge-uniquegun",
@@ -11,9 +11,10 @@
     "subtitle" : "Sidearm"
   },
   "twoHanded": false,
-  "level" : 5,
+  "fixedLevel": false,
+  "level" : 6,
   "itemTags" : [ "starforge", "weapon", "ranged", "pistol" ],
-  "inventoryIcon": "starforge-fevericon.png",
+  "inventoryIcon": "starforge-fever.png:slide.1",
   
   "animation": "/items/active/weapons/ranged/unique/mauricessidearm/mauricessidearm.animation",
   "animationParts": {

@@ -33,7 +33,7 @@
   "primaryAbilityType" : "starforge-throwprojectile",
   "primaryAbility" : {
     "baseDps" : 13,
-    "cooldownTime" : 0.9,
+    "fireTime" : 0.9,
 	
 	"hideItemWhileIdle" : true,
 	
@@ -47,9 +47,9 @@
   "altAbility" : {
     "name" : "Jaw of the Leviathan",
     "baseDps" : 7,
-    "cooldownTime" : 2,
+    "fireTime" : 2,
 	
-	"hideItemWhileIdle" : true,
+	  "hideItemWhileIdle" : true,
 
     "energyUsage" : 21,
 	

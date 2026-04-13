@@ -69,22 +69,53 @@ function build(directory, config, parameters, level, seed)
     config.tooltipFields = {}
     config.tooltipFields.levelLabel = util.round(configParameter("level", 1), 1)
     config.tooltipFields.rarityLabel = configParameter("rarity", "Common")
+
+    --Bows
     if config.primaryAbility.drawTime then
       config.tooltipFields.speedTitleLabel = "Draw Time:"
-      config.tooltipFields.speedLabel = config.primaryAbility.drawTime - (config.altAbility and config.altAbility.drawTimeReduction or 0) or 0
+      config.tooltipFields.speedLabel = util.round(config.primaryAbility.drawTime - (config.altAbility and config.altAbility.drawTimeReduction or 0) or 0, 1)
       
       config.tooltipFields.damagePerShotTitleLabel = "Base Damage:"
       config.tooltipFields.damagePerShotLabel = util.round(config.primaryAbility.projectileParameters.power * config.primaryAbility.dynamicDamageMultiplier * config.damageLevelMultiplier, 1) or 0
       config.tooltipFields.energyPerShotLabel = config.primaryAbility.energyPerShot or 0
-      if config.primaryAbility.resourcetype == "health" then
-        config.tooltipFields.energyPerShotTitleLabel = "Health Per Shot:"
-      end
+
+    --Other
     else
-      config.tooltipFields.damagePerShotLabel = util.round((config.primaryAbility.baseDps or 0) * (config.primaryAbility.fireTime or 1.0) * config.damageLevelMultiplier, 1)
-      config.tooltipFields.energyPerShotLabel = util.round((config.primaryAbility.energyUsage or 0) * (config.primaryAbility.fireTime or 1.0), 1)
-      config.tooltipFields.dpsLabel = util.round((config.primaryAbility.baseDps or 0) * config.damageLevelMultiplier, 1)
-      config.tooltipFields.speedLabel = util.round(1 / ((config.primaryAbility.stanceSpeedFactor or 1) * (config.primaryAbility.fireTime or 1.0)), 1)
+      --Beam weapons
+      if config.primaryAbility.chain then
+        config.tooltipFields.energyPerShotTitleLabel = "Energy Per Second:"
+        config.tooltipFields.energyPerShotLabel = util.round((config.primaryAbility.energyUsage or 0), 1)
+
+        config.tooltipFields.damagePerShotTitleLabel = "Damge Per Second:"
+        config.tooltipFields.damagePerShotLabel = util.round((config.primaryAbility.baseDps or 0) * config.damageLevelMultiplier, 1)
+
+        config.tooltipFields.speedTitleLabel = "Ticks Per Second:"
+      else
+        config.tooltipFields.damagePerShotLabel = util.round(config.primaryAbility.baseDamage or ((config.primaryAbility.baseDps or 0) * (config.primaryAbility.fireTime or 1.0)) * config.damageLevelMultiplier, 1)
+        config.tooltipFields.energyPerShotLabel = util.round((config.primaryAbility.energyUsage or 0) * (config.primaryAbility.fireTime or 1.0), 1)
+        config.tooltipFields.dpsLabel = util.round((config.primaryAbility.baseDps or 0) * config.damageLevelMultiplier, 1)
+      end
+
+      if config.primaryAbility.tooltipDamageMultiplier then
+        config.tooltipFields.damagePerShotLabel = config.tooltipFields.damagePerShotLabel * config.primaryAbility.tooltipDamageMultiplier
+      end
+
+      --Fire Rate things
+      --Charge weapons
+      if config.primaryAbility.chargeTime then
+        config.tooltipFields.speedTitleLabel = "Charge Time:"
+        config.tooltipFields.speedLabel = util.round(config.primaryAbility.chargeTime or 1, 1)
+      else
+        local cycleTime = (config.primaryAbility.fireTime or config.primaryAbility.cooldownTime or 1.0) + (config.primaryAbility.fireType == "burst" and (config.primaryAbility.burstTime * config.primaryAbility.burstCount) or 0)
+        local rateOfFire = (config.primaryAbility.burstCount or 1) / cycleTime
+        config.tooltipFields.speedLabel = util.round(rateOfFire, 1)
+      end
     end
+    --Diff energy types
+    if config.primaryAbility.resourcetype == "health" then
+      config.tooltipFields.energyPerShotTitleLabel = "Health Per Shot:"
+    end
+    
     if elementalType ~= "physical" then
       config.tooltipFields.damageKindImage = "/interface/elements/" .. elementalType .. ".png"
     end

@@ -28,7 +28,7 @@
             "transition" : "active"
           },
           "active" : {
-            "frames" : 6,
+            "frames" : 5,
             "cycle" : 0.4,
             "mode" : "loop"
           },

@@ -7,10 +7,12 @@
 
     "inaccuracy" : 0.008,
     "cooldownTime" : 0.4,
-    "reloadWait" : 0.15,
 
     "energyUsage" : 24,
 	
+    "fireOffset" : [-1.5, -0.5],
+    "stanceSpeedFactor" : 1,
+
     "projectileCount" : 1,
     "projectileTimesAndAngles" : [
       [0.1, 0]
@@ -30,7 +32,7 @@
         "allowRotate" : false,
         "allowFlip" : true
       },
-      "prepare" : {
+      "throw" : {
         "duration" : 0.15,
         "armRotation" : 165,
         "weaponRotation" : 0,
@@ -41,7 +43,7 @@
         "allowRotate" : true,
         "allowFlip" : true
       },
-      "throw" : {
+      "cooldown" : {
         "duration" : 0.15,
         "armRotation" : 45,
         "weaponRotation" : 0,

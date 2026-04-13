@@ -5,7 +5,7 @@
   "fixedLevel" : false,
   "inventoryIcon" : "starforge-ferment.png:idle",
   "maxStack" : 1,
-  "rarity" : "Rare",
+  "rarity" : "Legendary",
   "description" : "The ferment held it together, let it grow.",
   "shortdescription" : "Ferment",
   "tooltipKind": "starforge-uniquegun",

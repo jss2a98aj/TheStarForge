@@ -46,7 +46,7 @@
     "type" : "label",
     "position" : [9, 78],
     "hAnchor" : "left",
-    "value" : "Rate of Fire:"
+    "value" : "Attack Speed:"
   },
   "speedLabel" : {
     "type" : "label",
@@ -58,7 +58,7 @@
     "type" : "label",
     "position" : [9, 87],
     "hAnchor" : "left",
-    "value" : "Damage Per Swing:"
+    "value" : "Base Damage:"
   },
   "damagePerShotLabel" : {
     "type" : "label",

@@ -2,7 +2,7 @@
   "itemName": "starforge-frenzy",
   "price": 1500,
   "maxStack": 1,
-  "rarity": "Rare",
+  "rarity": "Legendary",
   "description": "The frenzy brought a new piece, a boost.",
   "shortdescription" : "Frenzy",
   "tooltipKind": "starforge-uniquegun",
@@ -11,9 +11,10 @@
     "subtitle" : "Shotgun"
   },
   "twoHanded": false,
-  "level" : 5,
+  "level" : 6,
+  "fixedLevel": false,
   "itemTags" : [ "starforge", "weapon", "ranged", "shotgun" ],
-  "inventoryIcon": "starforge-frenzyicon.png",
+  "inventoryIcon": "starforge-frenzy.png:slide.1",
   
   "animation": "/items/active/weapons/ranged/unique/mauricessidearm/mauricessidearm.animation",
   "animationParts": {

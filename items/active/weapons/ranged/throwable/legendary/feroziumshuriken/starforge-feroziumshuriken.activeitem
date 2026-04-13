@@ -34,7 +34,9 @@
   "primaryAbilityType" : "starforge-throwprojectile",
   "primaryAbility" : {
     "baseDps" : 6,
-    "cooldownTime" : 0.2,
+    "fireTime" : 0.2,
+    "tooltipDamageMultiplier" : 2,      //If the projectile explodes for more damage, etc
+    "stanceSpeedFactor" : 0.7,
 	
     "hideItemWhileIdle" : true,
 
@@ -42,14 +44,6 @@
     "projectileCount" : 1,
     "projectileType" : "starforge-feroziumshuriken",
     "projectileParameters" : {
-    },
-    "stances" : {
-      "prepare" : {
-        "duration" : 0.1
-      },
-      "throw" : {
-        "duration" : 0.1
-      }
     }
   },
 

@@ -11,7 +11,7 @@ end
 function update(dt)
   if not status.resourcePositive("health") and status.resourceMax("health") >= config.getParameter("minMaxHealth", 0) then
     effect.setParentDirectives(config.getParameter("deathDirective"))
-	explode()
+	  explode()
   end
   
   --If the target doesn't die quickly enough, expire this effect and activate the next

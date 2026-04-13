@@ -110,13 +110,11 @@
           }
         },
 
+
         {
           "action" : "sound",
           "options" : [
-            "/sfx/projectiles/bugswarm1.ogg",
-            "/sfx/projectiles/bugswarm2.ogg",
-            "/sfx/projectiles/bugswarm3.ogg",
-            "/sfx/projectiles/bugswarm4.ogg"
+            "/sfx/projectiles/hivebomb_impact.ogg"
           ]
         },   
 

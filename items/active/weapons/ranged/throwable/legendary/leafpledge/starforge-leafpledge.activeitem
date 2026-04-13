@@ -33,7 +33,9 @@
   "primaryAbilityType" : "starforge-throwprojectile",
   "primaryAbility" : {
     "baseDps" : 9.5,
-    "cooldownTime" : 0.3,
+    "fireTime" : 0.3,
+
+    "stanceSpeedFactor" : 1.2,
 	
 	  "hideItemWhileIdle" : true,
 	
@@ -51,7 +53,7 @@
   "altAbility" : {
     "name" : "Age of Grass",
     "baseDps" : 5,
-    "cooldownTime" : 1,
+    "fireTime" : 1,
 	
 	  "hideItemWhileIdle" : true,
 

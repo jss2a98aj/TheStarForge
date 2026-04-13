@@ -4,12 +4,11 @@
     "dimensions" : [6, 1],
 
     "names" : [
-      [ "idle", "active.2", "active.3", "active.4", "active.5", "active.6" ]
+      [ "idle", "active.1", "active.2", "active.3", "active.4", "active.5" ]
     ]
   },
   "aliases" : {
-    "active.1" : "idle",
-    "activate.1" : "active.1",
-    "deactivate.1" : "active.1"
+    "activate.1" : "idle",
+    "deactivate.1" : "idle"
   }
 }

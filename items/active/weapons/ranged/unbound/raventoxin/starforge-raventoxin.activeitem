@@ -56,22 +56,22 @@
     "scripts" : ["/items/active/weapons/ranged/abilities/starforge-beamfire.lua"],
     "class" : "StarforgeBeamFire",
 
-	"activeAnimation" : true, //Allows a special animation to be played while firing
-	"pitchVariance" : 0.4,
+    "activeAnimation" : true, //Allows a special animation to be played while firing
+    "pitchVariance" : 0.4,
 	
     "fireTime" : 0.1,
     "baseDps" : 9.5,
     "energyUsage" : 40.0,
     "inaccuracy" : 0.0,
 	
-	"beamCollisionType" : "box",
-	"beamWidth" : 0.4,
-	
-	"impactDamageTimeout" : 0.2,
-	"spawnImpactProjectile" : false,
-	"impactProjectile" : "",
-	
-	"laserPiercing" : false,
+    "beamCollisionType" : "box",
+    "beamWidth" : 0.4,
+    
+    "impactDamageTimeout" : 0.2,
+    "spawnImpactProjectile" : false,
+    "impactProjectile" : "",
+    
+    "laserPiercing" : false,
 
     "damageConfig" : {
       "statusEffects" : [ "weakpoison" ],
@@ -81,10 +81,10 @@
 
     "beamLength" : 80,
 
-	"animatedChain" : true,
-	"offsetFrames" : true,
-	"chainAnimationTime" : 0.4,
-	"chainAnimationFrames" : 16,
+    "animatedChain" : true,
+    "offsetFrames" : true,
+    "chainAnimationTime" : 0.4,
+    "chainAnimationFrames" : 16,
     "chain" : {
       "startOffset" : [0, 0],
       "segmentImage" : "/items/active/weapons/ranged/unbound/raventoxin/starforge-raventoxinbeam.png",
@@ -98,8 +98,8 @@
         "movement" : 5.0
       },
       "fullbright" : true,
-	  "renderLayer" : "Player-1"
-    },
+      "renderLayer" : "Player-1"
+      },
 
     "stances" : {
       "idle" : {

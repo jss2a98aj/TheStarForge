@@ -90,7 +90,8 @@
   "primaryAbilityType" : "starforge-throwprojectile",
   "primaryAbility" : {
     "baseDps" : 10.5,
-    "cooldownTime" : 0.2,
+    "fireTime" : 0.35,
+    "stanceSpeedFactor" : 0.9,
 	
 	"projectileFacesDirection" : true, //when facing left, flip to make the blade always face away
 	

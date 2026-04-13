@@ -6,7 +6,7 @@
   "description" : "\"If a king were to fall, would his men fall too?\"",
   "shortdescription" : "^orange;Ode to the King^reset;",
   "level" : 8,
-  "tooltipKind" : "starforge-exalted",
+  "tooltipKind" : "starforge-uniquegun",
   "category" : "Hand Cannon",
   "itemTags" : ["weapon","ranged","revolver","exalted"],
   "twoHanded" : true,
@@ -98,24 +98,24 @@
         "duration" : 1.9,
         "armRotation" : -25,
         "weaponRotation" : 55,
-		"weaponOffset" : [-0.25, 0.0],
+		    "weaponOffset" : [-0.25, 0.0],
         "twoHanded" : true,
 
         "aimAngle" : 0,
         "allowRotate" : false,
         "allowFlip" : true,
 
-		"frontArmFrameSequence" : [
-		  [0.0, "rotation"],
-		  [0.4, "walk.2"],
-		  [0.7, "run.3"],
-		  [1.0, "run.1"],
-		  [1.5, "run.1"]
-		],
+      "frontArmFrameSequence" : [
+        [0.0, "rotation"],
+        [0.4, "walk.2"],
+        [0.7, "run.3"],
+        [1.0, "run.1"],
+        [1.5, "run.1"]
+      ],
         "backArmFrame" : "rotation"
       }
     }
   },
 
-  "builder" : "/items/buildscripts/starforge-buildexaltedweapon.lua"
+  "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
 }

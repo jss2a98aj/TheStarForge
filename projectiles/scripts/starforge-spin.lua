@@ -8,6 +8,13 @@ function init(...) if starforge_spinningProjectile_init then starforge_spinningP
   self.minSpinSpeed = config.getParameter("minSpinSpeed", 25)
   self.ignoreVelocity = config.getParameter("ignoreVelocity", false)
   self.countMovementDirection = config.getParameter("countMovementDirection", false)
+
+  local angleAdjust = config.getParameter("angleAdjust")
+  if angleAdjust then
+    sb.logInfo("%s", mcontroller.velocity())
+    local direction = mcontroller.velocity()[1] > 0 and 1 or -1
+    mcontroller.setVelocity(vec2.rotate(mcontroller.velocity(), 150 * direction))
+  end
 end
 
 starforge_spinningProjectile_update = update

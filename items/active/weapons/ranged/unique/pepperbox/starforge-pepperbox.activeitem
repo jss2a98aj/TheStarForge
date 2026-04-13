@@ -6,7 +6,7 @@
   "rarity" : "Legendary",
   "description" : "A small revolver, packing the punch of a gun twice its size.",
   "shortdescription" : "Pepperbox",
-  "level" : 7,
+  "level" : 6,
   "tooltipKind" : "starforge-uniquegun",
   "category": "uniqueWeapon",
   "tooltipFieldsOverride" : {"subtitle":"Revolver"},

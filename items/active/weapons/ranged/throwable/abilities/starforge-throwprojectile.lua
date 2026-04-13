@@ -31,29 +31,29 @@ function StarforgeThrowProjectile:update(dt, fireMode, shiftHeld)
     and (not self.energyUsage or (self.energyUsage > 0 and not status.resourceLocked("energy")))
     and not world.lineTileCollision(mcontroller.position(), self:firePosition()) then
 
-	  self:setState(self.prepare)
+	  self:setState(self.throw)
   end
 end
 
-function StarforgeThrowProjectile:prepare()
+function StarforgeThrowProjectile:throw()
   activeItem.setHoldingItem(true)
   
-  self.weapon:setStance(self.stances.prepare)
+  self.weapon:setStance(self.stances.throw)
   self.weapon:updateAim()
 
   local projectileTimesAndAngles = copy(self.projectileTimesAndAngles)
   
-  if self.stances.prepare.smooth then
+  if self.stances.throw.smooth then
     local progress = 0
-    util.wait(self.stances.prepare.duration, function(dt)
-      local from = self.stances.prepare.weaponOffset or {0,0}
+    util.wait(self.stances.throw.duration * (self.stanceSpeedFactor or 1), function(dt)
+      local from = self.stances.throw.weaponOffset or {0,0}
       local to = self.stances.throw.weaponOffset or {0,0}
       self.weapon.weaponOffset = {util.interpolateSigmoid(progress, from[1], to[1]), util.interpolateSigmoid(progress, from[2], to[2])}
       
-      self.weapon.relativeWeaponRotation = util.toRadians(util.interpolateSigmoid(progress, self.stances.prepare.weaponRotation, self.stances.throw.weaponRotation))
-      self.weapon.relativeArmRotation = util.toRadians(util.interpolateSigmoid(progress, self.stances.prepare.armRotation, self.stances.throw.armRotation))
+      self.weapon.relativeWeaponRotation = util.toRadians(util.interpolateSigmoid(progress, self.stances.throw.weaponRotation, self.stances.throw.weaponRotation))
+      self.weapon.relativeArmRotation = util.toRadians(util.interpolateSigmoid(progress, self.stances.throw.armRotation, self.stances.throw.armRotation))
       
-      progress = math.min(1.0, progress + (self.dt / self.stances.prepare.duration))
+      progress = math.min(1.0, progress + (self.dt / self.stances.throw.duration * (self.stanceSpeedFactor or 1)))
 	  
       local newTimesAndAngles = {}
       for _, timeAndAngle in pairs(projectileTimesAndAngles) do
@@ -68,30 +68,29 @@ function StarforgeThrowProjectile:prepare()
       projectileTimesAndAngles = newTimesAndAngles
 	  end)
   else
-    if self.stances.prepare.duration then
-      util.wait(self.stances.prepare.duration)
+    if self.stances.throw.duration then
+      util.wait(self.stances.throw.duration * (self.stanceSpeedFactor or 1))
     end
   end
+  
+  self.cooldownTimer = self.fireTime
 
-  self:setState(self.throw)
+  self:setState(self.cooldown)
 end
 
-function StarforgeThrowProjectile:throw()
-  self.weapon:setStance(self.stances.throw)
+function StarforgeThrowProjectile:cooldown()
+  self.weapon:setStance(self.stances.cooldown)
   self.weapon:updateAim()
   
   if not world.lineTileCollision(mcontroller.position(), self:firePosition()) then
 	animator.setAnimationState("weapon", "invisible")
   
-	util.wait(self.stances.throw.duration, function(dt)
+	util.wait(self.stances.cooldown.duration * (self.stanceSpeedFactor or 1), function(dt)
     end)
   end
   
   item.consume(self.consumeCount or 0)
   self.cheesePrevention = false
-  
-  util.wait(self.reloadWait)
-  self.cooldownTimer = self.cooldownTime
   
   if not self.hideItemWhileIdle then
     self:setState(self.reload)
@@ -103,19 +102,19 @@ function StarforgeThrowProjectile:reload()
   self.weapon:updateAim()
 
   local progress = 0
-  util.wait(self.stances.reload.duration, function()
-	local from = self.stances.reload.weaponOffset or {0,0}
-	local to = self.stances.reload.endWeaponOffset or {0,0}
-	self.weapon.weaponOffset = {util.interpolateSigmoid(progress, from[1], to[1]), util.interpolateSigmoid(progress, from[2], to[2])}
-	  
-	self.weapon.relativeWeaponRotation = util.toRadians(util.interpolateSigmoid(progress, self.stances.reload.weaponRotation, self.stances.reload.endWeaponRotation))
-	self.weapon.relativeArmRotation = util.toRadians(util.interpolateSigmoid(progress, self.stances.reload.armRotation, self.stances.reload.endArmRotation))
-	
-	if progress > self.stances.reload.loadTime and not self.hideItemWhileIdle then
-	  animator.setAnimationState("weapon", "visible")
-	end
-	
-	progress = math.min(1.0, progress + (self.dt / self.stances.reload.duration))
+  util.wait(self.stances.reload.duration * (self.stanceSpeedFactor or 1), function()
+    local from = self.stances.reload.weaponOffset or {0,0}
+    local to = self.stances.reload.endWeaponOffset or {0,0}
+    self.weapon.weaponOffset = {util.interpolateSigmoid(progress, from[1], to[1]), util.interpolateSigmoid(progress, from[2], to[2])}
+      
+    self.weapon.relativeWeaponRotation = util.toRadians(util.interpolateSigmoid(progress, self.stances.reload.weaponRotation, self.stances.reload.endWeaponRotation))
+    self.weapon.relativeArmRotation = util.toRadians(util.interpolateSigmoid(progress, self.stances.reload.armRotation, self.stances.reload.endArmRotation))
+    
+    if progress > self.stances.reload.loadTime and not self.hideItemWhileIdle then
+      animator.setAnimationState("weapon", "visible")
+    end
+    
+    progress = math.min(1.0, progress + (self.dt / self.stances.reload.duration * (self.stanceSpeedFactor or 1)))
   end)
 end
 
@@ -133,7 +132,7 @@ function StarforgeThrowProjectile:spawnProjectile(angleAdjust)
   
   --Set up projectile parameters
   local params = sb.jsonMerge(self.projectileParameters, {})
-  params.power = (self.baseDamage or (self.baseDps * (self.stances.prepare.duration + self.stances.throw.duration + self.cooldownTime))) / self.projectileCount / #self.projectileTimesAndAngles
+  params.power = self:damagePerShot()
   params.powerMultiplier = activeItem.ownerPowerMultiplier()
   
   if self.projectileFacesDirection and self.weapon.aimDirection > 0 then
@@ -164,13 +163,17 @@ function StarforgeThrowProjectile:spawnProjectile(angleAdjust)
 end
 
 function StarforgeThrowProjectile:firePosition()
-  return vec2.add(mcontroller.position(), activeItem.handPosition(self.weapon.fireOffset))
+  return vec2.add(mcontroller.position(), activeItem.handPosition(self.fireOffset))
 end
 
 function StarforgeThrowProjectile:updateAim()
   self.aimAngle, self.aimDirection = activeItem.aimAngleAndDirection(self.aimOffset, activeItem.ownerAimPosition())
   activeItem.setArmAngle(self.aimAngle)
   activeItem.setFacingDirection(self.aimDirection)
+end
+
+function StarforgeThrowProjectile:damagePerShot()
+  return (self.baseDamage or (self.baseDps * (self.fireTime))) * (self.baseDamageMultiplier or 1.0) * config.getParameter("damageLevelMultiplier") / self.projectileCount / #self.projectileTimesAndAngles
 end
 
 function StarforgeThrowProjectile:aimVector(inaccuracy, angleAdjust)
