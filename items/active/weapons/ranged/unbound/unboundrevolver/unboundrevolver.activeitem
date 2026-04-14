@@ -88,7 +88,7 @@
         "weaponRotation" : 5,
         "twoHanded" : true,
 
-        "allowRotate" : true,
+        "allowRotate" : false,
         "allowFlip" : true
       },
       "cooldown" : {
@@ -97,13 +97,50 @@
         "weaponRotation" : 5,
         "twoHanded" : true,
 
-        "allowRotate" : false,
+        "allowRotate" : true,
         "allowFlip" : true
       }
     }
   },
-  "altAbilityType" : {
-    "name" : "flashlight"},
+  "altAbility" : {
+    "name" : "Fan Fire",
+    "scripts" : ["/items/active/weapons/ranged/starforge-gunfire.lua"],
+    "class" : "StarforgeGunFire",
+
+    "fireTime": 1,
+    "baseDps": 11.5,
+    "energyUsage": 50,
+    "inaccuracy": 0.001,
+    "projectileCount": 1,
+    "fireType": "burst",
+    "burstCount" : 6,
+    "burstTime" : 0.085,
+    "projectileType": "starforge-physicalbullet",
+    "projectileParameters": {
+      "knockback": 4
+    },
+    "stances" : {
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 15,
+        "weaponRotation" : 15,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "frontArmFrame" : "swim.2"
+      },
+      "cooldown" : {
+        "duration" : 0.35,
+        "armRotation" : 15,
+        "weaponRotation" : 15,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      }
+    }
+  },
    
   "builder": "/items/buildscripts/starforge-builduniqueweapon.lua"
 }

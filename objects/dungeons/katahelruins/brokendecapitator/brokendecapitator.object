@@ -38,6 +38,10 @@
   "animationParts" : {
     "object" : "brokendecapitator.png"
   },
-  "animationPosition" : [0, 0]
-  
+  "animationPosition" : [0, 0],
+  "messageConfig" : {
+    "sendMessage" : "starforge-setWaveActive",
+    "receiveMessage" : "starforge-decaptitatorwin",
+    "messageRadius" : 75
+  }
 }

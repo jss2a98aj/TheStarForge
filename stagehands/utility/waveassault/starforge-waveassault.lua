@@ -4,6 +4,9 @@ require "/scripts/stagehandutil.lua"
 
 function init()
   --Init all variables
+  self.filterParameter = config.getParameter("filterParameter", "starforge-waveassaultunlock")
+  self.entranceParameter = config.getParameter("entranceParameter", "starforge-waveassaultentrance")
+
   self.enemyCount = config.getParameter("enemyCount")
   
   self.npcSpecies = config.getParameter("npcSpecies")
@@ -38,22 +41,32 @@ function init()
   
   self.currentEnemies = {}
   
-  self.active = config.getParameter("startActive", false)
-  self.delayTime = config.getParameter("delayTime", 0)
+  self.canStart = config.getParameter("startActive", true)
+  self.active = false
+  self.delayTime = config.getParameter("delayTime", 2)
   
   message.setHandler("starforge-setWaveActive", function(_, _, delay)
-	self.delayTime = delay
+    if not self.active then
+      self.canStart = true
+      self.delayTime = delay or 0.1
+    end
   end)
+
+  reset()
 end
 
 function update(dt)
   if self.active then updateArena(dt) end
   
-  if self.player and not self.active and self.delayTime > 0 then
+  if self.canStart and self.player and not self.active and self.delayTime > 0 then
     self.delayTime = math.max(0, self.delayTime - dt)
-	if self.delayTime == 0 then
-	  self.active = true
-	end
+    if self.delayTime == 0 then
+      self.active = true
+      messageDoors("lockDoor", "lockDoor")
+      if self.startMessages then
+        messageNearbyEntities(self.startMessages)
+      end
+    end
   end
   
   checkPlayers()
@@ -65,20 +78,23 @@ function reset()
   self.waveTime = config.getParameter("waveTime")
   self.remainingWaves = self.totalWaves
   self.waveTimer = self.waveTime
+  self.active = false
+  self.delayTime = config.getParameter("delayTime", 2)
   
   --Cull the progress bar
   if self.progressBarId then
     world.sendEntityMessage(self.progressBarId, "starforge-reset")
-	self.progressBarId = nil
+	  self.progressBarId = nil
   end
   
   --Cull existing monsters
   for _, enemy in pairs(self.currentEnemies) do
-	world.sendEntityMessage(enemy, "applyStatusEffect", "starforge-terminate")
+	  world.sendEntityMessage(enemy, "applyStatusEffect", "starforge-terminate")
   end
   self.currentEnemies = {}
   
   --Send out reset messages
+  messageDoors("lockDoor", "openDoor")
   messageNearbyEntities(self.resetMessages)
 end
 
@@ -105,7 +121,7 @@ function updateArena(dt)
     end
   --If there are no enemies, and the timer is not active, count down the current waves, and activate the timer
   elseif #self.currentEnemies == 0 and self.waveTimer == 0 then
-	self.remainingWaves = self.remainingWaves - 1
+	  self.remainingWaves = self.remainingWaves - 1
     updateProgress()
     self.waveTimer = self.waveTime
   end
@@ -113,8 +129,9 @@ function updateArena(dt)
   --If we have completed, send the end messages, and die
   if self.remainingWaves == 0 then
     updateProgress()
-	messageNearbyEntities(self.endMessages)
-	stagehand.die()
+    messageDoors("openDoor", "openDoor")
+    messageNearbyEntities(self.endMessages)
+    stagehand.die()
   end
 end
 
@@ -126,22 +143,39 @@ end
 
 function checkPlayers()
   local playersFound = broadcastAreaQuery({ includedTypes = {"player"} })
-  if #playersFound == 0 then
+  if #playersFound == 0 and self.progressBarId then
     reset()
   elseif not self.player then
-	self.player = playersFound[1]
-	
-	if self.startMessages and self.player then
-	  messageNearbyEntities(self.startMessages)
-	end
+    self.player = playersFound[1]
   end
 end
+
+function messageDoors(filteredMessage, entranceMessage)
+  local genericDoors = broadcastAreaQuery({ 
+    includedTypes = { "object" }
+  })
+  
+  for _, doorId in pairs(genericDoors) do
+    local filterParam = world.callScriptedEntity(doorId, "config.getParameter", "filterParameter")
+    if filterParam then
+      if filteredMessage and filterParam == self.filterParameter then 
+        world.sendEntityMessage(doorId, filteredMessage)
+      end
+        sb.logInfo("%s out", entranceMessage)
+      if entranceMessage and filterParam == self.entranceParameter then
+        sb.logInfo("%s in", entranceMessage)
+        world.sendEntityMessage(doorId, entranceMessage)
+      end
+    end
+  end
+end
+
 
 function messageNearbyEntities(messagesToSend)
   --Find all nearby entities and send them a set of messages
   local entitiesToMessage = world.entityQuery(stagehand.position(), self.messageRadius)	
   for _, entity in pairs(entitiesToMessage) do
-	for _, message in ipairs(messagesToSend) do
+	  for _, message in ipairs(messagesToSend) do
       world.sendEntityMessage(entity, message)
     end
   end

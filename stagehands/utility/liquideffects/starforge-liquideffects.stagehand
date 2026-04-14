@@ -19,7 +19,10 @@
   ],
 	
   "projectileType" : "starforge-electrified",
-  "projectileParameters" : {},
+  "projectileParameters" : {
+    "knockback" : 0,
+    "power" : 15
+  },
   "projectileCount" : 4,
   "projectileTime" : [0.001, 0.045]
 }

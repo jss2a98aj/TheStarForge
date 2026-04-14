@@ -69,7 +69,7 @@
         128,
         128
       ],
-	  "ambientNoises": "/sfx/others/unboundmission1ambience.ogg",
+	    "ambientNoises": "/sfx/others/unboundmission1ambience.ogg",
       "musicTrack": "/music/loib-unshackled_unbound.ogg"
     }
   },
@@ -86,8 +86,8 @@
         2000,
         2000
       ],
-      "dungeonBaseHeight": 1120,
-      "dungeonSurfaceHeight": 1070,
+      "dungeonBaseHeight": 1100,
+      "dungeonSurfaceHeight": 900,
       "ambientLightLevel": [
         128,
         128,

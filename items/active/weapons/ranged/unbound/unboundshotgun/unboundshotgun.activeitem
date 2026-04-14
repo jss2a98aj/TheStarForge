@@ -3,11 +3,11 @@
   "price": 500,
   "maxStack": 1,
   "rarity": "Rare",
-  "description": "A slug shotgun loaded with deadly fire-elemental shells.",
+  "description": "A pump shotgun loaded with deadly fire-elemental shells.",
   "shortdescription": "^#686F5D;UNBD^reset; \"Salamander\" SSG",
   "tooltipKind": "starforge-unboundgun",
   "category": "shotgun",
-  "tooltipFieldsOverride" : {"subtitle":"Slug Shotgun"},
+  "tooltipFieldsOverride" : {"subtitle":"Pump Shotgun"},
   "twoHanded": true,
   "level" : 5,
   "itemTags": [
@@ -38,6 +38,23 @@
         ]
       }
     },
+    "lights" : {
+      "flashlightSpread" : {
+        "active" : true,
+        "position" : [-0.75, -0.5],
+        "transformationGroups" : ["muzzle"],
+        "color" : [80, 80, 80]
+      },
+      "flashlight" : {
+        "active" : true,
+        "position" : [-1.25, -0.5],
+        "transformationGroups" : ["muzzle"],
+        "color" : [200, 200, 200],
+        "pointLight" : true,
+        "pointAngle" : 0.00,
+        "pointBeam" : 2.5
+      }
+    },
     "sounds": {
       "fire": [
         "/sfx/gun/shotgun3.ogg"
@@ -52,19 +69,19 @@
   ],
   "elementalType": "fire",
   "primaryAbility": {
-    "scripts": [
-      "/items/active/weapons/ranged/gunfire.lua"
-    ],
-    "class": "GunFire",
+    "scripts" : ["/items/active/weapons/ranged/starforge-gunfire.lua"],
+    "class" : "StarforgeGunFire",
+
     "fireTime": 0.95,
     "baseDps": 12,
     "energyUsage": 45,
-    "inaccuracy": 0.005,
+    "inaccuracy": 0.05,
     "projectileCount": 4,
     "fireType": "auto",
     "projectileType": "unboundfirebullet",
     "projectileParameters": {
-      "knockback": 8
+      "knockback": 8,
+      "speed" : [155, 175]
     },
     "stances": {
       "idle": {

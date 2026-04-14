@@ -8,6 +8,7 @@ function init()
   self.projectileCount = config.getParameter("projectileCount", 1)
   self.projectileTime = config.getParameter("projectileTime", {0.1, 1})
   self.projectileTimer = self.projectileTime[1]
+  self.persistent = config.getParameter("persistent", false)
   
   --Liquid scanning
   self.ignoreLiquidType = config.getParameter("ignoreLiquidType", true)  
@@ -18,28 +19,26 @@ function init()
   self.scanTimer = 0
   
   self.timeToExist = config.getParameter("timeToExist")
-  
-  world.entityType(entity.id())
   reset()
 end
 
 function update(dt)
   self.projectileTimer = math.max(0, self.projectileTimer - dt)
   if self.projectileTimer == 0 then
-	spawnProjectile(self.liquidSpaces)
+	  spawnProjectile(self.liquidSpaces)
     self.projectileTimer = math.random() * self.projectileTime[2] - self.projectileTime[1]
   end
   
   if self.timeToExist then
-	self.timeToExist = math.max(0, self.timeToExist - dt)
-	if self.timeToExist == 0 then
-	  stagehand.die()
+    self.timeToExist = math.max(0, self.timeToExist - dt)
+    if self.timeToExist == 0 then
+	    stagehand.die()
     end
   end
 
-  --if self.scanTimer == 0 then
-  --  reset()
-  --end
+  if self.scanTimer == 0 then
+    reset()
+  end
   for _, space in ipairs(self.liquidSurfaceSpaces) do
     world.debugPoint(vec2.add(space, {0, 0.5}), "yellow")
   end
@@ -48,13 +47,17 @@ function update(dt)
   end
 end
 
-function spawnProjectile(table)	
+function spawnProjectile(table)
+  if #table == 0 then return false end
+
   local params = sb.jsonMerge(self.projectileParameters, {})
 
   local projectileType = self.projectileType
   if type(projectileType) == "table" then
     projectileType = projectileType[math.random(#projectileType)]
   end
+
+  params.power = (params.power or 0) + world.threatLevel()
 
   local projectileId = 0
   for i = 1, (projectileCount or self.projectileCount) do
@@ -85,7 +88,7 @@ function checkSpace(position, ignoreAdjacent)
   local liquidRight = world.liquidAt(vec2.add(position, {1, 0}))
   local materialAbove = world.material(vec2.add(position, {0, 1}), "foreground")
   
-  if not liquid then stagehand.die() return end
+  if not liquid and not self.persistent then stagehand.die() return end
   
   local validLiquid = self.ignoreLiquidType
   for _, id in ipairs(self.liquidWhitelist) do 
@@ -132,8 +135,8 @@ function checkSpace(position, ignoreAdjacent)
   
   --Add to liquid surface table if needed
   if isLiquidSurface then
-	if not isDuplicate(position, self.liquidSurfaceSpaces) then
-	  table.insert(self.liquidSurfaceSpaces, position)
+    if not isDuplicate(position, self.liquidSurfaceSpaces) then
+      table.insert(self.liquidSurfaceSpaces, position)
     end
   end
   
@@ -144,7 +147,7 @@ function reset()
   self.liquidSpaces = {}
   self.liquidSurfaceSpaces = {}
   local isActive = checkSpace(vec2.add(vec2.floor(entity.position()), {0.5, 0.5}))
-  if not isActive then
+  if not isActive and not self.persistent then
     stagehand.die()
   end
   self.scanTimer = self.scanFrequency

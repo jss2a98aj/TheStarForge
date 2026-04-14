@@ -45,7 +45,7 @@
     }
   },
   
-  "baseOffset" : [0.375, -0.0625],
+  "baseOffset" : [0.125, -0.0625],
   "muzzleOffset" : [0.25, 0.0],
 
   "handGrip" : "outside",

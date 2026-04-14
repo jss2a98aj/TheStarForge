@@ -1,0 +1,12 @@
+{
+  "type" : "starforge-killtoprogress",
+
+  "broadcastArea" : [-5, -5, 5, 5],
+
+  "scripts" : [ "/stagehands/utility/killtoprogress/starforge-killtoprogress.lua" ],
+  "scriptDelta" : 5,
+
+  "openDelay" : 2.0,
+  "dieOnOpen" : true,
+  "filterParameter" : null
+}

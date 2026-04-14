@@ -2,10 +2,10 @@ function init()
   if not storage.itemHasSpawned then
     object.setInteractive(true)
     animator.setAnimationState("objectState", "filled")
-	storage.itemHasSpawned = false
+    storage.itemHasSpawned = false
   else
     animator.setAnimationState("objectState", "empty")
-	object.setInteractive(false)
+	  object.setInteractive(false)
   end
   
   self.spawnableItem = config.getParameter("spawnableItem")
@@ -13,21 +13,28 @@ function init()
   self.floatingObjectCycle = config.getParameter("floatingObjectCycle", 1.0) / (2 * math.pi)
   self.floatingObjectMaxTransform = config.getParameter("floatingObjectMaxTransform", 1.0)
   self.timer = 0
+
+  self.messageConfig = config.getParameter("messageConfig")
+  if self.messageConfig then
+    message.setHandler(self.messageConfig.receiveMessage, function(_, _)
+      storage.messageReceived = true
+    end)
+  end
   
   --Optionally reset the floating object transformation group
   if self.useFloatingObject then
-	animator.resetTransformationGroup("floatingObject")
+	  animator.resetTransformationGroup("floatingObject")
   end
 end
 
 function update(dt)
   --Optionally make the artefact float up and down
   if self.useFloatingObject then
-	self.timer = self.timer + dt
-	local offset = math.sin(self.timer / self.floatingObjectCycle) * self.floatingObjectMaxTransform
-	
-	animator.resetTransformationGroup("floatingObject")
-	animator.translateTransformationGroup("floatingObject", {0, offset})
+    self.timer = self.timer + dt
+    local offset = math.sin(self.timer / self.floatingObjectCycle) * self.floatingObjectMaxTransform
+    
+    animator.resetTransformationGroup("floatingObject")
+    animator.translateTransformationGroup("floatingObject", {0, offset})
   end
 end
 
@@ -42,9 +49,15 @@ function open()
 end
 
 function onInteraction(args)
-  if storage.itemHasSpawned == false then
-    open()
+  if (self.messageConfig and storage.messageReceived) or not self.messageConfig then
+    if storage.itemHasSpawned == false then
+      open()
+    end
+  else
+    --Find all nearby entities and send them a set of messages
+    local entitiesToMessage = world.entityQuery(entity.position(), self.messageConfig.messageRadius)	
+    for _, entity in pairs(entitiesToMessage) do
+      world.sendEntityMessage(entity, self.messageConfig.sendMessage)
+    end
   end
 end
-
---All credits goes to Aegonian for making the script

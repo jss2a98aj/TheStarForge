@@ -27,7 +27,7 @@
   "waveCount" : 3,
   
   "messageRadius" : 32,
-  "startMessages" : [ "lockDoor" ],
-  "endMessages" : [ "openDoor" ],
-  "resetMessages" : [ "openDoor" ]
+  "startMessages" : [ ],
+  "endMessages" : [ ],
+  "resetMessages" : [ ]
 }

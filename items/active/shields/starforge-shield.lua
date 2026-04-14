@@ -44,6 +44,8 @@ function update(dt, fireMode, shiftHeld)
 
   updateAim()
 
+  world.debugText("health : %s", status.resource("shieldStamina"), mcontroller.position(), "red")
+
   if not self.active
     and fireMode == "primary"
     and self.cooldownTimer == 0
