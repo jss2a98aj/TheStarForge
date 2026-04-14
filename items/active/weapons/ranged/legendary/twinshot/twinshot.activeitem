@@ -5,7 +5,7 @@
   "rarity": "Legendary",
   "fixedLevel" : false,
   "description": "\"Quick and quiet -- that's the difference between safe and dead\"",
-  "shortdescription": "^#FFBC47;Twin Shot",
+  "shortdescription": "^#FFBC47;Twin Shot^reset;",
   "tooltipKind": "starforge-uniquegun",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {

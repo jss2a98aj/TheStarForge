@@ -1,9 +1,10 @@
 {
   "input" : [
 	{ "item" : "essence", "count" : 1750},
-	{ "item" : "starforge-impervium", "count" : 5},
-	{ "item" : "bow", "count" : 1},
-	{ "item" : "darkwoodmaterial", "count" : 75}
+	{ "item" : "starforge-impervium", "count" : 10},
+	{ "item" : "refinedaegisalt", "count" : 12},
+	{ "item" : "sharpenedclaw", "count" : 10},
+	{ "item" : "darkwoodmaterial", "count" : 250}
   ],
   "output" : {
     "item" : "starforge-avarice",

@@ -5,7 +5,7 @@
   "rarity": "Legendary",
   "fixedLevel" : false,
   "description": "A common form of hidden arms, this one given to especially talented Glitch for covert ops.",
-  "shortdescription": "^#FFBC47;Silent Needle",
+  "shortdescription": "^#FFBC47;Silent Needle^reset;",
   "tooltipKind": "starforge-uniquegun",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {

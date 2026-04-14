@@ -4,7 +4,7 @@
   "category" : "Kitchenware",
   "inventoryIcon" : "thespork.png",
   "image" : "thespork.png",
-  "shortdescription" : "^#b4f5c3;The Spork^reset;",
+  "shortdescription" : "^#C67CEE;The Spork^reset;",
   "description" : "The best of both worlds \n^gray;-Elana^reset;",
   "maxStack" : 1,
 

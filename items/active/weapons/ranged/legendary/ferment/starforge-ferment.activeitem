@@ -7,7 +7,7 @@
   "maxStack" : 1,
   "rarity" : "Legendary",
   "description" : "The ferment held it together, let it grow.",
-  "shortdescription" : "^#80F4FF;Ferment",
+  "shortdescription" : "^#80F4FF;Ferment^reset;",
   "tooltipKind": "starforge-uniquegun",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {

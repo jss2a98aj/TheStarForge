@@ -27,7 +27,7 @@
 		{"weight" : 0.10, "item" : "starforge-combatrifle"},
         {"weight" : 0.10, "item" : "starforge-carver"},
 		{"weight" : 0.10, "item" : "starforge-existar"},
-		{"weight" : 0.10, "item" : "starforge-twinshot"}
+		{"weight" : 0.10, "item" : "starforge-aspic"}
       ],
       "poolRounds" : [
         [0.30, 1],
@@ -135,6 +135,18 @@
 		{"pool" : "chestMoney"},
 		{"pool" : "chestMoney"},
 		{"pool" : "chestMoney"}
+      ]
+    }]
+  ],
+  
+  "starforge-katahelspecial6" : [
+    [1, {
+      "fill" : [
+        {"item" : [ "starforge-katahelbackfalse", 1]},
+		{"item" : [ "starforge-impervium", 4]},
+		{"item" : [ "essence", 450]},
+		{"item" : [ "money", 125]}
+
       ]
     }]
   ]

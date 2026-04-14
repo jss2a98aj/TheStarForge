@@ -1,10 +1,9 @@
 {
   "input" : [
 	{ "item" : "essence", "count" : 1750},
-	{ "item" : "starforge-undyingfibre", "count" : 6},
-	{ "item" : "hardenedcarapace", "count" : 5},
-	{ "item" : "starforge-withersample", "count" : 75},
-	{ "item" : "starforge-blackrotmaterial", "count" : 250}
+	{ "item" : "refinedaegisalt", "count" : 6},
+	{ "item" : "diamond", "count" : 3},
+	{ "item" : "ironbar", "count" : 8}
   ],
   "output" : {
     "item" : "starforge-hawkmoon",

@@ -4,7 +4,7 @@
   "maxStack": 1,
   "rarity": "Legendary",
   "description": "The fever saw to the beginning, a story built.",
-  "shortdescription" : "^#80F4FF;Fever",
+  "shortdescription" : "^#80F4FF;Fever^reset;",
   "tooltipKind": "starforge-uniquegun",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {

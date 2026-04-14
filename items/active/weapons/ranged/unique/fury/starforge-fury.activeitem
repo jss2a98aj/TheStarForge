@@ -5,7 +5,7 @@
   "maxStack" : 1,
   "rarity" : "Essential",
   "description" : "The fury tore it down, to start again.",
-  "shortdescription" : "^#80F4FF;Fury",
+  "shortdescription" : "^#80F4FF;Fury^reset;",
   "level" : 7,
   "fixedLevel" : false,
   "tooltipKind" : "starforge-uniquegun",

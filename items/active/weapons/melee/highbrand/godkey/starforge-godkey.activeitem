@@ -5,7 +5,7 @@
   "maxStack" : 1,
   "rarity" : "Essential",
   "description" : "Something about its make suggests a purpose far older than the hand that forged it.",
-  "shortdescription" : "^orange;Godward^reset;",
+  "shortdescription" : "^#C67CEE;Godward^reset;",
   "tooltipKind" : "starforge-uniquesword",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {

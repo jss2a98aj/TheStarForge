@@ -1,9 +1,9 @@
 {
   "input" : [
-	{ "item" : "essence", "count" : 250},
-	{ "item" : "refinedferozium", "count" : 4},
-	{ "item" : "tungstenbar", "count" : 12},
-	{ "item" : "darkwoodmaterial", "count" : 125}
+	{ "item" : "essence", "count" : 1750},
+	{ "item" : "refinedferozium", "count" : 5},
+	{ "item" : "scorchedcore", "count" : 5},
+	{ "item" : "tungstenbar", "count" : 8}
   ],
   "output" : {
     "item" : "starforge-ferment",

@@ -1,0 +1,41 @@
+{
+  "type": "starforge-unbtjanitor",
+  "baseType": "outpostvisitor",
+
+  "identity": {
+    "facialHairType": "0",
+    "hairType": "0",
+    "facialHairGroup": "fronthair",
+    "hairGroup": "hair",
+    "personalityArmOffset": [0, 0],
+    "personalityArmIdle": "idle.1",
+    "personalityIdle": "idle.1",
+    "gender": "female",
+    "imagePath": "starforge_UNBT"
+  },
+
+  "damageTeamType": "ghostly",
+
+  "scriptConfig": {
+    "dialogMode": "random",
+
+    "personalities": [
+      [1.0, {
+          "personality": "cheerful",
+          "reactions": {}
+        }
+      ]
+    ],
+
+    "dialog": {
+      "converse": {
+        "default": {
+          "default": [
+            "Kill. Me."
+          ]
+        }
+      }
+    }
+  }
+
+}

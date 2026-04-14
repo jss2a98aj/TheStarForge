@@ -4,7 +4,7 @@
   "maxStack": 1,
   "rarity": "Legendary",
   "description": "The frenzy brought a new piece, a boost.",
-  "shortdescription" : "^#80F4FF;Frenzy",
+  "shortdescription" : "^#80F4FF;Frenzy^reset;",
   "tooltipKind": "starforge-uniquegun",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {
