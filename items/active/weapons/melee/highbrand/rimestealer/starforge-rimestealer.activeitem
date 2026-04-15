@@ -41,10 +41,10 @@
   "primaryAbilityType" : "starforge-highbrandcombo",
   "primaryAbility" : {
     "fireTime" : 0.9,
-    "baseDps" : 13,
+    "baseDps" : 13.25,
     "stanceSpeedFactor" : 1.2,
     "swingPitchFactor" : 0.7,
-    "energyUsage" : 30,
+    "energyUsage" : 20,
     "damageConfig" : {
       "damageSourceKind" : "icebroadsword",
       "statusEffects" : [ "frostslow" ],

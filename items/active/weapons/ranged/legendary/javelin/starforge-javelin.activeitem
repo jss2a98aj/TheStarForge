@@ -1,25 +1,25 @@
 {
-  "itemName": "starforge-silverserpent",
+  "itemName": "starforge-javelin",
   "price": 1500,
   "maxStack": 1,
   "rarity": "Legendary",
-  "description": "A serpent bound cannon, sporting armour penetrating rounds.",
-  "shortdescription" : "Silver Serpent",
+  "description": "Your motha.",
+  "shortdescription" : "Javelin",
   "tooltipKind": "starforge-uniquegun",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {
-    "subtitle" : "Deagle"
+    "subtitle" : "AMR"
   },
   "twoHanded": true,
   "level" : 6,
   "fixedLevel" : false,
   "itemTags" : [ "starforge", "weapon", "ranged", "pistol" ],
-  "inventoryIcon": "starforge-silverserpent.png:idle",
+  "inventoryIcon": "starforge-javelin.png:idle",
   
   "animation": "/items/active/weapons/ranged/starforge-gun.animation",
   "animationParts": {
     "butt": "",
-    "middle": "starforge-silverserpent.png",
+    "middle": "starforge-javelin.png",
     "barrel": "",
 	  "middleFullbright": "",
     "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-firemuzzleflash.png"
@@ -27,6 +27,18 @@
   "animationCustom": {
     "animatedParts" : {
       "stateTypes" : {
+        "gun" : {
+          "default" : "idle",
+          "states" : {
+            "idle" : {},
+            "reload" : {
+              "frames" : 2,
+              "cycle" : 0.1,
+              "mode" : "transition",
+              "transition" : "idle"
+            }
+          }
+        },
         "altSwoosh" : {
           "default" : "idle",
           "states" : {
@@ -34,19 +46,7 @@
             },
             "fire" : {
               "frames" : 3,
-              "cycle" : 0.09,
-              "mode" : "transition",
-              "transition" : "idle"
-            }
-          }
-        },
-        "gun" : {
-          "default" : "idle",
-          "states" : {
-            "idle" : {},
-            "reload" : {
-              "frames" : 2,
-              "cycle" : 0.075,
+              "cycle" : 0.08,
               "mode" : "transition",
               "transition" : "idle"
             }
@@ -54,6 +54,34 @@
         }
       },
       "parts" : {
+        "altSwoosh" : {
+          "properties" : {
+            "zLevel" : -3,
+            "centered" : true,
+            "offset" : [5.25, 0.5],
+            "transformationGroups" : ["weapon", "swoosh"]
+          },
+          "partStates" : {
+            "altSwoosh" : {
+              "idle" : {
+                "properties" : {
+                  "image" : ""
+                }
+              },
+              "fire" : {
+                "properties" : {
+                  "image" : "/items/active/weapons/melee/swoosh/starforge/jab/jab-physical.png:<frame>",
+                  "damageArea" : [[-5.5, 0], [-4, 1], [1, 1], [4, 0], [1, -1], [-4, -1]]
+                }
+              }
+            }
+          }
+        },
+        "muzzleFlash" : {
+          "properties" : {
+            "offset" : [2.125, -1.625]
+          }
+        },
         "middle" : {
           "partStates" : {
             "gun" : {
@@ -69,29 +97,6 @@
               }
             }
           }
-        },
-        "altSwoosh" : {
-          "properties" : {
-          "zLevel" : -3,
-          "centered" : true,
-          "offset" : [1.125, -0.125],
-          "transformationGroups" : ["swoosh"]
-          },
-          "partStates" : {
-            "altSwoosh" : {
-              "idle" : {
-                "properties" : {
-                  "image" : ""
-                }
-              },
-              "fire" : {
-                "properties" : {
-                  "image" : "/items/active/weapons/melee/swoosh/starforge/jab/jab-physical.png:<frame>",
-                  "damageArea" : [[-3.75, 1.5], [-1.875, 2.25], [0.75, 2.25], [3, 1.25], [3.75, -0.15], [3.75, -1.675], [3, -2.375], [0, -1.875]]
-                }
-              }
-            }
-          }
         }
       }
     },
@@ -102,123 +107,131 @@
       "muzzleFlash" : {
         "burstCount" : 1,
         "transformationGroups" : ["muzzle"],
-		    "offsetRegion" : [-2.125, 0.125, -2.125, 0.125],
+		    "offsetRegion" : [-3.125, -0.5, -3.125, -0.5],
         "particles" : [
           { "particle" : "starforge-unboundfireshell" },
+          { "particle" : "rocketbarrelpuff" },
           { "particle" : "rocketbarrelpuff" }
         ]
       },
       "altSwoosh" : {
         "active" : false,
         "emissionRate" : 5,
-        "transformationGroups" : ["swoosh"],
+        "transformationGroups" : ["weapon", "swoosh"],
         "offsetRegion" : [0.0, 0.0, 0.0, 0.0],
         "particles" : []
       }
     },
     "sounds": {
   	  "altFire" : [ "/sfx/melee/swing_hammer.ogg" ],
-      "fire": [ "/sfx/gun/starforge-silverserpentfire.ogg" ]
+      "fire": [ "/sfx/gun/starforge-javelinfire.ogg" ]
     }
   },
   
-  "baseOffset" : [0.50, 0.125],
-  "muzzleOffset": [1.125, 0.25],
+  "baseOffset" : [1.75, 0.25],
+  "muzzleOffset": [1.5, 1.75],
   
   "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
   "elementalType": "physical",
+
+  "aimOffset" : -0.225,
   
   "primaryAbility": {
     "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
     "class": "StarforgeGunFire",
 	
-    "fireTime": 0.7,
-    "baseDps": 11,
-    "energyUsage": 20,
-    "inaccuracy": 0.01,
+    "fireTime": 0.85,
+    "baseDps": 13.5,
+    "energyUsage": 40,
+    "inaccuracy": 0.001,
 	
     "projectileCount": 1,
     "fireType": "auto",
     "projectileType": "starforge-silverserpentbullet",
     "projectileParameters": {
-	    "armourPiercingFactor" : 0.70,
-      "knockback": 4
+	    "armourPiercingFactor" : 0.85,
+      "speed" : 200,
+      "piercing" : true,
+      "knockback": 10
     },
     "animatedFire" : true,
+    "knockbackForce" : 30,
 	
     "stances" : {
       "idle" : {
-        "armRotation" : 0,
-        "weaponRotation" : 0,
+        "armRotation" : -25,
+        "weaponRotation" : 25,
+		    "frontArmFrame" : "jump.1",
         "twoHanded" : true,
+        "weaponOffset" : [-0.75, 0],
+        "weaponRotationCentre" : [-1, 0],
 
         "allowRotate" : true,
         "allowFlip" : true
       },
       "fire" : {
-        "duration" : 0.05,
-        "armRotation" : 6,
-        "weaponRotation" : 6,
+        "duration" : 0.1,
+        "armRotation" : -12,
+        "weaponRotation" : 22,
+		    "frontArmFrame" : "jump.1",
         "twoHanded" : true,
+        "weaponOffset" : [-0.75, 0],
+        "weaponRotationCentre" : [-1, 0],
 
         "allowRotate" : false,
-        "allowFlip" : true
+        "allowFlip" : false
       },
       "cooldown" : {
-        "duration" : 0.1,
-        "armRotation" : 6,
-        "weaponRotation" : 6,
+        "duration" : 0.6,
+        "armRotation" : -12,
+        "weaponRotation" : 22,
+		    "frontArmFrame" : "jump.1",
         "twoHanded" : true,
+        "weaponOffset" : [-0.75, 0],
+        "weaponRotationCentre" : [-1, 0],
 
         "allowRotate" : true,
         "allowFlip" : true
       }
     }
   },
-
+  
   "altAbility" : {
-    "name" : "Pistol Whip",
+    "name" : "Spacing Jab",
     "scripts" : ["/items/active/weapons/melee/abilities/starforge-meleeslash.lua"],
     "class" : "StarforgeMeleeSlash",
-    
-    "fireTime" : 0.87,
-    "baseDps" : 5.5,
+
+    "fireTime" : 1.0,
+    "baseDps" : 2.5,
     "damageConfig" : {
-      "damageSourceKind" : "fist",
+      "damageSourceKind" : "hammer",
       "statusEffects" : [ ],
       "knockbackMode" : "aim",
-      "knockback" : 45,
+      "knockback" : 30,
       "timeoutGroup" : "primary"
     },
 
     "stances" : {
       "windup" : {
-        "duration" : 0.2,
-        "armRotation" : 85,
-        "weaponRotation" : 3,
-        "weaponOffset" : [-0.1, 0],
-        "twoHanded" : false,
+        "duration" : 0.25,
+        "armRotation" : -80,
+        "weaponRotation" : 55,
+		    "frontArmFrame" : "jump.1",
+        "twoHanded" : true,
+        "weaponOffset" : [-0.375, 0.5],
+        "weaponRotationCentre" : [-1, 0],
 
         "allowRotate" : true,
-        "allowFlip" : false
+        "allowFlip" : true
       },
       "fire" : {
-        "duration" : 0.25,
-        "armRotation" : 15,
-        "weaponRotation" : 55,
-        "twoHanded" : false,
-
-		    "swooshRotation" : -20,
-
-        "allowRotate" : false,
-        "allowFlip" : false
-      },
-      "transitionState" : {
         "duration" : 0.4,
-        "armRotation" : 15,
-        "weaponRotation" : -325,
-		    "weaponOffset" : [-0.25, -0.125],
-        "twoHanded" : false,
+        "armRotation" : -25,
+        "weaponRotation" : 25,
+		    "frontArmFrame" : "jump.1",
+        "twoHanded" : true,
+        "weaponOffset" : [-0.75, 0],
+        "weaponRotationCentre" : [-1, 0],
 
         "allowRotate" : true,
         "allowFlip" : true

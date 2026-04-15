@@ -107,7 +107,7 @@ function build(directory, config, parameters, level, seed)
         config.tooltipFields.speedLabel = util.round(config.primaryAbility.chargeTime or 1, 1)
       else
         local cycleTime = (config.primaryAbility.fireTime or config.primaryAbility.cooldownTime or 1.0) + (config.primaryAbility.fireType == "burst" and (config.primaryAbility.burstTime * config.primaryAbility.burstCount) or 0)
-        local rateOfFire = (config.primaryAbility.burstCount or 1) / cycleTime
+        local rateOfFire = (config.primaryAbility.burstCount or 1) / (cycleTime * (config.primaryAbility.stanceSpeedFactor or 1))
         config.tooltipFields.speedLabel = util.round(rateOfFire, 1)
       end
     end

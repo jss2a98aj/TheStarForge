@@ -233,10 +233,10 @@
   "primaryAbilityType" : "starforge-highbrandcombo",
   "primaryAbility" : {
     "fireTime" : 0.9,
-    "baseDps" : 12.5,
+    "baseDps" : 13,
     "stanceSpeedFactor" : 1,
     "swingPitchFactor" : 0.8,
-    "energyUsage" : 30,
+    "energyUsage" : 15,
     "damageConfig" : {
       "damageSourceKind" : "electricbroadsword",
       "statusEffects" : [ ],

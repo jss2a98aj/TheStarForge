@@ -89,6 +89,9 @@ function updateAim()
   end
   activeItem.setArmAngle(self.aimAngle + self.relativeArmRotation)
 
+  activeItem.setFrontArmFrame(self.stance.frontArmFrame)
+  activeItem.setBackArmFrame(self.stance.backArmFrame)
+
   if self.stance.allowFlip then
     self.aimDirection = aimDirection
   end
@@ -96,6 +99,10 @@ function updateAim()
 
   animator.setGlobalTag("hand", isNearHand() and "near" or "far")
   activeItem.setOutsideOfHand(self.alwaysOutside or isNearHand())
+
+  animator.resetTransformationGroup("shield")
+  animator.rotateTransformationGroup("shield", self.relativeShieldRotation, self.relativeShieldRotationCenter)
+  animator.translateTransformationGroup("shield", self.relativeShieldOffset)
 end
 
 function isNearHand()
@@ -105,6 +112,8 @@ end
 function setStance(stance)
   self.stance = stance
   self.relativeShieldRotation = util.toRadians(stance.shieldRotation) or 0
+  self.relativeShieldOffset = stance.shieldOffset or {0, 0}
+  self.relativeShieldRotationCenter = stance.shieldRotationCenter or {0, 0}
   self.relativeArmRotation = util.toRadians(stance.armRotation) or 0
 end
 

@@ -95,7 +95,7 @@
     "baseDps" : 15,
     "stanceSpeedFactor" : 1.5,
     "swingPitchFactor" : 0.5,
-    "energyUsage" : 30,
+    "energyUsage" : 40,
     "damageConfig" : {
       "damageSourceKind" : "hammer",
       "statusEffects" : [ { "effect" : "starforge-stunned", "duration" : 0.5 } ],

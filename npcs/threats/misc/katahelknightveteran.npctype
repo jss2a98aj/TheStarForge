@@ -11,23 +11,24 @@
  
  
   "scriptConfig" : {
-	"bossName" : "Last Vigil",
-	
-	"behavior" : "mik-hostilenpc",
-	
-	"bandageTime" : 60,
+    "bossName" : "Last Vigil",
+    
+    "behavior" : "mik-hostilenpc",
+    
+    "bandageTime" : 1,
 
-	"aggressive" : true,
+    "aggressive" : true,
+    "interactive" : false,
 
-	"behaviorConfig" : {
-	  "leapWindup" : 0.15,
-	  "leapCooldown": 8,
-	  "rangedAimTime" : 0.1,
-	  "rangedWindupTime" : 0.1,
-	  "leapChance" : 0.95,
-	  "rangedSwapTime" : 1,
-	  "meleeSwapTime" : 1.5
-	},
+    "behaviorConfig" : {
+      "leapWindup" : 0.15,
+      "leapCooldown": 8,
+      "rangedAimTime" : 0.1,
+      "rangedWindupTime" : 0.1,
+      "leapChance" : 0.95,
+      "rangedSwapTime" : 1,
+      "meleeSwapTime" : 1.5
+    },
 
     "chatSounds" : {
       "default" : {
@@ -57,7 +58,7 @@
       "killedTarget" : {
         "default" : {
           "default" : [
-            "Glorious. AND SO ANOTHER ONE FALL.",
+            "Glorious. AND SO ANOTHER ONE FALLS.",
             "Proud. I STAND UNDEFEATED,"
           ]
         }
@@ -109,7 +110,7 @@
         "spear" : 0
       },
       "meleeWeaponCooldowns" : {
-        "default" : 1.0,
+        "default" : 0.5,
         "broadsword" : 3.7,
         "dagger" : 0.7,
         "axe" : 1.4,
@@ -131,7 +132,7 @@
     "statusEffects" : [ ]
   },
  
-  "innateStatusEffects" : [{"stat":"maxHealth","amount":3000}, {"stat":"powerMultiplier","amount":1.7}, {"stat":"maxEnergy","amount":180}],
+  "innateStatusEffects" : ["starforge-veteraneffects", {"stat":"maxHealth","amount":3000}, {"stat":"powerMultiplier","amount":1.7}, {"stat":"maxEnergy","amount":180}],
 	
   "items": {
     "override": [
@@ -146,7 +147,7 @@
           "name": "starforge-katahelknightpants"
         }],
 		"back": [{ 
-				    "name": "raggedcapeback" 
+				    "name": "starforge-katahelbackfalse" 
 				}],
         "primary": [
           "starforge-vigilance"
@@ -187,29 +188,29 @@
     ],
 	
     "primaryScriptDelta" : 5,
-    "stats" : {
-      "maxHealth" : {
-        "baseValue" : 100.0
-      },
-      "maxEnergy" : {
-        "baseValue" : 1.0
-      },
-      "powerMultiplier" : {
-        "baseValue" : 0.01
-      },
-      "protection" : {
-        "baseValue" : 0.6
-      },
-      "healthRegen" : {
-        "baseValue" : 0.0
-      },
-      "jumpModifier" : {
-        "baseValue" : 0.5
-      },
-      "knockbackStunTime" : {
-        "baseValue" : 1
-      },
-	  "fireResistance" : {
+      "stats" : {
+        "maxHealth" : {
+          "baseValue" : 100.0
+        },
+        "maxEnergy" : {
+          "baseValue" : 1.0
+        },
+        "powerMultiplier" : {
+          "baseValue" : 0.01
+        },
+        "protection" : {
+          "baseValue" : 0.6
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+        "jumpModifier" : {
+          "baseValue" : 0.5
+        },
+        "knockbackStunTime" : {
+          "baseValue" : 1
+        },
+        "fireResistance" : {
           "baseValue" : 0.5
         },
         "fireStatusImmunity" : {
@@ -233,9 +234,12 @@
         "poisonStatusImmunity" : {
           "baseValue" : 1.0
         },
-      "grit" : {
-        "baseValue" : -1
-      }
+        "knockbackbackthreshold" : {
+          "baseValue" : 9
+        },
+        "grit" : {
+          "baseValue" : 0
+        }
     },
 	
     "resources" : {

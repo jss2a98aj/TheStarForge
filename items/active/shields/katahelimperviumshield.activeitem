@@ -7,7 +7,7 @@
   "category" : "shield",
   "description" : "Only ever raised once, for who it was raised for, it was never lowered.",
   "shortdescription" : "Vigil",
-  "tooltipKind" : "Shield",
+  "tooltipKind" : "starforge-uniqueshield",
   "twoHanded" : false,
   "itemTags" : ["shield"],
 
@@ -20,7 +20,8 @@
   },
   "animationCustom" : {
     "animatedParts" : { "parts" : { "shield" : { "properties" : {
-        "shieldPoly" : [ [-0.5, -2.5], [-0.5, 2.25], [0.75, 1.5], [0.75, -1.75] ]
+        "shieldPoly" : [ [-0.5, -2.5], [-0.5, 2.25], [0.75, 1.5], [0.75, -1.75] ],
+        "offset" : [0.25, 0]
     }}}},
     "sounds" : {
       "raiseShield" : [ "/sfx/melee/sword_guard.ogg" ],
@@ -30,12 +31,12 @@
     }
   },
 
-  "scripts" : ["/items/active/shields/shield.lua"],
+  "scripts" : ["/items/active/shields/starforge-shield.lua"],
 
   "minActiveTime" : 0.3,
 
   "forceWalk" : true,
-  "baseShieldHealth" : 150,
+  "baseShieldHealth" : 225,
   "cooldownTime" : 0.9,
 
   "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
@@ -43,18 +44,30 @@
 
   "knockback" : 10,
 
+  "shieldStats" : {
+    "fireResistance" : 0.5
+  },
+
+  "alwaysOutside" : true,
+
   "stances" : {
     "idle" : {
-      "armRotation" : -90,
-      "shieldRotation" : 0,
+      "armRotation" : -100,
+      "shieldRotation" : -5,
+      "aimAngle" : 0,
+      "shieldOffset" : [-0.5, 0],
       "allowRotate" : false,
       "allowFlip" : true
     },
     "raised" : {
-      "armRotation" : 0,
-      "shieldRotation" : 0,
-      "allowRotate" : false,
-      "allowFlip" : true
+      "armRotation" : -10,
+      "shieldRotation" : 5,
+      "allowRotate" : true,
+      "allowFlip" : true,
+      "shieldOffset" : [0, 0.375],
+
+      "frontArmFrame" : "swim.3",
+      "backArmFrame" : "swim.3"
     }
   },
 

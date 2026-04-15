@@ -1,0 +1,15 @@
+{
+  "name" : "starforge-fadeout",
+
+  "effectConfig" : {
+    "fadeOut" : true,
+    "deathEffects" : {
+      "hideDeath" : true
+    }
+  },
+  "defaultDuration" : 0.5,
+
+  "scripts" : [
+    "starforge-fade.lua"
+  ]
+}

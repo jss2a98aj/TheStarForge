@@ -21,6 +21,7 @@ function init()
   self.spawnTolerance = config.getParameter("spawnTolerance")
   
   self.spawnEffects = config.getParameter("spawnEffects")
+  self.resetEffect = config.getParameter("resetEffect", "starforge-fadeout")
   self.waveTime = config.getParameter("waveTime")
   self.totalWaves = config.getParameter("waveCount")
   self.remainingWaves = self.totalWaves
@@ -89,7 +90,7 @@ function reset()
   
   --Cull existing monsters
   for _, enemy in pairs(self.currentEnemies) do
-	  world.sendEntityMessage(enemy, "applyStatusEffect", "starforge-terminate")
+	  world.sendEntityMessage(enemy, "applyStatusEffect", self.resetEffect)
   end
   self.currentEnemies = {}
   
@@ -161,9 +162,7 @@ function messageDoors(filteredMessage, entranceMessage)
       if filteredMessage and filterParam == self.filterParameter then 
         world.sendEntityMessage(doorId, filteredMessage)
       end
-        sb.logInfo("%s out", entranceMessage)
       if entranceMessage and filterParam == self.entranceParameter then
-        sb.logInfo("%s in", entranceMessage)
         world.sendEntityMessage(doorId, entranceMessage)
       end
     end

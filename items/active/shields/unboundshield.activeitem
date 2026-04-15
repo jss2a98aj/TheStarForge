@@ -5,9 +5,9 @@
   "maxStack" : 1,
   "rarity" : "Legendary",
   "category" : "shield",
-  "description" : "A compact energy shield used by the Unbound.",
+  "description" : "A compact energy shield used by the Unbound capable of resisting powerful shocks.",
   "shortdescription" : "^#686F5D;UNBD^reset; Energy Shield",
-  "tooltipKind" : "Shield",
+  "tooltipKind" : "starforge-uniqueshield",
   "twoHanded" : false,
   "itemTags" : ["shield"],
 
@@ -65,7 +65,7 @@
   "minActiveTime" : 0.3,
 
   "forceWalk" : false,
-  "baseShieldHealth" : 165,
+  "baseShieldHealth" : 145,
   "cooldownTime" : 0.1,
 
   "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
@@ -74,7 +74,7 @@
   "knockback" : 10,
 
   "shieldStats" : {
-    "electricResistance" : 1
+    "electricResistance" : 0.75
   },
 
   "alwaysOutside" : true,

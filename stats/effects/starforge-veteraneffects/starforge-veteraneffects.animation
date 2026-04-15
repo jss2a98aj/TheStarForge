@@ -1,0 +1,43 @@
+{
+  "transformationGroups" : {
+    "dash" : {}
+  },
+
+  "particleEmitters" : {
+    "startDashLeft" : {
+      "particles" : [
+        {
+          "particle" : "dash"
+        }
+      ]
+    },
+    "startDashRight" : {
+      "particles" : [
+        {
+          "particle" : "dash",
+          "flip" : true
+        }
+      ]
+    },
+    "dashParticles" : {
+      "transformationGroups" : ["dash"],
+      "emissionRate" : 40.0,
+      "particles" : [
+        {
+          "particle" : "sprint",
+          "flip" : true,
+          "offset" : [0, 0.0]
+        },
+        {
+          "particle" : "sprint",
+          "flip" : true,
+          "offset" : [0, -0.75]
+        }
+      ]
+    }
+  },
+
+  "sounds" : {
+    "startDash" : [ "/sfx/tech/tech_dash.ogg" ]
+  }
+}

@@ -18,9 +18,9 @@ function update(dt)
   self.queryDamageSince = nextStep
   
   for _, notification in ipairs(damageNotifications) do
-	if notification.healthLost > 1 then
-	  self.adaptiveFactor = math.min(1, self.adaptiveFactor + self.adaptiveFactorPerHit)
-	end
+    if notification.healthLost > 1 then
+      self.adaptiveFactor = math.min(1, self.adaptiveFactor + self.adaptiveFactorPerHit)
+    end
   end
   
   self.adaptiveFactor = math.max(0, self.adaptiveFactor - (self.adaptiveDecayRate * dt))

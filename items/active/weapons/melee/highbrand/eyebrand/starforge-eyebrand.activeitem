@@ -387,7 +387,7 @@
     "baseDps" : 16.5,
     "stanceSpeedFactor" : 1.8,
     "swingPitchFactor" : 0.6,
-    "energyUsage" : 30,
+    "energyUsage" : 35,
     "damageConfig" : {
       "damageSourceKind" : "poisonhammer",
       "statusEffects" : [ ],

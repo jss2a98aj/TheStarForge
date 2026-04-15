@@ -1,0 +1,13 @@
+{
+  "name" : "starforge-veteraneffects",
+  "effectConfig" : {
+    "movementSpeedToDash" : 20
+  },
+  "defaultDuration" : 15,
+
+  "scripts" : [
+    "starforge-veteraneffects.lua"
+  ],
+
+  "animationConfig" : "starforge-veteraneffects.animation"
+}

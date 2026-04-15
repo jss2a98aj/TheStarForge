@@ -56,7 +56,7 @@
     "baseDps" : 11,
     "stanceSpeedFactor" : 1.15,
     "swingPitchFactor" : 0.8,
-    "energyUsage" : 30,
+    "energyUsage" : 10,
 
     "swooshReachOffset" : -0.5
   },

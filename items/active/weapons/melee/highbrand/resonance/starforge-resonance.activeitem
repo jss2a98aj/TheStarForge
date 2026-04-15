@@ -81,7 +81,7 @@
     "baseDps" : 13.5,
     "stanceSpeedFactor" : 1.45,
     "swingPitchFactor" : 0.55,
-    "energyUsage" : 30,
+    "energyUsage" : 25,
     "damageConfig" : {
       "damageSourceKind" : "firebroadsword",
       "statusEffects" : [ ],
