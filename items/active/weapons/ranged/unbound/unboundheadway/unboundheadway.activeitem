@@ -78,15 +78,15 @@
     ],
     "class": "StarforgeGunFire",
     "fireTime": 0.22,
-    "baseDps": 15,
-    "energyUsage": 22,
+    "baseDps": 13,
+    "energyUsage": 28,
     "inaccuracy": 0.003,
     "projectileCount": 1,
     "fireType": "auto",
     "projectileType": "unboundelectricbullet",
     "projectileParameters": {
 	  "speed" : 200,
-      "knockback": 3.5,
+      "knockback": 7,
 	  "periodicActions" : [{
                   "rotate" : true,
                   "time" : 0.01,

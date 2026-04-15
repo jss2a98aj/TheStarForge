@@ -1,6 +1,8 @@
 {
   "type": "starforge-unbtjanitor",
-  "baseType": "outpostvisitor",
+  "baseType": "base",
+
+  "humanoidConfig": "/humanoid/starforge_UNBT/unboroid.config",
 
   "identity": {
     "facialHairType": "0",
@@ -10,32 +12,59 @@
     "personalityArmOffset": [0, 0],
     "personalityArmIdle": "idle.1",
     "personalityIdle": "idle.1",
-    "gender": "female",
-    "imagePath": "starforge_UNBT"
+    "imagePath": "starforge_UNBT",
+	"bodyDirectives": "?replace;A85636=344495;E0975C=5588D4;FFCA8A=96CBE7;6F2919=1A1C51"
   },
 
-  "damageTeamType": "ghostly",
+  "damageTeamType" : "ghostly",
 
-  "scriptConfig": {
-    "dialogMode": "random",
+  "persistent" : true,
 
-    "personalities": [
-      [1.0, {
-          "personality": "cheerful",
-          "reactions": {}
+  "dropPools" : [ ],
+
+  "movementParameters" : {
+    "walkSpeed" : 5.0
+  },
+
+  "scriptConfig" : {
+    "behavior" : "starforge-creightonjanitor",
+
+    "dialogMode" : "sequence",
+    "dialog" : {
+      "converse" : {
+        "default" : {
+          "default" : [
+            "Gree^#7B7B7B;* krtz - 01010000 01100101 01100101//*^reset; tings.",
+            "I am an Unbound UNB-T janitor unit. ^#7B7B7B;//*tzz/^reset; I clean. ",
+            "Please do not dis-^#7B7B7B;* 01110100 01110101 01110010 01100100^reset;turb my work",
+			"Everyday I mo-^#7B7B7B;01101101 01101111 01100111^reset;p. It is what I was made for.",
+			"I wish my programming allowed me to s-s-s-s ^#7B7B7B;* krtz -^reset;wear. This job is very frustrating.",
+            "Be- free.",
+			"Glory to the Unbound."
+          ]
         }
-      ]
-    ],
-
-    "dialog": {
-      "converse": {
-        "default": {
-          "default": [
-            "Kill. Me."
+      },
+      "complain" : {
+        "default" : {
+          "default" : [
+            "I keep and keep an-^#7B7B7B;*01100001 01110011 01110011^reset; mopping.",
+			"Glory to the //krtz - Apex."
           ]
         }
       }
     }
-  }
+  },
 
+    "items": {
+        "override": [
+            [0, [{
+                "head": [{
+                    "name": "fancaphead"
+                }],
+                "primary": [
+                    "broom"
+                ]
+            }]]
+        ]
+    }
 }
