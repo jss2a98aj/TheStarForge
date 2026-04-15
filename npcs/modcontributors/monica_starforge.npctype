@@ -1,0 +1,123 @@
+{
+  "type": "monica_starforge",
+  "baseType": "outpostvisitor",
+
+  "identity": {
+    "facialHairType": "0",
+    "hairType": "0",
+    "facialHairGroup": "fronthair",
+    "hairGroup": "hair",
+    "personalityArmOffset": [0, 0],
+    "personalityArmIdle": "idle.5",
+    "personalityIdle": "idle.2",
+    "name": "^pink;Monica^reset;",
+    "gender": "female",
+    "imagePath": "starforge-monica",
+    "personalityHeadOffset": [-1, 0],
+    "facialHairDirectives": "",
+    "bodyDirectives": "?replace;f9d8b3=fee6cd;ffc181=fee6cd;d39c6c=fad6b7;ffe2c5=fef7f1;DC1F00=f9b1fa;BE1B00=DF85D3;951500=D87D94;d1a57c=fad6b7;dab490=f1ad95;c7815b=f1ad95",
+    "emoteDirectives": "?replace;f9d8b3=fee6cd;dab490=f1ad95;f79586=feb79a;d96d6d=feb79a;f8a892=fecdb8;f7a797=feb79a;c7815b=f1ad95;fad6b7=fee6cd;dab490=fad6b7;d1a57c=fad6b7",
+    "hairDirectives": ""
+  },
+
+  "scriptConfig": {
+    "dialogMode": "random",
+
+    "personalities": [
+      [1.0, {
+          "personality": "cheerful",
+          "reactions": {}
+        }
+      ]
+    ],
+
+    "dialog": {
+      "converse": {
+        "default": {
+          "default": [
+            "Heya.",
+            "Heard about'cha. Glad you're on my side.",
+            "Nice weapon! Did ya patent it?",
+            "This universe has a whole lot waiting for us.",
+            "You're <entityname>, right? The name's <selfname>. It's good to meet you troublemaker.",
+            "You wanna touch my ears? Tail's off limits though.",
+            "I like the Apex. They've got the brains and the brawn, it's hard to beat!",
+            "Oh Avians? They're great, minus all the trying to kill you stuff.",
+            "Humans are great! Good sense of humour.",
+            "I like the Floran... But I've got a soft spot for Strelitzia. Don't tell her.",
+            "Those Hylotl sure have a rich culture huh?.. So many artifacts up for grabs!",
+            "I like the Novakid, they dont tend to act their age. Heh. Me neither!",
+            "Bodacious. I love the Glitch. It's so funny how easy to read they are in poker!",
+            "Howdy partner.",
+            "Can I come aboard your ship? I'll try not to steal.",
+            "Don't tell me you dont know what a Kitsune is?",
+            "Nah I dont know how Kitsune as a species got started.\nIt's probably better we dont know.",
+            "Sorry if my tail gets in the way.",
+            "Can we get much higher~\n\n\n\n\n\n",
+            "That old ^orange;Starforge^reset; sure is handy, huh?",
+            "I joke around a lot, but if you need a place to stay, just gimmie the word.",
+            "There was this one time I stole a Knightfall Admiral's clothes. She did NOT like me.",
+            "Why's cash always gotta be so tight...",
+            "Ugh, my back... I have *got* to retire...",
+            "Wanna see whats in my pocket?",
+            "I don't mind you but... Some people. Sheesh. What a fashion disaster huh?",
+            "I've got a couple kids of my own. One Lamia and one centaur mermaid. Real cuties... Hey, what's that look for?",
+            "I got... REAL intimate with the Ruin once. If you catch my drift.",
+            "The damn Ruin owes me child support.",
+            "Those Unbound folk sure are hardy huh? It's good they escort refugees but... It's hard to agree with their process isn't it?",
+            "I keep saying I left all the fightin' behind me but... Here I am in a camp with you lot! It seems I just cant help myself, hahah!",
+            "Howdy.",
+            "What's on your mind?",
+            "I work on the dungeons for ^orange;Starforge^reset;. Nice to meetcha!",
+            "Oh, the eyepatch? Heh. Believe me, you dont wanna see what's under it.",
+            "The Wither is just... So gross! I much prefer the Tide.",
+            "Have you seen Neb around? God please dont tell me you've seen Neb around.",
+            "Heya cutie.",
+            "What's cookin, good lookin?",
+            "Give em hell for me.",
+            "I'm here to deliver something, and catch up with old friends.",
+            "Anyone you need killed sweetheart?",
+            "My home planet was full of funny folk of all kinds. Maybe you'd have liked it.",
+            "Live and make merry!",
+            "Wanna get drinks? It's on me",
+            "I'm not afraid to love a man. I'm not afraid to shoot him, either.",
+            "If you cant think of a reason to live, surely you have a reason you wont die?",
+            "Trickery within the scope of the rules is better known as ingenuity.",
+            "Dont set some artificial limit for yourself. You can be as good as you want to be.",
+            "I will not wish the time away,\nBut when it's time to go -\nI hope I wake upon that day,\nAnd never get to know.\nI hope the sky is brightest blue -\nI hope I've hopes to meet -\nAnd every word I hear is true,\nAnd every sound is sweet.\nI hope I leave a thousand lives\nImproved, and saved from strife -\nAnd so I hope the end arrives\nAmidst the joy of life.",
+            "One foot in front of the other, killer!",
+            "Oh me? I'm a Pirate. But not some kind of senseless bandit. Where's the romance in that? Bein' a pirate is about freedom! The journey into the unknown! The thrill of adventure! Surely you'd understand?",
+            "Your eyes look heavy... Do you need a lullaby?",
+            "Why do the Apex love those poison-pooled, lightning-walled parkour courses so much? I thought it was just a Miniknog thing, but the Unbound do it too!",
+            "I'm glad there's so much new blood around. Fills me with joy seeing you all fight for somethin' you believe in.",
+            "I've never liked cooking. But I love baking. I'll show you sometime!"
+          ]
+        }
+      }
+    }
+  },
+
+  "items": {
+    "override": [
+      [0, [{
+            "head": [{
+                "name": "starforge-monicaeyepatch"
+              }
+            ],
+            "chest": [{
+                "name": "starforge-monicachest"
+              }
+            ],
+            "legs": [{
+                "name": "starforge-monicapants"
+              }
+            ],
+            "back": [{
+                "name": "starforge-monicatail"
+              }
+            ]
+          }
+        ]]
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "itemName" : "starforge-monicatail",
+  "price" : 3500,
+  "maxStack" : 1,
+  "rarity" : "Essential",
+  "category" : "backwear",
+  "description" : "mon tail.",
+  "shortdescription" : "^pink;Monica's Fluffy Tail^reset;",
+  "tooltipKind" : "starforge-backitemexalted",
+  
+  "inventoryIcon" : "/items/armors/backitems/monicatail/monicatailicon.png",
+  "itemBackground" : "/interface/inventory/starforge-exalted.png",
+
+  "maleFrames" : "back.png",
+  "femaleFrames" : "back.png",
+
+  "statusEffects" : [
+  "starforge-marikorunboost", "starforge-marikoswimboost", "starforge-marikojumpboost",
+
+    {
+      "stat" : "biomeheatImmunity",
+      "amount" : 1.0
+    },
+    {
+      "stat" : "biomecoldImmunity",
+      "amount" : 1.0
+    },
+    {
+      "stat" : "biomeradiationImmunity",
+      "amount" : 1.0
+    },
+    {
+      "stat" : "breathProtection",
+      "amount" : 1.0
+    }
+  ],
+  
+  "builder" : "/items/buildscripts/starforge-buildexaltedarmour.lua"
+}
