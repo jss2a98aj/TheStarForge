@@ -1,0 +1,20 @@
+{
+	"id": "starforge-witherurbanweapons",
+	"title": "Warning of Inadequacy",
+	"description": "An data drive, holding a singular isolated email from an exchange.",
+	"icon": "starforge-witherurbanweapons.png",
+	"contentPages": [
+"Director Jassen,\n
+With all due respect, I must formally object to the discontinuation of our cryo projects. I understand that coil accelerators are cheaper, and that the budget isn't what it was eleven months ago. I really do. But I fear that what you perceive as 'good enough' will be woefully inadequate for dealing with this particular problem.",
+"Ballistic weaponry does little to these rotting plants regardless of increased muzzle velocity. They do however respond to cold. We have seen it in field tests, repeatedly. Not just repeatedly, but consistently across every field test run. It is more than I can say for these hybrid electromagnetic-chemical launchers. Their results are, at best, mixed.",
+"Realize that I am not saying the coil weapons are useless. What I am saying is that pulling the one approach that has real promise over costs is a decision I must push back on. I heavily suggest reconsidering.",
+"If our goal is to buy time for an evac solution, cold has little competition from increased penetration depth. I have put this writing because I want it on record that you have been informed this choice is ill advised.\n
+Respectfully,\n
+E. Marden, R&D"
+
+	],
+	"itemConfig": {
+		"rarity": "rare",
+		"price": 50
+	}
+}

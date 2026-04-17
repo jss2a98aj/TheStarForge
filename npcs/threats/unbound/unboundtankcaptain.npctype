@@ -21,7 +21,7 @@
     
     "behavior" : "mik-hostilenpc",
     
-    "bandageTime" : 60,
+    "bandageTime" : 0,
 
     "aggressive" : true,
 
@@ -142,7 +142,7 @@
     "statusEffects" : [ ]
   },
  
-  "innateStatusEffects" : [{"stat":"maxHealth","amount":5}, {"stat":"powerMultiplier","amount":0.01}, {"stat":"maxEnergy","amount":10000}],
+  "innateStatusEffects" : ["starforge-veteraneffects", {"stat":"maxHealth","amount":5}, {"stat":"powerMultiplier","amount":0.01}, {"stat":"maxEnergy","amount":10000}],
 	
   "items": {
     "override": [

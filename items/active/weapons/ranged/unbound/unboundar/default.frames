@@ -3,7 +3,7 @@
     "size" : [32, 12],
     "dimensions" : [2, 1],
     "names" : [
-      ["slide.1", "slide.2"]
+      ["idle", "reload.1"]
     ]
   }
 }

@@ -5,25 +5,22 @@
   "rarity": "Legendary",
   "description": "A Chain Gun used by Unbound Fortress units, \"Unstoppable\" type.",
   "shortdescription": "^#686F5D;UNBD^reset; \"Melter\" CG",
-  "tooltipKind": "starforge-unboundgun",
-  "category": "assaultRifle",
+  "tooltipKind": "starforge-uniquegun",
+  "category": "uniqueWeapon",
   "tooltipFieldsOverride" : {"subtitle":"Chain Gun"},
   "twoHanded": true,
   "level" : 6,
-  "itemTags": [
-    "weapon",
-    "ranged",
-    "assaultrifle"
-  ],
+  "itemTags": [ "weapon", "ranged", "assaultrifle" ],
   "inventoryIcon": "unboundchaingunicon.png",
-  "animation": "unboundchaingun.animation",
+  "manufacturer" : "unboundarmaments",
 
+  "animation": "unboundchaingun.animation",
   "animationParts": {
     "butt": "",
     "middle": "unboundchaingun.png",
     "barrel": "",
-	"middleFullbright": "unboundchaingunfullbright.png",
-	"muzzleFlash": "muzzleflash.png"
+  	"middleFullbright": "unboundchaingunfullbright.png",
+    "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-firemuzzleflash.png"
   },
   "animationCustom": {
       "particleEmitters" : {
@@ -44,15 +41,11 @@
   
   "baseOffset": [1.250, -0.125],
   "muzzleOffset": [2.5, 0.1],
-  "scripts": [
-    "/items/active/weapons/ranged/gun.lua"
-  ],
+  "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
   "elementalType": "fire",
   
   "primaryAbility": {
-    "scripts": [
-      "/items/active/weapons/ranged/starforge-gunfire.lua"
-    ],
+    "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
     "class": "StarforgeGunFire",
     "fireTime": 0.085,
     "baseDps": 11.5,
@@ -87,9 +80,9 @@
 
         "animationStates" : {
           "firing" : "fire"
-		},
-		
-		"frontArmFrame" : "run.2",
+        },
+        
+        "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       },
       "cooldown": {
@@ -101,27 +94,28 @@
         "allowRotate": true,
         "allowFlip": true,
 		
-		"frontArmFrame" : "run.2",
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       }
     }
   },
   "altAbility": {
-    "scripts": [
-      "/items/active/weapons/ranged/gunfire.lua"
-    ],
-    "class": "GunFire",
-	"name" : "Spray n' Pray",
+    "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
+    "class": "StarforgeGunFire",
+	  "name" : "Meltdown",
+
     "fireTime": 0.001,
-    "baseDps": 600.0,
+    "baseDps": 800.0,
     "energyUsage": 7000,
     "inaccuracy": 0.05,
     "projectileCount": 1,
     "fireType": "auto",
-    "projectileType": "unboundfirebullet",
+    "projectileType": "starforge-firefluxboltstatus",
     "projectileParameters": {
       "knockback": 3
     },
+    "pitchVariance" : 0.1,
+
     "stances": {
       "idle": {
         "armRotation": 0,
@@ -131,7 +125,7 @@
         "allowRotate": true,
         "allowFlip": true,
 		
-		"frontArmFrame" : "run.2",
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       },
       "fire": {
@@ -145,9 +139,9 @@
 
         "animationStates" : {
           "firing" : "fire"
-		},
-		
-		"frontArmFrame" : "run.2",
+        },
+        
+        "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       },
       "cooldown": {
@@ -159,7 +153,7 @@
         "allowRotate": true,
         "allowFlip": true,
 		
-		"frontArmFrame" : "run.2",
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       }
     }

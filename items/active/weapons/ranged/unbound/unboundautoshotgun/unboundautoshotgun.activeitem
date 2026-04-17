@@ -3,36 +3,31 @@
   "price": 500,
   "maxStack": 1,
   "rarity": "Rare",
-  "description": "An Unbound Auto-shotgun loaded with fire elemental shells. Unstoppable.",
+  "description": "An auto-shotgun sporting incendiary rounds specialised in suppressive fire.",
   "shortdescription": "^#686F5D;UNBD^reset; \"Dragon\" ASG",
-  "tooltipKind": "starforge-unboundgun",
-  "category": "shotgun",
-  "tooltipFieldsOverride" : {"subtitle":"Auto Shotgun"},
+  "tooltipKind": "starforge-uniquegun",
+  "category": "uniqueWeapon",
+  "tooltipFieldsOverride" : {
+    "subtitle":"Auto Shotgun"
+  },
   "twoHanded": true,
   "level" : 5,
-  "itemTags": [
-    "weapon",
-    "ranged",
-    "shotgun"
-  ],
-  "inventoryIcon": "unboundautoshotgunicon.png",
-  "animation": "unboundautoshotgun.animation",
+  "itemTags": [ "weapon", "ranged", "shotgun" ],
+  "manufacturer" : "unboundarmaments",
+  "inventoryIcon": "unboundautoshotgun.png:idle",
 
+  "animation" : "/items/active/weapons/ranged/animations/starforge-shellanimgun.animation",
   "animationParts": {
     "butt": "",
     "middle": "unboundautoshotgun.png",
     "barrel": "",
-	"middleFullbright": "unboundautoshotgunfullbright.png",
-	"muzzleFlash": "muzzleflash.png"
+    "middleFullbright": "",
+    "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-firemuzzleflash.png"
   },
   "animationCustom": {
     "particleEmitters" : {
-      "muzzleFlash" : {
-        "transformationGroups" : ["muzzle"],
-		"offsetRegion" : [-2.1, 0.1, -2.1, 0.1],
-        "particles" : [
-          { "particle" : "starforge-unboundfireshell" }
-        ]
+      "casing" : {
+		    "offsetRegion" : [0.25, 0.75, 0.25, 0.75]
       },
       "ammoIndicator" : {
         "active" : false,
@@ -40,39 +35,39 @@
         "transformationGroups" : ["muzzle"],
         "offsetRegion" : [0, 0, 0, 0],
         "particles" : [
-          { "particle" : "daggerblue"},
-          { "particle" : "daggerblue"},
-          { "particle" : "daggerblue"}
+          { "particle" : "starforge-smallfireflame"}
         ]
       }
     },
     "sounds": {
       "fire": [ "/sfx/gun/shotgun2.ogg" ],
-      "loadAmmo" : [ "/sfx/gun/reload/shotgun_reload_clip2.ogg" ]
+      "loadAmmo" : [ "/sfx/gun/reload/shotgun_reload_clip2.ogg" ],
+      "fireNade" : [ "/sfx/gun/grenade1.ogg" ]
     }
   },
   
   "baseOffset": [0.375, 0.3],
   "muzzleOffset": [2.125, 0.275],
-  "scripts": [
-    "/items/active/weapons/ranged/gun.lua"
-  ],
+  "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
+
   "elementalType": "fire",
+
   "primaryAbility": {
-    "scripts": [
-      "/items/active/weapons/ranged/starforge-gunfire.lua"
-    ],
+    "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
     "class": "StarforgeGunFire",
     "fireTime": 0.25,
     "baseDps": 11,
     "energyUsage": 25,
     "inaccuracy": 0.0775,
-    "projectileCount": 8,
+    "projectileCount": 6,
     "fireType": "auto",
     "projectileType": "unboundfirebullet",
     "projectileParameters": {
-      "knockback": 6
+      "knockback": 8,
+      "speed" : [125, 175]
     },
+    "animatedFire" : true,
+
     "stances": {
       "idle": {
         "armRotation": 0,
@@ -82,7 +77,7 @@
         "allowRotate": true,
         "allowFlip": true,
 		
-		"frontArmFrame" : "run.2",
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       },
       "fire": {
@@ -93,12 +88,9 @@
         "twoHanded": true,
         "allowRotate": true,
         "allowFlip": true,
-
-        "animationStates" : {
-          "firing" : "fire"
-		},
+        "burstParticleEmitters": [ "casing" ],
 		
-		"frontArmFrame" : "run.2",
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       },
       "cooldown": {
@@ -110,49 +102,78 @@
         "allowRotate": true,
         "allowFlip": true,
 		
-		"frontArmFrame" : "run.2",
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       }
     }
   },
   
   "altAbility" : {
-    "name" : "Change Firemode",
-    "scripts" : ["/items/active/weapons/ranged/abilities/loadalternateammo/starforge-loadalternateammo.lua"],
-    "class" : "StarForgeLoadAlternateAmmo",
+    "name" : "Thermite Launcher",
+    "scripts" : ["/items/active/weapons/ranged/starforge-gunfire.lua"],
+    "class" : "StarforgeGunFire",
 
-	"adaptedAbilityIndex" : 1, //Which ability to adapt (1 = primary, 2 = secondary)
-	
-	//The new stats which will overwrite the primary ability
-	"newAbility" : {
-	  "projectileParameters" : {
-		"knockback": 15
-	  },
-	  
-	  "projectileCount" : 6,
-	  
-	  "fireType" : "auto",
-	
-      "baseDps" : 10.0,	
-      "fireTime" : 0.4,
-      "energyUsage" : 35,
-	  "inaccuracy": 0.0275
-	},
+    "projectileType" : "starforge-unboundfirerocket",
+    "projectileParameters" : {
+      "speed" : 40,
+      "movementSettings" : {
+        "gravityMultiplier" : 0.7
+      },
+      "actionOnReap" : [
+        {
+          "inheritDamageFactor": 0.5,
+          "angleAdjust": 0,
+          "fuzzAngle": 30,
+          "type": "largefirecloud",
+          "action": "projectile"
+        }
+      ],
+      "timeToLive" : 5,
+      "periodicActions" : [  
+        {
+          "time" : 0.225,
+          "inheritDamageFactor": 0.1,
+          "angleAdjust": 180,
+          "fuzzAngle": 100,
+          "config" : {
+            "speed" : 7
+          },
+          "type": "largefirecloud",
+          "action": "projectile"
+        }
+      ]
+    },
+    "projectileCount" : 1,
+    "inaccuracy" : 0.01,
+    "baseDamage" : 9,
+    "energyUsage" : 65,
+    "fireTime" : 3,
+    "fireType" : "auto",
+    "useStanceDuration" : true,
+
+    "fireOffset" : [-0.125, -0.5],
+    "fireSound" : "fireNade",
+    "muzzleFlashState" : "off",
 
     "stances" : {
-      "load" : {
-        "duration" : 0.2,
-        "aimAngle" : 0,
-        "weaponAngularVelocity" : -150,
-        "armAngularVelocity" : 100,
-        "armRotation": 0,
-        "weaponRotation": 0,
-        "weaponOffset" : [0, 0],
-        "twoHanded": true,
-        "allowRotate": true,
-        "allowFlip": true,
-		
-		"frontArmFrame" : "run.2",
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 5,
+        "weaponRotation" : 5,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+        "backArmFrame" : "swim.4"
+      },
+      "cooldown" : {
+        "duration" : 0.225,
+        "armRotation" : 5,
+        "weaponRotation" : 5,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
         "backArmFrame" : "swim.4"
       }
     }

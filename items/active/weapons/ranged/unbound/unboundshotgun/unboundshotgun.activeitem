@@ -3,38 +3,59 @@
   "price": 500,
   "maxStack": 1,
   "rarity": "Rare",
-  "description": "A pump shotgun loaded with deadly fire-elemental shells.",
-  "shortdescription": "^#686F5D;UNBD^reset; \"Salamander\" SSG",
-  "tooltipKind": "starforge-unboundgun",
-  "category": "shotgun",
+  "description": "A pump shotgun commonly used in urban combat, loaded with deadly incendiary shells.",
+  "shortdescription": "^#686F5D;UNBD^reset; \"Salamander\" SG",
+  "tooltipKind": "starforge-uniquegun",
+  "category": "uniqueWeapon",
   "tooltipFieldsOverride" : {"subtitle":"Pump Shotgun"},
   "twoHanded": true,
   "level" : 5,
-  "itemTags": [
-    "weapon",
-    "ranged",
-    "shotgun"
-  ],
-  "inventoryIcon": "unboundshotgunicon.png",
-  "animation": "unboundshotgun.animation",
+  "itemTags": [ "weapon", "ranged", "shotgun" ],
+  "manufacturer" : "unboundarmaments",
+  "inventoryIcon": "unboundshotgun.png:idle",
 
+  "animation" : "/items/active/weapons/ranged/animations/starforge-shellanimgun.animation",
   "animationParts": {
     "butt": "",
-    "middle": "unboundshotgun:slides.png",
+    "middle": "unboundshotgun.png",
     "barrel": "",
-	"middleFullbright": "unboundshotgunfullbright.png",
-	"muzzleFlash": "muzzleflash.png"
+    "middleFullbright": "unboundshotgunfullbright.png",
+    "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-firemuzzleflash.png"
   },
   "animationCustom": {
+    "animatedParts" : {
+      "stateTypes" : {
+        "gun" : {
+          "states" : {
+            "reload" : {
+              "properties" : {
+                "immediateSound" : "/sfx/gun/reload/shotgun_reload_clip3.ogg"
+              }
+            }
+          }
+        }
+      },
+      "parts" : {
+        "middleFullbright" : {
+          "properties" : {
+            "offset" : [0.625, -0.250]
+          }
+        }
+      }
+    },
     "particleEmitters": {
       "casing": {
-        "emissionRate": 1,
-        "offsetRegion": [0, 0.35, 0, 0.35],
         "particles": [
           { "particle": "starforge-unboundfireshell"}
-        ],
-        "transformationGroups": [
-          "weapon"
+        ]
+      },
+      "ammoIndicator" : {
+        "active" : false,
+        "emissionRate" : 8,
+        "transformationGroups" : ["muzzle"],
+        "offsetRegion" : [0, 0, 0, 0],
+        "particles" : [
+          { "particle" : "starforge-smallfireflame"}
         ]
       }
     },
@@ -43,7 +64,9 @@
         "active" : true,
         "position" : [-0.75, -0.5],
         "transformationGroups" : ["muzzle"],
-        "color" : [80, 80, 80]
+        "color" : [125, 125, 125],
+        "pointLight" : true,
+        "pointBeam" : 1
       },
       "flashlight" : {
         "active" : true,
@@ -52,22 +75,20 @@
         "color" : [200, 200, 200],
         "pointLight" : true,
         "pointAngle" : 0.00,
-        "pointBeam" : 2.5
+        "pointBeam" : 100
       }
     },
     "sounds": {
-      "fire": [
-        "/sfx/gun/shotgun3.ogg"
-      ]
+      "fire" : [ "/sfx/gun/shotgun3.ogg" ],
+      "loadAmmo" : [ "/sfx/gun/reload/shotgun_reload_clip2.ogg" ]
     }
   },
   
   "baseOffset": [0.625, -0.250],
-  "muzzleOffset": [1.875, 0.375],
-  "scripts": [
-    "/items/active/weapons/ranged/gun.lua"
-  ],
+  "muzzleOffset": [2, 0.375],
+  "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
   "elementalType": "fire",
+
   "primaryAbility": {
     "scripts" : ["/items/active/weapons/ranged/starforge-gunfire.lua"],
     "class" : "StarforgeGunFire",
@@ -83,6 +104,7 @@
       "knockback": 8,
       "speed" : [155, 175]
     },
+
     "stances": {
       "idle": {
         "armRotation": 0,
@@ -94,35 +116,87 @@
         "frontArmFrame": "jump.1",
         "backArmFrame": "rotation"
       },
-      "fire": {
-        "duration": 0.3,
-        "armRotation": 3,
-        "weaponRotation": 3,
-        "weaponOffset" : [-0.2, 0],
-        "twoHanded": true,
-        "allowRotate": true,
-        "allowFlip": true,
+      "fire" : {
+        "duration" : 0.3,
+        "armRotation" : 4,
+        "weaponRotation" : 8,
+        "weaponOffset" : [0, 0.125],
+        "weaponRotationCenter" : [-1, 0],
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
         "frontArmFrame": "jump.1",
         "backArmFrame": "rotation"
       },
-      "cooldown": {
-        "duration": 0.35,
-        "armRotation": -2,
-        "weaponRotation": -2,
-		"weaponOffset" : [-0.2, 0],
-        "twoHanded": true,
-        "burstParticleEmitters": [
-          "casing"
-        ],
+      "cooldown" : {
+        "duration" : 0.45,
+        "armRotation" : -15,
+        "weaponRotation" : 25,
+        "weaponOffset" : [-0.125, 0.25],
+        "weaponRotationCenter" : [-1, 0],
+        "twoHanded" : true,
+        "burstParticleEmitters": [ "casing" ],
         "animationStates": {
-          "firing": "reload"
+          "gun" : "reload"
         },
-        "allowRotate": true,
-        "allowFlip": true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
         "frontArmFrame": "jump.1",
         "backArmFrame": "rotation"
       }
     }
   },
+
+  "altAbility": {
+    "name" : "Load Thermite",
+    "scripts" : ["/items/active/weapons/ranged/abilities/loadalternateammo/starforge-loadalternateammo.lua"],
+    "class" : "StarForgeLoadAlternateAmmo",
+
+    "adaptedAbilityIndex" : 1, //Which ability to adapt (1 = primary, 2 = secondary)
+    
+    //The new stats which will overwrite the primary ability
+    "newAbility" : {
+      "projectileParameters" : {
+        "knockback": 15,
+        "speed" : [125, 155]
+      },
+      
+      "projectileCount" : 7,
+
+      "projectileType" : "starforge-firefluxboltstatus",
+      
+      "fireType" : "auto",
+	
+      "baseDps" : 10.0,	
+      "fireTime" : 1.65,
+      "energyUsage" : 55,
+      "inaccuracy": 0.04
+    },
+
+    "stances" : {
+      "load" : {
+        "duration" : 0.2,
+        "aimAngle" : 0,
+        "weaponAngularVelocity" : -150,
+        "armAngularVelocity" : 100,
+        "armRotation": 0,
+        "weaponRotation": 0,
+        "weaponOffset" : [0, 0],
+        "twoHanded": true,
+        "allowRotate": true,
+        "allowFlip": true,
+        "burstParticleEmitters": [ "casing" ],
+        "animationStates": {
+          "gun" : "reload"
+        },
+
+        "frontArmFrame": "jump.1",
+        "backArmFrame": "rotation"
+      }
+    }
+  },
+
   "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
 }

@@ -2,82 +2,91 @@
   "itemName": "starforge-unboundrocketlauncher",
   "price": 1250,
   "maxStack": 1,
-  "rarity": "legendary",
-  "description": "A devastating rocket launcher fire thermite-type rockets.",
-  "tooltipKind": "starforge-unboundgun",
+  "rarity": "Legendary",
+  "description": "A devastating rocket launcher loaded with sticky thermite rockets.",
+  "tooltipKind": "starforge-uniquegun",
   "shortdescription": "^#686F5D;UNBD^reset; \"Immolator\" RL",
-  "category": "rocketLauncher",
-  "tooltipFieldsOverride" : {"subtitle":"Thermite Rocket Launcher"},
+  "category": "uniqueWeapon",
+  "tooltipFieldsOverride" : {
+    "subtitle":"Rocket Launcher",
+	
+    "altAbilityTitleLabel" : "Special:",
+    "altAbilityLabel" : "Remote Detonation"
+  },
   "twoHanded": true,
   "level": 6,
-  "itemTags": [
-    "weapon",
-    "ranged",
-    "rocketlauncher"
-  ],
-  "inventoryIcon": "unboundrocketlauncher.png",
-  "animation": "unboundrocketlauncher.animation",
+  "itemTags": [ "weapon", "ranged", "rocketlauncher" ],
+  "manufacturer" : "unboundarmaments",
+  "inventoryIcon": "unboundrocketlauncher.png:idle",
+
+  "animation" : "/items/active/weapons/ranged/animations/starforge-shellanimgun.animation",
   "animationParts": {
     "butt": "",
-    "middle": "unboundrocketlauncheranim.png:cock.1",
-    "middleFullbright": "unboundrocketlauncherfb.png",
+    "middle": "unboundrocketlauncher.png",
+    "middleFullbright": "",
     "barrel": "",
     "muzzleFlash": "/items/active/weapons/ranged/muzzleflash.png"
   },
   "animationCustom": {
-    "particleEmitters": {
-      "muzzleFlash": {
-        "transformationGroups": [
-          "muzzle"
-        ],
-        "offsetRegion": [
-          -1,
-          0.5,
-          -1,
-          0.5
-        ],
-        "particles": [
-          {
-            "particle": "starforge-unboundrocket"
+    "animatedParts": {
+      "stateTypes": {
+        "gun": {
+          "states": {
+            "reload": {
+              "frames" : 4,
+              "cycle" : 0.3,
+              "frameProperties": {
+                "immediateSound" : [ "", "", "", "/sfx/gun/starforge-rocketreload.ogg" ]
+              }
+            }
           }
+        }
+      }
+    },
+    "particleEmitters": {
+      "casing": {
+		    "offsetRegion" : [-0.625, 1.5, -0.625, 1.5],
+        "particles": [
+          { "particle" : "starforge-unboundrocket" }
         ]
       }
     },
     "sounds": {
-      "fire": [
-        "/sfx/gun/starforge-rocketfire.ogg"
-      ]
+      "fire": [ "/sfx/gun/starforge-rocketfire.ogg" ]
     }
   },
-  "baseOffset": [-1,0.4],
-  "muzzleOffset": [2,0.2],
-  "scripts": [
-    "/items/active/weapons/ranged/gun.lua"
-  ],
+
+  "baseOffset": [-0.625, 0.5],
+  "muzzleOffset": [2, 0.25],
+  
+  "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
+  
   "elementalType": "fire",
+
   "primaryAbility": {
-    "scripts": [
-      "/items/active/weapons/ranged/gunfire.lua"
-    ],
-    "class": "GunFire",
-    "fireTime": 1.20,
-    "baseDps": 3,
+    "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
+    "class": "StarforgeGunFire",
+
+    "fireTime": 1.25,
+    "baseDps": 4,
+    "tooltipDamageMultiplier" : 2.5,      //If the projectile explodes for more damage, etc
     "energyUsage": 65,
     "inaccuracy": 0,
     "projectileCount": 1,
     "fireType": "auto",
+
+	  "remoteDetonateProjectile" : true,
+    
     "projectileType": "starforge-unboundfirerocket",
     "projectileParameters": {
-      "knockback": 20
     },
+    "animatedFire" : true,
+
     "stances": {
       "idle": {
         "armRotation": 0,
         "weaponRotation": 0,
-        "weaponOffset": [
-          0,
-          0
-        ],
+        "weaponOffset": [0, 0],
         "twoHanded": true,
         "allowRotate": true,
         "allowFlip": true,
@@ -85,36 +94,25 @@
         "backArmFrame": "rotation"
       },
       "fire": {
-        "duration": 0.5,
-        "armRotation": 0,
-        "weaponRotation": 0,
-        "weaponOffset": [
-          -0.2,
-          0
-        ],
+        "duration": 0.185,
+        "armRotation": 1,
+        "weaponRotation": 1,
+        "weaponOffset": [-0.125, 0],
         "twoHanded": true,
-        "animationStates": {
-          "firing": "shoot"
-        },
         "allowRotate": true,
         "allowFlip": true,
         "frontArmFrame": "run.2",
         "backArmFrame": "rotation"
       },
       "cooldown": {
-        "duration": 0.35,
-        "armRotation": 0,
-        "weaponRotation": 0,
-        "weaponOffset": [
-          -0.2,
-          0
-        ],
+        "duration": 0.6,
+        "armRotation": 1,
+        "weaponRotation": 1,
+        "weaponOffset": [-0.125, 0],
         "twoHanded": true,
-        "animationStates": {
-          "firing": "reload"
-        },
         "allowRotate": true,
         "allowFlip": true,
+        "burstParticleEmitters": [ "casing" ],
         "frontArmFrame": "run.2",
         "backArmFrame": "rotation"
       }
