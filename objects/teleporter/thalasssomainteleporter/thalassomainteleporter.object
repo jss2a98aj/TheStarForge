@@ -82,6 +82,11 @@
 	 },
 	 
 	 {
+	  "type" : "starforge-monica",
+	  "species" : [ "human" ]
+	 },
+	 
+	 {
 	  "type" : "starforge-teskredotexe",
 	  "species" : [ "human" ]
 	 }

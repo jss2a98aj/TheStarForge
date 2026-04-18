@@ -16,8 +16,6 @@
 	"bodyDirectives": "?replace;A85636=344495;E0975C=5588D4;FFCA8A=96CBE7;6F2919=1A1C51"
   },
 
-  "damageTeamType" : "ghostly",
-
   "persistent" : true,
 
   "dropPools" : [ ],
@@ -39,7 +37,7 @@
             "Please do not dis-^#7B7B7B;* 01110100 01110101 01110010 01100100^reset;turb my work",
 			"Everyday I mo-^#7B7B7B;01101101 01101111 01100111^reset;p. It is what I was made for.",
 			"I wish my programming allowed me to s-s-s-s ^#7B7B7B;* krtz -^reset;wear. This job is very frustrating.",
-            "Be- free.",
+            "Be- ♪free.",
 			"Glory to the Unbound."
           ]
         }
@@ -47,7 +45,7 @@
       "complain" : {
         "default" : {
           "default" : [
-            "I keep and keep an-^#7B7B7B;*01100001 01110011 01110011^reset; mopping.",
+            "♪I keep and keep an-^#7B7B7B;*01100001 01110011 01110011^reset; mopping.♪",
 			"Glory to the //krtz - Apex."
           ]
         }
@@ -58,9 +56,6 @@
     "items": {
         "override": [
             [0, [{
-                "head": [{
-                    "name": "fancaphead"
-                }],
                 "primary": [
                     "broom"
                 ]
