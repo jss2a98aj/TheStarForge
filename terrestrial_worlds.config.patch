@@ -11,7 +11,7 @@
           "primaryRegion" : ["starforge-progenitorwither"], // Planet primary region
           "secondaryRegions" : ["starforge-blackrot"], // Planet secondary regions
           "dungeons" : [
-			  [1.0, "apextestfacility"]
+			      [1.0, "apextestfacility"]
           ]
         },
 		

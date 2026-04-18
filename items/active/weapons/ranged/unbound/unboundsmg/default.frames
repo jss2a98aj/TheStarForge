@@ -3,7 +3,10 @@
     "size" : [30, 15],
     "dimensions" : [2, 1],
     "names" : [
-      ["slide.1", "slide.2"]
+      ["idle", "reload.1"]
     ]
+  },
+  "aliases" : {
+    "reload.2" : "idle"
   }
 }
