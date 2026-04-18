@@ -1,9 +1,0 @@
-{
-  "name" : "starforge-heavyelecdronehead",
-  "category" : "heavyelecdrone",
-  "type" : "head",
-
-  "frames" : {
-    "head" : "heavyelecdronehead.png"
-  }
-}

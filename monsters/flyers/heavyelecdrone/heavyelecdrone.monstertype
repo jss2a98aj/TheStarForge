@@ -4,13 +4,12 @@
   "description" : "A heavy shock Unbound UMAW. Will try to kill you no matter watt.",
 
   "categories" : [ "heavyelecdrone" ],
-  "parts" : [ "body", "head", "wings" ],
-  "partParameters" : "heavyelecdrone.partparams",
+  "parts" : [ "body" ],
 
   "animation" : "heavyelecdrone.animation",
   "reversed" : true,
   
-  "dropPools" : [ { "default" : "warmongerdroneTreasure"} ],
+  "dropPools" : [ { "default" : "heavyshockumawTreasure"} ],
 
   "baseParameters" : {
     "scripts" : [
@@ -39,10 +38,11 @@
           "parameters" : {
             "cooldown" : 6.0,
 		    "aimAtTarget" : true,
+			"rotateToTarget" : false,
             "onGround" : false,
 			"inaccuracy" : 0.4,
-            "maximumRange" : 12,
-            "minimumRange" : 6,
+            "maximumRange" : 30,
+            "minimumRange" : 10,
             "windupTime" : 0.0,
             "windupStopForce" : 50,
             "windupState" : "fire",
@@ -53,10 +53,10 @@
             "fireOffset" : [-0.5, -2.0],
             "fireSound" : "fire",
             "fireState" : "",
-            "fireDelay" : 0.0,
+            "fireDelay" : 0.2,
 
             "winddownState" : "idle",
-            "winddownTime" : 0.8
+            "winddownTime" : 1.8
           }
         }
        ],
@@ -137,7 +137,6 @@
       "concurrentHostileActions" : [ ]
     },
 
-    "baseSkills" : [],
 
     "metaBoundBox" : [-2.5, -2.5, 2.5, 2.5],
     "scale" : 1.0,
@@ -190,13 +189,13 @@
           "baseValue" : 0.25
         },
         "knockbackThreshold" : {
-          "baseValue" : 9
+          "baseValue" : 0
         },
         "maxHealth" : {
-          "baseValue" : 225
+          "baseValue" : 250
         },
         "protection" : {
-          "baseValue" : 0.0
+          "baseValue" : 0.3
         },
         "healthRegen" : {
           "baseValue" : 0.5

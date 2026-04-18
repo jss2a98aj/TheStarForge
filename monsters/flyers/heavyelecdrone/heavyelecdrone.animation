@@ -69,48 +69,6 @@
     },
 
     "parts" : {
-      "backWings" : {
-        "properties" : {
-          "zLevel" : 0,
-          "centered" : true
-        },
-
-        "partStates" : {
-          "body" : {
-            "idle" : {
-              "properties" : {
-                "image" : "<partImage>:idle.<frame>"
-              }
-            },
-            "fly" : {
-              "properties" : {
-                "image" : "<partImage>:fly.<frame>"
-              }
-            },
-            "charge" : {
-              "properties" : {
-                "image" : "<partImage>:fly.<frame>"
-              }
-            },
-            "fire" : {
-              "properties" : {
-                "image" : "<partImage>:fire.<frame>"
-              }
-            },
-            "swoopwindup" : {
-              "properties" : {
-                "image" : "<partImage>:fly.<frame>"
-              }
-            },
-            "swoop" : {
-              "properties" : {
-                "image" : "<partImage>:fly.<frame>"
-              }
-            }
-          }
-        }
-      },
-
       "body" : {
         "properties" : {
           "fullbright" : false,
@@ -153,59 +111,10 @@
           }
         }
       },
-
-      "head" : {
+	  "bodyfb" : {
         "properties" : {
+          "fullbright" : true,
           "zLevel" : 2,
-          "centered" : true
-        },
-
-        "partStates" : {
-          "body" : {
-            "idle" : {
-              "properties" : {
-                "image" : "<partImage>:idle.<frame>"
-              }
-            },
-            "fly" : {
-              "properties" : {
-                "image" : "<partImage>:fly.<frame>"
-              }
-            },
-            "charge" : {
-              "properties" : {
-                "image" : "<partImage>:fly.<frame>"
-              }
-            },
-            "fire" : {
-              "properties" : {
-                "image" : "<partImage>:fire.<frame>"
-              }
-            },
-            "swoopwindup" : {
-              "properties" : {
-                "image" : "<partImage>:fly.<frame>"
-              }
-            },
-            "swoop" : {
-              "properties" : {
-                "image" : "<partImage>:fly.<frame>"
-              }
-            }
-          },
-          "damage" : {
-            "stunned" : {
-              "properties" : {
-                "image" : "<partImage>:hurt.<frame>"
-              }
-            }
-          }
-        }
-      },
-
-      "frontWings" : {
-        "properties" : {
-          "zLevel" : 3,
           "centered" : true
         },
 
@@ -303,7 +212,7 @@
 
   "sounds" : {
     "aggroHop" : [  ],
-    "fire" : [ "/sfx/gun/sniper3.ogg" ],
+    "fire" : [ "/sfx/gun/grenade1.ogg" ],
     "deathPuff" : [ "/sfx/npc/enemydeathpuff.ogg" ]
   },
 

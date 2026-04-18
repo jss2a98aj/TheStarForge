@@ -176,10 +176,21 @@
 	
 	{
 	  "op": "add",
-	  "path": "/collectables/unboundbombdrone",
+	  "path": "/collectables/unboundicedrone",
 	  "value": 	  
 	  {
 	    "order" : 117,
+	    "monsterType" : "starforge-unboundicedrone",
+	    "icon" : "/monsters/walkers/unboundicedrone/unboundicedroneicon.png"
+	  }
+	},
+	
+	{
+	  "op": "add",
+	  "path": "/collectables/unboundbombdrone",
+	  "value": 	  
+	  {
+	    "order" : 118,
 	    "monsterType" : "starforge-unboundbombdrone",
 	    "icon" : "/monsters/crawlers/unboundbombdrone/unboundbombdrone-full.png"
 	  }
@@ -189,7 +200,7 @@
 	  "path": "/collectables/heavyelecdrone",
 	  "value": 	  
 	  {
-	    "order" : 118,
+	    "order" : 119,
 	    "monsterType" : "starforge-unboundheavyelecdrone",
 	    "icon" : "/monsters/flyers/heavyelecdrone/heavyelecdrone.png"
 	  }
