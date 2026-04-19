@@ -36,11 +36,11 @@
         {
           "name" : "action-fire",
           "parameters" : {
-            "cooldown" : 6.0,
+            "cooldown" : 0.0,
 		    "aimAtTarget" : true,
 			"rotateToTarget" : false,
             "onGround" : false,
-			"inaccuracy" : 0.4,
+			"inaccuracy" : 0.2,
             "maximumRange" : 30,
             "minimumRange" : 10,
             "windupTime" : 0.0,

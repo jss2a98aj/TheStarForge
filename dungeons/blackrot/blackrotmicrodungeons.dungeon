@@ -1,0 +1,31 @@
+{
+  "metadata" : {
+    "name" : "starforge-blackrotmicrodungeons",
+	"species" : "generic",
+    "rules" : [
+    ],
+    "anchor" : [ "blackrottower1", "blackrotmassivehive" ],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 100,
+    "protected" : false
+  },
+
+  "parts" : [
+    {
+      "name" : "blackrottower1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "blackrottower1.json" ]
+    },
+	
+	{
+      "name" : "blackrotmassivehive",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "blackrotmassivehive.json" ]
+    }
+  ]
+}

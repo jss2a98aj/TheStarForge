@@ -2,6 +2,9 @@
     "type": "starforge-unboundfortress1",
     "baseType": "hostile",
  
+    "scripts" : ["/npcs/bmain.lua"],
+    "initialScriptDelta" : 5,
+ 
     "dropPools": ["unboundFortress1DeathTreasure"],
  
     "identity" : {
@@ -9,6 +12,27 @@
 	},
  
     "scriptConfig" : {
+	
+	"behavior" : "mik-hostilenpc",
+	"aggressive" : true,
+    "interactive" : false,
+	
+	"pathing" : {
+      "forceWalkingBackwards" : false,
+      "canOpenDoors" : true
+    },
+	
+	"behaviorConfig" : {
+      "rangedAimTime" : 1.2,
+	  "leapWindup" : 0.15,
+      "leapCooldown": 10,
+	  "leapChance" : 0.5,
+      "rangedWindupTime" : 0.1,
+      "rangedSwapTime" : 1,
+      "meleeSwapTime" : 1.5
+    },
+	
+	
         "dialog": {
             "attack": {
                 "default": {
@@ -30,7 +54,7 @@
         }
     },
  
-    "innateStatusEffects" : ["rage",{"stat":"maxHealth","amount":120}, {"stat":"powerMultiplier","amount":3.1}, {"stat":"maxEnergy","amount":800}],
+    "innateStatusEffects" : ["starforge-veteraneffects", "rage",{"stat":"maxHealth","amount":120}, {"stat":"powerMultiplier","amount":3.1}, {"stat":"maxEnergy","amount":1800}],
 	
     "items": {
         "override": [
@@ -55,6 +79,13 @@
     "primaryScriptSources" : [
       "/stats/starforge-npc_primary.lua",
       "/scripts/vec2.lua"
-    ]
+    ],
+	
+	"resources" : {
+      "energy" : {
+        "maxStat" : "maxEnergy",
+        "defaultPercentage" : 10.0
+      }
+	}
   }
 }

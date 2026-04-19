@@ -1,6 +1,9 @@
 {
     "type": "starforge-unboundcaptain1",
     "baseType": "hostile",
+	
+	"scripts" : ["/npcs/bmain.lua"],
+    "initialScriptDelta" : 5,
  
     "dropPools": ["unboundCaptain1DeathTreasure"],
  
@@ -8,7 +11,27 @@
     "species" : "apex"
 	},
  
-    "scriptConfig" : {
+     "scriptConfig" : {
+	
+	"behavior" : "mik-hostilenpc",
+	"aggressive" : true,
+    "interactive" : false,
+	
+	"pathing" : {
+      "forceWalkingBackwards" : false,
+      "canOpenDoors" : true
+    },
+	
+	"behaviorConfig" : {
+      "rangedAimTime" : 0.6,
+	  "leapWindup" : 0.15,
+      "leapCooldown": 8,
+	  "leapChance" : 0.75,
+      "rangedWindupTime" : 0.1,
+      "rangedSwapTime" : 1,
+      "meleeSwapTime" : 1.5
+    },
+	
         "dialog": {
             "attack": {
                 "default": {
@@ -30,7 +53,7 @@
         }
     },
  
-    "innateStatusEffects" : ["rage",{"stat":"maxHealth","amount":50}, {"stat":"powerMultiplier","amount":2.0}],
+    "innateStatusEffects" : ["starforge-veteraneffects", "rage",{"stat":"maxHealth","amount":50}, {"stat":"powerMultiplier","amount":2.0}],
 	
     "items": {
         "override": [

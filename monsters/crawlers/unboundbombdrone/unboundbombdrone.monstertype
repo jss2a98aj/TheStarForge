@@ -1,7 +1,7 @@
 {
   "type" : "starforge-unboundbombdrone",
   "shortdescription" : "Tick UMAW",
-  "description" : "A tick Unbound Mobile Assault Weapon. Beware of its explosive personnality.",
+  "description" : "A tick Unbound Mobile Assault Weapon. Beware of its explosive personality.",
 
   "categories" : [ "unboundbombdrone" ],
   "parts" : [ "body", "head" ],
