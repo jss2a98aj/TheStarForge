@@ -339,7 +339,7 @@
         {"weight" : 0.599, "pool" : "robotTreasure"},
         {"weight" : 0.300, "item" : "stickofram"},
         {"weight" : 0.100, "item" : "staticcell"},
-		{"weight" : 0.01, "item" : "starforge-shockumawaf"}
+		{"weight" : 0.01, "item" : "starforge-heavyshockumawaf"}
       ],
       "poolRounds" : [
         [0.90, 1],

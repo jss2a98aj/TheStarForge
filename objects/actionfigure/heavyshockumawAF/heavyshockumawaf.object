@@ -1,0 +1,33 @@
+{
+  "objectName" : "starforge-heavyshockumawaf",
+  "colonyTags" : ["pretty"],
+  "rarity" : "Legendary",
+  "category" : "actionFigure",
+  "price" : 5000,
+  "printable" : false,
+  "description" : "The label reads, \"Will try to kill you no matter watt.\"",
+  "shortdescription" : "Heavy Shock UMAW Figurine",
+  "collectablesOnPickup" : { "actionfigures" : "starforge-heavyshockumawaf" },
+
+
+  "inventoryIcon" : "heavyshockumawaf.png",
+  "orientations" : [
+    {
+      "image" : "heavyshockumawaf.png:<color>",
+      "imagePosition" : [-2, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaces" : [ [0, 0], [0, 1] ],  
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "heavyshockumawaf.png:<color>",
+      "imagePosition" : [-2, 0],
+      "direction" : "right",
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

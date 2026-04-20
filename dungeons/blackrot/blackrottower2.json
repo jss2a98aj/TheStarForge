@@ -5,7 +5,7 @@
  "layers":[
         {
          "compression":"zlib",
-         "data":"eJztmV2OwyAMhHngJnu63GLvsofpW3qlqtodrWXZhBC7QdgjjfJjQPMJSqrkUcr3I51Op9PpdDqdTpu6TK4IjJqicHJFYoUisULJuy4rlLxrKxIrlLxrK3nXVvKureRdWzPz\/nz92lJWvNa5MObMvCPZtH4erG958h5lRr3FbC3P9dzDq\/WffX659nKOF316+47Kkpfm28t\/fu2edI2jN6\/1b3hvuJRjdoxnKev3G8i3\/V1rvLTeGmt2Xmgj59LcUl7OhJr3WrZk3tj1O\/uu1DVea3m+f+aZ+bqVmPjcW8vzG4PEq80vbSPV6tUwxecbEs3Vw1uFOt3LpHFH5PWdUOPlexXqVahrvCPMZzk19icZ80myVOG8Ek7wVNa29azibXGfn+NowQi3\/j\/wbJS11f5ozFF7s87oSKzReCOsZ+S03LNmZrfmnJnZk3U27k+x3s38ac4rzL39pHZ3cp7l721\/d\/4rzHfnSMfzC7HuVbc=",
+         "data":"eJztmgGqwyAMhnOM4VF2ugfvZttg13r4aCCkMUZNW9P2h7BiN\/UzmkTYF+Dne9u\/QVBdhZPrSqyom\/e8rKibt4\/1sZFtoS14e5V\/+1psD97ePvg8R2xr3ixv3qP7qenmtYvP8bMYkGfa1tIXtnnHtr14NfYS68toLczevCiN88M+o\/Iig8Yp+b\/G6xnPPXm1s6Wtg4W3NrZVnrz588lMWgPOHIHX4ltk\/iVWWoNovNJ+La0BZ5fmHZHXugaReQHkmKTxR+cF4flsvNTSYigP3iPzr5SHaAyiQnYpF7XwSjXVUbwlv6JwHbRcxOc8M2\/pHsB9i7nIMueZ97N25+vJRdIYtTlY5c1buve1xCppDNqP9r4mL16ci+V+FInXcq5G7vnau9odw6JRXpqL0Err8FT6qY2TVbtDWuTt39KdSMpFUXiBjYNMmm+lfkbi7968WVhbUF7uU15vWec7S\/6V6ifkesP6LJe+28p7VH0l8Wa9idE2Krou0XktsrKC8J0Z9nOCtU810ZjWytv6vqRRXnpWNW6ap87CqwljWe9+zjqivkrLGDhmr0XhBVjHEZ6HaKzmuWqUV3tv0SgvctB6g7PyWuQB9XnOyktrKV5XSawjvC3vS\/Lg5Xu5tLfpnm7l9c6\/VuaRGCWZNo53fdXzfyR6Vvk+7mmbnXdP\/3r048GLZ5E+09pSsiT8psYrjSO17c2bmF2FV+LrnefMvCV\/Jlizn5lX8v1MvDP9F7on\/nLV+GZjHlEPa1TmEdYr8t4W2\/4AiY8cvQ==",
          "encoding":"base64",
          "height":60,
          "id":1,
@@ -19,7 +19,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJztl1sOgyAQRflwJ12d26rraXVJjakTyWQeoKBg7kkmNTKQeyo1JQQAAAAAAAAAAAAAAAAAAAAAAKjLsNXTGaJ6v\/br8dZUx\/lsn6vLN\/wrhP06rrVHql6QPCzHSfGdorHWiPNZz8zyIrd1T\/N7rSHltp6d5tsblJ\/eO9xf+4326ktwX4veXTmez5NciSc6AQB8Wj1P1Mh19flJ+n8vMbBKIaU3XpOfnT7RtZRTy+qhrUXFXSlbTj+fq415Wc54pjpLmSxfGtc8xsS+Ws7aevNWPNOcUdJ6\/P7RKu0b15Lpqnl6vql5zpLiS5XiaPlKa1rz+HdRmhJ7zXKWfBell\/vWooaztW+8\/X8VpRzO7IerOeJawvdOcvOmzpP6WsTL7\/X3SM\/ZQd\/8AP5ZeME=",
+         "data":"eJztmc1t6zAQhJnD68EwcksX6ch1pAM1YCBFuICXnJ2WAsIaeDJYiitbArWEBhhY1i8\/kdwlxZR27dq1y9a\/l9YlWE+Z7fx2d6+sn283nw33pIN4oF8Y70LPnfJWdRx\/\/6c7X94GI++b8kG2t6ojbeeynlKdrRfeXM5T8rdZtAG09Tm8reLgUbZPzus0poEXfUDF7+ZzjIHM3Irfw6usYOAYkDXVHjgXtMx5NV7Nz2diRVtGnyj1dSvvbVFcD1Zb9vCi\/pU30rimxmvleGa2+vuW5eH9Gg1WcCO+vb7cHEFe3pTu3BzPEa+j8SIP8z7lTekvL+frCLycZwbZr7zf47HovNwneb\/F+5364M19VsemvfJmeXjZUXnBqOOyqfx7MI5nReJVKU9t\/hgp\/1qay5sViVfrudf2nJXjc423h3iVGZF7PbzR8xF4eRwJ9cRb6oMY9yfjWFRelJPLy99t9bzIvPz93eLlMcdc3q3lX50XWHNePT9qfL6kWxl1TWUOb5T8e0l33qn5Xo03wviKWXvnzWXwsmYxr7W+0qo9l+YzrByTNLbM5UUcbx2varzWeq9+\/6\/xngu8LfKvxQuuQQxWDy\/Eaw5D8vOulX91PVBjCVhPqby24+HldXJv\/a6h4\/gM3ta4acVb1lRZ8Z4GOacVr5UnOGZyuT3Xq3DdVurXyhOWnuV9ZDy5hrzPWZrXk3\/X0Nq8pfM846s19OxzIvJa8Wnp60ttuORdu3bN18\/okjAH7kE\/YtVFHEng0bgI1utoZYSn4urVcKv4fE1\/6zDf+4P8TkZZS8fZH+O9LNar8Ry9H\/+37vMML5gfee81a5949DlL8TLzErb4LN5nvEXVYt2u5fQLl\/L4xw==",
          "encoding":"base64",
          "height":60,
          "id":2,
@@ -50,104 +50,243 @@
          "name":"objects",
          "objects":[
                 {
-                 "gid":8970,
-                 "height":24,
-                 "id":1118,
+                 "height":8,
+                 "id":1177,
+                 "name":"",
+                 "properties":
+                    {
+                     "monster":"starforge-blackrotfly"
+                    },
+                 "propertytypes":
+                    {
+                     "monster":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":168,
+                 "y":88
+                }, 
+                {
+                 "height":8,
+                 "id":1214,
+                 "name":"",
+                 "properties":
+                    {
+                     "monster":"starforge-blackrotfly"
+                    },
+                 "propertytypes":
+                    {
+                     "monster":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":192,
+                 "y":88
+                }, 
+                {
+                 "height":8,
+                 "id":1215,
+                 "name":"",
+                 "properties":
+                    {
+                     "monster":"starforge-blackrotfly"
+                    },
+                 "propertytypes":
+                    {
+                     "monster":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":240,
+                 "y":120
+                }, 
+                {
+                 "height":8,
+                 "id":1221,
+                 "name":"",
+                 "properties":
+                    {
+                     "monster":"starforge-blackrotfly"
+                    },
+                 "propertytypes":
+                    {
+                     "monster":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":344,
+                 "y":136
+                }, 
+                {
+                 "height":8,
+                 "id":1222,
+                 "name":"",
+                 "properties":
+                    {
+                     "monster":"starforge-blackrotfly"
+                    },
+                 "propertytypes":
+                    {
+                     "monster":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":184,
+                 "y":336
+                }, 
+                {
+                 "gid":5757,
+                 "height":40,
+                 "id":1235,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":48,
+                 "x":80,
+                 "y":432
+                }, 
+                {
+                 "gid":5757,
+                 "height":40,
+                 "id":1236,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":48,
+                 "x":208,
+                 "y":432
+                }, 
+                {
+                 "gid":5757,
+                 "height":40,
+                 "id":1237,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":48,
+                 "x":288,
+                 "y":432
+                }, 
+                {
+                 "gid":5757,
+                 "height":40,
+                 "id":1238,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":48,
+                 "x":352,
+                 "y":432
+                }, 
+                {
+                 "gid":5319,
+                 "height":40,
+                 "id":1239,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":248,
+                 "y":56
+                }, 
+                {
+                 "gid":4412,
+                 "height":8,
+                 "id":1240,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":40,
+                 "x":120,
+                 "y":392
+                }, 
+                {
+                 "gid":4412,
+                 "height":8,
+                 "id":1241,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":40,
+                 "x":176,
+                 "y":392
+                }, 
+                {
+                 "gid":4412,
+                 "height":8,
+                 "id":1242,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":40,
+                 "x":120,
+                 "y":256
+                }, 
+                {
+                 "gid":4412,
+                 "height":8,
+                 "id":1243,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":40,
+                 "x":144,
+                 "y":144
+                }, 
+                {
+                 "gid":4426,
+                 "height":16,
+                 "id":1244,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":192,
+                 "y":368
+                }, 
+                {
+                 "gid":6359,
+                 "height":16,
+                 "id":1245,
                  "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":24,
-                 "x":248,
-                 "y":368
+                 "x":128,
+                 "y":320
                 }, 
                 {
-                 "gid":8849,
+                 "gid":491,
                  "height":24,
-                 "id":1119,
+                 "id":1246,
                  "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":16,
-                 "x":288,
-                 "y":368
-                }, 
-                {
-                 "gid":8915,
-                 "height":16,
-                 "id":1120,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":16,
-                 "x":144,
-                 "y":360
-                }, 
-                {
-                 "gid":9215,
-                 "height":16,
-                 "id":1121,
-                 "name":"",
-                 "properties":
-                    {
-                     "parameters":"{\"treasurePools\":[\"progenitorChestTreasure\"]}"
-                    },
-                 "propertytypes":
-                    {
-                     "parameters":"string"
-                    },
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":16,
-                 "x":168,
-                 "y":368
-                }, 
-                {
-                 "gid":9215,
-                 "height":16,
-                 "id":1123,
-                 "name":"",
-                 "properties":
-                    {
-                     "parameters":"{\"treasurePools\":[\"progenitorChestTreasure\"]}"
-                    },
-                 "propertytypes":
-                    {
-                     "parameters":"string"
-                    },
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":16,
-                 "x":280,
-                 "y":256
-                }, 
-                {
-                 "gid":9214,
-                 "height":62,
-                 "id":1124,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":39,
-                 "x":200,
-                 "y":360
-                }, 
-                {
-                 "gid":2147492862,
-                 "height":62,
-                 "id":1125,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":39,
-                 "x":272,
-                 "y":344
+                 "width":32,
+                 "x":328,
+                 "y":432
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -172,83 +311,7 @@
          "draworder":"topdown",
          "id":6,
          "name":"monsters & npcs",
-         "objects":[
-                {
-                 "height":8,
-                 "id":1115,
-                 "name":"",
-                 "properties":
-                    {
-                     "monster":"starforge-witherhusk"
-                    },
-                 "propertytypes":
-                    {
-                     "monster":"string"
-                    },
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":8,
-                 "x":248,
-                 "y":328
-                }, 
-                {
-                 "height":8,
-                 "id":1116,
-                 "name":"",
-                 "properties":
-                    {
-                     "monster":"starforge-witherhusk"
-                    },
-                 "propertytypes":
-                    {
-                     "monster":"string"
-                    },
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":8,
-                 "x":168,
-                 "y":328
-                }, 
-                {
-                 "height":8,
-                 "id":1117,
-                 "name":"",
-                 "properties":
-                    {
-                     "monster":"starforge-witherhusk"
-                    },
-                 "propertytypes":
-                    {
-                     "monster":"string"
-                    },
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":8,
-                 "x":344,
-                 "y":328
-                }, 
-                {
-                 "height":8,
-                 "id":1122,
-                 "name":"",
-                 "properties":
-                    {
-                     "monster":"starforge-tanglevinereanimator"
-                    },
-                 "propertytypes":
-                    {
-                     "monster":"string"
-                    },
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":8,
-                 "x":272,
-                 "y":200
-                }],
+         "objects":[],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -292,8 +355,8 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":400,
-                 "y":400
+                 "x":424,
+                 "y":448
                 }, 
                 {
                  "gid":214,
@@ -305,7 +368,7 @@
                  "visible":true,
                  "width":8,
                  "x":80,
-                 "y":104
+                 "y":16
                 }, 
                 {
                  "gid":214,
@@ -317,7 +380,7 @@
                  "visible":true,
                  "width":8,
                  "x":240,
-                 "y":104
+                 "y":16
                 }, 
                 {
                  "gid":214,
@@ -329,7 +392,7 @@
                  "visible":true,
                  "width":8,
                  "x":392,
-                 "y":104
+                 "y":16
                 }, 
                 {
                  "gid":214,
@@ -341,7 +404,7 @@
                  "visible":true,
                  "width":8,
                  "x":464,
-                 "y":240
+                 "y":160
                 }, 
                 {
                  "gid":214,
@@ -353,7 +416,7 @@
                  "visible":true,
                  "width":8,
                  "x":8,
-                 "y":240
+                 "y":160
                 }, 
                 {
                  "gid":214,
@@ -365,7 +428,7 @@
                  "visible":true,
                  "width":8,
                  "x":80,
-                 "y":360
+                 "y":432
                 }, 
                 {
                  "gid":214,
@@ -377,7 +440,7 @@
                  "visible":true,
                  "width":8,
                  "x":392,
-                 "y":360
+                 "y":432
                 }, 
                 {
                  "gid":202,
@@ -389,7 +452,7 @@
                  "visible":true,
                  "width":8,
                  "x":392,
-                 "y":360
+                 "y":432
                 }, 
                 {
                  "gid":202,
@@ -401,7 +464,7 @@
                  "visible":true,
                  "width":8,
                  "x":464,
-                 "y":240
+                 "y":160
                 }, 
                 {
                  "gid":202,
@@ -413,7 +476,7 @@
                  "visible":true,
                  "width":8,
                  "x":392,
-                 "y":104
+                 "y":16
                 }, 
                 {
                  "gid":202,
@@ -425,7 +488,7 @@
                  "visible":true,
                  "width":8,
                  "x":240,
-                 "y":104
+                 "y":16
                 }, 
                 {
                  "gid":202,
@@ -437,7 +500,7 @@
                  "visible":true,
                  "width":8,
                  "x":80,
-                 "y":104
+                 "y":16
                 }, 
                 {
                  "gid":202,
@@ -449,7 +512,7 @@
                  "visible":true,
                  "width":8,
                  "x":8,
-                 "y":240
+                 "y":160
                 }, 
                 {
                  "gid":202,
@@ -461,7 +524,7 @@
                  "visible":true,
                  "width":8,
                  "x":80,
-                 "y":360
+                 "y":432
                 }, 
                 {
                  "gid":203,
@@ -472,8 +535,32 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":72,
-                 "y":400
+                 "x":48,
+                 "y":448
+                }, 
+                {
+                 "gid":203,
+                 "height":8,
+                 "id":1226,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":320,
+                 "y":472
+                }, 
+                {
+                 "gid":203,
+                 "height":8,
+                 "id":1227,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":136,
+                 "y":472
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -493,7 +580,7 @@
          "y":0
         }],
  "nextlayerid":11,
- "nextobjectid":1126,
+ "nextobjectid":1247,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
