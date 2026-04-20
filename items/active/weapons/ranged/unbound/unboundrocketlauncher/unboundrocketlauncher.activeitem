@@ -2,7 +2,7 @@
   "itemName": "starforge-unboundrocketlauncher",
   "price": 1250,
   "maxStack": 1,
-  "rarity": "Legendary",
+  "rarity": "Rare",
   "description": "A devastating rocket launcher loaded with sticky thermite rockets.",
   "tooltipKind": "starforge-uniquegun",
   "shortdescription": "^#686F5D;UNBD^reset; \"Immolator\" RL",

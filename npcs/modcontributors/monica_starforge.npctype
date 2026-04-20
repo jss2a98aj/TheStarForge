@@ -1,5 +1,5 @@
 {
-  "type": "monica_starforge",
+  "type": "starforge-monica",
   "baseType": "outpostvisitor",
 
   "identity": {
@@ -19,6 +19,8 @@
     "emoteDirectives": "?replace;f9d8b3=fee6cd;dab490=f1ad95;f79586=feb79a;d96d6d=feb79a;f8a892=fecdb8;f7a797=feb79a;c7815b=f1ad95;fad6b7=fee6cd;dab490=fad6b7;d1a57c=fad6b7",
     "hairDirectives": ""
   },
+
+  "damageTeamType": "ghostly",
 
   "scriptConfig": {
     "dialogMode": "random",

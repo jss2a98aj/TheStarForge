@@ -3,62 +3,69 @@
   "price": 1000,
   "maxStack": 1,
   "rarity": "Rare",
-  "description": "A burst pistol, often used by Unbound officers.",
+  "description": "A pistol sporting a 3 round burst with incendiary rounds.",
   "shortdescription": "^#686F5D;UNBD^reset; \"Hornet\" BP",
-  "tooltipKind": "starforge-unboundgun",
-  "category": "pistol",
+  "tooltipKind": "starforge-uniquegun",
+  "category": "uniqueWeapon",
   "tooltipFieldsOverride" : {"subtitle":"Burst Pistol"},
   "twoHanded": false,
   "level": 5,
-  "itemTags": [
-    "weapon",
-    "ranged",
-    "pistol"
-  ],
-  "inventoryIcon": "unboundburstpistolicon.png",
-  "animation": "unboundburstpistol.animation",
+  "itemTags": [ "weapon", "ranged", "pistol" ],
+  "manufacturer" : "unboundarmaments",
+  "inventoryIcon": "unboundburstpistol.png:idle",
 
+  "animation" : "/items/active/weapons/ranged/animations/starforge-shellanimgun.animation",
   "animationParts": {
     "butt": "",
     "middle": "unboundburstpistol.png",
     "barrel": "",
-	"middleFullbright": "unboundburstpistolfullbright.png",
-    "muzzleFlash": "muzzleflash.png"
+	  "middleFullbright": "",
+    "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-firemuzzleflash.png"
   },
   "animationCustom": {
-      "particleEmitters" : {
+    "animatedParts": {
+      "stateTypes": {
+        "gun": {
+          "states": {
+            "reload": {
+              "frames" : 1,
+              "cycle" : 0.08
+            }
+          }
+        }
+      }
+    },
+    "particleEmitters" : {
       "muzzleFlash" : {
-        "transformationGroups" : ["muzzle"],
-		"offsetRegion" : [-0.250, 0.1, -0.250, 0.1],
+		    "offsetRegion" : [-1, 0.25, -1, 0.25],
         "particles" : [
           { "particle" : "starforge-unboundrifle" }
+        ]
+      },
+      "casing" : {
+		    "offsetRegion" : [-0.125, 0.5, -0.125, 0.5],
+        "particles" : [
         ]
       }
     },
     "sounds": {
-      "fire": [
-        "/sfx/gun/pistol1.ogg"
-      ]
+      "fire": [ "/sfx/gun/pistol1.ogg" ]
     }
   },
   
-  "baseOffset": 
-  [0.250,0.125],
+  "baseOffset" : [0.250,0.125],
   
-  "muzzleOffset": 
-  [1.125,0.375],
+  "muzzleOffset" : [1.125, 0.375],
   
-  "scripts": [
-    "/items/active/weapons/ranged/gun.lua"
-  ],
+  "scripts" : [ "/items/active/weapons/ranged/starforge-gun.lua" ],
   "elementalType": "fire",
   "primaryAbility": {
     "scripts": [
       "/items/active/weapons/ranged/starforge-gunfire.lua"
     ],
     "class": "StarforgeGunFire",
-    "fireTime": 0.4,
-    "baseDps": 9,
+    "fireTime": 0.3,
+    "baseDps": 5,
     "energyUsage": 17,
     "inaccuracy": 0.001,
     "projectileCount" : 1,
@@ -69,7 +76,9 @@
     "projectileParameters": {
       "knockback": 3
     },
-          "stances" : {
+    "animatedFire" : true,
+
+    "stances" : {
       "idle" : {
         "armRotation" : 0,
         "weaponRotation" : 0,
@@ -83,8 +92,9 @@
         "armRotation" : 5,
         "weaponRotation" : 5,
         "twoHanded" : false,
+        "burstParticleEmitters": [ "casing" ],
 
-        "allowRotate" : false,
+        "allowRotate" : true,
         "allowFlip" : true
       },
       "cooldown" : {
@@ -93,7 +103,7 @@
         "weaponRotation" : 5,
         "twoHanded" : false,
 
-        "allowRotate" : false,
+        "allowRotate" : true,
         "allowFlip" : true
       }
     }

@@ -1,0 +1,17 @@
+{
+  "name" : "starforge-rottingwinds",
+  "effectConfig" : {
+    "tickDamagePercentage" : 0.125,
+    "tickTime" : 1
+  },
+  "defaultDuration" : 5,
+
+  "scripts" : [
+    "starforge-rottingwinds.lua"
+  ],
+
+  "animationConfig" : "starforge-rottingwinds.animation",
+
+  "label" : "Rotting Winds",
+  "icon" : "/interface/statuses/starforge-rottingwinds.png"
+}

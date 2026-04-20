@@ -3,11 +3,11 @@
     "op": "add",
     "path": "/withered",
     "value": [
-		[0.50, "junkstorm"],
-		[0.20, "groundmist"],
-		[0.10, "rain"], 
-		[0.20, "clear"]
+      [0.5, "starforge-rottingwinds"], 
+      [0.15, "groundmist"],
+      [0.15, "junkstorm"],
+      [0.1, "rain"], 
+      [0.1, "clear"]
     ]
   }
-
 ]

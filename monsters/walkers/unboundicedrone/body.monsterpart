@@ -5,6 +5,6 @@
 
   "frames" : {
     "body" : "unboundicedrone.png",
-	"bodynobright" : "unboundicedronenobright.png"
+	"bodyFullbright" : "unboundicedronefullbright.png"
   }
 }

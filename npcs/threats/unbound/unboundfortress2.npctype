@@ -9,6 +9,26 @@
 	},
  
     "scriptConfig" : {
+	
+	"behavior" : "mik-hostilenpc",
+	"aggressive" : true,
+    "interactive" : false,
+	
+	"pathing" : {
+      "forceWalkingBackwards" : false,
+      "canOpenDoors" : true
+    },
+	
+	"behaviorConfig" : {
+      "rangedAimTime" : 0.3,
+	  "leapWindup" : 0.15,
+      "leapCooldown": 13,
+	  "leapChance" : 0.35,
+      "rangedWindupTime" : 0.1,
+      "rangedSwapTime" : 1,
+      "meleeSwapTime" : 1.5
+    },
+	
         "dialog": {
             "attack": {
                 "default": {
@@ -30,7 +50,7 @@
         }
     },
  
-    "innateStatusEffects" : ["rage",{"stat":"maxHealth","amount":80}, {"stat":"powerMultiplier","amount":1.40}],
+    "innateStatusEffects" : ["starforge-veteraneffects", "rage",{"stat":"maxHealth","amount":80}, {"stat":"powerMultiplier","amount":1.40}],
 	
     "items": {
         "override": [

@@ -215,17 +215,7 @@
         "distribution" : "/biomes/distributions.config:mainBiomeMicrodungeon",
 
         "type" : "microdungeon",
-        "microdungeons" : [ "forestmicrodungeons" ]
-      },
-
-      {
-        "mode" : "floor",
-        "priority" : 1,
-        "variants" : 1,
-        "distribution" : "/biomes/distributions.config:mainBiomeEncounterDungeon",
-
-        "type" : "microdungeon",
-        "microdungeons" : [ "encounterdungeons" ]
+        "microdungeons" : [ "starforge-blackrotmicrodungeons" ]
       },
 
       {

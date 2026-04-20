@@ -1,6 +1,9 @@
 {
     "type": "starforge-unboundsoldier",
     "baseType": "hostile",
+	
+	"scripts" : ["/npcs/bmain.lua"],
+    "initialScriptDelta" : 5,
  
     "dropPools": ["unboundSoldierDeathTreasure"],
 	
@@ -10,6 +13,26 @@
 	
  
     "scriptConfig" : {
+	
+	"behavior" : "mik-hostilenpc",
+	"aggressive" : true,
+    "interactive" : false,
+	
+	"pathing" : {
+      "forceWalkingBackwards" : false,
+      "canOpenDoors" : true
+    },
+	
+	"behaviorConfig" : {
+      "rangedAimTime" : 0.9,
+      "rangedWindupTime" : 0.1,
+      "rangedSwapTime" : 1,
+	  "leapWindup" : 0.15,
+      "leapCooldown": 50,
+	  "leapChance" : 0.01,
+      "meleeSwapTime" : 1.5
+    },
+	
         "dialog": {
             "attack": {
                 "default": {

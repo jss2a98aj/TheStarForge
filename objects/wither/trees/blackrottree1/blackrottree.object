@@ -16,7 +16,7 @@
   "hylotlDescription" : "A Sickamore tree. They're strangely linked to the Blackrot strand.",
   "novakidDescription" : "Never seen a tree like this before.",
 
-  
+  "breakDropPool" : "blackrotmaterialTreasure",
 
   "inventoryIcon" : "icon.png",
   "orientations" : [

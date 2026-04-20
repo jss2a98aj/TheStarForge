@@ -2,60 +2,58 @@
   "itemName": "starforge-unboundsmg",
   "price": 1000,
   "maxStack": 1,
-  "rarity": "Legendary",
+  "rarity": "Rare",
   "description": "An Unbound SMG loaded with elemental bullets. Often used by Unbound \"Harasser\" Commando types.",
-  "shortdescription": "^#686F5D;UNBD^reset; \"Harasser\" SMG",
-  "tooltipKind": "starforge-unboundgun",
-  "category": "machinePistol",
+  "shortdescription": "\"Harasser\" SMG",
+  "tooltipKind": "starforge-uniquegun",
+  "category": "uniqueWeapon",
   "tooltipFieldsOverride" : {"subtitle":"SMG"},
   "twoHanded": true,
   "level" : 6,
-  "itemTags": [
-    "weapon",
-    "ranged",
-    "assaultrifle"
-  ],
-  "inventoryIcon": "unboundsmgicon.png",
-  "animation": "unboundsmg.animation",
+  "itemTags": [ "weapon", "ranged", "assaultrifle" ],
+  "inventoryIcon": "unboundsmg.png:idle",
 
+  "animation" : "/items/active/weapons/ranged/animations/starforge-shellanimgun.animation",
   "animationParts": {
     "butt": "",
     "middle": "unboundsmg.png",
     "barrel": "",
-	"middleFullbright": "unboundsmgfullbright.png",
-	"muzzleFlash": "muzzleflash.png"
+    "middleFullbright": "",
+    "muzzleFlash": ""
   },
   "animationCustom": {
-      "particleEmitters" : {
+    "particleEmitters" : {
       "muzzleFlash" : {
-        "transformationGroups" : ["muzzle"],
-		"offsetRegion" : [-2.1, 0.1, -2.1, 0.1],
+        "particles" : [
+          { "particle" : "rocketsmoke" }
+        ]
+      },
+      "casing" : {
+		    "offsetRegion" : [0.125, 0.5, 0.125, 0.5],
         "particles" : [
           { "particle" : "starforge-unboundrifle" }
         ]
       }
     },
     "sounds": {
-      "fire": [
-        "/sfx/gun/pistol2.ogg"
-      ]
+      "fire": [ "/sfx/gun/uzi1.ogg", "/sfx/gun/uzi2.ogg", "/sfx/gun/uzi3.ogg" ]
     }
   },
   
   "baseOffset": [0.375, 0.0],
   "muzzleOffset": [2.0, 0.500],
-  "scripts": [
-    "/items/active/weapons/ranged/gun.lua"
-  ],
+
+  "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
+
   "elementalType": "electric",
+
   "primaryAbility": {
-    "scripts": [
-      "/items/active/weapons/ranged/starforge-gunfire.lua"
-    ],
+    "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
     "class": "StarforgeGunFire",
-    "fireTime": 0.1,
-    "baseDps": 12,
-    "energyUsage": 25,
+
+    "fireTime": 0.04,
+    "baseDps": 13,
+    "energyUsage": 35,
     "inaccuracy": 0.003,
     "projectileCount": 1,
     "fireType": "auto",
@@ -72,13 +70,13 @@
         "allowRotate": true,
         "allowFlip": true,
 		
-		"frontArmFrame" : "run.2",
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       },
       "fire": {
         "duration": 0,
-        "armRotation": 2,
-        "weaponRotation": 1,
+        "armRotation": 0,
+        "weaponRotation": 0,
         "weaponOffset" : [-0.1, 0],
         "twoHanded": true,
         "allowRotate": true,
@@ -86,15 +84,15 @@
 
         "animationStates" : {
           "firing" : "fire"
-		},
+		    },
 		
-		"frontArmFrame" : "run.2",
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       },
       "cooldown": {
-        "duration": 0.05,
-        "armRotation": 2,
-        "weaponRotation": 1,
+        "duration": 0.04,
+        "armRotation": 0,
+        "weaponRotation": 0,
         "weaponOffset" : [-0.1, 0],
         "twoHanded": true,
         "allowRotate": true,

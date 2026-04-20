@@ -1,9 +1,9 @@
 {  
   "frameGrid" : {
     "size" : [37, 15],
-    "dimensions" : [2, 1],
+    "dimensions" : [4, 1],
     "names" : [
-      ["slide.1", "slide.2"]
+      ["idle", "reload.1", "reload.2", "reload.3"]
     ]
   }
 }

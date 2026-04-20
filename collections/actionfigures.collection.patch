@@ -24,6 +24,7 @@
 ,{"op":"add","path":"/collectables/starforge-shockumawaf","value":{"order":124,"item":"starforge-shockumawaf"}}
 ,{"op":"add","path":"/collectables/starforge-iceumawaf","value":{"order":125,"item":"starforge-iceumawaf"}}
 ,{"op":"add","path":"/collectables/starforge-bombumawaf","value":{"order":126,"item":"starforge-bombumawaf"}}
+,{"op":"add","path":"/collectables/starforge-heavyshockumawaf","value":{"order":127,"item":"starforge-heavyshockumawaf"}}
 ,{"op":"add","path":"/collectables/starforge-progenitorslitheraf","value":{"order":120,"item":"starforge-progenitorslitheraf"}}
 ,{"op":"add","path":"/collectables/starforge-tanglevinereanimatoraf","value":{"order":121,"item":"starforge-tanglevinereanimatoraf"}}
 ,{"op":"add","path":"/collectables/starforge-witherhuskaf","value":{"order":122,"item":"starforge-witherhuskaf"}}

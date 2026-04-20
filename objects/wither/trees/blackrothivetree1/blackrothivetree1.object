@@ -16,7 +16,7 @@
   "hylotlDescription" : "A creepy result of evolution. The Great Withering learns and adapts very quickly.",
   "novakidDescription" : "Never seen a tree like this before.",
 
-  
+  "breakDropPool" : "blackrotmaterialTreasure",
 
   "inventoryIcon" : "icon.png",
   "orientations" : [

@@ -9,9 +9,28 @@
             "frames" : 1
           },
           "walk" : {
-            "frames" : 8,
+            "frames" : 9,
             "cycle" : 0.8,
             "mode" : "loop"
+          },
+          "jump" : {
+            "frames" : 4,
+            "cycle" : 0.2,
+            "properties" : {
+              "immediateSound" : "/sfx/npc/monsters/monster_hop.ogg",
+              "immediateSoundRangeMultiplier" : 0.5
+            }
+          },
+          "fall" : {
+            "frames" : 2,
+            "cycle" : 0.2
+          },
+          "fire" : {
+            "frames" : 5,
+            "cycle" : 0.5,
+            "properties" : {
+              "immediateSound" : "/sfx/npc/monsters/monster_hop.ogg"
+            }
           }
         }
       },
@@ -53,9 +72,7 @@
       "body" : {
         "properties" : {
           "transformationGroups" : [ "body" ],
-		  "zLevel" : 1,
-		  "fullbright" : true,
-          "offset" : [0.0, 0.625]
+          "offset" : [-0.25, 0.5]
         },
         "partStates" : {
           "body" : {
@@ -67,6 +84,21 @@
             "walk" : {
               "properties" : {
                 "image" : "<partImage>:walk.<frame>"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "<partImage>:jump.<frame>"
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "<partImage>:fall.<frame>"
+              }
+            },
+            "fire" : {
+              "properties" : {
+                "image" : "<partImage>:fire.<frame>"
               }
             }
           },
@@ -79,11 +111,12 @@
           }
         }
       },
-	   "bodynobright" : {
+      "bodyFullbright" : {
         "properties" : {
-          "zLevel" : 2,
+		  "fullbright" : true,
+		  "zLevel" : 5,
           "transformationGroups" : [ "body" ],
-          "offset" : [0.0, 0.625]
+          "offset" : [-0.25, 0.5]
         },
         "partStates" : {
           "body" : {
@@ -95,6 +128,21 @@
             "walk" : {
               "properties" : {
                 "image" : "<partImage>:walk.<frame>"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "<partImage>:jump.<frame>"
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "<partImage>:fall.<frame>"
+              }
+            },
+            "fire" : {
+              "properties" : {
+                "image" : "<partImage>:fire.<frame>"
               }
             }
           },
@@ -125,15 +173,15 @@
   "particleEmitters" : {
     "deathPoof" : {
       "particles" : [
-        { "particle" : "greenmonstersplosion" },
-        { "particle" : "greendeathember" },
-        { "particle" : "greendeathember" },
-        { "particle" : "greendeathember" },
-        { "particle" : "greendeathember" },
-        { "particle" : "greendeathember" },
-        { "particle" : "greendeathember" },
-        { "particle" : "greendeathember" },
-        { "particle" : "greendeathember" },
+        { "particle" : "monstersplosion" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
+        { "particle" : "deathember" },
         { "particle" : "deathfizz1left" },
         { "particle" : "deathfizz1right" },
         { "particle" : "deathfizz2left" },
@@ -173,6 +221,7 @@
 
   "sounds" : {
     "aggroHop" : [ "/sfx/npc/monsters/monster_surprise.ogg" ],
-    "deathPuff" : [ "/sfx/npc/enemydeathpuff.ogg" ]
+    "deathPuff" : [ "/sfx/npc/enemydeathpuff.ogg" ],
+    "fire" : [ "/sfx/gun/sniper3.ogg" ]
   }
 }
