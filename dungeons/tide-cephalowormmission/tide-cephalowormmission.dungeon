@@ -1,0 +1,24 @@
+{
+  "metadata" : {
+    "name" : "starforge-tide-cephalowormmission",
+    "species" : "generic",
+    "rules" : [
+    ],
+    "anchor" : [ "tide-cephalowormmission" ],
+    "gravity" : 60,
+    "maxRadius" : 1000000,
+    "maxParts" : 100,
+    "protected" : true,
+	"persistent" : false
+  },
+
+  "parts" : [
+    {
+      "name" : "tide-cephalowormmission",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "tide-cephalowormmission.json" ]
+    }
+  ]
+}

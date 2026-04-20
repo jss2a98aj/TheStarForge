@@ -68,9 +68,34 @@
         128,
         128,
         128
+      ]
+    }
+  },
+   {
+    "op": "add",
+    "path": "/starforge-tide-cephalowormmission",
+    "value": {
+      "primaryDungeon": "starforge-tide-cephalowormmission",
+      "weatherPool": [
+        [
+          1,
+          "snowstorm"
+        ]
       ],
-	    "ambientNoises": "/sfx/others/unboundmission1ambience.ogg",
-      "musicTrack": "/music/loib-unshackled_unbound.ogg"
+      "threatLevel": 8,
+      "biome": "snow",
+      "gravity": 60,
+      "worldSize": [
+        2000,
+        2000
+      ],
+      "dungeonBaseHeight": 1050,
+      "dungeonSurfaceHeight": 700,
+      "ambientLightLevel": [
+        128,
+        128,
+        128
+      ]
     }
   },
   //UNBOUND MISSIONS
@@ -86,15 +111,15 @@
         2000,
         2000
       ],
-      "dungeonBaseHeight": 1100,
-      "dungeonSurfaceHeight": 900,
+      "dungeonBaseHeight": 1120,
+      "dungeonSurfaceHeight": 1070,
       "ambientLightLevel": [
         128,
         128,
         128
       ],
       "ambientNoises": "/sfx/others/unboundmission1ambience.ogg",
-      "musicTrack": "/music/loib-unshackled_unbound.ogg"
+      "musicTrack": "/music/kyumay-guwata.ogg"
     }
   },
   {
@@ -118,6 +143,29 @@
       ],
       "ambientNoises": "/sfx/others/unboundmission1ambience.ogg",
       "musicTrack": "/music/loib-unshackled_unbound.ogg"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/starforge-unbdwithership",
+    "value": {
+      "primaryDungeon": "starforge-unbdwithership",
+      "threatLevel": 7,
+      "biome": "asteroids",
+      "gravity": 45,
+      "worldSize": [
+        2000,
+        2000
+      ],
+      "dungeonBaseHeight": 1120,
+      "dungeonSurfaceHeight": 1070,
+      "ambientLightLevel": [
+        128,
+        128,
+        128
+      ],
+      "ambientNoises": "/sfx/others/unboundmission1ambience.ogg",
+      "musicTrack": "/music/unshackled_unbound.ogg"
     }
   },
   {
@@ -197,18 +245,18 @@
   },
   {
     "op": "add",
-    "path": "/starforge-razortailhunt",
+    "path": "/starforge-eleuthia1",
     "value": {
-      "primaryDungeon": "starforge-razortailhunt",
-      "threatLevel": 5,
-      "biome": "desert",
+      "primaryDungeon": "starforge-eleuthia1",
+      "threatLevel": 4,
+      "biome": "starforge-eleuthia",
       "gravity": 80,
       "worldSize": [
         1000,
         300
       ],
-      "dungeonBaseHeight": 350,
-      "dungeonSurfaceHeight": 225,
+      "dungeonBaseHeight": 400,
+      "dungeonSurfaceHeight": 170,
       "ambientLightLevel": [
         128,
         128,

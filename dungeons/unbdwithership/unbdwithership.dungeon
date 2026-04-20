@@ -1,0 +1,24 @@
+{
+  "metadata" : {
+    "name" : "starforge-unbdwithership",
+    "species" : "generic",
+    "rules" : [
+    ],
+    "anchor" : [ "unbdwithership" ],
+    "gravity" : 45,
+    "maxRadius" : 1000000,
+    "maxParts" : 100,
+    "protected" : true,
+	"persistent" : false
+  },
+
+  "parts" : [
+    {
+      "name" : "unbdwithership",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "unbdwithership.json" ]
+    }
+  ]
+}
