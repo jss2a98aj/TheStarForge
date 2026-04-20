@@ -68,7 +68,9 @@
         128,
         128,
         128
-      ]
+      ],
+    "ambientNoises": "/sfx/others/unboundmission1ambience.ogg",
+    "musicTrack": "/music/loib-unshackled_unbound.ogg"
     }
   },
    {
@@ -82,7 +84,7 @@
           "snowstorm"
         ]
       ],
-      "threatLevel": 8,
+      "threatLevel": 4,
       "biome": "snow",
       "gravity": 60,
       "worldSize": [
@@ -111,15 +113,15 @@
         2000,
         2000
       ],
-      "dungeonBaseHeight": 1120,
-      "dungeonSurfaceHeight": 1070,
+      "dungeonBaseHeight": 1100,
+      "dungeonSurfaceHeight": 900,
       "ambientLightLevel": [
         128,
         128,
         128
       ],
       "ambientNoises": "/sfx/others/unboundmission1ambience.ogg",
-      "musicTrack": "/music/kyumay-guwata.ogg"
+      "musicTrack": "/music/loib-unshackled_unbound.ogg"
     }
   },
   {
@@ -245,18 +247,18 @@
   },
   {
     "op": "add",
-    "path": "/starforge-eleuthia1",
+    "path": "/starforge-razortailhunt",
     "value": {
-      "primaryDungeon": "starforge-eleuthia1",
-      "threatLevel": 4,
-      "biome": "starforge-eleuthia",
+      "primaryDungeon": "starforge-razortailhunt",
+      "threatLevel": 6,
+      "biome": "desert",
       "gravity": 80,
       "worldSize": [
         1000,
         300
       ],
-      "dungeonBaseHeight": 400,
-      "dungeonSurfaceHeight": 170,
+      "dungeonBaseHeight": 350,
+      "dungeonSurfaceHeight": 225,
       "ambientLightLevel": [
         128,
         128,
