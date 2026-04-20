@@ -2,8 +2,8 @@
   "itemName": "starforge-unboundchaingun",
   "price": 1000,
   "maxStack": 1,
-  "rarity": "Rare",
-  "description": "A fast spinning chain gun filled with overheating rounds that can combust when fired quickly.",
+  "rarity": "Legendary",
+  "description": "A chain gun chambered with overheating rounds that combust when fired quickly.",
   "shortdescription": "\"Melter\" CG",
   "tooltipKind": "starforge-uniquegun",
   "category": "uniqueWeapon",
@@ -78,7 +78,7 @@
     "inaccuracy": 0.025,
     "projectileCount": 1,
     "fireType": "auto",
-    "projectileType": "unboundfirebullet",
+    "projectileType": "starforge-firebullet",
     "projectileParameters": {
       "knockback": 6
     },
@@ -140,6 +140,7 @@
       "knockback": 3
     },
     "pitchVariance" : 0.1,
+    "animatedFire" : true,
 
     "stances": {
       "idle": {

@@ -2,14 +2,15 @@
   "itemName": "starforge-unboundburstshotgun",
   "price": 1500,
   "maxStack": 1,
-  "rarity": "Essential",
-  "description": "An experimental Unbound shotgun. Fires deadly poisonous shells.",
-  "shortdescription": "^#41453B;UNBD^reset; \"Aspic\" ^#9BBA3D;EXP SG^reset;",
-  "tooltipKind": "starforge-experimentalgun",
-  "category": "shotgun",
-  "tooltipFields" : {"subtitle":"^white;Experimental Shotgun^reset;"},
+  "rarity": "Legendary",
+  "description": "An experimental shotgun designed to incorporate poisonous payloads.",
+  "shortdescription": "\"Toxin\" EXP BSG",
+  "tooltipKind": "starforge-uniquegun",
+  "category": "uniqueWeapon",
+  "tooltipFieldsOverride" : {"subtitle":"Burst Shotgun"},
+  "manufacturer" : "unboundarmaments",
   "twoHanded": true,
-  "level" : 7,
+  "level" : 6,
   "itemTags": [
     "weapon",
     "ranged",
@@ -45,7 +46,7 @@
   "baseOffset": [1.0, 0.0],
   "muzzleOffset": [2.125, 0.275],
   "scripts": [
-    "/items/active/weapons/ranged/gun.lua"
+    "/items/active/weapons/ranged/starforge-gun.lua"
   ],
   "elementalType": "poison",
   "primaryAbility": {
@@ -107,5 +108,6 @@
       }
     }
   },
-  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+
+  "builder": "/items/buildscripts/starforge-builduniqueweapon.lua"
 }

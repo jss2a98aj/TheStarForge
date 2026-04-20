@@ -3,65 +3,63 @@
   "price": 750,
   "maxStack": 1,
   "rarity": "Rare",
-  "description": "A  sniper rifle loaded with ice elemental bullets.",
-  "shortdescription": "^#686F5D;UNBD^reset; \"Tundra\" SR",
-  "tooltipKind": "starforge-unboundgun",
-  "category": "sniperRifle",
+  "description": "A powerful rifle used for scouting, a small recon drone is connected to its scope.",
+  "shortdescription": "\"Tundra\" SR",
+  "tooltipKind": "starforge-uniquegun",
+  "category": "uniqueWeapon",
+  "tooltipFieldsOverride" : {"subtitle":"Sniper Rifle"},
   "twoHanded": true,
   "level" : 5,
-  "itemTags": [
-    "weapon",
-    "ranged",
-    "sniperrifle"
-  ],
-  "inventoryIcon": "unboundsnipericon.png",
-  "animation": "unboundsniper.animation",
+  "itemTags": [ "weapon", "ranged", "sniperrifle" ],
+  "inventoryIcon": "unboundsniper.png:idle",
+  "manufacturer" : "unboundarmaments",
 
+  "animation" : "/items/active/weapons/ranged/animations/starforge-shellanimgun.animation",
   "animationParts": {
     "butt": "",
     "middle": "unboundsniper.png",
     "barrel": "",
-	"middleFullbright": "unboundsniperfullbright.png",
-	"muzzleFlash": "muzzleflash.png"
+    "middleFullbright": "unboundsniperfullbright.png",
+    "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-icemuzzleflash.png"
   },
   "animationCustom": {
-      "particleEmitters" : {
-      "muzzleFlash" : {
-        "transformationGroups" : ["muzzle"],
-		"offsetRegion" : [-3.250, 0.1, -3.250, 0.1],
+    "particleEmitters" : {
+      "casing" : {
+		    "offsetRegion" : [0.250, 0.25, 0.250, 0.25],
         "particles" : [
           { "particle" : "starforge-unboundsniper" }
         ]
       }
     },
     "sounds": {
-      "fire": [
-        "/sfx/gun/starforge-sniper.ogg"
-      ]
+      "fire": [ "/sfx/gun/starforge-sniper.ogg" ],
+      
+      "summon" : [ "/sfx/objects/mechbeacon_pulse1.ogg" ]
     }
   },
   
   "baseOffset": [1.125, 0.250],
   "muzzleOffset": [2.875, 0.125],
-  "scripts": [
-    "/items/active/weapons/ranged/gun.lua"
-  ],
+
+  "scripts" : [ "/items/active/weapons/ranged/starforge-gun.lua" ],
   "elementalType": "ice",
+
   "primaryAbility": {
-    "scripts": [
-      "/items/active/weapons/ranged/starforge-gunfire.lua"
-    ],
+    "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
     "class": "StarforgeGunFire",
-    "fireTime": 1.30,
+
+    "fireTime": 1.2,
     "baseDps": 9.5,
     "energyUsage": 45,
     "inaccuracy": 0.001,
     "projectileCount": 1,
     "fireType": "auto",
-    "projectileType": "unboundicebullet",
+    "projectileType": "starforge-icebullet",
     "projectileParameters": {
       "knockback": 10
     },
+    "animatedFire" : false,
+
     "stances": {
       "idle": {
         "armRotation": 0,
@@ -71,23 +69,20 @@
         "allowRotate": true,
         "allowFlip": true,
 		
-		"frontArmFrame" : "run.2",
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       },
       "fire": {
         "duration": 0,
-        "armRotation": 11,
-        "weaponRotation": 7,
+        "armRotation": 8,
+        "weaponRotation": 6,
         "weaponOffset" : [-0.1, 0],
         "twoHanded": true,
         "allowRotate": true,
         "allowFlip": true,
-
-        "animationStates" : {
-          "firing" : "fire"
-		},
-		
-		"frontArmFrame" : "run.2",
+        "burstParticleEmitters": [ "casing" ],
+        
+        "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       },
       "cooldown": {
@@ -99,10 +94,62 @@
         "allowRotate": true,
         "allowFlip": true,
 		
-		"frontArmFrame" : "run.2",
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       }
     }
   },
+  
+  "altAbility" : {
+    "name" : "Summon Lil' Guy",
+    "scripts" : ["/items/active/weapons/ranged/abilities/starforge-allymonstersummon/starforge-allymonstersummon.lua"],
+    "class" : "StarforgeAllyMonsterSummon",
+	
+    "windupTime" : 0.5,
+    "cooldownTime" : 2.5,
+	
+    "summonEnergyUsage" : 500,
+    "summonOffset" : [0.0, 0],
+
+    "monsterConfigs" : [ 
+      { 
+        "monsterType" : "starforge-unboundicedrone",
+        "monsterParameters" : {},
+        "spawnEffects" : [ "starforge-delayeddeath", "starforge-fadein" ],
+        "spawnOffset" : [ 0, 0 ]
+      } 
+    ],
+
+    "stances" : {
+      "windup" : {
+        "aimAngle" : 0,
+        
+        "armRotation": 8,
+        "weaponRotation": 6,
+        "weaponOffset" : [-0.1, 0],
+        "twoHanded": true,
+        "allowRotate": true,
+        "allowFlip": true,
+		
+		    "frontArmFrame" : "run.2",
+        "backArmFrame" : "swim.4"
+      },
+      "summon" : {
+        "aimAngle" : 0,
+		
+        "duration" : 0.3,
+        "armRotation": 8,
+        "weaponRotation": 6,
+        "weaponOffset" : [-0.1, 0],
+        "twoHanded": true,
+        "allowRotate": true,
+        "allowFlip": true,
+		
+		    "frontArmFrame" : "run.2",
+        "backArmFrame" : "swim.4"
+      }
+    }
+  },
+
   "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
 }

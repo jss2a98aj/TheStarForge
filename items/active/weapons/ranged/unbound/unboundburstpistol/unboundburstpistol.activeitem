@@ -4,7 +4,7 @@
   "maxStack": 1,
   "rarity": "Rare",
   "description": "A pistol sporting a 3 round burst with incendiary rounds.",
-  "shortdescription": "^#686F5D;UNBD^reset; \"Hornet\" BP",
+  "shortdescription": "\"Hornet\" BP",
   "tooltipKind": "starforge-uniquegun",
   "category": "uniqueWeapon",
   "tooltipFieldsOverride" : {"subtitle":"Burst Pistol"},
@@ -72,7 +72,7 @@
     "burstTime" : 0.08,
     "burstCount" : 3,
     "fireType" : "burst",
-    "projectileType": "unboundfirebullet",
+    "projectileType": "starforge-firebullet",
     "projectileParameters": {
       "knockback": 3
     },

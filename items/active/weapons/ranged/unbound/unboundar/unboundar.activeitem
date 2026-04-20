@@ -4,7 +4,7 @@
   "maxStack": 1,
   "rarity": "Rare",
   "description": "A expensive assault rifle used by Unbound troopers for its electrically charged rounds.",
-  "shortdescription": "^#686F5D;UNBD^reset; \"Valiant\" AR",
+  "shortdescription": "\"Valiant\" AR",
   "tooltipKind": "starforge-uniquegun",
   "category": "uniqueWeapon",
   "tooltipFieldsOverride" : {"subtitle":"Assault Rifle"},

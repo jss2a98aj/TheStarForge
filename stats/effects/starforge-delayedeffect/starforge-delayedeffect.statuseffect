@@ -1,7 +1,7 @@
 {
   "name" : "starforge-delayeddeath",
   "effectConfig" : {
-    "effectOnExpire" : "monsterdespawn"
+    "effectOnExpire" : "starforge-fadeout"
   },
   "defaultDuration" : 30.0,
 

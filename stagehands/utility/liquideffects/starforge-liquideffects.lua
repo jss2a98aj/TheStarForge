@@ -63,7 +63,7 @@ function spawnProjectile(table)
   for i = 1, (projectileCount or self.projectileCount) do
     local projectilePosition = table[math.ceil(math.random() * #table)]
     local positionVariance = {math.random() * 1 - 0.5, math.random() * 1 - 0.5}
-    local position = vec2.add(projectilePosition, positionVariance)
+    local position = vec2.add(projectilePosition or stagehand.position(), positionVariance)
 	
     local aimVec = vec2.rotate({0, 1}, math.random() * math.pi)
 

@@ -4,11 +4,11 @@
   "maxStack": 1,
   "rarity": "Rare",
   "description": "An auto-shotgun sporting incendiary rounds specialised in suppressive fire.",
-  "shortdescription": "^#686F5D;UNBD^reset; \"Dragon\" ASG",
+  "shortdescription": "\"Dragon\" ASG",
   "tooltipKind": "starforge-uniquegun",
   "category": "uniqueWeapon",
   "tooltipFieldsOverride" : {
-    "subtitle":"Auto Shotgun"
+    "subtitle" : "Auto Shotgun"
   },
   "twoHanded": true,
   "level" : 5,
@@ -46,8 +46,8 @@
     }
   },
   
-  "baseOffset": [0.375, 0.3],
-  "muzzleOffset": [2.125, 0.275],
+  "baseOffset": [0.5, 0.25],
+  "muzzleOffset": [2.125, 0.25],
   "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
 
   "elementalType": "fire",
@@ -61,7 +61,7 @@
     "inaccuracy": 0.0775,
     "projectileCount": 6,
     "fireType": "auto",
-    "projectileType": "unboundfirebullet",
+    "projectileType": "starforge-firebullet",
     "projectileParameters": {
       "knockback": 8,
       "speed" : [125, 175]

@@ -9,8 +9,9 @@
   "category": "uniqueWeapon",
   "tooltipFieldsOverride" : {"subtitle":"SMG"},
   "twoHanded": true,
-  "level" : 6,
+  "level" : 5,
   "itemTags": [ "weapon", "ranged", "assaultrifle" ],
+  "manufacturer" : "unboundarmaments",
   "inventoryIcon": "unboundsmg.png:idle",
 
   "animation" : "/items/active/weapons/ranged/animations/starforge-shellanimgun.animation",
@@ -22,6 +23,18 @@
     "muzzleFlash": ""
   },
   "animationCustom": {
+    "animatedParts": {
+      "stateTypes": {
+        "gun": {
+          "states": {
+            "reload": {
+              "frames" : 1,
+              "cycle" : 0.04
+            }
+          }
+        }
+      }
+    },
     "particleEmitters" : {
       "muzzleFlash" : {
         "particles" : [
@@ -29,14 +42,24 @@
         ]
       },
       "casing" : {
-		    "offsetRegion" : [0.125, 0.5, 0.125, 0.5],
+		    "offsetRegion" : [0.5, 0.625, 0.5, 0.625],
         "particles" : [
           { "particle" : "starforge-unboundrifle" }
+        ]
+      },
+      "ammoIndicator" : {
+        "active" : false,
+        "emissionRate" : 8,
+        "transformationGroups" : ["muzzle"],
+        "offsetRegion" : [0, 0, 0, 0],
+        "particles" : [
+          { "particle" : "starforge-smallelectricflame"}
         ]
       }
     },
     "sounds": {
-      "fire": [ "/sfx/gun/uzi1.ogg", "/sfx/gun/uzi2.ogg", "/sfx/gun/uzi3.ogg" ]
+      "fire": [ "/sfx/gun/uzi1.ogg", "/sfx/gun/uzi2.ogg", "/sfx/gun/uzi3.ogg" ],
+      "loadAmmo" : [ "/sfx/gun/reload/machinepistol_reload_clip3.ogg" ]
     }
   },
   
@@ -57,10 +80,13 @@
     "inaccuracy": 0.003,
     "projectileCount": 1,
     "fireType": "auto",
-    "projectileType": "unboundelectricbullet",
+    "projectileType": "starforge-electricbullet",
     "projectileParameters": {
-      "knockback": 3
+      "knockback": 3,
+      "statusEffects" : [ ]
     },
+    "animatedFire" : true,
+    
     "stances": {
       "idle": {
         "armRotation": 0,
@@ -81,10 +107,7 @@
         "twoHanded": true,
         "allowRotate": true,
         "allowFlip": true,
-
-        "animationStates" : {
-          "firing" : "fire"
-		    },
+        "burstParticleEmitters": [ "casing" ],
 		
 		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
@@ -103,5 +126,53 @@
       }
     }
   },
+
+  "altAbility": {
+    "name" : "Load Shock Tracers",
+    "scripts" : ["/items/active/weapons/ranged/abilities/loadalternateammo/starforge-loadalternateammo.lua"],
+    "class" : "StarForgeLoadAlternateAmmo",
+
+    "adaptedAbilityIndex" : 1, //Which ability to adapt (1 = primary, 2 = secondary)
+    
+    //The new stats which will overwrite the primary ability
+    "newAbility" : {
+      "projectileCount" : 1,
+
+      "projectileType" : "starforge-electricbulletstun",
+      "projectileParameters" : {
+        "knockback": 0
+      },
+      
+      "fireType" : "auto",
+	
+      "baseDps" : 2.0,	
+      "fireTime" : 0.2,
+      "energyUsage" : 55,
+      "inaccuracy": 0.003
+    },
+
+    "stances" : {
+      "load" : {
+        "duration" : 0.2,
+        "aimAngle" : 0,
+        "weaponAngularVelocity" : -150,
+        "armAngularVelocity" : 100,
+        "armRotation": 0,
+        "weaponRotation": 0,
+        "weaponOffset" : [0, 0],
+        "twoHanded": true,
+        "allowRotate": true,
+        "allowFlip": true,
+        "burstParticleEmitters": [ "casing" ],
+        "animationStates": {
+          "gun" : "reload"
+        },
+
+        "frontArmFrame": "rotation",
+        "backArmFrame": "rotation"
+      }
+    }
+  },
+
   "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
 }

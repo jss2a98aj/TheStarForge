@@ -7,20 +7,20 @@
   "shortdescription": "\"Hercules\" R",
   "tooltipKind": "starforge-uniquegun",
   "tooltipFieldsOverride" : {"subtitle":"Revolver"},
-  "category": "pistol",
+  "category": "uniqueWeapon",
   "twoHanded": true,
   "manufacturer" : "unboundarmaments",
-  "level": 6,
+  "level": 5,
   "itemTags": [ "weapon", "ranged", "pistol" ],
-  "inventoryIcon": "unboundrevolver.png:slide.1",
-  "animation": "unboundrevolver.animation",
+  "inventoryIcon": "unboundrevolver.png:idle",
 
+  "animation" : "/items/active/weapons/ranged/animations/starforge-shellanimgun.animation",
   "animationParts": {
     "butt": "",
     "middle": "unboundrevolver.png",
     "barrel": "",
   	"middleFullbright": "unboundrevolverfullbright.png",
-    "muzzleFlash": "muzzleflash.png"
+    "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-unboundmuzzleflash.png"
   },
   "animationCustom": {
     "particleEmitters" : {
@@ -30,9 +30,7 @@
       }
     },
     "sounds": {
-      "fire": [
-        "/sfx/gun/starforge-unboundrevolver.ogg"
-      ]
+      "fire": [ "/sfx/gun/starforge-unboundrevolver.ogg" ]
     },
     "lights" : {
       "flashlightSpread" : {
@@ -61,6 +59,7 @@
   
   "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
   "elementalType": "physical",
+
   "primaryAbility" : {
     "scripts" : ["/items/active/weapons/ranged/starforge-gunfire.lua"],
     "class" : "StarforgeGunFire",
@@ -75,6 +74,8 @@
     "projectileParameters": {
       "knockback": 4
     },
+    "animatedFire" : true,
+
     "stances" : {
       "idle" : {
         "armRotation" : 0,
@@ -114,6 +115,7 @@
       }
     }
   },
+
   "altAbility" : {
     "name" : "Fan Fire",
     "scripts" : ["/items/active/weapons/ranged/starforge-gunfire.lua"],

@@ -66,15 +66,15 @@
             "minimumRange" : 10,
             "maximumRange" : 36,
             "onGround" : false,
-			"windupState": "divewindup",
+			      "windupState": "divewindup",
             "windupTime" : 0.3,
 
-			"swoopState": "dive",
+			      "swoopState": "dive",
             "gravityMultiplier" : -0.4,
             "swoopVelocity" : 40,
             "collisionCheck" : true,
             "highArc" : false,
-			"minSwoopTime": 0.1,
+			      "minSwoopTime": 0.1,
             "swoopTime" : 0.4,
 
             "winddownTime" : 0.8,
@@ -90,8 +90,8 @@
         {
           "name" : "approach-fly",
           "parameters" : {
-			"minRange": -1,
-			"maxRange": 5
+            "minRange": -1,
+            "maxRange": 5
           }
         }
       ],
@@ -104,8 +104,8 @@
         {
           "name" : "approach-fly",
           "parameters" : {
-			"minRange": -1,
-			"maxRange": 4
+            "minRange": -1,
+            "maxRange": 4
           }
         }
       ],

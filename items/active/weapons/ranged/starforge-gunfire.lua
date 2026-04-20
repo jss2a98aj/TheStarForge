@@ -188,7 +188,7 @@ function StarforgeGunFire:burst(charged)
 
   local shots = self.burstCount
   while shots > 0 and (charged or status.overConsumeResource("energy", self:energyPerShot())) do
-    self.projectileId = self:fireProjectile(self.noBurstRecoil and 0 or (self.burstCount - shots))
+    self.projectileId = self:fireProjectile(nil, nil, self.noBurstRecoil and 0 or (self.burstCount - shots))
     self:muzzleFlash()
     if self.knockbackForce then
       self:knockbackFire()
@@ -268,12 +268,12 @@ function StarforgeGunFire:knockbackFire()
   mcontroller.addMomentum(momentum)
 end
 
-function StarforgeGunFire:fireProjectile(burstNumber)
-  local params = sb.jsonMerge(self.projectileParameters, projectileParams or {})
+function StarforgeGunFire:fireProjectile(projectileType, params, burstNumber)
+  local params = sb.jsonMerge(self.projectileParameters, params or {})
   params.power = self:damagePerShot()
   params.powerMultiplier = activeItem.ownerPowerMultiplier()
 
-  local projectileType = self.projectileType
+  local projectileType = projectileType or self.projectileType
   if type(projectileType) == "table" then
     projectileType = projectileType[math.random(#projectileType)]
   end

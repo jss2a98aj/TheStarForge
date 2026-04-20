@@ -30,12 +30,6 @@ function init()
   self.stances = config.getParameter("stances")
   setStance(self.stances.idle)
 
-  message.setHandler("starforge-lastDamageConfig", function(_, _, config)
-    if self.active and entity.entityType() == "player" then
-      processDamage(config)
-    end
-  end)
-
   updateAim()
 end
 
@@ -44,7 +38,7 @@ function update(dt, fireMode, shiftHeld)
 
   updateAim()
 
-  world.debugText("health : %s", status.resource("shieldStamina"), mcontroller.position(), "red")
+  world.debugText("health : %s", status.stat("shieldHealth") * status.resource("shieldStamina"), mcontroller.position(), "red")
 
   if not self.active
     and fireMode == "primary"
@@ -142,15 +136,13 @@ function raiseShield()
     activeItem.setItemDamageSources({ knockbackDamageSource })
   end
 
-  if entity.entityType() == "npc" then
-    self.damageListener = damageListener("damageTaken", function(notifications)
-      for _, notification in pairs(notifications) do
-        if notification.hitType == "ShieldHit" then
-          processDamage(notification)
-        end
+  self.damageListener = damageListener("damageTaken", function(notifications)
+    for _, notification in pairs(notifications) do
+      if notification.hitType == "ShieldHit" then
+        processDamage(notification)
       end
-    end)
-  end
+    end
+  end)
 
   refreshPerfectBlock()
 end
@@ -182,8 +174,9 @@ end
 
 function processDamage(notification)
   local percentDamage = self.lastStamina - status.resource("shieldStamina")
-  status.setResource("shieldStamina", self.lastStamina > status.resource("shieldStamina") and self.lastStamina or status.resource("shieldStamina"))
-
+  if status.resource("shieldStamina") ~= 0 then
+    status.setResource("shieldStamina", math.max(self.lastStamina, status.resource("shieldStamina")))
+  end
   local elementalStat = root.elementalResistance(notification.damageSourceKind)
   local resistance = self.shieldStats[elementalStat] or 0
   local adjustedPercentDamage = percentDamage - (percentDamage * resistance)

@@ -2,7 +2,7 @@
   "itemName": "starforge-unboundlmg",
   "price": 1000,
   "maxStack": 1,
-  "rarity": "Rare",
+  "rarity": "Legendary",
   "description": "An oppressive LMG with an attached Vanguard energy shield projector.",
   "shortdescription": "\"Scorcher\" SAW",
   "tooltipKind": "starforge-uniquegun",
@@ -19,10 +19,86 @@
     "butt": "",
     "middle": "unboundlmg.png",
     "barrel": "",
+    "shield" : "unboundlmgshield.png",
     "middleFullbright": "unboundlmgfullbright.png",
     "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-firemuzzleflash.png"
   },
   "animationCustom": {
+    "animatedParts" : {
+      "stateTypes" : {
+        "shield" : {
+          "default" : "off",
+          "states" : {
+            "off" : {},
+            "activate" : {
+              "frames" : 5,
+              "cycle" : 0.5,
+              "mode" : "transition",
+              "transition" : "active"
+            },
+            "block" : {
+              "frames" : 1,
+              "cycle" : 0.2,
+              "mode" : "transition",
+              "transition" : "active"
+            },
+            "active" : {
+              "frames" : 1,
+              "cycle" : 0.2,
+              "mode" : "loop"
+            },
+            "deactivate" : {
+              "frames" : 5,
+              "cycle" : 0.35,
+              "mode" : "transition",
+              "transition" : "off"
+            }
+          }
+        }
+      },
+
+      "parts" : {
+        "shield" : {
+          "properties" : {
+            "centered" : true,
+            "fullbright" : true,
+            "zLevel" : 5,
+            "offset" : [1.1875, 0.125],
+            "transformationGroups" : ["weapon"],
+            "shieldPoly" : [ [-1.25, -1], [-1.25, 1], [1, 1.75], [1, -1.75] ]
+          },
+          "partStates" : {
+            "shield" : {
+              "off" : {
+                "properties" : {
+                  "image" : ""
+                }
+              },
+              "activate" : {
+                "properties" : {
+                  "image" : "<partImage>:activate.<frame>"
+                }
+              },
+              "active" : {
+                "properties" : {
+                  "image" : "<partImage>:active.<frame>"
+                }
+              },
+              "block" : {
+                "properties" : {
+                  "image" : "<partImage>:block.<frame>"
+                }
+              },
+              "deactivate" : {
+                "properties" : {
+                  "image" : "<partImage>:deactivate.<frame>"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "particleEmitters" : {
       "casing" : {
 		    "offsetRegion" : [-0.25, 0.625, -0.25, 0.625],
@@ -32,25 +108,32 @@
       }
     },
     "sounds": {
-      "fire": [ "/sfx/gun/starforge-assaultriflefire1.ogg" ]
+      "fire": [ "/sfx/gun/starforge-assaultriflefire1.ogg" ],
+      
+      "activateShield" : [ "/sfx/tech/vehicle_appear1.ogg" ],
+      "deactivateShield" : [ "/sfx/tech/vehicle_disappear1.ogg" ],
+      "block" : [ "/sfx/tech/vehicle_disappear2.ogg" ],
+      "break" : [ "/sfx/tech/mech_explosion_windup.ogg" ]
     }
   },
   
   "baseOffset": [0, -0.125],
   "muzzleOffset": [2.5, 0.250],
+
   "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
   "elementalType": "fire",
+
   "primaryAbility": {
     "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
     "class": "StarforgeGunFire",
 
     "fireTime": 0.07,
-    "baseDps": 10.5,
+    "baseDps": 13.5,
     "energyUsage": 45,
     "inaccuracy": 0.02,
     "projectileCount": 1,
     "fireType": "auto",
-    "projectileType": "unboundfirebullet",
+    "projectileType": "starforge-firebullet",
     "projectileParameters": {
       "knockback": 8
     },
@@ -95,5 +178,28 @@
       }
     }
   },
+
+  "altAbility" : {
+    "name" : "Deploy Shield",
+    "scripts" : ["/items/active/weapons/ranged/abilities/starforge-deployshield.lua"],
+    "class" : "StarforgeDeployShield",
+
+    "cooldownTime" : 2.0,
+    "energyUsage" : 25,
+    "knockback" : 8,
+
+    "shieldStats" : {
+      "electricResistance" : 0.5,
+      "starforge-surgeResistance" : 0.35
+    },
+
+    "walkWhileActive" : true,
+    "baseShieldHealth" : 185,
+
+    "retaliationCooldownTime" : 1,
+    "projectileType" : null,
+    "projectileParameters" : {}
+  },
+
   "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
 }

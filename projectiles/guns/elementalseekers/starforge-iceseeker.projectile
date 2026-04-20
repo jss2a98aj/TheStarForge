@@ -1,0 +1,37 @@
+{
+  "projectileName" : "starforge-iceseeker",
+  "physics" : "laser",
+  "timeToLive" : 3,
+  "image" : "starforge-iceseeker.png",
+  "animationCycle" : 0.3,
+  "lightColor" : [34, 190, 220],
+  "frameNumber" : 4,
+  "periodicActions" : [ ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/elementimpact/iceimpact.config"
+    }
+  ],
+  "speed" : 15,
+  "power" : 30,
+  "damageKind" : "ice",
+  "damagePoly" : [ [-6, 0], [-4, -4], [0, -6], [4, -4], [6, 0], [4, 4], [0, 6], [-4, 4] ],
+  "statusEffects" : [ "frostslow" ],
+
+  "fullbright" : true,
+  "emitters" : [ "iceplasma" ],
+
+  "bounces" : 0,
+
+  "scripts" : [ "/projectiles/scripts/starforge-seekerprojectile.lua", "/projectiles/scripts/starforge-spin.lua" ],
+
+  "baseHomingControlForce" : 3,
+
+  "orientationLocked" : true,
+  "pointToLight" : true,
+  "countMovementDirection" : true,
+  "spinRate" : 1,
+  "minSpinSpeed": 2,
+  "spinDirection" : 1
+}

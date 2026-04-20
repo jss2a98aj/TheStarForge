@@ -26,7 +26,7 @@ function onExpire()
         world.callScriptedEntity(entity.id(), "npc.setDropPools", {})
       elseif world.entityType(entity.id()) == "monster" then
         world.callScriptedEntity(entity.id(), "monster.setDeathParticleBurst", nil)
-        world.callScriptedEntity(entity.id(), "monster.setDropPool", {})
+        world.callScriptedEntity(entity.id(), "monster.setDropPool", "empty")
       end
     end
     mcontroller.controlModifiers({

@@ -65,7 +65,7 @@
   "minActiveTime" : 0.3,
 
   "forceWalk" : false,
-  "baseShieldHealth" : 145,
+  "baseShieldHealth" : 125,
   "cooldownTime" : 0.1,
 
   "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
@@ -74,7 +74,8 @@
   "knockback" : 10,
 
   "shieldStats" : {
-    "electricResistance" : 0.75
+    "electricResistance" : 0.5,
+    "starforge-surge" : 0.35
   },
 
   "alwaysOutside" : true,

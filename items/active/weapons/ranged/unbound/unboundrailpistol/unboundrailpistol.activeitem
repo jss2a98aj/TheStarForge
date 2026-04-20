@@ -2,9 +2,9 @@
   "itemName": "starforge-unboundrailpistol",
   "price": 1000,
   "maxStack": 1,
-  "rarity": "Rare",
+  "rarity": "Legendary",
   "description": "A rail pistol used riot units for its piercing capabilities.",
-  "shortdescription": "^#686F5D;UNBD^reset; \"Dauntless\" RP",
+  "shortdescription": "\"Dauntless\" RP",
   "tooltipKind": "starforge-uniquegun",
   "category": "uniqueWeapon",
   "tooltipFieldsOverride" : {"subtitle":"Rail Pistol"},
@@ -50,14 +50,22 @@
     "class": "StarforgeGunFire",
 
     "fireTime": 0.5,
-    "baseDps": 5,
-    "tooltipDamageMultiplier" : 1.25,      //If the projectile explodes for more damage, etc
+    "baseDps": 6,
+    "tooltipDamageMultiplier" : 2,      //If the projectile explodes for more damage, etc
     "energyUsage": 40,
     "inaccuracy": 0.001,
     "projectileCount": 1,
     "fireType": "auto",
-    "projectileType": "unboundrailbullet",
+    "projectileType": "starforge-physicalbullet",
     "projectileParameters": {
+      "actionOnReap" : [
+        {
+          "action" : "config",
+          "file" : "/projectiles/explosions/vsmallregularexplosion/vsmallregularexplosionknockback.config"
+        }
+      ],
+      "piercing" : true,
+      "speed" : 200,
       "knockback": 10
     },
     "animatedFire" : true,
@@ -68,7 +76,7 @@
 	  "chargeShake" : true,
 	  "chargeShakeWavePeriod" : 0.25,
 	  "chargeShakeWaveAmplitude" : 0.01,
-	  "chargeShakeFactor" : 1,
+	  "chargeShakeFactor" : 1.5,
 
     "stances" : {
       "idle" : {

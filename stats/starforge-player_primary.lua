@@ -1,8 +1,6 @@
 preStarforge_applyDamageRequest = applyDamageRequest
 
 function applyDamageRequest(damageRequest)
-  world.sendEntityMessage(entity.id(), "starforge-lastDamageConfig", damageRequest)
-
   local oldDamageRequest = damageRequest
   if preStarforge_applyDamageRequest then
     damageRequest = preStarforge_applyDamageRequest(damageRequest)
