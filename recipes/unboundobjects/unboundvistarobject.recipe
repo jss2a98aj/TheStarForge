@@ -1,0 +1,13 @@
+{
+  "input" : [
+	{ "item" : "durasteelbar", "count" : 20},
+	{ "item" : "titaniumbar", "count" : 8}
+  ],
+  "output" : {
+    "item" : "starforge-unboundvistarobject",
+    "count" : 1
+  },
+  "groups" : [ "starforge-unboundobject", "decoration" ],
+  "duration" : 0
+}
+

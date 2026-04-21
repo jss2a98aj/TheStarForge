@@ -10,7 +10,7 @@
     "item" : "starforge-thecenturion",
     "count" : 1
   },
-  "groups" : [ "starforge-starforge", "weapons" ],
+  "groups" : [ "starforge-starforge", "starforge-unboundgear", "weapons", "upgrade" ],
   "duration" : 2
 }
 

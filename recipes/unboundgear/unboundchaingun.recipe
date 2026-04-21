@@ -1,9 +1,10 @@
 {
   "input" : [
-    { "item" : "starforge-salvagedunboundtech", "count" : 1},
-    { "item" : "essence", "count" : 600},
+    { "item" : "essence", "count" : 1000},
+	{ "item" : "starforge-salvagedunboundtech", "count" : 3},
+	{ "item" : "refinedaegisalt", "count" : 6},
 	{ "item" : "durasteelbar", "count" : 15},
-	{ "item" : "titaniumbar", "count" : 8}
+	{ "item" : "scorchedcore", "count" : 5}
   ],
   "output" : {
     "item" : "starforge-unboundchaingun",

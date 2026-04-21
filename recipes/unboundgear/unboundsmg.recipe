@@ -1,9 +1,9 @@
 {
   "input" : [
-    { "item" : "starforge-salvagedunboundtech", "count" : 1},
     { "item" : "essence", "count" : 600},
+	{ "item" : "starforge-salvagedunboundtech", "count" : 1},
 	{ "item" : "durasteelbar", "count" : 10},
-	{ "item" : "titaniumbar", "count" : 5}
+	{ "item" : "staticcell", "count" : 5}
   ],
   "output" : {
     "item" : "starforge-unboundsmg",

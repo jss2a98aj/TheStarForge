@@ -2,8 +2,8 @@
   "input" : [
     { "item" : "starforge-salvagedunboundtech", "count" : 1},
     { "item" : "essence", "count" : 600},
-	{ "item" : "durasteelbar", "count" : 10},
-	{ "item" : "titaniumbar", "count" : 8}
+	{ "item" : "refinedviolium", "count" : 5},
+	{ "item" : "durasteelbar", "count" : 10}
   ],
   "output" : {
     "item" : "starforge-unboundrevolver",

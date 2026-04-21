@@ -1,9 +1,10 @@
 {
   "input" : [
-    { "item" : "starforge-salvagedunboundtech", "count" : 3},
-    { "item" : "essence", "count" : 1250},
-	{ "item" : "durasteelbar", "count" : 12},
-	{ "item" : "titaniumbar", "count" : 6}
+    { "item" : "essence", "count" : 1600},
+	{ "item" : "starforge-salvagedunboundtech", "count" : 5},
+	{ "item" : "solariumstar", "count" : 5},
+	{ "item" : "durasteelbar", "count" : 10},
+	{ "item" : "staticcell", "count" : 4}
   ],
   "output" : {
     "item" : "starforge-unboundsmartpistol",

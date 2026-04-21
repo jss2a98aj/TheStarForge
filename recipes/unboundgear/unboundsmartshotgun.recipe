@@ -1,9 +1,10 @@
 {
   "input" : [
-    { "item" : "starforge-salvagedunboundtech", "count" : 3},
-    { "item" : "essence", "count" : 1425},
+    { "item" : "essence", "count" : 2400},
+	{ "item" : "starforge-salvagedunboundtech", "count" : 5},
+	{ "item" : "solariumstar", "count" : 10},
 	{ "item" : "durasteelbar", "count" : 16},
-	{ "item" : "titaniumbar", "count" : 8}
+	{ "item" : "scorchedcore", "count" : 8}
   ],
   "output" : {
     "item" : "starforge-unboundsmartshotgun",

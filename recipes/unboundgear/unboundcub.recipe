@@ -1,0 +1,13 @@
+{
+  "input" : [
+    { "item" : "essence", "count" : 100},
+	{ "item" : "titaniumbar", "count" : 4}
+  ],
+  "output" : {
+    "item" : "starforge-unboundshortar",
+    "count" : 1
+  },
+  "groups" : [ "starforge-unboundgear", "weapon" ],
+  "duration" : 0
+}
+
