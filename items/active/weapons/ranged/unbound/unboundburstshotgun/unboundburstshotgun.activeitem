@@ -23,14 +23,14 @@
     "butt": "",
     "middle": "unboundburstshotgun.png",
     "barrel": "",
-	"middleFullbright": "unboundburstshotgunfullbright.png",
-	"muzzleFlash": "muzzleflash.png"
+    "middleFullbright": "unboundburstshotgunfullbright.png",
+    "muzzleFlash": "muzzleflash.png"
   },
   "animationCustom": {
-      "particleEmitters" : {
+    "particleEmitters" : {
       "muzzleFlash" : {
         "transformationGroups" : ["muzzle"],
-		"offsetRegion" : [-3.0, 0.375, -3.0, 0.375],
+		    "offsetRegion" : [-3.0, 0.375, -3.0, 0.375],
         "particles" : [
           { "particle" : "starforge-unboundpoisonshell" }
         ]

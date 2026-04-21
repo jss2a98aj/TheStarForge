@@ -43,15 +43,14 @@
   
   "baseOffset": [0.750, 0.250],
   "muzzleOffset": [2.250, 0.750],
-  "scripts": [
-    "/items/active/weapons/ranged/gun.lua"
-  ],
+
+  "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
   "elementalType": "fire",
+
   "primaryAbility": {
-    "scripts": [
-      "/items/active/weapons/ranged/starforge-gunfire.lua"
-    ],
+    "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
     "class": "StarforgeGunFire",
+
     "fireTime": 1.80,
     "baseDps": 10.5,
     "energyUsage": 70,
@@ -62,6 +61,7 @@
     "projectileParameters": {
       "knockback": 10
     },
+
     "stances": {
       "idle": {
         "armRotation": 0,
@@ -104,5 +104,6 @@
       }
     }
   },
+  
   "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
 }
