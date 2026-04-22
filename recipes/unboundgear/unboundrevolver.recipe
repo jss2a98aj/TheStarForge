@@ -2,7 +2,6 @@
   "input" : [
     { "item" : "starforge-salvagedunboundtech", "count" : 1},
     { "item" : "essence", "count" : 600},
-	{ "item" : "refinedviolium", "count" : 5},
 	{ "item" : "durasteelbar", "count" : 10}
   ],
   "output" : {

@@ -2,6 +2,7 @@
   "input" : [
     { "item" : "essence", "count" : 600},
 	{ "item" : "starforge-salvagedunboundtech", "count" : 1},
+	{ "item" : "refinedaegisalt", "count" : 5},
 	{ "item" : "durasteelbar", "count" : 10},
 	{ "item" : "scorchedcore", "count" : 2}
   ],

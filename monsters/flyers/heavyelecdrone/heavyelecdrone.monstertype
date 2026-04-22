@@ -99,6 +99,7 @@
         {
           "name" : "approach-fly",
           "parameters" : {
+		  "distance" : 5,
             "excludeLiquidIds" : [1,6,7,11]
           }
         }
