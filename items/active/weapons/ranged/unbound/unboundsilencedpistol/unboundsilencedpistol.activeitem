@@ -48,6 +48,7 @@
   "muzzleOffset" : [1.5, 0.3125],
   
   "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
+  "useTwoHandedWhileAlone" : true,    //if in one hand, and theres nothing in the other hand, twohand the weapon in the stance
   "elementalType": "ice",
 
   "primaryAbility": {

@@ -13,6 +13,7 @@ function Weapon:new(weaponConfig)
   newWeapon.abilities = {}
   newWeapon.transformationGroups = {}
   newWeapon.handGrip = config.getParameter("handGrip", "inside")
+  newWeapon.useTwoHandedWhileAlone = config.getParameter("useTwoHandedWhileAlone", false)
   setmetatable(newWeapon, extend(self))
   return newWeapon
 end
@@ -114,6 +115,7 @@ function Weapon:addTransformationGroup(name, offset, rotation, rotationCenter)
 end
 
 function Weapon:updateAim()
+  world.debugText("%s, \n%s", (player.primaryHandItem() and not player.altHandItem()), (player.altHandItem() and not player.primaryHandItem()), entity.position(), "red")
   for _, group in pairs(self.transformationGroups) do
     animator.resetTransformationGroup(group.name)
     animator.translateTransformationGroup(group.name, group.offset)
@@ -247,9 +249,15 @@ function Weapon:setStance(stance)
     animator.burstParticleEmitter(particleEmitterName)
   end
 
+  local useTwoHanded = stance.twoHanded or false
+  if self.useTwoHandedWhileAlone and ((player.primaryHandItem() and not player.altHandItem()) or (player.altHandItem() and not player.primaryHandItem())) then
+    useTwoHanded = true
+  end
+
+  activeItem.setHoldingItem(stance.holdingItem or true)
   activeItem.setFrontArmFrame(self.stance.frontArmFrame)
   activeItem.setBackArmFrame(self.stance.backArmFrame)
-  activeItem.setTwoHandedGrip(stance.twoHanded or false)
+  activeItem.setTwoHandedGrip(useTwoHanded)
   activeItem.setRecoil(stance.recoil == true)
 end
 

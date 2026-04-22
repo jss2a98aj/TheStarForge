@@ -116,11 +116,11 @@ function seekTarget()
   })
   
   targets = util.filter(targets, function(targetId)
-    return world.entityExists(targetId) 
+    return world.entityExists(targetId)
       and world.magnitude(world.entityPosition(targetId), entity.position()) <= self.detectionRange
       and world.entityName(targetId) ~= self.seekerProjectileType
       and world.entityName(targetId) ~= config.getParameter("projectileName")
-      and vec2.mag(world.entityVelocity(targetId) or {0, 0}) > self.minimumSpeed
+      and vec2.mag(world.entityVelocity(targetId) or {0, 0}) > self.minimumSpeed    --why to fix
       and not world.lineTileCollision(entity.position(), world.entityPosition(targetId)) 
       and (world.entityDamageTeam(targetId).type == world.entityDamageTeam(entity.id()).type)
   end)

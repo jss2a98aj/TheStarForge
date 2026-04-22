@@ -25,7 +25,7 @@
     "middle": "unboundrocketlauncher.png",
     "middleFullbright": "",
     "barrel": "",
-    "muzzleFlash": "/items/active/weapons/ranged/muzzleflash.png"
+    "muzzleFlash": ""
   },
   "animationCustom": {
     "animatedParts": {
@@ -57,7 +57,7 @@
   },
 
   "baseOffset": [-0.625, 0.5],
-  "muzzleOffset": [2, 0.25],
+  "muzzleOffset": [2, 0.5],
   
   "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
   

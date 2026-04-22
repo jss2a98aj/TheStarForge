@@ -34,7 +34,7 @@
   "primaryAbilityType" : "starforge-throwprojectile",
   "primaryAbility" : {
     "baseDps" : 5,
-    "cooldownTime" : 0.8,
+    "fireTime" : 0.8,
 	
     //"hideItemWhileIdle" : true,
     

@@ -36,6 +36,8 @@
       "fire": [ "/sfx/gun/unboundrailpistol.ogg" ]
     }
   },
+
+  "useTwoHandedWhileAlone" : true,    //if in one hand, and theres nothing in the other hand, twohand the weapon in the stance
   
   "baseOffset" : [0.5, 0.0],
   

@@ -7,6 +7,10 @@ StarforgeGunFire = WeaponAbility:new()
 function StarforgeGunFire:init()
   self.weapon:setStance(self.weapon.abilities[1].stances.idle)
 
+  for part, state in pairs(self.pullOutAnimationStates or {}) do
+    animator.setAnimationState(part, state)
+  end
+
   self.cooldownTimer = self.fireTime
   
   self.unholster = self.stances.unholsterTwirl

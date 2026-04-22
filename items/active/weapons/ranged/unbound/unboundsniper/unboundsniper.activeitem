@@ -51,7 +51,7 @@
       }
     },
     "sounds": {
-      "fire": [ "/sfx/gun/starforge-sniper.ogg" ],
+      "fire": [ "/sfx/gun/starforge-heavysniper.ogg" ],
       
       "summon" : [ "/sfx/objects/mechbeacon_pulse1.ogg" ]
     }
@@ -82,8 +82,8 @@
     "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
     "class": "StarforgeGunFire",
 
-    "fireTime": 1.2,
-    "baseDps": 9.5,
+    "fireTime": 1.1,
+    "baseDps": 11,
     "energyUsage": 45,
     "inaccuracy": 0.001,
     "projectileCount": 1,

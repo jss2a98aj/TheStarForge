@@ -106,6 +106,17 @@
   
   "elementalType": "electric",
 
+	"starforgeNpcWeaponData" : {
+    "minRange" : 30, 
+    "maxRange" : 70, 
+    "forceMoveRange" : 80, 
+    "primaryCharge" : 2, 
+    "minAltRange" : 0.5, 
+    "maxAltRange" : 3, 
+    "altChance" : 0.25, 
+    "altCharge" : 10
+  },
+
   "primaryAbility": {
     "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
     "class": "StarforgeGunFire",
@@ -137,9 +148,9 @@
       },
       "fire": {
         "duration": 0,
-        "armRotation": 4,
-        "weaponRotation": 3,
-        "weaponOffset" : [-0.125, 0],
+        "armRotation": 3,
+        "weaponRotation": 1,
+        "weaponOffset" : [-0.0625, 0],
         "twoHanded": true,
         "allowRotate": true,
         "allowFlip": true,
@@ -150,9 +161,9 @@
       },
       "cooldown": {
         "duration": 0.05,
-        "armRotation": 4,
-        "weaponRotation": 3,
-        "weaponOffset" : [-0.125, 0],
+        "armRotation": 3,
+        "weaponRotation": 1,
+        "weaponOffset" : [-0.0625, 0],
         "twoHanded": true,
         "allowRotate": true,
         "allowFlip": true,
