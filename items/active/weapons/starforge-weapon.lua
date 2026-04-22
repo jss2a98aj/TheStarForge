@@ -115,7 +115,6 @@ function Weapon:addTransformationGroup(name, offset, rotation, rotationCenter)
 end
 
 function Weapon:updateAim()
-  world.debugText("%s, \n%s", (player.primaryHandItem() and not player.altHandItem()), (player.altHandItem() and not player.primaryHandItem()), entity.position(), "red")
   for _, group in pairs(self.transformationGroups) do
     animator.resetTransformationGroup(group.name)
     animator.translateTransformationGroup(group.name, group.offset)
@@ -250,7 +249,7 @@ function Weapon:setStance(stance)
   end
 
   local useTwoHanded = stance.twoHanded or false
-  if self.useTwoHandedWhileAlone and ((player.primaryHandItem() and not player.altHandItem()) or (player.altHandItem() and not player.primaryHandItem())) then
+  if self.useTwoHandedWhileAlone and (player and ((player.primaryHandItem() and not player.altHandItem()) or (player.altHandItem() and not player.primaryHandItem()))) then
     useTwoHanded = true
   end
 

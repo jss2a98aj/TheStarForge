@@ -85,7 +85,7 @@
     "powerProjectileTime" : 0.15,
 
     "resourcetype" : "health",
-    "energyPerShot" : 50,
+    "energyPerShot" : 10,
     "drainEnergyWhilePowerful" : true,	//If true, consume energy while at max power
     "holdEnergyUsage" : 10,
 	
