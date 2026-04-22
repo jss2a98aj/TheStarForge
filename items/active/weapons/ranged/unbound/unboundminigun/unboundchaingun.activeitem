@@ -67,6 +67,8 @@
   "muzzleOffset": [2, 0.125],
   "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
   "elementalType": "fire",
+
+	"starforgeNpcWeaponData" : {"minRange" : 30, "maxRange" : 70, "forceMoveRange" : 80, "primaryCharge" : 2, "minAltRange" : 5, "maxAltRange" : 45, "altChance" : 1, "altCharge" : 2.25},
   
   "primaryAbility": {
     "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],

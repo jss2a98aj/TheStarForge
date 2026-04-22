@@ -190,7 +190,7 @@ function setRangedAttackerPositions()
 			end
 
 			-- Find a good position for npcs that need one
-			for _,pair in pairs(needPosition) do
+			for _, pair in pairs(needPosition) do
 				local npcPosition = world.entityPosition(pair[1])
 				table.sort(rangedPositions, function(a,b)
 					return world.magnitude(a, npcPosition) < world.magnitude(b, npcPosition)

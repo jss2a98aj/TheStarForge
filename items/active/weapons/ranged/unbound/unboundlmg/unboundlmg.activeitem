@@ -23,6 +23,9 @@
     "middleFullbright": "unboundlmgfullbright.png",
     "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-firemuzzleflash.png"
   },
+
+	"starforgeNpcWeaponData" : {"minRange" : 30, "maxRange" : 70, "forceMoveRange" : 80, "primaryCharge" : 2, "minAltRange" : 5, "maxAltRange" : 45, "altChance" : 0.25, "altCharge" : 10},
+
   "animationCustom": {
     "animatedParts" : {
       "stateTypes" : {
