@@ -1,0 +1,53 @@
+{
+  "itemName" : "starforge-godstep",
+  "price" : 1000,
+  "level" : 7,
+  "fixedLevel" : false,
+  "maxStack" : 1,
+  "rarity" : "Essential",
+  "description" : "A...",
+  "shortdescription" : "Godstep",
+  "tooltipKind" : "starforge-uniquesword",
+  "category" : "uniqueWeapon",
+  "twoHanded" : false,
+  "itemTags" : [ "starforge", "weapon", "melee", "quickblade", "dagger" ],
+  "tooltipFieldsOverride" : {
+    "subtitle" : "Quickblade"
+  },
+
+  //"learnBlueprintsOnPickup" : [ "starforge-godstep" ],
+
+  "inventoryIcon" : "starforge-godstep.png",
+
+  "animation" : "/items/active/weapons/melee/dagger/starforge-quickblade.animation",
+  "animationParts" : {
+    "blade" : "starforge-godstep.png",
+	
+    "swoosh" : "physical"
+  },
+  "animationCustom" : {},
+
+  "scripts" : ["/items/active/weapons/melee/starforge-meleeweapon.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbilityType" : "starforge-daggercombo",
+  "primaryAbility" : {
+    "baseDps" : 4.5,
+    
+    "stanceSpeedFactor" : 1.25,
+    "swingPitchFactor" : 0.85,
+	
+    "finisherHoldTime" : 0.6,
+  
+    "damageConfig" : {
+      "damageSourceKind" : "dagger",
+      "knockbackMode" : "aim",
+      "timeout" : 0.25,
+	    "statusEffects" : [ "starforge-lightbleeding" ]
+    }
+  },
+  "altAbilityType" : "superspinslash",
+
+  "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
+}

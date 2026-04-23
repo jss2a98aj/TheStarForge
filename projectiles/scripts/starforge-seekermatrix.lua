@@ -120,10 +120,20 @@ function seekTarget()
       and world.magnitude(world.entityPosition(targetId), entity.position()) <= self.detectionRange
       and world.entityName(targetId) ~= self.seekerProjectileType
       and world.entityName(targetId) ~= config.getParameter("projectileName")
-      and vec2.mag(world.entityVelocity(targetId) or {0, 0}) > self.minimumSpeed    --why to fix
+      and checkVelocity(targetId)
       and not world.lineTileCollision(entity.position(), world.entityPosition(targetId)) 
       and (world.entityDamageTeam(targetId).type == world.entityDamageTeam(entity.id()).type)
   end)
 
   return targets[1]
+end
+
+function checkVelocity(id)
+  sb.logInfo("Self Velocity Check: %s", world.entityVelocity(entity.id()))
+  sb.logInfo("Target Velocity Check %s", world.entityVelocity(id))
+  local velocityCheck = true
+  if world.entityVelocity then  --it doesnt work for some people?
+    velocityCheck = vec2.mag(world.entityVelocity(id)) > self.minimumSpeed
+  end
+  return velocityCheck
 end

@@ -90,7 +90,7 @@
     "holdEnergyUsage" : 10,
 	
     "cooldownTime" : 0.2,
-    "inaccuracy" : 0.01,
+    "inaccuracy" : 0.001,
 	
     "walkWhileFiring" : false,
     "useQuiverDamageBonus" : true,	//from ERM

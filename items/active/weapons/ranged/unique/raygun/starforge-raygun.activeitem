@@ -31,8 +31,8 @@
           "states" : {
             "idle" : {},
             "overheat" : {
-              "frames" : 3,
-              "cycle" : 0.3,
+              "frames" : 8,
+              "cycle" : 0.8,
               "mode" : "loop"
             }
           }
