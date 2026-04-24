@@ -4,6 +4,7 @@ function init()
   self.startSpeed = vec2.mag(mcontroller.velocity())
   self.baseControlForce = config.getParameter("baseHomingControlForce", 1)
   self.lifeFactor = projectile.timeToLive() * config.getParameter("timeToLiveFactor", 0.25)
+  self.distanceFactor = config.getParameter("distanceFactor", 2)
   self.lifeTimer = 0
 
   self.targetId = config.getParameter("targetId")
@@ -23,7 +24,7 @@ function updateStats()
     self.targetPosition = world.entityPosition(self.targetId)
     local dist = world.distance(self.targetPosition, mcontroller.position())
     self.targetDirection = vec2.norm(dist)
-    self.targetSpeed = math.max(math.max(self.targetSpeed or 0, vec2.mag(world.entityVelocity(self.targetId))), self.startSpeed)
+    self.targetSpeed = math.max(vec2.mag(dist) * self.distanceFactor, self.startSpeed)
   end
   self.currentSpeed = self.startSpeed + (self.lifeTimer / self.lifeFactor) * (self.targetSpeed - self.startSpeed)
   self.controlForce = self.baseControlForce * self.currentSpeed
