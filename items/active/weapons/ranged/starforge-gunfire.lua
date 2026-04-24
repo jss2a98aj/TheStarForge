@@ -284,6 +284,12 @@ function StarforgeGunFire:fireProjectile(projectileType, params, burstNumber)
   
   local shotNumber = 0
 
+  if self.consumeOnShot then
+    for _, config in ipairs(self.consumeOnShot) do
+      player.consumeItem({name = config.item, count = config.count or 1})
+    end
+  end
+
   local baseSpeed = params.speed
   if math.ceil(self.projectileCount) > 1 and not baseSpeed and (self.projectileSpeedVariance or config.getParameter("itemName") == "starforge-combatrifle") then -- im lazy lol
     local config = root.projectileConfig(self.projectileType)

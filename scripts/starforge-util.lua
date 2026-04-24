@@ -165,4 +165,29 @@ if not nebUtil then
       sb.logError("%s sound does not exist on item %s", sound, config.getParamter("itemName"))
     end
   end
+  
+  --Backup an ability
+  function nebUtil.backupAbility(abilityToBackup)
+    local ret = {}
+    for k, v in pairs(abilityToBackup) do
+      if k == "stances" then
+        ret["stances"] = nebUtil.copyTable(abilityToBackup["stances"], 11)
+      elseif type(v) == "table" then
+        -- including weapon causes an infinite loop
+        if v ~= "weapon" then
+          ret[k] = nebUtil.copyTable(v, 3);
+        end
+      else
+        ret[k] = v;
+      end
+    end
+    return ret;
+  end
+
+  --Restore an ability DEPRECATED
+  --function nebAbilityUtil.restoreAbility(backup, weapon)
+  --  local ret = nebAbilityUtil.copyTable(backup, 1)
+  --  ret.weapon = weapon;
+  --  return ret;
+  --end
 end

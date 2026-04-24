@@ -4,117 +4,90 @@
   "maxStack": 1,
   "rarity": "Legendary",
   "description": "An experimental and upgraded version of the Unbound assault rifle.",
-  "shortdescription": "^#686F5D;UNBD^reset; \"Headway\" AR ^yellow;^reset;",
-  "tooltipKind": "starforge-unboundgun",
-  "category": "assaultRifle",
-  "tooltipFieldsOverride" : {"subtitle":"Unbound Rifle"},
+  "shortdescription": "\"Headway\" AR ^yellow;^reset;",
+  "tooltipKind": "starforge-uniquegun",
+  "category": "uniqueWeapon",
+  "tooltipFieldsOverride" : {"subtitle":"Assault Rifle"},
   "twoHanded": true,
-  "level" : 7,
-  "itemTags": [
-    "weapon",
-    "ranged",
-    "assaultrifle"
-  ],
-  "inventoryIcon": "unboundheadwayicon.png",
-  "animation": "unboundheadway.animation",
+  "level" : 6,
+  "itemTags": [ "weapon", "ranged", "assaultrifle" ],
+  "inventoryIcon": "unboundheadway.png:idle",
 
+  "animation" : "/items/active/weapons/ranged/animations/starforge-shellanimgun.animation",
   "animationParts": {
     "butt": "",
     "middle": "unboundheadway.png",
     "barrel": "",
-	"middleFullbright": "unboundheadwayfullbright.png",
-	"muzzleFlash": "muzzleflash.png"
+	  "middleFullbright": "unboundheadwayfullbright.png",
+    "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-electricmuzzleflash.png"
   },
+
   "animationCustom": {
-  "animatedParts" : { "parts" : {
-      "grenadelauncher" : {
-        "properties" : {
-          "zLevel" : 2,
-          "centered" : true,
-          "offset" : [-1.9, 0.7],
-          "transformationGroups" : ["muzzle"],
-          "firePosition" : [0.75, -0.125],
-          "image" : ""
+    "animatedParts": {
+      "stateTypes": {
+        "gun": {
+          "states": {
+            "reload": {
+              "frames" : 1,
+              "cycle" : 0.11
+            }
+          }
         }
       }
-    }},
-      "particleEmitters" : {
-      "muzzleFlash" : {
-        "transformationGroups" : ["muzzle"],
-		"offsetRegion" : [-2.1, 0.1, -2.1, 0.1],
+    },
+
+    "particleEmitters" : {
+      "casing" : {
+		    "offsetRegion" : [0.5, 0.75, 0.5, 0.75],
         "particles" : [
           { "particle" : "starforge-unboundrifle" }
         ]
       },
-	  "altMuzzleFlash" : {
+      "ammoIndicator" : {
         "active" : false,
         "emissionRate" : 8,
-		"burstCount": 2,
         "transformationGroups" : ["muzzle"],
-        "offsetRegion" : [-0.25, -0.5, -0.25, -0.5],
+        "offsetRegion" : [-1.5, 0.75, -1.5, 0.75],
         "particles" : [
-          { "particle" : "rocketbarrelpuff", "offset" : [-1, 0.7] },
-          { "particle" : "rocketbarrelpuff", "offset" : [-1, 0.7] }
+          { "particle" : "starforge-smallelectricflame"}
         ]
       }
     },
+
     "sounds": {
-      "fire": [
-         "/sfx/gun/starforge-sniper.ogg"
-      ],
-	  "altFire" : [ "/sfx/gun/grenade1.ogg" ]
+      "fire": [ "/sfx/gun/sniper1.ogg" ],
+      "loadAmmo" : [ "/sfx/gun/reload/machinepistol_reload_clip3.ogg" ],
+      "fireNade" : [ "/sfx/gun/grenade1.ogg" ]
     }
   },
   
-  "baseOffset": [0.625, 0.3],
-  "muzzleOffset": [2.4, 0.120],
-  "scripts": [
-    "/items/active/weapons/ranged/gun.lua"
-  ],
+  "baseOffset": [0.625, 0.375],
+  "muzzleOffset": [2.25, 0.0],
+
+  "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
   "elementalType": "electric",
+
   "primaryAbility": {
-    "scripts": [
-      "/items/active/weapons/ranged/starforge-gunfire.lua"
-    ],
+    "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
     "class": "StarforgeGunFire",
-    "fireTime": 0.22,
-    "baseDps": 13,
-    "energyUsage": 28,
+
+    "fireTime": 0.11,
+    "baseDps": 12.5,
+    "energyUsage": 30,
     "inaccuracy": 0.003,
     "projectileCount": 1,
     "fireType": "auto",
-    "projectileType": "unboundelectricbullet",
+
+    "projectileType": "starforge-electricbullet",
     "projectileParameters": {
-	  "speed" : 200,
-      "knockback": 7,
-	  "periodicActions" : [{
-                  "rotate" : true,
-                  "time" : 0.01,
-                  "specification" : {
-                    "fade" : 0.9,
-                    "initialVelocity" : [20, 0],
-                    "approach" : [60, 60],
-                    "layer" : "back",
-                    "destructionAction" : "shrink",
-                    "fullbright" : true,
-                    "variance" : {
-                      "initialVelocity" : [5, 0],
-                      "position" : [1, 0],
-                      "timeToLive" : 0.2,
-                      "size" : 0.2
-                    },
-                    "type" : "ember",
-                    "destructionTime" : 0.1,
-                    "size" : 1,
-                    "color" : [214, 180, 255, 255],
-                    "finalVelocity" : [0, 0],
-                    "timeToLive" : 0.2,
-                    "light" : [74, 0, 160]
-                  },
-                  "repeat" : true,
-                  "action" : "particle"
-                }]
+	    "speed" : 200,
+      "knockback": 7
     },
+    "fireOffset" : [0, 0],
+    "fireSound" : "fire",
+    "muzzleFlashState" : "fire",
+    "animatedFire" : true,
+
     "stances": {
       "idle": {
         "armRotation": 0,
@@ -124,79 +97,109 @@
         "allowRotate": true,
         "allowFlip": true,
 		
-		"frontArmFrame" : "run.2",
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       },
       "fire": {
         "duration": 0,
-        "armRotation": 2,
-        "weaponRotation": 2,
-        "weaponOffset" : [-0.15, 0],
+        "armRotation": 3,
+        "weaponRotation": 1,
         "twoHanded": true,
         "allowRotate": true,
         "allowFlip": true,
-		"frontArmFrame" : "run.2",
+        "burstParticleEmitters": [ "casing" ],
+
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       },
       "cooldown": {
         "duration": 0.05,
-        "armRotation": 2,
-        "weaponRotation": 2,
-        "weaponOffset" : [-0.15, 0],
+        "armRotation": 3,
+        "weaponRotation": 1,
         "twoHanded": true,
         "allowRotate": true,
         "allowFlip": true,
 		
-		"frontArmFrame" : "run.2",
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       }
     }
   },
-  "altAbilityType" : "grenadelauncher",
-    "altAbility" : {
-    "name" : "Grenade Launcher",
-    "type" : "grenadelauncher",
-    "scripts" : ["/items/active/weapons/ranged/abilities/altfire.lua"],
-    "class" : "AltFireAttack",
-	"elementalConfig" : {
-        "electric" : {
-          "projectileType" : "starforge-unboundelecgrenade"
-        }
-      },
-    "projectileParameters" : {
-	"speed":45,
-	"periodicActions" : []
-	},
-    "projectileCount" : 1,
-    "inaccuracy" : 0,
-    "baseDamage" : 9,
-    "energyUsage" : 22,
-    "fireTime" : 1.7,
-    "fireType" : "auto",
 
-    "firePositionPart" : "grenadelauncher",
-    "hidePrimaryMuzzleFlash" : true,
+  "altAbility": {
+    "name" : "Swap Mode",
+    "scripts" : ["/items/active/weapons/ranged/abilities/loadalternateammo/starforge-loadalternateammo.lua"],
+    "class" : "StarForgeLoadAlternateAmmo",
+
+    "adaptedAbilityIndex" : 1, //Which ability to adapt (1 = primary, 2 = secondary)
+    
+    //The new stats which will overwrite the primary ability
+    "newAbility" : {
+      "projectileCount" : 1,
+
+      "projectileType" : "starforge-unboundelecgrenade",
+      "projectileParameters" : {
+	      "speed" : 40,
+        "knockback": 0
+      },
+      
+      "fireOffset" : [-1.5, 0.75],
+      "fireSound" : "fireNade",
+      "muzzleFlashState" : "off",
+
+      "fireType" : "auto",
+      "animatedFire" : false,
+	
+      "baseDps" : 10.0,	
+      "fireTime" : 1.1,
+      "energyUsage" : 55,
+      "inaccuracy": 0.003,
+      
+      "stances": {
+        "idle": {
+          "armRotation": 0,
+          "weaponRotation": 0,
+          "weaponOffset" : [0, 0],
+          "twoHanded": true,
+          "allowRotate": true,
+          "allowFlip": true,
+      
+          "frontArmFrame" : "run.2",
+          "backArmFrame" : "swim.4"
+        },
+        "fire": {
+          "duration": 0,
+          "armRotation": 1,
+          "weaponRotation": 1,
+          "twoHanded": true,
+          "allowRotate": true,
+          "allowFlip": true,
+          "burstParticleEmitters": false,
+
+          "frontArmFrame" : "run.2",
+          "backArmFrame" : "swim.4"
+        }
+      }
+    },
 
     "stances" : {
-      "fire" : {
-        "duration" : 0,
-        "armRotation" : 5,
-        "weaponRotation" : 5,
-        "twoHanded" : true,
-
-        "allowRotate" : false,
-        "allowFlip" : false
-      },
-      "cooldown" : {
-        "duration" : 0.11,
-        "armRotation" : 5,
-        "weaponRotation" : 5,
-        "twoHanded" : true,
-
-        "allowRotate" : false,
-        "allowFlip" : false
+      "load" : {
+        "duration" : 0.2,
+        "aimAngle" : 0,
+        "weaponAngularVelocity" : -150,
+        "armAngularVelocity" : 100,
+        "armRotation": 0,
+        "weaponRotation": 0,
+        "weaponOffset" : [0, 0],
+        "twoHanded": true,
+        "allowRotate": true,
+        "allowFlip": true,
+        
+        "frontArmFrame": "rotation",
+        "backArmFrame": "rotation"
       }
     }
   },
+
   "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
 }

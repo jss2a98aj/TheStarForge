@@ -127,7 +127,7 @@
     "inaccuracy": 0.008,
     "projectileCount": 1,
     "fireType": "auto",
-    "projectileType": "unboundelectricbullet",
+    "projectileType": "starforge-electricbullet",
     "projectileParameters": {
 	    "speed" : 175,
       "knockback": 3

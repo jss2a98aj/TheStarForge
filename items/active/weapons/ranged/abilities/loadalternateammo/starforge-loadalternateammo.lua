@@ -1,12 +1,8 @@
-require "/scripts/starforge-abilityutil.lua" -- nebAbilityUtil
+require "/scripts/starforge-util.lua" -- nebUtil
 
 StarForgeLoadAlternateAmmo = WeaponAbility:new()
 
-function StarForgeLoadAlternateAmmo:init()
-  self.weapon.onLeaveAbility = function()
-    self.weapon:setStance(self.weapon.abilities[self.adaptedAbilityIndex].stances.idle)
-  end
-  
+function StarForgeLoadAlternateAmmo:init()  
   self.newAbilityLoaded = false
   self.abilityBackup = false
 end
@@ -20,7 +16,7 @@ function StarForgeLoadAlternateAmmo:update(dt, fireMode, shiftHeld)
   
   if self.abilityBackup == false then
 	--sb.jsonMerge() and copy() cause stack overflow
-    self.abilityBackup = nebAbilityUtil.backupAbility(self.weapon.abilities[self.adaptedAbilityIndex])
+    self.abilityBackup = nebUtil.backupAbility(self.weapon.abilities[self.adaptedAbilityIndex])
     if config.getParameter("newAbilityLoaded", false) then
       self:initAltAmmo()
     end
@@ -41,12 +37,22 @@ function StarForgeLoadAlternateAmmo:loadAmmo()
   local abilityType = self.newAbilityLoaded and self.abilityBackup or self.newAbility
   
   self:adaptAbility(abilityType)
-	
+
   self.newAbilityLoaded = (not self.newAbilityLoaded)
   activeItem.setInstanceValue("newAbilityLoaded", self.newAbilityLoaded)
 	
   animator.playSound("loadAmmo")
   animator.setParticleEmitterActive("ammoIndicator", self.newAbilityLoaded)
+
+  if self.loadAnimationStates and self.newAbilityLoaded then
+    for part, state in pairs(self.loadAnimationStates) do
+      animator.setAnimationState(part, state)
+    end
+  elseif self.unloadAnimationStates and not self.newAbilityLoaded then
+    for part, state in pairs(self.unloadAnimationStates) do
+      animator.setAnimationState(part, state)
+    end
+  end
 
   self.weapon:setStance(self.stances.load)
   util.wait(self.stances.load.duration / 2)
@@ -62,6 +68,9 @@ function StarForgeLoadAlternateAmmo:loadAmmo()
 
     progress = math.min(1.0, progress + (self.dt / self.stances.load.duration))
   end)
+
+  self.weapon:setStance(self.weapon.abilities[self.adaptedAbilityIndex].stances.idle)
+  self.weapon:updateAim()
 end
 
 function StarForgeLoadAlternateAmmo:adaptAbility(abilityType)

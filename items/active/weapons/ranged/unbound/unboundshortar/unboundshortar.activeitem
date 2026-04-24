@@ -12,53 +12,115 @@
   "twoHanded": true,
   "level" : 4,
   "fixedlevels" : false,
-  "itemTags": [
-    "weapon",
-    "ranged",
-    "assaultrifle"
-  ],
-  "inventoryIcon": "unboundshortaricon.png",
-  "animation": "unboundshortar.animation",
+  "itemTags": [ "weapon", "ranged", "assaultrifle" ],
+  "inventoryIcon": "unboundshortar.png:idle",
 
+  "animation" : "/items/active/weapons/ranged/animations/starforge-shellanimgun.animation",
   "animationParts": {
-    "butt": "",
-    "middle": "unboundrifle.png",
+    "butt": "unboundshortarstock.png",
+    "middle": "unboundshortar.png",
     "barrel": "",
-	"middleFullbright": "unboundshortarfullbright.png",
-	"muzzleFlash": "muzzleflash.png"
+    "middleFullbright": "",
+    "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-unboundmuzzleflash.png"
   },
   "animationCustom": {
-      "particleEmitters" : {
-      "muzzleFlash" : {
-        "transformationGroups" : ["muzzle"],
-		"offsetRegion" : [-2.1, 0.1, -2.1, 0.1],
+    "animatedParts": {
+      "stateTypes": {
+        "gun": {
+          "states": {
+            "reload": {
+              "frames" : 1,
+              "cycle" : 0.04
+            }
+          }
+        },
+        "stock": {
+          "states": {
+            "retracted" : {},
+            "extend" : {
+              "frames" : 4,
+              "cycle" : 0.3,
+              "mode" : "transition",
+              "transition" : "extended"
+            },
+            "extended" : {},
+            "retract": {
+              "frames" : 4,
+              "cycle" : 0.3,
+              "mode" : "transition",
+              "transition" : "retracted"
+            }
+          }
+        }
+      },
+
+      "parts" : {
+        "butt" : {
+          "properties" : {
+            "zLevel" : -3,
+            "offset" : [0.0, 0.125]
+          },
+          "partStates" : {
+            "stock" : {
+              "retracted" : {
+                "properties" : {
+                  "image" : "<partImage>:retracted"
+                }
+              },
+              "extend" : {
+                "properties" : {
+                  "image" : "<partImage>:extend.<frame>"
+                }
+              },
+              "extended" : {
+                "properties" : {
+                  "image" : "<partImage>:extended"
+                }
+              },
+              "retract" : {
+                "properties" : {
+                  "image" : "<partImage>:retract.<frame>"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "particleEmitters" : {
+      "casing" : {
+		    "offsetRegion" : [0.25, 0.75, 0.25, 0.75],
         "particles" : [
           { "particle" : "starforge-unboundrifle" }
         ]
+      },
+      "ammoIndicator" : {
+        "active" : false,
+        "emissionRate" : 8,
+        "transformationGroups" : ["muzzle"],
+        "offsetRegion" : [0, 0, 0, 0],
+        "particles" : []
       }
     },
     "sounds": {
-      "fire": [
-        "/sfx/gun/starforge-assaultriflefire1.ogg"
-      ]
+      "fire": [ "/sfx/gun/mp1.ogg", "/sfx/gun/mp2.ogg", "/sfx/gun/mp3.ogg" ],
+      "loadAmmo" : [ "/sfx/gun/reload/machinepistol_reload_clip3.ogg" ]
     }
   },
   
-  "baseOffset": [0.0, 0.3],
-  "muzzleOffset": [1.875, 0.275],
-  "scripts": [
-    "/items/active/weapons/ranged/gun.lua"
-  ],
+  "baseOffset": [0.0, 0.125],
+  "muzzleOffset": [1.875, 0.375],
+  "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
   "elementalType": "physical",
+
   "primaryAbility": {
-    "scripts": [
-      "/items/active/weapons/ranged/starforge-gunfire.lua"
-    ],
+    "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
     "class": "StarforgeGunFire",
-    "fireTime": 0.11,
+
+    "fireTime": 0.075,
     "baseDps": 7,
     "energyUsage": 12,
-    "inaccuracy": 0.03,
+    "inaccuracy": 0.05,
     "projectileCount": 1,
     "fireType": "auto",
     "projectileType": "starforge-physicalbullet",
@@ -66,47 +128,131 @@
 	    "speed" : 200,
       "knockback": 2
     },
+    "animatedFire" : true,
+	
+    "fireOffset" : [-0.25, -0.25],
+
     "stances": {
       "idle": {
         "armRotation": 0,
         "weaponRotation": 0,
-        "weaponOffset" : [0, 0],
+        "weaponOffset" : [-0.375, -0.375],
         "twoHanded": true,
         "allowRotate": true,
         "allowFlip": true,
 		
-		"frontArmFrame" : "run.2",
-        "backArmFrame" : "swim.4"
+        "frontArmFrame": "jump.1",
+        "backArmFrame": "rotation"
       },
       "fire": {
         "duration": 0,
         "armRotation": 2,
         "weaponRotation": 1,
-        "weaponOffset" : [-0.1, 0],
+        "weaponOffset" : [-0.475, -0.375],
         "twoHanded": true,
         "allowRotate": true,
         "allowFlip": true,
-
-        "animationStates" : {
-          "firing" : "fire"
-		},
+        "burstParticleEmitters": [ "casing" ],
 		
-		"frontArmFrame" : "run.2",
-        "backArmFrame" : "swim.4"
+        "frontArmFrame": "jump.1",
+        "backArmFrame": "rotation"
       },
       "cooldown": {
         "duration": 0.05,
         "armRotation": 2,
         "weaponRotation": 1,
-        "weaponOffset" : [-0.1, 0],
+        "weaponOffset" : [-0.475, -0.375],
         "twoHanded": true,
         "allowRotate": true,
         "allowFlip": true,
 		
-		"frontArmFrame" : "run.2",
+        "frontArmFrame": "jump.1",
+        "backArmFrame": "rotation"
+      }
+    }
+  },
+
+  "altAbility": {
+    "name" : "Extend Stock",
+    "scripts" : ["/items/active/weapons/ranged/abilities/loadalternateammo/starforge-loadalternateammo.lua"],
+    "class" : "StarForgeLoadAlternateAmmo",
+
+    "adaptedAbilityIndex" : 1, //Which ability to adapt (1 = primary, 2 = secondary)
+    
+    //The new stats which will overwrite the primary ability
+    "newAbility" : {
+      "baseDps" : 9.0,	
+      "fireTime" : 0.25,
+      "energyUsage" : 55,
+      "inaccuracy": 0.005,
+	
+      "fireOffset" : [0, 0],
+
+      "stances": {
+        "idle": {
+          "armRotation": 0,
+          "weaponRotation": 0,
+          "weaponOffset" : [0, 0],
+          "twoHanded": true,
+          "allowRotate": true,
+          "allowFlip": true,
+      
+          "frontArmFrame" : "run.2",
+          "backArmFrame" : "swim.4"
+        },
+        "fire": {
+          "duration": 0,
+          "armRotation": 2,
+          "weaponRotation": 1,
+          "weaponOffset" : [-0.1, 0],
+          "twoHanded": true,
+          "allowRotate": true,
+          "allowFlip": true,
+          "burstParticleEmitters": [ "casing" ],
+        
+          "frontArmFrame" : "run.2",
+          "backArmFrame" : "swim.4"
+        },
+        "cooldown": {
+          "duration": 0.05,
+          "armRotation": 2,
+          "weaponRotation": 1,
+          "weaponOffset" : [-0.1, 0],
+          "twoHanded": true,
+          "allowRotate": true,
+          "allowFlip": true,
+      
+          "frontArmFrame" : "run.2",
+          "backArmFrame" : "swim.4"
+        }
+      }
+    },
+
+    "loadAnimationStates" : {
+      "stock" : "extend"
+    },
+    "unloadAnimationStates" : {
+      "stock" : "retract"
+    },
+
+    "stances" : {
+      "load" : {
+        "duration" : 0.4,
+        "aimAngle" : 0,
+        "weaponAngularVelocity" : -150,
+        "armAngularVelocity" : 100,
+        "armRotation": -35,
+        "weaponRotation": -25,
+        "weaponOffset" : [0, -0.25],
+        "twoHanded": true,
+        "allowRotate": true,
+        "allowFlip": true,
+
+        "frontArmFrame" : "swimIdle.1",
         "backArmFrame" : "swim.4"
       }
     }
   },
+
   "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
 }
