@@ -26,7 +26,7 @@ function init()
   self.totalWaves = config.getParameter("waveCount")
   self.remainingWaves = self.totalWaves
   self.waveTimer = self.waveTime
-  
+
   self.validTypes = {}
   if self.monsterTypes and #self.monsterTypes > 0 then
     table.insert(self.validTypes, "monster")

@@ -1,0 +1,101 @@
+{
+  "metadata" : {
+    "name" : "starforge-stormcresttemple",
+    "species" : "generic",
+    "rules" : [
+    ],
+    "anchor" : [ "starforge-stormcresttemple" ],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 15,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+    // BASE LAYOUTS
+    {
+      "name" : "starforge-stormcresttemple",
+      "rules" : [
+        [ "ignorePartMaximumRule" ],
+        [ "doNotCombineWith", [ "starforge-stormcresttemple" ] ]
+      ],
+      "def" : [ "tmx", "starforge-stormcresttemple.json" ],
+      "chance" : 0
+    },
+
+    //Left Entrance
+    {
+      "name" : "starforge-stormcrestrooml1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-stormcrestrooml1.json" ],
+      "chance" : 0.1
+    },
+
+    {
+      "name" : "starforge-stormcrestrooml2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-stormcrestrooml2.json" ],
+      "chance" : 0.1
+    },
+
+    {
+      "name" : "starforge-stormcrestrooml3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-stormcrestrooml3.json" ],
+      "chance" : 0.1
+    },
+
+    {
+      "name" : "starforge-stormcrestrooml4",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-stormcrestrooml3.json" ],
+      "chance" : 0.1
+    },
+
+    //Right Entrance
+    {
+      "name" : "starforge-stormcrestroomr1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-stormcrestroomr1.json" ],
+      "chance" : 0.1
+    },
+
+    {
+      "name" : "starforge-stormcrestroomr2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-stormcrestroomr2.json" ],
+      "chance" : 0.1
+    },
+
+    {
+      "name" : "starforge-stormcrestroomr3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-stormcrestroomr3.json" ],
+      "chance" : 0.1
+    },
+
+    {
+      "name" : "starforge-stormcrestroomr4",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-stormcrestroomr4.json" ],
+      "chance" : 0.1
+    }
+  ]
+}
