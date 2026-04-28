@@ -14,7 +14,7 @@ function init()
   self.baseDuration = effect.duration()
   
   message.setHandler("starforge-setteleportposition", function(_, _, position)
-	self.targetPosition = position
+	  self.targetPosition = position
   end)
 end
 

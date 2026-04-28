@@ -213,6 +213,6 @@ function spawnEntity(type, pos)
   if type == "npc" then
     return world.spawnNpc(pos, util.randomChoice(self.npcSpecies), util.randomChoice(self.npcTypes), world.threatLevel())
   elseif type == "monster" then
-	return world.spawnMonster(util.randomChoice(self.monsterTypes), pos, {level = world.threatLevel(), aggressive = true})
+	  return world.spawnMonster(util.randomChoice(self.monsterTypes), pos, {level = world.threatLevel(), aggressive = true, targetOutOfSightTime = math.huge})
   end
 end

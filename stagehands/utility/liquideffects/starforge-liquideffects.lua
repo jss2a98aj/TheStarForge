@@ -41,6 +41,7 @@ function update(dt)
     end
   end
 
+  self.scanTimer = math.max(0, self.scanTimer - dt)
   if self.scanTimer == 0 then
     reset()
   end

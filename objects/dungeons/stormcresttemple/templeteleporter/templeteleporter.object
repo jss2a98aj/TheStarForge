@@ -1,0 +1,57 @@
+{
+  "objectName" : "starforge-templeteleporter",
+  "colonyTags" : ["storage", "apex"],
+  "rarity" : "Legendary",
+  "tooltipKind" : "base",
+  "race" : "apex",
+
+  "category" : "storage",
+  "price" : 0,
+  "printable" : false,
+  "description" : "A warp pad.",
+  "shortdescription" : "Aviolite Warp Pad",
+
+  "apexDescription" : "This could teleport me anywhere. I should be prepared.",
+  "avianDescription" : "If I press this button, I'll be warped somewhere.",
+  "floranDescription" : "Floran press button, Floran warpsss away.",
+  "glitchDescription" : "Weary. Where could this teleporter lead?",
+  "humanDescription" : "Where could this lead? There's only one way to find out!",
+  "hylotlDescription" : "I can be teleported to places unknown. I could exercise caution.",
+  "novakidDescription" : "Time to bust in, guns blazin'!",
+
+  "inventoryIcon" : "templeteleportericon.png",
+
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "unboundmissionteleporter.png:default", "fullbright" : true } ],
+      "imagePosition" : [-16, 0],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "imageLayers" : [ { "image" : "unboundmissionteleporter.png:default", "fullbright" : true } ],
+      "imagePosition" : [-16, 0],
+
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "animation" : "/objects/mission/unbound/unboundmissionteleporter/unboundmissionteleporter.animation",
+  "animationParts" : {
+    "teleporter" : "templeteleporter.png"
+  },
+  "animationPosition" : [-16, 0],
+
+  "scripts" : ["/objects/scripts/starforge-applystatusoninteract.lua"],
+  "scriptDelta" : 0,
+
+  "statusEffectsOnInteract" : ["starforge-teleporttoposition"],
+  "statusDuration" : [0]
+}

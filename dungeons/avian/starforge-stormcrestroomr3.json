@@ -19,7 +19,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJzt21EOgjAQRVH8czOux+2wBXYsRkka1A4Uihe4J5n4U8nkjcSGatNIWup6adqS93T9662vrvAaR7NGJmvmmPaiF1ImpF4oamfS31\/Z2rKXPSJlQuqFgpQJqRcKUiakXihImZB6oSBlQuqFgrR\/kyRJx3W3qtecGYx1VvWK5Nb++7N1hork1qZnQsMZ07fyDK6+KRmX3qPahvNhcz5spd9x0l753FmSJGlf3L9JUsznO2w+H2VZci7o3uPT84ztnU87VLR\/S9eOr1fzXP2shnym\/tY3t7Z0Nt47v43\/ixqpMR\/lOR8258OWZh7tD+bMUlLsAcc\/58s=",
+         "data":"eJzt22EOgjAMhuH5z8t4Hq\/DFbixW3QJgUFhUPwG75M0\/qmkaV1cNg0BwF7PR+hq3tPH11eMvvIZV3NET47s47AWfCn1RKkWFd49ietrMc6spUVKPVGqRYVST5RqUaHUE6VaVCj1RKkWFUo9UapFhdL+DQAAXNebcI8tMxjrCfewLOX++7N1h7As5Q7vhPIdUym4g\/O3pse1axTnYD7amI+22u84oFWcOwMAALSF\/RsA2Djf0cb5qJY994LsPabSHduvP10Oa\/+Wcuae53mvfle5P2t\/65ty5mZUOxvWzrzxf1EtObc0I9aOj5r5lHKZjw\/mo23Yc2t\/sGWWAGwfxyfmfA==",
          "encoding":"base64",
          "height":44,
          "id":2,
@@ -1884,7 +1884,7 @@
                  "name":"",
                  "properties":
                     {
-                     "parameters":"{ \"detectArea\" : [ [-33, -12], [33, 12] ], \"detectDuration\" : 1 }"
+                     "parameters":"{ \"detectArea\" : [ [-33, -4], [33, 12] ], \"detectDuration\" : 1 }"
                     },
                  "propertytypes":
                     {
@@ -2064,7 +2064,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "x":0,
          "y":0
         }, 

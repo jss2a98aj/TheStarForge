@@ -1916,7 +1916,7 @@
                  "name":"",
                  "properties":
                     {
-                     "parameters":"{ \"detectArea\" : [ [-33, -12], [33, 12] ], \"detectDuration\" : 1 }"
+                     "parameters":"{ \"detectArea\" : [ [-33, -4], [33, 12] ], \"detectDuration\" : 1 }"
                     },
                  "propertytypes":
                     {
@@ -1963,7 +1963,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "x":0,
          "y":0
         }, 

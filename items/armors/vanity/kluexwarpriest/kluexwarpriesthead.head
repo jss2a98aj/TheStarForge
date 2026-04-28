@@ -1,0 +1,15 @@
+{
+  "itemName" : "starforge-kluexwarpriesthead",
+  "price" : 100,
+  "inventoryIcon" : "icons.png:head",
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "category" : "headwear",
+  "description" : ".",
+  "shortdescription" : "Kluex Warpriest Mask",
+  "tooltipKind" : "armor",
+
+  "maleFrames" : "head.png",
+  "femaleFrames" : "head.png",
+  "mask" : "mask.png"
+}

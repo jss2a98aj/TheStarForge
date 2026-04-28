@@ -1,0 +1,114 @@
+{
+  "projectileName" : "starforge-lavaspurt",
+  "image" : "/projectiles/invisibleprojectile/invisibleprojectile.png",
+  "physics" : "illusion",
+  "power" : 1,
+  "speed" : 0,
+  "bounces" : -1,
+  "orientationLocked" : true,
+  "flippable" : true,
+  "timeToLive" : 1,
+  "damageType" : "noDamage",
+  "piercing" : true,
+  "periodicActions" : [
+    {
+      "time" : 0.01,
+      "repeat" : true,
+      "action" : "option",
+      "options" : [
+        {
+          "action" : "particle",
+          "specification" : {
+            "type" : "animated",
+            "animation" : "/animations/ember1/ember1.animation",
+            "approach" : [0.5, 0.5],
+            "timeToLive" : 0.6,
+            "variance" : {
+              "timeToLive" : 0.15,
+              "position" : [1, 1],
+              "initialVelocity" : [1, 1],
+              "rotation" : 180
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "crabcanoball",
+      "inheritDamageFactor" : 1,
+      "config" : {
+        "speed" : 25, 
+        "statusEffects" : [ "burning" ],
+        "damageTeam" : { "type" : "indiscriminate" }
+      }
+    },
+    {
+      "action" : "actions",
+      "list" : [
+        {
+          "action" : "loop",
+          "count" : 3,
+          "body" : [
+            {
+              "action" : "option",
+              "options" : [
+                {
+                  "action" : "particle",
+                  "specification" : {
+                    "type" : "animated",
+                    "animation" : "/animations/ember1/ember1.animation",
+                    "approach" : [0.5, 0.5],
+                    "timeToLive" : 0.6,
+                    "variance" : {
+                      "timeToLive" : 0.15,
+                      "position" : [4, 4],
+                      "initialVelocity" : [1, 1],
+                      "rotation" : 180
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "action" : "spark"
+            }
+          ]
+        },
+        {
+          "action" : "loop",
+          "count" : 2,
+          "body" : [
+            {
+              "action" : "option",
+              "options" : [
+                {
+                  "action" : "particle",
+                  "specification" : {
+                    "type" : "animated",
+                    "animation" : "/animations/smallflame/smallflame.animation",
+                    "approach" : [0.5, 0.5],
+                    "timeToLive" : 1.5,
+                    "variance" : {
+                      "position" : [4, 4],
+                      "initialVelocity" : [1, 1],
+                      "timeToLive" : 0.5,
+                      "rotation" : 180
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "action" : "sound",
+          "options" : [ "/sfx/projectiles/fireball_spit.ogg" ]
+        }
+      ]
+    }
+  ],
+  "damageKind" : "default"
+}
