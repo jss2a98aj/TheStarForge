@@ -1,0 +1,607 @@
+{
+  "itemName" : "starforge-devotion",
+  "price" : 600,
+  "level" : 7,
+  "maxStack" : 1,
+  "rarity" : "Essential",
+  "description" : "Wielded by those annointed by Kluex, it is said to use one of his feathers as its blade.",
+  "shortdescription" : "Devotion",
+  "tooltipKind" : "starforge-uniquesword",
+  "category" : "uniqueWeapon",
+  "tooltipFieldsOverride" : {
+    "subtitle" : "Spellglaive"
+  },
+  "twoHanded" : true,
+  "itemTags" : [ "starforge", "weapon", "melee", "spellglaive", "spear", "avian" ],
+
+  "cursor" : "/cursors/starforge-spellglaivecursor.cursor",
+
+  "inventoryIcon" : "starforge-devotion.png",
+
+  "animation" : "/items/active/weapons/melee/spellglaive/spellglaive.animation",
+  "animationParts" : {
+    "blade" : "starforge-devotion.png",
+	  "bladeFullbright" : "starforge-devotionfb.png",
+	
+    "swoosh" : "physical",
+	  "muzzleFlash" : ""
+  },
+  "animationCustom" : {
+    "animatedParts" : {
+      "stateTypes" : {
+        "swoosh" : {
+          "default" : "idle",
+          "states" : {
+            "fire5" : {
+              "frames" : 3,
+              "cycle" : 0.1,
+              "mode" : "transition",
+              "transition" : "idle"
+            }
+          }
+        },
+        "energy" : {
+          "default" : "idle",
+          "states" : {
+            "idle" : {},
+            "physUp" : {
+              "frames" : 3,
+              "cycle" : 0.3,
+              "mode" : "transition",
+              "transition" : "physical"
+            },
+            "physical" : {},
+            "fire" : {},
+            "ice" : {},
+            "physDown" : {
+              "frames" : 3,
+              "cycle" : 0.3,
+              "mode" : "transition",
+              "transition" : "idle"
+            }
+          }
+        }
+      },
+      "parts" : {
+        "bladeFullbright" : {
+          "partStates" : {
+            "energy" : {
+              "idle" : {
+                "properties" : {
+                  "image" : "<partImage>:physical.1<paletteSwaps>?<directives>?<bladeDirectives><comboDirectives>"
+                }
+              },
+              "physUp" : {
+                "properties" : {
+                  "image" : "<partImage>:physical.<frame><paletteSwaps>?<directives>?<bladeDirectives><comboDirectives>"
+                }
+              },
+              "physical" : {
+                "properties" : {
+                  "image" : "<partImage>:physical.3<paletteSwaps>?<directives>?<bladeDirectives><comboDirectives>"
+                }
+              },
+              "fire" : {
+                "properties" : {
+                  "image" : "<partImage>:fire.3<paletteSwaps>?<directives>?<bladeDirectives><comboDirectives>"
+                }
+              },
+              "ice" : {
+                "properties" : {
+                  "image" : "<partImage>:ice.3<paletteSwaps>?<directives>?<bladeDirectives><comboDirectives>"
+                }
+              },
+              "physDown" : {
+                "properties" : {
+                  "image" : "<partImage>:physDown.<frame><paletteSwaps>?<directives>?<bladeDirectives><comboDirectives>"
+                }
+              }
+            }
+          }
+        },
+
+        "swoosh" : {
+          "partStates" : {
+            "swoosh" : {
+              "fire" : {
+                "properties" : {
+                  "image" : "/items/active/weapons/melee/swoosh/starforge/slash/slash-<partImage>.png:<frame>",
+                  "offset" : [2.5, 0.75],
+                  "damageArea" : [[-4, 1], [2.5, 1], [2.5, -2], [-4, -2]]
+                }
+              },
+              "fire3" : {
+                "properties" : {
+                  "image" : "/items/active/weapons/melee/swoosh/starforge/downcut/downcut-ice.png:<frame>",
+                  "offset" : [-1.375, 2.625],
+                  "damageArea" : [[-5, 2], [-2.5, 3], [1, 3], [4, 1.75], [5, -0.25], [5, -2.25], [4, -3.25], [0, -2.5]]
+                }
+              },
+              "fire5" : {
+                "properties" : {
+                  "image" : "/items/active/weapons/melee/swoosh/starforge/downcut/downcut-fire.png:<frame>?flipy",
+                  "offset" : [-1.375, -2.625],
+                  "damageArea" : [[-5, -2], [-2.5, -3], [1, -3], [4, -1.75], [5, 0.25], [5, 2.25], [4, 3.25], [0, 2.5]]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "sounds" : {
+      "fire" : [ "/sfx/melee/swing_shortsword.ogg" ],
+      "fire2" : [ "/sfx/melee/swing_spear.ogg" ],
+      "fire3" : [ "/sfx/melee/swing_shortsword_ice1.ogg", "/sfx/melee/swing_shortsword_ice2.ogg", "/sfx/melee/swing_shortsword_ice3.ogg" ],
+      "fire4" : [ "/sfx/melee/swing_shortsword.ogg" ],
+      "fire5" : [ "/sfx/melee/swing_shortsword_fire1.ogg", "/sfx/melee/swing_shortsword_fire2.ogg", "/sfx/melee/swing_shortsword_fire3.ogg" ],
+
+      "colourShift" : [ "/sfx/npc/boss/kluexboss_phase1.ogg" ]
+    }
+  },
+
+  "scripts" : [ "/items/active/weapons/melee/starforge-meleeweapon.lua" ],
+
+  "elementalType" : "physical",
+
+  "primaryAbilityType" : "starforge-spellglaivecombo",
+  "primaryAbility" : {
+    "baseDps" : 11.0,
+
+    "stanceSpeedFactor" : 1.05,
+    "swingPitchFactor" : 0.95,
+	
+    "comboSteps" : 5,
+
+    "swooshOffsetRegions" : [
+      [0.75, 0.0, 4.25, 5.0],
+      [3.0, -0.5, 6.5, 2.0],
+      [0.75, 0.0, 4.25, 5.0],
+      [1.5, -1.0, 5.5, 1.0],
+      [0.75, -0.0, 4.25, -5.0]
+    ],
+
+    "stepDamageConfig" : [
+      {
+        "baseDamageFactor" : 0.7,
+        "damageSourceKind" : "plasma",
+        "knockback" : 10
+      },
+      {
+        "baseDamageFactor" : 0.7,
+        "damageSourceKind" : "plasma",
+        "knockback" : 10
+      },
+      {
+        "baseDamageFactor" : 1.0,
+        "damageSourceKind" : "iceplasma",
+        "statusEffects" : [ "coldslow" ],
+        "knockback" : 15
+      },
+      {
+        "baseDamageFactor" : 1.25,
+        "damageSourceKind" : "plasma",
+        "knockback" : 30
+      },
+      {
+        "baseDamageFactor" : 1.0,
+        "damageSourceKind" : "fireplasma",
+        "statusEffects" : [ "burning" ],
+        "knockback" : 15
+      }
+    ],
+        
+    "resetAnimationStates" : {
+      "energy" : "physDown"
+    },
+
+    "stances" : {
+      //IDLE - DEFAULT
+      "idle" : {
+        "armRotation" : -10,
+        "weaponRotation" : -78,
+        "weaponOffset" : [0.125, 0],
+        "allowRotate" : true,
+        "twoHanded" : true,
+        "allowFlip" : true,
+		
+        "frontArmFrame" : "jump.3"
+      },
+      //COMBO STEP 1
+      "windup1" : {
+        "duration" : 0.15,
+        "armRotation" : -10,
+        "weaponRotation" : -70,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 2.5],
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+        "continueStep" : true,
+        
+        "animationStates" : {
+          "energy" : "physUp"
+        },
+        "playSounds" : [ "colourShift" ],
+
+        "frontArmFrame" : "rotation"
+      },
+      "preslash1" : {
+        "duration" : 0.025,
+        "armRotation" : -25,
+        "weaponRotation" : -75,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.25],
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+        "frontArmFrame" : "jump.3"
+      },
+      "fire1" : {
+        "duration" : 0.125,
+        "armRotation" : -30,
+        "weaponRotation" : -80,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0],
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+
+        "projectileType" : "standardbullet",
+        "projectileParameters" : {
+          "damageType" : "noDamage",
+          "timeToLive" : 0.05,
+          "speed" : [100, 150],
+          "bounces" : -1,
+          "piercing" : true,
+          "processing" : "?crop=0;0;1;1",
+          "movementSettings" : {
+            "airFriction" : 3.0
+          },
+          "actionOnReap" : [
+            {
+              "action" : "projectile",
+              "inheritDamageFactor" : 1,
+              "type" : "starforge-devotionplasma",
+              "config" : {
+                "timeToLive" : 1,
+                "processing" : ""
+              }
+            }
+          ]
+        },
+        "projectileInaccuracy" : 0.5,
+        "fixedProjectileAngle" : true,
+        "projectileDamage" : 3.5,
+		
+        "frontArmFrame" : "jump.3"
+      },
+      "wait1" : {
+        "duration" : 0.1,
+        "armRotation" : -25,
+        "weaponRotation" : -75,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.5],
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+        "frontArmFrame" : "jump.3"
+      },
+      //COMBO STEP 2
+      "windup2" : {
+        "duration" : 0.089,
+        "armRotation" : -25,
+        "weaponRotation" : -75,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.5],
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+        "frontArmFrame" : "jump.3"
+      },
+      "preslash2" : {
+        "duration" : 0.01,
+        "armRotation" : -25,
+        "weaponRotation" : -75,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.5],
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+        "frontArmFrame" : "jump.3"
+      },
+      "fire2" : {
+        "duration" : 0.15,
+        "armRotation" : -20,
+        "weaponRotation" : -70,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 2.5],
+
+        "projectileType" : "standardbullet",
+        "projectileParameters" : {
+          "damageType" : "noDamage",
+          "timeToLive" : 0.05,
+          "speed" : [100, 150],
+          "bounces" : -1,
+          "piercing" : true,
+          "processing" : "?crop=0;0;1;1",
+          "movementSettings" : {
+            "airFriction" : 3.0
+          },
+          "actionOnReap" : [
+            {
+              "action" : "projectile",
+              "inheritDamageFactor" : 1,
+              "type" : "starforge-devotionplasma",
+              "config" : {
+                "timeToLive" : 1,
+                "processing" : ""
+              }
+            }
+          ]
+        },
+        "projectileInaccuracy" : 0.5,
+        "fixedProjectileAngle" : true,
+        "projectileDamage" : 3.5,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "wait2" : {
+        "duration" : 0.1,
+        "armRotation" : -20,
+        "weaponRotation" : -70,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 2.25],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+	    //COMBO STEP 3
+      "windup3" : {
+        "duration" : 0.2,
+        "armRotation" : 175,
+        "weaponRotation" : -105,
+        "weaponOffset" : [1, 0.625],
+        "twoHanded" : true,
+
+        "animationStates" : {
+          "energy" : "ice"
+        },
+        "playSounds" : [ "colourShift" ],
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+        "frontArmFrame" : "jump.3"
+      },
+      "preslash3" : {
+        "duration" : 0.025,
+        "armRotation" : 140,
+        "weaponRotation" : -140,
+        "weaponOffset" : [1, 1],
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+        "frontArmFrame" : "jump.3"
+      },
+      "fire3" : {
+        "duration" : 0.25,
+        "armRotation" : -45,
+        "weaponRotation" : -65,
+        "weaponOffset" : [0, 1],
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+
+        "projectileType" : "standardbullet",
+        "projectileParameters" : {
+          "damageType" : "noDamage",
+          "timeToLive" : 0.05,
+          "speed" : [100, 150],
+          "bounces" : -1,
+          "piercing" : true,
+          "processing" : "?crop=0;0;1;1",
+          "movementSettings" : {
+            "airFriction" : 3.0
+          },
+          "actionOnReap" : [
+            {
+              "action" : "projectile",
+              "inheritDamageFactor" : 1,
+              "type" : "starforge-devotionplasma",
+              "config" : {
+                "timeToLive" : 1,
+                "processing" : "?replace;842138=3b4f75;b9182a=4689c0;ea6a56=73c6da;ff9d8d=98eaf6;b9182aBF=4689c0BF",
+                "damageKind" : "iceplasma"
+              }
+            }
+          ]
+        },
+        "projectileInaccuracy" : 0.5,
+        "fixedProjectileAngle" : true,
+        "projectileDamage" : 3.5,
+		
+        "frontArmFrame" : "jump.3"
+      },
+      "wait3" : {
+        "duration" : 0.15,
+        "armRotation" : -45,
+        "weaponRotation" : -65,
+        "weaponOffset" : [0, 1],
+        "twoHanded" : true,
+		
+        "allowRotate" : false,
+        "allowFlip" : true,
+		
+        "frontArmFrame" : "jump.3"
+      },
+      //COMBO STEP 4
+      "windup4" : {
+        "duration" : 0.3,
+        "armRotation" : -25,
+        "weaponRotation" : -245,
+        "twoHanded" : true,
+        "weaponOffset" : [0.25, 1.5],
+
+        "animationStates" : {
+          "energy" : "physical"
+        },
+        "playSounds" : [ "colourShift" ],
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+		    "comboDirectives" : "flipx",
+		
+        "frontArmFrame" : "jump.3"
+      },
+      "fire4" : {
+        "duration" : 0.225,
+        "armRotation" : -15,
+        "weaponRotation" : -255,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.0],
+		
+		    "comboDirectives" : "flipx",
+
+        "projectileType" : "standardbullet",
+        "projectileParameters" : {
+          "damageType" : "noDamage",
+          "timeToLive" : 0.02,
+          "speed" : [100, 150],
+          "bounces" : -1,
+          "piercing" : true,
+          "processing" : "?crop=0;0;1;1",
+          "movementSettings" : {
+            "gravityMultiplier" : 0,
+            "airFriction" : 3.0
+          },
+          "actionOnReap" : [
+            {
+              "action" : "projectile",
+              "inheritDamageFactor" : 1,
+              "type" : "starforge-devotionplasma",
+              "config" : {
+                "timeToLive" : 1,
+                "processing" : ""
+              }
+            }
+          ]
+        },
+        "projectileInaccuracy" : 0.5,
+        "fixedProjectileAngle" : true,
+        "projectileDamage" : 3.5,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "wait4" : {
+        "duration" : 0.35,
+        "armRotation" : -15,
+        "weaponRotation" : -255,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0.0],
+		
+		    "comboDirectives" : "flipx",
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "windup5" : {
+        "duration" : 0.15,
+        "armRotation" : -90,
+        "weaponRotation" : -170,
+        "twoHanded" : true,
+
+        "animationStates" : {
+          "energy" : "fire"
+        },
+        "playSounds" : [ "colourShift" ],
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+		
+		    "comboDirectives" : "flipx"
+      },
+      "preslash5" : {
+        "duration" : 0.025,
+        "armRotation" : -45,
+        "weaponRotation" : -140,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		
+	    	"comboDirectives" : "flipx"
+      },
+      "fire5" : {
+        "duration" : 0.25,
+        "armRotation" : 45,
+        "weaponRotation" : -125,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 1],
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+
+        "projectileType" : "standardbullet",
+        "projectileParameters" : {
+          "damageType" : "noDamage",
+          "timeToLive" : 0.02,
+          "speed" : [100, 150],
+          "bounces" : -1,
+          "piercing" : true,
+          "processing" : "?crop=0;0;1;1",
+          "movementSettings" : {
+            "gravityMultiplier" : 0,
+            "airFriction" : 3.0
+          },
+          "actionOnReap" : [
+            {
+              "action" : "projectile",
+              "inheritDamageFactor" : 1,
+              "type" : "starforge-devotionplasma",
+              "config" : {
+                "timeToLive" : 1,
+                "processing" : "?replace;842138=ba5732;b9182a=f09637;ea6a56=f5c945;ff9d8d=ffed83;b9182aBF=f09637BF",
+                "damageKind" : "fireplasma"
+              }
+            }
+          ]
+        },
+        "projectileInaccuracy" : 0.5,
+        "fixedProjectileAngle" : true,
+        "projectileDamage" : 3.5,
+		
+		    "comboDirectives" : "flipx"
+      }
+    }
+  },
+  
+  "altAbilityType" : "starforge-spellglaiveblast",
+  "altAbility" : {
+    "projectileType" : "redplasmatorpedo",
+    "projectileParameters" : {
+      "speed" : 150
+    },
+
+    "projectileCount" : 1,
+    "inaccuracy": 0.005,
+    "baseDamage" : 9,
+    "energyUsage" : 35,
+    
+    "fireTime" : 0.9,
+    "fireType" : "auto"
+  },
+
+  "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
+}

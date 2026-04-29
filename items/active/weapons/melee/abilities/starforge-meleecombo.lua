@@ -5,6 +5,10 @@ function StarforgeMeleeCombo:init()
   self.comboStep = 1
   animator.setGlobalTag("comboDirectives", self.stances.idle.comboDirectives or "")
 
+  for part, state in pairs(self.pullOutAnimationStates or {}) do
+    animator.setAnimationState(part, state)
+  end
+
   self.energyUsage = self.energyUsage or 0
 
   self:computeDamageAndCooldowns()
@@ -167,7 +171,7 @@ function StarforgeMeleeCombo:teleport()
 	params.powerMultiplier = activeItem.ownerPowerMultiplier()
 	params.speed = util.randomInRange(params.speed)
 		
-    world.spawnProjectile(
+  world.spawnProjectile(
 	  stance.projectileType,
 	  targetPosition,
 	  activeItem.ownerEntityId(),
@@ -227,6 +231,10 @@ function StarforgeMeleeCombo:wait()
       return
     end
   end)
+  
+  for part, state in pairs(self.resetAnimationStates or {}) do
+    animator.setAnimationState(part, state)
+  end
 
   self.cooldownTimer = math.max(0, self.cooldowns[self.comboStep - 1] - stance.duration * (self.stanceSpeedFactor or 1))
   self.comboStep = 1
@@ -276,6 +284,7 @@ function StarforgeMeleeCombo:fire()
   if not stance.animationStates or not stance.animationStates.swoosh then
     animator.setAnimationState("swoosh", animStateKey)
   end
+
   --Add normal pitch variance to shots
   local pitchVariance = ((self.swingPitchFactor or 1) + (self.pitchVariance or 0.1)) - (math.random() * ((self.pitchVariance or 0.1) * 2)) + (pitchIncrease or 0)
   animator.setSoundPitch(animStateKey, pitchVariance)
@@ -284,15 +293,9 @@ function StarforgeMeleeCombo:fire()
   local swooshKey = self.animKeyPrefix .. (self.elementalType or self.weapon.elementalType) .. "swoosh"
   animator.setParticleEmitterOffsetRegion(swooshKey, self.swooshOffsetRegions[self.comboStep])
   animator.burstParticleEmitter(swooshKey)
-
-  if stance.immediateSounds then
-    for sound, pitchShift in pairs(stance.immediateSounds) do
-      if animator.hasSound(sound) then
-        local variance = (pitchShift or 0.1) - (math.random() * ((pitchShift or 0.1) * 2))
-        animator.setSoundPitch(sound, 1 + pitchVariance)
-        animator.playSound(sound)
-      end
-    end
+  
+  if stance.projectileType then
+    self:spawnProjectile(stance)
   end
 
   -- If this step is configured as a "spin" move, spin the weapon
@@ -363,7 +366,11 @@ function StarforgeMeleeCombo:fire()
   else
     self.cooldownTimer = self.cooldowns[self.comboStep]
     self.comboStep = 1
-    
+  
+    for part, state in pairs(self.resetAnimationStates or {}) do
+      animator.setAnimationState(part, state)
+    end
+      
     local alt = getAltAbility()
     if alt and self.altComboFinisher then
       animator.setGlobalTag("comboDirectives", "")
@@ -371,6 +378,31 @@ function StarforgeMeleeCombo:fire()
       triggerFinisher(self.finisherHoldTime)
     end
   end
+end
+
+function StarforgeMeleeCombo:spawnProjectile(stance)
+  local inaccuracy = sb.nrand(stance.projectileInaccuracy or 0, 0)
+	local aimVector = vec2.rotate({0, 1}, (stance.fixedProjectileAngle and 0 or self.weapon.aimAngle) + inaccuracy + (mcontroller.facingDirection() * (stance.projectileAimAngleOffset or 0)))
+	aimVector[1] = aimVector[1] * mcontroller.facingDirection()
+	
+	local params = stance.projectileParameters or {}
+	params.power = (stance.projectileDamage or 1) * config.getParameter("damageLevelMultiplier")
+	params.powerMultiplier = activeItem.ownerPowerMultiplier()
+  if params.speed then
+  	params.speed = util.randomInRange(params.speed)
+  end
+  sb.logInfo("%s", sb.printJson(params, 1))
+
+  local firePosition = vec2.add(mcontroller.position(), activeItem.handPosition(animator.partPoint("blade", "projectileFirePoint") or {0,0}))
+
+  world.spawnProjectile(
+	  stance.projectileType,
+	  firePosition,
+	  activeItem.ownerEntityId(),
+	  aimVector,
+	  false,
+	  params
+	)
 end
 
 function StarforgeMeleeCombo:shouldActivate()
@@ -407,7 +439,7 @@ function StarforgeMeleeCombo:computeDamageAndCooldowns()
   local totalAttackTime = 0
   local totalDamageFactor = 0
   for i, attackTime in ipairs(attackTimes) do
-    self.stepDamageConfig[i] = util.mergeTable(self.stepDamageConfig[i], copy(self.damageConfig)) --swapped for testing?
+    self.stepDamageConfig[i] = util.mergeTable(copy(self.damageConfig), self.stepDamageConfig[i]) --swapped for testing?
     self.stepDamageConfig[i].timeoutGroup = "primary" .. i
     if self.stepDamageConfig[i].statusEffects ~= self.damageConfig.statusEffects then --can't copy empty tables ig?
       self.stepDamageConfig[i].statusEffects = self.damageConfig.statusEffects

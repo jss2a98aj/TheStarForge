@@ -10,7 +10,7 @@
   "dropPools": [],
  
   "scriptConfig" : {
-    "bossName" : "Disciple of Kluex",
+    "bossName" : "Disicple of Kluex",
     
     "behavior" : "mik-hostilenpc",
     
@@ -140,10 +140,7 @@
 				    "name": "starforge-katahelbackfalse" 
 				}],
         "primary": [
-          "kluexstaff"
-        ],
-        "alt" : [ 
-          "kluexstaff"
+          "starforge-devotion"
         ]
       }]]
     ]

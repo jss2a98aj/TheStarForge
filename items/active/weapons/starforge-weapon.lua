@@ -241,6 +241,8 @@ function Weapon:setStance(stance)
   end
 
   for _, soundName in pairs(stance.playSounds or {}) do
+    local pitchVariance = ((stance.playSoundsPitchFactor or 1) + (stance.playSoundsPitchVariance or 0.1)) - (math.random() * ((stance.playSoundsPitchVariance or 0.1) * 2)) + (pitchIncrease or 0)
+    animator.setSoundPitch(soundName, pitchVariance)
     animator.playSound(soundName)
   end
 

@@ -1,0 +1,17 @@
+{
+  "frameGrid" : {
+    "size" : [23, 56],
+    "dimensions" : [3, 3],
+    "names" : [
+      [ "physical.1", "physical.2", "physical.3" ],
+      [ "fire.1", "fire.2", "fire.3" ],
+      [ "ice.1", "ice.2", "ice.3" ]
+    ]
+  },
+
+  "aliases" : {
+    "physDown.1" : "physical.3",
+    "physDown.2" : "physical.2",
+    "physDown.3" : "physical.1"
+  }
+}

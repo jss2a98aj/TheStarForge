@@ -1,6 +1,6 @@
 {
   "globalTagDefaults" : {
-    "stanceDirectives" : "",
+    "comboDirectives" : "",
     "paletteSwaps" : ""
   },
 
@@ -44,7 +44,7 @@
         "properties" : {
           "zLevel" : 0,
           "centered" : true,
-          "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives><stanceDirectives>",
+          "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives><comboDirectives>",
           "offset" : [0, 1.875],
           "transformationGroups" : ["weapon"],
           "rotationCenter" : [0, 0],
@@ -56,7 +56,7 @@
           "zLevel" : 1,
           "centered" : true,
           "fullbright" : true,
-          "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives><stanceDirectives>",
+          "image" : "<partImage><paletteSwaps>?<directives>?<bladeDirectives><comboDirectives>",
           "offset" : [0, 1.875],
           "transformationGroups" : ["weapon"],
           "rotationCenter" : [0, 0],
@@ -67,7 +67,7 @@
         "properties" : {
           "zLevel" : 2,
           "centered" : true,
-          "image" : "<partImage><paletteSwaps>?<directives><stanceDirectives>",
+          "image" : "<partImage><paletteSwaps>?<directives><comboDirectives>",
           "offset" : [0, 1.875],
           "transformationGroups" : ["weapon"],
           "rotationCenter" : [0, 0]
