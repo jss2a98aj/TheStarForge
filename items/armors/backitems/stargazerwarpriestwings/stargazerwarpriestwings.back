@@ -1,0 +1,36 @@
+{
+  "itemName" : "starforge-stargazerwarpriestwings",
+  "price" : 1200,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "category" : "backwear",
+  "description" : "...",
+  "shortdescription" : "Stargazer Warpriest Wings",
+  "tooltipKind" : "back",
+  
+  "inventoryIcon" : "/items/armors/backitems/stargazerwarpriestwings/stargazerwarpriestwingsicon.png",
+
+  "maleFrames" : "back.png",
+  "femaleFrames" : "back.png",
+
+  "statusEffects" : [
+    {
+      "stat" : "biomeheatImmunity",
+      "amount" : 1.0
+    },
+    {
+      "stat" : "biomecoldImmunity",
+      "amount" : 1.0
+    },
+    {
+      "stat" : "biomeradiationImmunity",
+      "amount" : 1.0
+    },
+    {
+      "stat" : "breathProtection",
+      "amount" : 1.0
+    }
+  ],
+  
+  "builder" : "/items/buildscripts/starforge-buildexaltedarmour.lua"
+}

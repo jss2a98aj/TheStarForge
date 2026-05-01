@@ -12,7 +12,7 @@
  "layers":[
         {
          "compression":"zlib",
-         "data":"eJwTZmBgEB7Fo3gUjzg8T4mBYS4SBvEJ6ZmthBvPw8In1yyYfmLdh6xvLg5MrPuQ1cDCCVf4ETIP3SxqmYeuj1jzDBioiwEkY068",
+         "data":"eJwTZmBgEB7Fo3gUjzi8UomBYQUSBvEJ6VmmhBuvxMIn1yyYfmLdh6xvBQ5MrPuQ1cDCCVf4ETIP3SxqmYeuj1jzDBioiwE961G+",
          "encoding":"base64",
          "height":20,
          "id":1,
@@ -48,17 +48,16 @@
                  "height":16,
                  "id":940,
                  "name":"",
-                 "properties":[
-                        {
-                         "name":"back",
-                         "type":"string",
-                         "value":"starforge-unboundwallpanel"
-                        }, 
-                        {
-                         "name":"colorVariant",
-                         "type":"string",
-                         "value":"4"
-                        }],
+                 "properties":
+                    {
+                     "back":"starforge-unboundwallpanel",
+                     "colorVariant":"4"
+                    },
+                 "propertytypes":
+                    {
+                     "back":"string",
+                     "colorVariant":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -103,7 +102,7 @@
                  "y":152
                 }, 
                 {
-                 "gid":8943,
+                 "gid":8961,
                  "height":31,
                  "id":934,
                  "name":"",
@@ -115,7 +114,7 @@
                  "y":152
                 }, 
                 {
-                 "gid":2147492571,
+                 "gid":2147492589,
                  "height":16,
                  "id":935,
                  "name":"",
@@ -127,7 +126,7 @@
                  "y":136
                 }, 
                 {
-                 "gid":2147492518,
+                 "gid":2147492536,
                  "height":16,
                  "id":936,
                  "name":"",
@@ -139,7 +138,7 @@
                  "y":152
                 }, 
                 {
-                 "gid":8900,
+                 "gid":8918,
                  "height":8,
                  "id":937,
                  "name":"",
@@ -151,7 +150,7 @@
                  "y":136
                 }, 
                 {
-                 "gid":8897,
+                 "gid":8915,
                  "height":8,
                  "id":938,
                  "name":"",
@@ -163,7 +162,7 @@
                  "y":112
                 }, 
                 {
-                 "gid":8944,
+                 "gid":8962,
                  "height":32,
                  "id":941,
                  "name":"",
@@ -197,7 +196,28 @@
          "draworder":"topdown",
          "id":6,
          "name":"monsters & npcs",
-         "objects":[],
+         "objects":[
+                {
+                 "height":8,
+                 "id":942,
+                 "name":"",
+                 "properties":
+                    {
+                     "npc":"glitch",
+                     "typeName":"starforge-unbtjanitor"
+                    },
+                 "propertytypes":
+                    {
+                     "npc":"string",
+                     "typeName":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":64,
+                 "y":128
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -250,10 +270,10 @@
          "y":0
         }],
  "nextlayerid":11,
- "nextobjectid":942,
+ "nextobjectid":943,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.4.3",
+ "tiledversion":"1.10.2",
  "tileheight":8,
  "tilesets":[
         {
@@ -335,7 +355,8 @@
         {
          "firstgid":6655,
          "source":"..\/..\/..\/..\/assets\/_unpacked\/tilesets\/packed\/objects-by-category\/other.json"
-        }, 
+        },
+    
         {
          "firstgid":6967,
          "source":"..\/..\/..\/..\/assets\/_unpacked\/tilesets\/packed\/objects-by-category\/pot.json"
@@ -397,19 +418,19 @@
          "source":"..\/..\/tilesets\/thalassooutpost\/thalassooutpost.json"
         }, 
         {
-         "firstgid":8844,
+         "firstgid":8846,
          "source":"..\/..\/tilesets\/furouraltar\/furouraltar.json"
         }, 
         {
-         "firstgid":8859,
+         "firstgid":8870,
          "source":"..\/..\/tilesets\/unboundtiles\/unboundtiles.json"
         }, 
         {
-         "firstgid":8865,
+         "firstgid":8883,
          "source":"..\/..\/tilesets\/unbound\/unbound.json"
         }],
  "tilewidth":8,
  "type":"map",
- "version":1.4,
+ "version":1.1,
  "width":20
 }
