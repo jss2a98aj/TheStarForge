@@ -40,6 +40,21 @@
             }
           }
         },
+        "spinSwoosh" : {
+          "default" : "idle",
+          "states" : {
+            "idle" : {
+            },
+            "spin" : {
+              "frames" : 8,
+              "cycle" : 0.25,
+              "mode" : "loop",
+              "properties" : {
+                "persistentSound" : "/sfx/npc/boss/kluexboss_vortex_windy.ogg"
+              }
+            }
+          }
+        },
         "energy" : {
           "default" : "idle",
           "states" : {
@@ -100,6 +115,53 @@
           }
         },
 
+        "spinSwoosh" : {
+          "properties" : {
+            "zLevel" : 1,
+            "centered" : true,
+            "transformationGroups" : ["swoosh"],
+            "offset" : [0, 0],
+            "fullbright" : false,
+            "damageArea" : [ [-3.75, 1.75], [-1.75, 3.75], [1.75, 3.75], [3.75, 1.75], [3.75, -1.75], [1.75, -3.75], [-1.75, -3.75], [-3.75, -1.75] ]
+          },
+          "partStates" : {
+            "spinSwoosh" : {
+              "idle" : {
+                "properties" : {
+                  "image" : ""
+                }
+              },
+              "spin" : {
+                "properties" : {
+                  "image" : "spinswoosh.png"
+                }
+              }
+            }
+          }
+        },
+        "spinSwooshEnergy" : {
+          "properties" : {
+            "zLevel" : -2,
+            "centered" : true,
+            "offset" : [0, 0],
+            "fullbright" : true,
+            "damageArea" : [ [-3.75, 1.75], [-1.75, 3.75], [1.75, 3.75], [3.75, 1.75], [3.75, -1.75], [1.75, -3.75], [-1.75, -3.75], [-3.75, -1.75] ]
+          },
+          "partStates" : {
+            "spinSwoosh" : {
+              "idle" : {
+                "properties" : {
+                  "image" : ""
+                }
+              },
+              "spin" : {
+                "properties" : {
+                  "image" : "/monsters/boss/kluexboss/spinvortex.png:spin.<frame>?flipx"
+                }
+              }
+            }
+          }
+        },
         "swoosh" : {
           "partStates" : {
             "swoosh" : {
@@ -129,6 +191,33 @@
         }
       }
     },
+    "particleEmitters" : {
+      "spin" : {
+        "active" : true,
+        "emissionRate" : 125,
+        "particles" : [
+          {
+            "particle" : {
+              "type" : "animated",
+              "animation" : "/animations/starforge-windpull/starforge-windpull.animation",
+              "position" : [0, 0],
+              "initialVelocity" : [0, 0.1],
+              "collidesForeground" : false,
+              "timeToLive" : 0.2,
+              "destructionTime" : 0.1,
+              "destructionAction" : "fade",
+              "fullbright" : false,
+              "size" : 1,
+              "layer" : "back",
+              "variance" : {
+                "size" : 0.75,
+                "rotation" : 180
+              }
+            }
+          }
+        ]
+      }
+    },
 
     "sounds" : {
       "fire" : [ "/sfx/melee/swing_shortsword.ogg" ],
@@ -143,11 +232,23 @@
 
   "scripts" : [ "/items/active/weapons/melee/starforge-meleeweapon.lua" ],
 
+	/*"starforgeNpcWeaponData" : {
+    "minRange" : 25, 
+    "maxRange" : 25, 
+    "forceMoveRange" : 10, 
+    "primaryCharge" : 0, 
+    "minAltRange" : 0, 
+    "maxAltRange" : 15, 
+    "altChance" : 0.55, 
+    "altCharge" : 5
+  },*/
+
   "elementalType" : "physical",
 
   "primaryAbilityType" : "starforge-spellglaivecombo",
   "primaryAbility" : {
     "baseDps" : 11.0,
+    "energyUsage" : 10,
 
     "stanceSpeedFactor" : 1.05,
     "swingPitchFactor" : 0.95,
@@ -274,7 +375,7 @@
         },
         "projectileInaccuracy" : 0.5,
         "fixedProjectileAngle" : true,
-        "projectileDamage" : 3.5,
+        "projectileDamage" : 1,
 		
         "frontArmFrame" : "jump.3"
       },
@@ -347,7 +448,7 @@
         },
         "projectileInaccuracy" : 0.5,
         "fixedProjectileAngle" : true,
-        "projectileDamage" : 3.5,
+        "projectileDamage" : 1.5,
 
         "allowRotate" : false,
         "allowFlip" : false
@@ -420,7 +521,7 @@
               "type" : "starforge-devotionplasma",
               "config" : {
                 "timeToLive" : 1,
-                "processing" : "?replace;842138=3b4f75;b9182a=4689c0;ea6a56=73c6da;ff9d8d=98eaf6;b9182aBF=4689c0BF",
+                "processing" : "?replace;842138=3b4f75;b9182a=4689c0;ea6a56=73c6da;ff9d8d=98eaf6;b9182aBF=4689c0BF;ff072a=4689c0;ff8799=73c6da;ffc9dc=98eaf6",
                 "damageKind" : "iceplasma"
               }
             }
@@ -499,7 +600,7 @@
         },
         "projectileInaccuracy" : 0.5,
         "fixedProjectileAngle" : true,
-        "projectileDamage" : 3.5,
+        "projectileDamage" : 3,
 
         "allowRotate" : false,
         "allowFlip" : false
@@ -572,7 +673,7 @@
               "type" : "starforge-devotionplasma",
               "config" : {
                 "timeToLive" : 1,
-                "processing" : "?replace;842138=ba5732;b9182a=f09637;ea6a56=f5c945;ff9d8d=ffed83;b9182aBF=f09637BF",
+                "processing" : "?replace;842138=ba5732;b9182a=f09637;ea6a56=f5c945;ff9d8d=ffed83;b9182aBF=f09637BF;ff072a=f09637;ff8799=f5c945;ffc9dc=ffed83",
                 "damageKind" : "fireplasma"
               }
             }
@@ -580,27 +681,64 @@
         },
         "projectileInaccuracy" : 0.5,
         "fixedProjectileAngle" : true,
-        "projectileDamage" : 3.5,
+        "projectileDamage" : 4,
 		
 		    "comboDirectives" : "flipx"
       }
     }
   },
-  
-  "altAbilityType" : "starforge-spellglaiveblast",
+
   "altAbility" : {
-    "projectileType" : "redplasmatorpedo",
-    "projectileParameters" : {
-      "speed" : 150
+    "name" : "Wind Vortex",
+    "scripts" : ["/items/active/weapons/melee/abilities/spear/spin/starforge-vortex.lua"],
+    "class" : "StarforgeVortex",
+
+    "energyUsage" : 60,
+    "cooldownTime" : 0.2,
+
+    "forceRegion" : {
+      "type" : "RadialForceRegion",
+      "outerRadius" : 40,
+      "innerRadius" : 5,
+      "targetRadialVelocity" : -100,
+      "controlForce" : 160,
+      "categoryWhitelist": ["monster", "npc", "player", "itemdrop"]
     },
 
-    "projectileCount" : 1,
-    "inaccuracy": 0.005,
-    "baseDamage" : 9,
-    "energyUsage" : 35,
+    "damageConfig" : {
+      "damageSourceKind" : "plasma",
+      "statusEffects" : [ ],
+    	"baseDamage" : 3,
+    	"knockbackMode" : "none",
+    	"knockback" : 30,
+    	"timeout" : 0.2,
+    	"timeoutGroup" : "alt"
+    },
     
-    "fireTime" : 0.9,
-    "fireType" : "auto"
+    "resetAnimationStates" : {
+      "energy" : "physDown"
+    },
+
+    "spinUpTime" : 1,
+    "spinRate" : -1750,
+    
+		"maxFallSpeed": -7,
+
+    "stances" : {
+      "spin" : {
+        "armRotation" : 80,
+        "weaponRotation" : -40,
+        "twoHanded" : true,
+        "weaponOffset" : [0, 0],
+
+        "animationStates" : {
+          "energy" : "physUp"
+        },
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+    }
   },
 
   "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"

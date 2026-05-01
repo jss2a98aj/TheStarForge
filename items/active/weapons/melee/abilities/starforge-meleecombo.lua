@@ -391,7 +391,6 @@ function StarforgeMeleeCombo:spawnProjectile(stance)
   if params.speed then
   	params.speed = util.randomInRange(params.speed)
   end
-  sb.logInfo("%s", sb.printJson(params, 1))
 
   local firePosition = vec2.add(mcontroller.position(), activeItem.handPosition(animator.partPoint("blade", "projectileFirePoint") or {0,0}))
 

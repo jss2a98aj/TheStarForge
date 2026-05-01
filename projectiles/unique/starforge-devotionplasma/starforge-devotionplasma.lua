@@ -36,43 +36,54 @@ end
 function activate()
   local rotation = mcontroller.rotation()
   world.spawnProjectile(
-      "energycrystal",
-      mcontroller.position(),
-      projectile.sourceEntity(),
-      {math.cos(rotation), math.sin(rotation)},
-      false,
-      {
-        speed = 50,
-        power = projectile.power(),
-        powerMultiplier = projectile.powerMultiplier(),
-        damageKind = config.getParameter("damageKind", "plasma"),
-        processing = config.getParameter("processing", ""),
-        periodicActions = {
-          {
-            time = 0,
-            ["repeat"] = false,
-            action = "sound",
-            options = { "/sfx/gun/pulsecannon_blast1.ogg" }
-          },
-          {
-            time = 0.066,
-            ["repeat"] = true,
-            action = "particle",
-            rotate = true,
-            specification = {
-              type = "textured",
-              animation = "/animations/crystaltrail/crystaltrail.png:0" .. config.getParameter("processing", ""),
-              initialVelocity = {0.0, 0.0},
-              timeToLive = 0.2,
-              destructionAction = "fade",
-              destructionTime = 0.2,
-              layer = "back",
-              position = {0.0, 0.0}
-            }
+    "energycrystal",
+    mcontroller.position(),
+    projectile.sourceEntity(),
+    {math.cos(rotation), math.sin(rotation)},
+    false,
+    {
+      speed = 50,
+      power = projectile.power(),
+      powerMultiplier = projectile.powerMultiplier(),
+      damageKind = config.getParameter("damageKind", "plasma"),
+      processing = config.getParameter("processing", ""),
+      periodicActions = {
+        {
+          time = 0,
+          ["repeat"] = false,
+          action = "sound",
+          options = { "/sfx/gun/pulsecannon_blast1.ogg" }
+        },
+        {
+          time = 0.066,
+          ["repeat"] = true,
+          action = "particle",
+          rotate = true,
+          specification = {
+            type = "textured",
+            animation = "/animations/crystaltrail/crystaltrail.png:0" .. config.getParameter("processing", ""),
+            initialVelocity = {0.0, 0.0},
+            timeToLive = 0.2,
+            destructionAction = "fade",
+            destructionTime = 0.2,
+            layer = "back",
+            position = {0.0, 0.0}
           }
         }
       }
-    )
+    }
+  )
+
+  projectile.processAction(
+    {
+      action = "projectile",
+      inheritDamageFactor = 0,
+      type = "redpulsecannonexplosion",
+      config = {
+        processing = config.getParameter("processing", "")
+      }
+    }
+  )
 end
 
 function rotateTo(position, dt)

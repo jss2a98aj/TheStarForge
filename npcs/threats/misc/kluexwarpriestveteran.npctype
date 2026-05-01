@@ -137,7 +137,7 @@
           "name": "starforge-kluexwarpriestpants"
         }],
 		    "back": [{ 
-				    "name": "starforge-katahelbackfalse" 
+				    "name": "starforge-kluexwarpriestback" 
 				}],
         "primary": [
           "starforge-devotion"
