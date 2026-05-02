@@ -772,7 +772,7 @@
                  "name":"",
                  "properties":
                     {
-                     "parameters":"{\"filterParameter\" : \"starforge-waveassaultentrance\", \"defaultState\" : \"open\"\", \"interactive\" : false}"
+                     "parameters":"{\"filterParameter\" : \"starforge-waveassaultentrance\", \"defaultState\" : \"open\", \"interactive\" : false}"
                     },
                  "propertytypes":
                     {
@@ -1099,7 +1099,7 @@
                  "visible":true,
                  "width":8,
                  "x":392,
-                 "y":56
+                 "y":48
                 }, 
                 {
                  "gid":7863,
@@ -2055,26 +2055,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":3066,
-                 "name":"",
-                 "polyline":[
-                        {
-                         "x":0,
-                         "y":0
-                        }, 
-                        {
-                         "x":-104,
-                         "y":24
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":392,
-                 "y":48
-                }, 
-                {
-                 "height":0,
                  "id":3068,
                  "name":"",
                  "polyline":[
@@ -2432,6 +2412,26 @@
                  "width":0,
                  "x":160,
                  "y":224
+                }, 
+                {
+                 "height":0,
+                 "id":3160,
+                 "name":"",
+                 "polyline":[
+                        {
+                         "x":0,
+                         "y":0
+                        }, 
+                        {
+                         "x":-104,
+                         "y":32
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":392,
+                 "y":40
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -2473,7 +2473,7 @@
          "y":0
         }],
  "nextlayerid":12,
- "nextobjectid":3160,
+ "nextobjectid":3161,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.0",

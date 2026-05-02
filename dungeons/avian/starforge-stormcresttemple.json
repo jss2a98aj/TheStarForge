@@ -7364,7 +7364,7 @@
                  "name":"Warpriest Legs",
                  "properties":
                     {
-                     "parameters":"{\"treasurePools\":[\"starforge-kluexwarpriestpants\"]}"
+                     "parameters":"{\"treasurePools\" : [\"starforge-kluexwarpriestpants\"]}"
                     },
                  "propertytypes":
                     {
