@@ -216,8 +216,6 @@
   },
 
   "undergroundPlaceables" : {
-    "grassMod" : [ "grass" ],
-    "grassModDensity" : 0.2,
 
     "ceilingGrassMod" : [ "roots" ],
     "ceilingGrassModDensity" : 0.3,

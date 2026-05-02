@@ -4,6 +4,7 @@
   "type" : "body",
 
   "frames" : {
-    "body" : "warmongerdronebody.png"
+    "body" : "warmongerdronebody.png",
+	"bodyfb" : "warmongerdronebodyfb.png"
   }
 }

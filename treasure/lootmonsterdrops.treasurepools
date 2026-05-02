@@ -95,9 +95,9 @@
       "warmongerdroneTreasure" : [
     [1, {
       "pool" : [
-		{"weight" : 0.43, "pool" : "warmongerstoryDrop"},
-        {"weight" : 0.54, "pool" : "warmongerarmorDrop"},
-		{"weight" : 0.02, "item" : "starforge-hawkmoon"},
+		{"weight" : 0.32, "pool" : "warmongerstoryDrop"},
+		{"weight" : 0.33, "pool" : "warmongerweaponDrop"},
+        {"weight" : 0.33, "pool" : "warmongerarmorDrop"},
 		{"weight" : 0.01, "item" : "starforge-warmongerdroneaf"}
       ],
       "poolRounds" : [
@@ -205,6 +205,21 @@
       "pool" : [
         {"weight" : 0.5, "item" : "starforge-twinshot"},
         {"weight" : 0.5, "item" : "starforge-silentneedle"}
+      ],
+      "poolRounds" : [
+        [1.0, 1],
+        [0.0, 2]
+      ],
+      "allowDuplication" : false
+    }]
+  ],
+  
+  "warmongerweaponDrop" : [
+    [1, {
+      "pool" : [
+        {"weight" : 0.3, "item" : "starforge-frenzy"},
+		{"weight" : 0.3, "item" : "starforge-ferment"},
+        {"weight" : 0.3, "item" : "starforge-fever"}
       ],
       "poolRounds" : [
         [1.0, 1],

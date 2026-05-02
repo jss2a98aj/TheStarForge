@@ -4,8 +4,7 @@
   "description" : "An old abandonned drone, carrying blueprints in hopes of them falling into good hands.",
 
   "categories" : [ "warmongerdrone" ],
-  "parts" : [ "body", "head", "wings" ],
-  "partParameters" : "warmongerdrone.partparams",
+  "parts" : [ "body" ],
 
   "animation" : "warmongerdrone.animation",
   "reversed" : true,
@@ -28,89 +27,43 @@
       "keepTargetInRange" : 50,
       "targetOutOfSightTime" : 30.0,
 
-      // Attack specific parameters
-      "swoopVelocity" : 30,
 
       "foundTargetActions" : [ ],
 
       "fleeActions" : [ ],
 
-      "hostileActions" : [
-        {
-          "name" : "action-swoop",
-          "cooldown" : 2.0,
-          "parameters" : {
-            "minimumRange" : 3,
-            "maximumRange" : 10,
-            "onGround" : false,
-            "windupTime" : 0.6,
-
-            "gravityMultiplier" : -0.5,
-            "swoopVelocity" : 25,
-            "collisionCheck" : true,
-            "highArc" : false,
-            "swoopTime" : 0.5,
-
-            "winddownTime" : 0.5,
-            "winddownState" : "fly",
-            "winddownStopForce" : 20
-          }
-        },
-        {
-          "name" : "action-fire",
-          "cooldown" : 4.0,
-          "parameters" : {
-            "onGround" : false,
-            "requireLineOfSight" : true,
-            "maximumRange" : 100,
-            "minimumRange" : 2,
-            "windupState" : "fire",
-            "windupTime" : 0.6,
-            "windupStopForce" : 200,
-
-            "projectileCount": 3,
-            "projectileInterval": 0.05,
-            "projectileType" : "unboundfirebullet",
-            "projectileParameters" : {
-              "power" : 6
-            },
-            "fireOffset" : [1.5, -1.5],
-            "fireSound" : "fire",
-            "fireState" : "",
-
-            "winddownState" : "",
-            "winddownTime" : 0.1
-          }
-        }
-       ],
+      "hostileActions" : [  ],
 
        "damageTakenActions" : [
          {
-           "name" : "action-fire",
-           "cooldown" : 4.0,
-           "parameters" : {
-             "onGround" : false,
-             "requireLineOfSight" : true,
-             "maximumRange" : 100,
-             "minimumRange" : 2,
-             "windupState" : "fire",
-             "windupTime" : 0.3,
-             "windupStopForce" : 200,
+          "name" : "action-fire",
+          "cooldown" : 2.0,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 5,
+            "minimumRange" : 0,
+            "onGround" : false,
+            "windupStopForce" : 50,
+            "windupTime" : 0.3,
+			"windupState" : "idle",
 
-             "projectileCount": 6,
-             "projectileInterval": 0.05,
-             "projectileType" : "unboundfirebullet",
-             "projectileParameters" : {
-               "power" : 6
-             },
-             "fireOffset" : [1.5, -1.5],
-             "fireSound" : "fire",
-             "fireState" : "",
-
-             "winddownState" : "",
-             "winddownTime" : 0.1
-           }
-         }
+            "projectileType" : "largefirecloud",
+            "projectileParameters" : {
+              "speed" : 7.5,
+              "timeToLive" : 1.0
+            },
+            "fireOffset" : [0.0, 0.0],
+            "aimAtTarget" : false,
+            "inaccuracy" : 3.14,
+            "projectileCount" : 10,
+            "projectileInterval" : 0.0,
+            "fireState" : "",
+            "fireDelay" : 0.0,
+            "fireSound" : "",
+            "winddownState" : "",
+            "winddownTime" : 0.5
+          }
+        }
        ],
 
       "periodicActions" : [ ],
@@ -149,24 +102,9 @@
             "xVelocity" : 8,
             "yVelocity" : 12
           }
-        },
-        {
-          "name" : "land-fly",
-          "parameters" : {
-            "flySpeed" : 8,
-            "flyControlForce" : 25,
-            "landCheckDistance" : 40,
-            "idleTime" : 40
-          }
         }
-      ],
-
-      "concurrentActions" : [ ],
-
-      "concurrentHostileActions" : [ ]
+      ]
     },
-
-    "baseSkills" : [],
 
     "metaBoundBox" : [-2.5, -2.5, 2.5, 2.5],
     "scale" : 1.0,

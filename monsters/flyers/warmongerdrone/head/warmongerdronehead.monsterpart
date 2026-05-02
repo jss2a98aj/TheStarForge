@@ -1,9 +1,0 @@
-{
-  "name" : "starforge-warmongerdronehead",
-  "category" : "warmongerdrone",
-  "type" : "head",
-
-  "frames" : {
-    "head" : "warmongerdronehead.png"
-  }
-}
