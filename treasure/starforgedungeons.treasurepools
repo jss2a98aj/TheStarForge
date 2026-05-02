@@ -1,0 +1,63 @@
+{
+  // ==============================================================================================
+  //                                      RANDOM ITEM DROPS
+  // ==============================================================================================
+  
+  "starforge-stormcresttempleloot" : [
+    [1, {
+      "pool" : [
+        {"weight" : 0.20, "pool" : "smallChestTreasure"},
+		    {"weight" : 0.10, "item" : "starforge-combatrifle"}
+      ],
+      "poolRounds" : [
+        [0.30, 1],
+        [0.20, 2],
+        [0.40, 3],
+        [0.10, 4]
+      ],
+      "allowDuplication" : false
+    }]
+  ],
+  
+  "starforge-stormcresttemplekluexcodex" : [
+    [1, {
+      "fill" : [
+        {"item" : [ "banana", 1]},
+        {"pool" : "smallChestTreasure"}
+      ]
+    }]
+  ],
+  "starforge-stormcrestcodex" : [
+    [1, {
+      "fill" : [
+        {"item" : [ "banana", 1]},
+        {"pool" : "smallChestTreasure"}
+      ]
+    }]
+  ],
+  "starforge-kluexwarpriesthead" : [
+    [1, {
+      "fill" : [
+        {"item" : [ "starforge-kluexwarpriesthead", 1]},
+        {"pool" : "smallChestTreasure"}
+      ]
+    }]
+  ],
+  "starforge-kluexwarpriestchest" : [
+    [1, {
+      "fill" : [
+        {"item" : [ "starforge-kluexwarpriestchest", 1]},
+        {"pool" : "smallChestTreasure"}
+      ]
+    }]
+  ],
+  "starforge-kluexwarpriestpants" : [
+    [1, {
+      "fill" : [
+        {"item" : [ "starforge-kluexwarpriestpants", 1]},
+        {"pool" : "smallChestTreasure"}
+      ]
+    }]
+  ]
+}
+  

@@ -57,7 +57,7 @@
       "rules" : [
         [ "maxSpawnCount", [1] ]
       ],
-      "def" : [ "tmx", "starforge-stormcrestrooml3.json" ],
+      "def" : [ "tmx", "starforge-stormcrestrooml4.json" ],
       "chance" : 0.1
     },
 
@@ -99,11 +99,20 @@
     },
 
     {
-      "name" : "starforge-stormcrestroomrkluexdisciple",
+      "name" : "starforge-stormcrestroomrkluexdisciple1",
       "rules" : [
         [ "maxSpawnCount", [1] ]
       ],
-      "def" : [ "tmx", "starforge-stormcrestroomrkluexdisciple.json" ],
+      "def" : [ "tmx", "starforge-stormcrestroomrkluexdisciple1.json" ],
+      "chance" : 0.1
+    },
+
+    {
+      "name" : "starforge-stormcrestroomrkluexdisciple2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-stormcrestroomrkluexdisciple2.json" ],
       "chance" : 0.1
     }
   ]

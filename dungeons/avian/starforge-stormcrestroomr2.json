@@ -19,7 +19,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJztmsENwjAMRcuNZZihY7AOKzAhq1BUKlkkaRzHSX\/Kf5LFxSmuH4lcYJoIIbVcL9PDsua5vN6WeBqvcTY8euLZR1kLWUHqCVItKLTuybK\/dqNnLSOC1BOkWkgI\/WBDP9jQDzb00x\/Ob3XIntxFbKT6Gcv1rIWsyJ7I0KzT5lpqISv0gw39YEM\/2OT8pOYDrR\/Ob3Vw\/2BDP9jQDzZIfkgI0vcHJATp\/wckhGc+NvSDDZKfn7M2QPOMm8u15Pd6r1hebj5Iwd8X+oA0X9NPSIv98zKGrMV6jbNFzE\/q3JR8cuinrx+v5x+PWuZvHN2fo6PFme\/pZyRHcyRqrzeCnxEcxdzU3MO2JuXH8hywYZ0D9\/wge9K4KbkHmdti\/7T0k7tX7155uymtfXQ\/XtHLSWm08KOZz2NrjvRT8pke3Y8VBD9o0cOPdsagH72fmvnNCv3o\/RwB\/WD7IeSfeQOdO5zp",
+         "data":"eJztmtERgjAMhvHNZZyBMVzHFZjQVUSRux5taZqm7V\/9v7ucLwFDPtsL4DQRQkq5XqaH5phl\/bytsSjP8WtY9MSyj24tZAOpJ0i1oFC7J+v6Oo2WtYwIUk+QaiE+9IMN\/WBDP9jQT3s4v5Xh9uTuxE6sn6Fcy1rIhtsTNyTHSXM1tZAN+sGGfrChH2xSfmLzgdQP57cyuH6woR9s6AcbJD\/EB+n5AfFB+v8B8eGejw39YIPk57DXekjucVO5mvxW3xXKS80HMfh+oQ1I8zX9+KCunyfjEyE\/sX3T5Z0T82NRS+++oESN+x+LWuZv9O5P76ix51v6GcnRHIjS843gZwRHITcl17AfE\/OjuQ\/Y0c6BZ36QPUnc5FyDm1tj\/dT0k7pW615Zu8mtfXQ\/VtHKSW7U8CN9VnKMnn5yftOj+9GC4ActWviRzhj0I\/dTMr9poR+5nx7QD7YfQv6ZF6YukSM=",
          "encoding":"base64",
          "height":44,
          "id":2,
@@ -814,10 +814,18 @@
                  "y":296
                 }, 
                 {
-                 "gid":2892,
+                 "gid":2857,
                  "height":16,
-                 "id":2739,
-                 "name":"",
+                 "id":2742,
+                 "name":"Random Loot",
+                 "properties":
+                    {
+                     "parameters":"{\"treasurePools\":[\"starforge-stormcresttempleloot\"]}"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -1134,7 +1142,7 @@
          "y":0
         }],
  "nextlayerid":12,
- "nextobjectid":2742,
+ "nextobjectid":2743,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.0",
