@@ -23,7 +23,7 @@
 
   "orientations" : [
     {
-      "imageLayers" : [ { "image" : "unboundmissionteleporter.png:default", "fullbright" : true } ],
+      "imageLayers" : [ { "image" : "templeteleporter.png:default", "fullbright" : true } ],
       "imagePosition" : [-16, 0],
 
       "direction" : "left",
@@ -33,7 +33,7 @@
       "anchors" : [ "bottom" ]
     },
     {
-      "imageLayers" : [ { "image" : "unboundmissionteleporter.png:default", "fullbright" : true } ],
+      "imageLayers" : [ { "image" : "templeteleporter.png:default", "fullbright" : true } ],
       "imagePosition" : [-16, 0],
 
       "direction" : "right",

@@ -6,7 +6,7 @@
   "inventoryIcon" : "starforge-raventoxinicon.png",
   "maxStack" : 1,
   "rarity" : "Legendary",
-  "description" : "An in-development Unbound prototype developed using stolen Elpis technology.",
+  "description" : "An in-development Unbound prototype developed in collaboration with Xenotox.",
   "shortdescription" : "\"Raventoxin\" EXP BR",
   "tooltipKind": "starforge-uniquegun",
   "category" : "uniqueWeapon",
@@ -41,7 +41,7 @@
       "fireEnd" : [ "/sfx/gun/mech_beamdrill_winddown.ogg" ],
       "beamImpact" : [],
       //ALT
-      "fire": [ "/sfx/projectiles/bonerain_throw1.ogg", "/sfx/projectiles/bonerain_throw2.ogg" ]
+      "fire": [ "/sfx/gun/pumpgun_blast1.ogg", "/sfx/gun/pumpgun_blast2.ogg", "/sfx/gun/pumpgun_blast3.ogg" ]
     }
   },
   "animationScripts" : ["/items/active/effects/starforge-enhancedchain.lua"],
