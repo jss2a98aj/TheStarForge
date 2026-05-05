@@ -23,6 +23,14 @@
             "weight": 0.20,
             "item": "starforge-helix"
         }
+    },
+	{
+        "op": "add",
+        "path": "/shadowChestTreasure/0/1/pool/1",
+        "value": {
+            "weight": 0.20,
+            "item": "starforge-nightshard"
+        }
     }
   
 ]
