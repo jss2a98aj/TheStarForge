@@ -56,7 +56,7 @@
                  "name":"",
                  "properties":
                     {
-                     "parameters":"{\"filterParameter\" : \"starforge-waveassaultunlock\"}"
+                     "parameters":"{\"filterParameter\" : \"starforge-waveassaultentrance\"}"
                     },
                  "propertytypes":
                     {
@@ -1664,7 +1664,7 @@
                  "name":"",
                  "properties":
                     {
-                     "parameters":"{\"filterParameter\" : \"starforge-waveassaultentrance\"}"
+                     "parameters":"{\"filterParameter\" : \"starforge-waveassaultunlock\"}"
                     },
                  "propertytypes":
                     {

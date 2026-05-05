@@ -6206,18 +6206,6 @@
                  "y":1720
                 }, 
                 {
-                 "gid":2147486481,
-                 "height":16,
-                 "id":2155,
-                 "name":"Warpriest Legs",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":48,
-                 "x":2872,
-                 "y":1704
-                }, 
-                {
                  "gid":2926,
                  "height":24,
                  "id":2175,
@@ -6596,30 +6584,6 @@
                  "width":24,
                  "x":2200,
                  "y":1664
-                }, 
-                {
-                 "gid":2147486579,
-                 "height":12,
-                 "id":2453,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":1088,
-                 "y":832
-                }, 
-                {
-                 "gid":2876,
-                 "height":16,
-                 "id":2457,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":1128,
-                 "y":832
                 }, 
                 {
                  "gid":3104,
@@ -7078,6 +7042,14 @@
                  "height":16,
                  "id":2531,
                  "name":"Stormcrest Codex",
+                 "properties":
+                    {
+                     "parameters":"{\"treasurePools\":[\"starforge-stormcrestcodex\"]}"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -7090,6 +7062,14 @@
                  "height":24,
                  "id":2533,
                  "name":"Kluex Codex",
+                 "properties":
+                    {
+                     "parameters":"{\"treasurePools\":[\"starforge-stormcresttemplekluexcodex\"]}"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -7167,30 +7147,6 @@
                  "visible":true,
                  "width":40,
                  "x":2168,
-                 "y":240
-                }, 
-                {
-                 "gid":7836,
-                 "height":16,
-                 "id":2543,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":16,
-                 "x":2032,
-                 "y":240
-                }, 
-                {
-                 "gid":7836,
-                 "height":16,
-                 "id":2544,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":16,
-                 "x":2160,
                  "y":240
                 }, 
                 {
@@ -7318,6 +7274,14 @@
                  "height":16,
                  "id":2559,
                  "name":"Warpriest Head",
+                 "properties":
+                    {
+                     "parameters":"{\"treasurePools\":[\"starforge-kluexwarpriesthead\"]}"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -7330,12 +7294,192 @@
                  "height":16,
                  "id":2560,
                  "name":"Warpriest Chest",
+                 "properties":
+                    {
+                     "parameters":"{\"treasurePools\":[\"starforge-kluexwarpriestchest\"]}"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":24,
                  "x":1048,
                  "y":832
+                }, 
+                {
+                 "gid":7969,
+                 "height":16,
+                 "id":2569,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":1016,
+                 "y":2608
+                }, 
+                {
+                 "gid":7969,
+                 "height":16,
+                 "id":2570,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":3176,
+                 "y":2608
+                }, 
+                {
+                 "gid":7852,
+                 "height":8,
+                 "id":2571,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":3160,
+                 "y":2792
+                }, 
+                {
+                 "gid":7852,
+                 "height":8,
+                 "id":2573,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":1024,
+                 "y":2792
+                }, 
+                {
+                 "gid":2147486505,
+                 "height":16,
+                 "id":2579,
+                 "name":"Warpriest Legs",
+                 "properties":
+                    {
+                     "parameters":"{\"treasurePools\" : [\"starforge-kluexwarpriestpants\"]}"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":2888,
+                 "y":1704
+                }, 
+                {
+                 "gid":2931,
+                 "height":12,
+                 "id":2580,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":2320,
+                 "y":240
+                }, 
+                {
+                 "gid":2863,
+                 "height":24,
+                 "id":2581,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":2032,
+                 "y":240
+                }, 
+                {
+                 "gid":2147486511,
+                 "height":24,
+                 "id":2582,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":2160,
+                 "y":240
+                }, 
+                {
+                 "gid":2976,
+                 "height":40,
+                 "id":2583,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":1256,
+                 "y":784
+                }, 
+                {
+                 "gid":2977,
+                 "height":40,
+                 "id":2584,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":2936,
+                 "y":784
+                }, 
+                {
+                 "gid":3088,
+                 "height":16,
+                 "id":2585,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":40,
+                 "x":952,
+                 "y":848
+                }, 
+                {
+                 "gid":3088,
+                 "height":16,
+                 "id":2586,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":40,
+                 "x":3216,
+                 "y":848
+                }, 
+                {
+                 "gid":2147486505,
+                 "height":16,
+                 "id":2588,
+                 "name":"Random Loot",
+                 "properties":
+                    {
+                     "parameters":"{\"treasurePools\":[\"starforge-stormcresttempleloot\"]}"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":1624,
+                 "y":1720
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -9690,6 +9834,86 @@
                  "width":0,
                  "x":2040,
                  "y":232
+                }, 
+                {
+                 "height":0,
+                 "id":2574,
+                 "name":"",
+                 "polyline":[
+                        {
+                         "x":0,
+                         "y":0
+                        }, 
+                        {
+                         "x":-16,
+                         "y":-192
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1032,
+                 "y":2784
+                }, 
+                {
+                 "height":0,
+                 "id":2575,
+                 "name":"",
+                 "polyline":[
+                        {
+                         "x":0,
+                         "y":0
+                        }, 
+                        {
+                         "x":40,
+                         "y":112
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1024,
+                 "y":2600
+                }, 
+                {
+                 "height":0,
+                 "id":2576,
+                 "name":"",
+                 "polyline":[
+                        {
+                         "x":0,
+                         "y":0
+                        }, 
+                        {
+                         "x":8,
+                         "y":-192
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":3168,
+                 "y":2784
+                }, 
+                {
+                 "height":0,
+                 "id":2577,
+                 "name":"",
+                 "polyline":[
+                        {
+                         "x":0,
+                         "y":0
+                        }, 
+                        {
+                         "x":-72,
+                         "y":112
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":3184,
+                 "y":2600
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -9911,7 +10135,7 @@
          "y":0
         }],
  "nextlayerid":12,
- "nextobjectid":2563,
+ "nextobjectid":2589,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.0",

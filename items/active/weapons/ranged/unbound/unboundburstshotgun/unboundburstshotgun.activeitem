@@ -4,68 +4,79 @@
   "maxStack": 1,
   "rarity": "Legendary",
   "description": "An experimental shotgun designed to incorporate poisonous payloads.",
-  "shortdescription": "\"Toxin\" EXP BSG",
+  "shortdescription": "\"Venom\" EXP BSG",
   "tooltipKind": "starforge-uniquegun",
   "category": "uniqueWeapon",
   "tooltipFieldsOverride" : {"subtitle":"Burst Shotgun"},
   "manufacturer" : "unboundarmaments",
   "twoHanded": true,
   "level" : 6,
-  "itemTags": [
-    "weapon",
-    "ranged",
-    "shotgun"
-  ],
-  "inventoryIcon": "unboundburstshotgunicon.png",
-  "animation": "unboundburstshotgun.animation",
+  "itemTags": [ "weapon", "ranged", "shotgun" ],
+  "inventoryIcon": "unboundburstshotgun.png:idle",
 
+  "animation" : "/items/active/weapons/ranged/animations/starforge-shellanimgun.animation",
   "animationParts": {
     "butt": "",
     "middle": "unboundburstshotgun.png",
     "barrel": "",
-    "middleFullbright": "unboundburstshotgunfullbright.png",
-    "muzzleFlash": "muzzleflash.png"
+    "middleFullbright": "",
+    "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-poisonmuzzleflash.png"
   },
   "animationCustom": {
+    "animatedParts": {
+      "stateTypes": {
+        "gun": {
+          "states": {
+            "reload": {
+              "frames" : 1,
+              "cycle" : 0.05
+            }
+          }
+        }
+      }
+    },
     "particleEmitters" : {
       "muzzleFlash" : {
-        "transformationGroups" : ["muzzle"],
-		    "offsetRegion" : [-3.0, 0.375, -3.0, 0.375],
+		    "offsetRegion" : [-2.5, 0.125, -2.5, 0.125],
         "particles" : [
           { "particle" : "starforge-unboundpoisonshell" }
         ]
       }
     },
     "sounds": {
-      "fire": [
-        "/sfx/gun/gristlegun1.ogg"
-      ]
+      "fire": [ "/sfx/gun/mech_dualrifle1.ogg" ],
+      
+      "summon" : [ "/sfx/objects/mechbeacon_pulse1.ogg" ]
     }
   },
   
-  "baseOffset": [1.0, 0.0],
-  "muzzleOffset": [2.125, 0.275],
-  "scripts": [
-    "/items/active/weapons/ranged/starforge-gun.lua"
-  ],
+  "baseOffset": [0.625, 0.125],
+  "muzzleOffset": [2.125, 0.25],
+
+  "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
   "elementalType": "poison",
+
   "primaryAbility": {
-    "scripts": [
-      "/items/active/weapons/ranged/starforge-gunfire.lua"
-    ],
+    "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
     "class": "StarforgeGunFire",
-    "fireTime": 0.55,
-    "baseDps": 7.5,
-    "energyUsage": 25,
-    "inaccuracy": 0.03,
+
+    "fireTime": 0.22,
+    "baseDps": 9.5,
+    "energyUsage": 30,
+    "inaccuracy": 0.0325,
     "projectileCount": 3,
+
     "fireType": "burst",
-	"burstTime" : 0.35,
-    "burstCount" : 3,
+	  "burstTime" : 0.15,
+    "burstCount" : 4,
+
     "projectileType": "unboundpoisonbulletstatus",
     "projectileParameters": {
+      "speed" : [177, 204],
       "knockback": 7
     },
+    "animatedFire" : true,
+
     "stances": {
       "idle": {
         "armRotation": 0,
@@ -75,39 +86,87 @@
         "allowRotate": true,
         "allowFlip": true,
 		
-		"frontArmFrame" : "run.2",
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       },
       "fire": {
         "duration": 0,
         "armRotation": 2,
         "weaponRotation": 1,
-        "weaponOffset" : [-0.1, 0],
+        "weaponOffset" : [-0.05, 0],
         "twoHanded": true,
         "allowRotate": true,
         "allowFlip": true,
 
-        "animationStates" : {
-          "firing" : "fire"
-		},
-		
-		"frontArmFrame" : "run.2",
+	    	"frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       },
       "cooldown": {
         "duration": 0.15,
         "armRotation": 2,
         "weaponRotation": 1,
+        "weaponOffset" : [-0.05, 0],
+        "twoHanded": true,
+        "allowRotate": true,
+        "allowFlip": true,
+		
+		    "frontArmFrame" : "run.2",
+        "backArmFrame" : "swim.4"
+      }
+    }
+  },
+
+  "altAbility" : {
+    "name" : "Summon Someone?",
+    "scripts" : ["/items/active/weapons/ranged/abilities/starforge-allymonstersummon/starforge-allymonstersummon.lua"],
+    "class" : "StarforgeAllyMonsterSummon",
+	
+    "windupTime" : 0.5,
+    "cooldownTime" : 2.5,
+	
+    "summonEnergyUsage" : 500,
+    "summonOffset" : [0.0, 0],
+
+    "monsterConfigs" : [ 
+      { 
+        "monsterType" : "starforge-unboundicedrone",
+        "monsterParameters" : {},
+        "spawnEffects" : [ "starforge-delayeddeath", "starforge-fadein" ],
+        "spawnOffset" : [ 0, 0 ]
+      } 
+    ],
+
+    "stances" : {
+      "windup" : {
+        "aimAngle" : 0,
+        
+        "armRotation": 8,
+        "weaponRotation": 6,
         "weaponOffset" : [-0.1, 0],
         "twoHanded": true,
         "allowRotate": true,
         "allowFlip": true,
 		
-		"frontArmFrame" : "run.2",
+		    "frontArmFrame" : "run.2",
+        "backArmFrame" : "swim.4"
+      },
+      "summon" : {
+        "aimAngle" : 0,
+		
+        "duration" : 0.3,
+        "armRotation": 8,
+        "weaponRotation": 6,
+        "weaponOffset" : [-0.1, 0],
+        "twoHanded": true,
+        "allowRotate": true,
+        "allowFlip": true,
+		
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       }
     }
   },
+
 
   "builder": "/items/buildscripts/starforge-builduniqueweapon.lua"
 }
