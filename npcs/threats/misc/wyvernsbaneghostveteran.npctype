@@ -1,0 +1,256 @@
+{
+  "type": "starforge-wyvernsbaneghostveteran",
+  "baseType": "hostile",
+
+  "persistent" : true,
+	
+  "scripts" : ["/npcs/bmain.lua", "/npcs/scripts/npchealthbar.lua"],
+  "initialScriptDelta" : 5,
+ 
+  "dropPools": ["starforge-wyvernsbaneghostdrop"],
+
+ 	"identity" : {
+    "species" : "human",
+    "hairDirectives":"?crop=1;1;1;1",
+    "gender" : "male"
+  },
+ 
+  "scriptConfig" : {
+    "bossName" : "The Berserker",
+    
+    "behavior" : "mik-hostilenpc",
+    
+    "bandageTime" : 1,
+
+    "aggressive" : true,
+    "interactive" : false,
+
+    "behaviorConfig" : {
+      "leapWindup" : 0.15,
+      "leapCooldown": 8,
+      "rangedAimTime" : 0.1,
+      "rangedWindupTime" : 0.1,
+      "leapChance" : 0.95,
+      "rangedSwapTime" : 1,
+      "meleeSwapTime" : 1.5
+    },
+
+    "chatSounds" : {
+      "default" : {
+        "male" : [
+          "/sfx/cinematics/protectorate/stage_panic.ogg"
+        ]
+      }
+    },
+	
+    "dialog": {
+      "attack" : {
+        "default" : {
+          "default" : [
+            ".."
+          ]
+        }
+      },
+      "reattack" : {
+        "default" : {
+          "default" : [
+            ".."
+          ]
+        }
+      },
+      "killedTarget" : {
+        "default" : {
+          "default" : [
+            ".."
+          ]
+        }
+      },
+      "lostTarget" : {
+        "default" : {
+          "default" : [
+            ".."
+          ]
+        }
+      },
+      "outOfSight" : {
+        "default" : {
+          "default" : [
+            ".."
+          ]
+        }
+      },
+      "cheerOn" : {
+        "default" : {
+          "default" : [
+            ".."
+          ]
+        }
+      },
+      "cantReach" : {
+        "default" : {
+          "default" : [
+            ".."
+          ]
+        }
+      }
+    },
+	
+    "combat" : {
+      "meleeWeaponWindups" : {
+        "default" : 0,
+        "broadsword" : 0,
+        "dagger" : 0,
+        "axe" : 0.45,
+        "hammer" : 0.45,
+        "shortsword" : 0,
+        "spear" : 0
+      },
+      "meleeWeaponCooldowns" : {
+        "default" : 0.5,
+        "broadsword" : 3.7,
+        "dagger" : 0.7,
+        "axe" : 1.4,
+        "hammer" : 2.0,
+        "shortsword" : 1.0,
+        "spear" : 1.4
+      }
+    }
+  },
+
+  "touchDamage" : {
+    "damage" : 0,
+    "teamType" : "enemy",
+    "damageType" : "knockback",
+    "damageSourceKind" : "nodamage",
+    "damageRepeatGroup" : "npcTouchKnockback",
+    "damageRepeatTimeout" : 0.5,
+    "knockback" : 35,
+    "statusEffects" : [ ]
+  },
+ 
+  "innateStatusEffects" : ["starforge-veteraneffects", 
+  //ghost effects
+  "camouflage35", "ghostlyglow"],
+	
+  "items": {
+    "override": [
+      [0, [{
+        "head": [{
+          "name": "rustyskul",
+          "parameters" : { "colorIndex" : 2 }
+        }],
+        "chest": [{
+          "name": "glitchtier4chest",
+          "parameters" : { "colorIndex" : 2 }
+        }],
+        "legs": [{
+          "name": "glitchtier4pants",
+          "parameters" : { "colorIndex" : 2 }
+        }],
+		    "back": [{ 
+				    "name": "starforge-katahelbackfalse" 
+				}],
+        "primary": [
+          "starforge-wyvernsbane"
+        ]
+      }]]
+    ]
+  },
+  
+  "movementParameters" : {
+    "mass" : 2.0,
+    "runSpeed" : 10,
+    "airJumpProfile" : {
+      "jumpSpeed": 60,
+      "jumpHoldTime": 0,
+      "autoJump": false,
+      "collisionCancelled": true,
+      "multiJump": false,
+      "jumpControlForce": 900,
+      "reJumpDelay": 0.05,
+      "jumpInitialPercentage": 1
+    }
+  },
+  
+  "statusControllerSettings" : {
+    "statusProperties" : {
+      "hitInvulnerabilityThreshold" : 0.1,
+      "hitInvulnerabilityTime" : 1,
+      "hitInvulnerabilityFlash" : 0.15,
+      "shieldHitInvulnerabilityTime" : 1.0,
+      "damageFlashOnDirectives" : "",
+      "damageFlashOffDirectives" : "multiply=ffffff00=0.85"
+    },
+	
+    "primaryScriptSources" : [
+      "/stats/starforge-npc_primary.lua",
+      "/scripts/vec2.lua"
+    ],
+	
+    "primaryScriptDelta" : 5,
+      "stats" : {
+        "maxHealth" : {
+          "baseValue" : 3000.0
+        },
+        "maxEnergy" : {
+          "baseValue" : 15555.0
+        },
+        "powerMultiplier" : {
+          "baseValue" : 1.5
+        },
+        "protection" : {
+          "baseValue" : 0.6
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+        "jumpModifier" : {
+          "baseValue" : 0.5
+        },
+        "knockbackStunTime" : {
+          "baseValue" : 1
+        },
+        "fireResistance" : {
+          "baseValue" : 0.5
+        },
+        "fireStatusImmunity" : {
+          "baseValue" : 1
+        },
+        "iceResistance" : {
+          "baseValue" : 0.5
+        },
+        "iceStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "electricResistance" : {
+          "baseValue" : 0.3
+        },
+        "electricStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "poisonResistance" : {
+          "baseValue" : 0.8
+        },
+        "poisonStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "wetImmunity" : {
+          "baseValue" : 1.0
+        },
+        "knockbackbackthreshold" : {
+          "baseValue" : 9
+        },
+        "grit" : {
+          "baseValue" : 0
+        }
+    },
+	
+    "resources" : {
+      "stunned" : {
+        "deltaValue" : -1.0,
+        "initialValue" : 0.0,
+        "maxValue" : 0.0
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "globalTagDefaults" : {
+    "variant" : "1"
+  },
+  
+  "animatedParts" : {
+    "parts" : {
+      "sword" : {
+        "properties" : {
+          "centered" : false,
+          "image" : "<partImage>:<variant>"
+        }
+      }
+    }
+  }
+}

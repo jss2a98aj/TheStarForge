@@ -1,0 +1,44 @@
+{
+  "metadata" : {
+    "name" : "starforge-hillofswords",
+    "species" : "generic",
+    "rules" : [
+    ],
+    "anchor" : [ "starforge-hillofswords" ],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 15,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : false
+  },
+
+  "parts" : [
+    // BASE LAYOUTS
+    {
+      "name" : "starforge-hillofswords",
+      "rules" : [
+        [ "ignorePartMaximumRule" ],
+        [ "doNotCombineWith", [ "starforge-hillofswords" ] ]
+      ],
+      "def" : [ "tmx", "starforge-hillofswords.json" ],
+      "chance" : 0
+    },
+
+    {
+      "name" : "starforge-hillofswordscave1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-hillofswordscave1.json" ],
+      "chance" : 0.1
+    },
+    {
+      "name" : "starforge-hillofswordscave2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-hillofswordscave2.json" ],
+      "chance" : 0.1
+    }
+  ]
+}

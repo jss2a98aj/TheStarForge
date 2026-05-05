@@ -60,7 +60,7 @@ function init()
     self.board:setPosition("spawn", storage.spawnPosition)
   end
 
-  npc.setInteractive(true)
+  npc.setInteractive(config.getParameter("interactive", false))
 
   self.behaviorConfig = config.getParameter("behaviorConfig", {})
   if personality().behaviorConfig then

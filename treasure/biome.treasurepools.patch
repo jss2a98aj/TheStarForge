@@ -2,7 +2,7 @@
 
     {
         "op": "add",
-        "path": "/prismChestTreasure/0/1/pool/1",
+        "path": "/prismChestTreasure/0/1/pool/-",
         "value": {
             "weight": 0.20,
             "item": "starforge-faefrost"
@@ -10,7 +10,7 @@
     },
 	{
         "op": "add",
-        "path": "/alpineChestTreasure/0/1/pool/1",
+        "path": "/alpineChestTreasure/0/1/pool/-",
         "value": {
             "weight": 0.20,
             "item": "starforge-frozenanguish"
@@ -18,7 +18,7 @@
     },
     {
         "op": "add",
-        "path": "/cellChestTreasure/0/1/pool/1",
+        "path": "/cellChestTreasure/0/1/pool/-",
         "value": {
             "weight": 0.20,
             "item": "starforge-helix"
@@ -26,10 +26,18 @@
     },
 	{
         "op": "add",
-        "path": "/shadowChestTreasure/0/1/pool/1",
+        "path": "/shadowChestTreasure/0/1/pool/-",
         "value": {
             "weight": 0.20,
             "item": "starforge-nightshard"
+        }
+    },
+	{
+        "op": "add",
+        "path": "/boneChestTreasure/0/1/pool/-",
+        "value": {
+            "weight": 0.20,
+            "item": "starforge-skullbreaker"
         }
     }
   
