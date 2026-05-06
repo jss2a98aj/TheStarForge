@@ -1,12 +1,4 @@
 { "columns":0,
- "editorsettings":
-    {
-     "export":
-        {
-         "format":"",
-         "target":"."
-        }
-    },
  "grid":
     {
      "height":1,
@@ -36,8 +28,8 @@
      "tilesetDirection":"string"
     },
  "spacing":0,
- "tilecount":5,
- "tiledversion":"1.4.3",
+ "tilecount":6,
+ "tiledversion":"1.10.2",
  "tileheight":50,
  "tileproperties":
     {
@@ -89,6 +81,16 @@
          "imagePositionX":"-8",
          "imagePositionY":"0",
          "object":"starforge-frozenscout",
+         "tilesetDirection":"right"
+        },
+     "5":
+        {
+         "\/\/description":"thing",
+         "\/\/name":"thing",
+         "\/\/shortdescription":"thing",
+         "imagePositionX":"0",
+         "imagePositionY":"0",
+         "object":"starforge-resonancetree",
          "tilesetDirection":"right"
         }
     },
@@ -143,6 +145,16 @@
          "imagePositionY":"string",
          "object":"string",
          "tilesetDirection":"string"
+        },
+     "5":
+        {
+         "\/\/description":"string",
+         "\/\/name":"string",
+         "\/\/shortdescription":"string",
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
         }
     },
  "tiles":
@@ -176,6 +188,12 @@
          "image":"frozenscout.png",
          "imageheight":40,
          "imagewidth":24
+        },
+     "5":
+        {
+         "image":"resonancetree.png",
+         "imageheight":45,
+         "imagewidth":27
         }
     },
  "tilewidth":40,

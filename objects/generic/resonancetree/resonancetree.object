@@ -1,0 +1,38 @@
+{
+  "objectName" : "starforge-resonancetree",
+  "rarity" : "legendary",
+  "category" : "decorative",
+  "printable" : false,
+  "price" : 10,
+  "description" : "A stone shaped like a tree trunk. It grows a sharp crystal.",
+  "shortdescription" : "Symphony Tree",
+
+  "floranDescription" : "Floran curiousss about stone-tree...",
+  "glitchDescription" : "Confused. It appears this stone-like tree is growing something interesting.",
+
+
+
+  "inventoryIcon" : "resonancetreeicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "resonancetree.png:<color>",
+      "imagePosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+  
+  "scripts" : [
+    "/objects/scripts/starforgeinteractpickup.lua"
+  ],
+  "scriptDelta" : 5,
+  
+  "spawnableItem" : "starforge-resonance",
+
+  "animation" : "resonancetree.animation",
+  "animationParts" : {
+    "object" : "resonancetree.png"
+  },
+  "animationPosition" : [0, 0]
+}
