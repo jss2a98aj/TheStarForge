@@ -190,7 +190,7 @@
     "primaryScriptDelta" : 5,
       "stats" : {
         "maxHealth" : {
-          "baseValue" : 3000.0
+          "baseValue" : 1500.0
         },
         "maxEnergy" : {
           "baseValue" : 15555.0

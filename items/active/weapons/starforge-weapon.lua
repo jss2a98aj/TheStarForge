@@ -240,10 +240,15 @@ function Weapon:setStance(stance)
     animator.setAnimationState(stateType, state)
   end
 
-  for _, soundName in pairs(stance.playSounds or {}) do
-    local pitchVariance = ((stance.playSoundsPitchFactor or 1) + (stance.playSoundsPitchVariance or 0.1)) - (math.random() * ((stance.playSoundsPitchVariance or 0.1) * 2)) + (pitchIncrease or 0)
-    animator.setSoundPitch(soundName, pitchVariance)
-    animator.playSound(soundName)
+  for soundName, pitchFactor in pairs(stance.playSounds or {}) do
+    if type(pitchFactor) == "string" then
+      soundName = pitchFactor
+    end
+    if animator.hasSound(soundName) then
+      local pitchVariance = ((stance.playSoundsPitchFactor or 1) + (stance.playSoundsPitchVariance or 0.1)) - (math.random() * ((stance.playSoundsPitchVariance or 0.1) * 2)) + (pitchIncrease or 0)
+      animator.setSoundPitch(soundName, pitchVariance)
+      animator.playSound(soundName)
+    end
   end
 
   for _, particleEmitterName in pairs(stance.burstParticleEmitters or {}) do

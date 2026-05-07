@@ -36,5 +36,5 @@
   ],
   
   "scripts" : ["/objects/scripts/starforge-varianthook.lua"],
-  "variants" :  8
+  "variants" : 16
 }

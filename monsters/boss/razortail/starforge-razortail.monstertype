@@ -32,7 +32,7 @@
 
     "phases" : [
       {
-        "skills" : [ "razortailIdle", "razortailWalk", "razorTailTeleportTailStrike" ]
+        "skills" : [ "razorTailTeleportTailStrike" ]
       }
     ],
 
@@ -105,7 +105,7 @@
           "baseValue" : 1.0
         },
         "maxHealth" : {
-          "baseValue" : 2000
+          "baseValue" : 5000
         },
         "protection" : {
           "baseValue" : 35

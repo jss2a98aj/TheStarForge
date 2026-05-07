@@ -1,0 +1,40 @@
+{
+  "objectName" : "starforge-buriedwyvernsbane",
+  "colonyTags" : ["generic"],
+  "rarity" : "Common",
+  "description" : "An old sword, left to the elements.",
+  "shortdescription" : "Buried Sword",
+  "race" : "human",
+  "category" : "trap",
+  "price" : 75,
+
+  "apexDescription" : "A crude sword, buried in dirt.",
+  "avianDescription" : "It seems that this sword has been to rot.",
+  "floranDescription" : "Sharp and useless metal.",
+  "glitchDescription" : "Uninterested. What a worthless piece of junk.",
+  "humanDescription" : "A broken and useless sword.",
+  "hylotlDescription" : "Based on the state of this sword, it must be ancient.",
+  "novakidDescription" : "What a waste of good iron!",
+
+  "animation" : "/objects/dungeons/hillofswords/buriedsword/starforge-buriedsword.animation",
+  "animationParts" : {
+    "sword" : "starforge-buriedwyvernsbane.png"
+  },
+  
+  "inventoryIcon" : "starforge-buriedwyvernsbane.png:1",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "starforge-buriedwyvernsbane.png:1" } ],
+      "imagePosition" : [-8, 0],
+      "animationPosition" : [-8, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaces" : [[0, 0], [0, 1], [0, 2], [0, 3]],
+      "anchors" : [ "bottom" ]
+    }
+  ],
+  
+  "scripts" : ["/objects/scripts/starforge-varianthook.lua"],
+  "variants" : 2
+}

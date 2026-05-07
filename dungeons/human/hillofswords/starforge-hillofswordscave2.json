@@ -1,33 +1,33 @@
 { "backgroundcolor":"#000000",
  "compressionlevel":-1,
- "height":68,
+ "height":70,
  "infinite":false,
  "layers":[
         {
          "compression":"zlib",
-         "data":"eJzt0yEBACAQALHvXwxJJTwBOMHEImzNzAKAT23gGf+g4x90\/IOOf9DxDzr+Qcc\/6PgHHf+g4x90\/IOOf9DxDzr+Qcc\/6PgHHf+g4x90\/IOOf9DxDzr+Qcc\/6PgHHf+g4x90\/IOOf9DxDzr+Qcc\/6PgHHf+g4x90\/IOOf9DxDzr+Qcc\/6PgHHf+g4x90\/IOOf9DxDzr+Qcc\/6PgHHf+g4x90\/IOOf9DxDzr+Qcc\/6PgHHf+g4x90\/IOOf9DxDzr+Qcc\/6Nz\/AOAnB\/Pu+0I=",
+         "data":"eJzt0yEBACAQALHvXwxJJRJgOcTEImzNzAIAgI9s4BkPoech9DyEnofQ8xB6HkLPQ+h5CD0Poech9DyEnofQ8xB6HkLPQ+h5CD0Poech9DyEnofQ8xB6HkLPQ+h5CD0Poech9DyEnofQ8xB6HkLPQ+h5CD0Poech9DyEnofQ8xB6HkLPQ+h5CD0Poech9DyEnofQ8xB6HkLPQ+h5CD0Poech9DyEnofQ8xB6HkLPQ+h5CD0Poech9DyEnofQ8xB6HkLPQ+jdHgIAQOUA9G\/EdA==",
          "encoding":"base64",
-         "height":68,
+         "height":70,
          "id":1,
          "name":"back",
          "opacity":0.5,
          "type":"tilelayer",
          "visible":true,
-         "width":224,
+         "width":226,
          "x":0,
          "y":0
         }, 
         {
          "compression":"zlib",
-         "data":"eJzt3Etu3DAQRVEvJ8PsfxHJljIXopZaIvWqqHOAGtrm7zoOYPjnBwDe668x5rHZSq9n9H6uSu\/D9Jizzn58ej8zz+Cu9D5Nrblj73Ok9\/TE3kdJn0GFs0nvteq5nNGpvy6cCXdobA5nwhneCORoDnJ0Bzn6gxztQY72IEd\/kKM9yNEf5GgPcvQHOfqDHO1Bjv4gR3+Qoz\/I0R\/k6A9y9Ac5+oNn\/K8x\/cF8e43pD+b61JjfP4N5jvrSH8zzbX8ahDHOtKU\/GO\/s33XRH4x3pz8NwnV7TemPJ3x6f2enM\/2RMKK77m\/w2z2tsm9yRnfX+T3qj6fM7q7jm7zbHxx5srtu7\/NOf3Ak2V71Fq+suepeqCXdWocOO62VPkb38mczK3TYYY30MrO5M9Olw8pr27Pizx8rSbfXocVq6\/lk5H1W32t3lbob\/bNq+myelGiu2hl0VLW90f9fXPXtjbqvFc6im1FnO7O\/yh0erWum2Xelxbk6tVexwTPrmiFxVzocq2N71To8s6bR0nelw3tmvr83NXh2TaNUu6unz3sFK7WXfAvfrGeE6vekwc8Sb3DFDq+s5Y7ud\/T2Fiu8w+73f\/drX7XqHV3dz+8F5m39VXhn33jbfXy7z19N563\/\/lV4W0fefhdX9pzuKd1g+s46zF5\/vheOaXBkr3c+fvbaV73zp97TlrvINLjapO+r8uhPgzqs8Ya23IP+Vuuxwhr3vtZW+n4q33N6T2a92Uqv5+nRnEnOVno9xrxpttLrMeZNAwBv9g+kPdHo",
+         "data":"eJzt3Etu0EAQRVGWw5D9LwK2xBzJuG13+1W1z5FqmKR\/NwQpyo8fAABQyx9jzGtzJL2uVfu6Kr0P02NGXf349L5WnsVT6X2aWvPE2edI7+2NM5glfQYVzia916rnMqJjh104E2bQ2hrOhCu8FcjTHuTpD\/J0CHkahDwNQp4OIU+DkKdDyNMg5OkQ8nQIeRqEPB1Cng4hT4eQp0PI0yHk6RDydAjv+F9jOoT1zhrTIaw10pjfa4N1RvvSIaxzt0MtwhxX2tIhzHf1783okAp2e3szOtzpPKjn6M3t8vbu7G3XsyDnrLOR6UyHJM3or\/sbvLunXfZPzuz+Or9HHfK21f11fJOzOoQzb\/bX7X3O6BDOJBus3uSTNVfdE7Wkm+vQY6e10s\/sbn7\/Mzv02GGN9LSyvZHp0mPltZ3Z8eeSnaQb7NBktfWMmHmvXfbcVaX+Zv8Mmz6bhER7Vc+ik6oNzv7\/5O5vb9a97XQmXcw625UdVu7xbF1vWH1nmlyrU4MVWxxZ10qJO9PjXB0brNbjyJpWSd+ZHp9Z+Q6\/1OLommardmdvn\/sOdmow+RaurGem6velxf9LvMUde7yzlhm639XXm6zwHrvf\/9Ov\/dSud3V3P782mK91WOGd3fG1e7m6z59N56v\/HlZ4W6O+fid39pzuKt1i+s46zFmHvjfOaXFmt08+fvXad73zt97TEXeSaXG3Sd9X5dGhFvVY6w0dcR863K3LCms8+lpH0vdU+b7TezL7zZH0ut4e7ZnkHEmvy5gvzZH0uoz50gAAQDV\/AQj92f4=",
          "encoding":"base64",
-         "height":68,
+         "height":70,
          "id":2,
          "name":"front",
          "opacity":1,
          "type":"tilelayer",
          "visible":true,
-         "width":224,
+         "width":226,
          "x":0,
          "y":0
         }, 
@@ -48,91 +48,7 @@
          "draworder":"topdown",
          "id":4,
          "name":"objects",
-         "objects":[
-                {
-                 "gid":8801,
-                 "height":50,
-                 "id":2602,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":25,
-                 "x":160,
-                 "y":392
-                }, 
-                {
-                 "gid":8801,
-                 "height":50,
-                 "id":2603,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":25,
-                 "x":48,
-                 "y":456
-                }, 
-                {
-                 "gid":8801,
-                 "height":50,
-                 "id":2604,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":25,
-                 "x":584,
-                 "y":416
-                }, 
-                {
-                 "gid":8801,
-                 "height":50,
-                 "id":2605,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":25,
-                 "x":1288,
-                 "y":288
-                }, 
-                {
-                 "gid":8801,
-                 "height":50,
-                 "id":2606,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":25,
-                 "x":1576,
-                 "y":376
-                }, 
-                {
-                 "gid":8801,
-                 "height":50,
-                 "id":2607,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":25,
-                 "x":1736,
-                 "y":240
-                }, 
-                {
-                 "gid":8801,
-                 "height":50,
-                 "id":2608,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":25,
-                 "x":1088,
-                 "y":352
-                }],
+         "objects":[],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -211,8 +127,8 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":24,
-                 "y":536
+                 "x":56,
+                 "y":544
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -232,7 +148,7 @@
          "y":0
         }],
  "nextlayerid":12,
- "nextobjectid":2610,
+ "nextobjectid":2629,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.0",
@@ -376,10 +292,10 @@
         }, 
         {
          "firstgid":8801,
-         "source":"..\/..\/..\/tilesets\/dungeons\/starforge-dungeons.json"
+         "source":"..\/..\/..\/tilesets\/vowvillage\/vowvillage.json"
         }],
  "tilewidth":8,
  "type":"map",
  "version":1.1,
- "width":224
+ "width":226
 }

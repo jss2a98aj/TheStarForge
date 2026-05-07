@@ -85,7 +85,7 @@ function startFight()
   playSound("fightStart")
   monster.setDamageBar("Special")
   monster.setAggressive(true)
-  createMusicStagehand(config.getParameter("music"))
+  setBattleMusicEnabled(config.getParameter("music"))
 end
 
 function playSound(sound, pitchVariance)
@@ -275,6 +275,7 @@ function update(dt)
     self.state.update(dt)
 
     cullMusicStagehand()
+    setBattleMusicEnabled(false)
   else
     trackTargets(self.keepTargetInSight, self.queryTargetDistance, self.trackTargetDistance, self.switchTargetDistance)
 
@@ -283,6 +284,9 @@ function update(dt)
         _ENV[skillName].onUpdate(dt)
       end
     end
+    setBattleMusicEnabled(config.getParameter("musicStagehands"))
+    monster.setDamageBar("Special")
+    monster.setAggressive(true)
 
     if hasTarget() then
       script.setUpdateDelta(1)
@@ -303,6 +307,7 @@ function update(dt)
         if bossReset then bossReset() end
         monster.setDamageBar("None")
         cullMusicStagehand()
+    setBattleMusicEnabled(false)
         monster.setAggressive(false)
       end
 
@@ -313,6 +318,7 @@ function update(dt)
       end
 
       cullMusicStagehand()
+    setBattleMusicEnabled(false)
     end
 
     self.hadTarget = hasTarget()
@@ -622,7 +628,7 @@ function createMusicStagehand(track, timeToLive)
   end
 end
 
---[[function setBattleMusicEnabled(enabled)
+function setBattleMusicEnabled(enabled)
   if self.musicEnabled ~= enabled then
     local musicStagehands = config.getParameter("musicStagehands", {})
     for _, stagehand in pairs(musicStagehands) do
@@ -634,4 +640,4 @@ end
       end
     end
   end
-end]]
+end

@@ -21,6 +21,7 @@
     "butt": "",
     "middle": "starforge-skullbreaker.png",
     "barrel": "",
+	  "middleFullbright": "",
     "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-physicalmuzzleflash.png"
   },
   "animationCustom" : {

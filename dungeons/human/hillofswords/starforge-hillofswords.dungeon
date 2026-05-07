@@ -13,7 +13,6 @@
   },
 
   "parts" : [
-    // BASE LAYOUTS
     {
       "name" : "starforge-hillofswords",
       "rules" : [
@@ -30,7 +29,7 @@
         [ "maxSpawnCount", [1] ]
       ],
       "def" : [ "tmx", "starforge-hillofswordscave1.json" ],
-      "chance" : 0.1
+      "chance" : 0
     },
     {
       "name" : "starforge-hillofswordscave2",
@@ -38,7 +37,7 @@
         [ "maxSpawnCount", [1] ]
       ],
       "def" : [ "tmx", "starforge-hillofswordscave2.json" ],
-      "chance" : 0.1
+      "chance" : 0
     }
   ]
 }

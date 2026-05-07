@@ -97,15 +97,15 @@
         "animationStates" : {
           "geode" : "chime"
         },
-        "immediateSounds" : {
-          "chime" : 0.5
+        "playSounds" : {
+          "chime" : 0.4
         }
       },
       "fire2" : {
         "animationStates" : {
           "geode" : "chime"
         },
-        "immediateSounds" : {
+        "playSounds" : {
           "chime" : 0.5
         }
       },
@@ -113,24 +113,24 @@
         "animationStates" : {
           "geode" : "chime"
         },
-        "immediateSounds" : {
-          "chime" : 0.5
+        "playSounds" : {
+          "chime" : 0.6
         }
       },
       "fire4" : {
         "animationStates" : {
           "geode" : "chime"
         },
-        "immediateSounds" : {
-          "chime" : 0.5
+        "playSounds" : {
+          "chime" : 0.45
         }
       },
       "fire5" : {
         "animationStates" : {
           "geode" : "chime"
         },
-        "immediateSounds" : {
-          "chime" : 0.5
+        "playSounds" : {
+          "chime" : 0.7
         }
       }
     }
