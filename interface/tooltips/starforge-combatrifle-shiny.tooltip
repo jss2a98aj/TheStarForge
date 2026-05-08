@@ -1,9 +1,9 @@
 {
   "background" : {
     "type" : "background",
-    "fileHeader" : "/interface/tooltips/starforge-uniqueheader.png",
-    "fileBody" : "/interface/tooltips/starforge-uniquebody4.png",
-    "fileFooter" : "/interface/tooltips/starforge-uniquefooter2.png"
+    "fileHeader" : "/interface/tooltips/starforge-uniqueheader-shiny.png",
+    "fileBody" : "/interface/tooltips/starforge-uniquebody4-shiny.png",
+    "fileFooter" : "/interface/tooltips/starforge-uniquefooter2-shiny.png"
   },
   //===================== LEVEL LABELS =====================
   "levelTitleLabel" : {

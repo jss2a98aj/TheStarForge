@@ -41,8 +41,8 @@ function uninit()
   if config.getParameter("passiveStatusEffects") then
     status.clearPersistentEffects(self.tagGroup)
     if config.getParameter("statusEffectsLingerOnUnequip") then
-	  status.addEphemeralEffects(config.getParameter("passiveStatusEffects"), activeItem.ownerEntityId())
-	end
+      status.addEphemeralEffects(config.getParameter("passiveStatusEffects"), activeItem.ownerEntityId())
+    end
   end
 
   self.weapon:uninit()

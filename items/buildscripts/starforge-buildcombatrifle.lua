@@ -348,34 +348,69 @@ function build(directory, config, parameters, level, seed)
     end
   end
 
-  --Populate tooltip fields
+  -- populate tooltip fields
   if config.tooltipKind ~= "base" then
     config.tooltipFields = {}
-    local fireTime = parameters.primaryAbility.fireTime or config.primaryAbility.fireTime or 1.0
-    local baseDps = parameters.primaryAbility.baseDps or config.primaryAbility.baseDps or 0
-    local energyUsage = parameters.primaryAbility.energyUsage or config.primaryAbility.energyUsage or 0
-
     config.tooltipFields.levelLabel = util.round(configParameter("level", 1), 1)
-    config.tooltipFields.dpsLabel = util.round(baseDps * config.damageLevelMultiplier, 1)
-    config.tooltipFields.speedLabel = util.round(1 / fireTime, 1)
-    config.tooltipFields.damagePerShotLabel = util.round(baseDps * fireTime * config.damageLevelMultiplier, 1)
-    config.tooltipFields.energyPerShotLabel = util.round(energyUsage * fireTime, 1)
-    config.tooltipFields = sb.jsonMerge(config.tooltipFields, config.tooltipFieldsOverride or {})
+    config.tooltipFields.rarityLabel = configParameter("rarity", "Common")
 
-    if parameters.elementalType ~= "physical" then
+
+    config.tooltipFields.damagePerShotLabel = util.round(config.primaryAbility.baseDamage or ((config.primaryAbility.baseDps or 0) * (config.primaryAbility.fireTime or 1.0)) * config.damageLevelMultiplier, 1)
+    if config.primaryAbility.projectileCount and config.primaryAbility.projectileCount > 1 then
+      config.tooltipFields.damagePerShotLabel = util.round((config.tooltipFields.damagePerShotLabel / config.primaryAbility.projectileCount), 1) .. "^gray;x" .. math.floor(config.primaryAbility.projectileCount)
+    end
+    config.tooltipFields.energyPerShotLabel = util.round((config.primaryAbility.energyUsage or 0) * (config.primaryAbility.fireTime or 1.0), 1)
+    config.tooltipFields.dpsLabel = util.round((config.primaryAbility.baseDps or 0) * config.damageLevelMultiplier, 1)
+
+
+    if config.primaryAbility.tooltipDamageMultiplier then
+      config.tooltipFields.damagePerShotLabel = config.tooltipFields.damagePerShotLabel * config.primaryAbility.tooltipDamageMultiplier
+    end
+
+    --Fire Rate things
+    --Charge weapons
+    if config.primaryAbility.chargeTime then
+      config.tooltipFields.speedTitleLabel = "Charge Time:"
+      config.tooltipFields.speedLabel = util.round(config.primaryAbility.chargeTime or 1, 1)
+    else
+      local cycleTime = (config.primaryAbility.fireTime or config.primaryAbility.cooldownTime or 1.0) + (config.primaryAbility.fireType == "burst" and (config.primaryAbility.burstTime * config.primaryAbility.burstCount) or 0)
+      local rateOfFire = (config.primaryAbility.burstCount or 1) / (cycleTime * (config.primaryAbility.stanceSpeedFactor or 1))
+      config.tooltipFields.speedLabel = util.round(rateOfFire, 1)
+    end
+
+    --Diff energy types
+    if config.primaryAbility.resourcetype == "health" then
+      config.tooltipFields.energyPerShotTitleLabel = "Health Per Shot:"
+    end
+    
+    if elementalType ~= "physical" then
       config.tooltipFields.damageKindImage = "/interface/elements/" .. parameters.elementalType .. ".png"
     end
     if config.primaryAbility then
       config.tooltipFields.primaryAbilityTitleLabel = "Primary:"
-      config.tooltipFields.primaryAbilityLabel = config.primaryAbility.name or "unknown"
+      config.tooltipFields.primaryAbilityLabel = config.primaryAbility.name or "Unspecified"
     end
-    if config.altAbility then
-      config.tooltipFields.altAbilityTitleLabel = "Special:"
-      config.tooltipFields.altAbilityLabel = config.altAbility.name or "unknown"
+    if config.comboFinisher then
+      config.tooltipFields.altAbilityTitleLabel = "Finisher:"
+      config.tooltipFields.altAbilityLabel = config.comboFinisher.name or "Unspecified"
+    elseif config.altAbility then
+      if config.primaryAbility.finisherHoldTime and not config.twoHanded then
+        config.tooltipFields.altAbilityTitleLabel = "Finisher:"
+      else
+        config.tooltipFields.altAbilityTitleLabel = "Special:"
+      end
+      config.tooltipFields.altAbilityLabel = config.altAbility.name or "Unspecified"
     end
 
     --Apply manufacturer icon
     config.tooltipFields.manufacturerIconImage = "/interface/sf-manufacturers/" .. parameters.manufacturer:lower() .. ".png"
+    
+    if (config.rarity == "Essential" or config.rarity == "essential") and (config.tooltipKind == "starforge-uniquesword" or config.tooltipKind == "starforge-uniquegun" or config.tooltipKind == "starforge-combatrifle") then
+      config.tooltipKind = config.tooltipKind .. "-shiny"
+    end
+    
+    -- Lets you customise tooltip from the weapon... EXTREMELY useful I think!
+    config.tooltipFields = sb.jsonMerge(config.tooltipFields, config.tooltipFieldsOverride or {})
   end
 
   --Replace some tags which are useful in the combat rifles
@@ -549,9 +584,6 @@ function correctAbility(config, primaryAbilityMultipliers, seed)
   
   --Ensure we dont get lower than 1 projectile count
   correctedAbility.projectileCount = math.max(1, correctedAbility.projectileCount)
-  if correctedAbility.projectileCount > 1 then
-    correctedAbility.baseDps = correctedAbility.baseDps + (correctedAbility.projectileCount * 0.4)
-  end
 
   --Make inaccuracy scale a bit with projectile count
   correctedAbility.inaccuracy = correctedAbility.projectileCount > 1 and (correctedAbility.inaccuracy + 0.0125 * (1 + (correctedAbility.projectileCount))) or correctedAbility.inaccuracy

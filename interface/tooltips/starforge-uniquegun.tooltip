@@ -115,8 +115,8 @@
     "position" : [70, 135],
     "file" : "",
     "centered" : true,
-    "maxSize" : [84, 49],
-    "minSize" : [84, 49]
+    "maxSize" : [80, 40],
+    "minSize" : [80, 40]
   },
   
   //Custom field, Manufacturer Icon

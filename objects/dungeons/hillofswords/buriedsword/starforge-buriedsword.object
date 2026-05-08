@@ -5,8 +5,8 @@
   "description" : "An old sword, left to the elements.",
   "shortdescription" : "Buried Sword",
   "race" : "human",
-  "category" : "trap",
-  "price" : 75,
+  "category" : "decorative",
+  "price" : 15,
 
   "apexDescription" : "A crude sword, buried in dirt.",
   "avianDescription" : "It seems that this sword has been to rot.",

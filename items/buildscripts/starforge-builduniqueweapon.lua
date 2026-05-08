@@ -146,7 +146,6 @@ function build(directory, config, parameters, level, seed)
     if (config.rarity == "Essential" or config.rarity == "essential") and (config.tooltipKind == "starforge-uniquesword" or config.tooltipKind == "starforge-uniquegun") then
       config.tooltipKind = config.tooltipKind .. "-shiny"
     end
-
     
     -- Lets you customise tooltip from the weapon... EXTREMELY useful I think!
     config.tooltipFields = sb.jsonMerge(config.tooltipFields, config.tooltipFieldsOverride or {})

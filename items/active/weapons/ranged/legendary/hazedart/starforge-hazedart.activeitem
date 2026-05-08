@@ -2,7 +2,7 @@
   "itemName" : "starforge-hazedart",
   "price" : 3000,
   "maxStack" : 1,
-  "rarity" : "Rare",
+  "rarity" : "Legendary",
   "description" : "It whispers a promise of sleep, its thorns breaching shrouds of malignant fog.",
   "shortdescription" : "Hazedart",
   "tooltipKind" : "starforge-uniquegun",
@@ -94,7 +94,8 @@
     },
     "sounds": {
   	  "altFire" : [ "/sfx/melee/swing_hammer.ogg" ],
-      "fire": ["/sfx/npc/monsters/monster_bite1.ogg"]
+      "fire": ["/sfx/npc/monsters/monster_bite1.ogg"],
+	  "unholsterTwirl" : [ "/sfx/interface/item_equip.ogg" ]
 	  }
   },
   
@@ -128,6 +129,16 @@
         "allowRotate" : true,
         "allowFlip" : true
       },
+      "unholsterTwirl" : {
+        "duration" : 0.35,
+        "armRotation" : -25,
+        "weaponRotation" : -180,
+		    "weaponOffset" : [-0.25, -0.125],
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      }, 
       "fire" : {
         "duration" : 0,
         "armRotation" : 2,

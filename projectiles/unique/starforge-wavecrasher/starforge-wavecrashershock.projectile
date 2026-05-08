@@ -1,0 +1,18 @@
+{
+  "projectileName" : "starforge-wavecrashershock",
+  "image" : "/projectiles/invisibleprojectile/invisibleprojectile.png",
+  "physics" : "vhighgravgrenade",
+  "timeToLive" : 0.5,
+  "power" : 1,
+  "speed" : 0,
+  "bounces" : -1,
+  "orientationLocked" : true,
+  "piercing" : true,
+  "flippable" : true,
+  "damageType" : "noDamage",
+  "damageKind" : "default",
+  
+  "scripts" : [ "/projectiles/scripts/starforge-messagerprojectile.lua" ],
+  "messageRadius" : 50,
+  "messageToSend" : "starforge-shockWetEnemies"
+}
