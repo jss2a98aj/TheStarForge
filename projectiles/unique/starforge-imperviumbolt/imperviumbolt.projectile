@@ -30,7 +30,7 @@
       "loopTime" : 0.01,
       "delayTime" : 0.01,
       "rotate" : true,
-      "minimumVelocity" : 100,
+      "minimumVelocity" : 60,
 
       "action" : "particle",
       "specification" : {

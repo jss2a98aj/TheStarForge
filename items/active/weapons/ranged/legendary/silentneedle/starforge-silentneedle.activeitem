@@ -4,7 +4,7 @@
   "maxStack": 1,
   "rarity": "Legendary",
   "fixedLevel" : false,
-  "description": "A common form of hidden arms, this one given to especially talented Glitch for covert ops.",
+  "description": "A common form of hidden arms, given to talented Glitch for covert ops.",
   "shortdescription": "^#FFBC47;Silent Needle^reset;",
   "tooltipKind": "starforge-uniquegun",
   "category" : "uniqueWeapon",

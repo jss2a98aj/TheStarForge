@@ -1,5 +1,7 @@
 {
   "name" : "starforge-rottingwinds",
+  "blockingStat" : "starforge-witherWeatherStatusImmunity",
+
   "effectConfig" : {
     "tickDamagePercentage" : 0.125,
     "tickTime" : 1

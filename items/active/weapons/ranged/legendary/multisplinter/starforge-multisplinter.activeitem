@@ -1,71 +1,76 @@
 {
-  "itemName": "starforge-twinshot",
+  "itemName": "starforge-multisplinter",
   "price": 3000,
   "maxStack": 1,
   "rarity": "Legendary",
   "fixedLevel" : false,
-  "description": "A chunky crossbow sporting a dual loading mechanism for firing in quick bursts.",
-  "shortdescription": "^#FFBC47;Twin Spike^reset;",
+  "description": "A brutal crossbow loading multiple arrows at once for a spreaded blast.",
+  "shortdescription": "^#FFBC47;Multi Splinter^reset;",
   "tooltipKind": "starforge-uniquegun",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {
     "subtitle" : "Crossbow"
   },
-  "twoHanded": false,
+  "twoHanded": true,
   "level": 6,
   "itemTags" : [ "starforge", "weapon", "ranged", "pistol", "crossbow" ],
-  "learnBlueprintsOnPickup" : [ "starforge-twinshot" ],
+  "learnBlueprintsOnPickup" : [ "starforge-multisplinter" ],
 
-  "inventoryIcon": "starforge-twinshot.png:idle",
+  "inventoryIcon": "starforge-multisplinter.png:idle",
 
-  "animation": "starforge-twinshot.animation",
+  "animation": "/items/active/weapons/ranged/legendary/twinshot/starforge-twinshot.animation",
   "animationParts": {
     "butt": "",
-    "middle": "starforge-twinshot.png",
+    "middle": "starforge-multisplinter.png",
     "barrel": "",
     "muzzleFlash": ""
   },
   "animationCustom": {
     "sounds": {
-      "fire": ["/sfx/gun/starforge-bowgunfire.ogg"]}
+      "fire": ["/sfx/gun/starforge-bowgunaltfire.ogg"]
+    }
   },
   
-  "baseOffset" : [0.875, 0.25],
+  "baseOffset" : [0.325, 0.25],
   "muzzleOffset" : [1.125, 0.25],
   
   "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
   "elementalType": "physical",
+
   "primaryAbility": {
     "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
     "class": "StarforgeGunFire",
-    "fireTime": 0.55,
-    "baseDps": 6,
+
+    "fireTime": 0.855,
+    "baseDps": 8,
     "energyUsage": 30,
-    "inaccuracy": 0.01,
-    "projectileCount" : 1,
-    "burstTime" : 0.2,
-    "burstCount" : 2,
-    "fireType" : "burst",
+    "inaccuracy": 0.1,
+    "projectileCount" : 5,
+
+    "fireType" : "auto",
+
     "projectileType": "starforge-imperviumbolt",
     "projectileParameters": {
+      "speed" : [90, 110],
       "timeToLive" : 3,
-      "stickToTargetTime" : 3,
+      "stickToTargetTime" : 1,
       "knockback": 3
     },
+
     "stances" : {
       "idle" : {
         "armRotation" : 0,
         "weaponRotation" : 0,
-        "twoHanded" : false,
+        "twoHanded" : true,
 
         "allowRotate" : true,
         "allowFlip" : true
       },
       "fire" : {
         "duration" : 0,
-        "armRotation" : 5,
-        "weaponRotation" : 5,
-        "twoHanded" : false,
+        "armRotation" : 3,
+        "weaponRotation" : 3,
+        "twoHanded" : true,
 
         "animationStates" : {
           "reload" : "fire"
@@ -75,10 +80,10 @@
         "allowFlip" : true
       },
       "cooldown" : {
-        "duration" : 0.15,
-        "armRotation" : 5,
-        "weaponRotation" : 5,
-        "twoHanded" : false,
+        "duration" : 0.4,
+        "armRotation" : 3,
+        "weaponRotation" : 3,
+        "twoHanded" : true,
 
         "animationStates" : {
           "reload" : "reload"

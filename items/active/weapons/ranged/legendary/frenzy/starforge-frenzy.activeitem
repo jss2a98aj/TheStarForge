@@ -14,10 +14,10 @@
   "level" : 6,
   "fixedLevel": false,
   "itemTags" : [ "starforge", "weapon", "ranged", "shotgun" ],
-  "inventoryIcon": "starforge-frenzy.png:slide.1",
+  "inventoryIcon": "starforge-frenzy.png:idle",
   "learnBlueprintsOnPickup" : [ "starforge-frenzy" ],
   
-  "animation": "/items/active/weapons/ranged/unique/mauricessidearm/mauricessidearm.animation",
+  "animation" : "/items/active/weapons/ranged/animations/starforge-shellanimgun.animation",
   "animationParts": {
     "butt": "",
     "middle": "starforge-frenzy.png",
@@ -26,7 +26,22 @@
     "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-firemuzzleflash.png"
   },
   "animationCustom": {
+    "animatedParts" : {
+      "parts" : {
+        "middleFullbright" : {
+          "properties" : {
+            "offset" : [0.625, 0.25]
+          }
+        }
+      }
+    },
     "particleEmitters" : {
+      "casing" : {
+		    "offsetRegion" : [-0.125, 0.625, -0.125, 0.625],
+        "particles" : [
+          { "particle" : "starforge-unboundfireshell" }
+        ]
+      },
       "muzzleFlash" : {
         "burstCount" : 5,
         "transformationGroups" : ["muzzle"],
@@ -45,6 +60,7 @@
   "muzzleOffset": [1.125, 0.25],
   
   "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
+  "useTwoHandedWhileAlone" : true,    //if in one hand, and theres nothing in the other hand, twohand the weapon in the stance
   "elementalType": "fire",
   
   "primaryAbility": {
@@ -64,6 +80,7 @@
       "speed" : [100, 125],
       "knockback": 10
     },
+    "animatedFire" : true,
 	
     "stances" : {
       "idle" : {
@@ -79,6 +96,7 @@
         "armRotation" : 7,
         "weaponRotation" : 7,
         "twoHanded" : false,
+        "burstParticleEmitters": [ "casing" ],
 
         "allowRotate" : false,
         "allowFlip" : true

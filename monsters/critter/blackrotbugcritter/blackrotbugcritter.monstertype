@@ -78,6 +78,12 @@
         },
         "powerMultiplier" : {
           "baseValue" : 1.0
+        },
+        "starforge-witherStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "starforge-witherWeatherStatusImmunity" : {
+          "baseValue" : 1.0
         }
       },
 

@@ -1,0 +1,15 @@
+{
+  "input" : [
+	{ "item" : "essence", "count" : 1750},
+	{ "item" : "refinedaegisalt", "count" : 4},
+	{ "item" : "sharpenedclaw", "count" : 4},
+	{ "item" : "darkwoodmaterial", "count" : 75}
+  ],
+  "output" : {
+    "item" : "starforge-multisplinter",
+    "count" : 1
+  },
+  "groups" : [ "starforge-starforge", "weapons" ],
+  "duration" : 2
+}
+

@@ -1,4 +1,5 @@
 [
+  //VOW
   {
     "op": "add",
     "path": "/weaponSkins/starforge-thevow",
@@ -20,6 +21,7 @@
       }
     }
   },
+  //TIDEWALKER
   {
     "op": "add",
     "path": "/weaponSkins/starforge-tidewalker",
@@ -71,6 +73,7 @@
       }
     }
   },
+  //HAWKMOON
   {
     "op": "add",
     "path": "/weaponSkins/starforge-hawkmoon",
@@ -100,6 +103,28 @@
           "inventoryIcon": "/items/active/weapons/ranged/unique/hawkmoon/skins/oldtales.png:ready1",
           "animationParts": {
             "gun" : "/items/active/weapons/ranged/unique/hawkmoon/skins/oldtales.png"
+          }
+        }
+      }
+    }
+  },
+  //WAVECRASHER
+  {
+    "op": "add",
+    "path": "/weaponSkins/starforge-wavecrasher",
+    "value": {
+      "moonOfHawks": {
+        "skinName" : "Bonecrasher",
+        "unlockDescription" : "Unlocked by default.",
+        "prerequisiteQuests": [],
+	  
+        "skinConfig": {
+          "description": "From blood and bone comes forward a crashing flood, breeding an unknowing rage.",
+          "shortdescription": "Bonecrasher",
+          "inventoryIcon": "/items/active/weapons/ranged/legendary/wavecrasher/skins/starforge-bonecrasher.png:empty",
+          "animationParts": {
+            "gun" : "/items/active/weapons/ranged/legendary/wavecrasher/skins/starforge-bonecrasher.png",
+            "gunfullbright" : "/items/active/weapons/ranged/legendary/wavecrasher/skins/starforge-bonecrasherfullbright.png"
           }
         }
       }

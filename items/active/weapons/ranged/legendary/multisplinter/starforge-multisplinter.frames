@@ -1,0 +1,15 @@
+{  
+  "frameGrid" : {
+    "size" : [25, 25],
+    "dimensions" : [4, 1],
+    "names" : [
+      ["reload.1", "reload.2", "reload.3", "reload.4"]
+    ]
+  },
+
+  "aliases" : {
+    "idle" : "reload.4",
+    "fire.1" : "reload.4",
+    "fire.2" : "reload.4"
+  }
+}

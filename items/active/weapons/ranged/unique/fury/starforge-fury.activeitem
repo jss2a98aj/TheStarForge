@@ -1,7 +1,6 @@
 {
   "itemName" : "starforge-fury",
   "price" : 3000,
-  "inventoryIcon" : "starforge-fury.png:idle",
   "maxStack" : 1,
   "rarity" : "Essential",
   "description" : "The fury tore it down, to start again.",
@@ -13,8 +12,9 @@
   "tooltipFieldsOverride" : {"subtitle":"Shotgun"},
   "itemTags" : [ "starforge", "weapon", "ranged", "shotgun" ],
   "twoHanded" : true,
+  "inventoryIcon" : "starforge-fury.png:idle",
   
-  "animation" : "/items/active/weapons/ranged/starforge-gun.animation",
+  "animation" : "/items/active/weapons/ranged/animations/starforge-shellanimgun.animation",
   "animationParts" : {
     "butt" : "",
     "middle" : "starforge-fury.png",
@@ -25,74 +25,23 @@
   "animationCustom" : {
     "animatedParts" : {
       "stateTypes" : {
-        "pumpAction" : {
-          "default" : "idle",
+        "gun" : {
           "states" : {
-            "idle" : {},
-            "pump" : {
-              "frames" : 5,
-              "cycle" : 0.35,
-              "mode" : "transition",
-              "transition" : "idle",
+            "reload" : {
               "properties" : {
                 "immediateSound" : "/sfx/gun/reload/shotgun_reload_clip3.ogg"
-              }
-            },
-            "slamFire" : {
-              "frames" : 3,
-              "cycle" : 0.15,
-              "mode" : "loop",
-              "properties" : {
-                "persistentSound" : "/sfx/gun/reload/shotgun_reload_clip1.ogg"
               }
             }
           }
         }
       },
       "parts" : {
-        "middle" : {
-          "partStates" : {
-            "pumpAction" : {
-              "idle" : {
-                "properties" : {
-                  "image" : "<partImage>:idle<paletteSwaps>"
-                }
-              },
-              "pump" : {
-                "properties" : {
-                  "image" : "<partImage>:pump.<frame><paletteSwaps>"
-                }
-              },
-              "slamFire" : {
-                "properties" : {
-                  "image" : "<partImage>:slamFire.<frame><paletteSwaps>"
-                }
-              }
-            }
-          }
-        },
         "middleFullbright" : {
-          "partStates" : {
-            "pumpAction" : {
-              "idle" : {
-                "properties" : {
-                  "image" : "<partImage>:idle<paletteSwaps>"
-                }
-              },
-              "pump" : {
-                "properties" : {
-                  "image" : "<partImage>:pump.<frame><paletteSwaps>"
-                }
-              },
-              "slamFire" : {
-                "properties" : {
-                  "image" : "<partImage>:slamFire.<frame><paletteSwaps>"
-                }
-              }
-            }
+          "properties" : {
+            "offset" : [0.5, 0.25]
           }
         },
-        
+
         "muzzleFlash1" : {
           "properties" : {
             "zLevel" : -1,
@@ -134,6 +83,12 @@
       }
     },
     "particleEmitters" : {
+      "casing": {
+		    "offsetRegion" : [0.625, 0.625, 0.625, 0.625],
+        "particles": [
+          { "particle": "starforge-unboundfireshell"}
+        ]
+      },
       "muzzleFlash" : {
         "burstCount" : 2,
         "transformationGroups" : ["muzzle"],
@@ -152,8 +107,7 @@
   "baseOffset" : [0.5, 0.25],
   "muzzleOffset" : [1.25, 0.5],
 
-  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
-
+  "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
   "elementalType" : "fire",
 
   "primaryAbility" : {
@@ -206,14 +160,14 @@
         "allowFlip" : true
       },
       "cooldown" : {
-        "duration" : 0.45,
+        "duration" : 0.35,
         "armRotation" : -15,
         "weaponRotation" : 35,
 	    	"weaponOffset" : [-0.125, 0.0],
         "twoHanded" : true,
-
-        "animationStates" : {
-          "pumpAction" : "pump"
+        "burstParticleEmitters": [ "casing" ],
+        "animationStates": {
+          "gun" : "reload"
         },
 
         "allowRotate" : true,
@@ -222,62 +176,206 @@
     }
   },
 
-  "altAbility" : {
-    "name" : "Relentless Fury",
-    "scripts" : ["/items/active/weapons/ranged/abilities/starforge-multibarrelfire.lua"],
-    "class" : "StarForgeMultiBarrelFire",
+  "altAbility": {
+    "name" : "Pent-up Fury",
+    "scripts" : ["/items/active/weapons/ranged/starforge-gunfire.lua"],
+    "class" : "StarforgeGunFire",
 
-    "fireTime" : 0.3625,
-    "baseDps" : 14,
-    "energyUsage" : 40,
-    "inaccuracy" : 0.2,
-	
-    "projectileCount" : 4,
-	
-    "fireType" : "burst",
-    "burstCount" : 10,
-    "burstTime" : 0.085,
+    "fireTime": 2,
+    "baseDps": 3,
+    "energyUsage": 150,
+    "inaccuracy": 0.01,
+    "projectileCount": 1,
+    
+    "holdToCharge" : true,
+    "autoFire" : true,
+    "fireType" : "auto",
+	  "chargeTime" : 1.8,
 
-  	"muzzleOffsets" : [[2.25, 0.5], [2.25, 0.25]],
-	  "fireAllProjectileCount" : false,
-	  "projectileType" : "starforge-firefluxbolt",
-    "projectileParameters" : {
+	  "chargeShake" : true,
+	  "chargeShakeWavePeriod" : 0.25,
+	  "chargeShakeWaveAmplitude" : 0.005,
+	  "chargeShakeFactor" : 1,
+
+    "projectileType": "starforge-firebullet",
+    "projectileParameters": {
       "statusEffects" : [ "starforge-firecombust" ],
-      "knockback": 10,
-      "bounces" : 2,
-      "canBounce" : true,
-      "movementSettings" : {
-        "bounceFactor" : 0.25,
-        "stickyCollision" : false,
-        "stickyForce" : 0
-      }
+      "knockback": 8,
+      "piercing" : true,
+      "speed" : [155, 175],
+      "actionOnReap" : [
+        {
+          "action" : "projectile",
+          "inheritDamageFactor" : 1,
+          "type" : "fireexplosionknockback",
+          "fuzzAngle" : 360,
+          "config" : {
+            "bounces" : -1,
+            "statusEffects" : [ "starforge-firecombust" ]
+          }
+        },
+        {
+          "action" : "loop",
+          "count" : 20,
+          "body" : [
+            {
+              "action" : "option",
+              "options" : [
+                {
+                  "action" : "particle",
+                  "specification" : {
+                    "type" : "animated",
+                    "animation" : "/animations/ember1/ember1.animation",
+                    "approach" : [0.5, 0.5],
+                    "timeToLive" : 0.6,
+                    "variance" : {
+                      "timeToLive" : 0.15,
+                      "position" : [2.5, 2.5],
+                      "initialVelocity" : [1, 1],
+                      "rotation" : 180
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "action" : "spark"
+            }
+          ]
+        },
+        {
+          "action" : "loop",
+          "count" : 7,
+          "body" : [
+            {
+              "action" : "option",
+              "options" : [
+                {
+                  "action" : "particle",
+                  "specification" : {
+                    "type" : "animated",
+                    "animation" : "/animations/mediumflame/mediumflame.animation",
+                    "approach" : [0.5, 0.5],
+                    "timeToLive" : 1.5,
+                    "variance" : {
+                      "position" : [1.5, 1.5],
+                      "initialVelocity" : [1, 1],
+                      "timeToLive" : 0.5,
+                      "rotation" : 180
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "action" : "loop",
+          "count" : 7,
+          "body" : [
+            {
+              "action" : "option",
+              "options" : [
+                {
+                  "action" : "particle",
+                  "specification" : {
+                    "type" : "animated",
+                    "animation" : "/animations/smallflame/smallflame.animation",
+                    "approach" : [0.5, 0.5],
+                    "timeToLive" : 1.5,
+                    "variance" : {
+                      "position" : [1.5, 1.5],
+                      "initialVelocity" : [1, 1],
+                      "timeToLive" : 0.5,
+                      "rotation" : 180
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "action" : "sound",
+          "options" : [ "/sfx/gun/grenadeblast_fire1.ogg", "/sfx/gun/grenadeblast_fire2.ogg", "/sfx/gun/grenadeblast_fire3.ogg" ]
+        },
+
+        {
+          "action" : "loop",
+          "count" : 3,
+          "body" : [
+            {
+              "action" : "projectile",
+              "inheritDamageFactor" : 0.2,
+              "type" : "starforge-firefluxbolt",
+              "angleAdjust" : 0,
+              "fuzzAngle" : 60,
+              "config" : {
+                "statusEffects" : [ "starforge-firecombust" ],
+                "knockback": 10,
+                "bounces" : 2,
+                "canBounce" : true,
+                "movementSettings" : {
+                  "bounceFactor" : 0.25,
+                  "stickyCollision" : false,
+                  "stickyForce" : 0
+                }
+              }
+            },
+            {
+              "action" : "projectile",
+              "inheritDamageFactor" : 0.2,
+              "type" : "starforge-firefluxbolt",
+              "angleAdjust" : 120,
+              "fuzzAngle" : 60,
+              "config" : {
+                "piercing" : true,
+                "speed" : 30
+              }
+            },
+            {
+              "action" : "projectile",
+              "inheritDamageFactor" : 0.2,
+              "type" : "starforge-firefluxbolt",
+              "angleAdjust" : 240,
+              "fuzzAngle" : 60,
+              "config" : {
+                "statusEffects" : [ "starforge-firecombust" ],
+                "knockback": 10,
+                "bounces" : 2,
+                "canBounce" : true,
+                "movementSettings" : {
+                  "bounceFactor" : 0.25,
+                  "stickyCollision" : false,
+                  "stickyForce" : 0
+                }
+              }
+            }
+          ]
+        }
+      ]
     },
-	
-    "useStanceDuration" : true,
-    "stances" : {
+
+    "stances": {
       "fire" : {
-        "duration" : 0.01,
+        "duration" : 0.2,
         "armRotation" : 4,
         "weaponRotation" : 8,
-	    	"weaponOffset" : [-0.05, 0.0],
+	    	"weaponOffset" : [-0.125, 0.0],
         "twoHanded" : true,
-
-        "animationStates" : {
-          "pumpAction" : "slamFire"
-        },
 
         "allowRotate" : true,
         "allowFlip" : true
       },
       "cooldown" : {
-        "duration" : 0.75,
+        "duration" : 0.35,
         "armRotation" : -15,
         "weaponRotation" : 35,
 	    	"weaponOffset" : [-0.125, 0.0],
         "twoHanded" : true,
-
-        "animationStates" : {
-          "pumpAction" : "pump"
+        "burstParticleEmitters": [ "casing" ],
+        "animationStates": {
+          "gun" : "reload"
         },
 
         "allowRotate" : true,
@@ -285,6 +383,7 @@
       }
     }
   },
+
 
   "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
 }

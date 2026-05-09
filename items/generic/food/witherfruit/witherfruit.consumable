@@ -8,7 +8,7 @@
   "shortdescription" : "Buco Fruit",
   "effects" : [ [
     {
-      "effect" : "starforge-witherStatusImmunity",
+      "effect" : "starforge-witherblock",
       "duration" : 180
     }
   ] ],

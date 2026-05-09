@@ -1,8 +1,15 @@
 {
-  "name" : "starforge-witherStatusImmunity",
-  "effectConfig" : {},
-  "defaultDuration" : 60,
+  "name" : "starforge-witherblock",
 
-  "label" : "Wither Resistance",
+  "effectConfig" : {
+  },
+  "defaultDuration" : 5,
+
+  "scripts" : [
+    "starforge-witherblock.lua"
+  ],
+
+  "label" : "Wither Dust Protection",
   "icon" : "/interface/statuses/starforge-witherimmunity.png"
 }
+	
