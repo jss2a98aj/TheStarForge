@@ -26,7 +26,6 @@
     {
       "name" : "starforge-hillofswordscave1",
       "rules" : [
-        [ "maxSpawnCount", [1] ]
       ],
       "def" : [ "tmx", "starforge-hillofswordscave1.json" ],
       "chance" : 0
@@ -34,7 +33,6 @@
     {
       "name" : "starforge-hillofswordscave2",
       "rules" : [
-        [ "maxSpawnCount", [1] ]
       ],
       "def" : [ "tmx", "starforge-hillofswordscave2.json" ],
       "chance" : 0

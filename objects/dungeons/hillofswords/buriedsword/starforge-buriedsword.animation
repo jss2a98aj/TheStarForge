@@ -1,13 +1,23 @@
 {
   "globalTagDefaults" : {
-    "variant" : "1"
+    "variant" : "1",
+    "partImage" : ""
   },
   
   "animatedParts" : {
     "parts" : {
       "sword" : {
         "properties" : {
+          "zLevel" : 1,
           "centered" : false,
+          "image" : "<partImage>:<variant>"
+        }
+      },
+      "swordFullbright" : {
+        "properties" : {
+          "zLevel" : 2,
+          "centered" : false,
+          "fullbright" : false,
           "image" : "<partImage>:<variant>"
         }
       }

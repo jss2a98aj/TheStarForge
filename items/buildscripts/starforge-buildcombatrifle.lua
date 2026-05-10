@@ -119,7 +119,7 @@ function build(directory, config, parameters, level, seed)
 
   -- make sure the parts exist
   -- it won't actually do anything if all the parts are pre-generated
-  parameters.weaponParts = partPicker.generateParts(parameters.partParams, generationConfig, generatePartSeed, randomSource)
+  parameters.weaponParts = partPicker.generateParts(parameters.partParams or config.partParams, generationConfig, generatePartSeed, randomSource)
 
   function getPartData(partType)
     local partId = parameters.weaponParts[partType].id;

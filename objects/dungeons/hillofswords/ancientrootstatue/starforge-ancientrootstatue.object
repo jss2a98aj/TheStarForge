@@ -1,0 +1,131 @@
+{
+  "objectName" : "starforge-ancientrootstatue",
+  "colonyTags" : ["ancient"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "printable" : false,
+  "price" : 200,
+  "description" : "A strange depiction of a root.",
+  "shortdescription" : "Root Statue",
+  "race" : "ancient",
+
+  "lightColor" : [212, 116, 255],
+  
+  "inventoryIcon" : "starforge-ancientrootstatue.png:1",
+  "orientations" : [
+    {
+	    "imageLayers" : [ { "image" : "starforge-ancientrootstatue.png:1" } ],
+
+      "imagePosition" : [-8, 0],
+      "animationPosition" : [-40, 0],
+
+      "frames" : 1,
+      "animationCycle" : 0.5,
+      "lightPosition" : [0, 2],
+
+      "spaceScan" : 0.1,
+      "flipImages" : true,
+      "direction" : "left",
+      "anchors" : [ "bottom" ]
+    },
+    {
+	    "imageLayers" : [ { "image" : "starforge-ancientrootstatue.png:1" } ],
+
+      "imagePosition" : [-8, 0],
+      "animationPosition" : [-8, 0],
+      
+      "frames" : 1,
+      "animationCycle" : 0.5,
+      "lightPosition" : [0, 2],
+
+      "spaceScan" : 0.1,
+      "direction" : "right",
+      "anchors" : [ "bottom" ]
+    }
+  ],
+  
+  "animation" : "/objects/dungeons/hillofswords/buriedsword/starforge-buriedsword.animation",
+  "animationParts" : {
+    "sword" : "starforge-ancientrootstatue.png",
+    "swordFullbright" : "starforge-ancientrootstatuefullbright.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "damage" : [ "/sfx/melee/blunt_hit_stone1.ogg", "/sfx/melee/blunt_hit_stone2.ogg", "/sfx/melee/blunt_hit_stone3.ogg", "/sfx/melee/blunt_hit_stone4.ogg" ]
+    },
+    "particleEmitters" : {
+      "damage" : {
+		    "enabled" : true,
+        "burstCount" : 2,
+		    "offsetRegion" : [-1, 0, 1, 4],
+		    "particles" : [
+        ]
+      },
+      "destroy" : {
+		    "enabled" : true,
+        "burstCount" : 25,
+		    "offsetRegion" : [-1, 0, 1, 4],
+		    "particles" : [
+        ]
+      }
+    }
+  },
+
+  "smashable" : true,
+  "smashSounds" : [ "/sfx/objects/rock_big_break1.ogg", "/sfx/objects/rock_big_break2.ogg", "/sfx/objects/rock_big_break3.ogg", "/sfx/objects/rock_big_break4.ogg", "/sfx/objects/rock_big_break5.ogg" ],
+  "health" : 500,
+
+  "scripts" : [ "/objects/scripts/starforge-projectilebreakable.lua", "/objects/scripts/starforge-varianthook.lua"],
+  "variants" : 6,
+
+  "scriptDelta" : 5,
+
+  "damageParticles" : true,
+  "destroyParticles" : true,
+  
+  "healthMultiplierForHit" : 0.07,
+  "healthMultiplierForBreak" : 0.1,
+
+  "explosionOffset" : [1, 4],
+
+  "projectileReapActionOnHit" : [
+    {
+      "action" : "projectile",
+      "inheritDamageFactor" : 0,
+      "type" : "ancientenergy",
+      "angle" : 0,
+      "fuzzAngle" : 180,
+      "config" : {
+        "speed" : 25,
+        "damageType" : "noDamage",
+        "actionOnReap" : [
+          {
+            "action" : "item",
+            "name" : "essence",
+            "count" : 1
+          }
+        ]
+      }
+    }
+  ],
+  "projectileReapActionOnBreak" : [
+    {
+      "action" : "projectile",
+      "inheritDamageFactor" : 0,
+      "type" : "ancientenergy",
+      "angle" : 0,
+      "fuzzAngle" : 180,
+      "config" : {
+        "speed" : 25,
+        "damageType" : "noDamage",
+        "actionOnReap" : [
+          {
+            "action" : "item",
+            "name" : "essence",
+            "count" : 1
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -122,7 +122,7 @@
     "statusEffects" : [ ]
   },
  
-  "innateStatusEffects" : ["starforge-veteraneffects", {"stat":"maxHealth","amount":3000}, {"stat":"powerMultiplier","amount":1.7}, {"stat":"maxEnergy","amount":180}],
+  "innateStatusEffects" : ["starforge-veteraneffects"],
 	
   "items": {
     "override": [
@@ -179,13 +179,13 @@
     "primaryScriptDelta" : 5,
       "stats" : {
         "maxHealth" : {
-          "baseValue" : 100.0
+          "baseValue" : 1000.0
         },
         "maxEnergy" : {
-          "baseValue" : 1.0
+          "baseValue" : 100.0
         },
         "powerMultiplier" : {
-          "baseValue" : 0.01
+          "baseValue" : 1.2
         },
         "protection" : {
           "baseValue" : 0.6

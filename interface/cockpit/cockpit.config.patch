@@ -30,6 +30,19 @@
     {
       "inverse": true,
       "op": "test",
+      "path": "/displayDungeons"
+    },
+    {
+      "op": "add",
+      "path": "/displayDungeons",
+      "value": {}
+    }
+  ],
+  
+  [  // TEST INFO
+    {
+      "inverse": true,
+      "op": "test",
       "path": "/mods_present"
     },
     {
@@ -62,15 +75,11 @@
 
   [
     // ONLY WITH MPI
-    {"op":"test","path":"/displayDungeons"},
-    
-	  // Misc
-    {"op": "add","path": "/namesList/starforge-tidefragment","value": 
-      {"word": "starforge%-tidefragment","friendlyWord": "Tidal Remnants"}},
-    {"op": "add","path": "/namesList/starforge-progenitorwither","value": 
-      {"word": "starforge%-progenitorwither","friendlyWord": "Progenitor Strand"}},
-    {"op": "add","path": "/namesList/starforge-blackrot","value": 
-      {"word": "starforge%-blackrot","friendlyWord": "Blackrot Strand"}},
+    {
+      "op": "test",
+      "path": "/mods_present/MorePlanetInfo",
+      "inverse": false
+    },
 	
     { "op": "add", "path": "/displayDungeons/starforge-katahelruinsdungeon", "value": 
       {"description" : "Ruined Glitch castle detected. Reading faint traces of Ancient Essence from the structure.", "icon" : "/interface/cockpit/dungeons/katahelruinsicon.png" }
@@ -100,8 +109,16 @@
       {"description" : "Detecting a large floating Avian temple, appears to be heavily guarded.", "icon" : "/interface/cockpit/dungeons/stormcresttempleicon.png" }
     },
 	
-    { "op": "add", "path": "/displayDungeons/starforge-stormcresttemple", "value": 
-      {"description" : "An anomalous field of swords observed. It might be dangerous.", "icon" : "/interface/cockpit/dungeons/stormcresttempleicon.png" }
-    }
+    { "op": "add", "path": "/displayDungeons/starforge-hillofswords", "value": 
+      {"description" : "An anomalous field of swords observed. Explore with caution.", "icon" : "/interface/cockpit/dungeons/hillofswordsicon.png" }
+    },
+
+	  // Misc
+    {"op": "add","path": "/namesList/starforge-tidefragment","value": 
+      {"word": "starforge%-tidefragment","friendlyWord": "Tidal Remnants"}},
+    {"op": "add","path": "/namesList/starforge-progenitorwither","value": 
+      {"word": "starforge%-progenitorwither","friendlyWord": "Progenitor Strand"}},
+    {"op": "add","path": "/namesList/starforge-blackrot","value": 
+      {"word": "starforge%-blackrot","friendlyWord": "Blackrot Strand"}}
   ]
 ]

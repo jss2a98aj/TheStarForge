@@ -6619,7 +6619,7 @@
                  "visible":true,
                  "width":40,
                  "x":2040,
-                 "y":768
+                 "y":752
                 }, 
                 {
                  "gid":3012,
@@ -6630,8 +6630,8 @@
                  "type":"",
                  "visible":true,
                  "width":40,
-                 "x":2120,
-                 "y":768
+                 "x":2128,
+                 "y":752
                 }, 
                 {
                  "gid":2945,
@@ -6970,7 +6970,7 @@
                  "y":4576
                 }, 
                 {
-                 "gid":8940,
+                 "gid":8870,
                  "height":32,
                  "id":2525,
                  "name":"",
@@ -6992,7 +6992,7 @@
                  "y":4536
                 }, 
                 {
-                 "gid":8940,
+                 "gid":8870,
                  "height":32,
                  "id":2526,
                  "name":"",
@@ -7110,7 +7110,7 @@
                  "type":"",
                  "visible":true,
                  "width":40,
-                 "x":2008,
+                 "x":2000,
                  "y":736
                 }, 
                 {
@@ -7122,7 +7122,7 @@
                  "type":"",
                  "visible":true,
                  "width":40,
-                 "x":2160,
+                 "x":2168,
                  "y":736
                 }, 
                 {
@@ -8685,7 +8685,7 @@
                  "visible":true,
                  "width":16,
                  "x":2096,
-                 "y":768
+                 "y":800
                 }, 
                 {
                  "height":0,
@@ -8710,26 +8710,6 @@
                  "width":0,
                  "x":2104,
                  "y":872
-                }, 
-                {
-                 "height":0,
-                 "id":2435,
-                 "name":"",
-                 "polyline":[
-                        {
-                         "x":0,
-                         "y":0
-                        }, 
-                        {
-                         "x":-8,
-                         "y":104
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":2104,
-                 "y":760
                 }, 
                 {
                  "height":0,
@@ -8790,6 +8770,26 @@
                  "width":0,
                  "x":3136,
                  "y":824
+                }, 
+                {
+                 "height":0,
+                 "id":2590,
+                 "name":"",
+                 "polyline":[
+                        {
+                         "x":0,
+                         "y":0
+                        }, 
+                        {
+                         "x":-8,
+                         "y":72
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":2104,
+                 "y":792
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -10116,6 +10116,18 @@
                  "width":8,
                  "x":1736,
                  "y":600
+                }, 
+                {
+                 "gid":8899,
+                 "height":22,
+                 "id":2589,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":68,
+                 "x":2064,
+                 "y":768
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -10135,7 +10147,7 @@
          "y":0
         }],
  "nextlayerid":12,
- "nextobjectid":2589,
+ "nextobjectid":2591,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.0",
@@ -10278,8 +10290,12 @@
          "source":"..\/..\/..\/..\/..\/assets\/_unpacked\/tilesets\/packed\/huge-objects.json"
         }, 
         {
-         "firstgid":8871,
+         "firstgid":8801,
          "source":"..\/..\/..\/tilesets\/unbound\/unbound.json"
+        }, 
+        {
+         "firstgid":8891,
+         "source":"..\/..\/..\/tilesets\/vowvillage\/vowvillage.json"
         }],
  "tilewidth":8,
  "type":"map",

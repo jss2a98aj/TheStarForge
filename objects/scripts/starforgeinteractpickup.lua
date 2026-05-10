@@ -40,7 +40,8 @@ end
 
 function open()
   animator.setAnimationState("objectState", "empty")
-  world.spawnItem(self.spawnableItem, entity.position(), 1)
+  local itemToSpawn = {name = self.spawnableItem, parameters = { level = world.threatLevel() }}
+  world.spawnItem(itemToSpawn, entity.position(), 1)
   storage.itemHasSpawned = true
   object.setInteractive(false)
   

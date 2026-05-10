@@ -28,9 +28,9 @@
      "tilesetDirection":"string"
     },
  "spacing":0,
- "tilecount":8,
+ "tilecount":10,
  "tiledversion":"1.11.0",
- "tileheight":50,
+ "tileheight":70,
  "tileproperties":
     {
      "0":
@@ -111,6 +111,26 @@
          "imagePositionX":"-8",
          "imagePositionY":"0",
          "object":"starforge-buriedsword",
+         "tilesetDirection":"right"
+        },
+     "8":
+        {
+         "\/\/description":"...",
+         "\/\/name":"starforge-stormcrestmounted",
+         "\/\/shortdescription":"Mounted Stormcrest",
+         "imagePositionX":"0",
+         "imagePositionY":"0",
+         "object":"starforge-stormcrestmounted",
+         "tilesetDirection":"right"
+        },
+     "9":
+        {
+         "\/\/description":"..",
+         "\/\/name":"starforge-ancientrootstatue",
+         "\/\/shortdescription":"Root Statue",
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"starforge-ancientrootstatue",
          "tilesetDirection":"right"
         }
     },
@@ -195,6 +215,26 @@
          "imagePositionY":"string",
          "object":"string",
          "tilesetDirection":"string"
+        },
+     "8":
+        {
+         "\/\/description":"string",
+         "\/\/name":"string",
+         "\/\/shortdescription":"string",
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "9":
+        {
+         "\/\/description":"string",
+         "\/\/name":"string",
+         "\/\/shortdescription":"string",
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
         }
     },
  "tiles":
@@ -254,9 +294,25 @@
          "width":25,
          "x":0,
          "y":0
+        },
+     "8":
+        {
+         "height":22,
+         "image":"..\/..\/objects\/dungeons\/stormcresttemple\/stormcrest\/starforge-stormcrestmounted.png",
+         "imageheight":44,
+         "imagewidth":68,
+         "width":68,
+         "x":0,
+         "y":0
+        },
+     "9":
+        {
+         "image":"..\/..\/objects\/dungeons\/hillofswords\/ancientrootstatue\/starforge-ancientrootstatue.png",
+         "imageheight":70,
+         "imagewidth":30
         }
     },
- "tilewidth":40,
+ "tilewidth":68,
  "type":"tileset",
  "version":1.1
 }
