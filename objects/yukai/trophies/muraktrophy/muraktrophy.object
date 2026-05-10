@@ -1,0 +1,48 @@
+{
+  "objectName" : "starforge-muraktrophy",
+  "colonyTags" : ["bone", "light"],
+  "rarity" : "legendary",
+
+  "printable" : false,
+  "description" : "A trophy carved from precious wood of the Yukai homeworld, given for slaying Murak, the last shadow.",
+  "shortdescription" : "Great Hunt Trophy - Murak",
+  "race" : "hylotl",
+  "category" : "decorative",
+  "price" : 1500,
+
+  "apexDescription" : "A wooden trophy. It has been carved with care and represent a great beast.",
+  "avianDescription" : "A trophy awarded for slaying a dangerous Razortail. It was carved with passion.",
+  "floranDescription" : "Hunt trophiesss must be made of bonesss! Wassste...",
+  "glitchDescription" : "Proud. Such craftsmanship is a great reward for slaying this beast. ",
+  "humanDescription" : "A great example of Yukai craftsmanship. A trophy earned for slaying a legendary beast.",
+  "hylotlDescription" : "For the Yukai, the Razortail is a noble and powerful beast. Having a trophy such as this is an honor.",
+  "novakidDescription" : "This will be collectin' dust on a shelf probably.",
+
+  
+  "lightColor" : [255, 199, 68],
+
+  "flickerPeriod" : 0.9,
+  "flickerMinIntensity" : 0.9,
+  "flickerMaxIntensity" : 1,
+  "flickerPeriodVariance" : 0.0,
+  "flickerIntensityVariance" : 0.025,
+
+  "inventoryIcon" : "muraktrophyicon.png",
+  "orientations" : [
+    {
+	  "dualImage" : "muraktrophy.png",
+      "imageLayers" : [ { "image" : "muraktrophy.png" }, { "image" : "muraktrophyfullbright.png", "fullbright" : true } ],
+      "imagePosition" : [0, 0],
+
+      "direction" : "left",
+      "flipImages" : false,
+
+      "spaceScan" : 0.1,
+
+      "frames" : 1,
+      "animationCycle" : 1.5,
+      "anchors" : [ "bottom" ]
+    }
+   ]
+   
+   }

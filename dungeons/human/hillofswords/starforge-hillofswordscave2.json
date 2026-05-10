@@ -19,7 +19,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJzt3UFuGzEMRuEcJ8vc\/xDJlYLsjIk10kgkf1J6H8BdimgkvdptCvfjAwAAAMjlp+h8O436uZicY3WnWtTPt7ofVmiTeXe\/Zu\/b01+vfu6n+2DZXk\/G106v9wGV3juonneFusMMe2DF4n6++5pKe6NuP+u+jFjpkH28x37AgrLBnbEneGKmPwC2RjsE4KfXIAB\/vA4CerwWAnqtDgHEoUNAjwYBPToE9K4dAohHh4AeHQJ6rx0C0KBDQO\/154cANOgQ0KNDQI8OAT06BPToEIhx1xgdAv56jfHzQ8DXyGsd\/64N8HP9\/Kfe19EhYG+2Q1oEbLz7TNLe19IhvIz8Pyi7efqcdAhrI93t3qNFh7SIGSv97dTizLPRIVZZ9bdLi7Md8jnemOXRYOUWZ5+J10LM8mywao+zz8JrIWZENVitRasOgZ7oBiv1aNEh0KNsMHuTK2umQYxQN1ehx0prRT3W3Vz\/LLRDjxXWiJo82xuZKj1mXlvPju9LdqJusEKT2dYzwvJcqzxzVZn6s34Pq94bBUV7X4ODtqwNrrR4dxci72ckq3Nbed7PgcF\/VvfNs8On9+PuDlh31ltXBO8z89x31Gpw9E5EN9hblyfFmVnv4ek9Vmww4j6sPHvk\/VKfGT2u8byHJ7U4uiZr2c4set93sFODyrvwZD2Wsp8XLd5T3MUde5xZi4XqZ3VSk1G\/F2U418jzX\/3eq3Y9q8j7ejdZfr6109lmmpUOTzsX9X3+m6i\/Y6fD3B2efibZGlQ3dsKZZ+iQM8nVYsVRn1f2ed2rFs6EFjl3Osw86rtdcdRnlm2u+9PCedDhbl1mWGPre7WozynzeaufidlvWtTrih7aY5TTol4Xw5w0Lep1McxJAwAAAGTzC8jCOfM=",
+         "data":"eJztnUtu5DAMBXOcWeb+h8hcaZBFAw1Py5Ilko+UqgDuHJi\/ajvtwPn6AgAAAADIxd+i8eMU6rqInGG1Uy3U9Vn1YxXcJO72q7dn12Oe\/ry67qd9eK\/F0sNPZLx2et0HVLp3UNV7R+84tYeePfB08O58K\/v56RjP\/bBG7X72vvSOaZH1s2ekj4p+t3LI0A8FmXOLZLUPSgdXybwDu\/l2R8WcrfHwsMqeZMtnlar1VMzZgwgPs5I5t6dk73WLijl7YOlhFf9eVMhxlCo9v1IxZw+sPKx0HXxRIccnVKynYs4eeHkI8dD3unh4CBrofV3wcB\/ofV0sPMTBHND\/M8HDXND\/M7l6CFqYwZngIYAePATQ8+4hAGjAQwA9788PAUADHgLowUMAPXgIoAcPAfTgIUAMd47hIYA\/Pcd4fgjgy8i1jr9rA\/Dj+v6n3nF4CGDPrIe4CGDDp3eS9o7FQ\/Bi5P+g7MbTOvEQrBnxbncfLTzERZhhxb+dXJypDQ9hFSv\/dnFx1sOK7\/GGHHg4WNnF2Zq4FsIsng5W9XG2Fq6FMEOUg9VctPIQoEe0g5V8tPAQoIfSwexOruSMgzCC2rkKPlbKFeph7c31d6EdfKyQI9TE072RqOJj5tx67HhfshNqBys4mS2fESznWqXmqmTyz\/oeVt0bBQr3vgcD2mR1cMXFu12I3M9IrOa2Uu+fgYD\/sdo3Tw+f7sfdDlh71ssrAu+ZefYdajk4uhPRDvby8kQxM+senu5jRQcj9mGl9sj9Us8MH9fw3MOTXBzNyZpsM4vu+w7s5KByF57kY0n2eeHiPYpd3NHHmVwsqD6rk5yM+izKMNfI+a+ee5VdZxW5r3eR5fnWTrPNFCsenjYX9T7\/RtR37HiY28PTZ5LNQbVjJ8w8g4fMJJeLFUM9r+zx3qsWzAQXmTseZg71blcM9cyyxbU\/LZgHHu7mZYYcW+dqoZ5T5nmrayL2ixbqvKID9whltFDnRRAnRQt1XgRxUgAAAAAAZOMfobdnAw==",
          "encoding":"base64",
          "height":70,
          "id":2,
@@ -490,7 +490,7 @@
  "nextobjectid":2669,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.11.0",
+ "tiledversion":"1.10.2",
  "tileheight":8,
  "tilesets":[
         {
