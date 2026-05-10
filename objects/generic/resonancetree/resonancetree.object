@@ -16,7 +16,7 @@
   "orientations" : [
     {
       "dualImage" : "resonancetree.png:<color>",
-      "imagePosition" : [0, 0],
+      "imagePosition" : [-32, 0],
 
       "spaceScan" : 0.1,
       "anchors" : [ "bottom" ]
@@ -34,5 +34,5 @@
   "animationParts" : {
     "object" : "resonancetree.png"
   },
-  "animationPosition" : [0, 0]
+  "animationPosition" : [-32, 0]
 }
