@@ -23,23 +23,22 @@
         132,
         104
       ]
-    }
-  ],
-  
-  [  // TEST INFO
-    {
-      "inverse": true,
-      "op": "test",
-      "path": "/displayDungeons"
     },
+
+	  //Display Weathers
     {
       "op": "add",
-      "path": "/displayDungeons",
-      "value": {}
+      "path": "/displayWeathers/starforge-rottingwinds",
+      "value":  {
+        "displayName" : "Rotting Winds",
+        "icon" : "/interface/statuses/starforge-rottingwinds.png"
+      }
     }
   ],
   
-  [  // TEST INFO
+  
+  [  
+    //Test if mods_present exists
     {
       "inverse": true,
       "op": "test",
@@ -52,7 +51,8 @@
     }
   ],
 
-  [  //THIS MOD PRESENT
+  [  
+    //Add our mod to the mod list
     {
       "op": "add",
       "path": "/mods_present/The Starforge",
@@ -60,7 +60,8 @@
     }
   ],
 
-  [  //CLEAR TEST FOR MPI
+  [  
+    //Test for MPI
     {
       "inverse": false,
       "op": "test",
@@ -74,51 +75,118 @@
   ],
 
   [
-    // ONLY WITH MPI
+    //Below is MPI only
     {
       "op": "test",
       "path": "/mods_present/MorePlanetInfo",
       "inverse": false
     },
 	
-    { "op": "add", "path": "/displayDungeons/starforge-katahelruinsdungeon", "value": 
-      {"description" : "Ruined Glitch castle detected. Reading faint traces of Ancient Essence from the structure.", "icon" : "/interface/cockpit/dungeons/katahelruinsicon.png" }
+    //Display Dungeons
+    { 
+      "op": "add", 
+      "path": "/displayDungeons/starforge-katahelruinsdungeon", 
+      "value" : {
+        "description" : "Ruined Glitch castle detected. Reading faint traces of Ancient Essence from the structure.",
+        "icon" : "/interface/cockpit/dungeons/katahelruinsicon.png" 
+      }
     },
-	
-    { "op": "add", "path": "/displayDungeons/starforge-vowvillage", "value": 
-      {"description" : "Avian mining village detected. Recent Unbound invasion reported, no trace of Avian survivors.", "icon" : "/interface/cockpit/dungeons/vowvillageicon.png" }
+    { 
+      "op" : "add",
+      "path" : "/displayDungeons/starforge-vowvillage", 
+      "value" : {
+        "description" : "Avian mining village detected. Recent Unbound invasion reported, no trace of Avian survivors.", 
+        "icon" : "/interface/cockpit/dungeons/vowvillageicon.png" 
+      }
     },
-	
-    { "op": "add", "path": "/displayDungeons/starforge-furouraltar", "value": 
-      {"description" : "Strange Hylotls are preparing an obscure ritual on the planet.", "icon" : "/interface/cockpit/dungeons/furouraltaricon.png" }
+    { 
+      "op" : "add",
+      "path" : "/displayDungeons/starforge-furouraltar", 
+      "value" : { 
+        "description" : "Strange Hylotls are preparing an obscure ritual on the planet.", 
+        "icon" : "/interface/cockpit/dungeons/furouraltaricon.png" 
+      }
     },
-	
-    { "op": "add", "path": "/displayDungeons/starforge-yukaiforgemasterhut", "value": 
-      {"description" : "A strange Hylotl Forgemaster is living here.", "icon" : "/interface/cockpit/dungeons/yukaiforgemasterhuticon.png" }
+    { 
+      "op" : "add",
+      "path" : "/displayDungeons/starforge-yukaiforgemasterhut", 
+      "value" : {
+        "description" : "A strange Hylotl Forgemaster is living here.", 
+        "icon" : "/interface/cockpit/dungeons/yukaiforgemasterhuticon.png" 
+      }
     },
-	
-    { "op": "add", "path": "/displayDungeons/starforge-unboundvillage", "value": 
-      {"description" : "Multiple traces of Unbound technology identified, most likely a refugee village.", "icon" : "/interface/cockpit/dungeons/unbounddungeonicon.png" }
+    { 
+      "op" : "add",
+      "path" : "/displayDungeons/starforge-unboundvillage", 
+      "value" : {
+        "description" : "Multiple traces of Unbound technology identified, most likely a refugee village.", 
+        "icon" : "/interface/cockpit/dungeons/unbounddungeonicon.png" 
+      }
     },
-	
-    { "op": "add", "path": "/displayDungeons/starforge-yukaifortress", "value": 
-      {"description" : "Slight traces of a Yukai Hylotl settlement detected. Exercise caution.", "icon" : "/interface/cockpit/dungeons/yukaifortressicon.png" }
+    { 
+      "op" : "add",
+      "path" : "/displayDungeons/starforge-yukaifortress", 
+      "value" : {
+        "description" : "Slight traces of a Yukai Hylotl settlement detected. Exercise caution.", 
+        "icon" : "/interface/cockpit/dungeons/yukaifortressicon.png" 
+      }
     },
-	
-    { "op": "add", "path": "/displayDungeons/starforge-stormcresttemple", "value": 
-      {"description" : "Detecting a large floating Avian temple, appears to be heavily guarded.", "icon" : "/interface/cockpit/dungeons/stormcresttempleicon.png" }
+    { 
+      "op" : "add",
+      "path" : "/displayDungeons/starforge-stormcresttemple", 
+      "value" : {
+        "description" : "Detecting a large floating Avian temple, appears to be heavily guarded.", 
+        "icon" : "/interface/cockpit/dungeons/stormcresttempleicon.png" 
+      }
     },
-	
-    { "op": "add", "path": "/displayDungeons/starforge-hillofswords", "value": 
-      {"description" : "An anomalous field of swords observed. Explore with caution.", "icon" : "/interface/cockpit/dungeons/hillofswordsicon.png" }
+    { 
+      "op" : "add",
+      "path" : "/displayDungeons/starforge-hillofswords", 
+      "value" : {
+        "description" : "An anomalous field of swords observed. Explore with caution.", 
+        "icon" : "/interface/cockpit/dungeons/hillofswordsicon.png" 
+      }
+    },
+    { 
+      "op" : "add",
+      "path" : "/displayDungeons/starforge-rimespire", 
+      "value" : {
+        "description" : "A large ice spire identified on the surface. Fire is recommended.", 
+        "icon" : "/interface/cockpit/dungeons/rimespireicon.png" 
+      }
     },
 
-	  // Misc
-    {"op": "add","path": "/namesList/starforge-tidefragment","value": 
-      {"word": "starforge%-tidefragment","friendlyWord": "Tidal Remnants"}},
-    {"op": "add","path": "/namesList/starforge-progenitorwither","value": 
-      {"word": "starforge%-progenitorwither","friendlyWord": "Progenitor Strand"}},
-    {"op": "add","path": "/namesList/starforge-blackrot","value": 
-      {"word": "starforge%-blackrot","friendlyWord": "Blackrot Strand"}}
+	  //Weather Threat Levels
+    { 
+      "op" : "add",
+      "path" : "/weatherThreatValues/starforge-rottingwinds", 
+      "value" : 3 
+    },
+
+	  //Name List
+    { 
+      "op" : "add",
+      "path" : "/namesList/starforge-tidefragment",
+      "value" : { 
+        "word" : "starforge%-tidefragment",
+        "friendlyWord": "Tidal Remnants"
+      }
+    },
+    {
+      "op" : "add",
+      "path" : "/namesList/starforge-progenitorwither",
+      "value" : {
+        "word" : "starforge%-progenitorwither",
+        "friendlyWord" : "Progenitor Strand"
+      }
+    },
+    {
+      "op": "add",
+      "path" : "/namesList/starforge-blackrot",
+      "value" : {
+        "word" : "starforge%-blackrot",
+        "friendlyWord" : "Blackrot Strand"
+      }
+    }
   ]
 ]

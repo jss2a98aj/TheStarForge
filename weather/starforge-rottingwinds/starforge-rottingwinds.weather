@@ -2,7 +2,7 @@
   "name" : "starforge-rottingwinds",
 
   "particles" : [
-        {
+    {
       "density" : 0.005,
       "particle" : {
         "type" : "animated",
@@ -52,6 +52,4 @@
   "duration" : [400, 800],
   "maximumWind" : 35.0,
   "weatherNoises" : [ "/sfx/weather/blizzard.ogg" ]
-
-
 }
