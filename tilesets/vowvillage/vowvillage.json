@@ -28,9 +28,9 @@
      "tilesetDirection":"string"
     },
  "spacing":0,
- "tilecount":10,
+ "tilecount":11,
  "tiledversion":"1.11.0",
- "tileheight":70,
+ "tileheight":64,
  "tileproperties":
     {
      "0":
@@ -51,6 +51,16 @@
          "imagePositionX":"0",
          "imagePositionY":"0",
          "object":"starforge-earthbringerstone",
+         "tilesetDirection":"right"
+        },
+     "10":
+        {
+         "\/\/description":"...",
+         "\/\/name":"starforge-rimestealerstone",
+         "\/\/shortdescription":"Rimestealer",
+         "imagePositionX":"0",
+         "imagePositionY":"0",
+         "object":"starforge-rimestealerstone",
          "tilesetDirection":"right"
         },
      "2":
@@ -156,6 +166,16 @@
          "object":"string",
          "tilesetDirection":"string"
         },
+     "10":
+        {
+         "\/\/description":"string",
+         "\/\/name":"string",
+         "\/\/shortdescription":"string",
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
      "2":
         {
          "\/\/description":"string",
@@ -251,6 +271,16 @@
          "imageheight":50,
          "imagewidth":29
         },
+     "10":
+        {
+         "height":44,
+         "image":"..\/..\/objects\/dungeons\/rimespire\/rimestealer\/starforge-rimestealer.png",
+         "imageheight":44,
+         "imagewidth":40,
+         "width":20,
+         "x":0,
+         "y":0
+        },
      "2":
         {
          "image":"warmongercorpse.png",
@@ -307,9 +337,13 @@
         },
      "9":
         {
+         "height":64,
          "image":"..\/..\/objects\/dungeons\/hillofswords\/ancientrootstatue\/starforge-ancientrootstatue.png",
-         "imageheight":70,
-         "imagewidth":30
+         "imageheight":129,
+         "imagewidth":84,
+         "width":28,
+         "x":0,
+         "y":0
         }
     },
  "tilewidth":68,

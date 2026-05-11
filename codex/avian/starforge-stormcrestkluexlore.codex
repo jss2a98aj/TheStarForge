@@ -1,0 +1,16 @@
+{
+  "id" : "starforge-stormcrestkluexlore",
+  "species" : "avian",
+  "title" : "Old Kluex Slate",
+  "description" : "An old slate holding readings about Kluex.",
+  "icon" : "starforge-stormcrestkluexlorecover.png",
+  "contentPages" : [
+"He isn't real, how could he be? That version of him. Kluex certainly is real, before and now. Just not in that time and place. No, I think it was a false veneer. Something impersonating him. There is one perhaps that could have done it.",
+"Someone that wanted him gone. To stall what was in motion. Stealing gifts Kluex was meant to give just to give in his stead. Pretending to be him long enough to do what was wanted. His erratic behavior, and then the nothingness explainable as not his own. The impersonator's desire being fulfilled, and not truly him. The \"Cultivator\" as the adoring fools call him has the means. He has stalled other things. Sealing them away, timed with Kluex vanishing. But why?",
+"Kluex was finding truths beyond enlightenment. To filter to us unworthy. The Cultivator, he must want to keep us from Kluex's word. He must have sealed him somewhere. We must find where, free him, to return divine guidance to those that would listen."
+  ],
+    "itemConfig" : {
+    "rarity" : "legendary",
+    "price" : 1250
+  }
+}

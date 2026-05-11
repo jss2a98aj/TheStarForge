@@ -22,14 +22,13 @@
   "starforge-stormcresttemplekluexcodex" : [
     [1, {
       "fill" : [
-        {"item" : [ "banana", 1]},
-        {"pool" : "smallChestTreasure"}
+        {"item" : [ "starforge-stormcrestkluexlore-codex", 1]}
       ]
     }]
   ],
   "starforge-stormcrestcodex" : [
     [1, {
-      "fill" : [
+      "fill" : [ 
         {"item" : [ "banana", 1]},
         {"pool" : "smallChestTreasure"}
       ]

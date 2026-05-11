@@ -1,0 +1,115 @@
+{
+  "metadata" : {
+    "name" : "starforge-rimespire",
+    "species" : "generic",
+    "rules" : [
+    ],
+    "anchor" : [ "starforge-rimespire" ],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 15,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : false
+  },
+
+  "parts" : [
+    {
+      "name" : "starforge-rimespire",
+      "rules" : [
+        [ "ignorePartMaximumRule" ],
+        [ "doNotCombineWith", [ "starforge-rimespire" ] ]
+      ],
+      "def" : [ "tmx", "starforge-rimespire.json" ],
+      "chance" : 0
+    },
+
+    {
+      "name" : "starforge-rimespireroom1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-rimespireroom1.json" ],
+      "chance" : 0
+    },
+    {
+      "name" : "starforge-rimespireroom2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-rimespireroom2.json" ],
+      "chance" : 0
+    },
+    {
+      "name" : "starforge-rimespireroom3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-rimespireroom3.json" ],
+      "chance" : 0
+    },
+    {
+      "name" : "starforge-rimespireroom4",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-rimespireroom4.json" ],
+      "chance" : 0
+    },
+    {
+      "name" : "starforge-rimespireroom5",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-rimespireroom5.json" ],
+      "chance" : 0
+    },
+    {
+      "name" : "starforge-rimespireroom6",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-rimespireroom6.json" ],
+      "chance" : 0
+    },
+    {
+      "name" : "starforge-rimespireroom7",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-rimespireroom7.json" ],
+      "chance" : 0
+    },
+    {
+      "name" : "starforge-rimespireroom8",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-rimespireroom8.json" ],
+      "chance" : 0
+    },
+    {
+      "name" : "starforge-rimespireroom9",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-rimespireroom9.json" ],
+      "chance" : 0
+    },
+    {
+      "name" : "starforge-rimespireroom10",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-rimespireroom10.json" ],
+      "chance" : 0
+    },
+    {
+      "name" : "starforge-rimespireroom11",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starforge-rimespireroom11.json" ],
+      "chance" : 0
+    }
+  ]
+}

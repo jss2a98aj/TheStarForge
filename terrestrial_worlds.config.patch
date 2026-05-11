@@ -329,6 +329,32 @@
       "starforge-hillofswords"
     ]
   },
+
+  //RIMESPIRE
+  {
+    "op": "add",
+    "path": "/planetTypes/midnight/layers/surface/dungeons/-",
+    "value": [
+      0.5,
+      "starforge-rimespire"
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/planetTypes/tundra/layers/surface/dungeons/-",
+    "value": [
+      1,
+      "starforge-rimespire"
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/planetTypes/snow/layers/surface/dungeons/-",
+    "value": [
+      1,
+      "starforge-rimespire"
+    ]
+  },
   
   //UNBOUND VILLAGE
   {
