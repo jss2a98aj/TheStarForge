@@ -1,0 +1,9 @@
+{
+  "name" : "body",
+  "category" : "blackrotstinger",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "body.png"
+  }
+}

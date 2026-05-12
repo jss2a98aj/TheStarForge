@@ -1,0 +1,15 @@
+{
+  "itemName" : "starforge-unboundback",
+  "price" : 1000,
+  "inventoryIcon" : "icons.png:back",
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "category" : "backwear",
+  "description" : "A standard Unbound backpack. It is full of supplies.",
+  "shortdescription" : "^#686F5D;UNBD^reset; Standard Backpack",
+  "tooltipKind" : "back",
+
+  "maleFrames" : "back.png",
+  "femaleFrames" : "back.png"
+
+}
