@@ -1,7 +1,7 @@
 {
   "projectileName" : "starforge-shockwavespawner",
   "image" : "/projectiles/invisibleprojectile/invisibleprojectile.png",
-  "physics" : "vhighgravgrenade",
+  "physics" : "illusion",
   "timeToLive" : 0.5,
   "power" : 1,
   "speed" : 0,

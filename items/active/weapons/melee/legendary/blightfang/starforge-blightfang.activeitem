@@ -3,7 +3,7 @@
   "price" : 1000,
   "level" : 6,
   "maxStack" : 1,
-  "rarity" : "Rare",
+  "rarity" : "Legendary",
   "description" : "A blade wrought with blight, it may have known another name, though it lost now.",
   "shortdescription" : "Blightfang",
   "tooltipKind" : "starforge-uniquesword",
@@ -89,19 +89,28 @@
     "name" : "Earthrot",
 
     "energyUsage" : 100.0,
-    "cooldownTime" : 3.5,
+    "cooldownTime" : 0.5,
 
     "chargeTime" : 0.75,
     "minChargeTime" : 0.5,
     "projectileType" : "starforge-witheredground",
     "projectileParameters" : {
       "timeToLive" : 8,
+      "speed" : 0,
       "power" : 5
     },
+
     "shockWaveBounds" : [-0.4, -1.375, 0.4, 0.0],
     "shockwaveHeight" : 1.375,
-    "maxDistance" : 0,
-    "bothDirections" : true,
+    
+    "maxProjectiles" : 1,
+    "shockwaveStepDistance" : 1,
+
+    "directions" : [[1, 0]],
+    "maxYStep" : 3,
+
+    "projectileOffset" : [0, 0.25],
+
     "targetDirection" : [0, -1],
     "impactLine" : [[0.0, 0.0], [0.0, -10]],
     "yOffset" : -1.5,

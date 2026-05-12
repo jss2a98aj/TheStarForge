@@ -21,6 +21,7 @@
   "animationParts" : {
     "handle" : "",
     "blade" : "starforge-earthbringer.png",
+    "bladeFullbright" : "",
 	
     "swoosh" : "physical"
   },
@@ -54,6 +55,17 @@
           }
         }
       }
+    },
+    "particleEmitters" : {
+      "chargeShockwave" : {
+        "active" : false,
+        "particles" : []
+      }
+    },
+
+    "sounds" : {
+      "chargeShockwave" : [],
+      "shockwaveImpact" : [ "/sfx/melee/shockwave_physical_slam.ogg" ]
     }
   },
 
@@ -82,16 +94,40 @@
     }
   },
 
-  "altAbilityType" : "physicalshockwave",
   "altAbility" : {
+    "scripts" : ["/items/active/weapons/melee/abilities/other/shockwave/starforge-shockwave.lua"],
+    "class" : "StarforgeShockwave",
     "name" : "Quake",
+    
+    "energyUsage" : 100.0,
+    "cooldownTime" : 3,
+
     "chargeTime" : 0.85,
-    "minChargeTime" : 0.3,
-    "maxDistance" : 25,
-    "bothDirections" : false,
+    "minChargeTime" : 0.5,
     "projectileType" : "physicalshockwave",
-    "shockWaveBounds" : [-0.4, -1.375, 0.4, 1],
-    "impactWeaponOffset" : 0.55,
+    "projectileParameters" : {
+      "animationCycle" : 0.8,
+      "timeToLive" : 0.8,
+      "power" : 5
+    },
+
+    "shockWaveBounds" : [-0.4, -1.375, 0.4, 0.0],
+    "shockwaveHeight" : 1.375,
+    
+    "maxProjectiles" : 15,
+    "shockwaveStepDistance" : 1.5,
+
+    "directions" : [[1, 0]],
+    "maxYStep" : 3,
+
+    "projectileOffset" : [0, 1],
+    "delayTime" : 0.05,
+    "distanceDelay" : 0.001,
+
+    "targetDirection" : [-1, 0.5],
+    "projectileFuzzAngle" : 30,
+    "impactLine" : [[0.0, 0.0], [0.0, -10]],
+    "yOffset" : -1.5,
 
     "stances" : {
       "windup" : {

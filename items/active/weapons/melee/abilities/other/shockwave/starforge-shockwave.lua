@@ -79,15 +79,13 @@ function StarforgeShockwave:fireShockwave(charge)
   local impact, impactHeight = self:impactPosition()
 
   if impact then
-    local charge = math.floor(charge * self.maxDistance)
-    local directions = {1}
-    if self.bothDirections then directions[2] = -1 end
-    local positions, newDirections = self:shockWaveProjectilePositions(impact, charge, directions)
-    if #positions > 0 then
+    local charge = math.floor(charge * self.maxProjectiles)
+    local spawnData = self:shockWaveProjectilePositions(impact, charge)
+    if #spawnData > 0 then
       animator.playSound("shockwaveImpact")
       local params = copy(self.projectileParameters)
       params.powerMultiplier = activeItem.ownerPowerMultiplier()
-      params.power = params.power * config.getParameter("damageLevelMultiplier")
+      params.power = (params.power or 1) * config.getParameter("damageLevelMultiplier")
       local childParams = self.projectileParameters or {}
       params.actionOnReap = {}
       params.damageType = "nodamage"
@@ -95,17 +93,21 @@ function StarforgeShockwave:fireShockwave(charge)
         action = "projectile",
         inheritDamageFactor = 1,
         type = self.projectileType,
-        config = childParams
+        config = childParams,
+        fuzzAngle = self.projectileFuzzAngle or nil,
+        direction = self.forceDirection or nil
       }
-      for i, position in pairs(positions) do
-        local xDistance = world.distance(position, impact)[1]
-        local dir = newDirections[i]
-        position = vec2.add(position, {0, self.yOffset})
-        params.timeToLive = 0
-        if self.delaySpawns then
-          params.timeToLive = (math.floor(math.abs(xDistance))) * 0.2
+      for i, data in pairs(spawnData) do
+        params.timeToLive = data.delayTime
+        local aimVec = (self.moveInDirection and data.direction) or {0, 1}
+        if self.targetDirection then
+          aimVec = {self.targetDirection[1] * mcontroller.facingDirection(), self.targetDirection[2]}
         end
-        world.spawnProjectile("starforge-shockwavespawner", position, activeItem.ownerEntityId(), self.targetDirection or (self.moveInDirection and {dir, 0}) or {0, -1}, false, params)
+        local point = data.position
+        if self.projectileOffset then
+          point = vec2.add(point, self.projectileOffset)
+        end
+        world.spawnProjectile("starforge-shockwavespawner", point, activeItem.ownerEntityId(), aimVec, false, params)
       end
     end
   end
@@ -117,36 +119,51 @@ function StarforgeShockwave:impactPosition()
   local endLine = vec2.add(mcontroller.position(), vec2.mul(self.impactLine[2], {dir, 1}))
 
   local blocks = world.collisionBlocksAlongLine(startLine, endLine, {"Null", "Block"})
-  if #blocks > 0 then
+  if self.ignoreGround then
+    return mcontroller.position(), mcontroller.position()[2] + 1
+  elseif #blocks > 0 then
     return vec2.add(blocks[1], {0.5, 0.5}), endLine[2] - blocks[1][2] + 1
   end
 end
 
-function StarforgeShockwave:shockWaveProjectilePositions(impactPosition, maxDistance, directions)
-  local positions = {}
-  local newDirections = {}
-
-  for _, direction in pairs(directions) do
-    direction = direction * mcontroller.facingDirection()
+function StarforgeShockwave:shockWaveProjectilePositions(impactPosition, maxProjectiles)
+  local spawnData = {}
+  
+  for x, dir in pairs(self.directions or {1, 0}) do
+    local newDir = {dir[1] * mcontroller.facingDirection(), dir[2]}
     local position = copy(impactPosition)
-    for i = 0, maxDistance do
+    for i = 1, maxProjectiles do
       local continue = false
-      for _,yDir in ipairs({0, -1, 1}) do
-        local wavePosition = {position[1] + direction * i, position[2] + 0.5 + yDir + self.shockwaveHeight}
-        local groundPosition = {position[1] + direction * i, position[2] + yDir}
-        local bounds = rect.translate(self.shockWaveBounds, wavePosition)
 
-        if world.pointTileCollision(groundPosition, {"Null", "Block", "Dynamic", "Slippery"}) and not world.rectTileCollision(bounds, {"Null", "Block", "Dynamic", "Slippery"}) then
-          table.insert(positions, wavePosition)
-          table.insert(newDirections, direction)
-          position[2] = position[2] + yDir
-          continue = true
-          break
+      local stepDistance = vec2.mul(vec2.norm(newDir), self.shockwaveStepDistance * i)
+      local waveStepPosition = vec2.add(position, stepDistance)
+
+      local yPositiveTest = vec2.add(waveStepPosition, {0, self.maxYStep})
+      local yNegativeTest = vec2.add(waveStepPosition, {0, -self.maxYStep})
+
+      local collidePoint = world.lineTileCollisionPoint(yPositiveTest, yNegativeTest, {"Null", "Block", "Dynamic", "Slippery"})
+      local bounds = rect.translate(self.shockWaveBounds, vec2.add(collidePoint and collidePoint[1] or waveStepPosition, {0, self.shockwaveHeight}))
+      if self.ignoreGround or collidePoint then
+        local point = self.ignoreGround and waveStepPosition or collidePoint[1]
+        local posData = {
+          position = point,
+          direction = newDir,
+          delayTime = self.delayTime or 0
+        }
+        if self.directionDelay then
+          posData.delayTime = posData.delayTime + (self.directionDelay * x)
         end
+        if self.distanceDelay then
+          posData.delayTime = posData.delayTime + (math.floor(math.abs(world.magnitude(mcontroller.position(), point)))) * self.distanceDelay
+        end
+        table.insert(spawnData, posData)
+
+        continue = true
       end
+
       if not continue then break end
     end
   end
-
-  return positions, newDirections
+  
+  return spawnData
 end
