@@ -89,7 +89,7 @@
       "damageSourceKind" : "starforge-tidalfrost",
       "knockbackMode" : "aim",
       "timeout" : 0.25,
-      "statusEffects" : []
+      "statusEffects" : [ "starforge-tidalfreeze" ]
     }
   },
   

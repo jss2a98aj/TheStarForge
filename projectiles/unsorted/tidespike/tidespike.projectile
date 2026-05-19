@@ -15,6 +15,7 @@
     }
   ],
   "power" : 5.0,
+  "statusEffects" : [ "starforge-tidalfreeze" ],
   "speed" : 50,
   "damageKind" : "starforge-tidalfrost",
   "emitters" : [ "iceplasmarocket", "smoke" ],

@@ -4,7 +4,7 @@
   "level" : 7,
   "maxStack" : 1,
   "rarity" : "Essential",
-  "description" : "...",
+  "description" : "it showed me the stairs. i thought i counted them. i am still counting. i will not stop.",
   "shortdescription" : "Heaven's Stairway",
   "tooltipKind" : "starforge-uniquesword",
   "category" : "uniqueWeapon",
@@ -19,34 +19,48 @@
   "animation" : "starforge-heavenstairway.animation",
   "animationParts" : {
     "blade" : "",
-    "bladeFullbright" : "starforge-heavenstairway.png"
+    "bladeFullbright" : "starforge-heavenstairway.png",
+	
+    "swoosh" : "fire"
   },
-  "animationCustom" : {},
+  "animationCustom" : {
+    "sounds" : {
+      "fire" : [ "/sfx/melee/swing_broadsword_fire1.ogg", "/sfx/melee/swing_broadsword_fire2.ogg", "/sfx/melee/swing_broadsword_fire3.ogg" ],
+      "fire2" : [ "/sfx/melee/swing_shortsword_fire1.ogg", "/sfx/melee/swing_shortsword_fire2.ogg", "/sfx/melee/swing_shortsword_fire3.ogg" ],
+      "fire3" : [ "/sfx/melee/swing_broadsword_fire1.ogg", "/sfx/melee/swing_broadsword_fire2.ogg", "/sfx/melee/swing_broadsword_fire3.ogg" ],
+      "fire4" : [ "/sfx/melee/swing_shortsword_fire1.ogg", "/sfx/melee/swing_shortsword_fire2.ogg", "/sfx/melee/swing_shortsword_fire3.ogg" ],
+      "fire5" : [ "/sfx/melee/swing_spear_fire1.ogg", "/sfx/melee/swing_spear_fire2.ogg", "/sfx/melee/swing_spear_fire3.ogg" ]
+    }
+  },
 
-  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+  "scripts" : [ "/items/active/weapons/melee/starforge-meleeweapon.lua" ],
 
   "elementalType" : "starforge-soulflame",
 
-  "primaryAbilityType" : "broadswordcombo",
+  "primaryAbilityType" : "starforge-highbrandcombo",
   "primaryAbility" : {
-    "fireTime" : 0.55,
-    "baseDps" : 10.5,
-	
-	"comboSteps" : 0,
+    "fireTime" : 0.9,
+    "baseDps" : 13,
+    "stanceSpeedFactor" : 0.95,
+    "swingPitchFactor" : 0.8,
+    "energyUsage" : 15,
+    "damageConfig" : {
+      "damageSourceKind" : "starforge-soulflame",
+      "statusEffects" : [ ],
+      "knockbackMode" : "facing",
+      "timeout" : 0.5
+    },
 
-	"stances" : {
-      //IDLE - DEFAULT
+    "swooshReachOffset" : 1.5,
+
+    "stances" : {
       "idle" : {
-        "armRotation" : -105,
-        "weaponRotation" : 5,
-        "twoHanded" : false,
-		
-        "allowRotate" : false,
-        "allowFlip" : true,
-		"aimAngle" : 0
+        "weaponRotation" : 11,
+        "weaponOffset" : [-0.375, 1.25]
       }
-	}
+    }
   },
+
 
   "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"
 }

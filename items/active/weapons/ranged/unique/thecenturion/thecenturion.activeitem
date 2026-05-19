@@ -3,54 +3,126 @@
   "price": 3000,
   "maxStack": 1,
   "rarity": "Legendary",
-  "description": "A massive tank cannon, repurposed & made portable.",
+  "description": "A devastating repurposed tank cannon sporting cluster ordnance.",
   "shortdescription": "\"The Centurion\" TC",
   "tooltipKind": "starforge-uniquegun",
   "category": "uniqueWeapon",
   "manufacturer" : "unboundArmaments",
-  "tooltipFieldsOverride" : {"subtitle":"Tank Cannon"},
+  "tooltipFieldsOverride" : { "subtitle" : "Tank Cannon" },
   "twoHanded": true,
-  "level": 7,
+  "level": 6,
   "itemTags": ["weapon","ranged","cannon"],
   
-  "inventoryIcon": "thecenturion.png:idle.1",
-  "animation": "thecenturion.animation",
+  "inventoryIcon": "thecenturion.png:idle",
+  "animation" : "/items/active/weapons/ranged/animations/starforge-shellanimgun.animation",
   "animationParts": {
     "middle": "thecenturion.png",
-    "middleFullbright": "thecenturionfullbright.png",
-    "muzzleFlash": ""
+    "middleFullbright": "",
+
+    "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-firemuzzleflash.png"
   },
   "animationCustom": {
+    "animatedParts": {
+      "stateTypes": {
+        "gun": {
+          "states": {
+            "reload": {
+              "frames" : 1,
+              "cycle" : 0.6,
+              "transition" : "reload2",
+              "properties": {
+                "particleEmittersOn" : [ "muzzleHeat" ]
+              }
+            },
+            "reload2": {
+              "frames" : 3,
+              "cycle" : 0.4,
+              "mode" : "transition",
+              "transition" : "idle",
+              "properties": {
+                "particleEmittersOff" : [ "muzzleHeat" ],
+                "immediateSound" : "/sfx/gun/starforge-rocketreload.ogg"
+              }
+            },
+            "idle" : {
+              "properties": {
+                "particleEmittersOff" : [ "muzzleHeat" ]
+              }
+            }
+          }
+        }
+      },
+      "parts" : {
+        "middle" : {
+          "properties" : {
+          },
+          "partStates" : {
+            "gun" : {
+              "idle" : {
+                "properties" : {
+                  "image" : "<partImage>:idle"
+                }
+              },
+              "reload" : {
+                "properties" : {
+                  "image" : "<partImage>:reload.<frame>"
+                }
+              },
+              "reload2" : {
+                "properties" : {
+                  "image" : "<partImage>:reload2.<frame>"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "particleEmitters" : {
-      "muzzleFlash" : {
-        "transformationGroups" : ["muzzle"],
-		"offsetRegion" : [-1.875, 0.1, -1.875, 0.1],
+      "casing" : {
+		    "offsetRegion" : [-1, -0.25, -1, -0.25],
         "particles" : [
           { "particle" : "starforge-thermiteshell" }
+        ]
+      },
+      "muzzleHeat" : {
+		    "offsetRegion" : [0, 0.25, 0, -0.125],
+        "transformationGroups" : ["muzzle"],
+        "emissionRate" : 50,
+        "particles" : [
+          { "particle" : "rocketbarrelpuff" },
+          { "particle" : "rocketbarrelpuff" }
+        ]
+      },
+      "ammoIndicator" : {
+        "active" : false,
+        "emissionRate" : 8,
+        "transformationGroups" : ["muzzle"],
+        "offsetRegion" : [0, 0, 0, 0],
+        "particles" : [
+          { "particle" : "starforge-smallfireflame"}
         ]
       }
     },
     "sounds": {
-      "fire": [
-        "/sfx/gun/starforge-rocketfire.ogg"
-      ]
+      "fire": [ "/sfx/gun/starforge-rocketfire.ogg" ],
+      "loadAmmo" : [ "/sfx/gun/reload/shotgun_reload_clip2.ogg" ]
     }
   },
   
-  "baseOffset": [0.500,-1.125],
+  "baseOffset": [1, -1.125],
   
-  "muzzleOffset":  [1.125,0.125], 
+  "muzzleOffset":  [1.375, 0.375], 
   
-  "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
-  
+  "scripts" : [ "/items/active/weapons/ranged/starforge-gun.lua" ],
   "elementalType": "fire",
   
   "primaryAbility": {
     "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
     "class": "StarforgeGunFire",
 	
-    "fireTime": 1.65,
-    "baseDps": 12,
+    "fireTime": 1.8,
+    "baseDps": 11,
     "energyUsage": 100,
     "inaccuracy": 0.001,
     "projectileCount": 1,
@@ -60,44 +132,116 @@
     "projectileParameters": {
       "knockback": 4
     },
+    "animatedFire" : true,
+    "pullOutAnimationStates" : {
+      "gun" : "reload2"
+    },
 	
     "stances": {
       "idle": {
         "armRotation": 0,
         "weaponRotation": 0,
-        "weaponOffset": [0.375, 0],
+        "weaponOffset": [0, 0],
         "twoHanded": true,
         "allowRotate": true,
         "allowFlip": true,
+
         "frontArmFrame": "idle.3",
         "backArmFrame": "fall.1"
       },
       "fire": {
-        "duration": 0.1,
-        "armRotation": 0,
-        "weaponRotation": 0,
-        "weaponOffset": [-0.1, 0],
+        "duration": 0.01,
+        "armRotation": 5,
+        "weaponRotation": 2,
+        "weaponOffset": [0, 0],
         "twoHanded": true,
-        "animationStates": {
-          "weapon": "fire"
-        },
         "allowRotate": false,
         "allowFlip": false,
+        "burstParticleEmitters": [ "casing" ],
+
         "frontArmFrame": "idle.3",
         "backArmFrame": "fall.1"
       },
       "cooldown": {
         "duration": 0.35,
-        "armRotation": 0,
-        "weaponRotation": 0,
-        "weaponOffset": [-0.1, 0],
+        "armRotation": 5,
+        "weaponRotation": 2,
+        "weaponOffset": [0, 0],
         "twoHanded": true,
         "allowRotate": true,
         "allowFlip": true,
+
+        "controlModifiers" : {
+          "runningSuppressed" : false
+        },
+        
         "frontArmFrame": "idle.3",
         "backArmFrame": "fall.1"
       }
     }
   },
+
+  "altAbility": {
+    "name" : "Load Sabot",
+    "scripts" : ["/items/active/weapons/ranged/abilities/loadalternateammo/starforge-loadalternateammo.lua"],
+    "class" : "StarForgeLoadAlternateAmmo",
+
+    "adaptedAbilityIndex" : 1, //Which ability to adapt (1 = primary, 2 = secondary)
+    
+    //The new stats which will overwrite the primary ability
+    "newAbility" : {
+      "projectileParameters" : {
+        "knockback": 1
+      },
+      
+      "projectileCount" : 1,
+
+      "projectileType" : "starforge-firefluxboltstatus",
+      
+      "fireType" : "auto",
+	
+      "baseDps" : 10.0,	
+      "fireTime" : 1.65,
+      "energyUsage" : 55,
+      "inaccuracy": 0.01,
+      "stances" : {
+        "cooldown": {
+          "duration": 0.35,
+          "armRotation": 5,
+          "weaponRotation": 2,
+          "weaponOffset": [0, 0],
+          "twoHanded": true,
+          "allowRotate": true,
+          "allowFlip": true,
+
+          "controlModifiers" : {
+            "runningSuppressed" : true
+          },
+          
+          "frontArmFrame": "idle.3",
+          "backArmFrame": "fall.1"
+        }
+      }
+    },
+
+    "stances" : {
+      "load" : {
+        "duration" : 1.2,
+        "armRotation": 45,
+        "weaponRotation": 0,
+        "weaponOffset" : [0, 0],
+        "twoHanded": true,
+        "allowRotate": true,
+        "allowFlip": true,
+        "animationStates": {
+          "gun" : "reload2"
+        },
+
+        "frontArmFrame": "idle.3",
+        "backArmFrame": "fall.1"
+      }
+    }
+  },
+
   "builder": "/items/buildscripts/starforge-builduniqueweapon.lua"
 }

@@ -13,6 +13,7 @@
   "flippable" : true,
   "piercing" : true,
   "actionOnReap" : [],
+  "statusEffects" : [ "starforge-tidalfreeze" ],
   "damageKind" : "starforge-tidalfrost",
   
   "scripts" : [ "/projectiles/scripts/starforge-randomspeedslowdown.lua" ]

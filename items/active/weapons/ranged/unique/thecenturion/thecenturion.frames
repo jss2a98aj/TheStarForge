@@ -3,7 +3,7 @@
     "size" : [50, 20],
     "dimensions" : [5, 1],
     "names" : [
-      ["idle.1", "fire.1", "reload.1", "reload.2", "reload.3"]
+      ["idle", "reload.1", "reload2.1", "reload2.2", "reload2.3"]
     ]
   }
 }

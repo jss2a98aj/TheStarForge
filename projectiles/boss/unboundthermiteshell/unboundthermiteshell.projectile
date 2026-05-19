@@ -2,97 +2,388 @@
 	"projectileName": "starforge-unboundthermiteshell",
 	"image": "unboundthermiteshell.png",
 	"animationCycle": 0.4,
-	"frameNumber": 4,
+	"frameNumber": 1,
 	"damageKindImage": "icon.png",
 	"lightColor": [115, 119, 38],
 	"pointLight": true,
-	"actionOnReap": [{
-			"file": "/projectiles/explosions/regularexplosion2/fireexplosionknockback.config",
-			"action": "config"
-		},
+	"actionOnReap": [
 		{
-			"inheritDamageFactor": 0.05,
+			"action": "projectile",
+			"type": "fireplasmaexplosionstatus",
+			"fuzzAngle": 360,
+			"inheritDamageFactor": 0.5,
 			"angleAdjust": 0,
-			"fuzzAngle": 30,
-			"type": "largefirecloud",
-			"action": "projectile"
-		},
-		{
-			"inheritDamageFactor": 0.05,
-			"angleAdjust": 60,
-			"fuzzAngle": 30,
-			"type": "largefirecloud",
-			"action": "projectile"
-		},
-		{
-			"inheritDamageFactor": 0.05,
-			"angleAdjust": 90,
-			"fuzzAngle": 30,
-			"type": "largefirecloud",
-			"action": "projectile"
-		},
-		{
-			"inheritDamageFactor": 0.05,
-			"angleAdjust": 120,
-			"fuzzAngle": 30,
-			"type": "largefirecloud",
-			"action": "projectile"
-		},
-		{
-			"inheritDamageFactor": 0.05,
-			"angleAdjust": 180,
-			"fuzzAngle": 30,
-			"type": "largefirecloud",
-			"action": "projectile"
-		},
-		{
-			"inheritDamageFactor": 0.05,
-			"angleAdjust": 240,
-			"fuzzAngle": 30,
-			"type": "largefirecloud",
-			"action": "projectile"
-		},
-		{
-			"inheritDamageFactor": 0.05,
-			"angleAdjust": 270,
-			"fuzzAngle": 30,
-			"type": "largefirecloud",
-			"action": "projectile"
-		},
-		{
-			"action": "projectile",
-			"type": "starforge-flame",
-			"fuzzAngle": 9,
-			"inheritDamageFactor": 0.005,
-			"angleAdjust": 1
-		},
-		{
-			"action": "projectile",
-			"type": "starforge-flame",
-			"fuzzAngle": 9,
-			"inheritDamageFactor": 0.005,
-			"angleAdjust": -18
-		},
-		{
-			"action": "projectile",
-			"type": "starforge-flame",
-			"fuzzAngle": 9,
-			"inheritDamageFactor": 0.005,
-			"angleAdjust": 18
-		},
-		{
-			"action": "projectile",
-			"type": "starforge-flame",
-			"fuzzAngle": 9,
-			"inheritDamageFactor": 0.005,
-			"angleAdjust": -27
-		},
-		{
-			"action": "projectile",
-			"type": "starforge-flame",
-			"fuzzAngle": 9,
-			"inheritDamageFactor": 0.005,
-			"angleAdjust": 27
+      "config" : {
+        "actionOnReap": [
+          {
+            "action": "projectile",
+            "type": "fireplasmaexplosionstatus",
+            "fuzzAngle": 360,
+            "inheritDamageFactor" : 1
+          },
+          {
+            "action" : "loop",
+            "count" : 1,
+            "body" : [
+            {
+              "action" : "option",
+              "options" : [
+              {
+                "action" : "particle",
+                "specification" : {
+                "type" : "animated",
+                "animation" : "/animations/starforge-hugeflame/starforge-hugeflame.animation",
+                "approach" : [0.5, 0.5],
+                "timeToLive" : 1.2,
+                "size" : 0.9,
+                //"layer" : "front",
+                "variance" : {
+                  "position" : [0.5, 0.5],
+                  "initialVelocity" : [1, 1],
+                  "timeToLive" : 0.6,
+                  "rotation" : 180
+                }
+                }
+              }
+              ]
+            }
+            ]
+          },
+
+          {
+            "action": "projectile",
+            "type": "woodenarrow",
+            "fuzzAngle": 45,
+            "inheritDamageFactor": 0.25,
+            "angleAdjust": 0,
+            "config" : {
+              "damageKind" : "NoDamage",
+              "speed" : 15,
+              "piercing" : true,
+              "timeToLive" : 0.15 ,
+              "processing" : "?crop=0;1;0;1",
+              "actionOnReap": [
+                {
+                  "action" : "sound",
+                  "options" : [ "/sfx/gun/grenadeblast_fire1.ogg", "/sfx/gun/grenadeblast_fire2.ogg", "/sfx/gun/grenadeblast_fire3.ogg" ]
+                },
+                {
+                  "action" : "loop",
+                  "count" : 5,
+                  "body" : [
+                    {
+                      "action" : "option",
+                      "options" : [
+                        {
+                          "action" : "particle",
+                          "specification" : {
+                            "type" : "animated",
+                            "animation" : "/animations/mediumflame/mediumflame.animation",
+                            "approach" : [0.5, 0.5],
+                            "timeToLive" : 1.5,
+                            "variance" : {
+                              "position" : [1.5, 1.5],
+                              "initialVelocity" : [1, 1],
+                              "timeToLive" : 0.5,
+                              "rotation" : 180
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "action" : "loop",
+                  "count" : 2,
+                  "body" : [
+                    {
+                      "action" : "option",
+                      "options" : [
+                        {
+                          "action" : "particle",
+                          "specification" : {
+                            "type" : "animated",
+                            "animation" : "/animations/starforge-largeflame/starforge-largeflame.animation",
+                            "approach" : [0.5, 0.5],
+                            "timeToLive" : 1.2,
+                            "size" : 1,
+                            "variance" : {
+                              "position" : [1.5, 1.5],
+                              "initialVelocity" : [1, 1],
+                              "timeToLive" : 0.3,
+                              "size" : 0.25,
+                              "rotation" : 180
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "action": "projectile",
+                  "type": "fireexplosionknockback",
+                  "fuzzAngle": 360,
+                  "inheritDamageFactor" : 1,
+                  "config" : {
+                    "statusEffects" : [ "burning" ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "action": "projectile",
+            "type": "woodenarrow",
+            "fuzzAngle": 45,
+            "inheritDamageFactor": 0.25,
+            "angleAdjust": 90,
+            "config" : {
+              "damageKind" : "NoDamage",
+              "speed" : 20,
+              "piercing" : true,
+              "timeToLive" : 0.125,
+              "processing" : "?crop=0;1;0;1",
+              "actionOnReap": [
+                {
+                  "action" : "sound",
+                  "options" : [ "/sfx/gun/grenadeblast_fire1.ogg", "/sfx/gun/grenadeblast_fire2.ogg", "/sfx/gun/grenadeblast_fire3.ogg" ]
+                },
+                {
+                  "action" : "loop",
+                  "count" : 5,
+                  "body" : [
+                    {
+                      "action" : "option",
+                      "options" : [
+                        {
+                          "action" : "particle",
+                          "specification" : {
+                            "type" : "animated",
+                            "animation" : "/animations/mediumflame/mediumflame.animation",
+                            "approach" : [0.5, 0.5],
+                            "timeToLive" : 1.5,
+                            "variance" : {
+                              "position" : [1.5, 1.5],
+                              "initialVelocity" : [1, 1],
+                              "timeToLive" : 0.5,
+                              "rotation" : 180
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "action" : "loop",
+                  "count" : 2,
+                  "body" : [
+                    {
+                      "action" : "option",
+                      "options" : [
+                        {
+                          "action" : "particle",
+                          "specification" : {
+                            "type" : "animated",
+                            "animation" : "/animations/starforge-largeflame/starforge-largeflame.animation",
+                            "approach" : [0.5, 0.5],
+                            "timeToLive" : 1.2,
+                            "size" : 1,
+                            "variance" : {
+                              "position" : [1.5, 1.5],
+                              "initialVelocity" : [1, 1],
+                              "timeToLive" : 0.3,
+                              "size" : 0.25,
+                              "rotation" : 180
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "action": "projectile",
+                  "type": "fireexplosionknockback",
+                  "fuzzAngle": 360,
+                  "inheritDamageFactor" : 1,
+                  "config" : {
+                    "statusEffects" : [ "burning" ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "action": "projectile",
+            "type": "woodenarrow",
+            "fuzzAngle": 45,
+            "inheritDamageFactor": 0.25,
+            "angleAdjust": 180,
+            "config" : {
+              "damageKind" : "NoDamage",
+              "speed" : 25,
+              "piercing" : true,
+              "timeToLive" : 0.2,
+              "processing" : "?crop=0;1;0;1",
+              "actionOnReap": [
+                {
+                  "action" : "sound",
+                  "options" : [ "/sfx/gun/grenadeblast_fire1.ogg", "/sfx/gun/grenadeblast_fire2.ogg", "/sfx/gun/grenadeblast_fire3.ogg" ]
+                },
+                {
+                  "action" : "loop",
+                  "count" : 5,
+                  "body" : [
+                    {
+                      "action" : "option",
+                      "options" : [
+                        {
+                          "action" : "particle",
+                          "specification" : {
+                            "type" : "animated",
+                            "animation" : "/animations/mediumflame/mediumflame.animation",
+                            "approach" : [0.5, 0.5],
+                            "timeToLive" : 1.5,
+                            "variance" : {
+                              "position" : [1.5, 1.5],
+                              "initialVelocity" : [1, 1],
+                              "timeToLive" : 0.5,
+                              "rotation" : 180
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "action" : "loop",
+                  "count" : 2,
+                  "body" : [
+                    {
+                      "action" : "option",
+                      "options" : [
+                        {
+                          "action" : "particle",
+                          "specification" : {
+                            "type" : "animated",
+                            "animation" : "/animations/starforge-largeflame/starforge-largeflame.animation",
+                            "approach" : [0.5, 0.5],
+                            "timeToLive" : 1.2,
+                            "size" : 1,
+                            "variance" : {
+                              "position" : [1.5, 1.5],
+                              "initialVelocity" : [1, 1],
+                              "timeToLive" : 0.3,
+                              "size" : 0.25,
+                              "rotation" : 180
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "action": "projectile",
+                  "type": "fireexplosionknockback",
+                  "fuzzAngle": 360,
+                  "inheritDamageFactor" : 1,
+                  "config" : {
+                    "statusEffects" : [ "burning" ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "action": "projectile",
+            "type": "woodenarrow",
+            "fuzzAngle": 45,
+            "inheritDamageFactor": 0.25,
+            "angleAdjust": 270,
+            "config" : {
+              "damageKind" : "NoDamage",
+              "speed" : 30,
+              "piercing" : true,
+              "timeToLive" : 0.075,
+              "processing" : "?crop=0;1;0;1",
+              "actionOnReap": [
+                {
+                  "action" : "sound",
+                  "options" : [ "/sfx/gun/grenadeblast_fire1.ogg", "/sfx/gun/grenadeblast_fire2.ogg", "/sfx/gun/grenadeblast_fire3.ogg" ]
+                },
+                {
+                  "action" : "loop",
+                  "count" : 5,
+                  "body" : [
+                    {
+                      "action" : "option",
+                      "options" : [
+                        {
+                          "action" : "particle",
+                          "specification" : {
+                            "type" : "animated",
+                            "animation" : "/animations/mediumflame/mediumflame.animation",
+                            "approach" : [0.5, 0.5],
+                            "timeToLive" : 1.5,
+                            "variance" : {
+                              "position" : [1.5, 1.5],
+                              "initialVelocity" : [1, 1],
+                              "timeToLive" : 0.5,
+                              "rotation" : 180
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "action" : "loop",
+                  "count" : 2,
+                  "body" : [
+                    {
+                      "action" : "option",
+                      "options" : [
+                        {
+                          "action" : "particle",
+                          "specification" : {
+                            "type" : "animated",
+                            "animation" : "/animations/starforge-largeflame/starforge-largeflame.animation",
+                            "approach" : [0.5, 0.5],
+                            "timeToLive" : 1.2,
+                            "size" : 1,
+                            "variance" : {
+                              "position" : [1.5, 1.5],
+                              "initialVelocity" : [1, 1],
+                              "timeToLive" : 0.3,
+                              "size" : 0.25,
+                              "rotation" : 180
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "action": "projectile",
+                  "type": "fireexplosionknockback",
+                  "fuzzAngle": 360,
+                  "inheritDamageFactor" : 1,
+                  "config" : {
+                    "statusEffects" : [ "burning" ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
 		}
 	],
 	"timeToLive": 1.5,
@@ -100,11 +391,41 @@
 
 	"emitters": ["fireplasma", "smoke", "flames", "sparks"],
 	"power": 10.0,
-	"speed": 80.0,
+	"speed": 100.0,
 	"physics": "bullet",
 	"damageType": "NoDamage",
 	"damageKind": "default",
 
-	"controlForce": 150,
-	"maxSpeed": 150
+  "advancedPeriodicActions" : [
+    {
+      "loopTime" : 0.01,
+      "delayTime" : 0.01,
+      "rotate" : true,
+      "minimumVelocity" : 80,
+
+      "action" : "particle",
+      "specification" : {
+        "type" : "streak",
+        "layer" : "back",
+        "fullbright" : false,
+        "destructionAction" : "shrink",
+        "size" : 2,
+        "color" : [155, 155, 155, 255],
+        "collidesForeground" : false,
+        "length" : 20,
+        "position" : [2, 0],
+        "timeToLive" : 0.01,
+        "destructionTime" : 0.06,
+		    "initialVelocity" : [0.5, 0],
+        "variance" : {
+		      "size" : 0,
+          "destructionTime" : 0.5,
+          "initialVelocity" : [0.5, -0],
+          "length" : 0
+        }
+      }
+    }
+  ],
+  
+  "scripts" : [  "/projectiles/scripts/starforge-advancedperiodicactions.lua" ]
 }

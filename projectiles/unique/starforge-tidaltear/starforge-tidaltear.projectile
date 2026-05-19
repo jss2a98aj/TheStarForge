@@ -8,7 +8,7 @@
   "pointLight" : true,
   "flippable" : true,
   "piercing" : true,
-  "statusEffects" : [ ],
+  "statusEffects" : [ "starforge-tidalfreeze" ],
   "power" : 5.0,
   "speed" : 0,
   "knockback" : 20,

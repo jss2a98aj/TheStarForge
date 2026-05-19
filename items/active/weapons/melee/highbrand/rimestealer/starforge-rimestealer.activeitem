@@ -25,12 +25,21 @@
     "swoosh" : "ice"
   },
   "animationCustom" : {
+    "particleEmitters" : {
+      "chargeShockwave" : {
+        "active" : false,
+        "particles" : []
+      }
+    },
     "sounds" : {
       "fire" : [ "/sfx/melee/swing_broadsword_ice1.ogg", "/sfx/melee/swing_broadsword_ice2.ogg", "/sfx/melee/swing_broadsword_ice3.ogg" ],
       "fire2" : [ "/sfx/melee/swing_shortsword_ice1.ogg", "/sfx/melee/swing_shortsword_ice2.ogg", "/sfx/melee/swing_shortsword_ice3.ogg" ],
       "fire3" : [ "/sfx/melee/swing_broadsword_ice1.ogg", "/sfx/melee/swing_broadsword_ice2.ogg", "/sfx/melee/swing_broadsword_ice3.ogg" ],
       "fire4" : [ "/sfx/melee/swing_shortsword_ice1.ogg", "/sfx/melee/swing_shortsword_ice2.ogg", "/sfx/melee/swing_shortsword_ice3.ogg" ],
-      "fire5" : [ "/sfx/melee/swing_spear_ice1.ogg", "/sfx/melee/swing_spear_ice2.ogg", "/sfx/melee/swing_spear_ice3.ogg" ]
+      "fire5" : [ "/sfx/melee/swing_spear_ice1.ogg", "/sfx/melee/swing_spear_ice2.ogg", "/sfx/melee/swing_spear_ice3.ogg" ],
+
+      "chargeShockwave" : [],
+      "shockwaveImpact" : [ "/sfx/melee/travelingslash_ice1.ogg" ]
     }
   },
 
@@ -56,6 +65,78 @@
       "idle" : {
         "weaponRotation" : 42,
         "weaponOffset" : [-0.25, 0.25]
+      }
+    }
+  },
+
+  "altAbility" : {
+    "scripts" : ["/items/active/weapons/melee/abilities/other/shockwave/starforge-shockwave.lua"],
+    "class" : "StarforgeShockwave",
+    "name" : "Rimeburn",
+    
+    "energyUsage" : 100.0,
+    "cooldownTime" : 3,
+
+    "chargeTime" : 2,
+    "minChargeTime" : 1,
+    "projectileType" : "iceeruptiontele",
+    "projectileParameters" : {
+      "timeToLive" : 1,
+      "power" : 15,      
+      "eruptionAction" : {
+        "action" : "projectile",
+        "type" : "iceeruption",
+        "inheritDamageFactor" : 1.0,
+        "angleAdjust" : 0,
+        "config" : {
+          "actionOnReap" : [
+            {
+              "action" : "projectile",
+              "type" : "fireplasmaexplosionstatus",
+              "inheritDamageFactor" : 1.0,
+              "fuzzAngle" : 360
+            }
+          ]
+        },
+        "offset" : [ 0, 3 ]
+      }
+    },
+
+    "shockWaveBounds" : [-3, -1.375, 3, 0.0],
+    "shockwaveHeight" : 3,
+    
+    "maxProjectiles" : 1,
+    "shockwaveStepDistance" : 5,
+
+    "directions" : [[1, 0], [-1, 0]],
+    "maxYStep" : 3,
+
+    "projectileOffset" : [0, 0.5],
+
+    "moveInDirection" : true,
+    "impactLine" : [[0.0, 0.0], [0.0, -10]],
+    "yOffset" : -1.5,
+
+    "stances" : {
+      "windup" : {
+        "armRotation" : 15,
+        "weaponRotation" : 35,
+        "endArmRotation" : -5,
+        "endWeaponRotation" : -5,
+        "weaponOffset" : [0, 0.5],
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0.35,
+        "armRotation" : 55,
+        "weaponRotation" : -55,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : true
       }
     }
   },

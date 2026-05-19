@@ -6,6 +6,7 @@
   "frameNumber" : 1,
   "power" : 50,
   "speed" : 50,
+  "statusEffects" : [ "starforge-tidalfreeze" ],
   "supportsProcessing" : true,
   "flippable" : false,
   "damagePoly" : [[-8, 4], [-4, 8], [4, 8], [8, 4], [8, -4], [4, -8], [-4, -8], [-8, -4]],

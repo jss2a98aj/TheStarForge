@@ -78,7 +78,8 @@
     "fireTime" : 0.83,
     "baseDps" : 10,
     "damageConfig" : {
-      "damageSourceKind" : "starforge-tidalfrost"
+      "damageSourceKind" : "starforge-tidalfrost",
+      "statusEffects" : [ "starforge-tidalfreeze" ]
     }
   },
 

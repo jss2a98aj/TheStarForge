@@ -1,0 +1,14 @@
+{
+  "particleEmitters" : {
+    "decay" : {
+      "enabled" : true,
+      "emissionRate" : 20.0,
+      "particles" : [
+        //{ "particle" : "starforge-withersmoke" }
+      ]
+    }
+  },
+  "sounds" : {
+    "loop" : [ "/sfx/npc/monsters/orbide_creepy_loop.ogg" ]
+  }
+}

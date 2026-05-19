@@ -47,4 +47,6 @@ function blossom()
   for _, action in ipairs(config.getParameter("actionOnBlossom", {})) do 
     projectile.processAction(action)
   end
+  projectile.die()
+  self.hasDied = true
 end

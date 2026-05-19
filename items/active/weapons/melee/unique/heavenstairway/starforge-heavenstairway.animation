@@ -9,6 +9,36 @@
         "default" : "idle",
         "states" : {
           "idle" : {
+          },
+          "fire" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+          "fire2" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+          "fire3" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+          "fire4" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+          "fire5" : {
+            "frames" : 3,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "idle"
           }
         }
       },
@@ -17,10 +47,10 @@
         "states" : {
           "idle" : {
             "frames" : 7,
-            "cycle" : 0.6,
+            "cycle" : 0.75,
             "mode" : "transition",
             "transition" : "idle"
-		  }
+		      }
         }
       }
     },
@@ -68,14 +98,50 @@
         "properties" : {
           "zLevel" : -1,
           "centered" : true,
-          "transformationGroups" : ["swoosh"],
+          "transformationGroups" : ["swoosh", "swooshOffset"],
           "rotationCenter" : [0, 0]
         },
+
         "partStates" : {
           "swoosh" : {
             "idle" : {
               "properties" : {
                 "image" : ""
+              }
+            },
+            "fire" : {
+              "properties" : {
+                "image" : "/items/active/weapons/melee/swoosh/starforge/heavyuppercut/heavyuppercut-<partImage>.png:<frame>?flipy",
+                "offset" : [3, 2.5],
+                "damageArea" : [[-8, 5], [-2.5, 5], [1, 5], [5, 2.75], [7, -0.25], [7, -3.25], [5.5, -5.25], [5, -6.25], [-2, -6]]
+              }
+            },
+            "fire2" : {
+              "properties" : {
+                "image" : "/items/active/weapons/melee/swoosh/starforge/heavyslice/heavyslice-<partImage>.png:<frame>",
+                "offset" : [-1.25, -0.25],
+                "damageArea" : [[-10, -1], [4.5, 1], [4.5, -2], [-2, -9], [-12, -8]]
+              }
+            },
+            "fire3" : {
+              "properties" : {
+                "image" : "/items/active/weapons/melee/swoosh/starforge/heavyuppercut/heavyuppercut-<partImage>.png:<frame>",
+                "offset" : [3, -2.5],
+                "damageArea" : [[-8, -5], [-2.5, -5], [1, -5], [5, -2.75], [7, 0.25], [7, 3.25], [5.5, 5.25], [5, 6.25], [-2, 6]]
+              }
+            },
+            "fire4" : {
+              "properties" : {
+                "image" : "/items/active/weapons/melee/swoosh/starforge/sweep/sweep-<partImage>.png:<frame>?flipx?flipy",
+                "offset" : [5.5, 2],
+                "damageArea" : [[-4.75, 3.5], [6, 3], [6, -3], [-4.75, -3.5]]
+              }
+            },
+            "fire5" : {
+              "properties" : {
+                "image" : "/items/active/weapons/melee/swoosh/starforge/stab/stab-<partImage>.png:<frame>",
+                "offset" : [6.5, 0.25],
+                "damageArea" : [[-8.75, 1.5], [3, 1], [3, -1], [-8.75, -1.5]]
               }
             }
           }
@@ -86,7 +152,8 @@
 
   "transformationGroups" : {
     "weapon" : {},
-    "swoosh" : {}
+    "swoosh" : {},
+    "swooshOffset" : {}
   },
 
   "particleEmitters" : {
@@ -100,5 +167,9 @@
   },
 
   "sounds" : {
+    "fire" : [ "/sfx/melee/swing_broadsword.ogg" ],
+    "fire2" : [ "/sfx/melee/swing_shortsword.ogg" ],
+    "fire3" : [ "/sfx/melee/swing_broadsword.ogg" ],
+    "fire4" : [ "/sfx/melee/swing_spear.ogg" ]
   }
 }

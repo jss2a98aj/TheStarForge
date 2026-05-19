@@ -199,8 +199,8 @@ function StarforgeGunFire:burst(charged)
     end
 
     --Enable walk while firing
-    if self.walkWhileFiring == true then
-      mcontroller.controlModifiers({runningSuppressed=true})
+    if self.stances.fire.controlModifiers then
+      mcontroller.controlModifiers(self.stances.fire.controlModifiers)
     end
 	
     self.weapon.relativeWeaponRotation = util.toRadians(c5Easing.easeOut(1 - (shots / self.burstCount), self.weapon.abilities[1].stances.idle.weaponRotation, self.stances.cooldown.weaponRotation))
@@ -222,6 +222,10 @@ function StarforgeGunFire:cooldown()
   local progress = 0
   --local maxRecoil = self.burstTime and 5 or 1;
   util.wait(duration, function()
+    if self.stances.cooldown.controlModifiers then
+      mcontroller.controlModifiers(self.stances.cooldown.controlModifiers)
+    end
+
     local from = self.stances.cooldown.weaponOffset or {0,0}
     local to = self.weapon.abilities[1].stances.idle.weaponOffset or {0,0}
     self.weapon.weaponOffset = {c5Easing.easeOut(progress, from[1], to[1]), c5Easing.easeOut(progress, from[2], to[2])}

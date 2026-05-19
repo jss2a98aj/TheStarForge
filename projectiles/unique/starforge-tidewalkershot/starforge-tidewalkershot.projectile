@@ -11,6 +11,7 @@
   "supportsProcessing" : true,
   "piercing" : false,
   "flippable" : true,
+  "statusEffects" : [ "starforge-tidalfreeze" ],
   "emitters" : [],
   "actionOnReap" : [
     {
@@ -127,7 +128,6 @@
       }
     }
   ],
-  "statusEffects" : [],
   "lightColor" : [161, 241, 254],
   "fullbright" : true,
   "damageKind" : "icespear",
