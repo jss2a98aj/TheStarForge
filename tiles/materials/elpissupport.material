@@ -1,0 +1,24 @@
+{
+  "materialId" : 2918,
+  "materialName" : "starforge-elpissupport",
+  "particleColor" : [110, 110, 110, 255],
+  "itemDrop" : "starforge-elpissupport",
+  "shortdescription" : "Elpis Support Block",
+  "description" : "A support beam in a rigid rectangular shape. Used in Elpis structures.",
+  "glitchDescription" : "Confused. It is so shiny I expected to see my reflection.",
+  "floranDescription" : "Shiny ssurface.",
+  "novakidDescription" : "Elpis sure knows how to make themselves known. Building is shinier than me!",
+  "footstepSound" : "/sfx/blocks/footstep_composite.ogg",
+  "health" : 4,
+  "category" : "materials",
+
+  "renderTemplate" : "/tiles/classicmaterialtemplate.config",
+  "renderParameters" : {
+    "texture" : "elpissupport.png",
+    "variants" : 5,
+    "lightTransparent" : false,
+    "occludesBelow" : true,
+    "multiColored" : true,
+    "zLevel" : 3003
+  }
+}

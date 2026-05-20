@@ -1,0 +1,17 @@
+{
+  "itemName" : "starforge-valehavendresshead",
+  "price" : 200,
+  "inventoryIcon" : "icons.png:head",
+  "maxStack" : 1,
+  "rarity" : "uncommon",
+  "category" : "headwear",
+  "description" : "Every Avian residing in Valehaven must wear a blindfold unless they have completed one of the city's many trials.",
+  "shortdescription" : "Valehaven Commoner Blindfold",
+  "tooltipKind" : "armor",
+
+  "maleFrames" : "head.png",
+  "femaleFrames" : "head.png",
+  "mask" : "mask.png"
+  
+ 
+  }

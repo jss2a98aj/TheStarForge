@@ -1,0 +1,77 @@
+{
+  "objectName" : "starforge-nadir",
+  "colonyTags" : ["avian"],
+  "rarity" : "essential",
+  "category" : "crafting",
+  "price" : 20000,
+    "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/masamuneshop.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "Sworn Brand Nadir",
+        "subtitle" : "Siaxaan Protector",
+        "icon" : {
+          "file" : "/interface/crafting/yukaishopicon.png"
+        }
+      }
+    },
+    "filter" : ["starforge-masamune"]
+  },
+  "printable" : false,
+  
+  "description" : "It's literally just Nadir.",
+  "shortdescription" : "Nadir",
+  "race" : "avian",
+
+  "apexDescription" : "Seems like Forgemaster Masamune settled in the Thalasso outpost.",
+  "avianDescription" : "Masamune the Forgemaster joined the Thalasso, awesome!",
+  "floranDescription" : "Angry fissshman allied with strong fissshlady, not good for Floran.",
+  "glitchDescription" : "Pleased. It seems the Forgemaster found a new purpose at the Starforge.",
+  "humanDescription" : "So the Yukai Forgemaster is working with Mariko now? Found a new purpose, good for him.",
+  "hylotlDescription" : "I see Mariko invited the Forgemaster to work with her on the Starforge. A good opportunity for him.",
+  "novakidDescription" : "Masamune's the name of that gramps? I ain't likin' it.",
+
+
+  "inventoryIcon" : "nadirshopicon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "nadirshop.png:<frame>" }, { "image" : "nadirshopfullbright.png:<frame>", "fullbright" : true } ],
+      "imagePosition" : [-24, 0],
+      "direction" : "left",
+      "flipImages" : true,
+      
+      "lightPosition" : [0, 2],
+
+      "frames" : 1,
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "imageLayers" : [ { "image" : "nadirshop.png:<frame>" }, { "image" : "nadirshopfullbright.png:<frame>", "fullbright" : true } ],
+      "imagePosition" : [-24, 0],
+      "direction" : "right",
+
+      "frames" : 1,
+      "animationCycle" : 2.5,
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "scripts" : [
+     "/objects/scripts/starforge-talkingobject.lua"
+  ],
+  "scriptDelta" : 5,
+  
+  "chatRadius" : 10,
+  "chatCooldown" : 15,
+  "chatOptions" : [
+    "...",
+    "Little one.",
+    "Sirin is safe. Good...",
+	"Keep fighting...",
+	"...",
+	"Mmmhm?"
+  ]
+}

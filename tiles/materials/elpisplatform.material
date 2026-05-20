@@ -1,0 +1,20 @@
+{
+  "materialId" : 2916,
+  "materialName" : "starforge-elpisplatform",
+  "collisionKind" : "platform",
+  "itemDrop" : "starforge-elpisplatform",
+  "shortdescription" : "Elpis Platform",
+  "description" : "A glass platform.",
+  "footstepSound" : "/sfx/blocks/footstep_lightmetal.ogg",
+  "category" : "Supports",
+
+  "renderTemplate" : "/tiles/platformtemplate.config",
+  "renderParameters" : {
+    "texture" : "elpisplatform.png",
+    "variants" : 1,
+    "lightTransparent" : true,
+    "occludesBelow" : false,
+    "multiColored" : true,
+    "zLevel" : 0
+  }
+}

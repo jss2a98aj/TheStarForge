@@ -1,0 +1,14 @@
+{
+  "itemName" : "starforge-elpiswall",
+  "price" : 0,
+  "category" : "block",
+  "rarity" : "common",
+  "inventoryIcon" : "elpiswall.png",
+  "shortdescription" : "Elpis Wall",
+  "description" : "A smooth and shiny wall panel, reflecting light throughout Elpis structures.",
+  "glitchDescription" : "Confused. It is so shiny I expected to see my reflection.",
+  "floranDescription" : "Shiny ssurface.",
+  "novakidDescription" : "Elpis sure knows how to make themselves known. Building is shinier than me!",
+
+  "materialId" : 2919
+}

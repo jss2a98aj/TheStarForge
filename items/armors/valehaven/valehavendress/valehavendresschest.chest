@@ -1,0 +1,25 @@
+{
+  "itemName" : "starforge-valehavendresschest",
+  "price" : 350,
+  "inventoryIcon" : "icons.png:chest",
+  "maxStack" : 1,
+  "rarity" : "uncommon",
+  "category" : "chestarmour",
+  "description" : "A blouse worn by the Avians who aren't accepted in Valehaven yet.",
+  "shortdescription" : "Valehaven Commoner Blouse",
+  "tooltipKind" : "armor",
+
+  "maleFrames" : {
+    "body" : "chestf.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  },
+
+  "femaleFrames" : {
+    "body" : "chestf.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  }
+
+ 
+}

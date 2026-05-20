@@ -1,0 +1,14 @@
+{
+  "itemName" : "starforge-elpisplatform",
+  "price" : 0,
+  "category" : "block",
+  "rarity" : "common",
+  "inventoryIcon" : "elpisplatform.png",
+  "shortdescription" : "Elpis Platform",
+  "description" : "A glass platform.",
+  "glitchDescription" : "Confused. It is so shiny I expected to see my reflection.",
+  "floranDescription" : "Shiny ssurface.",
+  "novakidDescription" : "Elpis sure knows how to make themselves known. Building is shinier than me!",
+
+  "materialId" : 2916
+}

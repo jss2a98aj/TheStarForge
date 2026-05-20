@@ -1,0 +1,24 @@
+{
+  "materialId" : 2915,
+  "materialName" : "starforge-elpisflooring",
+  "particleColor" : [110, 110, 110, 255],
+  "itemDrop" : "starforge-elpisflooring",
+  "description" : "A shiny flooring polished to perfection. Used in Elpis structures.",
+  "shortdescription" : "Elpis Flooring",
+  "glitchDescription" : "Confused. It is so shiny I expected to see my reflection.",
+  "floranDescription" : "Shiny ssurface.",
+  "novakidDescription" : "Elpis sure knows how to make themselves known. Building is shinier than me!",
+  "footstepSound" : "/sfx/blocks/footstep_composite.ogg",
+  "health" : 4,
+  "category" : "materials",
+
+  "renderTemplate" : "/tiles/classicmaterialtemplate.config",
+  "renderParameters" : {
+    "texture" : "elpisflooring.png",
+    "variants" : 5,
+    "lightTransparent" : false,
+    "occludesBelow" : true,
+    "multiColored" : true,
+    "zLevel" : 2900
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "itemName" : "starforge-elpissupport",
+  "price" : 0,
+  "category" : "block",
+  "rarity" : "common",
+  "inventoryIcon" : "elpissupport.png",
+  "shortdescription" : "Elpis Support Block",
+  "description" : "A support beam in a rigid rectangular shape. Used in Elpis structures.",
+  "glitchDescription" : "Confused. It is so shiny I expected to see my reflection.",
+  "floranDescription" : "Shiny ssurface.",
+  "novakidDescription" : "Elpis sure knows how to make themselves known. Building is shinier than me!",
+
+  "materialId" : 2918
+}
