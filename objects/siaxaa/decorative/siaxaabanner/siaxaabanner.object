@@ -2,9 +2,9 @@
   "objectName" : "starforge-siaxaabanner",
   "colonyTags" : ["misc"],
   "printable" : true,
-  "rarity" : "Common",
+  "rarity" : "Uncommon",
   "description" : "A pretty banner bearing the symbol of the People of Siaxaa.",
-  "shortdescription" : "Siaxaa Banner",
+  "shortdescription" : "Siaxaan Banner",
   "race" : "avian",
   "category" : "furniture",
   "price" : 200,
@@ -27,7 +27,7 @@
       "animationCycle" : 1.0,
 
       "spaceScan" : 0.1,
-      "anchors" : [ "bottom" ]
+      "anchors" : [ "background" ]
 
     }
   ]

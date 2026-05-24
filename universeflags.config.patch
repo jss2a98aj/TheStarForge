@@ -22,7 +22,7 @@
                     "type": "placeDungeon",
                     "dungeonId": "thalassooutpost_sasha",
                     "targetInstance": "thalassooutpost",
-                    "targetPosition": [253, 572]
+                    "targetPosition": [228, 802]
                 }
             ]
         }
@@ -38,6 +38,21 @@
                     "dungeonId": "thalassooutpost_masamune",
                     "targetInstance": "thalassooutpost",
                     "targetPosition": [228, 572]
+                }
+            ]
+        }
+    },
+	
+	{
+        "op": "add",
+        "path": "/valehavensirinmission1",
+        "value": {
+            "actions": [
+                {
+                    "type": "placeDungeon",
+                    "dungeonId": "thalassooutpost_nadir",
+                    "targetInstance": "thalassooutpost",
+                    "targetPosition": [253, 572]
                 }
             ]
         }

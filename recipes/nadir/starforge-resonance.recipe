@@ -1,0 +1,15 @@
+{
+  "input" : [
+    { "item" : "solariumstar", "count" : 7},
+	{ "item" : "refinedviolium", "count" : 10},
+	{ "item" : "scorchedcore", "count" : 5},
+	{ "item" : "geodeblock", "count" : 60 }
+  ],
+  "output" : {
+    "item" : "starforge-resonance",
+    "count" : 1
+  },
+  "groups" : [ "starforge-nadir", "highbrand" ],
+  "duration" : 0
+}
+

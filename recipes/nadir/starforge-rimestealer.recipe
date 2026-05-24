@@ -1,0 +1,15 @@
+{
+  "input" : [
+    { "item" : "solariumstar", "count" : 6},
+	{ "item" : "refinedferozium", "count" : 10},
+	{ "item" : "cryonicextract", "count" : 8},
+	{ "item" : "snowflake", "count" : 50}
+  ],
+  "output" : {
+    "item" : "starforge-rimestealer",
+    "count" : 1
+  },
+  "groups" : [ "starforge-nadir", "highbrand" ],
+  "duration" : 0
+}
+

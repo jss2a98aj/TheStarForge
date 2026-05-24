@@ -4,5 +4,5 @@
     { "item" : "climbingrope", "count" : 3 }
   ],
   "output" : { "item" : "starforge-tungstenhighbrand", "count" : 1 },
-  "groups" : [ "craftinganvil", "weapons", "all" ]
+  "groups" : [ "craftinganvil", "weapons", "all", "starforge-nadir", "highbrand" ]
 }

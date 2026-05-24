@@ -1,0 +1,14 @@
+{
+  "input" : [
+    { "item" : "astrosabredeluxe", "count" : 1},
+	{ "item" : "solariumstar", "count" : 8},
+	{ "item" : "refinedviolium", "count" : 6}
+  ],
+  "output" : {
+    "item" : "starforge-astrobrandextreme",
+    "count" : 1
+  },
+  "groups" : [ "starforge-nadir", "highbrand" ],
+  "duration" : 0
+}
+

@@ -1,0 +1,36 @@
+{
+  "objectName" : "starforge-siaxaatable",
+  "colonyTags" : ["avian"],
+  "printable" : true,
+  "rarity" : "Uncommon",
+  "description" : "A golden table of Siaxaan origin. It has a big blue Avolite in the middle.",
+  "shortdescription" : "Siaxaan Table",
+  "race" : "Avian",
+  "category" : "furniture",
+  "price" : 160,
+
+  "apexDescription" : "A golden tablem decorated with a massive crystal. It's fancy.",
+  "avianDescription" : "Siaxaan furniture is frowned upon by the Stargazers, despite being so rare.",
+  "floranDescription" : "Floran sssee table, think about food... Floran hungry...",
+  "glitchDescription" : "Impressed. A table made of solid gold. It must be expensive.",
+  "humanDescription" : "A golden table. The big crystal must be expensive.",
+  "hylotlDescription" : "The design of this table is quite exquisite.",
+  "novakidDescription" : "A good ol' table.",
+
+  "inventoryIcon" : "siaxaatableicon.png",
+  "orientations" : [
+    {
+	 "dualImage" : "siaxaatable.png:<color>",
+
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+
+    }
+  ]
+}
+

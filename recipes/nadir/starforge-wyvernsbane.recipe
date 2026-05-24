@@ -1,0 +1,13 @@
+{
+  "input" : [
+	{ "item" : "solariumstar", "count" : 10},
+	{ "item" : "ironbar", "count" : 30}
+  ],
+  "output" : {
+    "item" : "starforge-wyvernsbane",
+    "count" : 1
+  },
+  "groups" : [ "starforge-nadir", "highbrand" ],
+  "duration" : 0
+}
+

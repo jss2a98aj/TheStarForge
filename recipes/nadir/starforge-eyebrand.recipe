@@ -1,0 +1,15 @@
+{
+  "input" : [
+    { "item" : "solariumstar", "count" : 8},
+	{ "item" : "refinedaegisalt", "count" : 10},
+	{ "item" : "venomsample", "count" : 8},
+	{ "item" : "oculemon", "count" : 5}
+  ],
+  "output" : {
+    "item" : "starforge-eyebrand",
+    "count" : 1
+  },
+  "groups" : [ "starforge-nadir", "highbrand" ],
+  "duration" : 0
+}
+

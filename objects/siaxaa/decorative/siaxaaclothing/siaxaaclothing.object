@@ -1,0 +1,32 @@
+{
+  "objectName" : "starforge-siaxaaclothing",
+  "colonyTags" : ["misc"],
+  "printable" : true,
+  "rarity" : "Uncommon",
+  "description" : "Hanging clothings, made from Siaxaan fabric.",
+  "shortdescription" : "Siaxaan Hanging Cloth",
+  "race" : "avian",
+  "category" : "furniture",
+  "price" : 200,
+
+  "avianDescription" : "Valehaven houses are full of colors and pretty hanging cloth like this.",
+  "floranDescription" : "Floran sssee strange colors...",
+  "glitchDescription" : "Curious. I wonder what the practical use of these hanging cloth is.",
+
+
+  "inventoryIcon" : "siaxaaclothingicon.png",
+  "orientations" : [
+    {
+	  "dualImage" : "siaxaaclothing.png",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+
+}

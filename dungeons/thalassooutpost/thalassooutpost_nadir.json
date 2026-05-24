@@ -12,7 +12,7 @@
  "layers":[
         {
          "compression":"zlib",
-         "data":"eJxjYBgFo4B4UEJlnEVlnE9lHDOM8UolBoYVSBjEJ6RnmRJuvBILn1yzYPqJdR+yvhU4MLHuQ1YDCydc4UfIPHSzSDUPPT3C5JDFsKnLx2GeAQN1MQBCnX0s",
+         "data":"eJwTZmBgEB7Fo3gU48ThVMLIZs4mwCdVLSH7SFVbAMQTkXABHvOIUTtq3uAwz4AAJjVvAACw2EKZ",
          "encoding":"base64",
          "height":20,
          "id":1,
@@ -26,7 +26,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJxjYBgFo4B4UEJlnEVlnE9lPAqGN3hNBB5I89bRwDxq5l8A9zQ72w==",
+         "data":"eJxjYBgFo2AUkArCCeBRMDTAayLwcDLPgMoYAG0SH0I=",
          "encoding":"base64",
          "height":20,
          "id":2,
@@ -43,28 +43,7 @@
          "draworder":"topdown",
          "id":3,
          "name":"mods",
-         "objects":[
-                {
-                 "height":16,
-                 "id":940,
-                 "name":"",
-                 "properties":
-                    {
-                     "back":"starforge-unboundwallpanel",
-                     "colorVariant":"4"
-                    },
-                 "propertytypes":
-                    {
-                     "back":"string",
-                     "colorVariant":"string"
-                    },
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":8,
-                 "x":96,
-                 "y":104
-                }],
+         "objects":[],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -90,88 +69,100 @@
                  "y":160
                 }, 
                 {
-                 "gid":8843,
-                 "height":32,
+                 "gid":2147492532,
+                 "height":36,
                  "id":933,
                  "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":43,
-                 "x":32,
-                 "y":152
+                 "width":17,
+                 "x":24,
+                 "y":136
                 }, 
                 {
-                 "gid":2147492609,
-                 "height":31,
-                 "id":934,
+                 "gid":2147492537,
+                 "height":63,
+                 "id":935,
                  "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":34,
-                 "x":121,
+                 "width":37,
+                 "x":104,
                  "y":152
                 }, 
                 {
-                 "gid":8915,
-                 "height":8,
+                 "gid":8888,
+                 "height":11,
+                 "id":937,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":6,
+                 "x":88,
+                 "y":136
+                }, 
+                {
+                 "gid":8885,
+                 "height":32,
                  "id":938,
                  "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":24,
-                 "x":128,
-                 "y":112
-                }, 
-                {
-                 "gid":2147492610,
-                 "height":32,
-                 "id":941,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":83,
+                 "width":16,
+                 "x":56,
                  "y":152
                 }, 
                 {
-                 "gid":8825,
-                 "height":21,
-                 "id":944,
+                 "gid":2147492538,
+                 "height":16,
+                 "id":939,
                  "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":28,
-                 "x":24,
+                 "width":30,
+                 "x":72,
+                 "y":152
+                }, 
+                {
+                 "gid":8891,
+                 "height":23,
+                 "id":940,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":88,
                  "y":112
                 }, 
                 {
-                 "gid":6370,
+                 "gid":8892,
                  "height":8,
-                 "id":946,
+                 "id":942,
                  "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":24,
-                 "x":16,
+                 "width":40,
+                 "x":8,
                  "y":88
                 }, 
                 {
-                 "gid":8826,
-                 "height":32,
-                 "id":947,
+                 "gid":8893,
+                 "height":24,
+                 "id":943,
                  "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":16,
-                 "x":8,
-                 "y":152
+                 "width":24,
+                 "x":56,
+                 "y":112
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -199,12 +190,12 @@
          "objects":[
                 {
                  "height":8,
-                 "id":942,
+                 "id":936,
                  "name":"",
                  "properties":
                     {
-                     "npc":"glitch",
-                     "typeName":"starforge-unbtclassic"
+                     "npc":"avian",
+                     "typeName":"starforge-sirin"
                     },
                  "propertytypes":
                     {
@@ -215,8 +206,8 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":115,
-                 "y":128
+                 "x":40,
+                 "y":136
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -270,7 +261,7 @@
          "y":0
         }],
  "nextlayerid":11,
- "nextobjectid":948,
+ "nextobjectid":945,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
@@ -427,7 +418,7 @@
         }, 
         {
          "firstgid":8883,
-         "source":"..\/..\/tilesets\/unbound\/unbound.json"
+         "source":"..\/..\/tilesets\/cityofcommence\/cityofcommence.json"
         }],
  "tilewidth":8,
  "type":"map",

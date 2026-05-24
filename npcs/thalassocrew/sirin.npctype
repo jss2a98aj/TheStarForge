@@ -1,0 +1,76 @@
+{
+  "type" : "starforge-sirin",
+  "baseType" : "base",
+
+  "identity" : {
+    "name" : "Sirin",
+    "species" : "avian",
+	"facialHairType":"10",
+	"facialHairGroup":"fluff",
+    "hairGroup" : "hair",
+	"facialMask" : "2",
+    "hairType" : "20",
+	"bodyDirectives":"?replace;ffca8a=deeded;6f2919=596809;dc1f00=d7e8e8;a38d59=464052;f32200=f6fbfb;e0975c=85AC1B;d9c189=70737D;be1b00=8fa7a3;a85636=6E8210;951500=5d6d69;735e3a=2B2B36",
+	"facialMaskDirectives":"?replace;ffca8a=d18bd5;6f2919=693367;dc1f00=d7e8e8;a38d59=1C141F;f32200=f6fbfb;e0975c=a766bc;d9c189=464052;be1b00=8fa7a3;a85636=814797;951500=5d6d69;735e3a=9b6638",
+	"hairDirectives":"?replace;ffca8a=deeded;6f2919=596809;dc1f00=d7e8e8;a38d59=464052;f32200=f6fbfb;e0975c=85AC1B;d9c189=70737D;be1b00=8fa7a3;a85636=6E8210;951500=5d6d69;735e3a=2B2B36",
+    "gender" : "female"
+  },
+
+  "damageTeamType" : "ghostly",
+
+  "persistent" : true,
+
+  "dropPools" : [ ],
+  
+  "personalities": [
+      [1.0, {
+          "personality": "cheerful",
+          "reactions": {}
+        }
+      ]
+    ],
+
+
+  "movementParameters" : {
+    "walkSpeed" : 5.0
+  },
+
+  "scriptConfig" : {
+    "behavior" : "villager",
+
+    "dialogMode" : "sequence",
+    "dialog" : {
+      "converse" : {
+        "default" : {
+          "default" : [
+            "From the bottom of my heart, thank you!",
+            "I can't imagine what the Stargazer would've done to me and Nadir if you didn't come.",
+			"Nadir is my designated bodyguard while I go through the Trial of the Maiden! I can't take this blindfold off until then.",
+			"I hope once I get my first mark of Siaxaa I'll be accepted in Valehaven...",
+            "The Stargazer are probably still looking for me and the Maiden, I'll stay here a while.",
+			"The Thalasso crew is so nice. They let me have plenty of snacks!",
+			"Can you help me find the bathroom? There's too many stairs I keep tripping!",
+			"Eeek! You scared me, I didn't see you coming."
+          ]
+        }
+      }
+
+    }
+  },
+
+    "items": {
+        "override": [
+            [0, [{
+                "head": [{
+                    "name": "starforge-valehavendresshead"
+                }],
+                "chest": [{
+                    "name": "starforge-valehavendresschest"
+                }],
+                "legs": [{
+                    "name": "starforge-valehavendresspants"
+                }]
+            }]]
+        ]
+    }
+}

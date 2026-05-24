@@ -1,11 +1,11 @@
 {
   "metadata" : {
-    "name" : "thalassooutpost_unboundstart",
+    "name" : "thalassooutpost_nadir",
     "species" : "generic",
     "rules" : [
     ],
 
-    "anchor" : [ "thalassooutpost_unboundstart" ],
+    "anchor" : [ "thalassooutpost_nadir" ],
 
     "maxRadius" : 1000000,
     "maxParts" : 1,
@@ -14,11 +14,11 @@
 
   "parts" : [
     {
-      "name" : "thalassooutpost_unboundstart",
+      "name" : "thalassooutpost_nadir",
       "rules" : [
         [ "maxSpawnCount", [1] ]
       ],
-      "def" : [ "tmx", "thalassooutpost_unboundstart.json" ]
+      "def" : [ "tmx", "thalassooutpost_nadir.json" ]
     }
   ]
 }
