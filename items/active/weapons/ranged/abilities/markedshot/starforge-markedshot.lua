@@ -11,7 +11,7 @@ end
 function StarforgeMarkedShot:init()
   self:reset()
 
-  activeItem.setScriptedAnimationParameter("markerImage", "/items/active/weapons/ranged/abilities/markedshot/targetoverlay.png")
+  activeItem.setScriptedAnimationParameter("entityMarker", self.entityMarker)
 
   self.cooldownTimer = self.fireTime
 end

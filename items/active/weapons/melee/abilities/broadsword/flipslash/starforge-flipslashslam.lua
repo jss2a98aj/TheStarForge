@@ -53,7 +53,7 @@ function StarforgeFlipSlashSlam:flip()
   animator.playSound(self.fireSound or "flipSlash")
   animator.setParticleEmitterActive("flipParticles", true)
 
-  self.flipTime = self.rotations * self.rotationTime
+  self.flipTime = math.max(self.rotations, 1) * self.rotationTime
   self.flipTimer = 0
 
   self.jumpTimer = self.jumpDuration
@@ -71,7 +71,9 @@ function StarforgeFlipSlashSlam:flip()
     local damageArea = partDamageArea("swoosh")
     self.weapon:setDamage(self.damageConfig, damageArea, self.fireTime)
 
-    mcontroller.setRotation(-math.pi * 2 * self.weapon.aimDirection * (self.flipTimer / self.rotationTime))
+    if self.rotations > 0 then
+      mcontroller.setRotation(-math.pi * 2 * self.weapon.aimDirection * (self.flipTimer / self.rotationTime))
+    end
 
     coroutine.yield()
   end

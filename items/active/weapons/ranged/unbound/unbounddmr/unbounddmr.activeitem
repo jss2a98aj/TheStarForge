@@ -48,7 +48,7 @@
       "disengage" : [ "/sfx/interface/sniper_mark_stop2.ogg"]
     }
   },
-  "animationScripts" : [ "/items/active/effects/entitymarker.lua" ],
+  "animationScripts" : [ "/items/active/effects/starforge-enhancedentitymarker.lua" ],
   
   "baseOffset": [1, 0.25],
   "muzzleOffset": [2.5, 0.125],
@@ -136,6 +136,11 @@
         "damageType" : "NoDamage"
       }
     },
+    
+    "entityMarker" : {
+      "markerImage" : "/items/active/weapons/ranged/abilities/markedshot/targetoverlay.png"
+    },
+    
     "baseDamage" : 6,
     "energyUsage" : 45, // cost per target marked
     "cooldownTime" : 1.0,

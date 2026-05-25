@@ -1,0 +1,21 @@
+{
+  "projectileName" : "starforge-largeicethrower",
+  "image" : "starforge-largeicethrower.png",
+  "physics" : "starforge-cloud",
+  "animationLoops" : false,
+  "frameNumber" : 13,
+  "animationCycle" : 1,
+  "power" : 50,
+  "speed" : 25,
+  "timeToLive" : 0.98,
+  "bounces" : -1,
+  "piercing" : true,
+  "fullbright" : true,
+  "damagePoly" : [ [-16, 0], [-12, -12], [0, -16], [12, -12], [16, 0], [12, 12], [0, 16], [-12, 12] ],
+  "lightColor" : [134, 176, 179],
+  "damageKind" : "ice",
+  "statusEffects" : [
+    "frostslow"
+  ],
+  "emitters" : [ "icethrowertrail" ]
+}

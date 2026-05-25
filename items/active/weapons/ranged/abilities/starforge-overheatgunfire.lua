@@ -54,7 +54,7 @@ function StarforgeGunFire:update(dt, fireMode, shiftHeld)
   
   self:updateIndicator()
   
-  oldUpdate(self, dt, fireMode, shiftHeld)
+  oldUpdate(self, dt, self.overheated and "none" or fireMode, shiftHeld)
 end
 
 function StarforgeGunFire:updateIndicator()

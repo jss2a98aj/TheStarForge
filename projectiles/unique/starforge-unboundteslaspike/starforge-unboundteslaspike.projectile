@@ -1,0 +1,80 @@
+{
+  "projectileName" : "starforge-unboundteslaspike",
+  "image" : "starforge-unboundteslaspike.png",
+  "fullbright" : false,
+  "physics" : "arrow",
+  "piercing" : true,
+  "timeToLive" : 5,
+  "bounces" : 0,
+  "movementSettings" : {
+    "gravityMultiplier" : 0.0
+  },
+  "actionOnReap" : [
+  ],
+  "power" : 0,
+  "speed" : 55,
+  "damageType" : "nodamage",
+  "damageKind" : "fireplasma",
+  
+  "persistentAudio" : "/sfx/projectiles/starforge-behemonthenergysphere.ogg",
+  
+  "scripts" : [ "/projectiles/scripts/starforge-longbowprojectile.lua", "/projectiles/scripts/starforge-electricalprojectile.lua" ],
+  
+  "teleportRange" : 100,
+  "teleportPiercing" : true,
+  "teleportDelay" : 0.15,
+  "teleportGenerosity" : 5,		//How far away from its destination it will teleport to, 0 would be directly on top, 3 would be 3 blocks away
+  "teleportOutActions" : [
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/tech/tech_blink1.ogg" ]
+    },
+    {
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "animated",
+        "animation" : "/animations/starforge-smallteleport/starforge-smallteleportout.animation",
+        "approach" : [0.0, 0.0],
+        "timeToLive" : 0.25,
+        "rotation" : 90,
+        "fullbright" : true
+      }
+    }
+  ],
+  "teleportInActions" : [
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/tech/tech_blink2.ogg" ]
+    },
+    {
+      "action" : "particle",
+      "rotate" : true,
+      "specification" : {
+        "type" : "animated",
+        "animation" : "/animations/starforge-smallteleport/starforge-smallteleportin.animation",
+        "approach" : [0.0, 0.0],
+        "timeToLive" : 0.25,
+        "rotation" : 90,
+        "fullbright" : true
+      }
+    }
+  ],
+  
+  "lightningParameters" : {
+    "chainLightningRadius" : 10,
+    
+    "tickRate" : 0.25,
+    "damageKind" : "electricplasma",
+    "statusEffects" : ["electrified"],
+	
+    "lightningConfig" : {
+      "displacement" : 0.875,
+      "minDisplacement" : 0.125,
+      "forks" : 1,
+      "forkAngleRange" : 0.4,
+      "width" : 0.7,
+	    "color" : [210, 156, 231, 200]
+    }
+  }
+}

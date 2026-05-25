@@ -12,6 +12,8 @@
   "tooltipFieldsOverride" : {"subtitle":"Revolver"},
   "itemTags" : ["weapon","ranged","revolver"],
   "twoHanded" : true,
+  
+  "cursor" : "/cursors/starforge-revolvercursor.cursor",
 
   "animation" : "starforge-pepperbox.animation",
   "animationParts" : {
@@ -27,7 +29,7 @@
   "baseOffset" : [1.25, 0.125],
   "muzzleOffset" : [0.25, 1],
   
-  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+  "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
 
   "elementalType" : "fire",
 

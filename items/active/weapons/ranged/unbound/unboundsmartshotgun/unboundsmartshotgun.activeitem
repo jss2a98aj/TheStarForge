@@ -2,50 +2,101 @@
   "itemName" : "starforge-unboundsmartshotgun",
   "price" : 1500,
   "maxStack" : 1,
-  "rarity" : "Essential",
-  "description" : "A shotgun firing special slowing ammo. Used by the Vanguard units.",
-  "shortdescription" : "^#686F5D;UNBD^reset; \"Marauder\" ^#69729E;VNGD SG^reset;",
-  "tooltipKind" : "starforge-vanguardgun",
-  "category" : "shotgun",
+  "rarity" : "Legendary",
+  "description" : "A smart shotgun packed with specialised supercooled rounds to slow its targets.",
+  "shortdescription" : "\"Marauder\" ^#69729E;VNGD SG^reset;",
+  "tooltipKind": "starforge-uniquegun",
+  "category": "uniqueWeapon",
   "tooltipFieldsOverride" : {"subtitle":"Smart Shotgun"},
-  "twoHanded" : true,
-  "itemTags" : ["weapon","ranged","shotgun"],
-  "level" : 7,
+  "twoHanded": true,
+  "level": 6,
+  "itemTags": [ "weapon", "ranged", "shotgun" ],
+  "manufacturer" : "unboundarmaments",
+  "inventoryIcon" : "unboundsmartshotgun.png:idle",
+  
+  "cursor" : "/cursors/starforge-smartreticle.cursor",
 
-"inventoryIcon" : "unboundsmartshotgun.png",
-
-  "animation": "/items/active/weapons/ranged/gun.animation",
-  "animationParts" : {
-    "middle" : "unboundsmartshotgun.png"
+  "animation" : "/items/active/weapons/ranged/animations/starforge-shellanimgun.animation",
+  "animationParts": {
+    "butt": "",
+    "middle": "unboundsmartshotgun.png",
+    "barrel": "",
+    "middleFullbright": "unboundsmartshotgunfullbright.png",
+    "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-icemuzzleflash.png"
   },
   "animationCustom" : {
-    "sounds" : {
+    "animatedParts" : {
+      "parts" : {
+        "middleFullbright" : {
+          "properties" : {
+            "offset" : [0.5, 0.25]
+          },
+          "partStates" : {
+            "gun" : {
+              "idle" : {
+                "properties" : {
+                  "image" : "<partImage>:idle<target>"
+                }
+              },
+              "reload" : {
+                "properties" : {
+                  "image" : "<partImage>:reload.<frame><target>"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "particleEmitters" : {
+      "casing" : {
+		    "offsetRegion" : [0.375, 0.625, 0.375, 0.625],
+        "particles" : [
+          { "particle" : "starforge-unboundsniper" }
+        ]
+      }
+    },
+    "sounds": {
+      "targetAcquired" : [ "/sfx/interface/sniper_mark_pitch1.ogg" ],
+      "disengage" : [ "/sfx/interface/sniper_mark_stop2.ogg"],
       "fire" : ["/sfx/gun/tank_shot.ogg"]
     }
   },
-  "baseOffset" : [0.375, 0.250],
-  "muzzleOffset" : [2.500, 0.375],
+  "animationScripts" : [ "/items/active/effects/starforge-enhancedentitymarker.lua" ],
+  
+  "baseOffset" : [0.5, 0.25],
+  "muzzleOffset" : [2.25, 0.375],
 
-  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+  "scripts" : ["/items/active/weapons/ranged/starforge-gun.lua"],
 
-  "elementalType" : "physical",
+  "elementalType" : "ice",
 
   "primaryAbility" : {
-    "scripts" : ["/items/active/weapons/ranged/starforge-gunfire.lua"],
+    "scripts" : [ "/items/active/weapons/ranged/starforge-gunfire.lua", "/items/active/weapons/ranged/abilities/starforge-smartlockongunfire.lua" ],
     "class" : "StarforgeGunFire",
 
     "fireTime" : 1.10,
-    "baseDps" : 14,
+    "baseDps" : 8,
     "energyUsage" : 50,
-    "inaccuracy" : 0.001,
+    "inaccuracy" : 0.1,
 
-    "projectileCount" : 1,
+    "projectileCount" : 6,
     "fireType" : "auto",
 
-    "projectileType" : "unboundsmartshell",
-    "projectileParameters" : {
-      "knockback" : 4
+    "projectileType": "starforge-smarticebulletstatus",
+    "projectileParameters": {
+      "homingStartDelay" : 0.1,
+      "baseHomingControlForce" : 1,
+      "speed" : [85, 95],
+      "knockback": 2
     },
+
+    "targetQueryDistance" : 5,
+    "markLingerTime" : 2,
+    "entityMarker" : {
+      "markerImage" : "/items/active/weapons/ranged/abilities/markedshot/starforge-lockon.png"
+    },
+    "animatedFire" : true,
 
     "stances": {
       "idle": {
@@ -56,35 +107,32 @@
         "allowRotate": true,
         "allowFlip": true,
 		
-		"frontArmFrame" : "run.2",
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       },
       "fire": {
         "duration": 0,
-        "armRotation": 15,
-        "weaponRotation": 12,
+        "armRotation": 8,
+        "weaponRotation": 6,
         "weaponOffset" : [-0.1, 0],
         "twoHanded": true,
         "allowRotate": true,
         "allowFlip": true,
-
-        "animationStates" : {
-          "firing" : "fire"
-		},
+        "burstParticleEmitters": [ "casing" ],
 		
-		"frontArmFrame" : "run.2",
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       },
       "cooldown": {
         "duration": 0.8,
-        "armRotation": 16,
-        "weaponRotation": 13,
+        "armRotation": 8,
+        "weaponRotation": 6,
         "weaponOffset" : [-0.1, 0],
         "twoHanded": true,
         "allowRotate": true,
         "allowFlip": true,
 		
-		"frontArmFrame" : "run.2",
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       }
     }

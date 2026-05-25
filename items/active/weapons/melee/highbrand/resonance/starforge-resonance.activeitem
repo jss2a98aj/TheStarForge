@@ -27,6 +27,17 @@
   "animationCustom" : {
     "animatedParts" : {
       "stateTypes" : {
+        "swoosh" : {
+          "states" : {
+            "flip" : {},
+            "slam" : {
+              "frames" : 3,
+              "cycle" : 0.1,
+              "mode" : "transition",
+              "transition" : "idle"
+            }
+          }
+        },
         "geode" : {
           "default" : "silent",
           "states" : {
@@ -42,6 +53,11 @@
         }
       },
       "parts" : {
+        "blade" : {
+          "properties" : {
+            "groundSlamPoint" : [1, 2]
+          }
+        },
         "bladeFullbright" : {
           "partStates" : {
             "geode" : {
@@ -57,7 +73,35 @@
               }
             }
           }
+        }, 
+        "swoosh" : {
+          "partStates" : {
+            "swoosh" : {
+              "flip" : {
+                "properties" : {
+                  "image" : ""
+                }
+              },
+              "slam" : {
+                "properties" : {
+                  "image" : "/items/active/weapons/melee/swoosh/starforge/stab/stab-<partImage>.png:<frame>",
+                  "offset" : [6.5, 0.25],
+                  "damageArea" : [[-8.75, 1.5], [3, 1], [3, -1], [-8.75, -1.5]]
+                }
+              }
+            }
+          }
         }
+      }
+    },
+    "particleEmitters" : {
+      "flipParticles" : {
+        "active" : false,
+        "transformationGroups" : ["weapon"],
+        "offsetRegion" : [-4, -4, 5, 5],
+        "emissionRate" : 70,
+        "particles" : [
+        ]
       }
     },
     "sounds" : {
@@ -67,7 +111,9 @@
       "fire4" : [ "/sfx/melee/swing_shortsword_fire1.ogg", "/sfx/melee/swing_shortsword_fire2.ogg", "/sfx/melee/swing_shortsword_fire3.ogg" ],
       "fire5" : [ "/sfx/melee/swing_spear_fire1.ogg", "/sfx/melee/swing_spear_fire2.ogg", "/sfx/melee/swing_spear_fire3.ogg" ],
 
-      "chime" : ["/sfx/instruments/geode/geodehum.ogg"]
+      "chime" : ["/sfx/instruments/geode/geodehum.ogg"],
+      "flipSlash" : [ "/sfx/tech/tech_dash.ogg" ],
+      "slamFall" : [ "/sfx/instruments/geode/geodehum.ogg" ]
     }
   },
 
@@ -132,6 +178,72 @@
         "playSounds" : {
           "chime" : 0.7
         }
+      }
+    }
+  },
+
+  "altAbilityType" : "flipslash",
+  "altAbility" : {
+    "name" : "Resonating Curse",
+    "scripts" : ["/items/active/weapons/melee/abilities/broadsword/flipslash/starforge-flipslashslam.lua"],
+    "class" : "StarforgeFlipSlashSlam",
+
+    "cooldownTime" : 2,
+    "energyUsage" : 200.0,
+    "rotations" : 0,
+    "rotationTime" : 0.3,
+
+    "jumpVelocity" : [5, 55],
+    "jumpDuration" : 0.2,
+    
+    "slamDelay" : 0.2,
+    "slamVelocity" : [0, -75],
+    "slamAimVec" : [1, 1],
+    "bounceVelocity" : 25,
+    "projectileType" : "starforge-unboundthermiteshell",
+    "projectileParameters" : {
+      "power" : 8,
+      "timeToLive" : 0
+    },
+    "winddownTime" : 0.35,
+
+    "damageConfig" : {
+      "damageSourceKind" : "firebroadsword",
+      "statusEffects" : [ { "effect" : "starforge-stunned", "duration" : 0.85 } ],
+      "baseDamage" : 6,
+      "knockback" : [0, -35],
+      "timeout" : 0.2,
+      "timeoutGroup" : "alt"
+    },
+    
+    "stances" : {
+      "windup" : {
+        "duration" : 0.4,
+        "armRotation" : 70,
+        "weaponRotation" : 110,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "flip" : {
+        "duration" : 0.2,
+        "armRotation" : 70,
+        "weaponRotation" : 110,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "slam" : {
+        "duration" : 0.8,
+        "armRotation" : -50,
+        "weaponRotation" : -130,
+        "twoHanded" : true,
+
+        "minStabTime" : 0.2,
+        "allowRotate" : false,
+        "allowFlip" : true
       }
     }
   },

@@ -2,74 +2,102 @@
   "itemName": "starforge-unboundsmartpistol",
   "price": 1500,
   "maxStack": 1,
-  "rarity": "Essential",
-  "description": "A deadly pistol firing seeking rounds. Used by Vanguard units.",
-  "shortdescription": "^#686F5D;UNBD^reset; \"Assailant\" ^#69729E;VNGD SP^reset;",
-  "tooltipKind": "starforge-vanguardgun",
-  "category": "pistol",
+  "rarity": "Legendary",
+  "description": "A pistol housing a Vanguard patented smart tracking system and seeking rounds.",
+  "shortdescription": "\"Assailant\" ^#69729E;VNGD SP^reset;",
+  "tooltipKind": "starforge-uniquegun",
+  "category": "uniqueWeapon",
   "tooltipFieldsOverride" : {"subtitle":"Smart Pistol"},
   "twoHanded": false,
-  "level": 7,
-  "itemTags": [
-    "weapon",
-    "ranged",
-    "pistol"
-  ],
-  "inventoryIcon": "unboundsmartpistolicon.png",
-  "animation": "unboundsmartpistol.animation",
+  "level": 6,
+  "itemTags": [ "weapon", "ranged", "pistol" ],
+  "manufacturer" : "unboundarmaments",
+  "inventoryIcon": "unboundsmartpistol.png:idle",
+  
+  "cursor" : "/cursors/starforge-smartreticle.cursor",
 
+  "animation" : "/items/active/weapons/ranged/animations/starforge-shellanimgun.animation",
   "animationParts": {
     "butt": "",
     "middle": "unboundsmartpistol.png",
     "barrel": "",
-	"middleFullbright": "unboundsmartpistolfullbright.png",
-    "muzzleFlash": "muzzleflash.png"
+	  "middleFullbright": "unboundsmartpistolfullbright.png",
+    "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-electricmuzzleflash.png"
   },
   "animationCustom": {
-      "particleEmitters" : {
-      "muzzleFlash" : {
-        "transformationGroups" : ["muzzle"],
-		"offsetRegion" : [-1.875, 0.125, -1.875, 0.125],
+    "animatedParts" : {
+      "parts" : {
+        "middleFullbright" : {
+          "properties" : {
+            "offset" : [0.125, 0.25]
+          },
+          "partStates" : {
+            "gun" : {
+              "idle" : {
+                "properties" : {
+                  "image" : "<partImage>:idle<target>"
+                }
+              },
+              "reload" : {
+                "properties" : {
+                  "image" : "<partImage>:reload.<frame><target>"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "particleEmitters" : {
+      "casing" : {
+		    "offsetRegion" : [-0.125, 0.5, -0.125, 0.5],
         "particles" : [
           { "particle" : "starforge-unboundrifle" }
         ]
       }
     },
     "sounds": {
-      "fire": [
-        "/sfx/gun/starforge-unboundsmartpistol.ogg"
-      ]
+      "targetAcquired" : [ "/sfx/interface/sniper_mark_pitch1.ogg" ],
+      "disengage" : [ "/sfx/interface/sniper_mark_stop2.ogg"],
+      "fire": [ "/sfx/gun/starforge-unboundsmartpistol.ogg" ]
     }
   },
+  "animationScripts" : [ "/items/active/effects/starforge-enhancedentitymarker.lua" ],
   
-  "baseOffset": 
-  [0.250,0.125],
+  "baseOffset" : [0.125, 0.25],
   
-  "muzzleOffset": 
-  [1.375,0.250],
+  "muzzleOffset" : [1.125, 0.125],
   
-  "scripts": [
-    "/items/active/weapons/ranged/gun.lua"
-  ],
+  "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
+  "useTwoHandedWhileAlone" : true,    //if in one hand, and theres nothing in the other hand, twohand the weapon in the stance
   "elementalType": "electric",
+  
   "primaryAbility": {
-    "scripts": [
-      "/items/active/weapons/ranged/starforge-gunfire.lua"
-    ],
+    "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua", "/items/active/weapons/ranged/abilities/starforge-smartlockongunfire.lua" ],
     "class": "StarforgeGunFire",
+
     "fireTime": 0.4,
-    "baseDps": 6,
-    "energyUsage": 26,
-    "inaccuracy": 0.07,
+    "baseDps": 5.5,
+    "energyUsage": 35,
+    "inaccuracy": 0.05,
     "projectileCount" : 1,
-    "burstTime" : 0.08,
-    "burstCount" : 4,
-    "fireType" : "burst",
-    "projectileType": "unboundsmartbullet",
+
+    "fireType" : "auto",
+    "projectileType": "starforge-smartelectricbullet",
     "projectileParameters": {
+      "homingStartDelay" : 0.06,
+      "baseHomingControlForce" : 2,
       "knockback": 3
     },
-          "stances" : {
+
+    "targetQueryDistance" : 8,
+    "markLingerTime" : 2,
+    "entityMarker" : {
+      "markerImage" : "/items/active/weapons/ranged/abilities/markedshot/starforge-lockon.png"
+    },
+    "animatedFire" : true,
+
+    "stances" : {
       "idle" : {
         "armRotation" : 0,
         "weaponRotation" : 0,
@@ -83,8 +111,9 @@
         "armRotation" : 5,
         "weaponRotation" : 5,
         "twoHanded" : false,
+        "burstParticleEmitters": [ "casing" ],
 
-        "allowRotate" : false,
+        "allowRotate" : true,
         "allowFlip" : true
       },
       "cooldown" : {
@@ -93,7 +122,7 @@
         "weaponRotation" : 5,
         "twoHanded" : false,
 
-        "allowRotate" : false,
+        "allowRotate" : true,
         "allowFlip" : true
       }
     }

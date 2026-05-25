@@ -4,7 +4,7 @@ function update()
   localAnimator.clearDrawables()
   localAnimator.clearLightSources()
 
-  local entityMarker = animationConfig.animationParameter("entityMarker")
+  local entityMarker = animationConfig.animationParameter("entityMarker") or {}
 
   local markerImage = entityMarker.markerImage
   

@@ -15,6 +15,8 @@
   "itemTags" : [ "starforge", "weapon", "ranged", "pistol", "revolver" ],
   "twoHanded" : true,
   "learnBlueprintsOnPickup" : [ "starforge-saltshaker" ],
+  
+  "cursor" : "/cursors/starforge-revolvercursor.cursor",
 
   "animation" : "starforge-saltshaker.animation",
   "animationParts" : {
@@ -27,7 +29,7 @@
   "baseOffset" : [1.25, 0.125],
   "muzzleOffset" : [1.125, 0.5],
   
-  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+  "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
 
   "elementalType" : "physical",
 

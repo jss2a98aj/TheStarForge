@@ -18,6 +18,8 @@
   "itemTags" : ["weapon","ranged","revolver"],
   "twoHanded" : true,
   "learnBlueprintsOnPickup" : [ "starforge-hawkmoon" ],
+  
+  "cursor" : "/cursors/starforge-revolvercursor.cursor",
 
   "animation" : "starforge-hawkmoon.animation",
   "animationParts" : {
@@ -37,7 +39,7 @@
   "baseOffset" : [0.75, 0.125],
   "muzzleOffset" : [1.75, 0.875],
 
-  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+  "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
   
   "elementalType" : "physical",
 

@@ -2,65 +2,111 @@
   "itemName": "starforge-unboundsmartsniper",
   "price": 1500,
   "maxStack": 1,
-  "rarity": "Essential",
-  "description": "A deadly sniper rifle loaded with ice elemental bullets.",
-  "shortdescription": "^#686F5D;UNBD^reset; \"Invader\" ^#69729E;VNGD SSR^reset;",
-  "tooltipKind": "starforge-vanguardgun",
-  "category": "sniperRifle",
+  "rarity": "Legendary",
+  "description": "A Vanguard sniper rifle sporting their exclusive smart targeting tech and piercing rounds.",
+  "shortdescription": "\"Invader\" ^#69729E;VNGD SSR^reset;",
+  "tooltipKind": "starforge-uniquegun",
+  "category": "uniqueWeapon",
   "tooltipFieldsOverride" : {"subtitle":"Smart Sniper Rifle"},
   "twoHanded": true,
-  "level" : 7,
-  "itemTags": [
-    "weapon",
-    "ranged",
-    "sniperrifle"
-  ],
-  "inventoryIcon": "unboundsmartsnipericon.png",
-  "animation": "unboundsmartsniper.animation",
+  "level": 6,
+  "itemTags": [ "weapon", "ranged", "sniperrifle" ],
+  "manufacturer" : "unboundarmaments",
+  "inventoryIcon": "unboundsmartsniper.png:idle",
+  
+  "cursor" : "/cursors/starforge-smartreticle.cursor",
 
+  "animation" : "/items/active/weapons/ranged/animations/starforge-shellanimgun.animation",
   "animationParts": {
     "butt": "",
     "middle": "unboundsmartsniper.png",
     "barrel": "",
-	"muzzleFlash": ""
+	  "middleFullbright": "unboundsmartsniperfullbright.png",
+    "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-electricmuzzleflash.png"
   },
   "animationCustom": {
-      "particleEmitters" : {
-      "muzzleFlash" : {
-        "transformationGroups" : ["muzzle"],
-		"offsetRegion" : [-2.500, 0.375, -2.500, 0.375],
+    "animatedParts" : {
+      "stateTypes": {
+        "gun": {
+          "states": {
+            "reload": {
+              "frames" : 4,
+              "cycle" : 0.4
+            }
+          }
+        }
+      },
+      "parts" : {
+        "middleFullbright" : {
+          "properties" : {
+            "offset" : [1, 0.375]
+          },
+          "partStates" : {
+            "gun" : {
+              "idle" : {
+                "properties" : {
+                  "image" : "<partImage>:idle<target>"
+                }
+              },
+              "reload" : {
+                "properties" : {
+                  "image" : "<partImage>:reload.<frame><target>"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "particleEmitters" : {
+      "casing" : {
+		    "offsetRegion" : [0.5, 0.625, 0.5, 0.625],
         "particles" : [
           { "particle" : "starforge-unboundsniper" }
         ]
       }
     },
     "sounds": {
-      "fire": [
-        "/sfx/gun/starforge-sniper.ogg"
-      ]
+      "targetAcquired" : [ "/sfx/interface/sniper_mark_pitch1.ogg" ],
+      "disengage" : [ "/sfx/interface/sniper_mark_stop2.ogg"],
+      "fire": [ "/sfx/gun/starforge-sniper.ogg" ],
+      "fireSpike" : [ "/sfx/gun/grenade1.ogg" ]
     }
   },
+  "animationScripts" : [ "/items/active/effects/starforge-enhancedentitymarker.lua" ],
   
-  "baseOffset": [0.750, 0.250],
-  "muzzleOffset": [2.250, 0.750],
+  "baseOffset": [1, 0.375],
+  "muzzleOffset": [2.5, 0.125],
 
   "scripts": [ "/items/active/weapons/ranged/starforge-gun.lua" ],
-  "elementalType": "fire",
+  "elementalType": "electric",
 
   "primaryAbility": {
-    "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua" ],
+    "scripts": [ "/items/active/weapons/ranged/starforge-gunfire.lua", "/items/active/weapons/ranged/abilities/starforge-smartlockongunfire.lua" ],
     "class": "StarforgeGunFire",
 
-    "fireTime": 1.80,
-    "baseDps": 10.5,
+    "fireTime": 1.5,
+    "baseDps": 11,
     "energyUsage": 70,
-    "inaccuracy": 0.001,
+    "inaccuracy": 0.0,
     "projectileCount": 1,
     "fireType": "auto",
-    "projectileType": "unboundsmartsniperbullet",
+    "projectileType": "starforge-smartelectricbullet",
+
     "projectileParameters": {
+      "homingStartDelay" : 0.01,
+      "baseHomingControlForce" : 1.8,
+      "piercing" : true,
+      "speed" : 120,
       "knockback": 10
     },
+
+    "targetQueryDistance" : 3,
+    "markLingerTime" : 2,
+    "entityMarker" : {
+      "markerImage" : "/items/active/weapons/ranged/abilities/markedshot/starforge-lockon.png"
+    },
+    "animatedFire" : true,
 
     "stances": {
       "idle": {
@@ -71,35 +117,91 @@
         "allowRotate": true,
         "allowFlip": true,
 		
-		"frontArmFrame" : "run.2",
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       },
       "fire": {
         "duration": 0,
         "armRotation": 11,
         "weaponRotation": 7,
-        "weaponOffset" : [-0.1, 0],
+        "weaponOffset" : [-0.05, 0],
         "twoHanded": true,
         "allowRotate": true,
         "allowFlip": true,
-
-        "animationStates" : {
-          "firing" : "fire"
-		},
-		
-		"frontArmFrame" : "run.2",
+        "burstParticleEmitters": [ "casing" ],
+        
+        "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       },
       "cooldown": {
         "duration": 0.8,
         "armRotation": 8,
         "weaponRotation": 6,
-        "weaponOffset" : [-0.1, 0],
+        "weaponOffset" : [-0.05, 0],
         "twoHanded": true,
         "allowRotate": true,
         "allowFlip": true,
 		
-		"frontArmFrame" : "run.2",
+		    "frontArmFrame" : "run.2",
+        "backArmFrame" : "swim.4"
+      }
+    }
+  },
+
+  "altAbility" : {
+    "name" : "Tesla Longbow",
+    "scripts" : [ "/items/active/weapons/ranged/starforge-gunfire.lua", "/items/active/weapons/ranged/abilities/starforge-smartlockongunfire.lua" ],
+    "class" : "StarforgeGunFire",
+
+    "projectileType" : "starforge-unboundteslaspike",
+    "projectileParameters" : {
+      "speed" : 40,
+      "movementSettings" : {
+        "gravityMultiplier" : 0.0
+      }
+    },
+    "projectileCount" : 1,
+    "inaccuracy" : 0.01,
+    "baseDamage" : 9,
+    "energyUsage" : 65,
+    "fireTime" : 3,
+    "fireType" : "auto",
+    "useStanceDuration" : true,
+
+    //"fireOffset" : [-0.125, -0.5],
+    "fireSound" : "fireSpike",
+    "muzzleFlashState" : "off",
+
+    "muteSounds" : true,
+    "targetQueryDistance" : 3,
+    "entityMarker" : {
+      "markerImage" : "/items/active/weapons/ranged/abilities/markedshot/starforge-lockon.png"
+    },
+
+    "stances" : {
+      "fire": {
+        "duration": 0,
+        "armRotation": 11,
+        "weaponRotation": 7,
+        "weaponOffset" : [-0.05, 0],
+        "twoHanded": true,
+        "allowRotate": true,
+        "allowFlip": true,
+        "burstParticleEmitters": [ "casing" ],
+        
+        "frontArmFrame" : "run.2",
+        "backArmFrame" : "swim.4"
+      },
+      "cooldown": {
+        "duration": 0.8,
+        "armRotation": 8,
+        "weaponRotation": 6,
+        "weaponOffset" : [-0.05, 0],
+        "twoHanded": true,
+        "allowRotate": true,
+        "allowFlip": true,
+		
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       }
     }

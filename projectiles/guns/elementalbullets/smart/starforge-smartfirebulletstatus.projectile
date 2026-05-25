@@ -1,24 +1,30 @@
 {
-  "projectileName" : "unboundsmartbullet",
-  "image" : "unboundsmartbullet.png",
+  "projectileName" : "starforge-smartfirebulletstatus",
+  "image" : "starforge-smartfirebullet.png",
   "animationCycle" : 0.2,
   "frameNumber" : 1,
-  "damageKindImage" : "icon.png",
-  "lightColor" : [102, 32, 110],
+  "lightColor" : [125, 80, 5],
   "fullbright" : true,
   "pointLight" : true,
   "actionOnReap" : [
     {
       "action" : "config",
-      "file" : "/projectiles/explosions/bulletimpact/unbound/starforge-unboundriflebulletexplosion.config"
+      "file" : "/projectiles/explosions/bulletimpact/unbound/starforge-unboundfirebulletexplosion.config"
+    },
+    {
+      "inheritDamageFactor": 0.05,
+      "angleAdjust": 0,
+      "fuzzAngle": 30,
+      "type": "smallfirecloud",
+      "action": "projectile"
     }
   ],
-  "emitters" : [ "electricplasma" ],
+  "emitters" : [ "fireplasma" ],
   "power" : 10.0,
   "speed" : 100.0,
   "timeToLive" : 30.0,
   "physics" : "laser",
-  "damageKind" : "electricplasmabullet",
+  "damageKind" : "fireplasmabullet",
 
   "advancedPeriodicActions" : [
     {
@@ -33,9 +39,9 @@
         "fullbright" : false,
         "destructionAction" : "shrink",
         "size" : 1,
-        "color" : [198, 124, 238, 255],
+        "color" : [255, 162, 15, 255],
         "collidesForeground" : false,
-        "length" : 14,
+        "length" : 16,
         "position" : [1, 0],
         "timeToLive" : 0.01,
         "destructionTime" : 0.2,

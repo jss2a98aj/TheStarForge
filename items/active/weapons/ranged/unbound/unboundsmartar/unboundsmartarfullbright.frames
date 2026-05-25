@@ -1,9 +1,0 @@
-{  
-  "frameGrid" : {
-    "size" : [31, 13],
-    "dimensions" : [2, 1],
-    "names" : [
-      ["slide.1", "slide.2"]
-    ]
-  }
-}
