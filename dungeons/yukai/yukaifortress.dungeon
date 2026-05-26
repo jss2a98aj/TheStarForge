@@ -4,7 +4,7 @@
     "species" : "hylotl",
     "rules" : [
     ],
-    "anchor" : [ "yukaifortress" ],
+    "anchor" : [ "yukaifortress", "yukaifortress2" ],
     "maxRadius" : 1000000,
     "maxParts" : 1,
 	"protected" : false
