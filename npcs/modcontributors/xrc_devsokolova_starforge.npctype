@@ -39,24 +39,26 @@
           "default": [
             "Hi there! I'm a historian.",
             "Hi there! I'm an engineer.",
+            "Hi there! I'm a roboticist.",
             "Have you heard of the Starforge? It's super cool! I'm here to study it!",
             "Have you tried Betabound? It's amazing!",
             "Hi! My name is <selfname>, and your name is <entityname>^reset;!",
-            "Have you ever had hair as long as mine?",
+            "Have you ever had hair as long as mine? I'm super proud of mine!",
             "^#f00;Hi.^reset;",
-            "Hi!",
-            "Huh?",
             "Have you seen someone named ^orange;Tiy^reset; wandering around?",
             "Can you fly? I can fly; I have rocket boots!",
-            "I'm sorry if I accidentally slapped you with my hair!",
-            "Hi!\n\n\n\n\n\n",
+            "Hi!\n\n\n\n\n\n(But with padding)",
             "Matter Manipulator? Ohh, can it run ^orange;Doom^reset;?",
-            "You look tired-- no offence! You should take some time off.",
-            "I got the flower in my hair from a different universe! ...Probably!",
+            "You look tired! You should take some time off.",
             "S\ni\nd\ne\nw\na\ny\ns\n!",
             "I hope you're having a great day!",
             "Have you seen the :catlick: emoji? I love it so much!",
-            "Have you tried the cookies they sell here? They're amazing!"
+            "Have you tried the cookies they sell here? They're amazing!",
+            "Wanna see my album of cats?",
+            "Know where I can buy multiple copies of what I'm wearing? My last provider was on Earth, and Will's too busy.",
+            "Mariko used to host Taco Tuesdays, but she stopped after Elana and I brought our kinda-spicy-but-not-really lava sauce.",
+            "Wanna know how I stay so fit despite my diet of cheesecake and cookies? Exercise, hyperfocus, and a good diet behind it!",
+            "Ice cream's great during the summer, but you GOTTA try it during the winter, it's awesome!"
           ]
         }
       }
