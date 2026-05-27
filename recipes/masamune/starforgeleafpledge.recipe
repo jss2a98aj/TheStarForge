@@ -1,6 +1,6 @@
 {
   "input" : [
-    { "item" : "refinedaegisalt", "count" : 15},
+    { "item" : "refinedaegisalt", "count" : 7},
 	{ "item" : "plantfibre", "count" : 95},
 	{ "item" : "biosample", "count" : 30}
   ],

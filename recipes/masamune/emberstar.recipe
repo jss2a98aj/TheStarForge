@@ -1,0 +1,14 @@
+{
+  "input" : [
+	{ "item" : "refinedviolium", "count" : 7},
+	{ "item" : "scorchedcore", "count" : 5},
+	{ "item" : "coralfragment", "count" : 45}
+  ],
+  "output" : {
+    "item" : "starforge-emberstar",
+    "count" : 1
+  },
+  "groups" : [ "starforge-masamune", "starforge-yukaishop", "throwable" ],
+  "duration" : 0
+}
+

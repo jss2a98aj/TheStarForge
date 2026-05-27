@@ -11,6 +11,7 @@
   "tooltipFieldsOverride" : {
     "subtitle" : "Throwable"
   },
+  "fixedLevel" : false,
   "twoHanded" : false,
   "itemTags" : [ "starforge", "weapon", "ranged", "throwable" ],
   //"learnBlueprintsOnPickup" : [ "starforge-nightshard" ],
