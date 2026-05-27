@@ -13,13 +13,13 @@
       "action" : "config",
       "file" : "/projectiles/explosions/bulletimpact/unbound/starforge-unboundfirebulletexplosion.config"
     },
-	{
-	  "inheritDamageFactor": 0.05,
-	  "angleAdjust": 0,
-	  "fuzzAngle": 30,
-	  "type": "smallfirecloud",
-	  "action": "projectile"
-	}
+    {
+      "inheritDamageFactor": 0.05,
+      "angleAdjust": 0,
+      "fuzzAngle": 30,
+      "type": "smallfirecloud",
+      "action": "projectile"
+    }
   ],
   "statusEffects" : [ ],
   "lightColor" : [255, 162, 0],

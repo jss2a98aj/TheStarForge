@@ -27,6 +27,8 @@ function StarforgeFlipSlashSlam:update(dt, fireMode, shiftHeld)
         self:setState(self.slam)
       end
   end
+
+  world.debugPoint(self:slamPosition(), "red")
 end
 
 function StarforgeFlipSlashSlam:windup()

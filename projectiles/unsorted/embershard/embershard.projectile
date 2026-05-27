@@ -9,7 +9,7 @@
   "actionOnReap" : [
     {
       "action" : "loop",
-      "count" : 3,
+      "count" : 1,
       "body" : [
         {
           "action" : "option",
@@ -41,7 +41,7 @@
   "speed" : 25,
   "statusEffects" : [ "burning" ],
   "damageKind" : "firehammer",
-  "emitters" : [ "fireplasma" ],
+  "emitters" : [ "fireplasma", "rocketsmoke", "firetrail" ],
   "timeToLive" : 0.6,
 
   "renderLayer" : "Monster+50"

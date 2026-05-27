@@ -22,65 +22,114 @@
     "middle" : "starforge-emberstar.png"
   },
   "animationCustom" : {
-	"animatedParts" : {
-	  "stateTypes" : {
-		"altSwoosh" : {
-		  "default" : "idle",
-		  "states" : {
-			"idle" : {
+		"animatedParts" : {
+			"stateTypes" : {
+        "weapon" : {
+          "states" : {
+            "visible" : {
+              "properties" : {
+                "particleEmittersOn" : ["idleEmbers"]
+              }
+            },
+            "invisible" : {
+              "properties" : {
+                "particleEmittersOff" : ["idleEmbers"]
+              }
+            }
+          }
+        },
+				"swoosh" : { 
+					"default" : "idle",
+					"states" : {
+						"idle" : {
+						},
+						"flip" : {},
+						"slam" : {
+							"frames" : 3,
+							"cycle" : 0.1,
+							"mode" : "transition",
+							"transition" : "idle"
+						}
+					}
+				}
 			},
-			"fire" : {
-			  "frames" : 3,
-			  "cycle" : 0.09,
-			  "mode" : "transition",
-			  "transition" : "idle"
+			"parts" : {
+				"blade" : {
+					"properties" : {
+						"groundSlamPoint" : [3, -2]
+					}
+				},
+				"middle" : {
+					"properties" : {
+						"offset" : [-0.125, 0.25]
+					}
+				},
+				"swoosh" : {
+					"properties" : {
+						"zLevel" : -3,
+						"centered" : true,
+						"offset" : [-1.125, 1.75],
+						"transformationGroups" : ["weapon"]
+					},
+					"partStates" : {
+						"swoosh" : {
+							"flip" : {
+								"properties" : {
+									"image" : ""
+								}
+							},
+							"slam" : {
+								"properties" : {
+									"image" : "/items/active/weapons/melee/swoosh/starforge/smalldowncut/smalldowncut-fire.png:<frame>",
+                  "offset" : [-1.875, 1.125],
+                  "damageArea" : [[-3.75, 1.5], [-1.875, 2.25], [0.75, 2.25], [3, 1.25], [3.75, -0.15], [3.75, -1.675], [3, -2.375], [0, -1.875]]
+								}
+							}
+						}
+					}
+				}
 			}
-		  }
-		}
-	  },
-	  "parts" : {
-		"middle" : {
-		  "properties" : {
-			"offset" : [-0.125, 0.25]
-		  }
 		},
-		"altSwoosh" : {
-		  "properties" : {
-			"zLevel" : -3,
-			"centered" : true,
-			"offset" : [-1.125, 1.75],
-			"transformationGroups" : ["swoosh"]
-		  },
-		  "partStates" : {
-			"altSwoosh" : {
-			  "idle" : {
-				"properties" : {
-				  "image" : ""
-				}
-			  },
-			  "fire" : {
-				"properties" : {
-				  "image" : "/items/active/weapons/melee/swoosh/starforge/smalldowncut/smalldowncut-tidalfrost.png:<frame>",
-				  "damageArea" : [[-3.75, 1.5], [-1.875, 2.25], [0.75, 2.25], [3, 1.25], [3.75, -0.15], [3.75, -1.675], [3, -2.375], [0, -1.875]]
-				}
-			  }
-			}
-		  }
-		}
-	  }
-	},
-	"particleEmitters" : {
-	  "altSwoosh" : {
-		"active" : false,
-		"emissionRate" : 5,
-		"transformationGroups" : ["swoosh"],
-		"offsetRegion" : [0.0, 0.0, 0.0, 0.0],
-		"particles" : []
-	  }
-	},
-	"sounds" : {
-	  "altFire" : [ "/sfx/melee/swing_hammer.ogg" ],
-      "throw" : [ "/sfx/projectiles/throw_item.ogg" ]
+    "particleEmitters" : {
+      "idleEmbers" : {
+        "active" : true,
+        "transformationGroups" : [ "weapon" ],
+        "offsetRegion" : [0.255, 0.5, 0.5, 1.375],
+        "emissionRate" : 7,
+        "particles" : [
+					{ 
+            "particle" : {
+              "type" : "animated",
+              "animation" : "/animations/ember1/ember1.animation",
+              "approach" : [0, 0],
+              "initialVelocity" : [-1, 0.5],
+              "destructionAction" : "shrink",
+              "fullbright" : true,
+              "destructionTime" : 0.85,
+              "timeToLive" : 0.3,
+              "variance" : {
+                "timeToLive" : 0.15,
+                "size" : 0.2,
+                "rotation" : 180
+              }
+            } 
+          }
+        ]
+      },
+      "flipParticles" : {
+        "active" : false,
+        "transformationGroups" : ["weapon"],
+        "offsetRegion" : [0.5, 0.5, 0.5, 1],
+        "emissionRate" : 1,
+        "particles" : [
+        ]
+      }
+    },
+		"sounds" : {
+      "throw" : [ "/sfx/projectiles/throw_item.ogg" ],
+	  
+      "flipSlash" : [ "/sfx/tech/tech_dash.ogg" ],
+      "slamFall" : [ "/sfx/npc/monsters/crabcano_windup3.ogg" ]
     }
   },
 
@@ -90,45 +139,79 @@
 
   "primaryAbilityType" : "starforge-throwprojectile",
   "primaryAbility" : {
-    "baseDps" : 7.5,
-    "fireTime" : 0.55,
-    "stanceSpeedFactor" : 1.3,
+    "baseDps" : 5.5,
+    "fireTime" : 0.8,
+    "stanceSpeedFactor" : 1.4,
 	
-	"projectileFacesDirection" : true, //when facing left, flip to make the blade always face away
+		"projectileFacesDirection" : true, //when facing left, flip to make the blade always face away
 	
     "projectileCount" : 1,
     "projectileType" : "starforge-emberstarhammer",
     "projectileParameters" : {
-    }
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : -45,
+        "weaponRotation" : -20
+      }
+		}
   },
   
+  "altAbilityType" : "flipslash",
   "altAbility" : {
-	"name" : "Hammer Strike",
-	"scripts" : ["/items/active/weapons/melee/abilities/starforge-meleeslash.lua"],
-	"class" : "StarforgeMeleeSlash",
-	
-	"fireTime" : 1.2,
-	"baseDps" : 9.5,
-	"damageConfig" : {
-	  "damageSourceKind" : "axe",
-	  "statusEffects" : [ ],
-	  "knockbackMode" : "aim",
-	  "knockback" : 30,
-	  "timeoutGroup" : "primary"
-	},
+    "name" : "Hammer Strike",
+    "scripts" : ["/items/active/weapons/melee/abilities/broadsword/flipslash/starforge-flipslashslam.lua"],
+    "class" : "StarforgeFlipSlashSlam",
 
-	"stances" : {
-	  "windup" : {
-		"duration" : 0.25,
+    "cooldownTime" : 2,
+    "energyUsage" : 200.0,
+    "rotations" : 0,
+    "rotationTime" : 0.3,
+
+    "jumpVelocity" : [5, 35],
+    "jumpDuration" : 0.2,
+    
+    "slamDelay" : 0.2,
+    "slamVelocity" : [0, -35],
+    "slamAimVec" : [1, 1],
+    "bounceVelocity" : 25,
+    "projectileType" : "starforge-emberstarhammer",
+    "projectileParameters" : {
+      "power" : 8,
+      "timeToLive" : 0
+    },
+    "winddownTime" : 0.35,
+
+    "damageConfig" : {
+      "damageSourceKind" : "firehammer",
+      "baseDamage" : 2,
+      "knockback" : [0, -35],
+      "timeout" : 0.2,
+      "timeoutGroup" : "alt"
+    },
+    
+    "stances" : {
+      "windup" : {
+        "duration" : 0.4,
 		"armRotation" : 55,
 		"weaponRotation" : 3,
 		"weaponOffset" : [-0.1, 0],
 		"twoHanded" : false,
 
-		"allowRotate" : true,
+		"allowRotate" : false,
 		"allowFlip" : false
-	  },
-	  "fire" : {
+      },
+      "flip" : {
+        "duration" : 0.2,
+		"armRotation" : 55,
+		"weaponRotation" : 3,
+		"weaponOffset" : [-0.1, 0],
+		"twoHanded" : false,
+
+		"allowRotate" : false,
+		"allowFlip" : false
+      },
+      "slam" : {
 		"duration" : 0.4,
 		"armRotation" : -50,
 		"weaponRotation" : -55,
@@ -138,18 +221,8 @@
 
 		"allowRotate" : false,
 		"allowFlip" : false
-	  },
-	  "transitionState" : {
-		"duration" : 0.2,
-		"armRotation" : -50,
-		"weaponRotation" : -55,
-		"weaponOffset" : [0.375, 0],
-		"twoHanded" : false,
-
-		"allowRotate" : false,
-		"allowFlip" : false
-	  }
-	}
+      }
+    }
   },
 
   "builder" : "/items/buildscripts/starforge-builduniqueweapon.lua"

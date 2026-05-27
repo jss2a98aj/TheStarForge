@@ -10,7 +10,7 @@
   "tooltipFieldsOverride" : {
     "subtitle" : "Throwable"
   },
-  "twoHanded" : true,
+  "twoHanded" : false,
   "fixedLevel" : false,
   "itemTags" : [ "starforge", "weapon", "ranged", "throwable" ],
   "learnBlueprintsOnPickup" : [ "starforge-leafpledge"],
@@ -47,27 +47,6 @@
       [0.14, 0]
     ],
     "projectileType" : "starforge-leafpledgeleaf",
-    "projectileParameters" : {}
-  },
-  
-  "altAbilityType" : "starforge-throwprojectile",
-  "altAbility" : {
-    "name" : "Age of Grass",
-    "baseDps" : 5,
-    "fireTime" : 1,
-	
-	  "hideItemWhileIdle" : true,
-
-    "energyUsage" : 21,
-	
-    "projectileTimesAndAngles" : [
-      [0.1, 17],
-      [0.1, 8],
-      [0.1, -0],
-      [0.1, -8],
-      [0.1, -17]
-    ],
-    "projectileType" : "starforge-leafpledgeleafspinning",
     "projectileParameters" : {}
   },
 
