@@ -1,0 +1,17 @@
+{
+  "name" : "starforge-targetpaint",
+  "effectConfig" : {
+  	"damageAdditionPercentage" : 0.1,
+	  "directive" : "fade=FF0000=0.15"
+  },
+  "defaultDuration" : 12,
+
+  "scripts" : [
+    "starforge-targetpaint.lua"
+  ],
+
+  "animationConfig" : "starforge-targetpaint.animation",
+
+  "label" : "Marked",
+  "icon" : "/interface/statuses/marked.png"
+}

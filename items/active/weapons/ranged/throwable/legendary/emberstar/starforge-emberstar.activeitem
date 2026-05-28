@@ -4,7 +4,7 @@
   "price" : 1000,
   "maxStack" : 1,
   "rarity" : "Legendary",
-  "description" : "The crushing might of a thousand waves.",
+  "description" : "Harvested from the seas, imbued with the crushing might of a thousand waves.",
   "shortdescription" : "Emberstar",
   "tooltipKind" : "starforge-uniquegun",
   "tooltipFieldsOverride" : {
@@ -193,34 +193,34 @@
     "stances" : {
       "windup" : {
         "duration" : 0.4,
-		"armRotation" : 55,
-		"weaponRotation" : 3,
-		"weaponOffset" : [-0.1, 0],
-		"twoHanded" : false,
+        "armRotation" : 55,
+        "weaponRotation" : 3,
+        "weaponOffset" : [-0.1, 0],
+        "twoHanded" : false,
 
-		"allowRotate" : false,
-		"allowFlip" : false
+        "allowRotate" : false,
+        "allowFlip" : false
       },
       "flip" : {
         "duration" : 0.2,
-		"armRotation" : 55,
-		"weaponRotation" : 3,
-		"weaponOffset" : [-0.1, 0],
-		"twoHanded" : false,
+        "armRotation" : 55,
+        "weaponRotation" : 3,
+        "weaponOffset" : [-0.1, 0],
+        "twoHanded" : false,
 
-		"allowRotate" : false,
-		"allowFlip" : false
+        "allowRotate" : false,
+        "allowFlip" : false
       },
       "slam" : {
-		"duration" : 0.4,
-		"armRotation" : -50,
-		"weaponRotation" : -55,
+        "duration" : 0.4,
+        "armRotation" : -50,
+        "weaponRotation" : -55,
 
-		"weaponOffset" : [0.375, 0],
-		"twoHanded" : false,
+        "weaponOffset" : [0.375, 0],
+        "twoHanded" : false,
 
-		"allowRotate" : false,
-		"allowFlip" : false
+        "allowRotate" : false,
+        "allowFlip" : false
       }
     }
   },

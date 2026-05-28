@@ -10,11 +10,11 @@ function StarforgeThrowProjectile:init()
   
   activeItem.setHoldingItem(not self.hideItemWhileIdle)
 
-  self.cooldownTimer = 0
+  self.cooldownTimer = self.fireTime
   
   self.weapon.onLeaveAbility = function()
     self.weapon:setStance(self.stances.idle)
-	animator.setAnimationState("weapon", "visible")
+	  animator.setAnimationState("weapon", "visible")
   
     activeItem.setHoldingItem(not self.hideItemWhileIdle)
   end

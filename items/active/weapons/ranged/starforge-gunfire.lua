@@ -276,7 +276,7 @@ function StarforgeGunFire:knockbackFire()
   mcontroller.addMomentum(momentum)
 end
 
-function StarforgeGunFire:fireProjectile(projectileType, params, burstNumber)
+function StarforgeGunFire:fireProjectile(projectileType, params, burstNumber, position)
   local params = sb.jsonMerge(self.projectileParameters, params or {})
   params.power = self:damagePerShot()
   params.powerMultiplier = activeItem.ownerPowerMultiplier()
@@ -313,7 +313,7 @@ function StarforgeGunFire:fireProjectile(projectileType, params, burstNumber)
 
     projectileId = world.spawnProjectile(
         projectileType,
-        self:firePosition(),
+        position or self:firePosition(),
         activeItem.ownerEntityId(),
         self:aimVector(inaccuracy or self.inaccuracy, shotNumber, burstNumber),
         self.trackSourceEntity or false,

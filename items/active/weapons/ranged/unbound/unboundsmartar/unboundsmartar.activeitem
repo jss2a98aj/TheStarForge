@@ -162,13 +162,14 @@
 
     "projectileParameters": {
       "homingStartDelay" : 0.01,
-      "baseHomingControlForce" : 1,
+      "baseHomingControlForce" : 2,
       "knockback": 1
     },
 
     "targetQueryDistance" : 6,
     "markLingerTime" : 2,
     "entityMarker" : {
+      "fullbright" : true,
       "markerImage" : "/items/active/weapons/ranged/abilities/markedshot/starforge-lockon.png"
     },
     "animatedFire" : true,

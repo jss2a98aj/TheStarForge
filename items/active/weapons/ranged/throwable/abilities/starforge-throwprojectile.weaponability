@@ -17,7 +17,7 @@
     "projectileTimesAndAngles" : [
       [0.1, 0]
     ],
-    "projectileType" : "gp_fraggrenade",
+    "projectileType" : "standardbullet",
     "projectileParameters" : {
       "knockback" : 4
     },

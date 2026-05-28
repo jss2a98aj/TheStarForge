@@ -33,8 +33,8 @@
 
   "primaryAbilityType" : "starforge-throwprojectile",
   "primaryAbility" : {
-    "baseDps" : 9.5,
-    "fireTime" : 0.3,
+    "baseDps" : 3.5,
+    "fireTime" : 0.6,
 
     "stanceSpeedFactor" : 1.2,
 	

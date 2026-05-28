@@ -2,6 +2,7 @@ function init()
   self.fadeOut = config.getParameter("fadeOut", false)
   self.deathEffects = config.getParameter("deathEffects", {})
   self.baseEffectDuration = effect.duration()
+  status.addEphemeralEffect("invulnerable", effect.duration() - 0.1)
 end
 
 function update(dt)

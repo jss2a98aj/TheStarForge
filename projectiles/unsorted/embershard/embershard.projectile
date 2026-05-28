@@ -41,7 +41,7 @@
   "speed" : 25,
   "statusEffects" : [ "burning" ],
   "damageKind" : "firehammer",
-  "emitters" : [ "fireplasma", "rocketsmoke", "firetrail" ],
+  "emitters" : [ "firetrail" ],
   "timeToLive" : 0.6,
 
   "renderLayer" : "Monster+50"

@@ -64,6 +64,14 @@
         "particles" : [
           { "particle" : "starforge-unboundsniper" }
         ]
+      },
+      "muzzleFlash" : {
+		    "offsetRegion" : [-2, 0.0, 0, 0.0],
+        "burstCount" : 3,
+        "particles" : [
+          { "particle" : "rocketbarrelpuff" },
+          { "particle" : "rocketbarrelpuff" }
+        ]
       }
     },
     "sounds": {
@@ -95,7 +103,7 @@
 
     "projectileParameters": {
       "homingStartDelay" : 0.01,
-      "baseHomingControlForce" : 1.8,
+      "baseHomingControlForce" : 3,
       "piercing" : true,
       "speed" : 120,
       "knockback": 10
@@ -104,6 +112,8 @@
     "targetQueryDistance" : 3,
     "markLingerTime" : 2,
     "entityMarker" : {
+      "useMouthPosition" : true,
+      "fullbright" : true,
       "markerImage" : "/items/active/weapons/ranged/abilities/markedshot/starforge-lockon.png"
     },
     "animatedFire" : true,
@@ -150,8 +160,8 @@
 
   "altAbility" : {
     "name" : "Tesla Longbow",
-    "scripts" : [ "/items/active/weapons/ranged/starforge-gunfire.lua", "/items/active/weapons/ranged/abilities/starforge-smartlockongunfire.lua" ],
-    "class" : "StarforgeGunFire",
+    "scripts" : [ "/items/active/weapons/ranged/abilities/starforge-altfire.lua" ],
+    "class" : "StarforgeAltFire",
 
     "projectileType" : "starforge-unboundteslaspike",
     "projectileParameters" : {
@@ -171,12 +181,6 @@
     //"fireOffset" : [-0.125, -0.5],
     "fireSound" : "fireSpike",
     "muzzleFlashState" : "off",
-
-    "muteSounds" : true,
-    "targetQueryDistance" : 3,
-    "entityMarker" : {
-      "markerImage" : "/items/active/weapons/ranged/abilities/markedshot/starforge-lockon.png"
-    },
 
     "stances" : {
       "fire": {

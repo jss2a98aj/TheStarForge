@@ -86,13 +86,14 @@
     "projectileType": "starforge-smartelectricbullet",
     "projectileParameters": {
       "homingStartDelay" : 0.06,
-      "baseHomingControlForce" : 2,
+      "baseHomingControlForce" : 3.5,
       "knockback": 3
     },
 
     "targetQueryDistance" : 8,
     "markLingerTime" : 2,
     "entityMarker" : {
+      "fullbright" : true,
       "markerImage" : "/items/active/weapons/ranged/abilities/markedshot/starforge-lockon.png"
     },
     "animatedFire" : true,

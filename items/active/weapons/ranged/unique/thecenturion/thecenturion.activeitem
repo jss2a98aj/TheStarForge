@@ -163,7 +163,7 @@
         "backArmFrame": "fall.1"
       },
       "cooldown": {
-        "duration": 0.35,
+        "duration": 0.5,
         "armRotation": 5,
         "weaponRotation": 2,
         "weaponOffset": [0, 0],
@@ -172,7 +172,7 @@
         "allowFlip": true,
 
         "controlModifiers" : {
-          "runningSuppressed" : false
+          "runningSuppressed" : true
         },
         
         "frontArmFrame": "idle.3",

@@ -59,10 +59,12 @@
     "sounds": {
       "targetAcquired" : [ "/sfx/interface/sniper_mark_pitch1.ogg" ],
       "disengage" : [ "/sfx/interface/sniper_mark_stop2.ogg"],
-      "fire" : ["/sfx/gun/tank_shot.ogg"]
+      "fire" : ["/sfx/gun/tank_shot.ogg"],
+      
+      "ping" : ["/sfx/tools/area_scan1.ogg"]
     }
   },
-  "animationScripts" : [ "/items/active/effects/starforge-enhancedentitymarker.lua" ],
+  "animationScripts" : [ "/items/active/effects/detector.lua", "/items/active/effects/starforge-enhancedentitymarker.lua" ],
   
   "baseOffset" : [0.5, 0.25],
   "muzzleOffset" : [2.25, 0.375],
@@ -86,7 +88,7 @@
     "projectileType": "starforge-smarticebulletstatus",
     "projectileParameters": {
       "homingStartDelay" : 0.1,
-      "baseHomingControlForce" : 1,
+      "baseHomingControlForce" : 2,
       "speed" : [85, 95],
       "knockback": 2
     },
@@ -94,6 +96,7 @@
     "targetQueryDistance" : 5,
     "markLingerTime" : 2,
     "entityMarker" : {
+      "fullbright" : true,
       "markerImage" : "/items/active/weapons/ranged/abilities/markedshot/starforge-lockon.png"
     },
     "animatedFire" : true,
@@ -119,6 +122,73 @@
         "allowRotate": true,
         "allowFlip": true,
         "burstParticleEmitters": [ "casing" ],
+		
+		    "frontArmFrame" : "run.2",
+        "backArmFrame" : "swim.4"
+      },
+      "cooldown": {
+        "duration": 0.8,
+        "armRotation": 8,
+        "weaponRotation": 6,
+        "weaponOffset" : [-0.1, 0],
+        "twoHanded": true,
+        "allowRotate": true,
+        "allowFlip": true,
+		
+		    "frontArmFrame" : "run.2",
+        "backArmFrame" : "swim.4"
+      }
+    }
+  },
+
+  "altAbility" : {
+    "name" : "Sonar Dart",
+    "scripts" : [ "/items/active/weapons/ranged/abilities/starforge-sonardart.lua" ],
+    "class" : "StarforgeSonarDart",
+
+    "fireTime" : 1.8,
+    "energyUsage" : 50,
+    "inaccuracy" : 0.01,
+
+    "projectileType": "starforge-wavecrashershock",
+    "projectileParameters": {
+      "actionOnReap" : [
+        {
+          "action" : "config",
+          "file" : "/projectiles/explosions/bulletimpact/unbound/starforge-unboundfirebulletexplosion.config"
+        }
+      ],
+
+      "messageRadius" : 23,
+      "messageToSend" : "applyStatusEffect",
+      "messageArgs" : "starforge-targetpaint"
+    },
+
+    "pingDetectConfig" : {
+      "type" : "cave",
+      "image" : "/items/active/unsorted/oredetector/detectnoise.png:<variant>",
+      "variants" : 4,
+      "colors" : {
+        "empty" : [253, 209, 77, 255],
+        "solid" : [253, 143, 77, 125]
+      }
+    },
+
+    "pingCenterRange" : 50,
+    "pingRange" : 25,
+    "pingBandWidth" : 25,
+    "pingDuration" : 2,
+    "pingCooldown" : 2.0,
+
+    "stances": {
+      "fire": {
+        "duration": 0,
+        "armRotation": 8,
+        "weaponRotation": 6,
+        "weaponOffset" : [-0.1, 0],
+        "twoHanded": true,
+        "allowRotate": true,
+        "allowFlip": true,
 		
 		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
