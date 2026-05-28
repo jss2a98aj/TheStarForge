@@ -2,7 +2,7 @@
   "input" : [
 	{ "item" : "refinedviolium", "count" : 7},
 	{ "item" : "scorchedcore", "count" : 5},
-	{ "item" : "coralfragment", "count" : 45}
+	{ "item" : "coralfragment", "count" : 16}
   ],
   "output" : {
     "item" : "starforge-emberstar",

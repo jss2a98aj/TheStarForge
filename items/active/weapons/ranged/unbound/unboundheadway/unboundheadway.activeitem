@@ -137,7 +137,7 @@
     "newAbility" : {
       "projectileCount" : 1,
 
-      "projectileType" : "starforge-unboundelecgrenade",
+      "projectileType" : "starforge-unboundheadwaygrenade",
       "projectileParameters" : {
 	      "speed" : 40,
         "knockback": 0

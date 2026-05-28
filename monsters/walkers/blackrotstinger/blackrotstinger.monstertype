@@ -30,14 +30,14 @@
       "hostileActions" : [
         {
           "name" : "action-leap",
-          "cooldown" : 0.0,
+          "cooldown" : 1.0,
           "parameters" : {
             "minimumRange" : 0,
             "maximumRange" : 20,
             "windupState" : "attack",
             "windupTime" : 0.3,
 
-            "leapVelocity" : 40,
+            "leapVelocity" : 25,
             "collisionCheck" : true,
             "highArc" : false,
             "leapState" : "attack",
@@ -149,7 +149,7 @@
           "baseValue" : 2.0
         },
         "powerMultiplier" : {
-          "baseValue" : 2.8
+          "baseValue" : 2.4
         },
         "physicalResistance" : {
           "baseValue" : 0.4
@@ -189,6 +189,9 @@
           "baseValue" : 0.80
         },
         "starforge-witherStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "starforge-witherWeatherStatusImmunity" : {
           "baseValue" : 1.0
         }
       },

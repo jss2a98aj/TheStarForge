@@ -60,6 +60,22 @@
       "monsterParameters" : {
         "aggressive" : true
       }
+    },
+	
+	{
+	  "name" : "starforge-blackrotstinger",
+	  "spawnParameters" : {
+		"area" : "surface",
+		"region" : "exposed",
+		"time" : "day"
+	  },
+	  
+	  "groupSize" : [1, 1],
+	  "spawnChance" : 0.03,
+      "monsterType" : "starforge-blackrotstinger",
+      "monsterParameters" : {
+        "aggressive" : true
+      }
     }
   
   ]

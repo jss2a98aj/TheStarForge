@@ -3,7 +3,7 @@
   "price": 1000,
   "maxStack": 1,
   "rarity": "Uncommon",
-  "description": "An service pistol, favoured for its versatility and shocking rounds.",
+  "description": "A service pistol, favoured for its versatility and shocking rounds.",
   "shortdescription": "\"Fang\" P",
   "tooltipKind": "starforge-uniquegun",
   "category": "uniqueWeapon",
