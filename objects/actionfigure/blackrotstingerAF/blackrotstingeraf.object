@@ -1,0 +1,33 @@
+{
+  "objectName" : "starforge-blackrotstingeraf",
+  "colonyTags" : ["pretty"],
+  "rarity" : "Legendary",
+  "category" : "actionFigure",
+  "price" : 5000,
+  "printable" : false,
+  "description" : "The label reads, \"The reanimated corpse of a giant insect. It has a very potent venom.\"",
+  "shortdescription" : "Blackrot Stinger Figurine",
+  "collectablesOnPickup" : { "actionfigures" : "starforge-blackrotstingeraf" },
+
+
+  "inventoryIcon" : "blackrotstingeraf.png",
+  "orientations" : [
+    {
+      "image" : "blackrotstingeraf.png:<color>",
+      "imagePosition" : [-2, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaces" : [ [0, 0], [0, 1] ],  
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "blackrotstingeraf.png:<color>",
+      "imagePosition" : [-2, 0],
+      "direction" : "right",
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

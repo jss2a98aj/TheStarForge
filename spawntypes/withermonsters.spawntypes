@@ -55,7 +55,7 @@
 	  },
 	  
 	  "groupSize" : [2, 4],
-	  "spawnChance" : 0.01,
+	  "spawnChance" : 0.008,
       "monsterType" : "starforge-blackrotfly",
       "monsterParameters" : {
         "aggressive" : true
@@ -67,11 +67,11 @@
 	  "spawnParameters" : {
 		"area" : "surface",
 		"region" : "exposed",
-		"time" : "day"
+		"time" : "all"
 	  },
 	  
 	  "groupSize" : [1, 1],
-	  "spawnChance" : 0.03,
+	  "spawnChance" : 0.04,
       "monsterType" : "starforge-blackrotstinger",
       "monsterParameters" : {
         "aggressive" : true
