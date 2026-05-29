@@ -280,11 +280,6 @@ function StarforgeGunFire:fireProjectile(projectileType, params, burstNumber, po
   local params = sb.jsonMerge(self.projectileParameters, params or {})
   params.power = self:damagePerShot()
   params.powerMultiplier = activeItem.ownerPowerMultiplier()
-
-  local projectileType = projectileType or self.projectileType
-  if type(projectileType) == "table" then
-    projectileType = projectileType[math.random(#projectileType)]
-  end
   
   local shotNumber = 0
 
@@ -302,6 +297,11 @@ function StarforgeGunFire:fireProjectile(projectileType, params, burstNumber, po
   local baseTTL = params.timeToLive
   local projectileId = 0
   for i = 1, (projectileCount or self.projectileCount) do
+      
+    local projectileType = projectileType or self.projectileType
+    if type(projectileType) == "table" then
+      projectileType = projectileType[math.random(#projectileType)]
+    end
     if baseTTL then
       params.timeToLive = util.randomInRange(baseTTL)
     end

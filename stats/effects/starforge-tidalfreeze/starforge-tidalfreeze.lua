@@ -118,6 +118,12 @@ end
 function shatter(index)
   if index and self.frost[index] then
     if world.entityExists(self.frost[index]) then
+      status.applySelfDamageRequest({
+        damageType = "IgnoresDef",
+        damage = self.shatterDamage * 0.5,
+        damageSourceKind = "starforge-tidalfrost",
+        sourceEntityId = entity.id()
+      })
       world.callScriptedEntity(self.frost[index], "blossom")
     end
   else
@@ -136,7 +142,13 @@ end
 function uninit()
   status.clearPersistentEffects("frostSlow")
   for _, frostId in ipairs(self.frost) do
-    if world.entityExists(frostId) then
+    if world.entityExists(frostId) then      
+      status.applySelfDamageRequest({
+        damageType = "IgnoresDef",
+        damage = self.shatterDamage,
+        damageSourceKind = "starforge-tidalfrost",
+        sourceEntityId = entity.id()
+      })
       world.callScriptedEntity(frostId, "kill")
     end
   end
