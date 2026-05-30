@@ -41,7 +41,7 @@
 	 {
       "drawables" : [
         {
-          "image" : "/cinematics/sashajoins/shashabackground.png"
+          "image" : "/cinematics/sirinjoins/sirinbackground.png"
         }
       ],
       "keyframes" : [
@@ -74,7 +74,7 @@
     {
       "drawables" : [
         {
-          "image" : "/cinematics/sashajoins/sashashadow.png"
+          "image" : "/cinematics/sirinjoins/sirinshadow.png"
         }
       ],
       "keyframes" : [
@@ -94,63 +94,63 @@
           "timecode" : 0.6,
           "zoom" : 1,
           "alpha" : 1,
-          "position" : [479, 245]
+          "position" : [479, 225]
         },
         {
           "timecode" : 6.0,
           "zoom" : 1,
           "alpha" : 1,
-          "position" : [479, 245]
+          "position" : [479, 225]
         },
         {
           "timecode" : 8.65,
           "zoom" : 1,
           "alpha" : 0,
-          "position" : [479, 245]
+          "position" : [479, 225]
         }
       ]
     },
     {
       "drawables" : [
         {
-          "image" : "/cinematics/sashajoins/sasha.png:<frame>"
+          "image" : "/cinematics/sirinjoins/sirin.png:<frame>"
         }
       ],
-      "animationFrames" : 18,
+      "animationFrames" : 1,
       "keyframes" : [
         {
           "timecode" : 0.6,
           "zoom" : 2,
           "alpha" : 0,
-          "position" : [479, 280],
+          "position" : [479, 295],
           "frame" : 0
         },
         {
           "timecode" : 1.1,
           "zoom" : 2,
           "alpha" : 1,
-          "position" : [479, 280]
+          "position" : [479, 295]
         },
         {
           "timecode" : 6.0,
           "zoom" : 2,
           "alpha" : 1,
-          "position" : [479, 280]
+          "position" : [479, 295]
         },
         {
           "timecode" : 8.65,
           "zoom" : 2,
           "alpha" : 0,
-          "position" : [479, 280],
+          "position" : [479, 295],
 		  "frame" : 18
         }
       ]
     },
     {
-      "text" : "NEW ALLY RECRUITED",
+      "text" : "NEW ALLIES RECRUITED",
       "fontSize" : 24,
       "textPosition" : {
-        "position" : [-120, 160],
+        "position" : [-127, 200],
         "hAnchor" : "mid",
         "vAnchor" : "mid",
         "wrapWidth" : 400
@@ -184,10 +184,10 @@
     },
 	
 	{
-      "text" : "SASHA BENIKO",
+      "text" : "SIRIN & NADIR",
       "fontSize" : 24,
       "textPosition" : {
-        "position" : [-80, 35],
+        "position" : [-85, 20],
         "hAnchor" : "mid",
         "vAnchor" : "mid",
         "wrapWidth" : 400
@@ -220,10 +220,10 @@
       ]
     },
 	{
-      "text" : "^cornflowerblue;Mission replay & new crafting stations available",
+      "text" : "^cornflowerblue;New crafting station available",
       "fontSize" : 11,
       "textPosition" : {
-        "position" : [-135, 10],
+        "position" : [-83, -5],
         "hAnchor" : "mid",
         "vAnchor" : "mid",
         "wrapWidth" : 400
