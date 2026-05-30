@@ -1,18 +1,11 @@
 { "backgroundcolor":"#000000",
  "compressionlevel":-1,
- "editorsettings":
-    {
-     "export":
-        {
-         "target":"."
-        }
-    },
  "height":60,
  "infinite":false,
  "layers":[
         {
          "compression":"zlib",
-         "data":"eJztmcENwjAMRTNLh2AnmKEHjizATL0xEz1gKYoacJpvJyT\/S0+gUkt+cigo2UK4b4QQQgghhBAoofPM4JjLLJ5pZnKVzOQqoe+4rhL6jp2ZXCX0HTtWvtflHNaxnu9t0eEVzrcuZz29vC3Xs3Yte65pK99SVy9nhC9qDXus7Vpfa1e0M\/9vnM9lZ915fl4vhaS1FkHPN+75kSFkrse1VvHwlRx5x9dH8I2TOqafefqinGt6tva12N+gr0+tJhZ7lLmevz2rf9Uigt5\/Lv2t1YIK+oxhNQIR1BmS1UyRs0aeE8oMct9NDavyfemsSz1z7q\/OQDsKrb1KmMm11rl13\/S1c\/0nZ+kT+czq2R3t2bOzpWtv3l6urZ29PWuctXVH97X0LPXX3t+6\/xrn1n2Q+XgDgruuHA==",
+         "data":"eJztmUEKg0AMRT2Vp3PRZS\/QM7nzTHXRgIQOJPgzMyb\/w6NiDeQRsNOZfVleOyGEEEIIIQTKMnkqOLZSxVOnkqukkquEvnldJfTNnUquEvrmDn1zh765Q9\/coW\/uIH3Xk+3k8\/tcnejaiKDne+357eRaG5UevhLtp+9n8L1GO+rvnu7bs9Ya9H\/gmX0j9jfo26fWkog9ylbPrd8gSy0i6P1n79rCCiroM4YtCERQZ0hRM0XOGnlOKDPwrhv1GtJy7Z2117PlfkwG2lEY7eWhkutd59F90zfO9UnO0ifynTWzO9pzZudI19m8e7mOdu7tecfZWvfvuZGeXn\/r86P7v+M8ug9Sjy8i02nu",
          "encoding":"base64",
          "height":60,
          "id":1,
@@ -26,7 +19,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJzt0sENwjAMhWFzYo8OwU4wAwOwQ3fqTFCJShEHVKfEziP\/Jz21B6r44ZgBAAAAAAAAAKDjOvmi7jb5osy7W+Ud13ZV7ey9x8r3+mhXhc5H76\/a\/R6t72puFAAAAPyv88nsYjFZz8q0nX9\/5fHOnvfP7P2+PDPC0mFG6trqf8iePbpz9tz0bddVqbMVz1\/K7tVqp99kd4vsWsruGdl1M0rPUu2sNb\/rkXcnPe2ulvLs0PYEeIrGFA==",
+         "data":"eJzt1ksKwjAQgOFx5T16CE+n0mVP55l8QCGrmoTMI9P\/g6GbSvIbAhUBAAAAAAAAgFweS9tk8FzqJoPa1gzNra2zNbfe1Qx3uvdMZzzr0a2Rm7VaIzZr3dvI9\/gmsmqOdx8AAAAwwvXy+3Y2me9anvb175\/Z\/szRO7W\/L9e08Ao4Z2rV+h+8927d7L1vevVaZ2qW4jmSd5fWmR7xbrNsLXl3WrbuztJZ6t1rz3sRtZ5JpLPrNfPeMbc3DSLlAA==",
          "encoding":"base64",
          "height":60,
          "id":2,
@@ -174,7 +167,7 @@
                  "visible":true,
                  "width":48,
                  "x":200,
-                 "y":288
+                 "y":280
                 }, 
                 {
                  "gid":3120,
@@ -186,7 +179,7 @@
                  "visible":true,
                  "width":24,
                  "x":272,
-                 "y":320
+                 "y":312
                 }, 
                 {
                  "gid":3120,
@@ -198,7 +191,7 @@
                  "visible":true,
                  "width":24,
                  "x":152,
-                 "y":320
+                 "y":312
                 }, 
                 {
                  "gid":6202,
@@ -234,7 +227,7 @@
                  "visible":true,
                  "width":16,
                  "x":152,
-                 "y":288
+                 "y":280
                 }, 
                 {
                  "gid":2147490102,
@@ -246,7 +239,7 @@
                  "visible":true,
                  "width":16,
                  "x":280,
-                 "y":288
+                 "y":280
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -276,17 +269,16 @@
                  "height":8,
                  "id":751,
                  "name":"",
-                 "properties":[
-                        {
-                         "name":"npc",
-                         "type":"string",
-                         "value":"hylotl"
-                        }, 
-                        {
-                         "name":"typeName",
-                         "type":"string",
-                         "value":"starforge-yukaislicer"
-                        }],
+                 "properties":
+                    {
+                     "npc":"hylotl",
+                     "typeName":"starforge-yukaislicer"
+                    },
+                 "propertytypes":
+                    {
+                     "npc":"string",
+                     "typeName":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -298,17 +290,16 @@
                  "height":8,
                  "id":874,
                  "name":"",
-                 "properties":[
-                        {
-                         "name":"npc",
-                         "type":"string",
-                         "value":"hylotl"
-                        }, 
-                        {
-                         "name":"typeName",
-                         "type":"string",
-                         "value":"starforge-yukaislicer"
-                        }],
+                 "properties":
+                    {
+                     "npc":"hylotl",
+                     "typeName":"starforge-yukaislicer"
+                    },
+                 "propertytypes":
+                    {
+                     "npc":"string",
+                     "typeName":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -320,12 +311,14 @@
                  "height":8,
                  "id":936,
                  "name":"",
-                 "properties":[
-                        {
-                         "name":"monster",
-                         "type":"string",
-                         "value":"ravencritter"
-                        }],
+                 "properties":
+                    {
+                     "monster":"ravencritter"
+                    },
+                 "propertytypes":
+                    {
+                     "monster":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -337,12 +330,14 @@
                  "height":8,
                  "id":937,
                  "name":"",
-                 "properties":[
-                        {
-                         "name":"monster",
-                         "type":"string",
-                         "value":"ravencritter"
-                        }],
+                 "properties":
+                    {
+                     "monster":"ravencritter"
+                    },
+                 "propertytypes":
+                    {
+                     "monster":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -354,12 +349,14 @@
                  "height":8,
                  "id":938,
                  "name":"",
-                 "properties":[
-                        {
-                         "name":"monster",
-                         "type":"string",
-                         "value":"ravencritter"
-                        }],
+                 "properties":
+                    {
+                     "monster":"ravencritter"
+                    },
+                 "propertytypes":
+                    {
+                     "monster":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -614,7 +611,7 @@
  "nextobjectid":943,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.4.3",
+ "tiledversion":"1.11.0",
  "tileheight":8,
  "tilesets":[
         {
@@ -758,11 +755,11 @@
          "source":"..\/..\/tilesets\/furouraltar\/furouraltar.json"
         }, 
         {
-         "firstgid":8805,
+         "firstgid":8825,
          "source":"..\/..\/tilesets\/unboundtiles\/unboundtiles.json"
         }],
  "tilewidth":8,
  "type":"map",
- "version":1.4,
+ "version":1.1,
  "width":60
 }

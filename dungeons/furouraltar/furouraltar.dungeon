@@ -17,7 +17,7 @@
       "rules" : [
         [ "maxSpawnCount", [1] ]
       ],
-      "def" : [ "tmx", "furouraltar.json" ]
+      "def" : [ "tmx", "furourcanyon.json" ]
     }
   ]
 }

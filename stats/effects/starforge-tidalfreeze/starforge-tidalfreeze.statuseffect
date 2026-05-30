@@ -18,9 +18,9 @@
     "frostBreakCooldown" : 3,
 
     "shatterChanceOnHit" : 0.25,
-    "shatterDamage" : 6
+    "shatterDamage" : 10
   },
-  "defaultDuration" : 65,
+  "defaultDuration" : 20,
 
   "scripts" : [
     "starforge-tidalfreeze.lua"

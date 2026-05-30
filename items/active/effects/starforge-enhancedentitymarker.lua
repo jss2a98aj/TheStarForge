@@ -18,7 +18,6 @@ function update(dt)
     for _, entityId in pairs(entities) do
 	  	local entityPosition = entityMarker.useMouthPosition and world.entityMouthPosition(entityId) or world.entityPosition(entityId)
 			
-			sb.logInfo("%s", entityMarker)
   	  local markerDrawable = {
         image = markerImage,
         centered = true,
