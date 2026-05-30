@@ -1,0 +1,24 @@
+{
+  "itemName" : "starforge-cubeofrazortail",
+  "rarity" : "Legendary",
+  "price" : 150,
+  "category" : "food",
+  "inventoryIcon" : "cubeofrazortail.png",
+  "description" : "A razortail condensed into the shape of a cube. It is very chewy and kind of bitter.",
+  "shortdescription" : "Cube of Razortail",
+  "effects" : [ [
+    {
+      "effect" : "starforge-tidalfreeze",
+      "duration" : 120
+    }
+  ] ],
+  "foodValue" : 5,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 0.5,
+  "blockingEffects" : [
+    "wellfed"
+  ]
+}
