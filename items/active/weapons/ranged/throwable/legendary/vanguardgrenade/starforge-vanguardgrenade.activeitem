@@ -5,12 +5,12 @@
   "maxStack" : 1,
   "rarity" : "Legendary",
   "description" : "Experimental longbow technology that teleports the grenade to its destination",
-  "shortdescription" : "Vanguard Grenade",
+  "shortdescription" : "\"Sparkler\" VNGD LBG",
   "tooltipKind" : "starforge-uniquegun",
   "manufacturer" : "unboundArmaments",
   "category": "uniqueWeapon",
   "tooltipFieldsOverride" : {
-    "subtitle" : "Throwable"
+    "subtitle" : "Longbow Grenade"
   },
   "twoHanded" : false,
   "itemTags" : [ "starforge", "weapon", "ranged", "throwable", "unbound" ],

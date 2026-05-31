@@ -155,6 +155,14 @@
         "icon" : "/interface/cockpit/dungeons/rimespireicon.png" 
       }
     },
+    { 
+      "op" : "add",
+      "path" : "/displayDungeons/starforge-locustdojo", 
+      "value" : {
+        "description" : "A withered Yukai Hylotl settlement identified with small signatures of abnormal frost.", 
+        "icon" : "/interface/cockpit/dungeons/locustdojocastleicon.png" 
+      }
+    },
 
 	  //Weather Threat Levels
     { 

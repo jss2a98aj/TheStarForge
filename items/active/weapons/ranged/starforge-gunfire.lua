@@ -240,7 +240,6 @@ function StarforgeGunFire:cooldown()
   
   if self.autoAltInterval then
     self.autoAltCounter = self.autoAltCounter + 1
-    sb.logInfo("%s", self.autoAltCounter)
     if self.autoAltCounter >= self.autoAltInterval then
       triggerAlt(self.altHoldTime)
       self.autoAltCounter = 0

@@ -4,7 +4,7 @@
   "maxStack": 1,
   "rarity": "Legendary",
   "description": "A fancy assault rifle featuring the famous Vanguard lock-on tech.",
-  "shortdescription": "\"Predator\" ^#69729E;VNGD SAR^reset;",
+  "shortdescription": "\"Predator\" VNGD SAR",
   "tooltipKind": "starforge-uniquegun",
   "category": "uniqueWeapon",
   "tooltipFieldsOverride" : {"subtitle":"Smart Assault Rifle"},

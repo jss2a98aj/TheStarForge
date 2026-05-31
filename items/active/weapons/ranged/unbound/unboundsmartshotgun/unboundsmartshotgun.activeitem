@@ -4,7 +4,7 @@
   "maxStack" : 1,
   "rarity" : "Legendary",
   "description" : "A smart shotgun packed with specialised supercooled rounds to slow its targets.",
-  "shortdescription" : "\"Marauder\" ^#69729E;VNGD SG^reset;",
+  "shortdescription" : "\"Marauder\" VNGD SG",
   "tooltipKind": "starforge-uniquegun",
   "category": "uniqueWeapon",
   "tooltipFieldsOverride" : {"subtitle":"Smart Shotgun"},

@@ -4,7 +4,7 @@
   "maxStack": 1,
   "rarity": "Legendary",
   "description": "A pistol housing a Vanguard patented smart tracking system and seeking rounds.",
-  "shortdescription": "\"Assailant\" ^#69729E;VNGD SP^reset;",
+  "shortdescription": "\"Assailant\" VNGD SP",
   "tooltipKind": "starforge-uniquegun",
   "category": "uniqueWeapon",
   "tooltipFieldsOverride" : {"subtitle":"Smart Pistol"},

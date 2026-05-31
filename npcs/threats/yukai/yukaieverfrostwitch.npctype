@@ -167,12 +167,11 @@
 					"name": "starforge-yukaieverfrostwitchpants"
 				}],
 				"primary": [
-					"starforge-deluge"
+					"starforge-deluge", "starforge-anentropia"
 				],
 				"alt": [
-					"starforge-yukaiknife", "bandage", "starforge-yukaiwristspell"
+					"starforge-anentropia"
 				]
-
 			}]]
 		]
 	},

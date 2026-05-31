@@ -3,7 +3,7 @@
   "price": 1000,
   "maxStack": 1,
   "rarity": "Rare",
-  "description": "An Unbound SMG loaded with elemental bullets. Often used by Unbound \"Harasser\" Commando types.",
+  "description": "An Unbound SMG used to stun and weaken foes for easier takedowns.",
   "shortdescription": "\"Harasser\" SMG",
   "tooltipKind": "starforge-uniquegun",
   "category": "uniqueWeapon",
@@ -121,7 +121,7 @@
         "allowRotate": true,
         "allowFlip": true,
 		
-		"frontArmFrame" : "run.2",
+		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
       }
     }

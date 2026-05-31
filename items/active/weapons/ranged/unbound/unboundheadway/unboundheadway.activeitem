@@ -11,6 +11,7 @@
   "twoHanded": true,
   "level" : 6,
   "itemTags": [ "weapon", "ranged", "assaultrifle" ],
+  "manufacturer" : "unboundarmaments",
   "inventoryIcon": "unboundheadway.png:idle",
 
   "animation" : "/items/active/weapons/ranged/animations/starforge-shellanimgun.animation",
@@ -149,7 +150,7 @@
     "class" : "StarForgeLoadAlternateAmmo",
 
     "swapOnCooldown" : 0.5,
-    "swapOffCooldown" : 2,
+    "swapOffCooldown" : 4,
     "adaptedAbilityIndex" : 1, //Which ability to adapt (1 = primary, 2 = secondary)
     
     //The new stats which will overwrite the primary ability
@@ -171,7 +172,7 @@
       "fireType" : "auto",
       "animatedFire" : false,
 	
-      "baseDps" : 10.0,	
+      "baseDps" : 15.0,	
       "fireTime" : 0.4,
       "energyUsage" : 55,
       "inaccuracy": 0.003,

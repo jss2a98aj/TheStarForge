@@ -1,0 +1,26 @@
+{
+  "metadata" : {
+    "name" : "starforge-locustdojo",
+    "species" : "generic",
+    "rules" : [
+    ],
+    "anchor" : [ "starforge-locustdojobase" ],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 15,
+    "extendSurfaceFreeSpace" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+    {
+      "name" : "starforge-locustdojobase",
+      "rules" : [
+        [ "ignorePartMaximumRule" ],
+        [ "doNotCombineWith", [ "starforge-locustdojobase" ] ]
+      ],
+      "def" : [ "tmx", "starforge-locustdojo.json" ],
+      "chance" : 0
+    }
+  ]
+}
