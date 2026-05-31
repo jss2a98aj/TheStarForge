@@ -120,7 +120,7 @@
   "starforge-katahelspecial4" : [
     [1, {
       "fill" : [
-        {"item" : [ "starforge-vigilance", 1]},
+        {"item" : [ "starforge-vigilance-recipe", 1]},
         {"pool" : "ore"},
 		{"pool" : "chestMoney"}
       ]

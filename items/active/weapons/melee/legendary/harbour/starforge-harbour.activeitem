@@ -12,6 +12,7 @@
     "subtitle" : "Broadsword"
   },
   "twoHanded" : true,
+  "fixedLevel" : false,
   "itemTags" : [ "starforge", "weapon", "melee", "broadsword" ],
   "learnBlueprintsOnPickup" : [ "starforge-harbour" ],
 

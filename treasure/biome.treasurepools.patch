@@ -46,5 +46,14 @@
             "weight": 0.20,
             "item": "starforge-wavecrasher"
         }
+    },
+	
+	{
+        "op": "add",
+        "path": "/oceanChestTreasure/0/1/pool/-",
+        "value": {
+            "weight": 0.20,
+            "item": "starforge-emberstar"
+        }
     }
 ]

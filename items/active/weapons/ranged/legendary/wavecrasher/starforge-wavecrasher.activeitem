@@ -9,6 +9,7 @@
   "tooltipFieldsOverride" : {"subtitle" : "Charge Cannon"},
   "category" : "uniqueWeapon",
   "twoHanded" : true,
+  "fixedLevel" : false,
   "itemTags" : ["weapon","ranged"],
   "level" : 6,
 

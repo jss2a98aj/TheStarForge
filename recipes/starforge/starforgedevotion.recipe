@@ -1,0 +1,17 @@
+{
+  "input" : [
+	{ "item" : "essence", "count" : 1750},
+	{ "item" : "starforge-brimsteel", "count" : 5},
+	{ "item" : "diamond", "count" : 5},
+	{ "item" : "scorchedcore", "count" : 4},
+	{ "item" : "cryonicextract", "count" : 4},
+	{ "item" : "goldbar", "count" : 30}
+  ],
+  "output" : {
+    "item" : "starforge-devotion",
+    "count" : 1
+  },
+  "groups" : [ "starforge-starforge", "weapons" ],
+  "duration" : 2
+}
+

@@ -1,0 +1,16 @@
+{
+  "input" : [
+    { "item" : "essence", "count" : 1600},
+	{ "item" : "starforge-salvagedunboundtech", "count" : 5},
+	{ "item" : "solariumstar", "count" : 3},
+	{ "item" : "durasteelbar", "count" : 6},
+	{ "item" : "staticcell", "count" : 2}
+  ],
+  "output" : {
+    "item" : "starforge-vanguardgrenade",
+    "count" : 1
+  },
+  "groups" : [ "starforge-unboundgear", "weapon" ],
+  "duration" : 0
+}
+

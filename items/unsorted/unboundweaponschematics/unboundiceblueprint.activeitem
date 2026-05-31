@@ -7,7 +7,7 @@
   "category" : "Blueprint",
   "twoHanded" : false,
   "inventoryIcon" : "unboundvanguardblueprint.png",
-  "recipes" : ["starforge-unboundsmartar", "starforge-unboundsmartpistol", "starforge-unboundsmartsniper", "starforge-unboundsmartshotgun"],
+  "recipes" : ["starforge-unboundsmartar", "starforge-unboundsmartpistol", "starforge-unboundsmartsniper", "starforge-unboundsmartshotgun", "starforge-vanguardgrenade"],
   "animation" : "unboundvanguardblueprint.animation",
   "scripts" : ["unboundweaponschematic.lua"],
   "swingTime" : 0.15

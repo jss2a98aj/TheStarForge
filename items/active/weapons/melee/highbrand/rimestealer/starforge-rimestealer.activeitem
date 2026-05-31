@@ -12,6 +12,7 @@
     "subtitle" : "Highbrand"
   },
   "twoHanded" : true,
+  "fixedLevel" : false,
   "itemTags" : [ "starforge", "weapon", "melee", "highbrand", "greatsword" ],
 
   "inventoryIcon" : "starforge-rimestealer.png",

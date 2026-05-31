@@ -6,7 +6,7 @@
   "maxStack" : 1,
   "rarity" : "Essential",
   "description" : "A remnant of Floran craft, with its roots severed, it has become part of the Wither.",
-  "shortdescription" : "^#92E945;Cursebringer^reset;",
+  "shortdescription" : "Cursebringer",
   "tooltipKind" : "starforge-uniquesword",
   "category" : "uniqueWeapon",
   "tooltipFieldsOverride" : {

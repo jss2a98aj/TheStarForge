@@ -3,6 +3,7 @@
   "price" : 960,
   "level" : 6,
   "maxStack" : 1,
+  "fixedLevel" : false,
   "rarity" : "Legendary",
   "description" : "A Miniknog plasma cutter used for cutting banana shapes into sheets of metal.",
   "shortdescription" : "Miniknog Plasma Cutter",

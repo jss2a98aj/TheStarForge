@@ -74,6 +74,7 @@
         {"weight" : 0.125, "item" : "starforge-unboundvanguardpants"},
 		{"weight" : 0.125, "item" : "starforge-unboundjumpkit"},
 		{"weight" : 0.125, "item" : "starforge-unboundsmartar"},
+		{"weight" : 0.125, "item" : "starforge-vanguardgrenade"},
 		{"weight" : 0.125, "item" : "starforge-unboundsmartpistol"},
 		{"weight" : 0.125, "item" : "starforge-unboundsmartshotgun"},
 		{"weight" : 0.125, "item" : "starforge-unboundsmartsniper"}
