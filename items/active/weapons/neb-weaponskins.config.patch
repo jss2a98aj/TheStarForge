@@ -1,4 +1,57 @@
 [
+  //FEVER
+  {
+    "op": "add",
+    "path": "/weaponSkins/starforge-fever",
+    "value": {
+      "magnumOpus": {
+        "skinName" : "Stress",
+        "unlockDescription" : "Unlocked by default.",
+        "prerequisiteQuests": [],
+	  
+        "skinConfig": {
+          "description": "Storm and Stress, a combo never forgotten.",
+          "shortdescription": "Stress",
+          "inventoryIcon": "/items/active/weapons/ranged/legendary/fever/skins/starforge-stress.png:idle",
+          "animationParts": {
+            "middle": "/items/active/weapons/ranged/legendary/fever/skins/starforge-stress.png",
+            "middleFullbright" : ""
+          }
+        }
+      }
+    }
+  },
+  //PEPPERBOX
+  {
+    "op": "add",
+    "path": "/weaponSkins/starforge-pepperbox",
+    "value": {
+      "magnumOpus": {
+        "skinName" : "Magnum Opus",
+        "unlockDescription" : "Unlocked by default.",
+        "prerequisiteQuests": [],
+	  
+        "skinConfig": {
+          "description": "A magnum carried by operators who prefer a no-frills backup firearm.",
+          "shortdescription": "Magnum Opus",
+          "inventoryIcon": "/items/active/weapons/ranged/unique/pepperbox/skins/starforge-magnumopus.png:ready1",
+          "animationParts": {
+            "gun": "/items/active/weapons/ranged/unique/pepperbox/skins/starforge-magnumopus.png"
+          },
+          "animationCustom" : {
+            "particleEmitters" : {
+              "muzzleFlash" : {
+                "offsetRegion" : [-1, -0.5, -1, -0.5],
+                "particles" : [
+                  { "particle" : "starforge-unboundrifle" }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
   //VOW
   {
     "op": "add",

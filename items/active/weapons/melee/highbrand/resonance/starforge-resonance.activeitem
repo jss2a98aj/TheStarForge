@@ -111,9 +111,9 @@
       "fire4" : [ "/sfx/melee/swing_shortsword_fire1.ogg", "/sfx/melee/swing_shortsword_fire2.ogg", "/sfx/melee/swing_shortsword_fire3.ogg" ],
       "fire5" : [ "/sfx/melee/swing_spear_fire1.ogg", "/sfx/melee/swing_spear_fire2.ogg", "/sfx/melee/swing_spear_fire3.ogg" ],
 
-      "chime" : ["/sfx/instruments/geode/geodehum.ogg"],
+      "chime" : [ "/sfx/instruments/geode/geodehum.ogg" ],
       "flipSlash" : [ "/sfx/tech/tech_dash.ogg" ],
-      "slamFall" : [ "/sfx/instruments/geode/geodehum.ogg" ]
+      "slamFall" : [ ]
     }
   },
 
@@ -214,6 +214,10 @@
             "timeToLive" : 0,
             "statusEffects" : [ ]
           }
+        },
+        {
+          "action" : "sound",
+          "options" : [ "/sfx/instruments/geode/geodehum.ogg" ]
         }
       ] 
     },

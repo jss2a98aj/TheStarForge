@@ -27,6 +27,10 @@
       "options" : [ "/sfx/projectiles/blast_small_fire1.ogg", "/sfx/projectiles/blast_small_fire2.ogg", "/sfx/projectiles/blast_small_fire3.ogg" ]
     },
     {
+      "action" : "sound",
+      "options" : [ "/sfx/instruments/geode/geodehum.ogg" ]
+    },
+    {
       "action" : "light",
       "color" : "orange"
     },

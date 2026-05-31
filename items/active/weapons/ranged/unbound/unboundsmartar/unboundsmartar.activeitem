@@ -163,7 +163,7 @@
     "projectileParameters": {
       "homingStartDelay" : 0.01,
       "baseHomingControlForce" : 2,
-      "knockback": 1
+      "knockback": 0
     },
 
     "targetQueryDistance" : 6,

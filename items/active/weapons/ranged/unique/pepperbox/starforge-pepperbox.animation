@@ -46,7 +46,7 @@
       "gun" : {
         "properties" : {
           "centered" : true,
-          "offset" : [0.75, 0.125], // x offset is set dynamically
+          "offset" : [0.5, 0.125], // x offset is set dynamically
           "transformationGroups" : ["weapon"]
         },
         "partStates" : {
@@ -78,7 +78,7 @@
         "properties" : {
           "zLevel" : -1,
           "centered" : true,
-          "offset" : [0.5, -0.75],
+          "offset" : [0.625, -0.75],
           "fullbright" : true,
           "transformationGroups" : ["muzzle"]
         },
