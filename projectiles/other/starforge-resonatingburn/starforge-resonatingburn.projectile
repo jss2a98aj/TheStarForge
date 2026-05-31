@@ -1,0 +1,95 @@
+{
+  "projectileName" : "starforge-resonatingburn",
+  "image" : "/projectiles/invisibleprojectile/invisibleprojectile.png",
+  "physics" : "vhighgravgrenade",
+  "timeToLive" : 0,
+  "power" : 1,
+  "speed" : 0,
+  "bounces" : -1,
+  "orientationLocked" : true,
+  "piercing" : true,
+  "flippable" : true,
+  "damageType" : "noDamage",
+  "damageKind" : "default",
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "inheritDamageFactor" : 1,
+      "fuzzAngle": 360,
+      "type" : "fireexplosionknockback",
+      "config" : {
+        "knockback" : 0,
+        "statusEffects" : [ ]
+      }
+    },
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/blast_small_fire1.ogg", "/sfx/projectiles/blast_small_fire2.ogg", "/sfx/projectiles/blast_small_fire3.ogg" ]
+    },
+    {
+      "action" : "light",
+      "color" : "orange"
+    },
+    {
+      "action" : "loop",
+      "count" : 3,
+      "body" : [
+        {
+          "action" : "option",
+          "options" : [
+            {
+              "action" : "particle",
+              "specification" : {
+                "type" : "animated",
+                "animation" : "/animations/mediumflame/mediumflame.animation",
+                "approach" : [0.5, 0.5],
+                "timeToLive" : 1.5,
+                "variance" : {
+                  "position" : [1.5, 1.5],
+                  "initialVelocity" : [1, 1],
+                  "timeToLive" : 0.5,
+                  "rotation" : 180
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "action" : "loop",
+      "count" : 2,
+      "body" : [
+        {
+          "action" : "option",
+          "options" : [
+            {
+              "action" : "particle",
+              "specification" : {
+                "type" : "animated",
+                "animation" : "/animations/starforge-largeflame/starforge-largeflame.animation",
+                "approach" : [0.5, 0.5],
+                "timeToLive" : 1.2,
+                "size" : 1,
+                "variance" : {
+                  "position" : [1.5, 1.5],
+                  "initialVelocity" : [1, 1],
+                  "timeToLive" : 0.3,
+                  "size" : 0.25,
+                  "rotation" : 180
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  
+  "scripts" : [ "/projectiles/scripts/starforge-messagerprojectile.lua" ],
+
+  "messageRadius" : 25,
+  "messageToSend" : "starforge-detonateBurn",
+  "messageArgs" : [0.025, null],
+  "distanceDetonate" : true
+}

@@ -124,13 +124,13 @@
   "primaryAbilityType" : "starforge-highbrandcombo",
   "primaryAbility" : {
     "fireTime" : 0.9,
-    "baseDps" : 13.5,
+    "baseDps" : 12.5,
     "stanceSpeedFactor" : 1.45,
     "swingPitchFactor" : 0.55,
     "energyUsage" : 25,
     "damageConfig" : {
       "damageSourceKind" : "firebroadsword",
-      "statusEffects" : [ ],
+      "statusEffects" : [ "burning" ],
       "knockbackMode" : "facing",
       "timeout" : 0.5
     },
@@ -184,7 +184,7 @@
 
   "altAbilityType" : "flipslash",
   "altAbility" : {
-    "name" : "Resonating Curse",
+    "name" : "Resonating Flames",
     "scripts" : ["/items/active/weapons/melee/abilities/broadsword/flipslash/starforge-flipslashslam.lua"],
     "class" : "StarforgeFlipSlashSlam",
 
@@ -198,12 +198,24 @@
     
     "slamDelay" : 0.2,
     "slamVelocity" : [0, -75],
-    "slamAimVec" : [1, 1],
+    "slamAimVec" : [0, -1],
     "bounceVelocity" : 25,
-    "projectileType" : "starforge-unboundthermiteshell",
-    "projectileParameters" : {
-      "power" : 8,
-      "timeToLive" : 0
+    "projectileOffset" : [0, -0.75],
+    "projectileType": "starforge-resonatingburn",
+    "projectileParameters": {
+      "power" : 10,
+      "actionOnReap" : [
+        {
+          "action" : "projectile",
+          "inheritDamageFactor" : 1,
+          "fuzzAngle": 360,
+          "type" : "starforge-emberstarhammer",
+          "config" : {
+            "timeToLive" : 0,
+            "statusEffects" : [ ]
+          }
+        }
+      ] 
     },
     "winddownTime" : 0.35,
 
@@ -240,6 +252,9 @@
         "armRotation" : -50,
         "weaponRotation" : -130,
         "twoHanded" : true,
+        "animationStates" : {
+          "geode" : "chime"
+        },
 
         "minStabTime" : 0.2,
         "allowRotate" : false,

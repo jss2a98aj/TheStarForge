@@ -14,5 +14,7 @@
   
   "scripts" : [ "/projectiles/scripts/starforge-messagerprojectile.lua" ],
   "messageRadius" : 50,
-  "messageToSend" : "starforge-shockWetEnemies"
+  "messageToSend" : "starforge-shockWetEnemies",
+  "messageArgs" : [0.025],
+  "distanceDetonate" : true
 }

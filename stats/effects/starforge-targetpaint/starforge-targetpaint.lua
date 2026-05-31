@@ -13,7 +13,6 @@ function init()
 end
 
 function update(dt)
-  sb.logInfo("%s", animator.animationState("target"))
   --Listen for damage taken
   local damageNotifications, nextStep = status.damageTakenSince(self.queryDamageSince)
   self.queryDamageSince = nextStep

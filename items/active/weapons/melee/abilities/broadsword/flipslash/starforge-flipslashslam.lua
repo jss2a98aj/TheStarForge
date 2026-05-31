@@ -120,7 +120,7 @@ function StarforgeFlipSlashSlam:slam()
           impactPoint = collision[1] 
         end
         
-        world.spawnProjectile(self.projectileType, impactPoint, activeItem.ownerEntityId(), {mcontroller.facingDirection() * self.slamAimVec[1], self.slamAimVec[2]}, false, params)
+        world.spawnProjectile(self.projectileType, vec2.add(impactPoint, self.projectileOffset or {0,0}), activeItem.ownerEntityId(), {mcontroller.facingDirection() * self.slamAimVec[1], self.slamAimVec[2]}, false, params)
         mcontroller.setVelocity(vec2.mul(vec2.norm(world.distance(self:slamPosition(), impactPoint)), -self.bounceVelocity))
         return true
       end

@@ -161,7 +161,8 @@
 
       "messageRadius" : 23,
       "messageToSend" : "applyStatusEffect",
-      "messageArgs" : "starforge-targetpaint"
+      "messageArgs" : ["starforge-targetpaint", 15],
+      "distanceDetonate" : false
     },
 
     "pingDetectConfig" : {
