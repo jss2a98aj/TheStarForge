@@ -29,6 +29,7 @@
     ],
 
     "behavior" : "monster",
+	"deathBehavior" : "monster-death",
 
     "seeThroughLiquid" : false,
     "behaviorConfig" : {
@@ -106,6 +107,30 @@
             "ceilingDistance" : 8,
             "xVelocity" : 4,
             "yVelocity" : 12
+          }
+        }
+      ],
+	  "deathActions" : [
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "starforge-himindottirskulltop",
+            "projectileParameters" : {},
+            "aimDirection" : [0.125, 1],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0]
+          }
+        },
+		{
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "starforge-himindottirskullbottom",
+            "projectileParameters" : {},
+            "aimDirection" : [-0.125, 1],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0]
           }
         }
       ]

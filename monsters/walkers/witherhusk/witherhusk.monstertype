@@ -103,6 +103,30 @@
             "wanderTime" : [1, 8]
           }
         }
+      ],
+	  "deathActions" : [
+        {
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "starforge-huskskeletonskull",
+            "projectileParameters" : {},
+            "aimDirection" : [0.125, 1],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0]
+          }
+        },
+		{
+          "name" : "action-projectile",
+          "parameters" : {
+            "projectileCount" : 1,
+            "projectileType" : "starforge-huskskeletonchest",
+            "projectileParameters" : {},
+            "aimDirection" : [-0.125, 1],
+            "inaccuracy" : 0,
+            "fireOffset" : [0, 0]
+          }
+        }
       ]
     },
 
