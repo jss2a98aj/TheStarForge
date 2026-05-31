@@ -5,12 +5,14 @@ StarForgeLoadAlternateAmmo = WeaponAbility:new()
 function StarForgeLoadAlternateAmmo:init()  
   self.newAbilityLoaded = false
   self.abilityBackup = false
+  self.swapCooldown = 0
 end
 
 function StarForgeLoadAlternateAmmo:update(dt, fireMode, shiftHeld)
   WeaponAbility.update(self, dt, fireMode, shiftHeld)
 
-  if not self.weapon.currentAbility and self.fireMode == (self.activatingFireMode or self.abilitySlot) then
+  self.swapCooldown = math.max(0, self.swapCooldown - self.dt)
+  if self.swapCooldown == 0 and not self.weapon.currentAbility and self.fireMode == (self.activatingFireMode or self.abilitySlot) then
     self:setState(self.loadAmmo)
   end
   
@@ -68,6 +70,8 @@ function StarForgeLoadAlternateAmmo:loadAmmo()
 
     progress = math.min(1.0, progress + (self.dt / self.stances.load.duration))
   end)
+
+  self.swapCooldown = self.newAbilityLoaded and self.swapOnCooldown or self.swapOffCooldown
 
   self.weapon:setStance(self.weapon.abilities[self.adaptedAbilityIndex].stances.idle)
   self.weapon:updateAim()

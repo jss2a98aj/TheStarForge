@@ -15,6 +15,8 @@ function StarforgeGunFire:init()
   
   self.unholster = self.stances.unholsterTwirl
 
+  self.autoAltCounter = 0
+
   self.weapon.onLeaveAbility = self.weapon.onLeaveAbility or function()
     self.weapon:setStance(self.weapon.abilities[1].stances.idle)
     self:reset()
@@ -235,6 +237,16 @@ function StarforgeGunFire:cooldown()
 
     progress = math.min(1.0, progress + (self.dt / duration))
   end)
+  
+  if self.autoAltInterval then
+    self.autoAltCounter = self.autoAltCounter + 1
+    sb.logInfo("%s", self.autoAltCounter)
+    if self.autoAltCounter >= self.autoAltInterval then
+      triggerAlt(self.altHoldTime)
+      self.autoAltCounter = 0
+    end
+  end
+
   self:reset()
 end
 

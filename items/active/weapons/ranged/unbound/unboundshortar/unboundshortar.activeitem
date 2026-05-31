@@ -177,6 +177,8 @@
     "scripts" : ["/items/active/weapons/ranged/abilities/loadalternateammo/starforge-loadalternateammo.lua"],
     "class" : "StarForgeLoadAlternateAmmo",
 
+    "swapOnCooldown" : 0.5,
+    "swapOffCooldown" : 0.5,
     "adaptedAbilityIndex" : 1, //Which ability to adapt (1 = primary, 2 = secondary)
     
     //The new stats which will overwrite the primary ability

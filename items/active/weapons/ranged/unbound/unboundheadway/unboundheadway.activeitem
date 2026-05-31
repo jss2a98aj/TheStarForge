@@ -18,7 +18,7 @@
     "butt": "",
     "middle": "unboundheadway.png",
     "barrel": "",
-	  "middleFullbright": "unboundheadwayfullbright.png",
+	  "middleFullbright": "",
     "muzzleFlash": "/items/active/weapons/ranged/muzzleflash/starforge-electricmuzzleflash.png"
   },
 
@@ -41,6 +41,20 @@
 		    "offsetRegion" : [0.5, 0.75, 0.5, 0.75],
         "particles" : [
           { "particle" : "starforge-unboundrifle" }
+        ]
+      },
+      "grenadeCasing" : {
+		    "offsetRegion" : [-0.25, 0.75, -0.25, 0.75],
+        "particles" : [
+          { "particle" : "starforge-unboundshell" }
+        ]
+      },
+      "grenadeMuzzle" : {
+        "offsetRegion" : [-1.5, 0.75, -1.5, 0.75],
+        "transformationGroups" : ["muzzle"],
+        "burstCount" : 2,
+        "particles" : [
+          { "particle" : "rocketbarrelpuff" }
         ]
       },
       "ammoIndicator" : {
@@ -78,6 +92,9 @@
     "projectileCount": 1,
     "fireType": "auto",
 
+    "autoAltInterval" : false,
+    "altHoldTime" : 0.1,
+
     "projectileType": "starforge-electricbullet",
     "projectileParameters": {
 	    "speed" : 200,
@@ -107,7 +124,7 @@
         "twoHanded": true,
         "allowRotate": true,
         "allowFlip": true,
-        "burstParticleEmitters": [ "casing" ],
+        "burstParticleEmitters": [ "casing", "muzzleFlash" ],
 
 		    "frontArmFrame" : "run.2",
         "backArmFrame" : "swim.4"
@@ -127,10 +144,12 @@
   },
 
   "altAbility": {
-    "name" : "Swap Mode",
+    "name" : "Arm Grenades",
     "scripts" : ["/items/active/weapons/ranged/abilities/loadalternateammo/starforge-loadalternateammo.lua"],
     "class" : "StarForgeLoadAlternateAmmo",
 
+    "swapOnCooldown" : 0.5,
+    "swapOffCooldown" : 2,
     "adaptedAbilityIndex" : 1, //Which ability to adapt (1 = primary, 2 = secondary)
     
     //The new stats which will overwrite the primary ability
@@ -143,6 +162,8 @@
         "knockback": 0
       },
       
+      "autoAltInterval" : 3,
+
       "fireOffset" : [-1.5, 0.75],
       "fireSound" : "fireNade",
       "muzzleFlashState" : "off",
@@ -151,7 +172,7 @@
       "animatedFire" : false,
 	
       "baseDps" : 10.0,	
-      "fireTime" : 1.1,
+      "fireTime" : 0.4,
       "energyUsage" : 55,
       "inaccuracy": 0.003,
       
@@ -174,7 +195,7 @@
           "twoHanded": true,
           "allowRotate": true,
           "allowFlip": true,
-          "burstParticleEmitters": false,
+          "burstParticleEmitters": [ "grenadeCasing", "grenadeMuzzle" ],
 
           "frontArmFrame" : "run.2",
           "backArmFrame" : "swim.4"

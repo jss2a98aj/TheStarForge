@@ -1,8 +1,8 @@
 {
   "kind" : "starforge-unboundlmg",
   "definition" : {
-    "type" : "animated",
-    "image" : "/particles/unbound/bulletcasing/unboundlmg.animation",
+    "type" : "textured",
+    "image" : "/particles/unbound/bulletcasing/unboundlmg.png",
     "fade" : 0.9,
 	  "position" : [0, 0],
 	  "size" : 1.0,

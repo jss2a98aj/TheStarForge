@@ -15,6 +15,8 @@ function init()
   activeItem.setCursor(config.getParameter("cursor", "/cursors/reticle0.cursor"))
   animator.setGlobalTag("paletteSwaps", config.getParameter("paletteSwaps", ""))
 
+  self.altGraceTimer = 0
+
   self.weapon = Weapon:new()
 
   self.weapon:addTransformationGroup("weapon", {0, 0}, 0)
@@ -32,9 +34,19 @@ function init()
 end
 
 function update(dt, fireMode, shiftHeld)
+  --Thanks to C0bra5 for helping figure this out
+	if self.altGraceTimer > 0 then
+		self.altGraceTimer = self.altGraceTimer - dt
+		fireMode = "alt"
+	end
+
   self.weapon:update(dt, fireMode, shiftHeld)
   
   world.debugPoint(vec2.add(mcontroller.position(), activeItem.handPosition(self.weapon.muzzleOffset)), "red")
+end
+
+function triggerAlt(holdTime)
+  self.altGraceTimer = holdTime or 0.5
 end
 
 function uninit()

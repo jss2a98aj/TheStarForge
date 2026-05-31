@@ -1,8 +1,8 @@
 {
   "kind" : "starforge-unboundsniper",
   "definition" : {
-    "type" : "animated",
-    "image" : "/particles/unbound/bulletcasing/unboundsniper.animation",
+    "type" : "textured",
+    "image" : "/particles/unbound/bulletcasing/unboundsniper.png",
     "fade" : 0.9,
 	"position" : [0, 0],
 	"size" : 1.0,

@@ -1,8 +1,8 @@
 {
-  "kind" : "starforge-unboundrifle",
+  "kind" : "starforge-unboundshell",
   "definition" : {
     "type" : "textured",
-    "image" : "/particles/unbound/bulletcasing/unboundrifle.png",
+    "image" : "/particles/unbound/rocket/unboundshell.png",
     "fade" : 0.9,
 	"position" : [0, 0],
 	"size" : 1.0,

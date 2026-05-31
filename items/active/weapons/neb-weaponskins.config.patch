@@ -1,4 +1,26 @@
 [
+  //Headway
+  {
+    "op": "add",
+    "path": "/weaponSkins/starforge-unboundheadway",
+    "value": {
+      "pastDays": {
+        "skinName" : "Pastdays",
+        "unlockDescription" : "Unlocked by default.",
+        "prerequisiteQuests": [],
+	  
+        "skinConfig": {
+          "description": "People always miss the past, as if old things preserve some kind of better life.",
+          "shortdescription": "Pastdays",
+          "inventoryIcon": "/items/active/weapons/ranged/unbound/unboundheadway/skins/starforge-pastdays.png:idle",
+          "animationParts": {
+            "middle": "/items/active/weapons/ranged/unbound/unboundheadway/skins/starforge-pastdays.png",
+            "middleFullbright" : ""
+          }
+        }
+      }
+    }
+  },
   //FEVER
   {
     "op": "add",

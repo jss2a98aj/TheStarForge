@@ -1,8 +1,8 @@
 {
   "kind" : "starforge-unboundrocket",
   "definition" : {
-    "type" : "animated",
-    "image" : "/particles/unbound/rocket/unboundrocket.animation",
+    "type" : "textured",
+    "image" : "/particles/unbound/rocket/unboundrocket.png",
     "fade" : 0.9,
 	"position" : [0, 0],
 	"size" : 1.0,

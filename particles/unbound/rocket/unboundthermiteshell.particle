@@ -1,8 +1,8 @@
 {
   "kind" : "starforge-thermiteshell",
   "definition" : {
-    "type" : "animated",
-    "animation" : "/particles/unbound/rocket/unboundthermiteshell.animation",
+    "type" : "textured",
+    "animation" : "/particles/unbound/rocket/unboundthermiteshell.png",
     "fade" : 0.9,
 	"position" : [0, 0],
 	"size" : 1.0,
